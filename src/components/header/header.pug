@@ -1,0 +1,14 @@
+mixin header()
+	header.header
+		a.header__logo
+			//- img(src="/images/logo.svg")
+			img(src = require('@/components/header/img/logo.svg'))
+		nav.header__main-menu
+			- var menu_items = ['Home', 'About Us', 'Services', 'Careers', 'News', 'Documentation'];
+			each val, index in menu_items
+				li
+					a= val
+		div.header__btn1
+			a.button_outline Login
+		div.header__btn2
+			a.button Registr

@@ -13,6 +13,11 @@ const isProd = process.env.NODE_ENV === 'production';
 
 const pages = [];
 
+const PATHS = {
+	src: path.resolve(__dirname, './src'),
+	dist: path.resolve(__dirname, './dist')
+};
+
 fs
   .readdirSync(path.resolve(__dirname, 'src', 'pages'))
   .filter((file) => {
@@ -65,35 +70,52 @@ const filename = ext => isDev ? `[name]${ext}` : `[name].[hash].${ext}`;
 const plugins = () =>{
 	const base = [
 		new CleanWebpackPlugin(),
-		// new CopyWebpackPlugin({
-		// 	from: '',
-		// 	to: ''
-		// }),
+		new CopyWebpackPlugin([
+			// {
+			// 	from: `${PATHS.src}/theme/fonts`, 
+			// 	to: `${PATHS.dist}/fonts`
+			// },
+			// {
+			// 	from: `${PATHS.src}/**/*.+(png|jpg|svg|gif)`,
+			// 	to: `${PATHS.dist}/images/`,
+			// 	// to: `${PATHS.dist}/images/[name].[ext]`,
+			// }
+		]),
 		new MiniCssExtractPlugin( filename('css') )
 	];
 
 	if( isProd ){
 		base.push(new BundleAnalyerPlugin());
 	}
-
+	
 	return base;
 };
 
 
 module.exports = {
-	context: path.resolve(__dirname, 'src'),
+	context: PATHS.src,
 	mode: 'development',
 	entry: {
-		bundle: [path.resolve(__dirname, 'src/entry.js')]
+		// bundle: [path.resolve(__dirname, 'src/entry.js')]
+		bundle: path.join(PATHS.src, '/entry.js')
 	},
 	output:{
 		filename: '[name].js',
-		path: path.resolve(__dirname, 'dist')
+		path: PATHS.dist,
+		publicPath: '/',
+	},
+	resolve:{
+		extensions: ['.js', '.json', '.png'],
+		alias:{
+			// '@models': path.resolve(__dirname, 'src/models'),
+			'@': PATHS.src
+		}
 	},
 	devServer:{
 		port: 4200,
 		hot: isDev,
-		open: true
+		open: true,
+		contentBase: PATHS.dist,
 	},
 	devtool: isDev ? 'source-map' : '',
 	optimization: optimization(),
@@ -115,11 +137,19 @@ module.exports = {
 			},
 			{
 				test: /\.(png|jpg|svg|gif)$/,
-				use: ['file-loader']
+				loader: 'file-loader',
+				// loader: 'url-loader',
+				// loader: 'file-loader?name=[path][name].[ext]',
+				options: {
+					name: 'img/[name].[ext]'
+				},
 			},
 			{
 				test: /\.(ttf|woff|woff2|eot)$/,
-				use: ['file-loader']
+				use: ['file-loader'],
+				// options: {
+				// 	name: 'fonts/[name].[ext]'
+				// },
 			},
 			{
 				test: /\.(scss|sass)$/,
