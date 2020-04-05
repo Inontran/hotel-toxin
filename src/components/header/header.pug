@@ -2,7 +2,7 @@ mixin header()
 	header.header
 		a.header__logo
 			//- img(src="/images/logo.svg")
-			img(src = require('@/components/header/img/logo.svg'))
+			img(src = require('@/components/header/img/logo.svg').default)
 		nav.header__main-menu
 			- var menu_items = ['Home', 'About Us', 'Services', 'Careers', 'News', 'Documentation'];
 			each val, index in menu_items

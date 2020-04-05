@@ -7,6 +7,11 @@ const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 const TerserWebpackPlugin = require('terser-webpack-plugin');
 const OptimizeCssAssetsPlugin = require('optimize-css-assets-webpack-plugin');
 const BundleAnalyerPlugin = require('webpack-bundle-analyzer').BundleAnalyzerPlugin;
+const postcssReporter = require('postcss-reporter');
+const postcssSCSS = require('postcss-scss');
+const autoprefixer = require('autoprefixer');
+// const stylelint = require('stylelint');
+// const doiuse = require('doiuse');
 
 const isDev = process.env.NODE_ENV === 'development';
 const isProd = process.env.NODE_ENV === 'production';
@@ -85,7 +90,7 @@ const plugins = () =>{
 	];
 
 	if( isProd ){
-		base.push(new BundleAnalyerPlugin());
+		// base.push(new BundleAnalyerPlugin());
 	}
 	
 	return base;
@@ -125,20 +130,20 @@ module.exports = {
 			{
 				test: /\.css$/,
 				use: [
-					{
-						loader: MiniCssExtractPlugin.loader,
-						options: {
-							hrm: isDev,
-							reloadAll: true
-						},
-					},
+					// {
+					// 	loader: MiniCssExtractPlugin.loader,
+					// 	options: {
+					// 		hrm: isDev,
+					// 		reloadAll: true
+					// 	},
+					// },
+					'style-loader',
 					'css-loader'
 				]
 			},
 			{
 				test: /\.(png|jpg|svg|gif)$/,
 				loader: 'file-loader',
-				// loader: 'url-loader',
 				// loader: 'file-loader?name=[path][name].[ext]',
 				options: {
 					name: 'img/[name].[ext]'
@@ -146,24 +151,56 @@ module.exports = {
 			},
 			{
 				test: /\.(ttf|woff|woff2|eot)$/,
-				use: ['file-loader'],
-				// options: {
-				// 	name: 'fonts/[name].[ext]'
-				// },
+				loader: 'file-loader',
+				options: {
+					name: 'fonts/[name].[ext]'
+				},
 			},
 			{
 				test: /\.(scss|sass)$/,
 				use: [
-					{
-						loader: MiniCssExtractPlugin.loader,
-						options: {
-							hrm: isDev,
-							reloadAll: true
-						},
-					},
-					'css-loader',
-					'sass-loader'
-				]
+					// {
+					// 	loader: MiniCssExtractPlugin.loader,
+					// 	options: {
+					// 		hrm: isDev,
+					// 		reloadAll: true
+					// 	},
+					// },
+					// 'css-loader',
+					// 'sass-loader'
+          'css-loader',
+          {
+            loader: 'postcss-loader',
+            options: {
+              plugins: function () {
+                return [
+                  autoprefixer({browsers: ['last 2 versions']}),
+                ];
+              },
+            },
+          },
+          'sass-loader',
+          // {
+          //   loader: 'postcss-loader',
+          //   options: {
+          //     syntax: postcssSCSS,
+          //     plugins: function () {
+          //       return [
+          //         stylelint(),
+          //         doiuse({
+          //           browsers:['ie >= 11', 'last 2 versions'],
+          //           ignore: ['flexbox', 'rem', 'css-resize', 'css-masks', 'object-fit'],
+          //           ignoreFiles: ['**/normalize.css'],
+          //         }),
+          //         postcssReporter({
+          //           clearReportedMessages: true,
+          //           throwError: true,
+          //         }),
+          //       ];
+          //     },
+          //   },
+          // },
+				],
 			},
 			{
 				test: /\.js$/,
