@@ -12,6 +12,7 @@ const postcssSCSS = require('postcss-scss');
 const autoprefixer = require('autoprefixer');
 // const stylelint = require('stylelint');
 // const doiuse = require('doiuse');
+const ExtractTextPlugin = require("extract-text-webpack-plugin");
 
 const isDev = process.env.NODE_ENV === 'development';
 const isProd = process.env.NODE_ENV === 'production';
@@ -101,18 +102,15 @@ module.exports = {
 	context: PATHS.src,
 	mode: 'development',
 	entry: {
-		// bundle: [path.resolve(__dirname, 'src/entry.js')]
 		bundle: path.join(PATHS.src, '/entry.js')
 	},
 	output:{
 		filename: '[name].js',
 		path: PATHS.dist,
-		publicPath: '/',
+		publicPath: '',
 	},
 	resolve:{
-		extensions: ['.js', '.json', '.png'],
 		alias:{
-			// '@models': path.resolve(__dirname, 'src/models'),
 			'@': PATHS.src
 		}
 	},
@@ -130,27 +128,32 @@ module.exports = {
 			{
 				test: /\.css$/,
 				use: [
-					// {
-					// 	loader: MiniCssExtractPlugin.loader,
-					// 	options: {
-					// 		hrm: isDev,
-					// 		reloadAll: true
-					// 	},
-					// },
-					'style-loader',
-					'css-loader'
+					{
+						loader: MiniCssExtractPlugin.loader,
+						options: {
+							hrm: isDev,
+							reloadAll: true
+						},
+					},
+					{
+						loader: "css-loader",
+						options: {
+							url: false
+						}
+					}
 				]
 			},
 			{
 				test: /\.(png|jpg|svg|gif)$/,
+				exclude: `${PATHS.src}/theme/fonts/`,
 				loader: 'file-loader',
-				// loader: 'file-loader?name=[path][name].[ext]',
 				options: {
-					name: 'img/[name].[ext]'
+					name: 'img/[path]/[name].[hash].[ext]'
 				},
 			},
 			{
-				test: /\.(ttf|woff|woff2|eot)$/,
+				test: /\.(ttf|woff|woff2|eot|svg)$/,
+				include: `${PATHS.src}/theme/fonts/`,
 				loader: 'file-loader',
 				options: {
 					name: 'fonts/[name].[ext]'
@@ -158,49 +161,61 @@ module.exports = {
 			},
 			{
 				test: /\.(scss|sass)$/,
+				// use: [
+        //   'css-loader',
+        //   {
+        //     loader: 'postcss-loader',
+        //     options: {
+        //       plugins: function () {
+        //         return [
+        //           autoprefixer({browsers: ['last 2 versions']}),
+        //         ];
+        //       },
+        //     },
+        //   },
+        //   'sass-loader',
+        //   // {
+        //   //   loader: 'postcss-loader',
+        //   //   options: {
+        //   //     syntax: postcssSCSS,
+        //   //     plugins: function () {
+        //   //       return [
+        //   //         stylelint(),
+        //   //         doiuse({
+        //   //           browsers:['ie >= 11', 'last 2 versions'],
+        //   //           ignore: ['flexbox', 'rem', 'css-resize', 'css-masks', 'object-fit'],
+        //   //           ignoreFiles: ['**/normalize.css'],
+        //   //         }),
+        //   //         postcssReporter({
+        //   //           clearReportedMessages: true,
+        //   //           throwError: true,
+        //   //         }),
+        //   //       ];
+        //   //     },
+        //   //   },
+        //   // },
+				// ],
 				use: [
-					// {
-					// 	loader: MiniCssExtractPlugin.loader,
-					// 	options: {
-					// 		hrm: isDev,
-					// 		reloadAll: true
-					// 	},
-					// },
-					// 'css-loader',
-					// 'sass-loader'
-          'css-loader',
-          {
-            loader: 'postcss-loader',
-            options: {
-              plugins: function () {
-                return [
-                  autoprefixer({browsers: ['last 2 versions']}),
-                ];
-              },
-            },
-          },
-          'sass-loader',
-          // {
-          //   loader: 'postcss-loader',
-          //   options: {
-          //     syntax: postcssSCSS,
-          //     plugins: function () {
-          //       return [
-          //         stylelint(),
-          //         doiuse({
-          //           browsers:['ie >= 11', 'last 2 versions'],
-          //           ignore: ['flexbox', 'rem', 'css-resize', 'css-masks', 'object-fit'],
-          //           ignoreFiles: ['**/normalize.css'],
-          //         }),
-          //         postcssReporter({
-          //           clearReportedMessages: true,
-          //           throwError: true,
-          //         }),
-          //       ];
-          //     },
-          //   },
-          // },
-				],
+					{
+						loader: MiniCssExtractPlugin.loader,
+						options: {
+							hrm: isDev,
+							reloadAll: true
+						},
+					},
+					{
+						loader: "css-loader",
+					},
+					{
+						loader: "resolve-url-loader"
+					},
+					{
+						loader: "sass-loader",
+						options: {
+							sourceMap: true
+						}
+					},
+				]
 			},
 			{
 				test: /\.js$/,
