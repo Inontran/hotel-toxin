@@ -1,3 +1,6 @@
+include ./base-data
+block variables
+
 //- include ../../components/layout/layout
 include ../../components/header/header
 include ../../components/footer/footer
@@ -12,7 +15,7 @@ html(lang="ru")
 		block header
 			div.layout
 				div.layout__container
-					+header()
+					+header({menuItems: menuItems})
 
 		block content
 

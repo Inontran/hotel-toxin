@@ -1,13 +1,17 @@
-mixin header()
+mixin header(options)
+	if !options
+		- options = {}
+	if !options.menuItems
+		- options.menuItems = []
+
 	header.header
 		a.header__logo
-			//- img(src="/images/logo.svg")
 			img(src = require('@/components/header/img/logo.svg').default)
+			//- include ./img/logo.svg
 		nav.header__main-menu
-			- var menu_items = ['Home', 'About Us', 'Services', 'Careers', 'News', 'Documentation'];
-			each val, index in menu_items
+			each item, index in options.menuItems
 				li
-					a= val
+					a(href = item.href)= item.name
 		div.header__btn1
 			a.button_outline Login
 		div.header__btn2
