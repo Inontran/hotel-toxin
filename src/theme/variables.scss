@@ -6,6 +6,24 @@ $lg: 1199px;
 $xl: 1440px;
 
 // цвета
+$dark: 	#1f2041;
+$dark75: 	rgba(#1f2041, .75);
+$dark50: 	rgba(#1f2041, .5);
+$dark25: 	rgba(#1f2041, .25);
+$dark5: 	rgba(#1f2041, .5);
 $white: #fff;
+$purple:#bc9cff;
+$green:	#6fcf97;
+
+// градиенты
+$gradient1: linear-gradient(180deg, #{$purple} 0%, #8BA4F9 100%);
+$gradient2: linear-gradient(180deg, #{$green} 0%, #66D2EA 100%);
 
 $font-size-base: 14;
+
+$gutter: 40px;
+
+@function calc_rem($val_px){
+	$result: #{$val_px / $font-size-base + 'rem'};
+	@return $result;
+}

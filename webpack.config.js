@@ -34,14 +34,14 @@ fs
 	});
 
 const htmlPlugins = pages.map(fileName => new HtmlWebpackPlugin({
-	// getData: () => {
-	// 	try {
-	// 		return JSON.parse(fs.readFileSync(`./src/pages/${fileName}/data.json`, 'utf8'));
-	// 	} catch (e) {
-	// 		console.warn(`data.json was not provided for page ${fileName}`);
-	// 		return {};
-	// 	}
-	// },
+	getData: () => {
+		try {
+			return JSON.parse(fs.readFileSync(`./src/pages/${fileName}/data.json`, 'utf8'));
+		} catch (e) {
+			console.warn(`data.json was not provided for page ${fileName}`);
+			return {};
+		}
+	},
 	filename: `${fileName}.html`,
 	template: path.resolve(__dirname, `src/pages/${fileName}/${fileName}.pug`),
 	alwaysWriteToDisk: true,

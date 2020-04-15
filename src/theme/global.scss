@@ -10,17 +10,39 @@
 }
 
 html{
-	font-size: $font-size-base + 'px';
+	font-size: #{$font-size-base + 'px'};
 }
 
 body{
 	font-family: 'Montserrat', sans-serif;
 	font-weight: 400;
+	font-style: normal;
 	font-size: 1rem;
+	line-height: 1.7;
 }
 
-h1{
+
+h1,
+.h1{
 	font-family: 'Quicksand', 'Open Sans', sans-serif;
 	font-weight: 700;
-	font-size: #{24 / $font-size-base + 'rem'};
+	font-size: calc_rem(24);
+	line-height: 1.25;
+	margin: 0;
+}
+
+h2,
+.h2{
+	font-family: 'Quicksand', 'Open Sans', sans-serif;
+	font-weight: 700;
+	font-size: calc_rem(19);
+	line-height: 1.25;
+}
+
+h3,
+.h3{
+	font-weight: 700;
+	font-size: calc_rem(12);
+	text-transform: uppercase;
+	line-height: 1.25;
 }

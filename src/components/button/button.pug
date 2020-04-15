@@ -1,0 +1,21 @@
+//-
+	options.text - текст
+	options.theme - список модификаторов ('button_fill button_wide')
+	options.isSubmit - задает тип кнопки Submit (bool)
+	options.tabindex - задает tabindex
+	
+mixin button(options)
+	if !options
+		- options = {}
+	
+	-
+		var classes = ''
+		//- classes += options.theme ? ' button_' + options.theme : ''
+		classes += options.theme ? options.theme : ''
+	
+	button.button(
+		class = classes,
+		type = options.isSubmit ? 'submit' : false,
+		tabindex = options.tabindex || false
+	)
+		span.button__text= options.text || 'Button'

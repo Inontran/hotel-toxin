@@ -1,0 +1,81 @@
+@import '@/theme/variables.scss';
+
+.button{
+	position: relative;
+	background: none;
+	border: none;
+	font-size: calc_rem(12);
+	text-transform: uppercase;
+	font-weight: 700;
+	line-height: 1.25;
+	color: $purple;
+	transition: .3s;
+	text-align: center;
+
+	&:hover{
+		color: $dark50;
+	}
+
+	&__text{
+		position: relative;
+		z-index: 2;
+	}
+}
+
+.button_fill{
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	border: 0;
+	border-radius: 100vh;
+	color: $white;
+	padding: calc_rem(5) calc_rem(20);
+	min-height: calc_rem(44);
+	background: $gradient1;
+
+	&:hover{
+		color: $white;
+		opacity: .5;
+	}
+}
+
+.button_outline{
+	@extend .button_fill;
+	
+	&, &:hover{
+		color: $purple;
+	}
+
+	&:after{
+		content: '';
+		position: absolute;
+		top: 2px;
+		left: 2px;
+		width: calc(100% - 4px);
+		height: calc(100% - 4px);
+		background: $white;
+		border-radius: 100vh;
+	}
+}
+
+.button_wide{
+	width: 100%;
+}
+
+.button_arrow-left{
+	padding: calc_rem(5) calc_rem(35);
+
+	&:after{
+		content: '';
+		position: absolute;
+		top: 50%;
+		right: 10px;
+		transform: translateY(-50%);
+		background-image: url(arrow_forward.svg);
+		background-position: center;
+		background-size: cover;
+		background-repeat: no-repeat;
+		width: 18px;
+		height: 18px;
+	}
+}

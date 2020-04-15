@@ -1,8 +1,13 @@
 extends ../base/base.pug
 
+block title
+	| Toxin Hotel
+
 block content
+	- data = htmlWebpackPlugin.options.getData()
+
 	div.layout
 		div.layout__container
 			a(href="guide.html") guide
 			h1 Quicksand
-			h1 ываывфа
+			h2 #{data.text}

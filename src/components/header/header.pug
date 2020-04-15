@@ -13,6 +13,6 @@ mixin header(options)
 				li
 					a(href = item.href)= item.name
 		div.header__btn1
-			a.button_outline Login
+			+button({text: 'Login', theme: 'button_outline'})
 		div.header__btn2
-			a.button Registr
+			+button({text: 'Registr', theme: 'button_fill'})

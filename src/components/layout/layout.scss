@@ -1,0 +1,15 @@
+@import '@/theme/variables.scss';
+
+.layout{
+	&__container{
+		max-width: 1180px;
+		margin: 0 auto;
+		padding: 0 $gutter/2;
+	}
+
+	&__grid{
+		display: grid;
+		grid-template-columns: repeat(12, 8.3333%);
+		grid-gap: 0 $gutter;
+	}
+}
