@@ -3,29 +3,45 @@
 .header{
 	display: grid;
 	grid-template-areas:
-		'logo nav btn1 btn2';
+		'logo nav-menu btn1 btn2';
 	align-items: center;
+	grid-template-columns: auto 1fr auto auto;
 	background: $white;
 	padding: 15px 0;
 
 	&__logo{
 		grid-area: logo;
-		margin-right: auto;
+		display: flex;
 	}
+
 	&__main-menu{
-		grid-area: nav;
+		grid-area: nav-menu;
 		list-style: none;
 		margin-left: auto;
 
-		li{
+		.item{
 			display: inline-block;
 			padding: 0 15px;
+
+			.link{
+				color: $dark50;
+				text-decoration: none;
+				font-weight: 400;
+			}
+			
+			&.active{
+				font-weight: 700;
+			}
 		}
 	}
+
 	&__btn1{
 		grid-area: btn1;
+		padding-left: 15px;
 	}
+
 	&__btn2{
 		grid-area: btn2;
+		padding-left: 20px;
 	}
 }

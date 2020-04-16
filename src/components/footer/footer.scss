@@ -1,1 +1,73 @@
 @import '@/theme/variables.scss';
+
+.footer{
+	background: $white;
+	border-top: 1px solid #b3b3bc;
+
+	&__up{
+		display: grid;
+		grid-template-areas: 'col1 col2 col3 col4 col5';
+		grid-template-columns: 3fr 2fr 2fr 2fr 3fr;		
+		padding: 100px 0;
+	}
+
+	&__container{
+		max-width: 1180px;
+		margin: 0 auto;
+		padding: 0 $gutter/2;
+	}
+
+	&__col1{
+		grid-area: col1;
+	}
+	&__col2{
+		grid-area: col2;
+	}
+	&__col3{
+		grid-area: col3;
+	}
+	&__col4{
+		grid-area: col4;
+	}
+	&__col5{
+		grid-area: col5;
+	}
+
+	&__subtitle{
+		margin-bottom: 21px;
+	}
+
+	&__list{
+		.item{
+			list-style: none;
+			margin-bottom: 21px;
+			
+			.link{
+				text-decoration: none;
+				color: $dark50;
+			}
+		}
+	}
+
+	&__down{
+		border-top: 1px solid #d1d1d4;
+		padding: 23px 0;
+	}
+
+	// &__main-menu{
+	// 	grid-area: nav-menu;
+	// 	list-style: none;
+	// 	margin-left: auto;
+
+	// 	.item{
+	// 		display: inline-block;
+	// 		padding: 0 15px;
+
+	// 		.link{
+	// 			color: $dark50;
+	// 			text-decoration: none;
+	// 			font-weight: 400;
+	// 		}
+	// 	}
+	// }
+}

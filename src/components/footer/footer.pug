@@ -1,0 +1,41 @@
+mixin footer(options)
+	if !options
+		- options = {}
+	if !options.menuItems
+		- options.menuItems = []
+
+	footer.footer
+		div.footer__container
+			div.footer__up
+				div.footer__col1
+					+logo
+					p Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsa nam blanditiis facilis voluptas commodi 
+				
+				div.footer__col2
+					h3.footer__subtitle #{options.menuItems[0].subtitle}
+					nav.footer__list
+						each val, index in options.menuItems[0].items
+							li.item
+								a.link(href = val.href)= val.name
+					
+				div.footer__col3
+					h3.footer__subtitle #{options.menuItems[1].subtitle}
+					nav.footer__list
+						each val, index in options.menuItems[1].items
+							li.item
+								a.link(href = val.href)= val.name
+				
+				div.footer__col4
+					h3.footer__subtitle #{options.menuItems[2].subtitle}
+					nav.footer__list
+						each val, index in options.menuItems[2].items
+							li.item
+								a.link(href = val.href)= val.name
+				
+				div.footer__col5
+					h3.footer__subtitle Subscribe to our newsletter
+					p Receive our latest news and promotions in your inbox!
+
+		div.footer__down
+			div.footer__container
+				p Copyright © 2018 Toxin UI Kit. All rights reserved.

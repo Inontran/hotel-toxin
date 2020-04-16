@@ -28,7 +28,72 @@
 		}
 	]
 
-//- include ../../components/layout/layout
+-
+	var footerItems = [
+		{
+			subtitle: 'Navigation',
+			items: [
+				{
+					name: 'About Us',
+					href: '/about.html'
+				},
+				{
+					name: 'News',
+					href: '/news.html'
+				},
+				{
+					name: 'Support',
+					href: '/support.html'
+				},
+				{
+					name: 'Products',
+					href: '/products.html'
+				},
+			]
+		},
+		{
+			subtitle: 'About Us',
+			items: [
+				{
+					name: 'Who we are',
+					href: '/who-we-are.html'
+				},
+				{
+					name: 'Our team',
+					href: '/our-team.html'
+				},
+				{
+					name: 'Careers',
+					href: '/careers.html'
+				},
+				{
+					name: 'Investors',
+					href: '/investors.html'
+				},
+			]
+		},
+		{
+			subtitle: 'Support',
+			items: [
+				{
+					name: 'Documentation',
+					href: '/docs.html'
+				},
+				{
+					name: 'Community',
+					href: '/community.html'
+				},
+				{
+					name: 'Get in Touch',
+					href: '/get-in-touch.html'
+				},
+			]
+		}
+	]
+
+
+include ../../components/layout/layout
+include ../../components/logo/logo
 include ../../components/header/header
 include ../../components/footer/footer
 include ../../components/button/button
@@ -49,6 +114,4 @@ html(lang="ru")
 		block content
 
 		block footer
-			div.layout
-				div.layout__container
-					footer.footer footer
+			+footer({menuItems: footerItems})

@@ -5,14 +5,13 @@ mixin header(options)
 		- options.menuItems = []
 
 	header.header
-		a.header__logo
-			img(src = require('@/components/header/img/logo.svg').default)
-			//- include ./img/logo.svg
+		div.header__logo
+			+logo()
 		nav.header__main-menu
-			each item, index in options.menuItems
-				li
-					a(href = item.href)= item.name
+			each val, index in options.menuItems
+				li.item
+					a.link(href = val.href)= val.name
 		div.header__btn1
 			+button({text: 'Login', theme: 'button_outline'})
 		div.header__btn2
-			+button({text: 'Registr', theme: 'button_fill'})
+			+button({text: 'Register', theme: 'button_fill'})
