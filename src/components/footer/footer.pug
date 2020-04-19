@@ -5,10 +5,10 @@ mixin footer(options)
 		- options.menuItems = []
 
 	footer.footer
-		div.footer__container
+		div.footer__container.footer_desktop
 			div.footer__up
 				div.footer__col1
-					+logo
+					+logo()
 					p Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsa nam blanditiis facilis voluptas commodi 
 				
 				div.footer__col2
@@ -36,6 +36,14 @@ mixin footer(options)
 					h3.footer__subtitle Subscribe to our newsletter
 					p Receive our latest news and promotions in your inbox!
 
-		div.footer__down
+		div.footer__down.footer_desktop
 			div.footer__container
-				p Copyright © 2018 Toxin UI Kit. All rights reserved.
+				div.footer__down-wrapper
+					p Copyright © 2018 Toxin UI Kit. All rights reserved.
+					+social-nets()
+
+		div.footer__container.footer_mobile
+			div.footer__container-mobile
+				+logo()
+				p.text Lorem ipsum dolor, sit amet consectetur adipisicing elit. Ad sint odio omnis optio cum, consequatur, ex ipsum temporibus error ul
+				+social-nets()

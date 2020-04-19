@@ -8,6 +8,7 @@
 		display: grid;
 		grid-template-areas: 'col1 col2 col3 col4 col5';
 		grid-template-columns: 3fr 2fr 2fr 2fr 3fr;		
+		grid-gap: 0 $gutter;
 		padding: 100px 0;
 	}
 
@@ -54,20 +55,31 @@
 		padding: 23px 0;
 	}
 
-	// &__main-menu{
-	// 	grid-area: nav-menu;
-	// 	list-style: none;
-	// 	margin-left: auto;
+	&__down-wrapper{
+		display: flex;
+		align-items: center;
+		justify-content: space-between;
+	}
 
-	// 	.item{
-	// 		display: inline-block;
-	// 		padding: 0 15px;
+	&_desktop{
+		@media(max-width: $md+1 ){
+			display: none;
+		}
+	}
+	&_mobile{
+		@media(min-width: $md+1 ){
+			display: none;
+		}
+	}
 
-	// 		.link{
-	// 			color: $dark50;
-	// 			text-decoration: none;
-	// 			font-weight: 400;
-	// 		}
-	// 	}
-	// }
+	&__container-mobile{
+		padding: 100px 0;
+		text-align: center;
+		margin: 0 auto;
+		max-width: 560px;
+
+		.text{
+			padding: 20px 0 25px;
+		}
+	}
 }

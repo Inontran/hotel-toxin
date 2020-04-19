@@ -94,6 +94,7 @@
 
 include ../../components/layout/layout
 include ../../components/logo/logo
+include ../../components/social-nets/social-nets
 include ../../components/header/header
 include ../../components/footer/footer
 include ../../components/button/button
@@ -105,13 +106,11 @@ html(lang="ru")
 		meta(name="viewport", content="width=device-width, initial-scale=1.0")
 		title
 			block title
-	body
-		block header
-			div.layout
-				div.layout__container
-					+header({menuItems: menuItems})
+	
+	body.page
 
-		block content
+		div.page__content-wrapper
+			block content
 
 		block footer
 			+footer({menuItems: footerItems})

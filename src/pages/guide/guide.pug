@@ -1,6 +1,13 @@
 extends ../base/base.pug
 
+block title
+	| Guide
+
 block content
+	div.layout
+		div.layout__container
+			+header({menuItems: menuItems})
+
 	div.layout
 		div.layout__container
 			main.content
