@@ -6,9 +6,7 @@ block title
 block content
 	- data = htmlWebpackPlugin.options.getData()
 
-	div.layout
-		div.layout__container
-			+header({menuItems: menuItems})
+	+header({menuItems: menuItems})
 
 	div.layout
 		div.layout__container

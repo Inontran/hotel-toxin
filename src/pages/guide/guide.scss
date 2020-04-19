@@ -1,1 +1,40 @@
 @import '@/theme/variables.scss';
+
+.guide-page{
+	padding-bottom: 69px;
+
+	&__container{
+		display: grid;
+		grid-template-columns: repeat(3, 1fr);
+		grid-gap: 0 72px;
+		max-width: $max_width_container;
+		margin: 0 auto;
+		padding: 0 $gutter/2;
+	}
+
+	&__col{
+
+	}
+
+	&__color-item{
+		display: flex;
+		align-items: center;
+		padding-bottom: $gutter/2;
+	}
+	&__color-div{
+		width: 70px;
+		height: 70px;
+		border-radius: 6px;
+		overflow: hidden;
+		flex: none;
+		margin-right: $gutter;
+	}
+	&__color-text{
+		font-size: calc_rem(19);
+	}
+	@each $name, $val in $colors{
+		.guide-page__color-div_#{$name}{
+			background-color: $val;
+		}
+	}
+}

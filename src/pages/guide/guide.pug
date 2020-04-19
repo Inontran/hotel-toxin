@@ -4,20 +4,59 @@ block title
 	| Guide
 
 block content
-	div.layout
-		div.layout__container
-			+header({menuItems: menuItems})
+	+header({menuItems: menuItems})
 
-	div.layout
-		div.layout__container
-			main.content
+	div.guide-page
+		div.guide-page__container
+			div.guide-page__col
+				div.guide-page__color-item
+					div.guide-page__color-div.guide-page__color-div_dark
+					div
+						h2 Dark Shade 100%
+						p.guide-page__color-text #1F2041
+				div.guide-page__color-item
+					div.guide-page__color-div.guide-page__color-div_dark75
+					div
+						h2 Dark Shade 75%
+						p.guide-page__color-text #1F2041
+				div.guide-page__color-item
+					div.guide-page__color-div.guide-page__color-div_dark50
+					div
+						h2 Dark Shade 50%
+						p.guide-page__color-text #1F2041
+				div.guide-page__color-item
+					div.guide-page__color-div.guide-page__color-div_dark25
+					div
+						h2 Dark Shade 25%
+						p.guide-page__color-text #1F2041
+				div.guide-page__color-item
+					div.guide-page__color-div.guide-page__color-div_dark5
+					div
+						h2 Dark Shade 5%
+						p.guide-page__color-text #1F2041
+				div.guide-page__color-item
+					div.guide-page__color-div.guide-page__color-div_purple
+					div
+						h2 Purple
+						p.guide-page__color-text #BC9CFF
+				div.guide-page__color-item
+					div.guide-page__color-div.guide-page__color-div_green
+					div
+						h2 Green
+						p.guide-page__color-text #6FCF97
+
+			div.guide-page__col
 				h1 This one is the sub-section or widget title
 				h2 Next one is the item title inside widgets
 				h3 This is a label or CTA text
 				p This is the body text which is used for most of the design, like paragraphs, lists, etc.
 
+			div.guide-page__col
+				+input({label: "Text Field", placeholder: "Email"})
+
+			div.guide-page__col
 				h3 Buttons
 				+button({text: "click me"})
-				+button({text: "click me", theme: 'button_fill button_wide'})
+				+button({text: "click me", theme: "button_fill button_wide"})
 				+button({text: "click me", theme: "outline"})
 				+button({text: "click me", theme: "button_fill button_arrow-left"})

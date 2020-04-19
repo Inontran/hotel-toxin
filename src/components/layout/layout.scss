@@ -2,14 +2,14 @@
 
 .layout{
 	&__container{
-		max-width: 1180px;
+		max-width: $max_width_container;
 		margin: 0 auto;
 		padding: 0 $gutter/2;
 	}
 
 	&__grid{
 		display: grid;
-		grid-template-columns: repeat(12, 8.3333%);
+		grid-template-columns: repeat(12, 1fr);
 		grid-gap: 0 $gutter;
 	}
 }

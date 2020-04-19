@@ -5,13 +5,14 @@ mixin header(options)
 		- options.menuItems = []
 
 	header.header
-		div.header__logo
-			+logo()
-		nav.header__main-menu
-			each val, index in options.menuItems
-				li.item
-					a.link(href = val.href)= val.name
-		div.header__btn1
-			+button({text: 'Login', theme: 'button_outline'})
-		div.header__btn2
-			+button({text: 'Register', theme: 'button_fill'})
+		div.header__container
+			div.header__logo
+				+logo()
+			nav.header__main-menu
+				each val, index in options.menuItems
+					li.item
+						a.link(href = val.href)= val.name
+			div.header__btn1
+				+button({text: 'Login', theme: 'button_outline'})
+			div.header__btn2
+				+button({text: 'Register', theme: 'button_fill'})

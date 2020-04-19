@@ -1,0 +1,36 @@
+//-
+	options.label - 
+	options.placeholder - 
+	options.value - 
+	options.attrs - 
+	options.classes - 
+	options.id - 
+	options.type - 
+
+mixin input(options)
+	if !options
+		- options = {}
+	
+	if !options.placeholder
+		- options.placeholder = ''
+
+	if !options.value
+		- options.value = ''
+	
+	if !options.classes
+		- options.classes = ''
+
+	if !options.id
+		- options.id = ''
+
+	if !options.type
+		- options.type = 'text'
+
+	if !options.attrs
+		- options.attrs = []
+
+	
+	label.input
+		if options.label
+			p.input__label #{options.label}
+		input(class: options.classes, id = options.id, value = options.value, placeholder = options.placeholder, type = options.type).input__field
