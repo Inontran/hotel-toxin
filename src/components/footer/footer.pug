@@ -8,33 +8,35 @@ mixin footer(options)
 		div.footer__container.footer_desktop
 			div.footer__up
 				div.footer__col1
-					+logo()
+					+logo().footer_mb21
 					p Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsa nam blanditiis facilis voluptas commodi 
 				
 				div.footer__col2
-					h3.footer__subtitle #{options.menuItems[0].subtitle}
+					h3.footer__subtitle.footer_mb21 #{options.menuItems[0].subtitle}
 					nav.footer__list
 						each val, index in options.menuItems[0].items
-							li.item
+							li.item.footer_mb20
 								a.link(href = val.href)= val.name
 					
 				div.footer__col3
-					h3.footer__subtitle #{options.menuItems[1].subtitle}
+					h3.footer__subtitle.footer_mb21 #{options.menuItems[1].subtitle}
 					nav.footer__list
 						each val, index in options.menuItems[1].items
-							li.item
+							li.item.footer_mb20
 								a.link(href = val.href)= val.name
 				
 				div.footer__col4
-					h3.footer__subtitle #{options.menuItems[2].subtitle}
+					h3.footer__subtitle.footer_mb21 #{options.menuItems[2].subtitle}
 					nav.footer__list
 						each val, index in options.menuItems[2].items
-							li.item
+							li.item.footer_mb20
 								a.link(href = val.href)= val.name
 				
 				div.footer__col5
-					h3.footer__subtitle Subscribe to our newsletter
-					p Receive our latest news and promotions in your inbox!
+					h3.footer__subtitle.footer_mb21 Subscribe to our newsletter
+					p.footer_mb20 Receive our latest news and promotions in your inbox!
+					form(action="", method="post")
+						+input({subscription: true, placeholder: 'Email'})
 
 		div.footer__down.footer_desktop
 			div.footer__container
@@ -44,6 +46,6 @@ mixin footer(options)
 
 		div.footer__container.footer_mobile
 			div.footer__container-mobile
-				+logo()
+				+logo().footer_mb20
 				p.text Lorem ipsum dolor, sit amet consectetur adipisicing elit. Ad sint odio omnis optio cum, consequatur, ex ipsum temporibus error ul
 				+social-nets()

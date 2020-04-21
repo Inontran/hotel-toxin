@@ -26,11 +26,14 @@ mixin input(options)
 	if !options.type
 		- options.type = 'text'
 
-	if !options.attrs
-		- options.attrs = []
+	if options.subscription
+		- options.classes += ' button_subscription'
 
 	
 	label.input
 		if options.label
 			p.input__label #{options.label}
 		input(class: options.classes, id = options.id, value = options.value, placeholder = options.placeholder, type = options.type).input__field
+		
+		if options.subscription
+			button.input__submit
