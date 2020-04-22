@@ -1,0 +1,20 @@
+
+
+mixin checkbox(options)
+	if !options
+		- options = {}
+	
+	if !options.text
+		- options.text = ''
+
+	if !options.classes
+		- options.classes = ''
+	
+	if !options.id
+		- options.id = ''
+
+	div.checkbox(class = classes)
+		input(type = "checkbox", id = options.id).checkbox__input
+		label.checkbox__view(for = options.id)
+		if options.text
+			label.checkbox__text(for = options.id) #{options.text}

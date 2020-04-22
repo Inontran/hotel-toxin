@@ -49,16 +49,32 @@ block content
 			
 			div.guide-page__col
 				h1 This one is the sub-section or widget title
+				div.guide-page__mb20
 				h2 Next one is the item title inside widgets
+				div.guide-page__mb20
 				h3 This is a label or CTA text
+				div.guide-page__mb20
 				p This is the body text which is used for most of the design, like paragraphs, lists, etc.
 
 			div.guide-page__col
 				+input({label: "Text Field", placeholder: "Email"})
+				div.guide-page__mb20
+				+input({label: "Subscription Text Field", placeholder: "Email", subscription: true})
+
+			div.guide-page__col
+				h3 Checkbox buttons
+				div.guide-page__mb16
+				+checkbox({id: "test2", text: "Можно курить"})
+				div.guide-page__mb10
+				+checkbox({id: "test3", text: "Можно пригласить гостей (до 10 человек)"})
 
 			div.guide-page__col
 				h3 Buttons
+				div.guide-page__mb16
+				+button({text: "click me", theme: "button_fill"})
+				div.guide-page__mb20
+				+button({text: "click me", theme: "button_outline"})
+				div.guide-page__mb20
 				+button({text: "click me"})
-				+button({text: "click me", theme: "button_fill button_wide"})
-				+button({text: "click me", theme: "outline"})
-				+button({text: "click me", theme: "button_fill button_arrow-left"})
+				div.guide-page__mb20
+				+button({text: "click me", theme: "button_fill button_arrow-left button_wide"})

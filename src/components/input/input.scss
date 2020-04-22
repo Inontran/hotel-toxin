@@ -37,10 +37,10 @@
 
 	&__submit{
 		position: absolute;
-		top: 0;
+		bottom: 0;
 		right: 0;
 		width: calc_rem(44);
-		height: 100%;
+		height: calc_rem(44);
 		border: 0;
 		border-radius: 0;
 		box-shadow: none;
@@ -49,5 +49,6 @@
 		background-position: center;
 		background-size: auto;
 		background-repeat: no-repeat;
+		cursor: pointer;
 	}
 }
