@@ -1,0 +1,50 @@
+@import '@/theme/variables.scss';
+
+.toggle{
+	display: flex;
+
+	&__input{
+		display: none;
+	}
+
+	&__view{
+		position: relative;
+		display: inline-block;
+		width: calc_rem(40);
+		height: calc_rem(20);
+		border-radius: 100vh;
+		background: $white;
+		border: 1px solid $dark25;
+		transition: .2s;
+
+		&:after{
+			content: '';
+			position: absolute;
+			top: 50%;
+			left: calc_rem(4);
+			transform: translateY(-50%);
+			width: calc_rem(12);
+			height: calc_rem(12);
+			background: $dark25;
+			border-radius: 100vh;
+			transition: left .2s;
+		}
+	}
+
+	&__input:checked + &__view{
+		border-color: $purple;
+
+		&:after{
+			left: calc(100% - #{calc_rem(4) - #{calc_rem(12)}});
+			background: $gradient1;
+		}
+	}
+
+	&__text{
+		line-height: 1.28;
+		font-size: calc_rem(14);
+		color: $dark75;
+		margin-left: 10px;
+		padding-top: 3px;
+	}
+}

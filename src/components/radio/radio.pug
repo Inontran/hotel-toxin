@@ -1,0 +1,27 @@
+
+
+mixin radio(options)
+	if !options
+		- options = {}
+	
+	if !options.text
+		- options.text = ''
+
+	if !options.classes
+		- options.classes = ''
+	
+	if !options.id
+		- options.id = ''
+
+	if !options.name
+		- options.name = ''
+
+	div.radio(class = classes)
+		if options.checked
+			input(type = "radio", id = options.id, name = options.name, checked).radio__input
+		else
+			input(type = "radio", id = options.id, name = options.name).radio__input
+			
+		label.radio__view(for = options.id)
+		if options.text
+			label.radio__text(for = options.id) #{options.text}

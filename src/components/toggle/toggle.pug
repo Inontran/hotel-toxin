@@ -1,0 +1,30 @@
+
+
+mixin toggle(options)
+	if !options
+		- options = {}
+	
+	if !options.text
+		- options.text = ''
+
+	if !options.classes
+		- options.classes = ''
+	
+	if !options.id
+		- options.id = ''
+
+	if !options.name
+		- options.name = ''
+
+	if !options.type
+		- options.type = 'checkbox'
+
+	div.toggle(class = classes)
+		if options.checked
+			input(type = options.type, id = options.id, name = options.name, checked).toggle__input
+		else
+			input(type = options.type, id = options.id, name = options.name).toggle__input
+			
+		label.toggle__view(for = options.id)
+		if options.text
+			label.toggle__text(for = options.id) #{options.text}

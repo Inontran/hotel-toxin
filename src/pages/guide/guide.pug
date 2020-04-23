@@ -45,8 +45,10 @@ block content
 						h2 Green
 						p.guide-page__color-text #6FCF97
 
+
 			div.guide-page__col
 			
+
 			div.guide-page__col
 				h1 This one is the sub-section or widget title
 				div.guide-page__mb20
@@ -56,17 +58,33 @@ block content
 				div.guide-page__mb20
 				p This is the body text which is used for most of the design, like paragraphs, lists, etc.
 
+
 			div.guide-page__col
 				+input({label: "Text Field", placeholder: "Email"})
 				div.guide-page__mb20
 				+input({label: "Subscription Text Field", placeholder: "Email", subscription: true})
 
+
 			div.guide-page__col
 				h3 Checkbox buttons
 				div.guide-page__mb16
-				+checkbox({id: "test2", text: "Можно курить"})
+				+checkbox({id: "test2", text: "Можно курить", checked: true})
 				div.guide-page__mb10
 				+checkbox({id: "test3", text: "Можно пригласить гостей (до 10 человек)"})
+				div.guide-page__mb40
+
+				h3 Radio Buttons
+				div.guide-page__mb16
+				+radio({id: "test4", text: "Мужчина", name: "gender", checked: true})
+				div.guide-page__mb10
+				+radio({id: "test5", text: "Женщина", name: "gender"})
+				div.guide-page__mb40
+
+				h3 Toggle
+				div.guide-page__mb16
+				+toggle({id: "test6", text: "Получать спецпредложения", name: "get", checked: true})
+				div.guide-page__mb40
+
 
 			div.guide-page__col
 				h3 Buttons
