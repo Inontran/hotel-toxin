@@ -62,7 +62,9 @@ block content
 			div.guide-page__col
 				+input({label: "Text Field", placeholder: "Email"})
 				div.guide-page__mb20
-				+input({label: "Subscription Text Field", placeholder: "Email", subscription: true})
+				+input({label: "Subscription Text Field", placeholder: "Email", subscription: true, classes: "input_mask-email"})
+				div.guide-page__mb20
+				+input({label: "Masked text field",classes: "input_mask-date", placeholder: "ДД.ММ.ГГГГ" })
 
 
 			div.guide-page__col

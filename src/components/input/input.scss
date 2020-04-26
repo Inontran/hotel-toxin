@@ -32,7 +32,9 @@
 	}
 	
 	&_subscription{
-		padding-right: calc_rem(44);
+		.input__field{
+			padding-right: calc_rem(44);
+		}
 	}
 
 	&__submit{

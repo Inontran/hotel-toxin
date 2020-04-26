@@ -27,13 +27,13 @@ mixin input(options)
 		- options.type = 'text'
 
 	if options.subscription
-		- options.classes += ' button_subscription'
+		- options.classes += ' input_subscription'
 
 	
-	label.input
+	label.input(class = options.classes, id = options.id)
 		if options.label
 			p.input__label #{options.label}
-		input(class: options.classes, id = options.id, value = options.value, placeholder = options.placeholder, type = options.type).input__field
+		input(value = options.value, placeholder = options.placeholder, type = options.type).input__field
 		
 		if options.subscription
 			button.input__submit
