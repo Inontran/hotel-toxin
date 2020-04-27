@@ -3,6 +3,8 @@ import 'normalize.css';
 
 import './theme/global.scss';
 
+$.RUBLE = '₽';
+
 function requireAll(requireContext) {
   return requireContext.keys().map(requireContext);
 }

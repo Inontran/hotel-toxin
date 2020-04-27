@@ -1,0 +1,33 @@
+
+
+mixin slider-range(options)
+	if !options
+		- options = {}
+
+	if !options.classes
+		- options.classes = ''
+
+	if !options.id
+		- options.id = ''
+
+	if !options.label
+		- options.label = ''
+
+	if !options.min
+		- options.min = 0
+
+	if !options.max
+		- options.max = 100
+
+	if !options.val1
+		- options.val1 = options.min
+
+	if !options.val2
+		- options.val2 = options.max
+
+	
+	div.slider-range(class = options.classes, id = options.id)
+		div.slider-range__top
+			span.slider-range__label #{options.label}
+			input.slider-range__input(type="text")
+		div.slider-range__slider(data-min = options.min, data-max = options.max, data-val1 = options.val1, data-val2 = options.val2)

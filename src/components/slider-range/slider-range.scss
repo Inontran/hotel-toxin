@@ -1,0 +1,52 @@
+@import '@/theme/variables.scss';
+
+.slider-range{
+
+	&__top{
+		display: flex;
+		align-items: center;
+		justify-content: space-between;
+		flex-wrap: wrap;
+		padding-bottom: 20px;
+	}
+
+	&__label{
+		display: block;
+		font-weight: 700;
+		font-size: calc_rem(12);
+		text-transform: uppercase;
+		line-height: 1.25;
+	}
+
+	&__input{
+		text-align: right;
+		border: 0;
+		box-shadow: none;
+		color: $dark50;
+		font-size: calc_rem(12);
+		text-transform: uppercase;
+	}
+
+	&__slider{
+		background: $white;
+		border: 1px solid $dark25;
+		border-radius: 100vh;
+		height: calc_rem(6);
+
+		&.ui-slider-horizontal .ui-slider-handle{
+			top: 50%;
+			transform: translateY(-50%);
+			width: calc_rem(16);
+			height: calc_rem(16);
+			border: 2px solid $white;
+			border-radius: 100vh;
+			background: $gradient2;
+		}
+
+		.ui-slider-range{
+			top: -1px;
+			height: calc(100% + 2px);
+			background: $gradient2;
+		}
+	}
+}

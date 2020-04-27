@@ -1,5 +1,3 @@
-import * as $ from 'jquery';
-
 $(document).ready(function(){
 	$('body').on('click', '.rate-btn .rate-btn__star-item', function(e){
 		e.preventDefault();

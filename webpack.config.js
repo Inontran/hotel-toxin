@@ -1,3 +1,4 @@
+const webpack = require('webpack');
 const path = require('path');
 const fs = require('fs');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
@@ -12,7 +13,8 @@ const postcssSCSS = require('postcss-scss');
 const autoprefixer = require('autoprefixer');
 // const stylelint = require('stylelint');
 // const doiuse = require('doiuse');
-const ExtractTextPlugin = require("extract-text-webpack-plugin");
+const ExtractTextPlugin = require('extract-text-webpack-plugin');
+const ProvidePlugin = require('webpack-provide-global-plugin');
 
 const isDev = process.env.NODE_ENV === 'development';
 const isProd = process.env.NODE_ENV === 'production';
@@ -87,7 +89,13 @@ const plugins = () =>{
 			// 	// to: `${PATHS.dist}/images/[name].[ext]`,
 			// }
 		]),
-		new MiniCssExtractPlugin( filename('css') )
+		new MiniCssExtractPlugin( filename('css') ),
+		new webpack.ProvidePlugin({
+			$: 'jquery',
+			jQuery: 'jquery',
+			'window.jQuery': 'jquery',
+			'window.$': 'jquery'
+		})
 	];
 
 	if( isProd ){

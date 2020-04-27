@@ -1,4 +1,3 @@
-import * as $ from 'jquery';
 import Inputmask from 'inputmask';
 
 $(document).ready(function(){
