@@ -1,0 +1,25 @@
+//-
+	options.value - 
+	options.classes - 
+	options.id - 
+	options.isLike
+
+mixin rate-btn(options)
+	if !options
+		- options = {}
+
+	if !options.value
+		- options.value = 0
+	else
+		-options.classes = ' rate-btn_count-' + options.value
+	
+	if !options.classes
+		- options.classes = ''
+
+	if !options.id
+		- options.id = ''
+
+	div.rate-btn(class = options.classes, id = options.id)
+		input.rate-btn__input(type = "hidden", value = options.value)
+		- for (var i = 1; i <= 5; i++)
+				a.rate-btn__star-item(href = '', data-number-star = i)
