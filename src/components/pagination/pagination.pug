@@ -1,0 +1,13 @@
+
+
+mixin pagination(options)
+	if !options
+		- options = {}
+
+	if !options.classes
+		- options.classes = ''
+
+	if !options.id
+		- options.id = ''
+
+	div.pagination(class = options.classes, id = options.id)
