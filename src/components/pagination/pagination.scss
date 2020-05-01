@@ -1,1 +1,63 @@
 @import '@/theme/variables.scss';
+
+
+.pagination{
+
+	&__wrapper{
+		display: flex;
+		align-items: center;
+	}
+
+	&__next, &__prev{
+		display: inline-block;
+		border-radius: 100vh;
+		position: relative;
+		background: $gradient2;
+		text-indent: 100px;
+		overflow: hidden;
+		width: calc_rem(40);
+		height: calc_rem(40);
+
+		&:after{
+			content: '';
+			position: absolute;
+			top: 50%;
+			left: 50%;
+			transform: translate(-50%, -50%);
+			z-index: 1;
+			background-image: url(img/arrow_forward.svg);
+			background-position: center;
+			background-size: cover;
+			background-repeat: no-repeat;
+			width: 18px;
+			height: 18px;
+		}
+	}
+
+	&__prev{
+		&:after{
+			transform: translate(-50%, -50%) rotate(180deg);
+		}
+	}
+	
+	&__number{
+		display: inline-block;
+		min-width: calc_rem(40);
+		height: calc_rem(40);
+		text-decoration: none;
+		text-align: center;
+		line-height: calc(#{calc_rem(40)} - 10px);
+		font-size: calc_rem(12);
+		color: $dark50;
+		padding: 5px;
+		background: transparent;
+		transition: .2s;
+
+		&_current{
+			border-radius: 100vh;
+			background: $gradient1;
+			color: $white;
+			font-weight: 700;
+		}
+	}
+}

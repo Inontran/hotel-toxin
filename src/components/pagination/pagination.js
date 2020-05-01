@@ -1,8 +1,8 @@
 $(document).ready(function(){
-	$('.pagination').paging(1337, { // make 1337 elements navigatable
-		format: '<(q-)nnncnnn(-p)>', // define how the navigation should look like and in which order onFormat() get's called
+	$('.pagination .pagination__wrapper').paging(133, { // make 1337 elements navigatable
+		format: '< [ (q-) ncn (-p) ] >', // define how the navigation should look like and in which order onFormat() get's called
 		perpage: 10, // show 10 elements per page
-		lapping: 1, // don't overlap pages for the moment
+		lapping: 0, // don't overlap pages for the moment
 		page: 1, // start at page, can also be "null" or negative
 		onSelect: function (page) {
 			console.log(this);
@@ -11,41 +11,54 @@ $(document).ready(function(){
 			switch (type) {
 				case 'block':
 					if(!this.active)
-						return '<span class="disabled">' + this.value + '</span>';
+						return '<span class="pagination__number">' + this.value + '</span>';
 					else if (this.value != this.page)
-						return '<em><a href="#' + this.value + '">' + this.value + '</a></em>';
-					return '<span class="current">' + this.value + '</span>';
+						return '<a href="#" class="pagination__number">' + this.value + '</a>';
+					return '<span class="pagination__number pagination__number_current">' + this.value + '</span>';
 		
 				case 'next':
-					if(this.active)
-						return '<a href="#' + this.value + '" class="next">></a>';
-					return '<span class="disabled">></span>';
+					if(this.active || this.page == 1)
+						return '<a href="#" class="pagination__next">></a>';
+					return '';
 		
 				case 'prev':
-					if(this.active)
-						return '<a href="#' + this.value + '" class="prev"><</a>';
-					return '<span class="disabled"><</span>';
+					if(this.active || this.page == 14)
+						return '<a href="#" class="pagination__prev"><</a>';
+					return '';
 		
 				case 'first':
 					if(this.active)
-						return '<a href="#' + this.value + '" class="first">First</a>';
-					return '<span class="disabled">First</span>';
+						return '';
+					return '';
 		
 				case 'last':
 					if(this.active)
-						return '<a href="#' + this.value + '" class="last">Last</a>';
-					return '<span class="disabled">Last</span>';
+						return '';
+					return '';
 		
 				case "leap":
 					if(this.active)
-						return "!!!";
-					return "";
+						return '';
+					return '';
 		
 				case 'fill':
 					if(this.active)
-						return "...";
-					return "";
+						return '<span class="pagination__number">...</span>';
+					return '';
+
+				case 'right':
+					if(this.active)
+						return '<a href="#" class="pagination__number">' + this.value + '</a>';
+					return '';
+
+				case 'left':
+					if(this.active)
+						return '<a href="#" class="pagination__number">' + this.value + '</a>';
+					return '';
 			}
+		},
+		onRefresh: function(){
+			console.log('refresh');
 		}
 	});
 });
