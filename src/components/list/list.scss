@@ -2,4 +2,21 @@
 
 .list{
 	
+	&__item{
+		position: relative;
+		color: $dark75;
+		list-style: none;
+		padding-left: calc_rem(20);
+
+		&:after{
+			content: '';
+			position: absolute;
+			top: 6px;
+			left: 0;
+			width: calc_rem(10);
+			height: calc_rem(10);
+			border-radius: 100vh;
+			background: $dark25;
+		}
+	}
 }

@@ -5,6 +5,13 @@ mixin list(options)
 	if !options.items
 		- options.items = []
 
-	ul.list
+	if !options.classes
+		- options.classes = ''
+	
+	if !options.id
+		- options.id = ''
+
+
+	ul.list(class = options.classes, id = options.id )
 		each val in options.items
-			li val
+			li.list__item #{val}

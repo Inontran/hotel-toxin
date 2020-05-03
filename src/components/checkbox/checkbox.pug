@@ -20,7 +20,7 @@ mixin checkbox(options)
 		- options.name = ''
 
 
-	div.checkbox(class = classes)
+	div.checkbox(class = options.classes)
 		if options.checked
 			input(type = "checkbox", id = options.id, name = options.name, checked).checkbox__input
 		else
