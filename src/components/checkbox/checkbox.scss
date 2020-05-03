@@ -16,6 +16,7 @@
 		background: $white;
 		border: 1px solid $dark25;
 		transition: .2s;
+		flex: none;
 
 		&:after{
 			content: '';
@@ -41,11 +42,21 @@
 		}
 	}
 
+	&__text-wrapper{
+		margin-left: 10px;
+	}
+
+	&__title{
+		font-size: calc_rem(14);
+		font-weight: 700;
+		color: $dark75;
+		margin-bottom: 2px;
+	}
+
 	&__text{
 		line-height: 1.28;
 		font-size: calc_rem(14);
 		color: $dark50;
-		margin-left: 10px;
 		padding-top: 3px;
 	}
 }

@@ -1,0 +1,10 @@
+mixin list(options)
+	if !options
+		- options = {}
+
+	if !options.items
+		- options.items = []
+
+	ul.list
+		each val in options.items
+			li val

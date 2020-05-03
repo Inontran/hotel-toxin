@@ -7,6 +7,9 @@ mixin checkbox(options)
 	if !options.text
 		- options.text = ''
 
+	if !options.title
+		- options.title = ''
+
 	if !options.classes
 		- options.classes = ''
 	
@@ -24,5 +27,9 @@ mixin checkbox(options)
 			input(type = "checkbox", id = options.id, name = options.name).checkbox__input
 			
 		label.checkbox__view(for = options.id)
-		if options.text
-			label.checkbox__text(for = options.id) #{options.text}
+		
+		label.checkbox__text-wrapper(for = options.id)
+			if options.title
+				p.checkbox__title #{options.title}
+			if options.text
+				p.checkbox__text #{options.text}
