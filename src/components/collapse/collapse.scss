@@ -1,0 +1,39 @@
+@import '@/theme/variables.scss';
+
+.collapse{
+
+	&__btn{
+		display: flex;
+		align-items: center;
+		justify-content: space-between;
+		border: 0;
+		background: none;
+		box-shadow: none;
+		width: 100%;
+		height: calc_rem(44);
+		cursor: pointer;
+
+		&-arrow{
+			fill: $dark50;
+			margin: 0 calc((#{calc_rem(44)} - 12px) / 2);
+			transform: rotate(0);
+			transition: .3s;
+		}
+	}
+
+	&__content{
+		max-height: 0;
+		overflow: hidden;
+		transition: .3s;
+	}
+
+	&.collapse_active{
+		.collapse__btn-arrow{
+			transform: rotate(-180deg);
+		}
+
+		.collapse__content{
+			max-height: 200vh;
+		}
+	}
+}

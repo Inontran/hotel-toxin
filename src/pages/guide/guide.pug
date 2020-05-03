@@ -119,6 +119,16 @@ block content
 
 
 			div.guide-page__col
+				+collapse({text: "expandable checkbox list", group: 'collapse-group-1'})
+					p Lorem ipsum dolor sit amet consectetur adipisicing elit. Error, explicabo. Facilis dolorem deleniti consequuntur, sint enim laborum temporibus, iure nihil suscipit minima sapiente rem dignissimos illum quam delectus itaque molestiae.
+				+collapse({text: "expandable checkbox list", group: 'collapse-group-1'})
+					+checkbox({id: "test10", text: "Можно курить"})
+					div.guide-page__mb10
+					+checkbox({id: "test11", text: "Можно курить"})
+					div.guide-page__mb10
+					+checkbox({id: "test12", text: "Можно курить"})
+					div.guide-page__mb10
+					+checkbox({id: "test13", text: "Можно курить"})
 
 
 			div.guide-page__col
