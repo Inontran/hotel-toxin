@@ -129,6 +129,23 @@ block content
 					+checkbox({id: "test12", text: "Можно курить"})
 					div.guide-page__mb10
 					+checkbox({id: "test13", text: "Можно курить"})
+				div.guide-page__mb40
+				+infographics({items: [
+					{	src: require("@/components/infographics/img/insert_emoticon.svg").default, 
+						title: "Комфорт", 
+						text: "Шумопоглощающие стены",
+						line: true
+					},
+					{	src: require("@/components/infographics/img/location_city.svg").default, 
+						title: "Удобство", 
+						text: "Окно в каждой из спален",
+						line: true
+					},
+					{	src: require("@/components/infographics/img/whatshot.svg").default, 
+						title: "Уют", 
+						text: "Номер оснащен камином"
+					}
+				]})
 
 
 			div.guide-page__col
