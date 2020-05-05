@@ -129,7 +129,24 @@ block content
 					+checkbox({id: "test12", text: "Можно курить"})
 					div.guide-page__mb10
 					+checkbox({id: "test13", text: "Можно курить"})
-				div.guide-page__mb40
+				
+
+
+			div.guide-page__col
+				h3 Rich Checkbox Buttons
+				div.guide-page__mb16
+				+checkbox({id: "test7", text: "Ширина коридоров в номере не менее 91 см.", checked: true, title: "Широкий коридор"})
+				div.guide-page__mb10
+				+checkbox({id: "test8", text: "На 1 этаже вас встретит специалист  и проводит до номера.", title: "Помощник для инвалидов"})
+
+
+			div.guide-page__col
+				h3 Bullet list
+				div.guide-page__mb16
+				+list({items: ["Нельзя с питомцами", "Без вечеринок и мероприятий", "Время прибытия — после 13:00, а выезд до 12:00"]})
+
+
+			div.guide-page__col
 				+infographics({items: [
 					{	src: require("@/components/infographics/img/insert_emoticon.svg").default, 
 						title: "Комфорт", 
@@ -147,16 +164,6 @@ block content
 					}
 				]})
 
-
+		
 			div.guide-page__col
-				h3 Rich Checkbox Buttons
-				div.guide-page__mb16
-				+checkbox({id: "test7", text: "Ширина коридоров в номере не менее 91 см.", checked: true, title: "Широкий коридор"})
-				div.guide-page__mb10
-				+checkbox({id: "test8", text: "На 1 этаже вас встретит специалист  и проводит до номера.", title: "Помощник для инвалидов"})
-
-
-			div.guide-page__col
-				h3 Bullet list
-				div.guide-page__mb16
-				+list({items: ["Нельзя с питомцами", "Без вечеринок и мероприятий", "Время прибытия — после 13:00, а выезд до 12:00"]})
+				

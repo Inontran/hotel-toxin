@@ -1,6 +1,8 @@
 @import '@/theme/variables.scss';
 
 .slider-range{
+	$size: calc_rem(16);
+	$border_width: 2px;
 
 	&__top{
 		display: flex;
@@ -28,17 +30,40 @@
 	}
 
 	&__slider{
+		width: calc(100% - #{$size} / 2 - (#{$border_width} * 2));
+		margin: 0 calc(#{$size} / 2 - #{$border_width} );
 		background: $white;
-		border: 1px solid $dark25;
-		border-radius: 100vh;
+		border-top: 1px solid $dark25;
+		border-bottom: 1px solid $dark25;
 		height: calc_rem(6);
+		position: relative;
+
+		&:after, &:before{
+			content: '';
+			position: absolute;
+			top: -1px;
+			height: calc( #{calc_rem(6)} - 2px );
+			width: calc( #{$size} / 2 );
+			border: 1px solid $dark25;
+			background: $white;
+		}
+		&:after{
+			left: calc(100% - 3px);
+			border-radius: 0 100vh 100vh 0;
+			border-left: 0;
+		}
+		&:before{
+			right: calc(100% - 3px);
+			border-radius: 100vh 0 0 100vh;
+			border-right: 0;
+		}
 
 		&.ui-slider-horizontal .ui-slider-handle{
 			top: 50%;
 			transform: translateY(-50%);
-			width: calc_rem(16);
-			height: calc_rem(16);
-			border: 2px solid $white;
+			width: $size;
+			height: $size;
+			border: $border_width solid $white;
 			border-radius: 100vh;
 			background: $gradient2;
 
