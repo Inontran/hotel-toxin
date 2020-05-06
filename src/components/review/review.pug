@@ -1,0 +1,25 @@
+include ../like-btn/like-btn
+
+mixin review(options)
+	if !options
+		- options = {}
+
+	if !options.classes
+		- options.classes = ''
+	
+	if !options.id
+		- options.id = ''
+
+	if !options.avatar
+		- options.avatar = require('@/components/review/img/photo-example.jpg').default
+
+	div.review(class = options.classes, id = options.id)
+		div.review__header
+			div.review__avatar(style = 'background-image: url(' + options.avatar + ');')
+			div.review__header-text
+				p.review__username Мурад Сарафанов
+				p.review__time 5 дней назад
+		div.review__content
+			div.review__like-wrapper
+				+like-btn({value: 12, isLike: true})
+			p.review__text Великолепный матрас на кровати в основной спальне! А пуфик вообще потрясающий. И стены, действительно, шумоподавляющие. Выкрикивал комплименты повару — никто не жаловался из соседей.
