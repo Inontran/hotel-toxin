@@ -19,16 +19,18 @@ mixin checkbox(options)
 	if !options.name
 		- options.name = ''
 
+	if !options.value
+		- options.value = ''
 
-	div.checkbox(class = options.classes)
+
+	label.checkbox(class = options.classes, id = options.id)
 		if options.checked
-			input(type = "checkbox", id = options.id, name = options.name, checked).checkbox__input
+			input(type = "checkbox", name = options.name, value = options.value, checked).checkbox__input
 		else
-			input(type = "checkbox", id = options.id, name = options.name).checkbox__input
-			
-		label.checkbox__view(for = options.id)
-		
-		label.checkbox__text-wrapper(for = options.id)
+			input(type = "checkbox", name = options.name, value = options.value).checkbox__input
+
+		div.checkbox__view
+		div.checkbox__text-wrapper
 			if options.title
 				p.checkbox__title #{options.title}
 			if options.text

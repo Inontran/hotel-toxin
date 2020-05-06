@@ -70,9 +70,9 @@ block content
 			div.guide-page__col
 				h3 Checkbox buttons
 				div.guide-page__mb16
-				+checkbox({id: "test2", text: "Можно курить", checked: true})
+				+checkbox({text: "Можно курить", checked: true})
 				div.guide-page__mb10
-				+checkbox({id: "test3", text: "Можно пригласить гостей (до 10 человек)"})
+				+checkbox({text: "Можно пригласить гостей (до 10 человек)"})
 				div.guide-page__mb40
 
 				h3 Radio Buttons
@@ -122,22 +122,22 @@ block content
 				+collapse({text: "expandable checkbox list", group: 'collapse-group-1'})
 					p Lorem ipsum dolor sit amet consectetur adipisicing elit. Error, explicabo. Facilis dolorem deleniti consequuntur, sint enim laborum temporibus, iure nihil suscipit minima sapiente rem dignissimos illum quam delectus itaque molestiae.
 				+collapse({text: "expandable checkbox list", group: 'collapse-group-1'})
-					+checkbox({id: "test10", text: "Можно курить"})
+					+checkbox({text: "Можно курить"})
 					div.guide-page__mb10
-					+checkbox({id: "test11", text: "Можно курить"})
+					+checkbox({text: "Можно курить"})
 					div.guide-page__mb10
-					+checkbox({id: "test12", text: "Можно курить"})
+					+checkbox({text: "Можно курить"})
 					div.guide-page__mb10
-					+checkbox({id: "test13", text: "Можно курить"})
+					+checkbox({text: "Можно курить"})
 				
 
 
 			div.guide-page__col
 				h3 Rich Checkbox Buttons
 				div.guide-page__mb16
-				+checkbox({id: "test7", text: "Ширина коридоров в номере не менее 91 см.", checked: true, title: "Широкий коридор"})
+				+checkbox({text: "Ширина коридоров в номере не менее 91 см.", checked: true, title: "Широкий коридор"})
 				div.guide-page__mb10
-				+checkbox({id: "test8", text: "На 1 этаже вас встретит специалист  и проводит до номера.", title: "Помощник для инвалидов"})
+				+checkbox({text: "На 1 этаже вас встретит специалист  и проводит до номера.", title: "Помощник для инвалидов"})
 
 
 			div.guide-page__col
@@ -166,4 +166,11 @@ block content
 
 		
 			div.guide-page__col
-				+review()
+				+review({
+					avatar: require("@/components/review/img/photo-example.jpg").default,
+					isLike: true,
+					count_like: 12,
+					username: "Мурад Сарафанов",
+					time_later: "5 дней назад",
+					text_review: "Великолепный матрас на кровати в основной спальне! А пуфик вообще потрясающий. И стены, действительно, шумоподавляющие. Выкрикивал комплименты повару — никто не жаловался из соседей."
+				})

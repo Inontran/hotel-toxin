@@ -13,13 +13,28 @@ mixin review(options)
 	if !options.avatar
 		- options.avatar = require('@/components/review/img/photo-example.jpg').default
 
+	if !options.isLike
+		- options.isLike = false
+	
+	if !options.count_like
+		- options.count_like = '0'
+
+	if !options.username
+		- options.username = 'Anonymous'
+
+	if !options.time_later
+		- options.time_later = 'несколько секунд назад'
+
+	if !options.text_review
+		- options.text_review = ''
+
 	div.review(class = options.classes, id = options.id)
 		div.review__header
 			div.review__avatar(style = 'background-image: url(' + options.avatar + ');')
 			div.review__header-text
-				p.review__username Мурад Сарафанов
-				p.review__time 5 дней назад
+				p.review__username #{options.username}
+				p.review__time #{options.time_later}
 		div.review__content
 			div.review__like-wrapper
-				+like-btn({value: 12, isLike: true})
-			p.review__text Великолепный матрас на кровати в основной спальне! А пуфик вообще потрясающий. И стены, действительно, шумоподавляющие. Выкрикивал комплименты повару — никто не жаловался из соседей.
+				+like-btn({value: options.count_like, isLike: options.isLike})
+			p.review__text #{options.text_review}

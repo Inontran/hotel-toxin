@@ -17,15 +17,15 @@ mixin like-btn(options)
 	if !options.id
 		- options.id = ''
 
-	if !options.isLike
-		- options.classes = ''
-		- var is_like_val = '1';
-	else
-		- options.classes = ' like-btn_active'
-		- var is_like_val = '0';
+	if !options.name
+		- options.name = 'like'
 
 	
-	div.like-btn(class = options.classes, id = options.id)
-		input.like-btn__check(type = 'checkbox', value = is_like_val)
-		input.like-btn__input(type = 'hidden', value = options.value)
-		span.like-btn__count #{options.value}
+	label.like-btn(class = options.classes, id = options.id)
+		if options.isLike
+			input.like-btn__check(type = 'checkbox', value = options.value, name = options.name, checked)
+		else
+			input.like-btn__check(type = 'checkbox', value = options.value, name = options.name)
+
+		span.like-btn__view
+			span.like-btn__count #{options.value}
