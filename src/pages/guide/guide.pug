@@ -110,18 +110,49 @@ block content
 				div.guide-page__mb20
 				+button({text: "click me"})
 				div.guide-page__mb20
+				+button({text: "Очистить", theme: "button_gray"})
+				div.guide-page__mb20
 				+button({text: "Перейти к оплате", theme: "button_fill button_arrow-left button_wide"})
 				div.guide-page__mb40
 
 				h3 Pagination
 				div.guide-page__mb16
-				+pagination({page: 1, perpage: 12, elements: 175, text: 'вариантов аренды'})
+				+pagination({page: 1, perpage: 12, elements: 175, text: "вариантов аренды"})
 
 
 			div.guide-page__col
+				+dropdown({
+					input_params:{
+						label: "Dropdown",
+						readonly: true
+					},
+					text_default: "Сколько гостей",
+					text_one: " гость",
+					text_many: " гостей",
+					array_counter: [
+						{label: "Взрослые", input_name: ""},
+						{label: "Дети", input_name: ""},
+						{label: "Младенцы", input_name: ""}
+					]
+				})
+				div.guide-page__mb20
+				+dropdown({
+					classes: 'dropdown_simple',
+					input_params:{
+						label: "Dropdown",
+						readonly: true
+					},
+					array_counter: [
+						{label: "Спальни"},
+						{label: "Кровати"},
+						{label: "Ванные комнаты"}
+					]
+				})
+				div.guide-page__mb40
+			
 				+collapse({text: "expandable checkbox list", group: 'collapse-group-1'})
 					p Lorem ipsum dolor sit amet consectetur adipisicing elit. Error, explicabo. Facilis dolorem deleniti consequuntur, sint enim laborum temporibus, iure nihil suscipit minima sapiente rem dignissimos illum quam delectus itaque molestiae.
-				+collapse({text: "expandable checkbox list", group: 'collapse-group-1'})
+				+collapse({text: "expandable checkbox list", group: 'collapse-group-1', is_open: true})
 					+checkbox({text: "Можно курить"})
 					div.guide-page__mb10
 					+checkbox({text: "Можно курить"})

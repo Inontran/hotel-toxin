@@ -1,0 +1,125 @@
+@import '@/theme/variables.scss';
+
+.dropdown{
+	position: relative;
+
+	&__input-wrapper{
+		position: relative;
+		cursor: pointer;
+
+		*{
+			cursor: pointer;
+		}
+
+		.input__field{
+			padding-right: calc_rem(44);
+			transition: .3s;
+		}
+
+		&:after{
+			content: '';
+			position: absolute;
+			bottom: 0;
+			right: 0;
+			width: calc_rem(44);
+			height: calc_rem(44);
+			background-image: url(img/expand_more.svg);
+			background-position: center;
+			background-size: auto;
+			background-repeat: no-repeat;
+		}
+	}
+
+	&__content{
+		position: absolute;
+		width: 100%;
+		top: calc(100% - 1px);
+		left: 0;
+		z-index: 1000;
+		border: 1px solid $dark50;
+		border-radius: 0 0 4px 4px;
+		background-color: $white;
+		max-height: 0;
+		transition: max-height .3s;
+		overflow: hidden;
+		opacity: 0;
+	}
+
+	&_active{
+		.input__field{
+			border-color: $dark50;
+			border-bottom-left-radius: 0;
+			border-bottom-right-radius: 0;
+		}
+
+		.dropdown__content{
+			max-height: 370px;
+			opacity: 1;
+		}
+	}
+
+	&__counter{
+		margin: 7px 7px 7px 15px;
+	}
+
+	&__counter, 
+	&__counter-btns,
+	&__btns-result{
+		display: flex;
+		align-items: center;
+		justify-content: space-between;
+	}
+
+	&__counter-label{
+		font-weight: 700;
+		font-size: calc_rem(12);
+		text-transform: uppercase;
+		line-height: 1.25;
+	}
+
+	&__btn-less, 
+	&__btn-more, 
+	&__counter-input{
+		width: calc_rem(30);
+		height: calc_rem(30);
+		text-align: center;
+	}
+
+	&__btn-less, 
+	&__btn-more{
+		border-radius: 100vh;
+		border: 1px solid $dark25;
+		background: $white;
+		line-height: calc_rem(30);
+		color: $dark25;
+		cursor: pointer;
+	}
+	&_disabled-btn{
+		opacity: .38;
+	}
+
+	&__counter-input{
+		padding: 0 3px;
+		border: 0;
+		background: none;
+	}
+
+	&__btns-result{
+		margin: 19px 7px 13px 15px;
+	}
+
+	&__btn-reset,
+	&__btn-submit{
+		line-height: 1;
+	}
+
+	&_hidden{
+		display: none;
+	}
+
+	&_simple{
+		.dropdown__btns-result{
+			display: none;
+		}
+	}
+}

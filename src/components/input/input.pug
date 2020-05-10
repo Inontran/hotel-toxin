@@ -33,7 +33,14 @@ mixin input(options)
 	label.input(class = options.classes, id = options.id)
 		if options.label
 			p.input__label #{options.label}
-		input(value = options.value, placeholder = options.placeholder, type = options.type).input__field
+		
+		if options.readonly
+			if options.disabled
+				input.input__field(value = options.value, placeholder = options.placeholder, type = options.type, readonly, disabled)
+			else
+				input.input__field(value = options.value, placeholder = options.placeholder, type = options.type, readonly)
+		else
+			input.input__field(value = options.value, placeholder = options.placeholder, type = options.type)
 		
 		if options.subscription
 			button.input__submit
