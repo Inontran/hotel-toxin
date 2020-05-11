@@ -11,9 +11,8 @@
 			cursor: pointer;
 		}
 
-		.input__field{
+		input{
 			padding-right: calc_rem(44);
-			transition: .3s;
 		}
 
 		&:after{
@@ -46,7 +45,7 @@
 	}
 
 	&_active{
-		.input__field{
+		input{
 			border-color: $dark50;
 			border-bottom-left-radius: 0;
 			border-bottom-right-radius: 0;

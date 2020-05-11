@@ -60,7 +60,7 @@ $(document).ready(function(){
 	});
 
 
-	$('body').on('click', '.dropdown .dropdown__btn-reset .button', function(){
+	$('body').on('click', '.dropdown:not(.dropdown_simple) .dropdown__btn-reset .button', function(){
 		var $dropdown = $(this).closest('.dropdown');
 		$dropdown.find('.dropdown__counter-input').val(0);
 		checkItemCount();
@@ -72,7 +72,7 @@ $(document).ready(function(){
 	});
 
 
-	$('body').on('click', '.dropdown .dropdown__btn-submit .button', function(){
+	$('body').on('click', '.dropdown:not(.dropdown_simple) .dropdown__btn-submit .button', function(){
 		var $dropdown = $(this).closest('.dropdown');
 		var summ = 0;
 		$dropdown.find('.dropdown__counter-input').each(function(){
@@ -94,6 +94,25 @@ $(document).ready(function(){
 		$dropdown.find('.dropdown__input-wrapper input').val(summ + ' ' + text);
 
 		checkItemCount();
+	});
+
+
+	$('body').on('click', '.dropdown.dropdown_simple .dropdown__btn-more, .dropdown.dropdown_simple .dropdown__btn-less', function(){
+		var $dropdown = $(this).closest('.dropdown');
+		var result = '';
+
+		$dropdown.find('.dropdown__counter').each(function(){
+			var val_counter = $(this).find('.dropdown__counter-input').val();
+			if( val_counter != 0 ){
+				result += $(this).find('.dropdown__counter-input').val();
+				result += ' ';
+				result += $(this).find('.dropdown__counter-label').text();
+				result += ', ';
+			}
+		});
+
+		$dropdown.find('.dropdown__input-wrapper input').val(result);
+		console.log(result);
 	});
 
 
