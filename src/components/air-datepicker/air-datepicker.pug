@@ -1,0 +1,11 @@
+mixin air-datepicker(options)
+	if !options
+		- options = {}
+	
+	if !options.classes
+		- options.classes = ''
+
+	if !options.id
+		- options.id = ''
+
+	div.air-datepicker(class = options.classes, id = options.id)
