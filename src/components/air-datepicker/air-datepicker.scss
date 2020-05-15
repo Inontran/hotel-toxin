@@ -12,6 +12,8 @@
 		display: flex;
 		align-items: center;
 		justify-content: space-between;
+		padding-top: 20px;
+		line-height: 1;
 	}
 
 	.datepicker{
@@ -19,12 +21,53 @@
 		border-radius: 0;
 		width: calc_rem(288);
 
+		&--nav{
+			border: 0;
+			align-items: center;
+		}
+
+		&--nav-action{
+			width: calc_rem(17);
+			height: calc_rem(18);
+			position: relative;
+
+			&:hover{
+				background: none;
+			}
+
+			&:after{
+				content: '';
+				position: absolute;
+				top: 0;
+				left: 0;
+				width: 100%;
+				height: 100%;
+				background-size: 100% 100%;
+				background-repeat: no-repeat;
+				background-position: center;
+			}
+
+			
+			svg{
+				display: none;
+			}
+
+			&[data-action="prev"]:after{
+				background-image: url(img/arrow_forward.svg);
+				transform: rotate(180deg);
+			}
+			&[data-action="next"]:after{
+				background-image: url(img/arrow_forward.svg);
+			}
+		}
+
 		&--nav-title{
 			font-weight: 700;
-			font-size: cacl_rem(19);
+			font-size: calc_rem(19);
 			color: $dark;
 			padding: 0;
 			border-radius: 0;
+			line-height: 1;
 
 			&:hover{
 				background: none;

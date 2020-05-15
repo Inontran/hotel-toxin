@@ -6,7 +6,15 @@ $(document).ready(function(){
 		$(this).datepicker({
 			range: true,
 			inline: true,
-			clearButton: true
+			// clearButton: true,
+			navTitles: {
+				days: 'MM yyyy',
+			},
+			
 		});
+	});
+
+	$('body').on('click', '.air-datepicker .air-datepicker__btn-wrapper_clear', function(){
+		$(this).closest('.air-datepicker').find('.air-datepicker__wrapper').data('datepicker').clear();
 	});
 });
