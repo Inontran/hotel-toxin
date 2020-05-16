@@ -15,6 +15,7 @@ const autoprefixer = require('autoprefixer');
 // const doiuse = require('doiuse');
 const ExtractTextPlugin = require('extract-text-webpack-plugin');
 const ProvidePlugin = require('webpack-provide-global-plugin');
+const MomentLocalesPlugin = require('moment-locales-webpack-plugin');
 
 const isDev = process.env.NODE_ENV === 'development';
 const isProd = process.env.NODE_ENV === 'production';
@@ -95,7 +96,10 @@ const plugins = () =>{
 			jQuery: 'jquery',
 			'window.jQuery': 'jquery',
 			'window.$': 'jquery'
-		})
+		}),
+		new MomentLocalesPlugin({
+				localesToKeep: ['es-us', 'ru'],
+		}),
 	];
 
 	if( isProd ){
