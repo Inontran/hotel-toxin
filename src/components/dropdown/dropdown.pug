@@ -17,6 +17,9 @@ mixin dropdown(options)
 	if !options.input_params
 		- options.input_params = {}
 
+	if options.input_params2
+		- options.classes = ' dropdown_dual-date'
+
 	if !options.text_default
 		- options.text_default = ''
 	else
@@ -28,27 +31,28 @@ mixin dropdown(options)
 	if !options.text_many
 		- options.text_many = ''
 
-	if !options.array_counter
-		- options.array_counter = []
-
 
 	div.dropdown(class = options.classes, id = options.id, data-group = options.group, data-default-text = options.text_default, data-text-one = options.text_one, data-text-many = options.text_many)
 		div.dropdown__input-wrapper
 			+input(options.input_params)
+			if options.input_params2
+				+input(options.input_params2)
+				
 		div.dropdown__content
 			div.dropdown__content-wrapper
 				if options.custom_content
 					block
 				else
-					each item, index in options.array_counter
-						div.dropdown__counter
-							span.dropdown__counter-label #{item.label}
-							div.dropdown__counter-btns
-								button.dropdown__btn-less -
-								input.dropdown__counter-input(name = item.input_name ? item.input_name : '', value = item.value ? item.value : 0, readonly)
-								button.dropdown__btn-more +
-					div.dropdown__btns-result
-						div.dropdown__btn-reset
-							+button({text: "Очистить", theme: "button_gray"})
-						div.dropdown__btn-submit
-							+button({text: "Применить"})
+					if options.array_counter
+						each item, index in options.array_counter
+							div.dropdown__counter
+								span.dropdown__counter-label #{item.label}
+								div.dropdown__counter-btns
+									button.dropdown__btn-less -
+									input.dropdown__counter-input(name = item.input_name ? item.input_name : '', value = item.value ? item.value : 0, readonly)
+									button.dropdown__btn-more +
+						div.dropdown__btns-result
+							div.dropdown__btn-reset
+								+button({text: "Очистить", theme: "button_gray"})
+							div.dropdown__btn-submit
+								+button({text: "Применить"})

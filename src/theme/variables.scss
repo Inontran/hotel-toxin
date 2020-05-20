@@ -15,6 +15,7 @@ $dark5: 	rgba(#1f2041, .05);
 $white: #fff;
 $purple:#bc9cff;
 $green:	#6fcf97;
+$black:		#000;
 
 $colors:(
 	'dark'	: 	$dark,
@@ -24,7 +25,8 @@ $colors:(
 	'dark5'	: 	$dark5,
 	'white'	: 	$white,
 	'purple': 	$purple,
-	'green'	: 	$green
+	'green'	: 	$green,
+	'black'	: 	$black,
 );
 
 // градиенты

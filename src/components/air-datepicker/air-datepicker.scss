@@ -3,10 +3,11 @@
 
 .air-datepicker{
 	display: inline-block;
-	padding: 20px;
+	padding: 20px 19px;
 	background: $white;
 	border: 1px solid $dark25;
 	border-radius: 4px;
+	width: calc_rem(320);
 
 	&__btns{
 		display: flex;
@@ -19,11 +20,12 @@
 	.datepicker{
 		border: 0;
 		border-radius: 0;
-		width: calc_rem(288);
+		width: 100%;
 
 		&--nav{
 			border: 0;
 			align-items: center;
+			padding: 0;
 		}
 
 		&--nav-action{
@@ -72,6 +74,14 @@
 			&:hover{
 				background: none;
 			}
+		}
+
+		&--content{
+			padding: 0;
+		}
+
+		&--days-names{
+			margin: 0;
 		}
 
 		&--day-name{

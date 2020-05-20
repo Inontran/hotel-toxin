@@ -3,12 +3,15 @@
 .guide-page{
 	padding-bottom: 69px;
 
+	&_limit-width{
+		max-width: $max_width_container;
+		margin: 0 auto;
+	}
+
 	&__container{
 		display: grid;
 		grid-template-columns: repeat(3, 1fr);
 		grid-gap: 0 72px;
-		max-width: $max_width_container;
-		margin: 0 auto;
 		padding: 0 $gutter/2;
 	}
 

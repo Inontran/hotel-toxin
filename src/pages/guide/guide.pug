@@ -7,7 +7,7 @@ block content
 	+header({menuItems: menuItems})
 
 	div.guide-page
-		div.guide-page__container
+		div.guide-page__container.guide-page_limit-width
 			div.guide-page__col
 				div.guide-page__color-item
 					div.guide-page__color-div.guide-page__color-div_dark
@@ -208,7 +208,7 @@ block content
 
 			
 			div.guide-page__col
-				h3 Datepicker
+				h3 Datepicker Inline
 				div.guide-page__mb16
 				+input({classes: 'input_result-dates'})
 				div.guide-page__mb16
@@ -216,4 +216,54 @@ block content
 				div.guide-page__mb16
 				+input({classes: 'input_result-date-end'})
 				div.guide-page__mb16
-				+air-datepicker()
+				+air-datepicker({classes: 'air-datepicker_inline'})
+
+		div.guide-page_limit-width
+			div.guide-page__mb40(style = 'max-width: 380px;')
+				+card({title: "Найдём номера под ваши пожелания"})
+					div.card_mb20
+						+dropdown({
+							input_params: {
+								label: "Прибытие",
+								readonly: true,
+								placeholder: "ДД.ММ.ГГГГ",
+								classes: 'input_result-date-start'
+							},
+							input_params2: {
+								label: "Выезд",
+								readonly: true,
+								placeholder: "ДД.ММ.ГГГГ",
+								classes: 'input_result-date-end'
+							},
+							custom_content: true,
+							classes: 'dropdown_dates',
+						})
+							+air-datepicker({classes: 'air-datepicker_inline'})
+					div.card_mb20
+						+dropdown({
+							input_params:{
+								label: "Dropdown",
+								readonly: true,
+								classes: 'input_result-dates'
+							},
+							custom_content: true,
+							classes: 'dropdown_dates'
+						})
+							+air-datepicker({classes: 'air-datepicker_inline'})
+
+					div.card__el.card_mb30
+						+dropdown({
+							input_params:{
+								label: "Гости",
+								readonly: true
+							},
+							text_default: "Сколько гостей",
+							text_one: " гость",
+							text_many: " гостей",
+							array_counter: [
+								{label: "Взрослые", input_name: ""},
+								{label: "Дети", input_name: ""},
+								{label: "Младенцы", input_name: ""}
+							]
+						})
+					+button({text: "Подобрать номер", theme: "button_fill button_arrow-left button_wide"})
