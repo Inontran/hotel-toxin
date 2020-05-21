@@ -19,12 +19,12 @@ mixin toggle(options)
 	if !options.type
 		- options.type = 'checkbox'
 
-	div.toggle(class = classes)
+	label.toggle(class = classes, id = options.id)
 		if options.checked
-			input(type = options.type, id = options.id, name = options.name, checked).toggle__input
+			input(type = options.type, name = options.name, checked).toggle__input
 		else
-			input(type = options.type, id = options.id, name = options.name).toggle__input
+			input(type = options.type, name = options.name).toggle__input
 			
-		label.toggle__view(for = options.id)
+		div.toggle__view
 		if options.text
-			label.toggle__text(for = options.id) #{options.text}
+			div.toggle__text #{options.text}

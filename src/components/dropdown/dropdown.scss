@@ -11,7 +11,7 @@
 			cursor: pointer;
 		}
 
-		input{
+		.input__field{
 			padding-right: calc_rem(44);
 		}
 
@@ -30,12 +30,12 @@
 	}
 
 	&_dual-date{
-		.dropdown__input-wrapper{
+		.dropdown__input-dates-wrapper{
 			display: flex;
 			justify-content: space-between;
 			margin: 0 -10px;
 
-			.input{
+			.dropdown__input-wrapper{
 				padding: 0 10px;
 			}
 		}
@@ -68,7 +68,7 @@
 	}
 
 	&_active{
-		input{
+		&:not(.dropdown_dates) .input__field{
 			border-color: $dark50;
 			border-bottom-left-radius: 0;
 			border-bottom-right-radius: 0;
@@ -83,6 +83,8 @@
 		&.dropdown_dates{
 			.dropdown__content{
 				max-height: 100vh;
+				top: 100%;
+				overflow: hidden;
 			}
 		}
 	}

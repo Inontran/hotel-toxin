@@ -18,7 +18,7 @@ mixin dropdown(options)
 		- options.input_params = {}
 
 	if options.input_params2
-		- options.classes = ' dropdown_dual-date'
+		- options.classes += ' dropdown_dual-date'
 
 	if !options.text_default
 		- options.text_default = ''
@@ -33,10 +33,15 @@ mixin dropdown(options)
 
 
 	div.dropdown(class = options.classes, id = options.id, data-group = options.group, data-default-text = options.text_default, data-text-one = options.text_one, data-text-many = options.text_many)
-		div.dropdown__input-wrapper
-			+input(options.input_params)
-			if options.input_params2
-				+input(options.input_params2)
+		if options.input_params2
+			div.dropdown__input-dates-wrapper
+				div.dropdown__input-wrapper
+					+input(options.input_params)
+				div.dropdown__input-wrapper
+					+input(options.input_params2)
+		else
+			div.dropdown__input-wrapper
+				+input(options.input_params)
 				
 		div.dropdown__content
 			div.dropdown__content-wrapper
