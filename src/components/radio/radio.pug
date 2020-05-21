@@ -17,10 +17,11 @@ mixin radio(options)
 		- options.name = ''
 
 	label.radio(class = classes, id = options.id)
-		if options.checked
-			input(type = "radio", name = options.name, checked).radio__input
-		else
-			input(type = "radio", name = options.name).radio__input
+		input(
+			type = "radio", 
+			name = options.name, 
+			checked = options.checked ? "checked" : false
+		).radio__input
 			
 		div.radio__view
 		if options.text

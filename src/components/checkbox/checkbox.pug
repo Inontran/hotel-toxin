@@ -24,10 +24,12 @@ mixin checkbox(options)
 
 
 	label.checkbox(class = options.classes, id = options.id)
-		if options.checked
-			input(type = "checkbox", name = options.name, value = options.value, checked).checkbox__input
-		else
-			input(type = "checkbox", name = options.name, value = options.value).checkbox__input
+		input(
+			type = "checkbox", 
+			name = options.name, 
+			value = options.value, 
+			checked = options.checked ? "checked" : false
+		).checkbox__input
 
 		div.checkbox__view
 		div.checkbox__text-wrapper

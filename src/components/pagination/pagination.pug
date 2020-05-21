@@ -20,7 +20,11 @@ mixin pagination(options)
 		- options.text = ''
 
 	div.pagination(class = options.classes, id = options.id)
-		div.pagination__wrapper(data-page = options.page, data-perpage = options.perpage, data-elements = options.elements)
+		div.pagination__wrapper(
+			data-page = options.page, 
+			data-perpage = options.perpage, 
+			data-elements = options.elements
+		)
 		p.pagination__text
 			span.pagination__output 1 - 12 из 100+ 
 			span #{options.text}

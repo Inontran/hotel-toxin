@@ -22,10 +22,12 @@ mixin like-btn(options)
 
 	
 	label.like-btn(class = options.classes, id = options.id)
-		if options.isLike
-			input.like-btn__check(type = 'checkbox', value = options.value, name = options.name, checked)
-		else
-			input.like-btn__check(type = 'checkbox', value = options.value, name = options.name)
+		input.like-btn__check(
+			type = 'checkbox', 
+			value = options.value, 
+			name = options.name, 
+			checked = options.isLike ? "checked" : false
+		)
 
 		span.like-btn__view
 			span.like-btn__count #{options.value}
