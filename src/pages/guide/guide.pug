@@ -211,94 +211,25 @@ block content
 				h3 Datepicker Inline
 				div.guide-page__mb16
 				+air-datepicker({classes: 'air-datepicker_inline'})
+				div.guide-page__mb20
+				+dropdown({
+					custom_content: true,
+					classes: 'dropdown_dates',
+					input_params:{
+						label: "Даты пребывания в отеле",
+						readonly: true,
+						classes: 'input_result-dates'
+					},
+				})
+					+air-datepicker({classes: 'air-datepicker_inline'})
 
 		div.guide-page_limit-width
 			div.guide-page__mb40(style = 'max-width: 380px;')
-				+card({title: "Найдём номера под ваши пожелания"})
-					div.card_mb20
-						+dropdown({
-							custom_content: true,
-							classes: 'dropdown_dates',
-							input_params: {
-								label: "Прибытие",
-								readonly: true,
-								placeholder: "ДД.ММ.ГГГГ",
-								classes: 'input_result-date-start'
-							},
-							input_params2: {
-								label: "Выезд",
-								readonly: true,
-								placeholder: "ДД.ММ.ГГГГ",
-								classes: 'input_result-date-end'
-							},
-						})
-							+air-datepicker({classes: 'air-datepicker_inline'})
-					div.card_mb20
-						+dropdown({
-							custom_content: true,
-							classes: 'dropdown_dates',
-							input_params:{
-								label: "Даты пребывания в отеле",
-								readonly: true,
-								classes: 'input_result-dates'
-							},
-						})
-							+air-datepicker({classes: 'air-datepicker_inline'})
-
-					div.card__el.card_mb30
-						+dropdown({
-							input_params:{
-								label: "Гости",
-								readonly: true
-							},
-							text_default: "Сколько гостей",
-							text_one: " гость",
-							text_many: " гостей",
-							array_counter: [
-								{label: "Взрослые", input_name: ""},
-								{label: "Дети", input_name: ""},
-								{label: "Младенцы", input_name: ""}
-							]
-						})
-					+button({text: "Подобрать номер", theme: "button_fill button_arrow-left button_wide"})
+				+form-fast-select()
 
 			div.guide-page__mb40(style = 'max-width: 380px;')
-				+card({title: "Регистрация аккаунта"})
-					div.card_mb10
-						+input({
-							placeholder: "Имя"
-						})
-					div.card_mb10
-						+input({
-							placeholder: "Фамилия"
-						})
-					div.card_mb20
-						+radio({text: "Мужчина", name: "gender", checked: true})
-						+radio({text: "Женщина", name: "gender"})
-					div.card_mb20
-						+input({
-							label: "Дата рождения",
-							classes: "input_mask-date"
-						})
-					div.card_mb10
-						+input({
-							label: "Данные для входа в сервис",
-							classes: "input_mask-email",
-							placeholder: "Email"
-						})
-					div.card_mb10
-						+input({
-							type: "password",
-							placeholder: "Пароль"
-						})
-					div.card_mb20
-						+toggle({text: "Получать спецпредложения"})
-					div.card_mb30
-						+button({text: "Перейти к оплате", theme: "button_fill button_arrow-left button_wide"})
-					div
-						p Уже есть аккаунт на Toxin
-						+button({
-							text: "Войти", 
-							theme: "button_outline",
-							isSubmit: true
-						})
+				+form-register()
+
+		div.guide-page_limit-width
+			div.guide-page__mb40(style = 'max-width: 380px;')
+				+form-login()

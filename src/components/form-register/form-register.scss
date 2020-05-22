@@ -1,0 +1,27 @@
+@import '@/theme/variables.scss';
+
+.form-register{
+
+
+	&__gender-radio{
+		display: flex;
+		margin-left: -10px;
+		margin-right: -10px;
+
+		.radio{
+			padding: 0 10px;
+		}
+	}
+
+	&__footer{
+		display: flex;
+		align-items: center;
+		justify-content: space-between;
+		margin-left: -10px;
+		margin-right: -10px;
+		
+		&-text, &-button{
+			margin: 0 10px;
+		}
+	}
+}
