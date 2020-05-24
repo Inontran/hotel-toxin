@@ -1,0 +1,82 @@
+include ../dropdown/dropdown
+include ../air-datepicker/air-datepicker
+include ../button/button
+
+mixin form-booking(options)
+	if !options
+		- options = {}
+
+	if !options.classes
+		- options.classes = ''
+
+	if !options.id
+		- options.id = ''
+
+	div.form-booking(class = options.classes, id = options.id)
+		+card()
+			div.form-booking__title.card_mb10
+				div.form-booking__title-left
+					span.form-booking__title-symbol № 
+					span.form-booking__title-number 888 
+					span.form-booking__title-type люкс
+				div.form-booking__title-right
+					span.form-booking__title-price 9 990₽ 
+					span.form-booking__title-price-type в сутки
+			
+			div.card_mb20
+				+dropdown({
+					custom_content: true,
+					classes: 'dropdown_dates',
+					input_params: {
+						label: "Прибытие",
+						readonly: true,
+						placeholder: "ДД.ММ.ГГГГ",
+						classes: 'input_result-date-start'
+					},
+					input_params2: {
+						label: "Выезд",
+						readonly: true,
+						placeholder: "ДД.ММ.ГГГГ",
+						classes: 'input_result-date-end'
+					},
+				})
+					+air-datepicker({classes: 'air-datepicker_inline'})
+
+			div.card__el.card_mb30
+				+dropdown({
+					input_params:{
+						label: "Гости",
+						readonly: true
+					},
+					text_default: "Сколько гостей",
+					text_one: " гость",
+					text_many: " гостей",
+					array_counter: [
+						{label: "Взрослые", input_name: ""},
+						{label: "Дети", input_name: ""},
+						{label: "Младенцы", input_name: ""}
+					]
+				})
+
+			div.card_mb20
+				table.form-booking__table
+					tr
+						td.form-booking__table-cell 9 990₽ х 4 суток
+						td.form-booking__table-cell.form-booking__table_px5
+						td.form-booking__table-cell.form-booking__table-cell_price 39 960₽
+					tr
+						td.form-booking__table-cell Сбор за услуги: скидка 2 179₽
+						td.form-booking__table-cell.form-booking__table_px5 
+							div.form-booking__tooltip
+						td.form-booking__table-cell.form-booking__table-cell_price 0₽
+					tr
+						td.form-booking__table-cell Сбор за дополнительные услуги
+						td.form-booking__table-cell.form-booking__table_px5 
+							div.form-booking__tooltip
+						td.form-booking__table-cell.form-booking__table-cell_price 300₽
+
+			div.form-booking__bottom.card_mb20
+				span.form-booking__bottom-word Итого
+				div.form-booking__bottom-points
+				span.form-booking__bottom-price 38 081₽
+			+button({text: "Забронировать", theme: "button_fill button_arrow-left button_wide"})

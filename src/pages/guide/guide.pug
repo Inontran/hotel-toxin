@@ -223,13 +223,15 @@ block content
 				})
 					+air-datepicker({classes: 'air-datepicker_inline'})
 
-		div.guide-page_limit-width
-			div.guide-page__mb40(style = 'max-width: 380px;')
-				+form-fast-select()
+		div.guide-page__container.guide-page__container_var2.guide-page_limit-width
+			div
+				div.guide-page__mb40
+					+form-fast-select()
+				div.guide-page__mb40
+					+form-register()
 
-			div.guide-page__mb40(style = 'max-width: 380px;')
-				+form-register()
-
-		div.guide-page_limit-width
-			div.guide-page__mb40(style = 'max-width: 380px;')
-				+form-login()
+			div
+				div.guide-page__mb40
+					+form-booking()
+				div.guide-page__mb40
+					+form-login()
