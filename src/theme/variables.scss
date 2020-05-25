@@ -9,6 +9,7 @@ $xl: 1440px;
 $dark: 	#1f2041;
 $dark75: 	rgba(#1f2041, .75);
 $dark50: 	rgba(#1f2041, .50);
+$dark30: 	rgba(#1f2041, .30);
 $dark25: 	rgba(#1f2041, .25);
 $dark10: 	rgba(#1f2041, .1);
 $dark5: 	rgba(#1f2041, .05);
@@ -21,6 +22,7 @@ $colors:(
 	'dark'	: 	$dark,
 	'dark75': 	$dark75,
 	'dark50': 	$dark50,
+	'dark30': 	$dark30,
 	'dark25': 	$dark25,
 	'dark5'	: 	$dark5,
 	'white'	: 	$white,

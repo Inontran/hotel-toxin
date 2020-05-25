@@ -1,0 +1,90 @@
+@import '@/theme/variables.scss';
+@import '~owl.carousel/dist/assets/owl.carousel.css';
+
+.card-product{
+	background: $white;
+	border-radius: 4px;
+	box-shadow: 0px 10px 20px $dark5;
+	overflow: hidden;
+
+	&__gallery{
+
+		.owl-carousel{
+			.owl-nav{
+				position: absolute;
+				top: 50%;
+				transform: translateY(-50%);
+				left: 0;
+				z-index: 2;
+				width: 100%;
+
+				.owl-prev, .owl-next{
+					display: flex;
+					align-items: center;
+					justify-content: center;
+					position: absolute;
+					top: 50%;
+					transform: translateY(-50%);
+					width: calc_rem(44);
+					height: calc_rem(44);
+
+					span{
+						width: calc_rem(8);
+						height: calc_rem(13);
+						background-image: url(img/expand_more.svg);
+						background-position: center;
+						background-repeat: no-repeat;
+						background-size: cover;
+						color: transparent;
+					}
+				}
+				.owl-prev{
+					left: 0;
+
+					span{
+						transform: rotate(180deg);
+					}
+				}
+				.owl-next{
+					right: 0;
+				}
+			}
+
+			.owl-dots{
+				position: absolute;
+				right: 15px;
+				bottom: 15px;
+				z-index: 1;
+				margin: 0 -2px;
+				display: flex;
+
+				.owl-dot{
+					width: calc_rem(8);
+					height: calc_rem(8);
+					border: 1px solid $white;
+					box-shadow: 0px 5px 5px $dark30;
+					transition: .3s;
+					margin: 0 2px;
+					border-radius: 100vh;
+
+					&.active{
+						background-color: $white;
+					}
+				}
+			}
+
+			
+		}
+	}
+
+	&__img{
+		background-size: cover;
+		background-repeat: no-repeat;
+		background-position: center;
+		padding-top: 56%;
+	}
+
+	&__content{
+		padding: 20px;
+	}
+}

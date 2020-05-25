@@ -208,10 +208,6 @@ block content
 
 			
 			div.guide-page__col
-				h3 Datepicker Inline
-				div.guide-page__mb16
-				+air-datepicker({classes: 'air-datepicker_inline'})
-				div.guide-page__mb20
 				+dropdown({
 					custom_content: true,
 					classes: 'dropdown_dates',
@@ -225,13 +221,16 @@ block content
 
 		div.guide-page__container.guide-page__container_var2.guide-page_limit-width
 			div
+				+form-fast-select()
 				div.guide-page__mb40
-					+form-fast-select()
-				div.guide-page__mb40
-					+form-register()
+				+form-register()
 
 			div
+				+form-booking()
 				div.guide-page__mb40
-					+form-booking()
+				+form-login()
+
+			div
+				+air-datepicker({classes: 'air-datepicker_inline'})
 				div.guide-page__mb40
-					+form-login()
+				+card-product()
