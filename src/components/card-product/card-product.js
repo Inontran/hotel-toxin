@@ -6,6 +6,7 @@ $(document).ready(function(){
 			nav: true,
 			dots: true,
 			items: 1,
+			loop: true,
 		});
 	});
 });

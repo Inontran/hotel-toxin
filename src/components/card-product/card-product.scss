@@ -87,4 +87,84 @@
 	&__content{
 		padding: 20px;
 	}
+
+	&__content-top{
+		display: flex;
+		align-items: flex-end;
+		justify-content: space-between;
+		margin-left: -10px;
+		margin-right: -10px;
+		margin-bottom: 8px;
+		position: relative;
+
+		&:after{
+			content: '';
+			position: absolute;
+			bottom: 0;
+			left: 10px;
+			width: calc(100% - 10px);
+			height: 1px;
+			background: $dark10;
+		}
+
+		&-left, &-right{
+			padding: 0 10px 10px;
+		}
+
+		&-left{
+			font-weight: 700;
+		}
+
+		&-symbol, &-number{
+			font-family: 'Quicksand', 'Montserrat', sans-serif;
+		}
+
+		&-symbol{
+			font-size: calc_rem(14);
+		}
+
+		&-number{
+			font-size: calc_rem(24);
+		}
+
+		&-type{
+			font-size: calc_rem(12);
+			color: $purple;
+			text-transform: uppercase;
+		}
+
+		&-right{
+			color: $dark50;
+		}
+
+		&-price{
+			font-weight: 700;
+			font-size: calc_rem(14);
+		}
+
+		&-price-type{
+			font-size: calc_rem(12);
+		}
+	}
+
+
+	&__content-bottom{
+		display: flex;
+		align-items: center;
+		justify-content: space-between;
+		margin-left: -10px;
+		margin-right: -10px;
+
+		&-left, &-right{
+			margin-left: 10px;
+			margin-right: 10px;
+		}
+	}
+
+	&__reviews-count-number, &__reviews-count-text{
+		color: $dark50;
+	}
+	&__reviews-count-number{
+		font-weight: 700;
+	}
 }

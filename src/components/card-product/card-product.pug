@@ -16,4 +16,17 @@ mixin card-product(options)
 				- for(var i = 0; i < 4; i++)
 						div.card-product__img(style = 'background-image: url(' + require('@/components/card-product/img/example.jpg').default + ' );')
 		div.card-product__content
-			+rate-btn({value: 4})
+			div.card-product__content-top
+				div.card-product__content-top-left
+					span.card-product__content-top-symbol № 
+					span.card-product__content-top-number 888 
+					span.card-product__content-top-type люкс
+				div.card-product__content-top-right
+					span.card-product__content-top-price 9 990₽ 
+					span.card-product__content-top-price-type в сутки
+			div.card-product__content-bottom
+				div.card-product__content-bottom-left
+					+rate-btn({value: 4})
+				div.card-product__content-bottom-right
+					span.card-product__reviews-count-number 145
+					span.card-product__reviews-count-text  Отзывов
