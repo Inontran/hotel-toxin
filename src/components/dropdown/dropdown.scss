@@ -14,20 +14,24 @@
 		.input__field{
 			padding-right: calc_rem(44);
 		}
-
-		.input:after{
-			content: '';
-			position: absolute;
-			bottom: 0;
-			right: 0;
-			width: calc_rem(44);
-			height: calc_rem(44);
-			background-image: url(img/expand_more.svg);
-			background-position: center;
-			background-size: auto;
-			background-repeat: no-repeat;
-		}
 	}
+
+
+	&__arrow{
+		position: absolute;
+		bottom: 0;
+		right: 0;
+		width: calc_rem(44);
+		height: calc_rem(44);
+		background: none;
+		border: 0;
+		box-shadow: none;
+		background-image: url(img/expand_more.svg);
+		background-position: center;
+		background-size: auto;
+		background-repeat: no-repeat;
+	}
+
 
 	&_dual-date{
 		.dropdown__input-dates-wrapper{
@@ -36,7 +40,7 @@
 			margin: 0 -10px;
 
 			.dropdown__input-wrapper{
-				padding: 0 10px;
+				margin: 0 10px;
 			}
 		}
 	}

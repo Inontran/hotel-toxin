@@ -11,7 +11,7 @@ $(document).ready(function(){
 	});
 
 
-	$('body').on('click', '.dropdown .dropdown__input-wrapper, .dropdown .dropdown__input-wrapper *', function(e){
+	$('body').on('click', '.dropdown .dropdown__input-wrapper', function(e){
 		e.preventDefault();
 		var $parent = $(this).closest('.dropdown');
 		var dropdown_group = $parent.attr('data-group');
@@ -20,7 +20,7 @@ $(document).ready(function(){
 			var selector = '.dropdown';
 			
 			$('body').find(selector + '[data-group="' + dropdown_group + '"]').each(function(){
-				if( $(selector).index( $(this) ) == $(selector).index($parent) ){
+				if( $(selector).index($(this)) == $(selector).index($parent) ){
 					$parent.toggleClass('dropdown_active');
 				} else{
 					$(this).removeClass('dropdown_active');

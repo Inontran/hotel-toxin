@@ -44,11 +44,14 @@ mixin dropdown(options)
 			div.dropdown__input-dates-wrapper
 				div.dropdown__input-wrapper
 					+input(options.input_params)
+					button.dropdown__arrow
 				div.dropdown__input-wrapper
 					+input(options.input_params2)
+					button.dropdown__arrow
 		else
 			div.dropdown__input-wrapper
 				+input(options.input_params)
+				button.dropdown__arrow
 				
 		div.dropdown__content
 			div.dropdown__content-wrapper
