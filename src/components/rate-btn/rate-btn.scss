@@ -15,6 +15,9 @@
 		background-position: center;
 		margin: 2px;
 		outline: none;
+		background-color: transparent;
+		border: 0;
+		box-shadow: none;
 
 		&:focus{
 			outline: dotted 1px;

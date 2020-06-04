@@ -25,4 +25,7 @@ mixin rate-btn(options)
 	div.rate-btn(class = options.classes, id = options.id)
 		input.rate-btn__input(type = "hidden", value = options.value, name = options.name)
 		- for (var i = 1; i <= 5; i++)
-				a.rate-btn__star-item(href = '', data-number-star = i)
+				button.rate-btn__star-item(
+					data-number-star = i, 
+					disabled = options.disabled ? "disabled" : false
+				)
