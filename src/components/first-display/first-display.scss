@@ -1,0 +1,18 @@
+@import '@/theme/variables.scss';
+
+.first-display{
+	min-height: 100vh;
+	background-image: url(img/example-bg.jpg);
+	background-size: cover;
+	background-repeat: no-repeat;
+	background-position: center;
+
+	&__content-wrapper{
+		max-width: $max_width_container;
+		padding: 70px $gutter/2;
+	}
+
+	&__form-wrapper{
+		max-width: calc_rem(380);
+	}
+}

@@ -1,15 +1,11 @@
 extends ../base/base.pug
 
+include ../../components/first-display/first-display
+
 block title
 	| Toxin Hotel
 
 block content
 	- data = htmlWebpackPlugin.options.getData()
 
-	+header({menuItems: menuItems})
-
-	div.layout
-		div.layout__container
-			a(href="guide.html") guide
-			h1 Quicksand
-			h2 #{data.text}
+	+first-display()

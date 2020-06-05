@@ -1,0 +1,21 @@
+include ../header/header
+include ../form-fast-select/form-fast-select
+
+
+mixin first-display(options)
+	if !options
+		- options = {}
+
+	if !options.classes
+		- options.classes = ''
+
+	if !options.id
+		- options.id = ''
+
+
+	div.first-display(class = options.classes, id = options.id)
+		+header({menuItems: menuItems})
+
+		div.first-display__content-wrapper
+			div.first-display__form-wrapper
+				+form-fast-select()
