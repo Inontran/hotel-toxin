@@ -6,13 +6,25 @@
 	background-size: cover;
 	background-repeat: no-repeat;
 	background-position: center;
+	display: flex;
+	flex-direction: column;
 
 	&__content-wrapper{
 		max-width: $max_width_container;
-		padding: 70px $gutter/2;
+		padding: 70px $gutter/2 18px;
+		flex-grow: 1;
+		display: flex;
+		flex-direction: column;
 	}
 
 	&__form-wrapper{
 		max-width: calc_rem(380);
+	}
+
+	&__text-bottom{
+		color: $dark;
+		max-width: calc_rem(297);
+		text-align: right;
+		margin: auto 0 0 auto;
 	}
 }
