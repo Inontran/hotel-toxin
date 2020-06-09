@@ -23,19 +23,25 @@
 		list-style: none;
 		margin-left: auto;
 
-		.item{
+		&-item{
 			display: inline-block;
 			padding: 0 15px;
 
-			.link{
-				color: $dark50;
-				text-decoration: none;
-				font-weight: 400;
-			}
-			
-			&.active{
+			&_active{
 				font-weight: 700;
 			}
+		}
+		&-link{
+			color: $dark50;
+			text-decoration: none;
+			font-weight: 400;
+			display: flex;
+			align-items: center;
+		}
+
+		&-arrow{
+			flex: none;
+			margin-left: 6px;
 		}
 	}
 
@@ -47,5 +53,23 @@
 	&__btn2{
 		grid-area: btn2;
 		padding-left: 20px;
+	}
+
+	&__username{
+		color: $dark50;
+		padding-left: 30px;
+		margin-left: 15px;
+		position: relative;
+
+		&:after{
+			content: '';
+			position: absolute;
+			top: 50%;
+			left: 0;
+			transform: translateY(-50%);
+			height: 30px;
+			width: 1px;
+			background-color: $dark10;
+		}
 	}
 }

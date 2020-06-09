@@ -12,11 +12,19 @@ mixin first-display(options)
 	if !options.id
 		- options.id = ''
 
+	if !options.form_options
+		- options.form_options = {}
+
 
 	div.first-display(class = options.classes, id = options.id)
-		+header({menuItems: menuItems})
+		+header({
+			menuItems: menuItems, 
+			button_login_text: header_btn_login_text,
+			button_reg_text: header_btn_reg_text
+		})
 
 		div.first-display__content-wrapper
 			div.first-display__form-wrapper
-				+form-fast-select()
-			div.first-display__text-bottom Лучшие номера для вашей работы, отдыха и просто вдохновения
+				+form-fast-select(options.form_options)
+			if options.text_bottom
+				div.first-display__text-bottom #{options.text_bottom}

@@ -12,8 +12,11 @@ mixin form-fast-select(options)
 	if !options.id
 		- options.id = ''
 
+	if !options.card_title
+		- options.card_title = 'Найдём номера под ваши пожелания'
+
 	div.form-fast-select(class = options.classes, id = options.id)
-		+card({title: "Найдём номера под ваши пожелания"})
+		+card({title: options.card_title})
 			div.card_mb20
 				+dropdown({
 					custom_content: true,

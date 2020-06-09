@@ -1,8 +1,15 @@
 mixin header(options)
 	if !options
 		- options = {}
+
 	if !options.menuItems
 		- options.menuItems = []
+
+	if !options.button_login_text
+		- options.button_login_text = 'Login'
+	
+	if !options.button_reg_text
+		- options.button_reg_text = 'Register'
 
 	header.header
 		div.header__container
@@ -10,9 +17,14 @@ mixin header(options)
 				+logo()
 			nav.header__main-menu
 				each val, index in options.menuItems
-					li.item
-						a.link(href = val.href)= val.name
-			div.header__btn1
-				+button({text: 'Login', theme: 'button_outline'})
-			div.header__btn2
-				+button({text: 'Register', theme: 'button_fill'})
+					li.header__main-menu-item
+						a.header__main-menu-link(href = val.href)= val.name
+							if val.subitems
+								img.header__main-menu-arrow(src = require('@/components/header/img/expand_more.svg').default)
+			if !options.username
+				div.header__btn1
+					+button({text: options.button_login_text, theme: 'button_outline'})
+				div.header__btn2
+					+button({text: options.button_reg_text, theme: 'button_fill'})
+			else
+				div.header__username #{options.username}

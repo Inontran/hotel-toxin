@@ -1,32 +1,38 @@
 //- include ./base-data
 //- block variables
+
 -
 	var menuItems = [
 		{
-			name: 'Home',
-			href: '/index.html'
+			name: "О нас",
+			href: "/about.html"
 		},
 		{
-			name: 'About Us',
-			href: '/about.html'
+			name: "Услуги",
+			href: "/services.html",
+			subitems: [
+				{name: "Долгосрочная аренда", href: "/404.html"}
+			]
 		},
 		{
-			name: 'Services',
-			href: '/services.html'
+			name: "Вакансии",
+			href: "/careers.html"
 		},
 		{
-			name: 'Careers',
-			href: '/careers.html'
+			name: "Новости",
+			href: "/news.html"
 		},
 		{
-			name: 'News',
-			href: '/news.html'
-		},
-		{
-			name: 'Documentation',
-			href: '/documentions.html'
+			name: "Соглашения",
+			href: "/documentions.html",
+			subitems: [
+				{name: "Договор", href: "/404.html"}
+			]
 		}
 	]
+
+- var header_btn_login_text = 'Войти'
+- var header_btn_reg_text = 'Зарегистрироваться'
 
 -
 	var footerItems = [
