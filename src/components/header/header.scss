@@ -1,13 +1,14 @@
 @import '@/theme/variables.scss';
 
 .header{
+	background: $white;
+	
 	&__container{
 		display: grid;
 		grid-template-areas:
 			'logo nav-menu btn1 btn2';
 		align-items: center;
 		grid-template-columns: auto 1fr auto auto;
-		background: $white;
 		padding: 15px $gutter/2;
 		max-width: $max_width_container;
 		margin: 0 auto;

@@ -11,6 +11,8 @@
 
 	&__content-wrapper{
 		max-width: $max_width_container;
+		width: 100%;
+		margin: 0 auto;
 		padding: 70px $gutter/2 18px;
 		flex-grow: 1;
 		display: flex;
