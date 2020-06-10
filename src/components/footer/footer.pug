@@ -1,15 +1,29 @@
 mixin footer(options)
 	if !options
 		- options = {}
+
 	if !options.menuItems
 		- options.menuItems = []
+
+	if !options.text1
+		- options.text1 = ''
+
+	if !options.text2
+		- options.text2 = ''
+
+	if !options.title_subscribe
+		- options.title_subscribe = ''
+
+	if !options.copyright_text
+		- options.copyright_text = ''
+
 
 	footer.footer
 		div.footer__container.footer_desktop
 			div.footer__up
 				div.footer__col1
 					+logo().footer_mb21
-					p Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsa nam blanditiis facilis voluptas commodi 
+					p #{options.text1}
 				
 				div.footer__col2
 					h3.footer__subtitle.footer_mb21 #{options.menuItems[0].subtitle}
@@ -33,19 +47,23 @@ mixin footer(options)
 								a.link(href = val.href)= val.name
 				
 				div.footer__col5
-					h3.footer__subtitle.footer_mb21 Subscribe to our newsletter
-					p.footer_mb20 Receive our latest news and promotions in your inbox!
+					if options.title_subscribe
+						h3.footer__subtitle.footer_mb21 #{options.title_subscribe}
+					if options.text2
+						p.footer_mb20 #{options.text2}
 					form(action="", method="post")
 						+input({subscription: true, placeholder: 'Email'})
 
 		div.footer__down.footer_desktop
 			div.footer__container
 				div.footer__down-wrapper
-					p Copyright © 2018 Toxin UI Kit. All rights reserved.
+					if options.copyright_text
+						p #{options.copyright_text}
 					+social-nets()
 
 		div.footer__container.footer_mobile
 			div.footer__container-mobile
 				+logo().footer_mb20
-				p.text Lorem ipsum dolor, sit amet consectetur adipisicing elit. Ad sint odio omnis optio cum, consequatur, ex ipsum temporibus error ul
+				if options.text1
+					p.text #{options.text1}
 				+social-nets()

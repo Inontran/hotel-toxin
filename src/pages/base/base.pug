@@ -35,67 +35,73 @@
 - var header_btn_reg_text = 'Зарегистрироваться'
 
 -
-	var footerItems = [
-		{
-			subtitle: 'Navigation',
-			items: [
-				{
-					name: 'About Us',
-					href: '/about.html'
-				},
-				{
-					name: 'News',
-					href: '/news.html'
-				},
-				{
-					name: 'Support',
-					href: '/support.html'
-				},
-				{
-					name: 'Products',
-					href: '/products.html'
-				},
-			]
-		},
-		{
-			subtitle: 'About Us',
-			items: [
-				{
-					name: 'Who we are',
-					href: '/who-we-are.html'
-				},
-				{
-					name: 'Our team',
-					href: '/our-team.html'
-				},
-				{
-					name: 'Careers',
-					href: '/careers.html'
-				},
-				{
-					name: 'Investors',
-					href: '/investors.html'
-				},
-			]
-		},
-		{
-			subtitle: 'Support',
-			items: [
-				{
-					name: 'Documentation',
-					href: '/docs.html'
-				},
-				{
-					name: 'Community',
-					href: '/community.html'
-				},
-				{
-					name: 'Get in Touch',
-					href: '/get-in-touch.html'
-				},
-			]
-		}
-	]
+	var data_footer = {
+		footerItems: [
+			{
+				subtitle: 'Навигация',
+				items: [
+					{
+						name: 'О нас',
+						href: '/about.html'
+					},
+					{
+						name: 'Новости',
+						href: '/news.html'
+					},
+					{
+						name: 'Служба поддержки',
+						href: '/support.html'
+					},
+					{
+						name: 'Услуги',
+						href: '/products.html'
+					},
+				]
+			},
+			{
+				subtitle: 'О нас',
+				items: [
+					{
+						name: 'О сервисе',
+						href: '/who-we-are.html'
+					},
+					{
+						name: 'Наша команда',
+						href: '/our-team.html'
+					},
+					{
+						name: 'Вакансии',
+						href: '/careers.html'
+					},
+					{
+						name: 'Инвесторы',
+						href: '/investors.html'
+					},
+				]
+			},
+			{
+				subtitle: 'Служба поддержки',
+				items: [
+					{
+						name: 'Соглашения',
+						href: '/docs.html'
+					},
+					{
+						name: 'Сообщества',
+						href: '/community.html'
+					},
+					{
+						name: 'Связь с нами',
+						href: '/get-in-touch.html'
+					},
+				]
+			}
+		],
+		text1: 'Бронирование номеров в лучшем отеле 2019 года по версии ассоциации «Отельные взгляды»',
+		text2: 'Получайте специальные предложения и новости сервиса',
+		title_subscribe: 'Подписка',
+		copyright_text: 'Copyright © 2018 Toxin отель. Все права зачищены.'
+	}
 
 
 include ../../components/layout/layout
@@ -140,4 +146,10 @@ html(lang="ru")
 			block content
 
 		block footer
-			+footer({menuItems: footerItems})
+			+footer({
+				menuItems: data_footer.footerItems,
+				text1: data_footer.text1,
+				text2: data_footer.text2,
+				title_subscribe: data_footer.title_subscribe,
+				copyright_text: data_footer.copyright_text
+			})
