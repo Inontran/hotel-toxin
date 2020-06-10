@@ -18,9 +18,9 @@ mixin first-display(options)
 
 	div.first-display(class = options.classes, id = options.id)
 		+header({
-			menuItems: menuItems, 
-			button_login_text: header_btn_login_text,
-			button_reg_text: header_btn_reg_text
+			menuItems: data_header.menuItems, 
+			button_login_text: data_header.login_text,
+			button_reg_text: data_header.reg_text
 		})
 
 		div.first-display__content-wrapper
