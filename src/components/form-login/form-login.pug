@@ -25,7 +25,11 @@ mixin form-login(options)
 				})
 
 			div.card_mb30
-				+button({text: "Войти", theme: "button_fill button_arrow-left button_wide", isSubmit: true})
+				+button({
+					text: "Войти", 
+					theme: "button_fill button_arrow-left button_wide", 
+					isSubmit: true
+				})
 
 			div.form-register__footer
 				p.form-register__footer-text Нет аккаунта на Toxin?
@@ -33,4 +37,5 @@ mixin form-login(options)
 					+button({
 						text: "Создать", 
 						theme: "button_outline",
+						href: options.button_reg_href ? options.button_reg_href : false
 					})

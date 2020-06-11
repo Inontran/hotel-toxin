@@ -13,9 +13,17 @@ mixin button(options)
 		//- classes += options.theme ? ' button_' + options.theme : ''
 		classes += options.theme ? options.theme : ''
 	
-	button.button(
-		class = classes,
-		type = options.isSubmit ? 'submit' : false,
-		tabindex = options.tabindex || false
-	)
-		span.button__text= options.text || 'Button'
+	if options.href
+		a.button(
+			class = classes,
+			href = options.href,
+			tabindex = options.tabindex || false
+		)
+			span.button__text= options.text || 'Button'
+	else
+		button.button(
+			class = classes,
+			type = options.isSubmit ? 'submit' : false,
+			tabindex = options.tabindex || false
+		)
+			span.button__text= options.text || 'Button'

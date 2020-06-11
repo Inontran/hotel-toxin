@@ -12,6 +12,7 @@
 	transition: .3s;
 	text-align: center;
 	cursor: pointer;
+	text-decoration: none;
 
 	&:hover{
 		color: $dark50;
@@ -20,6 +21,7 @@
 	&__text{
 		position: relative;
 		z-index: 2;
+		text-decoration: none;
 	}
 
 

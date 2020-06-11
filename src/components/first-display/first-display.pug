@@ -1,5 +1,4 @@
 include ../header/header
-include ../form-fast-select/form-fast-select
 
 
 mixin first-display(options)
@@ -16,15 +15,18 @@ mixin first-display(options)
 		- options.form_options = {}
 
 
-	div.first-display(class = options.classes, id = options.id)
+	div.first-display(
+		class = options.classes, 
+		id = options.id,
+		style = options.bg_url ? 'background-image: url(' + options.bg_url + ')' : false
+	)
 		+header({
 			menuItems: data_header.menuItems, 
 			button_login_text: data_header.login_text,
-			button_reg_text: data_header.reg_text
+			button_login_href: data_header.login_href,
+			button_reg_text: data_header.reg_text,
+			button_reg_href: data_header.reg_href
 		})
 
 		div.first-display__content-wrapper
-			div.first-display__form-wrapper
-				+form-fast-select(options.form_options)
-			if options.text_bottom
-				div.first-display__text-bottom #{options.text_bottom}
+			block

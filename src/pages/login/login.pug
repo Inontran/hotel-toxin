@@ -1,0 +1,16 @@
+extends ../base/base.pug
+
+include ../../components/first-display/first-display
+include ../../components/form-login/form-login
+
+block title
+	| Registration Toxin Hotel
+
+block content
+	- data = htmlWebpackPlugin.options.getData()
+
+	//- - data.bg_url = require('@/pages/login/img/' + data.bg_url).default
+
+	+first-display(data.first_display_options)
+		div.first-display__form-wrapper
+			+form-login(data.form_options)

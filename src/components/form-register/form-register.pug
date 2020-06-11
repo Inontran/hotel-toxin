@@ -46,12 +46,16 @@ mixin form-register(options)
 			div.card_mb20
 				+toggle({text: "Получать спецпредложения"})
 			div.card_mb30
-				+button({text: "Перейти к оплате", theme: "button_fill button_arrow-left button_wide"})
+				+button({
+					text: "Перейти к оплате", 
+					theme: "button_fill button_arrow-left button_wide",
+					isSubmit: true
+				})
 			div.form-register__footer
 				p.form-register__footer-text Уже есть аккаунт на Toxin
 				div.form-register__footer-button
 					+button({
 						text: "Войти", 
 						theme: "button_outline",
-						isSubmit: true
+						href: options.button_login_href ? options.button_login_href : false
 					})

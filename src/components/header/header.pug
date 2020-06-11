@@ -11,6 +11,7 @@ mixin header(options)
 	if !options.button_reg_text
 		- options.button_reg_text = 'Register'
 
+
 	header.header
 		div.header__container
 			div.header__logo
@@ -23,8 +24,16 @@ mixin header(options)
 								img.header__main-menu-arrow(src = require('@/components/header/img/expand_more.svg').default)
 			if !options.username
 				div.header__btn1
-					+button({text: options.button_login_text, theme: 'button_outline'})
+					+button({
+						text: options.button_login_text, 
+						theme: 'button_outline',
+						href: options.button_login_href ? options.button_login_href : false
+					})
 				div.header__btn2
-					+button({text: options.button_reg_text, theme: 'button_fill'})
+					+button({
+						text: options.button_reg_text, 
+						theme: 'button_fill',
+						href: options.button_reg_href ? options.button_reg_href : false
+					})
 			else
 				div.header__username #{options.username}
