@@ -8,8 +8,7 @@ block title
 
 block content
 	- data = htmlWebpackPlugin.options.getData()
-
-	//- - data.bg_url = require('@/pages/login/img/' + data.bg_url).default
+	- data.first_display_options.bg_url = require('@/pages/login/img/' + data.first_display_options.bg_url).default
 
 	+first-display(data.first_display_options)
 		div.first-display__form-wrapper
