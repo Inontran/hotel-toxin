@@ -1,0 +1,41 @@
+@import '@/theme/variables.scss';
+
+.products{
+
+	& &__container{
+		max-width: $max_width_container;
+		margin: 0 auto;
+		padding: 30px $gutter/2 70px;
+	}
+
+	& &__grid{
+		display: grid;
+		grid-column-gap: 60px;
+		grid-template-columns: 266px calc(100% - 326px);
+	}
+
+	& &__left-column{
+		// width: 266px;
+	}
+
+	& &__cards-container{
+		display: flex;
+		margin: 0 -6px;
+		flex-wrap: wrap;
+	}
+
+	& &__card-wrapper{
+		padding: 0 6px;
+		flex: 1 1 33%;
+		max-width: 33%;
+	}
+
+	& &_mb20{
+		margin-bottom: 20px;
+	}
+
+	& &__pagination-wrapper{
+		display: flex;
+		justify-content: center;
+	}
+}

@@ -36,3 +36,6 @@ mixin slider-range(options)
 			data-val1 = options.val1, 
 			data-val2 = options.val2
 		)
+
+		if options.text_bottom
+			div.slider-range__text-bottom #{options.text_bottom}

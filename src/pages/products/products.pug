@@ -1,0 +1,33 @@
+extends ../base/base.pug
+
+include ../../components/card-product/card-product
+include ../../components/pagination/pagination
+include ../../components/filter-products/filter-products
+
+block title
+	| Номера Toxin Hotel
+
+block content
+	- data = htmlWebpackPlugin.options.getData()
+
+	div.products
+		+header({
+			menuItems: data_header.menuItems, 
+			button_login_text: data_header.login_text,
+			button_login_href: data_header.login_href,
+			button_reg_text: data_header.reg_text,
+			button_reg_href: data_header.reg_href
+		})
+
+		div.products__container
+			div.products__grid
+				div.products__left-column
+					+filter-products()
+				div.products__center-column
+					h1.products_mb20 Номера, которые мы для вас подобрали
+					div.products__cards-container.products_mb20
+						- for(var i = 0; i < 12; i++)
+								div.products__card-wrapper.products_mb20
+									+card-product()
+					div.products__pagination-wrapper
+						+pagination({page: 1, perpage: 12, elements: 175, text: "вариантов аренды"})
