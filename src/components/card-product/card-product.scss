@@ -93,8 +93,8 @@
 		display: flex;
 		align-items: flex-end;
 		justify-content: space-between;
-		margin-left: -10px;
-		margin-right: -10px;
+		margin-left: -5px;
+		margin-right: -5px;
 		margin-bottom: 8px;
 		position: relative;
 
@@ -102,14 +102,14 @@
 			content: '';
 			position: absolute;
 			bottom: 0;
-			left: 10px;
+			left: 5px;
 			width: calc(100% - 10px);
 			height: 1px;
 			background: $dark10;
 		}
 
 		&-left, &-right{
-			padding: 0 10px 10px;
+			padding: 0 5px 10px;
 		}
 
 		&-left{
@@ -125,7 +125,7 @@
 		}
 
 		&-number{
-			font-size: calc_rem(24);
+			font-size: calc_rem(19);
 		}
 
 		&-type{
@@ -153,12 +153,13 @@
 		display: flex;
 		align-items: center;
 		justify-content: space-between;
-		margin-left: -10px;
-		margin-right: -10px;
+		margin-left: -5px;
+		margin-right: -5px;
 
 		&-left, &-right{
-			margin-left: 10px;
-			margin-right: 10px;
+			margin-left: 5px;
+			margin-right: 5px;
+			line-height: 1;
 		}
 	}
 

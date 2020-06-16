@@ -10,6 +10,22 @@ mixin card-product(options)
 	if !options.id
 		- options.id = ''
 
+	if !options.room_number
+		- options.room_number = ''
+
+	if !options.price
+		- options.price = ''
+
+	if !options.price_time
+		- options.price_time = ''
+
+	if !options.count_reviews
+		- options.count_reviews = '0'
+
+	if !options.rating
+		- options.rating = '0'
+
+
 	div.card-product(class = options.classes, id = options.id)
 		div.card-product__gallery
 			div.card-product__carousel.owl-carousel
@@ -19,14 +35,18 @@ mixin card-product(options)
 			div.card-product__content-top
 				div.card-product__content-top-left
 					span.card-product__content-top-symbol № 
-					span.card-product__content-top-number 888 
-					span.card-product__content-top-type люкс
+					span.card-product__content-top-number #{options.room_number}
+					if options.room_type
+						span.card-product__content-top-type  #{options.room_type}
 				div.card-product__content-top-right
-					span.card-product__content-top-price 9 990₽ 
-					span.card-product__content-top-price-type в сутки
+					span.card-product__content-top-price #{options.price}
+					span.card-product__content-top-price-type  #{options.price_time}
 			div.card-product__content-bottom
 				div.card-product__content-bottom-left
-					+rate-btn({value: 4, disabled: true})
+					+rate-btn({
+						value: options.rating, 
+						disabled: true
+					})
 				div.card-product__content-bottom-right
-					span.card-product__reviews-count-number 145
+					span.card-product__reviews-count-number #{options.count_reviews}
 					span.card-product__reviews-count-text  Отзывов
