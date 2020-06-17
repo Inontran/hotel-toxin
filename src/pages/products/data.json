@@ -1,0 +1,44 @@
+{
+	"cards":[
+		{
+			"gallery": [
+				"@/pages/products/img/image-1.jpg",
+				"@/pages/products/img/image-2.jpg",
+				"@/pages/products/img/image-3.jpg",
+				"@/pages/products/img/image-4.jpg"
+			],
+			"room_number": "100",
+			"price": "9 900₽",
+			"price_time": "в сутки",
+			"count_reviews": "145",
+			"rating": "4"
+		},
+		{
+			"gallery": [
+				"@/pages/products/img/image-1.jpg",
+				"@/pages/products/img/image-2.jpg",
+				"@/pages/products/img/image-3.jpg",
+				"@/pages/products/img/image-4.jpg"
+			],
+			"room_number": "101",
+			"price": "11 000₽",
+			"price_time": "в день",
+			"count_reviews": "1",
+			"rating": "5",
+			"room_type": "Люкс"
+		},
+		{
+			"gallery": [
+				"@/pages/products/img/image-1.jpg",
+				"@/pages/products/img/image-2.jpg",
+				"@/pages/products/img/image-3.jpg",
+				"@/pages/products/img/image-4.jpg"
+			],
+			"room_number": "102",
+			"price": "111 000₽",
+			"price_time": "в неделю",
+			"count_reviews": "145",
+			"rating": "4"
+		}
+	]
+}
