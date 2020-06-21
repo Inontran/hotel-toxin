@@ -40,5 +40,6 @@
 			"count_reviews": "145",
 			"rating": "4"
 		}
-	]
+	],
+	"test": "@/pages/products/img/image-4.jpg"
 }

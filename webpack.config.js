@@ -16,6 +16,7 @@ const autoprefixer = require('autoprefixer');
 const ExtractTextPlugin = require('extract-text-webpack-plugin');
 const ProvidePlugin = require('webpack-provide-global-plugin');
 const MomentLocalesPlugin = require('moment-locales-webpack-plugin');
+const crypto = require('crypto');
 
 const isDev = process.env.NODE_ENV === 'development';
 const isProd = process.env.NODE_ENV === 'production';
@@ -36,12 +37,122 @@ fs
     pages.push(file.split('/', 2));
 	});
 
+
+function makeHash(path) {
+	var hashFile = '';
+	// const fileStream = fs.ReadStream(path);
+	// const hash = crypto.createHash('md5');
+	// fileStream.on('data', function(data) {
+	// 	hash.update(data);
+	// });
+	// fileStream.on('end', function() {
+	// 	hashFile = hash.digest('hex');
+	// });
+
+	const fileStream = fs.readFileSync(path);
+	const hash = crypto.createHash('md5');
+	hash.update(fileStream);
+	hashFile = hash.digest('hex');
+
+	return hashFile;
+}
+
+function getFileName(path) {
+	return path.split('\\').pop().split('/').pop();
+}
+
+function appendHashFileName(name, hash){
+	var name_new = name.split('.');
+			name_new[0] += '.' + hash;
+			name_new = name_new.join('.');
+	return name_new;
+}
+
+function changePath(path){
+	console.log('----------------')
+	console.log(path);
+	var hasFile = makeHash( path.replace(/@/, PATHS.src) );
+	var filename = getFileName(path);
+	var name_hash = appendHashFileName(filename, hasFile);
+	path = path.replace(filename, name_hash);
+	if( isProd ){
+		path = path.replace(/@/, PATHS.dist + '/img');
+	} else{
+		path = path.replace(/@/, 'img');
+	}
+	console.log(path);
+	console.log('----------------')
+	return path;
+}
+
+function iteratorArray(arr){
+	var toString = {}.toString;  // для получение типа объекта
+	for (var i = 0; i < arr.length; i++){
+		if( toString.call(arr[i]) === '[object Object]' ){
+			arr[i] = iteratorAllProp(arr[i]);
+		}
+		if( toString.call(arr[i]) === '[object String]' ){
+			if( arr[i].includes('@/') ){
+				arr[i] = changePath(arr[i]);
+			}
+		}
+	}
+	return arr;
+}
+
+function iteratorAllProp(obj){
+	var toString = {}.toString;  // для получение типа объекта
+
+	for(var prop in obj){
+		console.log(prop + ' ; ' + toString.call(obj[prop]));
+		if( toString.call(obj[prop]) === '[object Object]' ){
+			obj[prop] = iteratorAllProp(obj[prop]);
+		}
+		if( toString.call(obj[prop]) === '[object Array]' ){
+			obj[prop] = iteratorArray(obj[prop]);
+		}
+		if( toString.call(obj[prop]) === '[object String]' ){
+			if( obj[prop].includes('@/') ){
+				obj[prop] = changePath(obj[prop]);
+			}
+		}
+	}
+
+	return obj;
+}
+
+
 const htmlPlugins = pages.map(fileName => new HtmlWebpackPlugin({
 	getData: () => {
 		try {
-			return JSON.parse(fs.readFileSync(`./src/pages/${fileName}/data.json`, 'utf8'));
+			var data_obj = JSON.parse(fs.readFileSync(`./src/pages/${fileName}/data.json`, 'utf8'));
+			try {
+				console.log(fileName + '  =======================================');
+				// for(var prop in data_obj){
+				// 	if( typeof data_obj[prop] === 'string' ){
+				// 		if( data_obj[prop].includes('@/') ){
+				// 			console.log(data_obj[prop]);
+				// 			var hasFile = makeHash( data_obj[prop].replace(/@/, PATHS.src) );
+				// 			var filename = getFileName(data_obj[prop]);
+				// 			var name_hash = appendHashFileName(filename, hasFile);
+				// 			data_obj[prop] = data_obj[prop].replace(filename, name_hash);
+				// 			data_obj[prop] = data_obj[prop].replace(/@/, PATHS.dist + '/img');
+				// 			// data_obj[prop] = PATHS.dist + '/img' + data_obj[prop];
+				// 			console.log(data_obj[prop]);
+				// 		}
+				// 	}
+				// }
+				data_obj = iteratorAllProp(data_obj);
+				console.log('=======================================');
+				// console.log(data_obj);
+			} catch (error) {
+				console.log(error);
+			}
+
+			return data_obj;
 		} catch (e) {
-			console.warn(`data.json was not provided for page ${fileName}`);
+			console.warn(`data.json was not provided for page ${fileName}, because `);
+			console.warn(e);
 			return {};
 		}
 	},
@@ -52,6 +163,9 @@ const htmlPlugins = pages.map(fileName => new HtmlWebpackPlugin({
 	hash: true,
 	minify:{
 		collapseWHiteSpace: isProd
+	},
+	getPaths: () => {
+		return PATHS;
 	}
 }));
 
@@ -84,11 +198,11 @@ const plugins = () =>{
 			// 	from: `${PATHS.src}/theme/fonts`, 
 			// 	to: `${PATHS.dist}/fonts`
 			// },
-			// {
-			// 	from: `${PATHS.src}/**/*.+(png|jpg|svg|gif)`,
-			// 	to: `${PATHS.dist}/images/`,
-			// 	// to: `${PATHS.dist}/images/[name].[ext]`,
-			// }
+			{
+				from: `${PATHS.src}/**/*.+(png|jpg|svg|gif)`,
+				// to: `${PATHS.dist}/images/`,
+				to: `${PATHS.dist}/img/[path][name].[hash].[ext]`,
+			}
 		]),
 		new MiniCssExtractPlugin( filename('css') ),
 		new webpack.ProvidePlugin({
@@ -160,7 +274,7 @@ module.exports = {
 				exclude: `${PATHS.src}/theme/fonts/`,
 				loader: 'file-loader',
 				options: {
-					name: 'img/[path]/[name].[hash].[ext]'
+					name: 'img/[path][name].[hash].[ext]'
 				},
 			},
 			{

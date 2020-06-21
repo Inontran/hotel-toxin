@@ -26,19 +26,16 @@ block content
 				div.products__center-column
 					h1.products_mb20 Номера, которые мы для вас подобрали
 					div.products__cards-container.products_mb20
-						each val, index in data.cards
-							//- - var gallery_paths = []
-							//- each path in val.gallery
-							//- 	- gallery_paths += require(path).default
+						each data_card in data.cards
 							div.products__card-wrapper.products_mb20
 								+card-product({
-									gallery: val.gallery,
-									room_number: val.room_number,
-									room_type: val.room_type,
-									price: val.price,
-									price_time: val.price_time,
-									count_reviews: val.count_reviews,
-									room_type: val.room_type,
+									gallery: data_card.gallery ? data_card.gallery : false,
+									room_number: data_card.room_number ? data_card.room_number : false,
+									room_type: data_card.room_type ? data_card.room_type : false,
+									price: data_card.price ? data_card.price : false,
+									price_time: data_card.price_time ? data_card.price_time : false,
+									count_reviews: data_card.count_reviews ? data_card.count_reviews : false,
+									room_type: data_card.room_type ? data_card.room_type : false,
 								})
 					div.products__pagination-wrapper
 						+pagination({page: 1, perpage: 12, elements: 175, text: "вариантов аренды"})
