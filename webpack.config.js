@@ -75,11 +75,7 @@ function changePath(path){
 	var filename = getFileName(path);
 	var name_hash = appendHashFileName(filename, hasFile);
 	path = path.replace(filename, name_hash);
-	if( isProd ){
-		path = path.replace(/@/, PATHS.dist + '/img');
-	} else{
-		path = path.replace(/@/, 'img');
-	}
+	path = path.replace(/@/, 'img');
 	console.log(path);
 	console.log('----------------')
 	return path;
