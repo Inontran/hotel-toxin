@@ -41,5 +41,78 @@
 			"rating": "4"
 		}
 	],
-	"test": "@/pages/products/img/image-4.jpg"
+
+	"filter_options":{
+		"option_dropdown_dates":{
+			"custom_content": true,
+			"classes": "dropdown_dates",
+			"input_params":{
+				"label": "Даты пребывания в отеле",
+				"readonly": true,
+				"classes": "input_result-dates"
+			}
+		},
+
+		"option_dropdown_dates_datepicker":{
+			"classes": "air-datepicker_inline"
+		},
+
+		"option_dropdown_people":{
+			"classes": "dropdown_simple",
+			"input_params":{
+				"label": "Гости",
+				"readonly": true
+			},
+			"array_counter": [
+				{"label": "Взрослые", "input_name": ""},
+				{"label": "Дети", "input_name": ""},
+				{"label": "Младенцы", "input_name": ""}
+			]
+		},
+
+		"option_slider_range":{
+			"label": "Диапозон цены", 
+			"min": 0, 
+			"max": 15000, 
+			"val1": 5000, 
+			"val2": 10000,
+			"text_bottom": "Стоимость за сутки пребывания в номере"
+		},
+
+		"checkboxes_title": "Checkbox buttons",
+		"checkboxes":[
+			{"text": "Можно курить"},
+			{"text": "Можно с питомцами", "checked": true},
+			{"text": "Можно пригласить гостей (до 10 человек)", "checked": true}
+		],
+
+		"checkboxes_big_title": "Доступность",
+		"checkboxes_big":[
+			{"text": "Ширина коридоров в номере не менее 91 см.", "checked": true, "title": "Широкий коридор"},
+			{"text": "На 1 этаже вас встретит специалист  и проводит до номера.", "title": "Помощник для инвалидов"}
+		],
+
+		"option_dropdown_feature": {
+			"classes": "dropdown_simple",
+			"input_params":{
+				"label": "Удобства номера",
+				"readonly": true
+			},
+			"array_counter": [
+				{"label": "Спальни", "input_name": ""},
+				{"label": "Кровати", "input_name": ""},
+				{"label": "Ванные комнаты", "input_name": ""}
+			]
+		},
+		
+		"collapse_feature_options": {
+			"text": "Дополнительные удобства", 
+			"group": "collapse-group-1"
+		},
+		"collapse_feature_checkboxes":[
+			{"text": "Можно курить"},
+			{"text": "Можно курить2"},
+			{"text": "Можно курить3"}
+		]
+	}
 }
