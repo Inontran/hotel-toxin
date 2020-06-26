@@ -1,0 +1,7 @@
+{
+	"gallery": [
+		"@/pages/product/img/image-1.jpg",
+		"@/pages/product/img/image-2.jpg",
+		"@/pages/product/img/image-3.jpg"
+	]
+}

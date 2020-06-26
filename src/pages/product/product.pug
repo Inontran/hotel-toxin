@@ -1,0 +1,91 @@
+extends ../base/base.pug
+
+include ../../components/form-booking/form-booking
+include ../../components/infographics/infographics
+include ../../components/review/review
+include ../../components/list/list
+
+block title
+	| Номер 122 Toxin Hotel
+
+block content
+	- data = htmlWebpackPlugin.options.getData()
+
+	div.product
+		+header({
+			menuItems: data_header.menuItems, 
+			button_login_text: data_header.login_text,
+			button_login_href: data_header.login_href,
+			button_reg_text: data_header.reg_text,
+			button_reg_href: data_header.reg_href
+		})
+
+		div.product__gallery
+			if !data.gallery[0]
+				- data.gallery[0] = ''
+			if !data.gallery[1]
+				- data.gallery[1] = ''
+			if !data.gallery[2]
+				- data.gallery[2] = ''
+			div.product__gallery-item.product__gallery-item_first(style="background-image: url(" + data.gallery[0] + ");")
+			div.product__gallery-item.product__gallery-item_second(style="background-image: url(" + data.gallery[1] + ");")
+			div.product__gallery-item.product__gallery-item_third(style="background-image: url(" + data.gallery[2] + ");")
+
+		div.product__body
+			div.product__body-col-1
+				div.product__grid-3.product_mb40
+					div.product__grid-3-col-1
+						h2.product__title Сведения о номере
+						+infographics({items: [
+							{	src: require("@/components/infographics/img/insert_emoticon.svg").default, 
+								title: "Комфорт", 
+								text: "Шумопоглощающие стены",
+								line: true
+							},
+							{	src: require("@/components/infographics/img/location_city.svg").default, 
+								title: "Удобство", 
+								text: "Окно в каждой из спален",
+								line: true
+							},
+							{	src: require("@/components/infographics/img/whatshot.svg").default, 
+								title: "Уют", 
+								text: "Номер оснащен камином"
+							}
+						]})
+					div.product__grid-3-col-2
+						h2.product__title Впечетления от номера
+				
+				div.product_mb40
+					h2.product__title Отзывы посетителей номера
+					div.product_mb20
+						+review({
+							avatar: require("@/components/review/img/photo-example.jpg").default,
+							isLike: true,
+							count_like: 12,
+							username: "Мурад Сарафанов",
+							time_later: "5 дней назад",
+							text_review: "Великолепный матрас на кровати в основной спальне! А пуфик вообще потрясающий. И стены, действительно, шумоподавляющие. Выкрикивал комплименты повару — никто не жаловался из соседей."
+						})
+					div.product_mb20
+						+review({
+							avatar: require("@/components/review/img/photo-example.jpg").default,
+							count_like: 2,
+							username: "Патрисия Стёклышкова",
+							time_later: "Неделю назад",
+							text_review: "Обслуживание на высоте! Всё аккуратно, чисто. Завтраки в номер советую заказать, каждый день новое блюдо и десерт как комплимент"
+						})
+
+				div.product__grid-3
+					div.product__grid-3-col-1
+						h2.product__title Правила
+						+list({items: [
+							"Нельзя с питомцами", 
+							"Без вечеринок и мероприятий", 
+							"Время прибытия — после 13:00, а выезд до 12:00"
+						]})
+					div.product__grid-3-col-2
+						h2.product__title Отмена
+						p.product__text Бесплатная отмена в течение 48 ч. После этого при отмене не позднее чем за 5 дн. до прибытия вы получите полный возврат за вычетом сбора за услуги.
+
+			div.product__body-col-2
+				+form-booking()
