@@ -35,57 +35,30 @@ block content
 			div.product__body-col-1
 				div.product__grid-3.product_mb40
 					div.product__grid-3-col-1
-						h2.product__title Сведения о номере
-						+infographics({items: [
-							{	src: require("@/components/infographics/img/insert_emoticon.svg").default, 
-								title: "Комфорт", 
-								text: "Шумопоглощающие стены",
-								line: true
-							},
-							{	src: require("@/components/infographics/img/location_city.svg").default, 
-								title: "Удобство", 
-								text: "Окно в каждой из спален",
-								line: true
-							},
-							{	src: require("@/components/infographics/img/whatshot.svg").default, 
-								title: "Уют", 
-								text: "Номер оснащен камином"
-							}
-						]})
+						if data.options_infographics
+							h2.product__title Сведения о номере
+							+infographics(data.options_infographics)
 					div.product__grid-3-col-2
 						h2.product__title Впечетления от номера
 				
-				div.product_mb40
-					h2.product__title Отзывы посетителей номера
-					div.product_mb20
-						+review({
-							avatar: require("@/components/review/img/photo-example.jpg").default,
-							isLike: true,
-							count_like: 12,
-							username: "Мурад Сарафанов",
-							time_later: "5 дней назад",
-							text_review: "Великолепный матрас на кровати в основной спальне! А пуфик вообще потрясающий. И стены, действительно, шумоподавляющие. Выкрикивал комплименты повару — никто не жаловался из соседей."
-						})
-					div.product_mb20
-						+review({
-							avatar: require("@/components/review/img/photo-example.jpg").default,
-							count_like: 2,
-							username: "Патрисия Стёклышкова",
-							time_later: "Неделю назад",
-							text_review: "Обслуживание на высоте! Всё аккуратно, чисто. Завтраки в номер советую заказать, каждый день новое блюдо и десерт как комплимент"
-						})
+				if data.reviews
+					div.product_mb40
+						h2.product__title Отзывы посетителей номера
+						each val, index in data.reviews
+							div.product_mb20
+								+review(val)
 
 				div.product__grid-3
 					div.product__grid-3-col-1
-						h2.product__title Правила
-						+list({items: [
-							"Нельзя с питомцами", 
-							"Без вечеринок и мероприятий", 
-							"Время прибытия — после 13:00, а выезд до 12:00"
-						]})
+						if data.rules_title
+							h2.product__title #{data.rules_title}
+						if data.options_rules
+							+list(data.options_rules)
 					div.product__grid-3-col-2
-						h2.product__title Отмена
-						p.product__text Бесплатная отмена в течение 48 ч. После этого при отмене не позднее чем за 5 дн. до прибытия вы получите полный возврат за вычетом сбора за услуги.
+						if data.cancel_title
+							h2.product__title #{data.cancel_title}
+						if data.cancel_text
+							p.product__text #{data.cancel_text}
 
 			div.product__body-col-2
 				+form-booking()
