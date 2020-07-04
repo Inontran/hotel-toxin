@@ -7,7 +7,9 @@
 	&__up{
 		display: grid;
 		grid-template-areas: 'col1 col2 col3 col4 col5';
-		grid-template-columns: 3fr 2fr 2fr 2fr 3fr;		
+		// grid-template-columns: 3fr 2fr 2fr 2fr 3fr;	
+		// grid-template-columns: 260px 160px 160px 160px 260px;
+		grid-auto-columns: repeat(auto, 5);
 		grid-gap: 0 $gutter;
 		padding: 100px 0;
 	}
@@ -15,37 +17,40 @@
 	&__container{
 		max-width: $max_width_container;
 		margin: 0 auto;
-		padding: 0 $gutter/2;
+		padding: 0 10px;
 	}
 
 	&__col1{
 		grid-area: col1;
+		max-width: 260px;
 	}
 	&__col2{
 		grid-area: col2;
+		max-width: 160px;
 	}
 	&__col3{
 		grid-area: col3;
+		max-width: 160px;
 	}
 	&__col4{
 		grid-area: col4;
+		max-width: 160px;
 	}
 	&__col5{
 		grid-area: col5;
+		max-width: 260px;
 	}
 
-	&_mb21{
-		margin-bottom: 21px;
-	}
-	
-	&_mb20{
-		margin-bottom: 20px;
+	&__subtitle{
+		margin-top: 4px;
+		margin-bottom: 23px;
 	}
 
 	&__list{
 		.item{
 			list-style: none;
 			margin-bottom: 21px;
+			line-height: 1.21;
 			
 			.link{
 				text-decoration: none;
@@ -65,17 +70,6 @@
 		justify-content: space-between;
 	}
 
-	&_desktop{
-		@media(max-width: $md+1 ){
-			display: none;
-		}
-	}
-	&_mobile{
-		@media(min-width: $md+1 ){
-			display: none;
-		}
-	}
-
 	&__container-mobile{
 		padding: 100px 0;
 		text-align: center;
@@ -84,6 +78,33 @@
 
 		.text{
 			padding: 20px 0 25px;
+		}
+	}
+
+	&__text{
+		color: $dark75;
+	}
+
+	&_mb21{
+		margin-bottom: 21px;
+	}
+	
+	&_mb20{
+		margin-bottom: 20px;
+	}
+
+	&_mt4{
+		margin-top: 4px;
+	}
+
+	&_desktop{
+		@media(max-width: $md+1 ){
+			display: none;
+		}
+	}
+	&_mobile{
+		@media(min-width: $md+1 ){
+			display: none;
 		}
 	}
 }

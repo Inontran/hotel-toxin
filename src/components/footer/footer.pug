@@ -14,35 +14,36 @@ mixin footer(options)
 		div.footer__container.footer_desktop
 			div.footer__up
 				div.footer__col1
-					+logo().footer_mb21
-					p #{options.text1}
+					div.footer_mb20(style="display: flex;")
+						+logo()
+					div.footer__text #{options.text1}
 				
 				div.footer__col2
-					h3.footer__subtitle.footer_mb21 #{options.menuItems[0].subtitle}
+					h3.footer__subtitle #{options.menuItems[0].subtitle}
 					nav.footer__list
 						each val, index in options.menuItems[0].items
-							li.item.footer_mb20
+							li.item
 								a.link(href = val.href)= val.name
 					
 				div.footer__col3
-					h3.footer__subtitle.footer_mb21 #{options.menuItems[1].subtitle}
+					h3.footer__subtitle #{options.menuItems[1].subtitle}
 					nav.footer__list
 						each val, index in options.menuItems[1].items
-							li.item.footer_mb20
+							li.item
 								a.link(href = val.href)= val.name
 				
 				div.footer__col4
-					h3.footer__subtitle.footer_mb21 #{options.menuItems[2].subtitle}
+					h3.footer__subtitle #{options.menuItems[2].subtitle}
 					nav.footer__list
 						each val, index in options.menuItems[2].items
-							li.item.footer_mb20
+							li.item
 								a.link(href = val.href)= val.name
 				
 				div.footer__col5
 					if options.title_subscribe
-						h3.footer__subtitle.footer_mb21 #{options.title_subscribe}
+						h3.footer__subtitle #{options.title_subscribe}
 					if options.text2
-						p.footer_mb20 #{options.text2}
+						div.footer__text.footer_mb20 #{options.text2}
 					form(action="", method="post")
 						+input({subscription: true, placeholder: 'Email'})
 
@@ -57,5 +58,5 @@ mixin footer(options)
 			div.footer__container-mobile
 				+logo().footer_mb20
 				if options.text1
-					p.text #{options.text1}
+					div.footer__text #{options.text1}
 				+social-nets()

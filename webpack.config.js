@@ -40,15 +40,6 @@ fs
 
 function makeHash(path) {
 	var hashFile = '';
-	// const fileStream = fs.ReadStream(path);
-	// const hash = crypto.createHash('md5');
-	// fileStream.on('data', function(data) {
-	// 	hash.update(data);
-	// });
-	// fileStream.on('end', function() {
-	// 	hashFile = hash.digest('hex');
-	// });
-
 	const fileStream = fs.readFileSync(path);
 	const hash = crypto.createHash('md5');
 	hash.update(fileStream);
@@ -69,15 +60,15 @@ function appendHashFileName(name, hash){
 }
 
 function changePath(path){
-	console.log('----------------')
-	console.log(path);
+	// console.log('----------------');
+	// console.log(path);
 	var hasFile = makeHash( path.replace(/@/, PATHS.src) );
 	var filename = getFileName(path);
 	var name_hash = appendHashFileName(filename, hasFile);
 	path = path.replace(filename, name_hash);
 	path = path.replace(/@/, 'img');
-	console.log(path);
-	console.log('----------------')
+	// console.log(path);
+	// console.log('----------------');
 	return path;
 }
 
@@ -100,7 +91,7 @@ function iteratorAllProp(obj){
 	var toString = {}.toString;  // для получение типа объекта
 
 	for(var prop in obj){
-		console.log(prop + ' ; ' + toString.call(obj[prop]));
+		// console.log(prop + ' ; ' + toString.call(obj[prop]));
 		if( toString.call(obj[prop]) === '[object Object]' ){
 			obj[prop] = iteratorAllProp(obj[prop]);
 		}
@@ -123,23 +114,9 @@ const htmlPlugins = pages.map(fileName => new HtmlWebpackPlugin({
 		try {
 			var data_obj = JSON.parse(fs.readFileSync(`./src/pages/${fileName}/data.json`, 'utf8'));
 			try {
-				console.log(fileName + '  =======================================');
-				// for(var prop in data_obj){
-				// 	if( typeof data_obj[prop] === 'string' ){
-				// 		if( data_obj[prop].includes('@/') ){
-				// 			console.log(data_obj[prop]);
-				// 			var hasFile = makeHash( data_obj[prop].replace(/@/, PATHS.src) );
-				// 			var filename = getFileName(data_obj[prop]);
-				// 			var name_hash = appendHashFileName(filename, hasFile);
-				// 			data_obj[prop] = data_obj[prop].replace(filename, name_hash);
-				// 			data_obj[prop] = data_obj[prop].replace(/@/, PATHS.dist + '/img');
-				// 			// data_obj[prop] = PATHS.dist + '/img' + data_obj[prop];
-				// 			console.log(data_obj[prop]);
-				// 		}
-				// 	}
-				// }
+				// console.log(fileName + '  =======================================');
 				data_obj = iteratorAllProp(data_obj);
-				console.log('=======================================');
+				// console.log('=======================================');
 				// console.log(data_obj);
 			} catch (error) {
 				console.log(error);
