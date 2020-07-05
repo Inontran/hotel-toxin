@@ -106,7 +106,8 @@
 		justify-content: space-between;
 	}
 
-	&__counter-label{
+	&__counter-label,
+	&__counter-input{
 		font-weight: 700;
 		font-size: calc_rem(12);
 		text-transform: uppercase;

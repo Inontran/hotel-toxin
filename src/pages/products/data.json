@@ -11,7 +11,7 @@
 			"price": "9 900₽",
 			"price_time": "в сутки",
 			"count_reviews": "145",
-			"rating": "4"
+			"rating": "5"
 		},
 		{
 			"gallery": [
@@ -24,7 +24,7 @@
 			"price": "11 000₽",
 			"price_time": "в день",
 			"count_reviews": "1",
-			"rating": "5",
+			"rating": "4",
 			"room_type": "Люкс"
 		},
 		{
@@ -38,7 +38,7 @@
 			"price": "111 000₽",
 			"price_time": "в неделю",
 			"count_reviews": "145",
-			"rating": "4"
+			"rating": "3"
 		}
 	],
 

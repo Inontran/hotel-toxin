@@ -26,6 +26,7 @@
 			border: 0;
 			align-items: center;
 			padding: 0;
+			margin-bottom: 24px;
 		}
 
 		&--nav-action{
@@ -64,6 +65,7 @@
 		}
 
 		&--nav-title{
+			font-family: 'Quicksand', 'Open Sans', sans-serif;
 			font-weight: 700;
 			font-size: calc_rem(19);
 			color: $dark;

@@ -8,9 +8,32 @@
 	overflow: hidden;
 
 	&__gallery{
+		position: relative;
 		width: 100%;
 
 		.owl-carousel{
+			&:after,
+			&:before{
+				content: '';
+				position: absolute;
+				top: 0;
+				left: 0;
+				width: 42px;
+				height: 100%;
+				z-index: 1;
+				background: linear-gradient(90deg, rgba(0, 0, 0, 0.5) 0%, rgba(0, 0, 0, 0) 99.99%, rgba(255, 255, 255, 0) 100%);
+
+				@media(min-width: $md){
+					opacity: 0;
+					transition: opacity .2s;
+				}
+			}
+			&:before{
+				left: auto;
+				right: 0;
+				transform: rotate(180deg);
+			}
+			
 			.owl-nav{
 				position: absolute;
 				top: 50%;
@@ -18,6 +41,11 @@
 				left: 0;
 				z-index: 2;
 				width: 100%;
+
+				@media(min-width: $md){
+					opacity: 0;
+					transition: opacity .2s;
+				}
 
 				.owl-prev, .owl-next{
 					display: flex;
@@ -73,8 +101,14 @@
 					}
 				}
 			}
+		}
 
-			
+		&:hover{
+			.owl-carousel:after,
+			.owl-carousel:before,
+			.owl-nav{
+				opacity: 1;
+			}
 		}
 	}
 

@@ -56,7 +56,8 @@ mixin footer(options)
 
 		div.footer__container.footer_mobile
 			div.footer__container-mobile
-				+logo().footer_mb20
+				div.footer_mb18(style="display: flex; justify-content: center;")
+					+logo()
 				if options.text1
-					div.footer__text #{options.text1}
+					div.footer__text.footer_mb28 #{options.text1}
 				+social-nets()
