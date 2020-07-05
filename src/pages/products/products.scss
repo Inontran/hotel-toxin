@@ -10,7 +10,7 @@
 
 	& &__grid{
 		display: grid;
-		grid-column-gap: 60px;
+		grid-column-gap: 59px;
 		grid-template-columns: 266px calc(100% - 326px);
 	}
 
@@ -26,12 +26,16 @@
 
 	& &__card-wrapper{
 		padding: 0 6px;
-		flex: 1 1 33%;
-		max-width: 33%;
+		flex: 1 1 33.3333333%;
+		max-width: 33.3333333%;
 	}
 
 	& &_mb20{
 		margin-bottom: 20px;
+	}
+
+	& &_mb23{
+		margin-bottom: 23px;
 	}
 
 	& &__pagination-wrapper{

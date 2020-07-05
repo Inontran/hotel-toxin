@@ -81,8 +81,8 @@
 
 			.owl-dots{
 				position: absolute;
-				right: 15px;
-				bottom: 15px;
+				right: 13px;
+				bottom: 14px;
 				z-index: 1;
 				margin: 0 -2px;
 				display: flex;
@@ -120,7 +120,7 @@
 	}
 
 	&__content{
-		padding: 20px;
+		padding: 17px 20px;
 	}
 
 	&__content-top{
@@ -143,7 +143,7 @@
 		}
 
 		&-left, &-right{
-			padding: 0 5px 10px;
+			padding: 0 5px 6px;
 		}
 
 		&-left{
@@ -170,6 +170,7 @@
 
 		&-right{
 			color: $dark50;
+			margin-bottom: 3px;
 		}
 
 		&-price{
@@ -193,7 +194,7 @@
 		&-left, &-right{
 			margin-left: 5px;
 			margin-right: 5px;
-			line-height: 1;
+			line-height: 1.2857;
 		}
 	}
 

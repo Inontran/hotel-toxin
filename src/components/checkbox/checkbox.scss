@@ -50,7 +50,8 @@
 		font-size: calc_rem(14);
 		font-weight: 700;
 		color: $dark75;
-		margin-bottom: 2px;
+		margin: 2px 0 5px;
+		line-height: 1.2857;
 	}
 
 	&__text{
@@ -58,5 +59,11 @@
 		font-size: calc_rem(14);
 		color: $dark50;
 		padding-top: 3px;
+	}
+
+	&__text-small{
+		line-height: 1.16;
+		font-size: calc_rem(12);
+		color: $dark50;
 	}
 }

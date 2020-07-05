@@ -70,9 +70,9 @@ mixin filter-products(options)
 			//- div.filter-products_mb10
 			//- 	+checkbox({text: "Можно пригласить гостей (до 10 человек)", checked: true})
 		if options.checkboxes
-			div.filter-products_mb30
+			div.filter-products_mb31
 				if options.checkboxes_title
-					h3.filter-products_mb16 #{options.checkboxes_title}
+					h3.filter-products_mb13 #{options.checkboxes_title}
 				each val, index in options.checkboxes
 						div.filter-products_mb10
 							+checkbox(val)
@@ -87,7 +87,7 @@ mixin filter-products(options)
 			div.filter-products_mb30
 				if options.checkboxes_big_title
 					h3.filter-products_mb16 #{options.checkboxes_big_title}
-				each val, index in options.checkboxes
+				each val, index in options.checkboxes_big
 					div.filter-products_mb10
 						+checkbox(val)
 
@@ -119,5 +119,5 @@ mixin filter-products(options)
 		if options.collapse_feature_options
 			+collapse(options.collapse_feature_options)
 				each val, index in options.collapse_feature_checkboxes
-					div.guide-page__mb10
+					div.filter-products_mb10
 						+checkbox(val)

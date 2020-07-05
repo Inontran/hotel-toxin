@@ -7,9 +7,6 @@ mixin checkbox(options)
 	if !options.text
 		- options.text = ''
 
-	if !options.title
-		- options.title = ''
-
 	if !options.classes
 		- options.classes = ''
 	
@@ -35,5 +32,7 @@ mixin checkbox(options)
 		div.checkbox__text-wrapper
 			if options.title
 				p.checkbox__title #{options.title}
-			if options.text
-				p.checkbox__text #{options.text}
+				p.checkbox__text-small #{options.text}
+			else
+				if options.text
+					p.checkbox__text #{options.text}
