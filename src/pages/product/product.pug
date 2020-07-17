@@ -4,6 +4,7 @@ include ../../components/form-booking/form-booking
 include ../../components/infographics/infographics
 include ../../components/review/review
 include ../../components/list/list
+include ../../components/chart/chart
 
 block title
 	| Номер 122 Toxin Hotel
@@ -40,6 +41,7 @@ block content
 							+infographics(data.options_infographics)
 					div.product__grid-3-col-2
 						h2.product__title Впечетления от номера
+						+chart()
 				
 				if data.reviews
 					div.product_mb40

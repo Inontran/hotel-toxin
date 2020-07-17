@@ -1,0 +1,15 @@
+
+
+mixin chart(options)
+	if !options
+		- options = {}
+
+	if !options.classes
+		- options.classes = ''
+
+	if !options.id
+		- options.id = ''
+
+	
+	div.chart
+		div.chart__picture
