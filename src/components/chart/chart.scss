@@ -1,5 +1,48 @@
 @import '@/theme/variables.scss';
 
 .chart{
-	
+	&__container{
+		display: flex;
+		align-items: flex-end;
+	}
+
+	&__wrapper{
+		max-width: 120px;
+	}
+
+	&__legend{
+
+		&-item{
+			display: flex;
+			align-items: flex-start;
+			line-height: 1.5;
+		}
+		
+		&-icon{
+			overflow: hidden;
+			width: calc_rem(10);
+			height: calc_rem(10);
+			border-radius: 100vh;
+			margin-right: 5px;
+			margin-top: 4px;
+
+			&_1{
+				background: $gradient3;
+			}
+			&_2{
+				background: $gradient2;
+			}
+			&_3{
+				background: $gradient1;
+			}
+			&_4{
+				background: $gradient4;
+			}
+		}
+
+		&-text{
+			font-size: calc_rem(14);
+			color: $dark75;
+		}
+	}
 }

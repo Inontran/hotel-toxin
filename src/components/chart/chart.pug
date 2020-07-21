@@ -12,4 +12,19 @@ mixin chart(options)
 
 	
 	div.chart
-		div.chart__picture
+		div.chart__container
+			div.chart__wrapper
+				canvas.chart__picture#myChart
+			div.chart__legend
+				div.chart__legend-item
+					span.chart__legend-icon.chart__legend-icon_1
+					span.chart__legend-text Великолепно
+				div.chart__legend-item
+					span.chart__legend-icon.chart__legend-icon_2
+					span.chart__legend-text Хорошо
+				div.chart__legend-item
+					span.chart__legend-icon.chart__legend-icon_3
+					span.chart__legend-text Удовлетворительно
+				div.chart__legend-item
+					span.chart__legend-icon.chart__legend-icon_4
+					span.chart__legend-text Разочарован
