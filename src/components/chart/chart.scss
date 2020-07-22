@@ -4,13 +4,24 @@
 	&__container{
 		display: flex;
 		align-items: flex-end;
+		position: relative;
 	}
 
 	&__wrapper{
-		max-width: 120px;
+		width: 240px;
+		position: relative;
+		z-index: 1;
+		margin-right: -91px;
+	}
+
+	&__picture{
+		margin: 0 -60px;
 	}
 
 	&__legend{
+		// position: absolute;
+		// bottom: 0;
+		// right: 0;
 
 		&-item{
 			display: flex;

@@ -1,4 +1,6 @@
-import * as $ from 'jquery';
+import $ from 'jquery';
+import jquery from 'jquery';
+
 import 'normalize.css';
 
 import './theme/global.scss';

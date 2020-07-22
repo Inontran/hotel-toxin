@@ -24,9 +24,9 @@ var options = {
 	layout: {
 		padding: {
 			left: 0,
-			// right: 0,
+			right: 0,
 			top: 0,
-			// bottom: 0
+			bottom: 0
 		}
 	},
 	legend: {
@@ -43,10 +43,14 @@ var options = {
 	cutoutPercentage: 90
 };
 
-var ctx = document.getElementById('myChart');
+$(document).ready(function(){
+	if( $('#myChart').length ){
+		var ctx = document.getElementById('myChart');
 
-var myDoughnutChart = new Chart(ctx, {
-	type: 'doughnut',
-	data: data,
-	options: options
+		var myDoughnutChart = new Chart(ctx, {
+			type: 'doughnut',
+			data: data,
+			options: options
+		});
+	}
 });
