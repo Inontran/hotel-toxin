@@ -47,3 +47,9 @@ $max_width_container: 1180px;
 	$result: #{$val_px / $font-size-base + 'rem'};
 	@return $result;
 }
+
+
+@function devide($num1, $num2){
+	$result: $num1 / $num2;
+	@return $result;
+}

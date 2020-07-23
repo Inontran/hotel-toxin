@@ -22,8 +22,8 @@ $.COLORS = {
 };
 
 $.GRADIENTS = {
-	$gradient1: 'linear-gradient(180deg, #{$purple} 0%, #8BA4F9 100%)',
-	$gradient2: 'linear-gradient(180deg, #{$green} 0%, #66D2EA 100%)',
+	$gradient1: 'linear-gradient(180deg, ' + $.COLORS.purple + ' 0%, #8BA4F9 100%)',
+	$gradient2: 'linear-gradient(180deg, ' + $.COLORS.green + ' 0%, #66D2EA 100%)',
 	$gradient3: 'linear-gradient(180deg, #FFE39C 0%, #FFBA9C 100%)',
 	$gradient4: 'linear-gradient(180deg, #919191 0%, #3D4975 100%)',
 };

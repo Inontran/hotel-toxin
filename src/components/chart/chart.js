@@ -1,13 +1,30 @@
 import Chart from 'chart.js';
 
+var ctx = document.getElementById('myChart').getContext('2d');
+var gradient1 = ctx.createLinearGradient(0, 0, 0, 180);
+gradient1.addColorStop(0, $.COLORS.purple);   
+gradient1.addColorStop(1, '#8BA4F9');
+
+var gradient2 = ctx.createLinearGradient(0, 0, 0, 180);
+gradient2.addColorStop(0, $.COLORS.green);   
+gradient2.addColorStop(1, '#66D2EA');
+
+var gradient3 = ctx.createLinearGradient(0, 0, 0, 180);
+gradient3.addColorStop(0, '#FFE39C');   
+gradient3.addColorStop(1, '#FFBA9C');
+
+var gradient4 = ctx.createLinearGradient(0, 0, 0, 180);
+gradient4.addColorStop(0, '#919191');   
+gradient4.addColorStop(1, '#3D4975');
+
 var data = {
 	datasets: [{
 		data: [10, 20, 30, 34],
 		backgroundColor: [
-			'rgba(255, 99, 132, 0.5)',
-			'rgba(54, 162, 235, 0.5)',
-			'rgba(255, 206, 86, 0.5)',
-			'rgba(75, 192, 192, 0.5)',
+			gradient3,
+			gradient2,
+			gradient1,
+			gradient4,
 		],
 	}],
 
@@ -40,12 +57,11 @@ var options = {
 			fontFamily: "'Montserrat', 'sans-serif'",
 		}
 	},
-	cutoutPercentage: 90
+	cutoutPercentage: 89
 };
 
 $(document).ready(function(){
 	if( $('#myChart').length ){
-		var ctx = document.getElementById('myChart');
 
 		var myDoughnutChart = new Chart(ctx, {
 			type: 'doughnut',

@@ -18,6 +18,29 @@
 		margin: 0 -60px;
 	}
 
+	&__count{
+		position: absolute;
+		top: 50%;
+		left: 60px;
+		transform: translate(-50%, -50%);
+		z-index: -1;
+		text-align: center;
+		color: $purple;
+
+		&-number{
+			font-family: 'Quicksand', 'Montserrat', sans-serif;
+			font-size: calc_rem(24);
+			font-weight: 700;
+			line-height: devide(30, 24);
+		}
+
+		&-text{
+			font-size: calc_rem(12);
+			font-weight: 700;
+			line-height: devide(15, 12);
+		}
+	}
+
 	&__legend{
 		// position: absolute;
 		// bottom: 0;
