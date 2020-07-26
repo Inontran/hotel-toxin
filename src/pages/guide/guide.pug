@@ -22,6 +22,7 @@ include ../../components/form-fast-select/form-fast-select
 include ../../components/form-login/form-login
 include ../../components/form-booking/form-booking
 include ../../components/card-product/card-product
+include ../../components/chart/chart
 
 
 block title
@@ -172,7 +173,15 @@ block content
 
 
 			div.guide-page__col
-			
+				h3 Chart Doughnut
+				div.guide-page__mb16
+				+chart({
+					chart_count_all: 260,
+					chart_num_1: 130,
+					chart_num_2: 65,
+					chart_num_3: 65,
+					chart_num_4: 0,
+				})
 
 			div.guide-page__col
 				h1 This one is the sub-section or widget title
