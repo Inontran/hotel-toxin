@@ -39,9 +39,16 @@ block content
 						if data.options_infographics
 							h2.product__title Сведения о номере
 							+infographics(data.options_infographics)
-					div.product__grid-3-col-2
-						h2.product__title Впечетления от номера
-						+chart()
+					if data.chart_count_all
+						div.product__grid-3-col-2
+							h2.product__title Впечатления от номера
+							+chart({
+								chart_count_all: data.chart_count_all,
+								chart_num_1: data.chart_num_1,
+								chart_num_2: data.chart_num_2,
+								chart_num_3: data.chart_num_3,
+								chart_num_4: data.chart_num_4,
+							})
 				
 				if data.reviews
 					div.product_mb40

@@ -2,6 +2,7 @@ var gulp = require('gulp');
 		gutil = require( 'gulp-util' );
 		ftp = require( 'vinyl-ftp' );
 		rsync = require('gulp-rsync');
+		imagemin = require('gulp-imagemin');
 
 gulp.task('deploy', function(){
 	return gulp.src('dist/**')
@@ -15,6 +16,7 @@ gulp.task('deploy', function(){
 			username: 'u0856806',
     }));
 });
+
 
 // таск не рабочий
 gulp.task('deploy-ftp', function(){
@@ -36,4 +38,25 @@ gulp.task('deploy-ftp', function(){
 	return gulp.src( globs, { base: '.', buffer: false } )
 		.pipe( conn.newer( '/var/www/u0856806/data/www/bragin-alexandr.site/' ) ) // only upload newer files
 		.pipe( conn.dest( '/var/www/u0856806/data/www/bragin-alexandr.site/' ) );
-} );
+});
+
+
+gulp.task('images', function(){
+  return gulp.src('dist/img/**/*.+(png|jpg|jpeg|gif)')
+    // Кэширование изображений, которые проходили через imagemin
+    .pipe(imagemin([
+			imagemin.gifsicle({
+				interlaced: true
+			}),
+			imagemin.mozjpeg({
+				quality: 75,
+				progressive: true
+			}),
+			imagemin.optipng({
+				optimizationLevel: 5
+			}),
+    ], {
+			verbose: true
+		}))
+    .pipe(gulp.dest('dist/img'))
+});

@@ -41,7 +41,7 @@ fs
 function makeHash(path) {
 	var hashFile = '';
 	const fileStream = fs.readFileSync(path);
-	const hash = crypto.createHash('md5');
+	const hash = crypto.createHash('md4');
 	hash.update(fileStream);
 	hashFile = hash.digest('hex');
 
@@ -166,17 +166,18 @@ const filename = ext => isDev ? `[name]${ext}` : `[name].[hash].${ext}`;
 const plugins = () =>{
 	const base = [
 		new CleanWebpackPlugin(),
-		new CopyWebpackPlugin([
-			// {
-			// 	from: `${PATHS.src}/theme/fonts`, 
-			// 	to: `${PATHS.dist}/fonts`
-			// },
-			{
-				from: `${PATHS.src}/**/*.+(png|jpg|svg|gif)`,
-				// to: `${PATHS.dist}/images/`,
-				to: `${PATHS.dist}/img/[path][name].[hash].[ext]`,
-			}
-		]),
+		new CopyWebpackPlugin({
+			patterns:[
+				{
+					from: `${PATHS.src}/components/**/*.+(png|jpg|svg|gif)`,
+					to: `${PATHS.dist}/img/[path][name].[hash].[ext]`,
+				},
+				{
+					from: `${PATHS.src}/pages/**/*.+(png|jpg|svg|gif)`,
+					to: `${PATHS.dist}/img/[path][name].[hash].[ext]`,
+				}
+			]
+		}),
 		new MiniCssExtractPlugin( filename('css') ),
 		new webpack.ProvidePlugin({
 			$: 'jquery',
@@ -248,7 +249,7 @@ module.exports = {
 				loader: 'file-loader',
 				options: {
 					name: 'img/[path][name].[hash].[ext]'
-				},
+				}
 			},
 			{
 				test: /\.(ttf|woff|woff2|eot|svg)$/,
