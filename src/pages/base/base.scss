@@ -1,7 +1,17 @@
+@import '@/theme/variables.scss';
+
 .page{
 	min-height: 100vh;
 	display: flex;
 	flex-direction: column;
+	transition: transform .3s;
+	transform: translateX(0);
+
+	&_show-curtain{
+		@media(max-width: $sm){
+			transform: translateX(-278px);
+		}
+	}
 
 	&__content-wrapper{
 		flex-grow: 1;

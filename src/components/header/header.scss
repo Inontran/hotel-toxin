@@ -5,11 +5,10 @@
 	
 	&__container{
 		display: grid;
-		grid-template-areas:
-			'logo nav-menu btn1 btn2';
+		grid-template-areas: 'logo nav-menu btn1 btn2';
 		align-items: center;
 		grid-template-columns: auto 1fr auto auto auto auto;
-		padding: 15px 10px;
+		padding: 15px $padding_container;
 		max-width: $max_width_container;
 		margin: 0 auto;
 	}
@@ -53,19 +52,11 @@
 	&__btn1{
 		grid-area: btn1;
 		padding-left: 15px;
-
-		@media(max-width: $lg){
-			display: none;
-		}
 	}
 
 	&__btn2{
 		grid-area: btn2;
 		padding-left: 20px;
-
-		@media(max-width: $lg){
-			display: none;
-		}
 	}
 
 	&__username{
@@ -83,6 +74,14 @@
 			height: 30px;
 			width: 1px;
 			background-color: $dark10;
+		}
+	}
+
+	&__btn1,
+	&__btn2,
+	&__username{
+		@media(max-width: $lg){
+			display: none;
 		}
 	}
 

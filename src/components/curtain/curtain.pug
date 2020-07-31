@@ -1,0 +1,37 @@
+mixin curtain(options)
+	if !options
+		- options = {}
+
+	if !options.classes
+		- options.classes = ''
+
+	if !options.id
+		- options.id = ''
+
+
+	div.curtain(class = options.classes, id = options.id)
+		div.curtain__content-wrapper
+			div.curtain__top
+				if !options.username
+					div.curtain_mb15
+						+button({
+							text: options.button_login_text, 
+							theme: 'button_outline button_size-md button_wide',
+							href: options.button_login_href ? options.button_login_href : false
+						})
+					div.curtain_mb15
+						+button({
+							text: options.button_reg_text, 
+							theme: 'button_fill button_size-md button_wide',
+							href: options.button_reg_href ? options.button_reg_href : false
+						})
+				else
+					a.curtain__username #{options.username}
+					
+			div.curtain__middle
+				nav.curtain__main-menu
+					each val, index in options.menuItems
+						li.curtain__main-menu-item
+							a.curtain__main-menu-link(href = val.href)= val.name
+								if val.subitems
+									img.curtain__main-menu-arrow(src = require('@/components/curtain/img/expand_more_green.svg').default)
