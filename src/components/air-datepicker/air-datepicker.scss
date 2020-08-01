@@ -9,6 +9,11 @@
 	border-radius: 4px;
 	width: calc_rem(320);
 
+	@media(max-width: $sm){
+		padding: 10px;
+		width: calc_rem(302);
+	}
+
 	&__btns{
 		display: flex;
 		align-items: center;

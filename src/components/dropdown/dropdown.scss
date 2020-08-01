@@ -32,19 +32,6 @@
 		background-repeat: no-repeat;
 	}
 
-
-	&_dual-date{
-		.dropdown__input-dates-wrapper{
-			display: flex;
-			justify-content: space-between;
-			margin: 0 -10px;
-
-			.dropdown__input-wrapper{
-				margin: 0 10px;
-			}
-		}
-	}
-
 	&__content{
 		position: absolute;
 		width: 100%;
@@ -58,39 +45,6 @@
 		transition: max-height .3s;
 		overflow: hidden;
 		opacity: 0;
-	}
-
-	&_dates{
-		.dropdown__content{
-			border: 0;
-			width: min-content;
-
-			&-wrapper{
-				padding-top: 5px;
-			}
-		}
-	}
-
-	&_active{
-		&:not(.dropdown_dates) .input__field{
-			border-color: $dark50;
-			border-bottom-left-radius: 0;
-			border-bottom-right-radius: 0;
-		}
-
-		.dropdown__content{
-			max-height: 370px;
-			opacity: 1;
-			overflow-y: auto;
-		}
-
-		&.dropdown_dates{
-			.dropdown__content{
-				max-height: 100vh;
-				top: 100%;
-				overflow: hidden;
-			}
-		}
 	}
 
 
@@ -148,6 +102,61 @@
 	&__btn-reset,
 	&__btn-submit{
 		line-height: 1;
+	}
+
+	
+	&_dual-date{
+		.dropdown__input-dates-wrapper{
+			display: flex;
+			justify-content: space-between;
+			margin: 0 -10px;
+			flex-wrap: wrap;
+
+			.dropdown__input-wrapper{
+				margin: 0 10px;
+				margin-bottom: 20px;
+				min-width: 150px;
+				flex-basis: calc(50% - 20px);
+				flex-grow: 1;
+			}
+		}
+
+		.dropdown__content{
+			top: calc(100% - 20px);
+		}
+	}
+
+	&_dates{
+		.dropdown__content{
+			border: 0;
+			width: min-content;
+
+			&-wrapper{
+				padding-top: 5px;
+			}
+		}
+	}
+
+	&_active{
+		&:not(.dropdown_dates) .input__field{
+			border-color: $dark50;
+			border-bottom-left-radius: 0;
+			border-bottom-right-radius: 0;
+		}
+
+		.dropdown__content{
+			max-height: 370px;
+			opacity: 1;
+			overflow-y: auto;
+		}
+
+		&.dropdown_dates{
+			.dropdown__content{
+				max-height: 100vh;
+				// top: 100%;
+				overflow: hidden;
+			}
+		}
 	}
 
 	&_hidden{

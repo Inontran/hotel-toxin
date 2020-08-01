@@ -7,6 +7,10 @@
 	border-radius: 4px;
 	padding: 40px 29px 30px;
 
+	@media(max-width: 400px){
+		padding: 20px 9px 20px;
+	}
+
 	&__title{
 		margin-bottom: 20px;
 	}
