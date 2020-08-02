@@ -122,7 +122,13 @@
 		}
 
 		.dropdown__content{
-			top: calc(100% - 20px);
+			top: calc(100% - 15px);
+
+			@media(max-width: $sm){
+				left: 50%;
+				transform: translateX(-50%);
+				border-radius: 4px;
+			}
 		}
 	}
 
@@ -130,10 +136,6 @@
 		.dropdown__content{
 			border: 0;
 			width: min-content;
-
-			&-wrapper{
-				padding-top: 5px;
-			}
 		}
 	}
 

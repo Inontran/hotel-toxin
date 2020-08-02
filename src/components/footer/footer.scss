@@ -79,6 +79,10 @@
 		margin: 0 auto;
 		max-width: 560px;
 
+		@media(max-width: $xs){
+			padding: 50px 0;
+		}
+
 		.text{
 			padding: 20px 0 25px;
 		}
