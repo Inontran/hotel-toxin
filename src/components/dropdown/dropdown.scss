@@ -134,6 +134,7 @@
 
 	&_dates{
 		.dropdown__content{
+			top: calc(100% + 5px);
 			border: 0;
 			width: min-content;
 		}

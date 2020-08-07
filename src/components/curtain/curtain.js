@@ -4,5 +4,4 @@ $(function(){
 		// $('.curtain').toggleClass('curtain_show');
 		$('body').toggleClass('page_show-curtain');
 	});
-
 });
