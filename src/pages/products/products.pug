@@ -19,13 +19,6 @@ block content
 			button_reg_text: data_header.reg_text,
 			button_reg_href: data_header.reg_href
 		})
-		+curtain({
-			menuItems: data_header.menuItems, 
-			button_login_text: data_header.login_text,
-			button_login_href: data_header.login_href,
-			button_reg_text: data_header.reg_text,
-			button_reg_href: data_header.reg_href
-		})
 
 		div.products__container
 			div.products__grid
@@ -33,10 +26,11 @@ block content
 					+filter-products(data.filter_options)
 				div.products__center-column
 					h1.products_mb20 Номера, которые мы для вас подобрали
-					+button({
-						theme: 'button_fill button_size-md products_filter-show products_mb20',
-						text: 'Фильтр'
-					})
+					div.product_mb20
+						+button({
+							theme: 'button_fill button_size-md products_filter-show products_show-filter',
+							text: 'Показать фильтр'
+						})
 					div.products__cards-container.products_mb23
 						each data_card in data.cards
 							div.products__card-wrapper.products_mb20

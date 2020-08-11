@@ -14,110 +14,122 @@ mixin filter-products(options)
 	if !options.id
 		- options.id = ''
 
-	div.filter-products(class = options.classes, id = options.id)
-		//- div.filter-products_mb20
-			//- +dropdown({
-			//- 	custom_content: true,
-			//- 	classes: 'dropdown_dates',
-			//- 	input_params:{
-			//- 		label: "Даты пребывания в отеле",
-			//- 		readonly: true,
-			//- 		classes: 'input_result-dates'
-			//- 	},
-			//- })
-				//- +air-datepicker({classes: 'air-datepicker_inline'})
-		if options.option_dropdown_dates
-			div.filter-products_mb20
-				+dropdown(options.option_dropdown_dates)
-					+air-datepicker(options.option_dropdown_dates_datepicker)
+	div.filter-products(
+		class = options.classes, 
+		id = options.id,
+		class = options.isMobile ? "filter-products_mob-md" : false
+	)
+		div.filter-products__content-wrapper(class = options.isMobile ? "scrollbar scrollbar_sierra" : false)
+			if options.isMobile
+				div.filter-products__close.filter-products_mb30
+					+button({
+						theme: 'button_fill button_size-md products_filter-show filter-products_hide-filter',
+						text: 'Скрыть фильтр'
+					})
 
-		//- div.filter-products_mb30
-			//- +dropdown({
-			//- 	classes: 'dropdown_simple',
-			//- 	input_params:{
-			//- 		label: "Гости",
-			//- 		readonly: true
-			//- 	},
-			//- 	array_counter: [
-			//- 		{label: "Взрослые", input_name: ""},
-			//- 		{label: "Дети", input_name: ""},
-			//- 		{label: "Младенцы", input_name: ""}
-			//- 	]
-			//- })
-		if options.option_dropdown_people
-			div.filter-products_mb30
-				+dropdown(options.option_dropdown_people)
+			//- div.filter-products_mb20
+				//- +dropdown({
+				//- 	custom_content: true,
+				//- 	classes: 'dropdown_dates',
+				//- 	input_params:{
+				//- 		label: "Даты пребывания в отеле",
+				//- 		readonly: true,
+				//- 		classes: 'input_result-dates'
+				//- 	},
+				//- })
+					//- +air-datepicker({classes: 'air-datepicker_inline'})
+			if options.option_dropdown_dates
+				div.filter-products_mb20
+					+dropdown(options.option_dropdown_dates)
+						+air-datepicker(options.option_dropdown_dates_datepicker)
 
-		//- div.filter-products_mb30
-			//- +slider-range({
-			//- 	label: "Диапозон цены", 
-			//- 	min: 0, 
-			//- 	max: 15000, 
-			//- 	val1: 5000, 
-			//- 	val2: 10000,
-			//- 	text_bottom: "Стоимость за сутки пребывания в номере",
-			//- })
-		if options.option_slider_range
-			div.filter-products_mb30
-				+slider-range(options.option_slider_range)
+			//- div.filter-products_mb30
+				//- +dropdown({
+				//- 	classes: 'dropdown_simple',
+				//- 	input_params:{
+				//- 		label: "Гости",
+				//- 		readonly: true
+				//- 	},
+				//- 	array_counter: [
+				//- 		{label: "Взрослые", input_name: ""},
+				//- 		{label: "Дети", input_name: ""},
+				//- 		{label: "Младенцы", input_name: ""}
+				//- 	]
+				//- })
+			if options.option_dropdown_people
+				div.filter-products_mb30
+					+dropdown(options.option_dropdown_people)
 
-		//- div.filter-products_mb30
-			//- h3.filter-products_mb16 Checkbox buttons
-			//- div.filter-products_mb10
-			//- 	+checkbox({text: "Можно курить"})
-			//- div.filter-products_mb10
-			//- 	+checkbox({text: "Можно с питомцами", checked: true})
-			//- div.filter-products_mb10
-			//- 	+checkbox({text: "Можно пригласить гостей (до 10 человек)", checked: true})
-		if options.checkboxes
-			div.filter-products_mb31
-				if options.checkboxes_title
-					h3.filter-products_mb13 #{options.checkboxes_title}
-				each val, index in options.checkboxes
+			//- div.filter-products_mb30
+				//- +slider-range({
+				//- 	label: "Диапозон цены", 
+				//- 	min: 0, 
+				//- 	max: 15000, 
+				//- 	val1: 5000, 
+				//- 	val2: 10000,
+				//- 	text_bottom: "Стоимость за сутки пребывания в номере",
+				//- })
+			if options.option_slider_range
+				div.filter-products_mb30
+					+slider-range(options.option_slider_range)
+
+			//- div.filter-products_mb30
+				//- h3.filter-products_mb16 Checkbox buttons
+				//- div.filter-products_mb10
+				//- 	+checkbox({text: "Можно курить"})
+				//- div.filter-products_mb10
+				//- 	+checkbox({text: "Можно с питомцами", checked: true})
+				//- div.filter-products_mb10
+				//- 	+checkbox({text: "Можно пригласить гостей (до 10 человек)", checked: true})
+			if options.checkboxes
+				div.filter-products_mb31
+					if options.checkboxes_title
+						h3.filter-products_mb13 #{options.checkboxes_title}
+					each val, index in options.checkboxes
+							div.filter-products_mb10
+								+checkbox(val)
+
+			//- div.filter-products_mb30
+				//- h3.filter-products_mb16 Доступность
+				//- div.filter-products_mb10
+				//- 	+checkbox({text: "Ширина коридоров в номере не менее 91 см.", checked: true, title: "Широкий коридор"})
+				//- div.filter-products_mb10
+				//- 	+checkbox({text: "На 1 этаже вас встретит специалист  и проводит до номера.", title: "Помощник для инвалидов"})
+			if options.checkboxes_big
+				div.filter-products_mb30
+					if options.checkboxes_big_title
+						h3.filter-products_mb16 #{options.checkboxes_big_title}
+					each val, index in options.checkboxes_big
 						div.filter-products_mb10
 							+checkbox(val)
 
-		//- div.filter-products_mb30
-			//- h3.filter-products_mb16 Доступность
-			//- div.filter-products_mb10
-			//- 	+checkbox({text: "Ширина коридоров в номере не менее 91 см.", checked: true, title: "Широкий коридор"})
-			//- div.filter-products_mb10
-			//- 	+checkbox({text: "На 1 этаже вас встретит специалист  и проводит до номера.", title: "Помощник для инвалидов"})
-		if options.checkboxes_big
-			div.filter-products_mb30
-				if options.checkboxes_big_title
-					h3.filter-products_mb16 #{options.checkboxes_big_title}
-				each val, index in options.checkboxes_big
-					div.filter-products_mb10
-						+checkbox(val)
+			//- div.filter-products_mb16
+				//- +dropdown({
+				//- 	classes: 'dropdown_simple',
+				//- 	input_params:{
+				//- 		label: "Удобства номера",
+				//- 		readonly: true
+				//- 	},
+				//- 	array_counter: [
+				//- 		{label: "Спальни", input_name: ""},
+				//- 		{label: "Кровати", input_name: ""},
+				//- 		{label: "Ванные комнаты", input_name: ""}
+				//- 	]
+				//- })
+			if options.option_dropdown_feature
+				div.filter-products_mb16
+					+dropdown(options.option_dropdown_feature)
 
-		//- div.filter-products_mb16
-			//- +dropdown({
-			//- 	classes: 'dropdown_simple',
-			//- 	input_params:{
-			//- 		label: "Удобства номера",
-			//- 		readonly: true
-			//- 	},
-			//- 	array_counter: [
-			//- 		{label: "Спальни", input_name: ""},
-			//- 		{label: "Кровати", input_name: ""},
-			//- 		{label: "Ванные комнаты", input_name: ""}
-			//- 	]
-			//- })
-		if options.option_dropdown_feature
-			div.filter-products_mb16
-				+dropdown(options.option_dropdown_feature)
-
-		//- +collapse({text: "Дополнительные удобства", group: 'collapse-group-1'})
-		//- 	+checkbox({text: "Можно курить"})
-		//- 	div.guide-page__mb10
-		//- 	+checkbox({text: "Можно курить"})
-		//- 	div.guide-page__mb10
-		//- 	+checkbox({text: "Можно курить"})
-		//- 	div.guide-page__mb10
-		//- 	+checkbox({text: "Можно курить"})
-		if options.collapse_feature_options
-			+collapse(options.collapse_feature_options)
-				each val, index in options.collapse_feature_checkboxes
-					div.filter-products_mb10
-						+checkbox(val)
+			//- +collapse({text: "Дополнительные удобства", group: 'collapse-group-1'})
+			//- 	+checkbox({text: "Можно курить"})
+			//- 	div.guide-page__mb10
+			//- 	+checkbox({text: "Можно курить"})
+			//- 	div.guide-page__mb10
+			//- 	+checkbox({text: "Можно курить"})
+			//- 	div.guide-page__mb10
+			//- 	+checkbox({text: "Можно курить"})
+			if options.collapse_feature_options
+				+collapse(options.collapse_feature_options)
+					each val, index in options.collapse_feature_checkboxes
+						div.filter-products_mb10
+							+checkbox(val)

@@ -10,4 +10,13 @@
 			}
 		}
 	}
+
+	&.scrollbar_sierra{
+		.simplebar-scrollbar{
+			&:before{
+				border-radius: 0;
+				background-color: $dark;
+			}
+		}
+	}
 }

@@ -122,15 +122,23 @@ html(lang="ru")
 			block title
 	
 	body.page
+	
+		+curtain({
+			menuItems: data_header.menuItems, 
+			button_login_text: data_header.login_text,
+			button_login_href: data_header.login_href,
+			button_reg_text: data_header.reg_text,
+			button_reg_href: data_header.reg_href
+		})
 		
 		main.page__content-wrapper
 			block content
 
-		block footer
-			+footer({
-				menuItems: data_footer.footerItems,
-				text1: data_footer.text1,
-				text2: data_footer.text2,
-				title_subscribe: data_footer.title_subscribe,
-				copyright_text: data_footer.copyright_text
-			})
+			block footer
+				+footer({
+					menuItems: data_footer.footerItems,
+					text1: data_footer.text1,
+					text2: data_footer.text2,
+					title_subscribe: data_footer.title_subscribe,
+					copyright_text: data_footer.copyright_text
+				})
