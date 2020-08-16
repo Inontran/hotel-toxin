@@ -19,7 +19,8 @@ mixin filter-products(options)
 		id = options.id,
 		class = options.isMobile ? "filter-products_mob-md" : false
 	)
-		div.filter-products__content-wrapper(class = options.isMobile ? "scrollbar scrollbar_sierra" : false)
+		//- div.filter-products__content-wrapper(class = options.isMobile ? "scrollbar scrollbar_sierra" : false)
+		div.filter-products__content-wrapper
 			if options.isMobile
 				div.filter-products__close.filter-products_mb30
 					+button({

@@ -17,8 +17,9 @@ $(function(){
 	});
 
 
-	function replace_filter_products(){
-		if( $(window).width() < $.BREAKPOINTS.md ){
+	function update_filter_products(){
+		// if( $(window).width() < $.BREAKPOINTS.md ){
+		if( window.matchMedia('(max-width: ' + $.BREAKPOINTS.md + 'px)').matches ){
 			$('body').prepend( $('.filter-products.filter-products_mob-md') );
 		} else{
 			$('.products__left-column').append( $('.filter-products.filter-products_mob-md') );
@@ -26,7 +27,7 @@ $(function(){
 		return false;
 	}
 
-	replace_filter_products();
+	update_filter_products();
 
 
 	var timer_filter = null;
@@ -36,7 +37,7 @@ $(function(){
 			clearTimeout(timer_filter);        
 		}
 		timer_filter = setTimeout(function() {
-			replace_filter_products();
+			update_filter_products();
 		}, 50);
 	});
 });
