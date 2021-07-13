@@ -30,7 +30,7 @@ mixin header(options)
 					li.header__main-menu-item
 						a.header__main-menu-link(href = val.href)= val.name
 							if val.subitems
-								img.header__main-menu-arrow(src = require('@/components/header/img/expand_more.svg').default)
+								img.header__main-menu-arrow(src = require('@/components/header/img/expand_more.svg').default, alt = "v")
 
 			a.header__btn-icon.header__btn-icon_profile(href = options.button_login_href ? options.button_login_href : false)
 				img(src = require('@/components/header/img/user_icon.svg').default, alt = 'Профиль', title = 'Профиль')
