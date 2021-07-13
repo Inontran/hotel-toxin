@@ -48,6 +48,7 @@ function makeHash(path) {
 	return hashFile;
 }
 
+
 function getFileName(path) {
 	return path.split('\\').pop().split('/').pop();
 }
@@ -58,6 +59,7 @@ function appendHashFileName(name, hash){
 			name_new = name_new.join('.');
 	return name_new;
 }
+
 
 function changePath(path){
 	// console.log('----------------');
@@ -71,6 +73,7 @@ function changePath(path){
 	// console.log('----------------');
 	return path;
 }
+
 
 function iteratorArray(arr){
 	var toString = {}.toString;  // для получение типа объекта
@@ -86,6 +89,7 @@ function iteratorArray(arr){
 	}
 	return arr;
 }
+
 
 function iteratorAllProp(obj){
 	var toString = {}.toString;  // для получение типа объекта
