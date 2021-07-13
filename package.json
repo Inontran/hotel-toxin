@@ -1,7 +1,7 @@
 {
   "name": "toxin",
   "version": "1.0.0",
-  "description": "верстка сайта бронирования номеров отеля. FSD frontend education program. The 2nd task.",
+  "description": "Второе задание программы обучения от FSD(Metalamp) на фронтенд разработчика. Результатом выполненного задания является сверстанный сайт бронирования номеров отеля.",
   "main": "index.js",
   "scripts": {
     "dev": "cross-env NODE_ENV=development webpack --mode development",
