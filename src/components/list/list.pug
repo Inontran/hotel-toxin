@@ -1,17 +1,17 @@
 mixin list(options)
-	if !options
-		- options = {}
+  if !options
+    - options = {}
 
-	if !options.items
-		- options.items = []
+  if !options.items
+    - options.items = []
 
-	if !options.classes
-		- options.classes = ''
-	
-	if !options.id
-		- options.id = ''
+  if !options.classes
+    - options.classes = ''
+  
+  if !options.id
+    - options.id = ''
 
 
-	ul.list(class = options.classes, id = options.id )
-		each val in options.items
-			li.list__item #{val}
+  ul.list(class = options.classes, id = options.id )
+    each val in options.items
+      li.list__item #{val}

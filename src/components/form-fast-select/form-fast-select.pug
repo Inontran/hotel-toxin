@@ -4,51 +4,51 @@ include ../button/button
 include ../card/card
 
 mixin form-fast-select(options)
-	if !options
-		- options = {}
+  if !options
+    - options = {}
 
-	if !options.classes
-		- options.classes = ''
+  if !options.classes
+    - options.classes = ''
 
-	if !options.id
-		- options.id = ''
+  if !options.id
+    - options.id = ''
 
-	if !options.card_title
-		- options.card_title = 'Найдём номера под ваши пожелания'
+  if !options.card_title
+    - options.card_title = 'Найдём номера под ваши пожелания'
 
-	div.form-fast-select(class = options.classes, id = options.id)
-		+card({title: options.card_title})
-			+dropdown({
-				custom_content: true,
-				classes: 'dropdown_dates',
-				input_params: {
-					label: "Прибытие",
-					readonly: true,
-					placeholder: "ДД.ММ.ГГГГ",
-					classes: 'input_result-date-start'
-				},
-				input_params2: {
-					label: "Выезд",
-					readonly: true,
-					placeholder: "ДД.ММ.ГГГГ",
-					classes: 'input_result-date-end'
-				},
-			})
-				+air-datepicker({classes: 'air-datepicker_inline'})
+  div.form-fast-select(class = options.classes, id = options.id)
+    +card({title: options.card_title})
+      +dropdown({
+        custom_content: true,
+        classes: 'dropdown_dates',
+        input_params: {
+          label: "Прибытие",
+          readonly: true,
+          placeholder: "ДД.ММ.ГГГГ",
+          classes: 'input_result-date-start'
+        },
+        input_params2: {
+          label: "Выезд",
+          readonly: true,
+          placeholder: "ДД.ММ.ГГГГ",
+          classes: 'input_result-date-end'
+        },
+      })
+        +air-datepicker({classes: 'air-datepicker_inline'})
 
-			div.card__el.card_mb30
-				+dropdown({
-					input_params:{
-						label: "Гости",
-						readonly: true
-					},
-					text_default: "Сколько гостей",
-					text_one: " гость",
-					text_many: " гостей",
-					array_counter: [
-						{label: "Взрослые", input_name: ""},
-						{label: "Дети", input_name: ""},
-						{label: "Младенцы", input_name: ""}
-					]
-				})
-			+button({text: "Подобрать номер", theme: "button_fill button_arrow-left button_wide"})
+      div.card__el.card_mb30
+        +dropdown({
+          input_params:{
+            label: "Гости",
+            readonly: true
+          },
+          text_default: "Сколько гостей",
+          text_one: " гость",
+          text_many: " гостей",
+          array_counter: [
+            {label: "Взрослые", input_name: ""},
+            {label: "Дети", input_name: ""},
+            {label: "Младенцы", input_name: ""}
+          ]
+        })
+      +button({text: "Подобрать номер", theme: "button_fill button_arrow-left button_wide"})

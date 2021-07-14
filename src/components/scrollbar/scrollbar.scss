@@ -2,21 +2,21 @@
 @import '~simplebar/dist/simplebar.css';
 
 .scrollbar{
-	&.scrollbar_catalina{
-		.simplebar-scrollbar{
-			&:before{
-				border-radius: 0;
-				background-color: $green;
-			}
-		}
-	}
+  &.scrollbar_catalina{
+    .simplebar-scrollbar{
+      &:before{
+        border-radius: 0;
+        background-color: $green;
+      }
+    }
+  }
 
-	&.scrollbar_sierra{
-		.simplebar-scrollbar{
-			&:before{
-				border-radius: 0;
-				background-color: $dark;
-			}
-		}
-	}
+  &.scrollbar_sierra{
+    .simplebar-scrollbar{
+      &:before{
+        border-radius: 0;
+        background-color: $dark;
+      }
+    }
+  }
 }

@@ -1,174 +1,174 @@
 @import '@/theme/variables.scss';
 
 .dropdown{
-	position: relative;
+  position: relative;
 
-	&__input-wrapper{
-		position: relative;
-		cursor: pointer;
+  &__input-wrapper{
+    position: relative;
+    cursor: pointer;
 
-		*{
-			cursor: pointer;
-		}
+    *{
+      cursor: pointer;
+    }
 
-		.input__field{
-			padding-right: calc_rem(44);
-		}
-	}
-
-
-	&__arrow{
-		position: absolute;
-		bottom: 0;
-		right: 0;
-		width: calc_rem(44);
-		height: calc_rem(44);
-		background: none;
-		border: 0;
-		box-shadow: none;
-		background-image: url(img/expand_more.svg);
-		background-position: center;
-		background-size: auto;
-		background-repeat: no-repeat;
-	}
-
-	&__content{
-		position: absolute;
-		width: 100%;
-		top: calc(100% - 1px);
-		left: 0;
-		z-index: 1000;
-		border: 1px solid $dark50;
-		border-radius: 0 0 4px 4px;
-		background-color: $white;
-		max-height: 0;
-		transition: max-height .3s;
-		overflow: hidden;
-		opacity: 0;
-	}
+    .input__field{
+      padding-right: calc_rem(44);
+    }
+  }
 
 
-	&__counter{
-		margin: 7px 7px 7px 15px;
-	}
+  &__arrow{
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    width: calc_rem(44);
+    height: calc_rem(44);
+    background: none;
+    border: 0;
+    box-shadow: none;
+    background-image: url(img/expand_more.svg);
+    background-position: center;
+    background-size: auto;
+    background-repeat: no-repeat;
+  }
 
-	&__counter, 
-	&__counter-btns,
-	&__btns-result{
-		display: flex;
-		align-items: center;
-		justify-content: space-between;
-	}
+  &__content{
+    position: absolute;
+    width: 100%;
+    top: calc(100% - 1px);
+    left: 0;
+    z-index: 1000;
+    border: 1px solid $dark50;
+    border-radius: 0 0 4px 4px;
+    background-color: $white;
+    max-height: 0;
+    transition: max-height .3s;
+    overflow: hidden;
+    opacity: 0;
+  }
 
-	&__counter-label,
-	&__counter-input{
-		font-weight: 700;
-		font-size: calc_rem(12);
-		text-transform: uppercase;
-		line-height: 1.25;
-	}
 
-	&__btn-less, 
-	&__btn-more, 
-	&__counter-input{
-		width: calc_rem(30);
-		height: calc_rem(30);
-		text-align: center;
-	}
+  &__counter{
+    margin: 7px 7px 7px 15px;
+  }
 
-	&__btn-less, 
-	&__btn-more{
-		border-radius: 100vh;
-		border: 1px solid $dark25;
-		background: $white;
-		line-height: calc_rem(30);
-		color: $dark25;
-		cursor: pointer;
-	}
-	&_disabled-btn{
-		opacity: .38;
-	}
+  &__counter, 
+  &__counter-btns,
+  &__btns-result{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
 
-	&__counter-input{
-		padding: 0 3px;
-		border: 0;
-		background: none;
-	}
+  &__counter-label,
+  &__counter-input{
+    font-weight: 700;
+    font-size: calc_rem(12);
+    text-transform: uppercase;
+    line-height: 1.25;
+  }
 
-	&__btns-result{
-		margin: 19px 7px 13px 15px;
-	}
+  &__btn-less, 
+  &__btn-more, 
+  &__counter-input{
+    width: calc_rem(30);
+    height: calc_rem(30);
+    text-align: center;
+  }
 
-	&__btn-reset,
-	&__btn-submit{
-		line-height: 1;
-	}
+  &__btn-less, 
+  &__btn-more{
+    border-radius: 100vh;
+    border: 1px solid $dark25;
+    background: $white;
+    line-height: calc_rem(30);
+    color: $dark25;
+    cursor: pointer;
+  }
+  &_disabled-btn{
+    opacity: .38;
+  }
 
-	
-	&_dual-date{
-		.dropdown__input-dates-wrapper{
-			display: flex;
-			justify-content: space-between;
-			margin: 0 -10px;
-			flex-wrap: wrap;
+  &__counter-input{
+    padding: 0 3px;
+    border: 0;
+    background: none;
+  }
 
-			.dropdown__input-wrapper{
-				margin: 0 10px;
-				margin-bottom: 20px;
-				min-width: 150px;
-				flex-basis: calc(50% - 20px);
-				flex-grow: 1;
-			}
-		}
+  &__btns-result{
+    margin: 19px 7px 13px 15px;
+  }
 
-		.dropdown__content{
-			top: calc(100% - 15px);
+  &__btn-reset,
+  &__btn-submit{
+    line-height: 1;
+  }
 
-			@media(max-width: $sm){
-				left: 50%;
-				transform: translateX(-50%);
-				border-radius: 4px;
-			}
-		}
-	}
+  
+  &_dual-date{
+    .dropdown__input-dates-wrapper{
+      display: flex;
+      justify-content: space-between;
+      margin: 0 -10px;
+      flex-wrap: wrap;
 
-	&_dates{
-		.dropdown__content{
-			top: calc(100% + 5px);
-			border: 0;
-			width: min-content;
-		}
-	}
+      .dropdown__input-wrapper{
+        margin: 0 10px;
+        margin-bottom: 20px;
+        min-width: 150px;
+        flex-basis: calc(50% - 20px);
+        flex-grow: 1;
+      }
+    }
 
-	&_active{
-		&:not(.dropdown_dates) .input__field{
-			border-color: $dark50;
-			border-bottom-left-radius: 0;
-			border-bottom-right-radius: 0;
-		}
+    .dropdown__content{
+      top: calc(100% - 15px);
 
-		.dropdown__content{
-			max-height: 370px;
-			opacity: 1;
-			overflow-y: auto;
-		}
+      @media(max-width: $sm){
+        left: 50%;
+        transform: translateX(-50%);
+        border-radius: 4px;
+      }
+    }
+  }
 
-		&.dropdown_dates{
-			.dropdown__content{
-				max-height: 100vh;
-				// top: 100%;
-				overflow: hidden;
-			}
-		}
-	}
+  &_dates{
+    .dropdown__content{
+      top: calc(100% + 5px);
+      border: 0;
+      width: min-content;
+    }
+  }
 
-	&_hidden{
-		display: none;
-	}
+  &_active{
+    &:not(.dropdown_dates) .input__field{
+      border-color: $dark50;
+      border-bottom-left-radius: 0;
+      border-bottom-right-radius: 0;
+    }
 
-	&_simple{
-		.dropdown__btns-result{
-			display: none;
-		}
-	}
+    .dropdown__content{
+      max-height: 370px;
+      opacity: 1;
+      overflow-y: auto;
+    }
+
+    &.dropdown_dates{
+      .dropdown__content{
+        max-height: 100vh;
+        // top: 100%;
+        overflow: hidden;
+      }
+    }
+  }
+
+  &_hidden{
+    display: none;
+  }
+
+  &_simple{
+    .dropdown__btns-result{
+      display: none;
+    }
+  }
 }

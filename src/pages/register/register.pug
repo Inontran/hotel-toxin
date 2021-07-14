@@ -4,20 +4,20 @@ include ../../components/first-display/first-display
 include ../../components/form-register/form-register
 
 block title
-	| Registration Toxin Hotel
+  | Registration Toxin Hotel
 
 block content
-	- data = htmlWebpackPlugin.options.getData()
-	- data.first_display_options.bg_url = require('@/pages/login/img/' + data.first_display_options.bg_url).default
+  - data = htmlWebpackPlugin.options.getData()
+  - data.first_display_options.bg_url = require('@/pages/login/img/' + data.first_display_options.bg_url).default
 
-	+curtain({
-		menuItems: data_header.menuItems, 
-		button_login_text: data_header.login_text,
-		button_login_href: data_header.login_href,
-		button_reg_text: data_header.reg_text,
-		button_reg_href: data_header.reg_href
-	})
+  +curtain({
+    menuItems: data_header.menuItems, 
+    button_login_text: data_header.login_text,
+    button_login_href: data_header.login_href,
+    button_reg_text: data_header.reg_text,
+    button_reg_href: data_header.reg_href
+  })
 
-	+first-display(data.first_display_options)
-		div.first-display__form-wrapper
-			+form-register(data.form_options)
+  +first-display(data.first_display_options)
+    div.first-display__form-wrapper
+      +form-register(data.form_options)

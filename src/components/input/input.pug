@@ -1,45 +1,45 @@
 //-
-	options.label - 
-	options.placeholder - 
-	options.value - 
-	options.attrs - 
-	options.classes - 
-	options.id - 
-	options.type - 
+  options.label - 
+  options.placeholder - 
+  options.value - 
+  options.attrs - 
+  options.classes - 
+  options.id - 
+  options.type - 
 
 mixin input(options)
-	if !options
-		- options = {}
-	
-	if !options.placeholder
-		- options.placeholder = ''
+  if !options
+    - options = {}
+  
+  if !options.placeholder
+    - options.placeholder = ''
 
-	if !options.value
-		- options.value = ''
-	
-	if !options.classes
-		- options.classes = ''
+  if !options.value
+    - options.value = ''
+  
+  if !options.classes
+    - options.classes = ''
 
-	if !options.id
-		- options.id = ''
+  if !options.id
+    - options.id = ''
 
-	if !options.type
-		- options.type = 'text'
+  if !options.type
+    - options.type = 'text'
 
-	if options.subscription
-		- options.classes += ' input_subscription'
+  if options.subscription
+    - options.classes += ' input_subscription'
 
-	
-	label.input(class = options.classes, id = options.id)
-		if options.label
-			p.input__label #{options.label}
-		input.input__field(
-			value = options.value, 
-			placeholder = options.placeholder, 
-			type = options.type, 
-			readonly = options.readonly ? "readonly" : false, 
-			disabled = options.disabled ? "disabled" : false, 
-		)
-		
-		if options.subscription
-			button.input__submit
+  
+  label.input(class = options.classes, id = options.id)
+    if options.label
+      p.input__label #{options.label}
+    input.input__field(
+      value = options.value, 
+      placeholder = options.placeholder, 
+      type = options.type, 
+      readonly = options.readonly ? "readonly" : false, 
+      disabled = options.disabled ? "disabled" : false, 
+    )
+    
+    if options.subscription
+      button.input__submit

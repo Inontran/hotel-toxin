@@ -1,33 +1,33 @@
 //-
-	options.value - 
-	options.classes - 
-	options.id - 
-	options.isLike
+  options.value - 
+  options.classes - 
+  options.id - 
+  options.isLike
 
 mixin like-btn(options)
-	if !options
-		- options = {}
+  if !options
+    - options = {}
 
-	if !options.value
-		- options.value = ''
-	
-	if !options.classes
-		- options.classes = ''
+  if !options.value
+    - options.value = ''
+  
+  if !options.classes
+    - options.classes = ''
 
-	if !options.id
-		- options.id = ''
+  if !options.id
+    - options.id = ''
 
-	if !options.name
-		- options.name = 'like'
+  if !options.name
+    - options.name = 'like'
 
-	
-	label.like-btn(class = options.classes, id = options.id)
-		input.like-btn__check(
-			type = 'checkbox', 
-			value = options.value, 
-			name = options.name, 
-			checked = options.isLike ? "checked" : false
-		)
+  
+  label.like-btn(class = options.classes, id = options.id)
+    input.like-btn__check(
+      type = 'checkbox', 
+      value = options.value, 
+      name = options.name, 
+      checked = options.isLike ? "checked" : false
+    )
 
-		span.like-btn__view
-			span.like-btn__count #{options.value}
+    span.like-btn__view
+      span.like-btn__count #{options.value}

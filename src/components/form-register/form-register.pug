@@ -5,57 +5,57 @@ include ../toggle/toggle
 include ../card/card
 
 mixin form-register(options)
-	if !options
-		- options = {}
+  if !options
+    - options = {}
 
-	if !options.classes
-		- options.classes = ''
+  if !options.classes
+    - options.classes = ''
 
-	if !options.id
-		- options.id = ''
+  if !options.id
+    - options.id = ''
 
-	div.form-register(class = options.classes, id = options.id)
-		+card({title: "Регистрация аккаунта"})
-			div.card_mb10
-				+input({
-					placeholder: "Имя"
-				})
-			div.card_mb10
-				+input({
-					placeholder: "Фамилия"
-				})
-			div.form-register__gender-radio.card_mb20
-				+radio({text: "Мужчина", name: "gender", checked: true})
-				+radio({text: "Женщина", name: "gender"})
-			div.card_mb20
-				+input({
-					label: "Дата рождения",
-					classes: "input_mask-date"
-				})
-			div.card_mb10
-				+input({
-					label: "Данные для входа в сервис",
-					classes: "input_mask-email",
-					placeholder: "Email"
-				})
-			div.card_mb10
-				+input({
-					type: "password",
-					placeholder: "Пароль"
-				})
-			div.card_mb20
-				+toggle({text: "Получать спецпредложения"})
-			div.card_mb30
-				+button({
-					text: "Перейти к оплате", 
-					theme: "button_fill button_arrow-left button_wide",
-					isSubmit: true
-				})
-			div.form-register__footer
-				p.form-register__footer-text Уже есть аккаунт на Toxin
-				div.form-register__footer-button
-					+button({
-						text: "Войти", 
-						theme: "button_outline",
-						href: options.button_login_href ? options.button_login_href : false
-					})
+  div.form-register(class = options.classes, id = options.id)
+    +card({title: "Регистрация аккаунта"})
+      div.card_mb10
+        +input({
+          placeholder: "Имя"
+        })
+      div.card_mb10
+        +input({
+          placeholder: "Фамилия"
+        })
+      div.form-register__gender-radio.card_mb20
+        +radio({text: "Мужчина", name: "gender", checked: true})
+        +radio({text: "Женщина", name: "gender"})
+      div.card_mb20
+        +input({
+          label: "Дата рождения",
+          classes: "input_mask-date"
+        })
+      div.card_mb10
+        +input({
+          label: "Данные для входа в сервис",
+          classes: "input_mask-email",
+          placeholder: "Email"
+        })
+      div.card_mb10
+        +input({
+          type: "password",
+          placeholder: "Пароль"
+        })
+      div.card_mb20
+        +toggle({text: "Получать спецпредложения"})
+      div.card_mb30
+        +button({
+          text: "Перейти к оплате", 
+          theme: "button_fill button_arrow-left button_wide",
+          isSubmit: true
+        })
+      div.form-register__footer
+        p.form-register__footer-text Уже есть аккаунт на Toxin
+        div.form-register__footer-button
+          +button({
+            text: "Войти", 
+            theme: "button_outline",
+            href: options.button_login_href ? options.button_login_href : false
+          })

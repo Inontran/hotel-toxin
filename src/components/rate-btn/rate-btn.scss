@@ -1,62 +1,62 @@
 @import '@/theme/variables.scss';
 
 .rate-btn{
-	display: inline-flex;
-	align-items: center;
-	margin: 0 1px;
+  display: inline-flex;
+  align-items: center;
+  margin: 0 1px;
 
-	&__star-item{
-		display: block;
-		width: calc_rem(20);
-		height: calc_rem(19);
-		background-image: url(img/star_border.svg);
-		background-size: cover;
-		background-repeat: no-repeat;
-		background-position: center;
-		margin: 2px;
-		outline: none;
-		background-color: transparent;
-		border: 0;
-		box-shadow: none;
+  &__star-item{
+    display: block;
+    width: calc_rem(20);
+    height: calc_rem(19);
+    background-image: url(img/star_border.svg);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    margin: 2px;
+    outline: none;
+    background-color: transparent;
+    border: 0;
+    box-shadow: none;
 
-		&:focus{
-			outline: dotted 1px;
-		}
+    &:focus{
+      outline: dotted 1px;
+    }
 
-		&:active{
-			outline: none;
-		}
-	}
+    &:active{
+      outline: none;
+    }
+  }
 
-	&_count{
-		&-1{
-			.rate-btn__star-item:nth-of-type(1){
-				background-image: url(img/star.svg);
-			}
-		}
-		&-2{
-			@extend .rate-btn_count-1;
-			.rate-btn__star-item:nth-of-type(2){
-				background-image: url(img/star.svg);
-			}
-		}
-		&-3{
-			@extend .rate-btn_count-2;
-			.rate-btn__star-item:nth-of-type(3){
-				background-image: url(img/star.svg);
-			}
-		}
-		&-4{
-			@extend .rate-btn_count-3;
-			.rate-btn__star-item:nth-of-type(4){
-				background-image: url(img/star.svg);
-			}
-		}
-		&-5{
-			@extend .rate-btn_count-4;
-			.rate-btn__star-item:nth-of-type(5){
-				background-image: url(img/star.svg);
-			}
-		}
-	}
+  &_count{
+    &-1{
+      .rate-btn__star-item:nth-of-type(1){
+        background-image: url(img/star.svg);
+      }
+    }
+    &-2{
+      @extend .rate-btn_count-1;
+      .rate-btn__star-item:nth-of-type(2){
+        background-image: url(img/star.svg);
+      }
+    }
+    &-3{
+      @extend .rate-btn_count-2;
+      .rate-btn__star-item:nth-of-type(3){
+        background-image: url(img/star.svg);
+      }
+    }
+    &-4{
+      @extend .rate-btn_count-3;
+      .rate-btn__star-item:nth-of-type(4){
+        background-image: url(img/star.svg);
+      }
+    }
+    &-5{
+      @extend .rate-btn_count-4;
+      .rate-btn__star-item:nth-of-type(5){
+        background-image: url(img/star.svg);
+      }
+    }
+  }
 }

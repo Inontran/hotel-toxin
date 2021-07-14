@@ -1,68 +1,68 @@
 @import '@/theme/variables.scss';
 
 .curtain{
-	display: flex;
-	flex-direction: column;
-	height: 100vh;
-	width: 272px;
-	position: fixed;
-	top: 0;
-	right: 0;
-	background-color: $dark75;
-	z-index: 1000;
-	transition: .3s;
-	transform: translateX(100%);
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+  width: 272px;
+  position: fixed;
+  top: 0;
+  right: 0;
+  background-color: $dark75;
+  z-index: 1000;
+  transition: .3s;
+  transform: translateX(100%);
 
-	&.curtain_show{
-		transform: translateX(0);
-	}
+  &.curtain_show{
+    transform: translateX(0);
+  }
 
-	&__content-wrapper{
-		position: relative;
-		display: flex;
-		flex-direction: column;
-		height: 100%;
-		overflow: hidden;
-		overflow-y: auto;
-		width: 100%;
-	}
+  &__content-wrapper{
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    overflow: hidden;
+    overflow-y: auto;
+    width: 100%;
+  }
 
-	&__top{
-		padding: 15px 15px 0;
-	}
+  &__top{
+    padding: 15px 15px 0;
+  }
 
-	&__middle{
-		padding: 15px;
-	}
+  &__middle{
+    padding: 15px;
+  }
 
-	&__main-menu{
-		list-style: none;
+  &__main-menu{
+    list-style: none;
 
-		&-item{
-			list-style: none;
-			margin-bottom: 15px;
+    &-item{
+      list-style: none;
+      margin-bottom: 15px;
 
-			&:last-of-type{
-				margin-bottom: 0;
-			}
-		}
+      &:last-of-type{
+        margin-bottom: 0;
+      }
+    }
 
-		&-link{
-			color: $green;
-			text-decoration: none;
-		}
+    &-link{
+      color: $green;
+      text-decoration: none;
+    }
 
-		&-arrow{
-			margin-left: 10px;
-		}
-	}
+    &-arrow{
+      margin-left: 10px;
+    }
+  }
 
-	&__username{
-		font-size: calc_rem(18);
-		color: $green;
-	}
+  &__username{
+    font-size: calc_rem(18);
+    color: $green;
+  }
 
-	&_mb15{
-		margin-bottom: 15px;
-	}
+  &_mb15{
+    margin-bottom: 15px;
+  }
 }

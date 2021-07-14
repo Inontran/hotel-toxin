@@ -1,40 +1,40 @@
 include ../like-btn/like-btn
 
 mixin review(options)
-	if !options
-		- options = {}
+  if !options
+    - options = {}
 
-	if !options.classes
-		- options.classes = ''
-	
-	if !options.id
-		- options.id = ''
+  if !options.classes
+    - options.classes = ''
+  
+  if !options.id
+    - options.id = ''
 
-	if !options.avatar
-		- options.avatar = require('@/components/review/img/photo-example.jpg').default
+  if !options.avatar
+    - options.avatar = require('@/components/review/img/photo-example.jpg').default
 
-	if !options.isLike
-		- options.isLike = false
-	
-	if !options.count_like
-		- options.count_like = '0'
+  if !options.isLike
+    - options.isLike = false
+  
+  if !options.count_like
+    - options.count_like = '0'
 
-	if !options.username
-		- options.username = 'Anonymous'
+  if !options.username
+    - options.username = 'Anonymous'
 
-	if !options.time_later
-		- options.time_later = 'несколько секунд назад'
+  if !options.time_later
+    - options.time_later = 'несколько секунд назад'
 
-	if !options.text_review
-		- options.text_review = ''
+  if !options.text_review
+    - options.text_review = ''
 
-	div.review(class = options.classes, id = options.id)
-		div.review__header
-			div.review__avatar(style = 'background-image: url(' + options.avatar + ');')
-			div.review__header-text
-				p.review__username #{options.username}
-				p.review__time #{options.time_later}
-		div.review__content
-			div.review__like-wrapper
-				+like-btn({value: options.count_like, isLike: options.isLike})
-			p.review__text #{options.text_review}
+  div.review(class = options.classes, id = options.id)
+    div.review__header
+      div.review__avatar(style = 'background-image: url(' + options.avatar + ');')
+      div.review__header-text
+        p.review__username #{options.username}
+        p.review__time #{options.time_later}
+    div.review__content
+      div.review__like-wrapper
+        +like-btn({value: options.count_like, isLike: options.isLike})
+      p.review__text #{options.text_review}

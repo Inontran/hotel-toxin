@@ -6,43 +6,43 @@ include ../../components/filter-products/filter-products
 include ../../components/button/button
 
 block title
-	| Номера Toxin Hotel
+  | Номера Toxin Hotel
 
 block content
-	- data = htmlWebpackPlugin.options.getData()
+  - data = htmlWebpackPlugin.options.getData()
 
-	div.products
-		+header({
-			menuItems: data_header.menuItems, 
-			button_login_text: data_header.login_text,
-			button_login_href: data_header.login_href,
-			button_reg_text: data_header.reg_text,
-			button_reg_href: data_header.reg_href
-		})
+  div.products
+    +header({
+      menuItems: data_header.menuItems, 
+      button_login_text: data_header.login_text,
+      button_login_href: data_header.login_href,
+      button_reg_text: data_header.reg_text,
+      button_reg_href: data_header.reg_href
+    })
 
-		div.products__container
-			div.products__grid
-				div.products__left-column
-					+filter-products(data.filter_options)
-				div.products__center-column
-					h1.products_mb20 Номера, которые мы для вас подобрали
-					div.product_mb20
-						+button({
-							theme: 'button_fill button_size-md products_filter-show products_show-filter',
-							text: 'Показать фильтр'
-						})
-					div.products__cards-container.products_mb23
-						each data_card in data.cards
-							div.products__card-wrapper.products_mb20
-								+card-product({
-									gallery: data_card.gallery ? data_card.gallery : false,
-									room_number: data_card.room_number ? data_card.room_number : false,
-									room_type: data_card.room_type ? data_card.room_type : false,
-									price: data_card.price ? data_card.price : false,
-									price_time: data_card.price_time ? data_card.price_time : false,
-									count_reviews: data_card.count_reviews ? data_card.count_reviews : false,
-									room_type: data_card.room_type ? data_card.room_type : false,
-									rating: data_card.rating ? data_card.rating : false,
-								})
-					div.products__pagination-wrapper
-						+pagination({page: 1, perpage: 12, elements: 175, text: "вариантов аренды"})
+    div.products__container
+      div.products__grid
+        div.products__left-column
+          +filter-products(data.filter_options)
+        div.products__center-column
+          h1.products_mb20 Номера, которые мы для вас подобрали
+          div.product_mb20
+            +button({
+              theme: 'button_fill button_size-md products_filter-show products_show-filter',
+              text: 'Показать фильтр'
+            })
+          div.products__cards-container.products_mb23
+            each data_card in data.cards
+              div.products__card-wrapper.products_mb20
+                +card-product({
+                  gallery: data_card.gallery ? data_card.gallery : false,
+                  room_number: data_card.room_number ? data_card.room_number : false,
+                  room_type: data_card.room_type ? data_card.room_type : false,
+                  price: data_card.price ? data_card.price : false,
+                  price_time: data_card.price_time ? data_card.price_time : false,
+                  count_reviews: data_card.count_reviews ? data_card.count_reviews : false,
+                  room_type: data_card.room_type ? data_card.room_type : false,
+                  rating: data_card.rating ? data_card.rating : false,
+                })
+          div.products__pagination-wrapper
+            +pagination({page: 1, perpage: 12, elements: 175, text: "вариантов аренды"})

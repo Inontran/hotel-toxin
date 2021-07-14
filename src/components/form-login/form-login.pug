@@ -3,40 +3,40 @@ include ../input/input
 include ../card/card
 
 mixin form-login(options)
-	if !options
-		- options = {}
+  if !options
+    - options = {}
 
-	if !options.classes
-		- options.classes = ''
+  if !options.classes
+    - options.classes = ''
 
-	if !options.id
-		- options.id = ''
+  if !options.id
+    - options.id = ''
 
-	div.form-login(class = options.classes, id = options.id)
-		+card({title: "Войти"})
-			div.card_mb10
-				+input({
-					classes: "input_mask-email",
-					placeholder: "Email"
-				})
-			div.card_mb20
-				+input({
-					type: "password",
-					placeholder: "Пароль"
-				})
+  div.form-login(class = options.classes, id = options.id)
+    +card({title: "Войти"})
+      div.card_mb10
+        +input({
+          classes: "input_mask-email",
+          placeholder: "Email"
+        })
+      div.card_mb20
+        +input({
+          type: "password",
+          placeholder: "Пароль"
+        })
 
-			div.card_mb30
-				+button({
-					text: "Войти", 
-					theme: "button_fill button_arrow-left button_wide", 
-					isSubmit: true
-				})
+      div.card_mb30
+        +button({
+          text: "Войти", 
+          theme: "button_fill button_arrow-left button_wide", 
+          isSubmit: true
+        })
 
-			div.form-register__footer
-				p.form-register__footer-text Нет аккаунта на Toxin?
-				div.form-register__footer-button
-					+button({
-						text: "Создать", 
-						theme: "button_outline",
-						href: options.button_reg_href ? options.button_reg_href : false
-					})
+      div.form-register__footer
+        p.form-register__footer-text Нет аккаунта на Toxin?
+        div.form-register__footer-button
+          +button({
+            text: "Создать", 
+            theme: "button_outline",
+            href: options.button_reg_href ? options.button_reg_href : false
+          })

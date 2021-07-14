@@ -2,31 +2,31 @@ include ../header/header
 
 
 mixin first-display(options)
-	if !options
-		- options = {}
+  if !options
+    - options = {}
 
-	if !options.classes
-		- options.classes = ''
+  if !options.classes
+    - options.classes = ''
 
-	if !options.id
-		- options.id = ''
+  if !options.id
+    - options.id = ''
 
-	if !options.form_options
-		- options.form_options = {}
+  if !options.form_options
+    - options.form_options = {}
 
 
-	div.first-display(
-		class = options.classes, 
-		id = options.id,
-		style = options.bg_url ? 'background-image: url(' + options.bg_url + ')' : false
-	)
-		+header({
-			menuItems: data_header.menuItems, 
-			button_login_text: data_header.login_text,
-			button_login_href: data_header.login_href,
-			button_reg_text: data_header.reg_text,
-			button_reg_href: data_header.reg_href
-		})
+  div.first-display(
+    class = options.classes, 
+    id = options.id,
+    style = options.bg_url ? 'background-image: url(' + options.bg_url + ')' : false
+  )
+    +header({
+      menuItems: data_header.menuItems, 
+      button_login_text: data_header.login_text,
+      button_login_href: data_header.login_href,
+      button_reg_text: data_header.reg_text,
+      button_reg_href: data_header.reg_href
+    })
 
-		div.first-display__content-wrapper
-			block
+    div.first-display__content-wrapper
+      block

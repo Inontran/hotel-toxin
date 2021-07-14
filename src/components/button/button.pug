@@ -1,29 +1,29 @@
 //-
-	options.text - текст
-	options.theme - список модификаторов ('button_fill button_wide')
-	options.isSubmit - задает тип кнопки Submit (bool)
-	options.tabindex - задает tabindex
-	
+  options.text - текст
+  options.theme - список модификаторов ('button_fill button_wide')
+  options.isSubmit - задает тип кнопки Submit (bool)
+  options.tabindex - задает tabindex
+  
 mixin button(options)
-	if !options
-		- options = {}
-	
-	-
-		var classes = ''
-		//- classes += options.theme ? ' button_' + options.theme : ''
-		classes += options.theme ? options.theme : ''
-	
-	if options.href
-		a.button(
-			class = classes,
-			href = options.href,
-			tabindex = options.tabindex || false
-		)
-			span.button__text= options.text || 'Button'
-	else
-		button.button(
-			class = classes,
-			type = options.isSubmit ? 'submit' : false,
-			tabindex = options.tabindex || false
-		)
-			span.button__text= options.text || 'Button'
+  if !options
+    - options = {}
+  
+  -
+    var classes = ''
+    //- classes += options.theme ? ' button_' + options.theme : ''
+    classes += options.theme ? options.theme : ''
+  
+  if options.href
+    a.button(
+      class = classes,
+      href = options.href,
+      tabindex = options.tabindex || false
+    )
+      span.button__text= options.text || 'Button'
+  else
+    button.button(
+      class = classes,
+      type = options.isSubmit ? 'submit' : false,
+      tabindex = options.tabindex || false
+    )
+      span.button__text= options.text || 'Button'

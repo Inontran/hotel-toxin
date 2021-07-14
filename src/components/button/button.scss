@@ -1,93 +1,93 @@
 @import '@/theme/variables.scss';
 
 .button{
-	position: relative;
-	background: none;
-	border: none;
-	font-size: calc_rem(12);
-	text-transform: uppercase;
-	font-weight: 700;
-	line-height: 1.25;
-	color: $purple;
-	transition: .3s;
-	text-align: center;
-	cursor: pointer;
-	text-decoration: none;
+  position: relative;
+  background: none;
+  border: none;
+  font-size: calc_rem(12);
+  text-transform: uppercase;
+  font-weight: 700;
+  line-height: 1.25;
+  color: $purple;
+  transition: .3s;
+  text-align: center;
+  cursor: pointer;
+  text-decoration: none;
 
-	&:hover{
-		color: $dark50;
-	}
+  &:hover{
+    color: $dark50;
+  }
 
-	&__text{
-		position: relative;
-		z-index: 2;
-		text-decoration: none;
-	}
+  &__text{
+    position: relative;
+    z-index: 2;
+    text-decoration: none;
+  }
 
 
-	&_fill{
-		display: inline-flex;
-		align-items: center;
-		justify-content: center;
-		border: 0;
-		border-radius: 100vh;
-		color: $white;
-		padding: calc_rem(5) calc_rem(20);
-		min-height: calc_rem(44);
-		background: $gradient1;
+  &_fill{
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    border: 0;
+    border-radius: 100vh;
+    color: $white;
+    padding: calc_rem(5) calc_rem(20);
+    min-height: calc_rem(44);
+    background: $gradient1;
 
-		&:hover{
-			color: $white;
-			opacity: .5;
-		}
-	}
+    &:hover{
+      color: $white;
+      opacity: .5;
+    }
+  }
 
-	&_outline{
-		@extend .button_fill;
-		
-		&, &:hover{
-			color: $purple;
-		}
+  &_outline{
+    @extend .button_fill;
+    
+    &, &:hover{
+      color: $purple;
+    }
 
-		&:after{
-			content: '';
-			position: absolute;
-			top: 2px;
-			left: 2px;
-			width: calc(100% - 4px);
-			height: calc(100% - 4px);
-			background: $white;
-			border-radius: 100vh;
-		}
-	}
+    &:after{
+      content: '';
+      position: absolute;
+      top: 2px;
+      left: 2px;
+      width: calc(100% - 4px);
+      height: calc(100% - 4px);
+      background: $white;
+      border-radius: 100vh;
+    }
+  }
 
-	&_wide{
-		width: 100%;
-	}
+  &_wide{
+    width: 100%;
+  }
 
-	&_arrow-left{
-		padding: calc_rem(5) calc_rem(35);
+  &_arrow-left{
+    padding: calc_rem(5) calc_rem(35);
 
-		&:after{
-			content: '';
-			position: absolute;
-			top: 50%;
-			right: 10px;
-			transform: translateY(-50%);
-			background-image: url(img/arrow_forward.svg);
-			background-position: center;
-			background-size: cover;
-			background-repeat: no-repeat;
-			width: 18px;
-			height: 18px;
-		}
-	}
+    &:after{
+      content: '';
+      position: absolute;
+      top: 50%;
+      right: 10px;
+      transform: translateY(-50%);
+      background-image: url(img/arrow_forward.svg);
+      background-position: center;
+      background-size: cover;
+      background-repeat: no-repeat;
+      width: 18px;
+      height: 18px;
+    }
+  }
 
-	&_gray{
-		color: $dark50;
-	}
+  &_gray{
+    color: $dark50;
+  }
 
-	&_size-md{
-		min-height: calc_rem(34);
-	}
+  &_size-md{
+    min-height: calc_rem(34);
+  }
 }

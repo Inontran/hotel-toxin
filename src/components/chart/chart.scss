@@ -1,90 +1,90 @@
 @import '@/theme/variables.scss';
 
 .chart{
-	&__container{
-		display: flex;
-		align-items: flex-end;
-		position: relative;
-		flex-wrap: wrap;
-	}
+  &__container{
+    display: flex;
+    align-items: flex-end;
+    position: relative;
+    flex-wrap: wrap;
+  }
 
-	&__wrapper{
-		// width: 240px;
-		width: 248px;
-		position: relative;
-		z-index: 1;
-		// margin-right: -91px;
-		margin-right: -98px;
-	}
+  &__wrapper{
+    // width: 240px;
+    width: 248px;
+    position: relative;
+    z-index: 1;
+    // margin-right: -91px;
+    margin-right: -98px;
+  }
 
-	&__picture{
-		margin: -1px -64px;
-	}
+  &__picture{
+    margin: -1px -64px;
+  }
 
-	&__count{
-		position: absolute;
-		top: 50%;
-		left: 60px;
-		transform: translate(-50%, -50%);
-		z-index: -1;
-		text-align: center;
-		color: $purple;
+  &__count{
+    position: absolute;
+    top: 50%;
+    left: 60px;
+    transform: translate(-50%, -50%);
+    z-index: -1;
+    text-align: center;
+    color: $purple;
 
-		&-number{
-			font-family: 'Quicksand', 'Montserrat', sans-serif;
-			font-size: calc_rem(24);
-			font-weight: 700;
-			line-height: devide(30, 24);
-		}
+    &-number{
+      font-family: 'Quicksand', 'Montserrat', sans-serif;
+      font-size: calc_rem(24);
+      font-weight: 700;
+      line-height: devide(30, 24);
+    }
 
-		&-text{
-			font-size: calc_rem(12);
-			font-weight: 700;
-			line-height: devide(15, 12);
-			text-transform: uppercase;
-		}
-	}
+    &-text{
+      font-size: calc_rem(12);
+      font-weight: 700;
+      line-height: devide(15, 12);
+      text-transform: uppercase;
+    }
+  }
 
-	&__legend{
-		padding-right: 7px;
-		padding-top: 10px;
+  &__legend{
+    padding-right: 7px;
+    padding-top: 10px;
 
-		&-item{
-			display: flex;
-			align-items: flex-start;
-			line-height: 1.5;
-			margin-bottom: 3px;
+    &-item{
+      display: flex;
+      align-items: flex-start;
+      line-height: 1.5;
+      margin-bottom: 3px;
 
-			&:last-of-type{
-				margin-bottom: 0;
-			}
-		}
-		
-		&-icon{
-			overflow: hidden;
-			width: calc_rem(10);
-			height: calc_rem(10);
-			border-radius: 100vh;
-			margin-right: 5px;
-			margin-top: 4px;
+      &:last-of-type{
+        margin-bottom: 0;
+      }
+    }
+    
+    &-icon{
+      overflow: hidden;
+      width: calc_rem(10);
+      height: calc_rem(10);
+      border-radius: 100vh;
+      margin-right: 5px;
+      margin-top: 4px;
 
-			&_1{
-				background: $gradient3;
-			}
-			&_2{
-				background: $gradient2;
-			}
-			&_3{
-				background: $gradient1;
-			}
-			&_4{
-				background: $gradient4;
-			}
-		}
+      &_1{
+        background: $gradient3;
+      }
+      &_2{
+        background: $gradient2;
+      }
+      &_3{
+        background: $gradient1;
+      }
+      &_4{
+        background: $gradient4;
+      }
+    }
 
-		&-text{
-			font-size: calc_rem(14);
-			color: $dark75;
-		}
-	}
+    &-text{
+      font-size: calc_rem(14);
+      color: $dark75;
+    }
+  }
 }

@@ -1,14 +1,14 @@
 mixin card(options)
-	if !options
-		- options = {}
-	
-	if !options.classes
-		- options.classes = ''
+  if !options
+    - options = {}
+  
+  if !options.classes
+    - options.classes = ''
 
-	if !options.id
-		- options.id = ''
+  if !options.id
+    - options.id = ''
 
-	div.card(class = options.classes, id = options.id)
-		if options.title
-			h1.card__title #{options.title}
-		block
+  div.card(class = options.classes, id = options.id)
+    if options.title
+      h1.card__title #{options.title}
+    block

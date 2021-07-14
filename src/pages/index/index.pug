@@ -4,21 +4,21 @@ include ../../components/first-display/first-display
 include ../../components/form-fast-select/form-fast-select
 
 block title
-	| Toxin Hotel
+  | Toxin Hotel
 
 block content
-	- data = htmlWebpackPlugin.options.getData()
+  - data = htmlWebpackPlugin.options.getData()
 
-	+curtain({
-		menuItems: data_header.menuItems, 
-		button_login_text: data_header.login_text,
-		button_login_href: data_header.login_href,
-		button_reg_text: data_header.reg_text,
-		button_reg_href: data_header.reg_href
-	})
+  +curtain({
+    menuItems: data_header.menuItems, 
+    button_login_text: data_header.login_text,
+    button_login_href: data_header.login_href,
+    button_reg_text: data_header.reg_text,
+    button_reg_href: data_header.reg_href
+  })
 
-	+first-display(data)
-		div.first-display__form-wrapper
-			+form-fast-select(data.form_options)
-		if data.text_bottom
-			div.first-display__text-bottom #{data.text_bottom}
+  +first-display(data)
+    div.first-display__form-wrapper
+      +form-fast-select(data.form_options)
+    if data.text_bottom
+      div.first-display__text-bottom #{data.text_bottom}

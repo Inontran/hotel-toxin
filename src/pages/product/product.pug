@@ -7,86 +7,86 @@ include ../../components/list/list
 include ../../components/chart/chart
 
 block title
-	| Номер 122 Toxin Hotel
+  | Номер 122 Toxin Hotel
 
 block content
-	- data = htmlWebpackPlugin.options.getData()
+  - data = htmlWebpackPlugin.options.getData()
 
-	div.product
-		+header({
-			menuItems: data_header.menuItems, 
-			button_login_text: data_header.login_text,
-			button_login_href: data_header.login_href,
-			button_reg_text: data_header.reg_text,
-			button_reg_href: data_header.reg_href
-		})
-		+curtain({
-			menuItems: data_header.menuItems, 
-			button_login_text: data_header.login_text,
-			button_login_href: data_header.login_href,
-			button_reg_text: data_header.reg_text,
-			button_reg_href: data_header.reg_href
-		})
+  div.product
+    +header({
+      menuItems: data_header.menuItems, 
+      button_login_text: data_header.login_text,
+      button_login_href: data_header.login_href,
+      button_reg_text: data_header.reg_text,
+      button_reg_href: data_header.reg_href
+    })
+    +curtain({
+      menuItems: data_header.menuItems, 
+      button_login_text: data_header.login_text,
+      button_login_href: data_header.login_href,
+      button_reg_text: data_header.reg_text,
+      button_reg_href: data_header.reg_href
+    })
 
-		div.product__gallery
-			if !data.gallery[0]
-				- data.gallery[0] = ''
-			if !data.gallery[1]
-				- data.gallery[1] = ''
-			if !data.gallery[2]
-				- data.gallery[2] = ''
-			div.product__gallery-item.product__gallery-item_first(style="background-image: url(" + data.gallery[0] + ");")
-			div.product__gallery-item.product__gallery-item_second(style="background-image: url(" + data.gallery[1] + ");")
-			div.product__gallery-item.product__gallery-item_third(style="background-image: url(" + data.gallery[2] + ");")
+    div.product__gallery
+      if !data.gallery[0]
+        - data.gallery[0] = ''
+      if !data.gallery[1]
+        - data.gallery[1] = ''
+      if !data.gallery[2]
+        - data.gallery[2] = ''
+      div.product__gallery-item.product__gallery-item_first(style="background-image: url(" + data.gallery[0] + ");")
+      div.product__gallery-item.product__gallery-item_second(style="background-image: url(" + data.gallery[1] + ");")
+      div.product__gallery-item.product__gallery-item_third(style="background-image: url(" + data.gallery[2] + ");")
 
-		div.product__carousel.owl-carousel
-			if !data.gallery[0]
-				- data.gallery[0] = ''
-			if !data.gallery[1]
-				- data.gallery[1] = ''
-			if !data.gallery[2]
-				- data.gallery[2] = ''
-			div.product__carousel-item(style="background-image: url(" + data.gallery[0] + ");")
-			div.product__carousel-item(style="background-image: url(" + data.gallery[1] + ");")
-			div.product__carousel-item(style="background-image: url(" + data.gallery[2] + ");")
+    div.product__carousel.owl-carousel
+      if !data.gallery[0]
+        - data.gallery[0] = ''
+      if !data.gallery[1]
+        - data.gallery[1] = ''
+      if !data.gallery[2]
+        - data.gallery[2] = ''
+      div.product__carousel-item(style="background-image: url(" + data.gallery[0] + ");")
+      div.product__carousel-item(style="background-image: url(" + data.gallery[1] + ");")
+      div.product__carousel-item(style="background-image: url(" + data.gallery[2] + ");")
 
-		div.product__body
-			div.product__body-row
-				div.product__body-col.product__body-col-1
-					div.product__grid-3
-						div.product__grid-3-col.product__grid-3-col-1.product_mb40
-							if data.options_infographics
-								h2.product__title Сведения о номере
-								+infographics(data.options_infographics)
-						if data.chart_count_all
-							div.product__grid-3-col.product__grid-3-col-2.product_mb40
-								h2.product__title Впечатления от номера
-								+chart({
-									chart_count_all: data.chart_count_all,
-									chart_num_1: data.chart_num_1,
-									chart_num_2: data.chart_num_2,
-									chart_num_3: data.chart_num_3,
-									chart_num_4: data.chart_num_4,
-								})
-					
-					if data.reviews
-						div.product_mb40
-							h2.product__title Отзывы посетителей номера
-							each val, index in data.reviews
-								div.product_mb20
-									+review(val)
+    div.product__body
+      div.product__body-row
+        div.product__body-col.product__body-col-1
+          div.product__grid-3
+            div.product__grid-3-col.product__grid-3-col-1.product_mb40
+              if data.options_infographics
+                h2.product__title Сведения о номере
+                +infographics(data.options_infographics)
+            if data.chart_count_all
+              div.product__grid-3-col.product__grid-3-col-2.product_mb40
+                h2.product__title Впечатления от номера
+                +chart({
+                  chart_count_all: data.chart_count_all,
+                  chart_num_1: data.chart_num_1,
+                  chart_num_2: data.chart_num_2,
+                  chart_num_3: data.chart_num_3,
+                  chart_num_4: data.chart_num_4,
+                })
+          
+          if data.reviews
+            div.product_mb40
+              h2.product__title Отзывы посетителей номера
+              each val, index in data.reviews
+                div.product_mb20
+                  +review(val)
 
-					div.product__grid-3
-						div.product__grid-3-col.product__grid-3-col-1.product_mb40
-							if data.rules_title
-								h2.product__title #{data.rules_title}
-							if data.options_rules
-								+list(data.options_rules)
-						div.product__grid-3-col.product__grid-3-col-2.product_mb40
-							if data.cancel_title
-								h2.product__title #{data.cancel_title}
-							if data.cancel_text
-								p.product__text #{data.cancel_text}
+          div.product__grid-3
+            div.product__grid-3-col.product__grid-3-col-1.product_mb40
+              if data.rules_title
+                h2.product__title #{data.rules_title}
+              if data.options_rules
+                +list(data.options_rules)
+            div.product__grid-3-col.product__grid-3-col-2.product_mb40
+              if data.cancel_title
+                h2.product__title #{data.cancel_title}
+              if data.cancel_text
+                p.product__text #{data.cancel_text}
 
-				div.product__body-col.product__body-col-2
-					+form-booking()
+        div.product__body-col.product__body-col-2
+          +form-booking()

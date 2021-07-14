@@ -1,133 +1,133 @@
 @import '@/theme/variables.scss';
 
 .footer{
-	background: $white;
-	border-top: 1px solid #b3b3bc;
+  background: $white;
+  border-top: 1px solid #b3b3bc;
 
-	&__up{
-		display: grid;
-		grid-template-areas: 'col1 col2 col3 col4 col5';
-		grid-template-columns: 3fr 2fr 2fr 2fr 3fr;
-		// grid-gap: 0 $gutter;
-		padding: 100px 0;
-		margin: 0 -20px;
-	}
+  &__up{
+    display: grid;
+    grid-template-areas: 'col1 col2 col3 col4 col5';
+    grid-template-columns: 3fr 2fr 2fr 2fr 3fr;
+    // grid-gap: 0 $gutter;
+    padding: 100px 0;
+    margin: 0 -20px;
+  }
 
-	&__container{
-		max-width: $max_width_container;
-		margin: 0 auto;
-		padding: 0 10px;
-	}
+  &__container{
+    max-width: $max_width_container;
+    margin: 0 auto;
+    padding: 0 10px;
+  }
 
-	&__col1{
-		grid-area: col1;
-		padding: 0 20px;
-	}
-	&__col2{
-		grid-area: col2;
-		padding: 0 20px;
-	}
-	&__col3{
-		grid-area: col3;
-		padding: 0 20px;
-	}
-	&__col4{
-		grid-area: col4;
-		padding: 0 20px;
-	}
-	&__col5{
-		grid-area: col5;
-		padding: 0 20px;
-	}
+  &__col1{
+    grid-area: col1;
+    padding: 0 20px;
+  }
+  &__col2{
+    grid-area: col2;
+    padding: 0 20px;
+  }
+  &__col3{
+    grid-area: col3;
+    padding: 0 20px;
+  }
+  &__col4{
+    grid-area: col4;
+    padding: 0 20px;
+  }
+  &__col5{
+    grid-area: col5;
+    padding: 0 20px;
+  }
 
-	&__subtitle{
-		margin-top: 4px;
-		margin-bottom: 23px;
-	}
+  &__subtitle{
+    margin-top: 4px;
+    margin-bottom: 23px;
+  }
 
-	&__list{
-		.item{
-			list-style: none;
-			margin-bottom: 21px;
-			line-height: 1.21;
+  &__list{
+    .item{
+      list-style: none;
+      margin-bottom: 21px;
+      line-height: 1.21;
 
-			&:last-of-type{
-				margin-bottom: 0;
-			}
-			
-			.link{
-				text-decoration: none;
-				color: $dark50;
-			}
-		}
-	}
+      &:last-of-type{
+        margin-bottom: 0;
+      }
+      
+      .link{
+        text-decoration: none;
+        color: $dark50;
+      }
+    }
+  }
 
-	&__down{
-		border-top: 1px solid #d1d1d4;
-		padding: 23px 0;
-	}
+  &__down{
+    border-top: 1px solid #d1d1d4;
+    padding: 23px 0;
+  }
 
-	&__down-wrapper{
-		display: flex;
-		align-items: center;
-		justify-content: space-between;
-	}
+  &__down-wrapper{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
 
-	&__container-mobile{
-		padding: 110px 0;
-		text-align: center;
-		margin: 0 auto;
-		max-width: 560px;
+  &__container-mobile{
+    padding: 110px 0;
+    text-align: center;
+    margin: 0 auto;
+    max-width: 560px;
 
-		@media(max-width: $xs){
-			padding: 50px 0;
-		}
+    @media(max-width: $xs){
+      padding: 50px 0;
+    }
 
-		.text{
-			padding: 20px 0 25px;
-		}
-	}
+    .text{
+      padding: 20px 0 25px;
+    }
+  }
 
-	&__text{
-		color: $dark75;
-	}
+  &__text{
+    color: $dark75;
+  }
 
-	&_mb15{
-		margin-bottom: 15px;
-	}
+  &_mb15{
+    margin-bottom: 15px;
+  }
 
-	&_mb18{
-		margin-bottom: 18px;
-	}
-	
-	&_mb20{
-		margin-bottom: 20px;
-	}
+  &_mb18{
+    margin-bottom: 18px;
+  }
+  
+  &_mb20{
+    margin-bottom: 20px;
+  }
 
-	&_mb21{
-		margin-bottom: 21px;
-	}
+  &_mb21{
+    margin-bottom: 21px;
+  }
 
-	&_mb25{
-		margin-bottom: 25px;
-	}
+  &_mb25{
+    margin-bottom: 25px;
+  }
 
-	&_mb28{
-		margin-bottom: 28px;
-	}
+  &_mb28{
+    margin-bottom: 28px;
+  }
 
-	&_mt4{
-		margin-top: 4px;
-	}
+  &_mt4{
+    margin-top: 4px;
+  }
 
-	&_desktop{
-		@media(max-width: $md+1 ){
-			display: none;
-		}
-	}
-	&_mobile{
-		@media(min-width: $md+1 ){
-			display: none;
-		}
-	}
+  &_desktop{
+    @media(max-width: $md+1 ){
+      display: none;
+    }
+  }
+  &_mobile{
+    @media(min-width: $md+1 ){
+      display: none;
+    }
+  }
 }

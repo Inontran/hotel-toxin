@@ -1,9 +1,9 @@
 {
-	"first_display_options":{
-		"classes": "first-display_content-center",
-		"bg_url": "image-4.jpg"
-	},
-	"form_options":{
-		"button_reg_href": "register.html"
-	}
+  "first_display_options":{
+    "classes": "first-display_content-center",
+    "bg_url": "image-4.jpg"
+  },
+  "form_options":{
+    "button_reg_href": "register.html"
+  }
 }

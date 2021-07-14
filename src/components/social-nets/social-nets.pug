@@ -1,14 +1,14 @@
 mixin social-nets(options)
-	if !options
-		- options = {}
-	
-	if !options.theme
-		- options.theme = ''
+  if !options
+    - options = {}
+  
+  if !options.theme
+    - options.theme = ''
 
-	div.social-nets(class = options.theme)
-		a(href="twitter.com", target = "_blank", rel="noopener noreferrer").social-nets__link
-			img(src = require('@/components/social-nets/img/twitter-icon.svg').default ).social-nets__icon
-		a(href="fb.com", target = "_blank", rel="noopener noreferrer").social-nets__link
-			img(src = require('@/components/social-nets/img/fb-icon.svg').default ).social-nets__icon
-		a(href="vk.com", target = "_blank", rel="noopener noreferrer").social-nets__link
-			img(src = require('@/components/social-nets/img/insta-icon.svg').default ).social-nets__icon
+  div.social-nets(class = options.theme)
+    a(href="twitter.com", target = "_blank", rel="noopener noreferrer").social-nets__link
+      img(src = require('@/components/social-nets/img/twitter-icon.svg').default ).social-nets__icon
+    a(href="fb.com", target = "_blank", rel="noopener noreferrer").social-nets__link
+      img(src = require('@/components/social-nets/img/fb-icon.svg').default ).social-nets__icon
+    a(href="vk.com", target = "_blank", rel="noopener noreferrer").social-nets__link
+      img(src = require('@/components/social-nets/img/insta-icon.svg').default ).social-nets__icon

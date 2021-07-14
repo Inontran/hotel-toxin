@@ -1,19 +1,19 @@
 include ../button/button
 
 mixin air-datepicker(options)
-	if !options
-		- options = {}
-	
-	if !options.classes
-		- options.classes = ''
+  if !options
+    - options = {}
+  
+  if !options.classes
+    - options.classes = ''
 
-	if !options.id
-		- options.id = ''
+  if !options.id
+    - options.id = ''
 
-	div.air-datepicker(class = options.classes, id = options.id)
-		div.air-datepicker__wrapper
-		div.air-datepicker__btns
-			div.air-datepicker__btn-wrapper.air-datepicker__btn-wrapper_clear
-				+button({text: 'Очистить', theme: 'button_gray'})
-			div.air-datepicker__btn-wrapper.air-datepicker__btn-wrapper_submit
-				+button({text: 'Применить'})
+  div.air-datepicker(class = options.classes, id = options.id)
+    div.air-datepicker__wrapper
+    div.air-datepicker__btns
+      div.air-datepicker__btn-wrapper.air-datepicker__btn-wrapper_clear
+        +button({text: 'Очистить', theme: 'button_gray'})
+      div.air-datepicker__btn-wrapper.air-datepicker__btn-wrapper_submit
+        +button({text: 'Применить'})

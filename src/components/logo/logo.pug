@@ -1,14 +1,14 @@
 mixin logo(options)
-	if !options
-		- options = {}
-	
-	if !options.src
-		- options.src = require('@/components/logo/img/logo.svg').default
-	else
-		- options.src = require(option.src).default
+  if !options
+    - options = {}
+  
+  if !options.src
+    - options.src = require('@/components/logo/img/logo.svg').default
+  else
+    - options.src = require(option.src).default
 
-	if !options.href
-		- options.href = 'index.html'
+  if !options.href
+    - options.href = 'index.html'
 
-	a.logo(href = options.href)
-		img(src = options.src, alt = "Toxin")
+  a.logo(href = options.href)
+    img(src = options.src, alt = "Toxin")

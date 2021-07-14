@@ -1,109 +1,109 @@
 @import '@/theme/variables.scss';
 
 .form-booking{
-	
-	&__title{
-		display: flex;
-		align-items: flex-end;
-		justify-content: space-between;
-		margin-left: -10px;
-		margin-right: -10px;
+  
+  &__title{
+    display: flex;
+    align-items: flex-end;
+    justify-content: space-between;
+    margin-left: -10px;
+    margin-right: -10px;
 
-		&-left, &-right{
-			padding: 0 10px 10px;
-		}
+    &-left, &-right{
+      padding: 0 10px 10px;
+    }
 
-		&-left{
-			font-weight: 700;
-		}
+    &-left{
+      font-weight: 700;
+    }
 
-		&-symbol, &-number{
-			font-family: 'Quicksand', 'Montserrat', sans-serif;
-		}
+    &-symbol, &-number{
+      font-family: 'Quicksand', 'Montserrat', sans-serif;
+    }
 
-		&-symbol{
-			font-size: calc_rem(14);
-		}
+    &-symbol{
+      font-size: calc_rem(14);
+    }
 
-		&-number{
-			font-size: calc_rem(24);
-		}
+    &-number{
+      font-size: calc_rem(24);
+    }
 
-		&-type{
-			font-size: calc_rem(12);
-			color: $purple;
-			text-transform: uppercase;
-		}
+    &-type{
+      font-size: calc_rem(12);
+      color: $purple;
+      text-transform: uppercase;
+    }
 
-		&-right{
-			color: $dark50;
-		}
+    &-right{
+      color: $dark50;
+    }
 
-		&-price{
-			font-weight: 700;
-			font-size: calc_rem(14);
-		}
+    &-price{
+      font-weight: 700;
+      font-size: calc_rem(14);
+    }
 
-		&-price-type{
-			font-size: calc_rem(12);
-		}
-	}
-
-
-	&__table{
-		color: $dark75;
-
-		&_px5{
-			padding-left: 5px;
-			padding-right: 5px;
-		}
-		&-cell{
-			padding-bottom: 10px;
-			vertical-align: top;
-
-			&_price{
-				text-align: right;
-				white-space: nowrap;
-			}
-		}
-	}
-
-	&__tooltip{
-		display: inline-block;
-		overflow: hidden;
-		border-radius: 100vh;
-		border: 1px solid $dark25;
-		position: relative;
-		width: calc_rem(20);
-		height: calc_rem(20);
-		text-align: center;
-		line-height: calc_rem(20);
-		cursor: pointer;
-
-		&:after{
-			content: 'i';
-			font-size: calc-rem(12);
-			font-weight: 700;
-			color: $dark25;
-		}
-	}
+    &-price-type{
+      font-size: calc_rem(12);
+    }
+  }
 
 
-	&__bottom{
-		display: flex;
-		align-items: flex-end;
-		font-weight: 700;
-		font-size: calc_rem(19);
-		line-height: 1;
-		
-		&-points{
-			border-bottom: 1px dashed $dark25;
-			width: 100%;
-			margin: 0 5px 4px;
-		}
+  &__table{
+    color: $dark75;
 
-		&-price{
-			white-space: nowrap;
-		}
-	}
+    &_px5{
+      padding-left: 5px;
+      padding-right: 5px;
+    }
+    &-cell{
+      padding-bottom: 10px;
+      vertical-align: top;
+
+      &_price{
+        text-align: right;
+        white-space: nowrap;
+      }
+    }
+  }
+
+  &__tooltip{
+    display: inline-block;
+    overflow: hidden;
+    border-radius: 100vh;
+    border: 1px solid $dark25;
+    position: relative;
+    width: calc_rem(20);
+    height: calc_rem(20);
+    text-align: center;
+    line-height: calc_rem(20);
+    cursor: pointer;
+
+    &:after{
+      content: 'i';
+      font-size: calc-rem(12);
+      font-weight: 700;
+      color: $dark25;
+    }
+  }
+
+
+  &__bottom{
+    display: flex;
+    align-items: flex-end;
+    font-weight: 700;
+    font-size: calc_rem(19);
+    line-height: 1;
+    
+    &-points{
+      border-bottom: 1px dashed $dark25;
+      width: 100%;
+      margin: 0 5px 4px;
+    }
+
+    &-price{
+      white-space: nowrap;
+    }
+  }
 }

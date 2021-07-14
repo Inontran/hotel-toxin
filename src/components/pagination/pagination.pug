@@ -1,30 +1,30 @@
 
 
 mixin pagination(options)
-	if !options
-		- options = {}
+  if !options
+    - options = {}
 
-	if !options.classes
-		- options.classes = ''
+  if !options.classes
+    - options.classes = ''
 
-	if !options.id
-		- options.id = ''
+  if !options.id
+    - options.id = ''
 
-	if !options.page
-		- options.page = 1
+  if !options.page
+    - options.page = 1
 
-	if !options.perpage
-		- options.perpage = 10
+  if !options.perpage
+    - options.perpage = 10
 
-	if !options.text
-		- options.text = ''
+  if !options.text
+    - options.text = ''
 
-	div.pagination(class = options.classes, id = options.id)
-		div.pagination__wrapper(
-			data-page = options.page, 
-			data-perpage = options.perpage, 
-			data-elements = options.elements
-		)
-		p.pagination__text
-			span.pagination__output 1 - 12 из 100+ 
-			span #{options.text}
+  div.pagination(class = options.classes, id = options.id)
+    div.pagination__wrapper(
+      data-page = options.page, 
+      data-perpage = options.perpage, 
+      data-elements = options.elements
+    )
+    p.pagination__text
+      span.pagination__output 1 - 12 из 100+ 
+      span #{options.text}
