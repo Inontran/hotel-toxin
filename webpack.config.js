@@ -13,10 +13,10 @@ const postcssSCSS = require('postcss-scss');
 const autoprefixer = require('autoprefixer');
 // const stylelint = require('stylelint');
 // const doiuse = require('doiuse');
-const ExtractTextPlugin = require('extract-text-webpack-plugin');
 const ProvidePlugin = require('webpack-provide-global-plugin');
 const MomentLocalesPlugin = require('moment-locales-webpack-plugin');
 const crypto = require('crypto');
+const FaviconsWebpackPlugin = require('favicons-webpack-plugin');
 
 const isDev = process.env.NODE_ENV === 'development';
 const isProd = process.env.NODE_ENV === 'production';
@@ -192,6 +192,19 @@ const plugins = () =>{
 		new MomentLocalesPlugin({
 				localesToKeep: ['es-us', 'ru'],
 		}),
+    new FaviconsWebpackPlugin({
+      logo: PATHS.src + '/components/logo/img/logo-mini.svg',
+      cache: true,
+      publicPath: '',
+      outputPath: 'favicons',
+      prefix: 'favicons/',
+      inject: true,
+      favicons: {
+        background: '#fff',
+        theme_color: '#BC9CFF',
+        version: '1.0',
+      },
+    }),
 	];
 
 	if( isProd ){
