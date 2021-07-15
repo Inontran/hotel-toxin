@@ -18,8 +18,22 @@ mixin dropdown(options)
   if !options.input_params
     - options.input_params = {}
 
+  if !options.input_params.classes
+    - options.input_params.classes = 'input_in-dropdown'
+  else
+    - options.input_params.classes += ' input_in-dropdown'
+
+
   if options.input_params2
     - options.classes += ' dropdown_dual-date'
+  else
+  //-   - options.input_params2 = {}
+
+  //- if !options.input_params2.classes
+  //-   - options.input_params2.classes = 'input_in-dropdown'
+  //- else
+  //-   - options.input_params2.classes += ' input_in-dropdown'
+
 
   if !options.text_default
     - options.text_default = ''

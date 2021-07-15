@@ -30,12 +30,6 @@
       border: 1px solid $dark50;
     }
   }
-  
-  &_subscription{
-    .input__field{
-      padding-right: calc_rem(44);
-    }
-  }
 
   &__submit{
     position: absolute;
@@ -52,5 +46,13 @@
     background-size: auto;
     background-repeat: no-repeat;
     cursor: pointer;
+  }
+
+
+  &_subscription,
+  &_in-dropdown{
+    .input__field{
+      padding-right: calc_rem(44);
+    }
   }
 }
