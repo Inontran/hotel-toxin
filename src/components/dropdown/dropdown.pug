@@ -1,6 +1,6 @@
 include ../input/input
 include ../button/button
-include ../input-number/input-number
+include ../list-counters/list-counters
 
 mixin dropdown(options)
   if !options
@@ -74,20 +74,18 @@ mixin dropdown(options)
           block
         else
           if options.array_counter
-            each item, index in options.array_counter
-              div.dropdown__counter.js-dropdown__counter
-                span.dropdown__counter-label.js-dropdown__counter-label #{item.label}
-                //- div.dropdown__counter-btns
-                //-   button.dropdown__btn-less.js-dropdown__btn-less -
-                //-   input.dropdown__counter-input.js-dropdown__counter-input(name = item.input_name ? item.input_name : '', value = item.value ? item.value : 0, readonly)
-                //-   button.dropdown__btn-more.js-dropdown__btn-more +
-                +input-number({
-                  value: item.value ? item.value : 0,
-                  name: item.input_name ? item.input_name : '',
-                  min: 0
-                })
-            div.dropdown__btns-result
-              div.dropdown__btn-reset.js-dropdown__btn-reset
-                +button({text: "Очистить", theme: "button_gray"})
-              div.dropdown__btn-submit.js-dropdown__btn-submit
-                +button({text: "Применить"})
+            +list-counters({
+              array_counter: options.array_counter
+            })
+            //- each item, index in options.array_counter
+            //-   div.dropdown__counter.js-dropdown__counter
+            //-     span.dropdown__counter-label.js-dropdown__counter-label #{item.label}
+            //-     div.dropdown__counter-btns
+            //-       button.dropdown__btn-less.js-dropdown__btn-less -
+            //-       input.dropdown__counter-input.js-dropdown__counter-input(name = item.input_name ? item.input_name : '', value = item.value ? item.value : 0, readonly)
+            //-       button.dropdown__btn-more.js-dropdown__btn-more +
+            //- div.dropdown__btns-result
+            //-   div.dropdown__btn-reset.js-dropdown__btn-reset
+            //-     +button({text: "Очистить", theme: "button_gray"})
+            //-   div.dropdown__btn-submit.js-dropdown__btn-submit
+            //-     +button({text: "Применить"})

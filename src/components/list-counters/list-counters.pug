@@ -1,0 +1,44 @@
+include ../button/button
+include ../input-number/input-number
+
+mixin list-counters(options)
+  if !options
+    - options = {}
+
+  if !options.classes
+    - options.classes = ''
+  
+  if !options.id
+    - options.id = ''
+
+  if !options.text_default
+    - options.text_default = ''
+
+  if !options.text_one
+    - options.text_one = ''
+
+  if !options.text_many
+    - options.text_many = ''
+
+
+  div.list-counters.js-list-counters(
+    class = options.classes, 
+    id = options.id, 
+    data-default-text = options.text_default, 
+    data-text-one = options.text_one, 
+    data-text-many = options.text_many
+  )
+    if options.array_counter
+      each item, index in options.array_counter
+        div.list-counters__counter.js-list-counters__counter
+          span.list-counters__counter-label.js-list-counters__counter-label #{item.label}
+          +input-number({
+            value: item.value ? item.value : 0,
+            name: item.input_name ? item.input_name : '',
+            min: 0
+          })
+      div.list-counters__btns-result
+        div.list-counters__btn-reset.js-list-counters__btn-reset
+          +button({text: "Очистить", theme: "button_gray"})
+        div.list-counters__btn-submit.js-list-counters__btn-submit
+          +button({text: "Применить"})
