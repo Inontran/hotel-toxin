@@ -32,7 +32,7 @@ mixin card-product(options)
         //- - for(var i = 0; i < 4; i++)
         //-     div.card-product__img(style = 'background-image: url(' + require('@/components/card-product/img/example.jpg').default + ' );')
       if options.gallery
-        div.card-product__carousel.owl-carousel
+        div.card-product__carousel.js-card-product__carousel.owl-carousel
           each val, index in options.gallery
             div.card-product__img(style = 'background-image: url(' + val + ' );')
     div.card-product__content

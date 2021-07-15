@@ -1,3 +1,4 @@
+import $ from 'jquery';
 import SimpleBar from 'simplebar';
 
 $(function(){

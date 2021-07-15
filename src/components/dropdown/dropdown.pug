@@ -1,5 +1,6 @@
 include ../input/input
 include ../button/button
+include ../counter-btns/counter-btns
 
 mixin dropdown(options)
   if !options
@@ -32,7 +33,7 @@ mixin dropdown(options)
     - options.text_many = ''
 
 
-  div.dropdown(
+  div.dropdown.js-dropdown(
     class = options.classes, 
     id = options.id, 
     data-group = options.group, 
@@ -42,14 +43,14 @@ mixin dropdown(options)
   )
     if options.input_params2
       div.dropdown__input-dates-wrapper
-        div.dropdown__input-wrapper
+        div.dropdown__input-wrapper.js-dropdown__input-wrapper
           +input(options.input_params)
           button.dropdown__arrow
-        div.dropdown__input-wrapper
+        div.dropdown__input-wrapper.js-dropdown__input-wrapper
           +input(options.input_params2)
           button.dropdown__arrow
     else
-      div.dropdown__input-wrapper
+      div.dropdown__input-wrapper.js-dropdown__input-wrapper
         +input(options.input_params)
         button.dropdown__arrow
         
@@ -60,14 +61,19 @@ mixin dropdown(options)
         else
           if options.array_counter
             each item, index in options.array_counter
-              div.dropdown__counter
-                span.dropdown__counter-label #{item.label}
-                div.dropdown__counter-btns
-                  button.dropdown__btn-less -
-                  input.dropdown__counter-input(name = item.input_name ? item.input_name : '', value = item.value ? item.value : 0, readonly)
-                  button.dropdown__btn-more +
+              div.dropdown__counter.js-dropdown__counter
+                span.dropdown__counter-label.js-dropdown__counter-label #{item.label}
+                //- div.dropdown__counter-btns
+                //-   button.dropdown__btn-less.js-dropdown__btn-less -
+                //-   input.dropdown__counter-input.js-dropdown__counter-input(name = item.input_name ? item.input_name : '', value = item.value ? item.value : 0, readonly)
+                //-   button.dropdown__btn-more.js-dropdown__btn-more +
+                +counter-btns({
+                  value: item.value ? item.value : 0,
+                  name: item.input_name ? item.input_name : '',
+                  min: 0
+                })
             div.dropdown__btns-result
-              div.dropdown__btn-reset
+              div.dropdown__btn-reset.js-dropdown__btn-reset
                 +button({text: "Очистить", theme: "button_gray"})
-              div.dropdown__btn-submit
+              div.dropdown__btn-submit.js-dropdown__btn-submit
                 +button({text: "Применить"})

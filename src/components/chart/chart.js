@@ -1,9 +1,10 @@
+import $ from 'jquery';
 import Chart from 'chart.js';
 
 $(document).ready(function(){
-  $('body').find('.chart').each(function(){
+  $('body').find('.js-chart').each(function(){
     var $current_chart = $(this);
-    var $chart_picture = $current_chart.find('.chart__picture');
+    var $chart_picture = $current_chart.find('.js-chart__picture');
     var ctx = $chart_picture.get(0).getContext('2d');
     var gradient1 = ctx.createLinearGradient(0, 0, 0, 180);
     gradient1.addColorStop(0, $.COLORS.purple);   
@@ -69,7 +70,7 @@ $(document).ready(function(){
       cutoutPercentage: 90
     };
 
-    var myDoughnutChart = new Chart(ctx, {
+    new Chart(ctx, {
       type: 'doughnut',
       data: data,
       options: options

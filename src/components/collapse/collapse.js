@@ -1,3 +1,5 @@
+import $ from 'jquery';
+
 $(document).ready(function(){
   $('body').on('click', '.collapse .collapse__btn', function(e){
     e.preventDefault();

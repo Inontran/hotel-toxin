@@ -1,3 +1,5 @@
+import $ from 'jquery';
+
 $(function(){
   $('body').on('click', '.products_show-filter', function(event){
     event.preventDefault();

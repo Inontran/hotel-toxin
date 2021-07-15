@@ -8,7 +8,9 @@
     "build": "cross-env NODE_ENV=production webpack --mode production",
     "watch": "cross-env NODE_ENV=development webpack --mode development --watch",
     "start": "cross-env NODE_ENV=development webpack serve --mode development --open",
-    "stats": "webpack --json > stats.json && webpack-bundle-analyzer stats.json"
+    "stats": "webpack --json > stats.json && webpack-bundle-analyzer stats.json",
+    "eslint": "eslint --cache --ext .js,.jsx,.ts,.tsx src",
+    "eslint:dump": "eslint --print-config ./.eslintrc.json"
   },
   "keywords": [
     "FSD",
@@ -29,6 +31,9 @@
     "cross-env": "^7.0.3",
     "crypto": "^1.0.1",
     "css-loader": "^5.2.7",
+    "eslint": "^6.8.0",
+    "eslint-loader": "^4.0.2",
+    "eslint-plugin-fsd": "^1.0.1",
     "favicons": "^6.2.2",
     "favicons-webpack-plugin": "4.2",
     "file-loader": "^6.2.0",

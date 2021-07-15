@@ -35,10 +35,10 @@ mixin chart(options)
     - options.label_4 = 'Разочарован'
 
   
-  div.chart(class = options.classes, id = options.id, data-num-1 = options.chart_num_1, data-num-2 = options.chart_num_2, data-num-3 = options.chart_num_3, data-num-4 = options.chart_num_4)
+  div.chart.js-chart(class = options.classes, id = options.id, data-num-1 = options.chart_num_1, data-num-2 = options.chart_num_2, data-num-3 = options.chart_num_3, data-num-4 = options.chart_num_4)
     div.chart__container
       div.chart__wrapper
-        canvas.chart__picture
+        canvas.chart__picture.js-chart__picture
         if options.chart_count_all
           div.chart__count
             div.chart__count-number #{options.chart_count_all}

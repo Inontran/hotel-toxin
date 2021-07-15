@@ -1,0 +1,26 @@
+{
+  "extends": [
+    // Базовый набор правил eslint
+    "eslint:recommended",
+    // Правила FSD
+    "plugin:fsd/all"
+  ],
+  "rules": {
+    "max-len": [
+      "error",
+      {
+        "code": 120
+      }
+    ]
+  },
+  "parserOptions": {
+    "sourceType": "module"
+  },
+  "plugins": [
+    
+  ],
+  "env": {
+    "browser": true,
+    "es6": true
+  }
+}

@@ -52,47 +52,18 @@
     margin: 7px 7px 7px 15px;
   }
 
-  &__counter, 
-  &__counter-btns,
+  &__counter,
   &__btns-result{
     display: flex;
     align-items: center;
     justify-content: space-between;
   }
 
-  &__counter-label,
-  &__counter-input{
+  &__counter-label{
     font-weight: 700;
     font-size: calc_rem(12);
     text-transform: uppercase;
     line-height: 1.25;
-  }
-
-  &__btn-less, 
-  &__btn-more, 
-  &__counter-input{
-    width: calc_rem(30);
-    height: calc_rem(30);
-    text-align: center;
-  }
-
-  &__btn-less, 
-  &__btn-more{
-    border-radius: 100vh;
-    border: 1px solid $dark25;
-    background: $white;
-    line-height: calc_rem(30);
-    color: $dark25;
-    cursor: pointer;
-  }
-  &_disabled-btn{
-    opacity: .38;
-  }
-
-  &__counter-input{
-    padding: 0 3px;
-    border: 0;
-    background: none;
   }
 
   &__btns-result{
@@ -102,6 +73,14 @@
   &__btn-reset,
   &__btn-submit{
     line-height: 1;
+  }
+
+  &__btn-reset{
+    margin-right: auto;
+  }
+
+  &__btn-submit{
+    margin-left: auto;
   }
 
   

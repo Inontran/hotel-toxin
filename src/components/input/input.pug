@@ -30,10 +30,10 @@ mixin input(options)
     - options.classes += ' input_subscription'
 
   
-  label.input(class = options.classes, id = options.id)
+  label.input.js-input(class = options.classes, id = options.id)
     if options.label
       p.input__label #{options.label}
-    input.input__field(
+    input.input__field.js-input__field(
       value = options.value, 
       placeholder = options.placeholder, 
       type = options.type, 

@@ -1,3 +1,4 @@
+import $ from 'jquery';
 import 'webpack-jquery-ui/slider';
 
 $(document).ready(function(){

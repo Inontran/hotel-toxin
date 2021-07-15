@@ -1,3 +1,5 @@
+import $ from 'jquery';
+
 $(document).ready(function(){
 
   checkItemCount();
@@ -5,19 +7,19 @@ $(document).ready(function(){
 
   // закрытие dropdown по клику вне этого dropdown
   $('body').on('click', '*', function (event) {
-    if( !$(event.target).closest('.dropdown').length && !$(event.target).hasClass('.dropdown') ) {
-      $('.dropdown').removeClass('dropdown_active');
+    if( !$(event.target).closest('.js-dropdown').length && !$(event.target).hasClass('.js-dropdown') ) {
+      $('.js-dropdown').removeClass('dropdown_active');
     }
   });
 
 
-  $('body').on('click', '.dropdown .dropdown__input-wrapper', function(e){
+  $('body').on('click', '.js-dropdown .js-dropdown__input-wrapper', function(e){
     e.preventDefault();
-    var $parent = $(this).closest('.dropdown');
+    var $parent = $(this).closest('.js-dropdown');
     var dropdown_group = $parent.attr('data-group');
     
     if( dropdown_group != '' && dropdown_group !== 'undefined' ){
-      var selector = '.dropdown';
+      var selector = '.js-dropdown';
       
       $('body').find(selector + '[data-group="' + dropdown_group + '"]').each(function(){
         if( $(selector).index($(this)) == $(selector).index($parent) ){
@@ -32,11 +34,11 @@ $(document).ready(function(){
   });
 
 
-  $('body').on('click', '.dropdown .dropdown__btn-less', function(e){
+  $('body').on('click', '.js-dropdown .js-dropdown__btn-less', function(e){
     e.preventDefault();
     var $btn = $(this);
-    var $parent = $btn.closest('.dropdown__counter');
-    var $input = $parent.find('.dropdown__counter-input');
+    var $parent = $btn.closest('.js-dropdown__counter');
+    var $input = $parent.find('.js-dropdown__counter-input');
     var countItem = $input.val();
     if( countItem != 0 ){
       countItem--;
@@ -46,11 +48,11 @@ $(document).ready(function(){
   });
 
 
-  $('body').on('click', '.dropdown .dropdown__btn-more', function(e){
+  $('body').on('click', '.js-dropdown .js-dropdown__btn-more', function(e){
     e.preventDefault();
     var $btn = $(this);
-    var $parent = $btn.closest('.dropdown__counter');
-    var $input = $parent.find('.dropdown__counter-input');
+    var $parent = $btn.closest('.js-dropdown__counter');
+    var $input = $parent.find('.js-dropdown__counter-input');
     var countItem = $input.val();
 
     countItem++;
@@ -60,76 +62,75 @@ $(document).ready(function(){
   });
 
 
-  $('body').on('click', '.dropdown:not(.dropdown_simple) .dropdown__btn-reset .button', function(){
-    var $dropdown = $(this).closest('.dropdown');
-    $dropdown.find('.dropdown__counter-input').val(0);
+  $('body').on('click', '.js-dropdown:not(.dropdown_simple) .js-dropdown__btn-reset .js-button', function(){
+    var $dropdown = $(this).closest('.js-dropdown');
+    $dropdown.find('.js-dropdown__counter-input').val(0);
     checkItemCount();
 
     var text = $dropdown.attr('data-default-text') ? $dropdown.attr('data-default-text') : '';
-    $dropdown.find('.dropdown__input-wrapper input').val(text);
+    $dropdown.find('.js-dropdown__input-wrapper .js-input__field').val(text);
 
-    $(this).addClass('dropdown_hidden');
+    $(this).closest('.js-dropdown__btn-reset').addClass('dropdown_hidden');
   });
 
 
-  $('body').on('click', '.dropdown:not(.dropdown_simple) .dropdown__btn-submit .button', function(){
-    var $dropdown = $(this).closest('.dropdown');
+  $('body').on('click', '.js-dropdown:not(.dropdown_simple) .js-dropdown__btn-submit .js-button', function(){
+    var $dropdown = $(this).closest('.js-dropdown');
     var summ = 0;
-    $dropdown.find('.dropdown__counter-input').each(function(){
+    $dropdown.find('.js-dropdown__counter-input').each(function(){
       summ += parseInt( $(this).val() );
     });
-    if( summ != 0 ){
-      $dropdown.find('.dropdown__btn-reset button').removeClass('dropdown_hidden');
+    if( summ !== 0 ){
+      $dropdown.find('.js-dropdown__btn-reset').removeClass('dropdown_hidden');
     } else{
-      $dropdown.find('.dropdown__btn-reset button').addClass('dropdown_hidden');
+      $dropdown.find('.js-dropdown__btn-reset').addClass('dropdown_hidden');
     }
 
     let text = '';
 
-    if( summ == 1 ){
+    if( summ === 1 ){
       text = $dropdown.attr('data-text-one') ? $dropdown.attr('data-text-one') : '';
     } else{
       text = $dropdown.attr('data-text-many') ? $dropdown.attr('data-text-many') : '';
     }
-    $dropdown.find('.dropdown__input-wrapper input').val(summ + ' ' + text);
+    $dropdown.find('.js-dropdown__input-wrapper .js-input__field').val(summ + ' ' + text);
 
     checkItemCount();
   });
 
 
-  $('body').on('click', '.dropdown.dropdown_simple .dropdown__btn-more, .dropdown.dropdown_simple .dropdown__btn-less', function(){
-    var $dropdown = $(this).closest('.dropdown');
+  $('body').on('click', '.js-dropdown.dropdown_simple .js-dropdown__btn-more, .js-dropdown.dropdown_simple .js-dropdown__btn-less', function(){
+    var $dropdown = $(this).closest('.js-dropdown');
     var result = '';
 
-    $dropdown.find('.dropdown__counter').each(function(){
-      var val_counter = $(this).find('.dropdown__counter-input').val();
+    $dropdown.find('.js-dropdown__counter').each(function(){
+      var val_counter = $(this).find('.js-dropdown__counter-input').val();
       if( val_counter != 0 ){
-        result += $(this).find('.dropdown__counter-input').val();
+        result += $(this).find('.js-dropdown__counter-input').val();
         result += ' ';
-        result += $(this).find('.dropdown__counter-label').text();
+        result += $(this).find('.js-dropdown__counter-label').text();
         result += ', ';
       }
     });
 
-    $dropdown.find('.dropdown__input-wrapper input').val(result);
-    console.log(result);
+    $dropdown.find('.js-dropdown__input-wrapper .js-input__field').val(result);
   });
 
 
   function checkItemCount($counter, count){
     if( arguments.length > 0 ){
       if( count == 0 ){
-        $counter.find('.dropdown__btn-less').addClass('dropdown_disabled-btn');
+        $counter.find('.js-dropdown__btn-less').addClass('dropdown_disabled-btn');
       } else{
-        $counter.find('.dropdown__btn-less').removeClass('dropdown_disabled-btn');
+        $counter.find('.js-dropdown__btn-less').removeClass('dropdown_disabled-btn');
       }
 
     }
     else{
-      $('body').find('.dropdown__btn-less').each(function(){
+      $('body').find('.js-dropdown__btn-less').each(function(){
         var $btn = $(this);
-        var $parent = $btn.closest('.dropdown__counter');
-        var $input = $parent.find('.dropdown__counter-input');
+        var $parent = $btn.closest('.js-dropdown__counter');
+        var $input = $parent.find('.js-dropdown__counter-input');
         var countItem = $input.val();
         if( countItem == 0 ){
           $btn.addClass('dropdown_disabled-btn');

@@ -1,30 +1,39 @@
+import $ from 'jquery';
+
 $(function(){
-  $('body').on('click', '.header__btn_show-curtain', function(event){
+  const $body = $('body');
+  const $html = $('html');
+  const $pageContentWrapper = $('.page__content-wrapper');
+
+  $body.on('click', '.js-header__btn_show-curtain', function(event){
     event.preventDefault();
     // $('.curtain').toggleClass('curtain_show');
 
-    if( ! $('body').hasClass('page_show-curtain') ){
-      var scrollTop_body = $('html, body').scrollTop() || $(document).scrollTop() || $(window).scrollTop();
-      $('.page__content-wrapper').css({
+    let scrollTop_body;
+
+    if( ! $body.hasClass('page_show-curtain') ){
+      scrollTop_body = $html.scrollTop() || $body.scrollTop() || $(document).scrollTop() || $(window).scrollTop();
+      $pageContentWrapper.css({
         top: '-' + scrollTop_body + 'px',
         position: 'fixed',
       });
-      $('body').css({
+      $body.css({
         top: '0px',
         position: 'fixed',
       });
-      $('body').attr('data-last-scrolltop', scrollTop_body);
+      $body.attr('data-last-scrolltop', scrollTop_body);
     } else{
-      var scrollTop_body = $('body').attr('data-last-scrolltop') ? $('body').attr('data-last-scrolltop') : 0;
+      scrollTop_body = $body.attr('data-last-scrolltop') ? $body.attr('data-last-scrolltop') : 0;
 
-      $('.page__content-wrapper, body').css({
+      $pageContentWrapper.css({
         top: '',
         position: '',
       });
-      $('html, body').scrollTop(scrollTop_body);
-      $('body').attr('data-last-scrolltop', 0);
+      $html.scrollTop(scrollTop_body);
+      $body.scrollTop(scrollTop_body);
+      $body.attr('data-last-scrolltop', 0);
     }
 
-    $('body').toggleClass('page_show-curtain');
+    $body.toggleClass('page_show-curtain');
   });
 });

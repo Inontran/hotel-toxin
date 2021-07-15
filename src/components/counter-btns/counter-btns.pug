@@ -1,0 +1,31 @@
+include ../input/input
+
+mixin counter-btns(options)
+  if options == undefined
+    - options = {}
+
+  if options.classes == undefined
+    - options.classes = ''
+  
+  if options.id == undefined
+    - options.id = ''
+
+  if options.min == undefined
+    - options.min = ''
+
+  if options.max == undefined
+    - options.max = ''
+
+  if options.step == undefined
+    - options.step = 1
+
+  if options.value == undefined
+    - options.value = 0
+
+  if options.name == undefined
+    - options.name = ''
+
+  div.counter-btns.js-counter-btns(class = options.classes, id = options.id)
+    button.counter-btns__btn-less.js-counter-btns__btn-less -
+    input.counter-btns__input.js-counter-btns__input(name = options.name, value = options.value, max = options.max, min = options.min, step = options.step, type = 'number')
+    button.counter-btns__btn-more.js-counter-btns__btn-more +

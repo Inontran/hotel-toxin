@@ -34,7 +34,7 @@ mixin header(options)
 
       a.header__btn-icon.header__btn-icon_profile(href = options.button_login_href ? options.button_login_href : false)
         img(src = require('@/components/header/img/user_icon.svg').default, alt = 'Профиль', title = 'Профиль')
-      button.header__btn-icon.header__btn-icon_menu.header__btn_show-curtain
+      button.header__btn-icon.header__btn-icon_menu.js-header__btn_show-curtain
         img(src = require('@/components/header/img/menu_icon.svg').default, alt = 'Меню', title = 'Меню')
 
       if !options.username

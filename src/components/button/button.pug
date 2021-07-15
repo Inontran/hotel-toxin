@@ -14,14 +14,14 @@ mixin button(options)
     classes += options.theme ? options.theme : ''
   
   if options.href
-    a.button(
+    a.button.js-button(
       class = classes,
       href = options.href,
       tabindex = options.tabindex || false
     )
       span.button__text= options.text || 'Button'
   else
-    button.button(
+    button.button.js-button(
       class = classes,
       type = options.isSubmit ? 'submit' : false,
       tabindex = options.tabindex || false

@@ -1,3 +1,5 @@
+import $ from 'jquery';
+
 $(document).ready(function(){
   $('body').find('.pagination .pagination__wrapper').each(function(){
     let $pagination = $(this);
