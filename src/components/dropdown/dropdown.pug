@@ -1,6 +1,6 @@
 include ../input/input
 include ../button/button
-include ../counter-btns/counter-btns
+include ../input-number/input-number
 
 mixin dropdown(options)
   if !options
@@ -81,7 +81,7 @@ mixin dropdown(options)
                 //-   button.dropdown__btn-less.js-dropdown__btn-less -
                 //-   input.dropdown__counter-input.js-dropdown__counter-input(name = item.input_name ? item.input_name : '', value = item.value ? item.value : 0, readonly)
                 //-   button.dropdown__btn-more.js-dropdown__btn-more +
-                +counter-btns({
+                +input-number({
                   value: item.value ? item.value : 0,
                   name: item.input_name ? item.input_name : '',
                   min: 0

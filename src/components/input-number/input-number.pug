@@ -1,4 +1,4 @@
-mixin counter-btns(options)
+mixin input-number(options)
   if options == undefined
     - options = {}
 
@@ -23,7 +23,7 @@ mixin counter-btns(options)
   if options.name == undefined
     - options.name = ''
 
-  div.counter-btns.js-counter-btns(class = options.classes, id = options.id)
-    button.counter-btns__btn-less.js-counter-btns__btn-less -
-    input.counter-btns__input.js-counter-btns__input(name = options.name, value = options.value, max = options.max, min = options.min, step = options.step, type = 'number')
-    button.counter-btns__btn-more.js-counter-btns__btn-more +
+  div.input-number.js-input-number(class = options.classes, id = options.id)
+    button.input-number__btn-less.js-input-number__btn-less -
+    input.input-number__input.js-input-number__input(name = options.name, value = options.value, max = options.max, min = options.min, step = options.step, type = 'number')
+    button.input-number__btn-more.js-input-number__btn-more +
