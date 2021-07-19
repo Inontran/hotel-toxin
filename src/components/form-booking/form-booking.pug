@@ -18,11 +18,12 @@ mixin form-booking(options)
       div.form-booking__title.card_mb10
         div.form-booking__title-left
           span.form-booking__title-symbol № 
-          span.form-booking__title-number 888 
-          span.form-booking__title-type люкс
+          span.form-booking__title-number #{options.room_number}
+          if options.room_type
+            span.form-booking__title-type  #{options.room_type}
         div.form-booking__title-right
-          span.form-booking__title-price 9 990₽ 
-          span.form-booking__title-price-type в сутки
+          span.form-booking__title-price #{options.price}
+          span.form-booking__title-price-type  #{options.price_time}
       
       div.card_mb20
         +dropdown({
@@ -61,25 +62,20 @@ mixin form-booking(options)
             ]
           })
 
-      div.card_mb20
-        table.form-booking__table
-          tr
-            td.form-booking__table-cell 9 990₽ х 4 суток
-            td.form-booking__table-cell.form-booking__table_px5
-            td.form-booking__table-cell.form-booking__table-cell_price 39 960₽
-          tr
-            td.form-booking__table-cell Сбор за услуги: скидка 2 179₽
-            td.form-booking__table-cell.form-booking__table_px5 
-              div.form-booking__tooltip
-            td.form-booking__table-cell.form-booking__table-cell_price 0₽
-          tr
-            td.form-booking__table-cell Сбор за дополнительные услуги
-            td.form-booking__table-cell.form-booking__table_px5 
-              div.form-booking__tooltip
-            td.form-booking__table-cell.form-booking__table-cell_price 300₽
+      if options.list_service
+        div.card_mb20
+          table.form-booking__table
+            each item, index in options.list_service
+              tr
+                td.form-booking__table-cell #{item.name}
+                td.form-booking__table-cell.form-booking__table_px5 
+                  if item.tooltip
+                    div.form-booking__tooltip(title = item.tooltip)
+                td.form-booking__table-cell.form-booking__table-cell_price #{item.price}
 
-      div.form-booking__bottom.card_mb20
-        span.form-booking__bottom-word Итого
-        div.form-booking__bottom-points
-        span.form-booking__bottom-price 38 081₽
+      if options.total_price
+        div.form-booking__bottom.card_mb20
+          span.form-booking__bottom-word Итого
+          div.form-booking__bottom-points
+          span.form-booking__bottom-price #{options.total_price}
       +button({text: "Забронировать", theme: "button_fill button_arrow-left button_wide"})

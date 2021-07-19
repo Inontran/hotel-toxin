@@ -58,5 +58,16 @@
   "chart_num_1": "130",
   "chart_num_2": "65",
   "chart_num_3": "65",
-  "chart_num_4": "0"
+  "chart_num_4": "0",
+
+  "room_number": 888,
+  "room_type": "люкс",
+  "price": "9 990₽",
+  "price_time": "в сутки",
+  "list_service": [
+    {"name": "9 990₽ х 4 суток", "price": "39 960₽"},
+    {"name": "Сбор за услуги: скидка 2 179₽", "price": "0₽", "tooltip": "Подсказка"},
+    {"name": "Сбор за дополнительные услуги", "price": "300₽", "tooltip": "Подсказка"}
+  ],
+  "total_price": "38 081₽"
 }

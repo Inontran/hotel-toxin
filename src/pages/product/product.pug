@@ -7,7 +7,7 @@ include ../../components/list/list
 include ../../components/chart/chart
 
 block title
-  | Номер 122 Toxin Hotel
+  | Номер 888 Toxin Hotel
 
 block content
   - data = htmlWebpackPlugin.options.getData()
@@ -89,4 +89,11 @@ block content
                 p.product__text #{data.cancel_text}
 
         div.product__body-col.product__body-col-2
-          +form-booking()
+          +form-booking({
+            room_number: data.room_number,
+            room_type: data.room_type,
+            price: data.price,
+            price_time: data.price_time,
+            list_service: data.list_service,
+            total_price: data.total_price
+          })
