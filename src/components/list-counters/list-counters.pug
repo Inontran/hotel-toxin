@@ -11,25 +11,19 @@ mixin list-counters(options)
   if !options.id
     - options.id = ''
 
-  if !options.text_default
-    - options.text_default = ''
+  if !options.type
+    - options.type = 1
 
-  if !options.text_one
-    - options.text_one = ''
-
-  if !options.text_many
-    - options.text_many = ''
+  if options.type == 2
+    - options.classes += ' list-counters_simple'
 
 
   div.list-counters.js-list-counters(
     class = options.classes, 
-    id = options.id, 
-    data-default-text = options.text_default, 
-    data-text-one = options.text_one, 
-    data-text-many = options.text_many
+    id = options.id
   )
-    if options.array_counter
-      each item, index in options.array_counter
+    if options.array_counters
+      each item, index in options.array_counters
         div.list-counters__counter.js-list-counters__counter
           span.list-counters__counter-label.js-list-counters__counter-label #{item.label}
           +input-number({
@@ -37,8 +31,9 @@ mixin list-counters(options)
             name: item.input_name ? item.input_name : '',
             min: 0
           })
-      div.list-counters__btns-result
-        div.list-counters__btn-reset.js-list-counters__btn-reset
-          +button({text: "Очистить", theme: "button_gray"})
-        div.list-counters__btn-submit.js-list-counters__btn-submit
-          +button({text: "Применить"})
+      if options.type == 1
+        div.list-counters__btns-result
+          div.list-counters__btn-reset.js-list-counters__btn-reset
+            +button({text: "Очистить", theme: "button_gray"})
+          div.list-counters__btn-submit.js-list-counters__btn-submit
+            +button({text: "Применить"})

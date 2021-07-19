@@ -270,12 +270,15 @@ block content
           text_default: "Сколько гостей",
           text_one: " гость",
           text_many: " гостей",
-          array_counter: [
-            {label: "Взрослые", input_name: ""},
-            {label: "Дети", input_name: ""},
-            {label: "Младенцы", input_name: ""}
-          ]
         })
+          +list-counters({
+            array_counters: [
+              {label: "Взрослые", input_name: ""},
+              {label: "Дети", input_name: ""},
+              {label: "Младенцы", input_name: ""}
+            ]
+          })
+
         div.guide-page__mb20
         +dropdown({
           classes: 'dropdown_simple',
@@ -283,12 +286,16 @@ block content
             label: "Dropdown",
             readonly: true
           },
-          array_counter: [
-            {label: "Спальни"},
-            {label: "Кровати"},
-            {label: "Ванные комнаты"}
-          ]
         })
+          +list-counters({
+            type: 2,
+            array_counters: [
+              {label: "Спальни"},
+              {label: "Кровати"},
+              {label: "Ванные комнаты"}
+            ]
+          })
+
         div.guide-page__mb40
       
         +collapse({text: "expandable checkbox list", group: 'collapse-group-1'})

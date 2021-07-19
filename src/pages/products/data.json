@@ -105,7 +105,7 @@
         "label": "Гости",
         "readonly": true
       },
-      "array_counter": [
+      "array_counters": [
         {"label": "Взрослые", "input_name": ""},
         {"label": "Дети", "input_name": ""},
         {"label": "Младенцы", "input_name": ""}
@@ -140,7 +140,7 @@
         "label": "Удобства номера",
         "readonly": true
       },
-      "array_counter": [
+      "array_counters": [
         {"label": "Спальни", "input_name": ""},
         {"label": "Кровати", "input_name": ""},
         {"label": "Ванные комнаты", "input_name": ""}

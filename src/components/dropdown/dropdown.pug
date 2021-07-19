@@ -70,22 +70,11 @@ mixin dropdown(options)
         
     div.dropdown__content
       div.dropdown__content-wrapper
-        if options.custom_content
-          block
-        else
-          if options.array_counter
-            +list-counters({
-              array_counter: options.array_counter
-            })
-            //- each item, index in options.array_counter
-            //-   div.dropdown__counter.js-dropdown__counter
-            //-     span.dropdown__counter-label.js-dropdown__counter-label #{item.label}
-            //-     div.dropdown__counter-btns
-            //-       button.dropdown__btn-less.js-dropdown__btn-less -
-            //-       input.dropdown__counter-input.js-dropdown__counter-input(name = item.input_name ? item.input_name : '', value = item.value ? item.value : 0, readonly)
-            //-       button.dropdown__btn-more.js-dropdown__btn-more +
-            //- div.dropdown__btns-result
-            //-   div.dropdown__btn-reset.js-dropdown__btn-reset
-            //-     +button({text: "Очистить", theme: "button_gray"})
-            //-   div.dropdown__btn-submit.js-dropdown__btn-submit
-            //-     +button({text: "Применить"})
+        block
+        //- if options.custom_content
+        //-   block
+        //- else
+        //-   if options.array_counters
+        //-     +list-counters({
+        //-       array_counters: options.array_counters
+        //-     })
