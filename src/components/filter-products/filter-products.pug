@@ -60,6 +60,9 @@ mixin filter-products(options)
       if options.option_dropdown_people
         div.filter-products_mb30
           +dropdown(options.option_dropdown_people)
+            +list-counters({
+              array_counters: options.option_dropdown_people.array_counters
+            })
 
       //- div.filter-products_mb30
         //- +slider-range({
@@ -120,6 +123,10 @@ mixin filter-products(options)
       if options.option_dropdown_feature
         div.filter-products_mb16
           +dropdown(options.option_dropdown_feature)
+            +list-counters({
+              type: 2,
+              array_counters: options.option_dropdown_feature.array_counters
+            })
 
       //- +collapse({text: "Дополнительные удобства", group: 'collapse-group-1'})
       //-   +checkbox({text: "Можно курить"})

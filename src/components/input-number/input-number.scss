@@ -1,6 +1,9 @@
 @import '@/theme/variables.scss';
 
 .input-number{
+  display: inline-flex;
+  align-items: center;
+
   &__btn-less, 
   &__btn-more, 
   &__input{

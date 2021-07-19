@@ -100,11 +100,13 @@
     },
 
     "option_dropdown_people":{
-      "classes": "dropdown_simple",
       "input_params":{
         "label": "Гости",
         "readonly": true
       },
+      "text_default": "Сколько гостей",
+      "text_one": " гость",
+      "text_many": " гостей",
       "array_counters": [
         {"label": "Взрослые", "input_name": ""},
         {"label": "Дети", "input_name": ""},
@@ -135,7 +137,6 @@
     ],
 
     "option_dropdown_feature": {
-      "classes": "dropdown_simple",
       "input_params":{
         "label": "Удобства номера",
         "readonly": true
