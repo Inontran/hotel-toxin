@@ -44,42 +44,6 @@
   }
 
 
-  &__counter{
-    margin: 7px 7px 7px 15px;
-  }
-
-  &__counter,
-  &__btns-result{
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-  }
-
-  &__counter-label{
-    font-weight: 700;
-    font-size: calc_rem(12);
-    text-transform: uppercase;
-    line-height: 1.25;
-  }
-
-  &__btns-result{
-    margin: 19px 7px 13px 15px;
-  }
-
-  &__btn-reset,
-  &__btn-submit{
-    line-height: 1;
-  }
-
-  &__btn-reset{
-    margin-right: auto;
-  }
-
-  &__btn-submit{
-    margin-left: auto;
-  }
-
-  
   &_dual-date{
     .dropdown__input-dates-wrapper{
       display: flex;
@@ -139,11 +103,5 @@
 
   &_hidden{
     display: none;
-  }
-
-  &_simple{
-    .dropdown__btns-result{
-      display: none;
-    }
   }
 }

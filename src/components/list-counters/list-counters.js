@@ -84,7 +84,7 @@ $(document).ready(function(){
       $listCounters.find('.js-list-counters__btn-reset').addClass('list-counters_hidden');
     }
 
-    const $dropdown = $listCounters.closest('.js-dropdown:not(.dropdown_simple)');
+    const $dropdown = $listCounters.closest('.js-dropdown');
     if( $dropdown.length ){
       let text = '';
 
