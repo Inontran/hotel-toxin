@@ -17,10 +17,22 @@ mixin list-counters(options)
   if options.type == 2
     - options.classes += ' list-counters_simple'
 
+  if !options.text_default
+    - options.text_default = ''
+
+  if !options.text_one
+    - options.text_one = ''
+
+  if !options.text_many
+    - options.text_many = ''
+
 
   div.list-counters.js-list-counters(
     class = options.classes, 
-    id = options.id
+    id = options.id,
+    data-default-text = options.text_default, 
+    data-text-one = options.text_one, 
+    data-text-many = options.text_many
   )
     if options.array_counters
       each item, index in options.array_counters

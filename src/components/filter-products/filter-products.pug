@@ -60,9 +60,7 @@ mixin filter-products(options)
       if options.option_dropdown_people
         div.filter-products_mb30
           +dropdown(options.option_dropdown_people)
-            +list-counters({
-              array_counters: options.option_dropdown_people.array_counters
-            })
+            +list-counters(options.option_dropdown_people)
 
       //- div.filter-products_mb30
         //- +slider-range({

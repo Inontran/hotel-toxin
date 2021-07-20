@@ -47,20 +47,11 @@ mixin dropdown(options)
   else
     - options.input_params.value = options.text_default
 
-  if !options.text_one
-    - options.text_one = ''
-
-  if !options.text_many
-    - options.text_many = ''
-
 
   div.dropdown.js-dropdown(
     class = options.classes, 
     id = options.id, 
-    data-group = options.group, 
-    data-default-text = options.text_default, 
-    data-text-one = options.text_one, 
-    data-text-many = options.text_many
+    data-group = options.group
   )
     if options.input_params2
       div.dropdown__input-dates-wrapper

@@ -89,12 +89,12 @@ $(document).ready(function(){
       let text = '';
 
       if( summ === 0 ){
-        text = $dropdown.attr('data-default-text') ? $dropdown.attr('data-default-text') : '';
+        text = $listCounters.attr('data-default-text') ? $listCounters.attr('data-default-text') : '';
       } else if( summ === 1 ){
-        text = $dropdown.attr('data-text-one') ? $dropdown.attr('data-text-one') : '';
+        text = $listCounters.attr('data-text-one') ? $listCounters.attr('data-text-one') : '';
         text = summ + ' ' + text;
       } else{
-        text = $dropdown.attr('data-text-many') ? $dropdown.attr('data-text-many') : '';
+        text = $listCounters.attr('data-text-many') ? $listCounters.attr('data-text-many') : '';
         text = summ + ' ' + text;
       }
       $dropdown.find('.js-dropdown__input-wrapper .js-input__field').val(text);

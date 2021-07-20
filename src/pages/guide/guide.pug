@@ -267,11 +267,14 @@ block content
             label: "Dropdown",
             readonly: true
           },
-          text_default: "Сколько гостей",
-          text_one: " гость",
-          text_many: " гостей",
+          input_params:{
+            value: "Сколько гостей"
+          }
         })
           +list-counters({
+            text_default: "Сколько гостей",
+            text_one: " гость",
+            text_many: " гостей",
             array_counters: [
               {label: "Взрослые", input_name: ""},
               {label: "Дети", input_name: ""},
