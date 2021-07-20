@@ -34,6 +34,6 @@ mixin list-counters(options)
       if options.type == 1
         div.list-counters__btns-result
           div.list-counters__btn-reset.js-list-counters__btn-reset
-            +button({text: "Очистить", theme: "button_gray"})
+            +button({text: "Очистить", classes: "button_gray"})
           div.list-counters__btn-submit.js-list-counters__btn-submit
             +button({text: "Применить"})

@@ -1,28 +1,31 @@
 //-
-  options.text - текст
-  options.theme - список модификаторов ('button_fill button_wide')
+  options.classes - Классы блока.
+  options.id - ИД блока.
+  options.text - текст кнопки.
   options.isSubmit - задает тип кнопки Submit (bool)
   options.tabindex - задает tabindex
-  
+  options.href - Ссылка кнопки. Если есть эта опция, то тег будет "а", иначе "button".
+
 mixin button(options)
   if !options
     - options = {}
-  
-  -
-    var classes = ''
-    //- classes += options.theme ? ' button_' + options.theme : ''
-    classes += options.theme ? options.theme : ''
+
+  if !options.classes
+    - options.classes = ''
+
+  if !options.id
+    - options.id = ''
   
   if options.href
     a.button.js-button(
-      class = classes,
+      class = options.classes,
       href = options.href,
       tabindex = options.tabindex || false
     )
       span.button__text= options.text || 'Button'
   else
     button.button.js-button(
-      class = classes,
+      class = options.classes,
       type = options.isSubmit ? 'submit' : false,
       tabindex = options.tabindex || false
     )

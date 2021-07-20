@@ -1,3 +1,11 @@
+//-
+  options.classes - Классы блока.
+  options.id - ИД блока.
+  options.group - Группа раскрывающихся списков. 
+    Если задать этот параметр с одинаковым значением у нескольких списков,
+    то при раскрытии одного списка все остальные из этой группы будут закрываться.
+  options.text - Текст в кнопке раскрывающего списка.
+
 mixin collapse(options)
   if !options
     - options = {}
@@ -15,7 +23,7 @@ mixin collapse(options)
     - options.text = ''
 
   div.collapse(class = options.classes, id = options.id, data-group = options.group)
-    button.collapse__btn 
+    button.collapse__btn(type = 'button')
       h3.collapse__btn-text #{options.text}
       img.collapse__btn-arrow.svg-js(src = require('@/components/collapse/img/expand_more.svg').default, alt = "v")
     div.collapse__content

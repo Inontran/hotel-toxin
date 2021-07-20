@@ -1,5 +1,16 @@
 include ../rate-btn/rate-btn
 
+//-
+  options.classes - Классы блока.
+  options.id - ИД блока.
+  options.room_number - Номер апартаментов.
+  options.price - Стоимость апартаментов.
+  options.price_time - Пометка "в сутки" или "в неделю".
+  options.count_reviews = '0' - Количество отзывов.
+  options.rating = '0' - Оценка или рейтинг апартаментов.
+  options.gallery - Галерея картинок.
+  options.gallery[0] - Путь до картинки.
+
 mixin card-product(options)
   if !options
     - options = {}

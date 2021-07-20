@@ -2,6 +2,13 @@ include ../input/input
 include ../button/button
 include ../list-counters/list-counters
 
+//-
+  options.classes - Классы блока.
+  options.id - ИД блока.
+  options.group - Группа выпадающих списков.
+    Если задать этот параметр с одинаковым значением у нескольких списков,
+    то при раскрытии одного списка все остальные из этой группы будут закрываться.
+
 mixin dropdown(options)
   if !options
     - options = {}
@@ -59,15 +66,15 @@ mixin dropdown(options)
       div.dropdown__input-dates-wrapper
         div.dropdown__input-wrapper.js-dropdown__input-wrapper
           +input(options.input_params)
-          button.dropdown__arrow
+          button.dropdown__arrow(type = 'button')
         div.dropdown__input-wrapper.js-dropdown__input-wrapper
           +input(options.input_params2)
-          button.dropdown__arrow
+          button.dropdown__arrow(type = 'button')
     else
       div.dropdown__input-wrapper.js-dropdown__input-wrapper
         +input(options.input_params)
-        button.dropdown__arrow
-        
+        button.dropdown__arrow(type = 'button')
+
     div.dropdown__content
       div.dropdown__content-wrapper
         block

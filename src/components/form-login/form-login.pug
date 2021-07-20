@@ -28,7 +28,7 @@ mixin form-login(options)
       div.card_mb30
         +button({
           text: "Войти", 
-          theme: "button_fill button_arrow-left button_wide", 
+          classes: "button_fill button_arrow-left button_wide", 
           isSubmit: true
         })
 
@@ -37,6 +37,6 @@ mixin form-login(options)
         div.form-register__footer-button
           +button({
             text: "Создать", 
-            theme: "button_outline",
+            classes: "button_outline",
             href: options.button_reg_href ? options.button_reg_href : false
           })

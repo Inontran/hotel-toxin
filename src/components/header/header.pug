@@ -41,13 +41,13 @@ mixin header(options)
         div.header__btn1
           +button({
             text: options.button_login_text, 
-            theme: 'button_outline button_size-md',
+            classes: 'button_outline button_size-md',
             href: options.button_login_href ? options.button_login_href : false
           })
         div.header__btn2
           +button({
             text: options.button_reg_text, 
-            theme: 'button_fill button_size-md',
+            classes: 'button_fill button_size-md',
             href: options.button_reg_href ? options.button_reg_href : false
           })
       else

@@ -1,9 +1,13 @@
 include ../button/button
 
+//-
+  options.classes - Классы блока.
+  options.id - ИД блока.
+
 mixin air-datepicker(options)
   if !options
     - options = {}
-  
+
   if !options.classes
     - options.classes = ''
 
@@ -14,6 +18,6 @@ mixin air-datepicker(options)
     div.air-datepicker__wrapper.js-air-datepicker__wrapper
     div.air-datepicker__btns
       div.air-datepicker__btn-wrapper.air-datepicker__btn-wrapper_clear.js-air-datepicker__btn-wrapper_clear
-        +button({text: 'Очистить', theme: 'button_gray'})
+        +button({text: 'Очистить', classes: 'button_gray'})
       div.air-datepicker__btn-wrapper.air-datepicker__btn-wrapper_submit.js-air-datepicker__btn-wrapper_submit
         +button({text: 'Применить'})
