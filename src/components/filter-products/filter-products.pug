@@ -14,17 +14,17 @@ mixin filter-products(options)
   if !options.id
     - options.id = ''
 
-  div.filter-products(
+  div.filter-products.js-filter-products(
     class = options.classes, 
     id = options.id,
     class = options.isMobile ? "filter-products_mob-md" : false
   )
-    //- div.filter-products__content-wrapper(class = options.isMobile ? "scrollbar scrollbar_sierra" : false)
+    //- div.filter-products__content-wrapper(class = options.isMobile ? "scrollbar js-scrollbar scrollbar_sierra" : false)
     div.filter-products__content-wrapper
       if options.isMobile
         div.filter-products__close.filter-products_mb30
           +button({
-            theme: 'button_fill button_size-md products_filter-show filter-products_hide-filter',
+            theme: 'button_fill button_size-md products_filter-show js-filter-products_hide-filter',
             text: 'Скрыть фильтр'
           })
 

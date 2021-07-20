@@ -2,7 +2,7 @@ import $ from 'jquery';
 import 'owl.carousel';
 
 $(document).ready(function(){
-  $('.product__carousel', 'body').each(function(){
+  $('.js-product__carousel').each(function(){
     $(this).owlCarousel({
       nav: true,
       dots: true,

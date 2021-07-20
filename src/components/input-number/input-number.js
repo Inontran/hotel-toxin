@@ -1,8 +1,8 @@
 import $ from 'jquery';
 
 $(document).ready(function(){
-
-  $('body .js-input-number').each(function(){
+  const $body = $('body');
+  $('.js-input-number', $body).each(function(){
     const $counterBtns = $(this);
     disableBtns($counterBtns);
   });
@@ -26,8 +26,8 @@ $(document).ready(function(){
     }
   }
 
-  $('body').on('click', '.js-input-number .js-input-number__btn-less', handlerClickCounterBtns);
-  $('body').on('click', '.js-input-number .js-input-number__btn-more', handlerClickCounterBtns);
+  $body.on('click', '.js-input-number .js-input-number__btn-less', handlerClickCounterBtns);
+  $body.on('click', '.js-input-number .js-input-number__btn-more', handlerClickCounterBtns);
 
 
   function handlerChangeInputCounterBtns(event){
@@ -36,7 +36,7 @@ $(document).ready(function(){
     disableBtns($counterBtns);
   }
 
-  $('body').on('change', '.js-input-number .js-input-number__input', handlerChangeInputCounterBtns);
+  $body.on('change', '.js-input-number .js-input-number__input', handlerChangeInputCounterBtns);
 
 
   function disableBtns($counterBtns){
@@ -45,22 +45,24 @@ $(document).ready(function(){
     }
 
     const $input = $('.js-input-number__input', $counterBtns);
+    const $btnLess = $('.js-input-number__btn-less', $counterBtns);
+    const $btnMore = $('.js-input-number__btn-more', $counterBtns);
     const inputMin = $input.attr('min');
     const inputMax = $input.attr('max');
     const inputVal = $input.val();
 
     if( inputMin && inputVal <= inputMin ){
-      $('.js-input-number__btn-less', $counterBtns).addClass('input-number_disabled-btn');
+      $btnLess.addClass('input-number_disabled-btn');
     }
     else{
-      $('.js-input-number__btn-less', $counterBtns).removeClass('input-number_disabled-btn');
+      $btnLess.removeClass('input-number_disabled-btn');
     }
 
     if( inputMax && inputVal >= inputMax ){
-      $('.js-input-number__btn-more', $counterBtns).addClass('input-number_disabled-btn');
+      $btnMore.addClass('input-number_disabled-btn');
     }
     else{
-      $('.js-input-number__btn-more', $counterBtns).removeClass('input-number_disabled-btn');
+      $btnMore.removeClass('input-number_disabled-btn');
     }
   }
 });

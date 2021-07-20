@@ -5,10 +5,11 @@ $(function(){
   const $html = $('html');
   const $pageContentWrapper = $('.page__content-wrapper');
 
-  $body.on('click', '.js-header__btn_show-curtain', function(event){
-    event.preventDefault();
-    // $('.curtain').toggleClass('curtain_show');
+  $body.on('click', '.js-header__btn_show-curtain', handlerClickCurtain);
 
+
+  function handlerClickCurtain(event){
+    event.preventDefault();
     let scrollTop_body;
 
     if( ! $body.hasClass('page_show-curtain') ){
@@ -35,5 +36,5 @@ $(function(){
     }
 
     $body.toggleClass('page_show-curtain');
-  });
+  }
 });

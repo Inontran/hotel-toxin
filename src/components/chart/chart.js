@@ -3,9 +3,9 @@ import Chart from 'chart.js';
 
 $(document).ready(function(){
   $('body').find('.js-chart').each(function(){
-    var $current_chart = $(this);
-    var $chart_picture = $current_chart.find('.js-chart__picture');
-    var ctx = $chart_picture.get(0).getContext('2d');
+    var $currentChart = $(this);
+    var $chartPicture = $currentChart.find('.js-chart__picture');
+    var ctx = $chartPicture.get(0).getContext('2d');
     var gradient1 = ctx.createLinearGradient(0, 0, 0, 180);
     gradient1.addColorStop(0, $.COLORS.purple);   
     gradient1.addColorStop(1, '#8BA4F9');
@@ -22,10 +22,10 @@ $(document).ready(function(){
     gradient4.addColorStop(0, '#919191');   
     gradient4.addColorStop(1, '#3D4975');
 
-    var num1 = $current_chart.attr('data-num-1') ? $current_chart.attr('data-num-1') : 0;
-    var num2 = $current_chart.attr('data-num-2') ? $current_chart.attr('data-num-2') : 0;
-    var num3 = $current_chart.attr('data-num-3') ? $current_chart.attr('data-num-3') : 0;
-    var num4 = $current_chart.attr('data-num-4') ? $current_chart.attr('data-num-4') : 0;
+    var num1 = $currentChart.attr('data-num-1') ? $currentChart.attr('data-num-1') : 0;
+    var num2 = $currentChart.attr('data-num-2') ? $currentChart.attr('data-num-2') : 0;
+    var num3 = $currentChart.attr('data-num-3') ? $currentChart.attr('data-num-3') : 0;
+    var num4 = $currentChart.attr('data-num-4') ? $currentChart.attr('data-num-4') : 0;
 
     var data = {
       datasets: [{

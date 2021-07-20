@@ -19,22 +19,36 @@ $(document).ready(function(){
   });
 
 
-  $body.on('click', '.js-dropdown .js-air-datepicker .js-air-datepicker__btn-wrapper_clear .js-button', function(){
-    $(this).closest('.js-air-datepicker').find('.js-air-datepicker__wrapper').data('datepicker').clear();
-  });
+  $body.on('click',
+    '.js-dropdown .js-air-datepicker .js-air-datepicker__btn-wrapper_clear .js-button',
+    handlerClickClearBtn
+  );
 
 
-  $body.on('click', '.js-air-datepicker .js-air-datepicker__btn-wrapper_submit .js-button', function(){
-    var $parent_dropdown = $(this).closest('.js-dropdown');
+  $body.on('click', '.js-air-datepicker .js-air-datepicker__btn-wrapper_submit .js-button', handlerClickSubmitBtn);
+
+
+  function handlerClickClearBtn(event){
+    event.preventDefault();
+    const $btn = $(event.currentTarget);
+    const $datePicker = $btn.closest('.js-air-datepicker');
+    $datePicker.find('.js-air-datepicker__wrapper').data('datepicker').clear();
+  }
+
+
+  function handlerClickSubmitBtn(event){
+    event.preventDefault();
+    const $btn = $(event.currentTarget);
+    var $parentDropdown = $btn.closest('.js-dropdown');
     var dates = $(this).closest('.js-air-datepicker')
                       .find('.js-air-datepicker__wrapper')
                       .data('datepicker').selectedDates;
 
-    $('.js-input_result-dates .js-input__field', $parent_dropdown)
+    $('.js-input_result-dates .js-input__field', $parentDropdown)
       .val(moment(dates[0]).format('D MMM') + ' - ' + moment(dates[1]).format('D MMM'));
-    $('.js-input_result-date-start .js-input__field', $parent_dropdown).val(moment(dates[0]).format('DD.MM.YYYY'));
-    $('.js-input_result-date-end .js-input__field', $parent_dropdown).val(moment(dates[1]).format('DD.MM.YYYY'));
+    $('.js-input_result-date-start .js-input__field', $parentDropdown).val(moment(dates[0]).format('DD.MM.YYYY'));
+    $('.js-input_result-date-end .js-input__field', $parentDropdown).val(moment(dates[1]).format('DD.MM.YYYY'));
 
-    $parent_dropdown.removeClass('dropdown_active');
-  });
+    $parentDropdown.removeClass('dropdown_active');
+  }
 });

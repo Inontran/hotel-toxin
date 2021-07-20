@@ -39,7 +39,7 @@ block content
       div.product__gallery-item.product__gallery-item_second(style="background-image: url(" + data.gallery[1] + ");")
       div.product__gallery-item.product__gallery-item_third(style="background-image: url(" + data.gallery[2] + ");")
 
-    div.product__carousel.owl-carousel
+    div.product__carousel.js-product__carousel.owl-carousel
       if !data.gallery[0]
         - data.gallery[0] = ''
       if !data.gallery[1]

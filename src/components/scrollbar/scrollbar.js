@@ -2,7 +2,7 @@ import $ from 'jquery';
 import SimpleBar from 'simplebar';
 
 $(function(){
-  $('.scrollbar', 'body').each(function(){
+  $('.js-scrollbar').each(function(){
     try {
       new SimpleBar($(this)[0]);
     } catch (error) {

@@ -2,34 +2,33 @@ import $ from 'jquery';
 
 $(document).ready(function(){
   $('body').find('.pagination .pagination__wrapper').each(function(){
-    let $pagination = $(this);
-    let current_page = $pagination.attr('data-page');
-    let perpage = $pagination.attr('data-perpage');
-    let count_elements = $pagination.attr('data-elements');
-    let $pagination_output = $pagination.closest('.pagination').find('.pagination__output');
+    const $pagination = $(this);
+    const currentPage = $pagination.attr('data-page');
+    const perpage = $pagination.attr('data-perpage');
+    const countElements = $pagination.attr('data-elements');
+    const $paginationOutput = $pagination.closest('.pagination').find('.pagination__output');
     
-    let count_elements_output = '';
-    if( count_elements >= 100 )
-      count_elements_output = '100+';
+    let countElementsOutput = '';
+    if( countElements >= 100 )
+      countElementsOutput = '100+';
     else
-      count_elements_output = count_elements;
+      countElementsOutput = countElements;
 
-    $pagination.paging(count_elements, { // elements navigatable
-      format: '< [ (q-) ncn (-p) ] >', // define how the navigation should look like and in which order onFormat() get's called
-      perpage: perpage, // show 10 elements per page
-      lapping: 0, // don't overlap pages for the moment
-      page: current_page, // start at page, can also be "null" or negative
-      onSelect: function (page) {
-        // console.log(this);
-        let start_count_elements = 0;
+    $pagination.paging(countElements, {
+      format: '< [ (q-) ncn (-p) ] >',
+      perpage: perpage,
+      lapping: 0,
+      page: currentPage,
+      onSelect: function () {
+        let start_countElements = 0;
         if( this.slice[0] ){
-          start_count_elements = this.slice[0];
+          start_countElements = this.slice[0];
         } else{
-          start_count_elements = 1;
+          start_countElements = 1;
         }
-        $pagination_output.text(start_count_elements + ' - ' + this.slice[1] + ' из ' + count_elements_output + ' ' );
+        $paginationOutput.text(start_countElements + ' - ' + this.slice[1] + ' из ' + countElementsOutput + ' ' );
       },
-      onFormat: function (type) { // Gets called for each character of "format" and returns a HTML representation
+      onFormat: function (type) {
         switch (type) {
           case 'block':
             if(!this.active)
