@@ -15,3 +15,5 @@ logs
 *.sw*
 
 package-lock.json
+
+.eslintcache

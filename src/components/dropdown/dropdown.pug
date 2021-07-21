@@ -8,6 +8,9 @@ include ../list-counters/list-counters
   options.group - Группа выпадающих списков.
     Если задать этот параметр с одинаковым значением у нескольких списков,
     то при раскрытии одного списка все остальные из этой группы будут закрываться.
+  options.input_params - Параметры поля ввода.
+  options.input_params2 - Параметры второго поля ввода.
+
 
 mixin dropdown(options)
   if !options
@@ -33,19 +36,6 @@ mixin dropdown(options)
 
   if options.input_params2
     - options.classes += ' dropdown_dual-date'
-  else
-  //-   - options.input_params2 = {}
-
-  //- if !options.input_params2.classes
-  //-   - options.input_params2.classes = 'input_in-dropdown'
-  //- else
-  //-   - options.input_params2.classes += ' input_in-dropdown'
-
-
-  if !options.text_default
-    - options.text_default = ''
-  else
-    - options.input_params.value = options.text_default
 
 
   div.dropdown.js-dropdown(

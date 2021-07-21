@@ -1,5 +1,9 @@
 include ../header/header
 
+//-
+  options.classes - Классы блока.
+  options.id - ИД блока.
+  options.bg_url - Фоновая картинка.
 
 mixin first-display(options)
   if !options
@@ -10,9 +14,6 @@ mixin first-display(options)
 
   if !options.id
     - options.id = ''
-
-  if !options.form_options
-    - options.form_options = {}
 
 
   div.first-display(

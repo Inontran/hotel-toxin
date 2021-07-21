@@ -3,6 +3,19 @@ include ../air-datepicker/air-datepicker
 include ../button/button
 include ../card/card
 
+//-
+  options.classes - Классы блока.
+  options.id - ИД блока.
+  options.room_number - Номер апартаментов.
+  options.room_type - Тип апартаментов (люкс).
+  options.price - Стоимость апартаментов.
+  options.price_time - Пометка "в сутки" или "в неделю".
+  options.list_service - Список услуг.
+  options.list_service[0].name - Название услуги.
+  options.list_service[0].price - Цена услуги.
+  options.list_service[0].tooltip - Подсказка.
+  options.total_price - Итоговая стоимость.
+
 mixin form-booking(options)
   if !options
     - options = {}

@@ -1,6 +1,18 @@
 include ../button/button
 include ../input-number/input-number
 
+//-
+  options.classes - Классы блока.
+  options.id - ИД блока.
+  options.type = 1 - Тип блока со счетчиками. Если 1, тогда блок отображается с кнопками сброса и подтверждения.
+  options.text_default - Текст поля без значений.
+  options.text_one - Текст поля, если сумма всех счетчиков равно 1.
+  options.text_many - Текст поля, если сумма всех счетчиков больше 1.
+  options.array_counters - Массив полей-счетчиков.
+  options.array_counters[0].label - Подпись счетчика.
+  options.array_counters[0].value = 0 - Значение поля счетчика.
+  options.array_counters[0].input_name - Имя поля счетчика.
+
 mixin list-counters(options)
   if !options
     - options = {}

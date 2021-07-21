@@ -4,6 +4,11 @@ include ../radio/radio
 include ../toggle/toggle
 include ../card/card
 
+//-
+  options.classes - Классы блока.
+  options.id - ИД блока.
+  options.button_login_href - Ссылка кнопки на страницу входа.
+
 mixin form-register(options)
   if !options
     - options = {}

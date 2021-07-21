@@ -1,6 +1,18 @@
+//-
+  options.classes - Классы блока.
+  options.id - ИД блока.
+  options.src - Ссылка на логотип.
+  options.href - Ссылка на главную страницу.
+
 mixin logo(options)
   if !options
     - options = {}
+
+  if !options.classes
+    - options.classes = ''
+  
+  if !options.id
+    - options.id = ''
   
   if !options.src
     - options.src = require('@/components/logo/img/logo.svg').default
@@ -10,5 +22,5 @@ mixin logo(options)
   if !options.href
     - options.href = 'index.html'
 
-  a.logo(href = options.href)
+  a.logo(href = options.href, class = options.classes, id = options.id)
     img(src = options.src, alt = "Toxin")

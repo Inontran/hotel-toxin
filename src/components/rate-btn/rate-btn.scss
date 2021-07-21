@@ -28,34 +28,14 @@
     }
   }
 
-  &_count{
-    &-1{
-      .rate-btn__star-item:nth-of-type(1){
-        background-image: url(img/star.svg);
-      }
-    }
-    &-2{
-      @extend .rate-btn_count-1;
-      .rate-btn__star-item:nth-of-type(2){
-        background-image: url(img/star.svg);
-      }
-    }
-    &-3{
-      @extend .rate-btn_count-2;
-      .rate-btn__star-item:nth-of-type(3){
-        background-image: url(img/star.svg);
-      }
-    }
-    &-4{
-      @extend .rate-btn_count-3;
-      .rate-btn__star-item:nth-of-type(4){
-        background-image: url(img/star.svg);
-      }
-    }
-    &-5{
-      @extend .rate-btn_count-4;
-      .rate-btn__star-item:nth-of-type(5){
-        background-image: url(img/star.svg);
+  @for $i from 0 through 5 {
+    .rate-btn__input{
+      &[value^="#{$i}"]{
+        @for $j from 0 through $i{
+          & ~ .rate-btn__star-item[data-number-star="#{$j}"]{
+            background-image: url(img/star.svg);
+          }
+        }
       }
     }
   }

@@ -1,26 +1,21 @@
 import $ from 'jquery';
 
 $(document).ready(function(){
-  $('body').on('click', '.rate-btn .rate-btn__star-item', function(e){
-    e.preventDefault();
-    var $parent = $(this).closest('.rate-btn');
-    var $input_rate = $parent.find('.rate-btn__input');
-    var star_rate = $(this).attr('data-number-star');
-    var current_rate = $input_rate.val();
-    
-    $parent.removeClass(`rate-btn_count-0
-                          rate-btn_count-1 
-                          rate-btn_count-2 
-                          rate-btn_count-3 
-                          rate-btn_count-4 
-                          rate-btn_count-5`);
+  $('body').on('click', '.js-rate-btn .js-rate-btn__star-item', handlerClickRateBtn);
 
-    if( star_rate == '1' && current_rate == 1){
-      $input_rate.val(0);
-      $parent.addClass('rate-btn_count-' + 0);
+
+  function handlerClickRateBtn(event){
+    event.preventDefault();
+    const $btn = $(event.currentTarget);
+    const $rateBtn = $btn.closest('.js-rate-btn');
+    const $inputRate = $rateBtn.find('.js-rate-btn__input');
+    const starRate = $btn.attr('data-number-star');
+    const currentRate = $inputRate.val();
+
+    if( starRate === '1' && currentRate === '1' ){
+      $inputRate.val(0);
     } else{
-      $input_rate.val(star_rate);
-      $parent.addClass('rate-btn_count-' + star_rate);
+      $inputRate.val(starRate);
     }
-  });
+  }
 });

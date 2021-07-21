@@ -1,5 +1,14 @@
 include ../like-btn/like-btn
 
+//-
+  options.classes - Классы блока.
+  options.id - ИД блока.
+  options.avatar - Фотография человека, оставивший отзыв.
+  options.isLike = false - Поставил ли лайк пользователь, который просматривает данный отзыв.
+  options.username = 'Anonymous' - Имя пользователя, написавший отзыв.
+  options.time_later = 'несколько секунд назад' - Сколько времени прошло после написания отзыва.
+  options.text_review - Текст отзыва.
+
 mixin review(options)
   if !options
     - options = {}

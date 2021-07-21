@@ -1,4 +1,10 @@
-
+//-
+  options.classes - Классы блока.
+  options.id - ИД блока.
+  options.text - Текст.
+  options.name - Название input (атрибут name).
+  options.type - Тип input (атрибут type). Может принимать значения "checkbox" или "radio".
+  options.checked = false - Включен или нет (атрибут checked).
 
 mixin toggle(options)
   if !options
@@ -20,11 +26,11 @@ mixin toggle(options)
     - options.type = 'checkbox'
 
   label.toggle(class = classes, id = options.id)
-    input(
+    input.toggle__input(
       type = options.type, 
       name = options.name, 
       checked = options.checked ? "checked" : false
-    ).toggle__input
+    )
       
     div.toggle__view
     if options.text

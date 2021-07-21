@@ -1,12 +1,12 @@
 import $ from 'jquery';
 
 $(document).ready(function(){
-  $('body').find('.pagination .pagination__wrapper').each(function(){
+  $('body').find('.js-pagination .js-pagination__wrapper').each(function(){
     const $pagination = $(this);
     const currentPage = $pagination.attr('data-page');
     const perpage = $pagination.attr('data-perpage');
     const countElements = $pagination.attr('data-elements');
-    const $paginationOutput = $pagination.closest('.pagination').find('.pagination__output');
+    const $paginationOutput = $pagination.closest('.js-pagination').find('.js-pagination__output');
     
     let countElementsOutput = '';
     if( countElements >= 100 )

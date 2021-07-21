@@ -1,11 +1,14 @@
 //-
-  options.label - 
-  options.placeholder - 
-  options.value - 
-  options.attrs - 
-  options.classes - 
-  options.id - 
-  options.type - 
+  options.classes - Классы блока.
+  options.id - ИД блока.
+  options.label - Подпись поля.
+  options.placeholder - Текст внутри поля, пока в нем отсутствует значение.
+  options.value - Значение поля.
+  options.type = "text" - Тип поля.
+  options.name - Название input (атрибут name).
+  options.readonly - Атрибут readonly.
+  options.disabled - Атрибут disabled.
+  options.subscription - Параметр, указывающий на то, что в поле должна быть кнопка подтверждения.
 
 mixin input(options)
   if !options
@@ -36,7 +39,8 @@ mixin input(options)
     input.input__field.js-input__field(
       value = options.value, 
       placeholder = options.placeholder, 
-      type = options.type, 
+      type = options.type,
+      name = options.name ? options.name : false,
       readonly = options.readonly ? "readonly" : false, 
       disabled = options.disabled ? "disabled" : false, 
     )

@@ -2,6 +2,11 @@ include ../button/button
 include ../input/input
 include ../card/card
 
+//-
+  options.classes - Классы блока.
+  options.id - ИД блока.
+  options.button_reg_href - Ссылка кнопки на страницу регистрации.
+
 mixin form-login(options)
   if !options
     - options = {}

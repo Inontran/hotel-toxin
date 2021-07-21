@@ -1,8 +1,9 @@
 //-
-  options.value - 
-  options.classes - 
-  options.id - 
-  options.isLike
+  options.classes - Классы блока.
+  options.id - ИД блока.
+  options.value - Количество выделенных звездочек. Может принимать значение от 0 до 5.
+  options.name - Название input (атрибут name).
+  options.disabled - Отключение возможности выбора количества звезд.
 
 mixin rate-btn(options)
   if !options
@@ -10,8 +11,6 @@ mixin rate-btn(options)
 
   if !options.value
     - options.value = 0
-  else
-    -options.classes = ' rate-btn_count-' + options.value
   
   if !options.classes
     - options.classes = ''
@@ -22,10 +21,15 @@ mixin rate-btn(options)
   if !options.name
     - options.name = 'rate'
 
-  div.rate-btn(class = options.classes, id = options.id)
-    input.rate-btn__input(type = "hidden", value = options.value, name = options.name)
+  div.rate-btn.js-rate-btn(class = options.classes, id = options.id)
+    input.rate-btn__input.js-rate-btn__input(
+      type = "hidden",
+      value = options.value,
+      name = options.name
+    )
     - for (var i = 1; i <= 5; i++)
-        button.rate-btn__star-item(
+        button.rate-btn__star-item.js-rate-btn__star-item(
+          type = 'button',
           data-number-star = i, 
           disabled = options.disabled ? "disabled" : false
         )

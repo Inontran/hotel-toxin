@@ -1,4 +1,10 @@
-
+//-
+  options.classes - Классы блока.
+  options.id - ИД блока.
+  options.page = 1 - Текущая страница.
+  options.perpage = 10 - Количество элементов на странице.
+  options.elements - Общее количество элементов.
+  options.text - Текст.
 
 mixin pagination(options)
   if !options
@@ -19,12 +25,12 @@ mixin pagination(options)
   if !options.text
     - options.text = ''
 
-  div.pagination(class = options.classes, id = options.id)
-    div.pagination__wrapper(
+  div.pagination.js-pagination(class = options.classes, id = options.id)
+    div.pagination__wrapper.js-pagination__wrapper(
       data-page = options.page, 
       data-perpage = options.perpage, 
       data-elements = options.elements
     )
     p.pagination__text
-      span.pagination__output 1 - 12 из 100+ 
+      span.pagination__output.js-pagination__output 1 - 12 из 100+ 
       span #{options.text}

@@ -2,6 +2,19 @@ include ../logo/logo
 include ../social-nets/social-nets
 include ../input/input
 
+//-
+  options.classes - Классы блока.
+  options.id - ИД блока.
+  options.text1 - Текст под логотипом.
+  options.menuItems - Массив колонок пунктов меню.
+  options.menuItems[0].subtitle - Заголовок колонки.
+  options.menuItems[0].items - Массив пунктов меню.
+  options.menuItems[0].items.href - Ссылка.
+  options.menuItems[0].items.name - Название страницы.
+  options.title_subscribe - Заголовок формы с подпиской.
+  options.text2 - Текст формы подписки.
+  options.copyright_text - Текст об авторских правах.
+
 mixin footer(options)
   if !options
     - options = {}
