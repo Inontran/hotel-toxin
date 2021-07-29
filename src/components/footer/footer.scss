@@ -8,7 +8,6 @@
     display: grid;
     grid-template-areas: 'col1 col2 col3 col4 col5';
     grid-template-columns: 3fr 2fr 2fr 2fr 3fr;
-    // grid-gap: 0 $gutter;
     padding: 100px 0;
     margin: 0 -20px;
   }

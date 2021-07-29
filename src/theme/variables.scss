@@ -5,7 +5,6 @@ $md:  991px;
 $lg:  1199px;
 $xl:  1440px;
 
-// цвета
 $dark:  #1f2041;
 $dark75:  rgba(#1f2041, .75);
 $dark50:  rgba(#1f2041, .50);
@@ -31,7 +30,6 @@ $colors:(
   'black'  :  $black,
 );
 
-// градиенты
 $gradient1: linear-gradient(180deg, #{$purple} 0%, #8BA4F9 100%);
 $gradient2: linear-gradient(180deg, #{$green} 0%, #66D2EA 100%);
 $gradient3: linear-gradient(180deg, #FFE39C 0%, #FFBA9C 100%);
