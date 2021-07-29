@@ -10,15 +10,15 @@ block content
   - data = htmlWebpackPlugin.options.getData()
 
   +curtain({
-    menuItems: data_header.menuItems, 
-    button_login_text: data_header.login_text,
-    button_login_href: data_header.login_href,
-    button_reg_text: data_header.reg_text,
-    button_reg_href: data_header.reg_href
+    menuItems: dataHeader.menuItems,
+    buttonLoginText: dataHeader.loginText,
+    buttonLoginHref: dataHeader.loginHref,
+    buttonRegText: dataHeader.regText,
+    buttonRegHref: dataHeader.regHref
   })
 
   +first-display(data)
     div.first-display__form-wrapper
-      +form-fast-select(data.form_options)
-    if data.text_bottom
-      div.first-display__text-bottom #{data.text_bottom}
+      +form-fast-select(data.formOptions)
+    if data.textBottom
+      div.first-display__text-bottom #{data.textBottom}

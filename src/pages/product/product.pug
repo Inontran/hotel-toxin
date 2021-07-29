@@ -14,18 +14,18 @@ block content
 
   div.product
     +header({
-      menuItems: data_header.menuItems, 
-      button_login_text: data_header.login_text,
-      button_login_href: data_header.login_href,
-      button_reg_text: data_header.reg_text,
-      button_reg_href: data_header.reg_href
+      menuItems: dataHeader.menuItems, 
+      buttonLoginText: dataHeader.loginText,
+      buttonLoginHref: dataHeader.loginHref,
+      buttonRegText: dataHeader.regText,
+      buttonRegHref: dataHeader.regHref
     })
     +curtain({
-      menuItems: data_header.menuItems, 
-      button_login_text: data_header.login_text,
-      button_login_href: data_header.login_href,
-      button_reg_text: data_header.reg_text,
-      button_reg_href: data_header.reg_href
+      menuItems: dataHeader.menuItems, 
+      buttonLoginText: dataHeader.loginText,
+      buttonLoginHref: dataHeader.loginHref,
+      buttonRegText: dataHeader.regText,
+      buttonRegHref: dataHeader.regHref
     })
 
     div.product__gallery
@@ -55,18 +55,18 @@ block content
         div.product__body-col.product__body-col-1
           div.product__grid-3
             div.product__grid-3-col.product__grid-3-col-1.product_mb40
-              if data.options_infographics
+              if data.optionsInfographics
                 h2.product__title Сведения о номере
-                +infographics(data.options_infographics)
-            if data.chart_count_all
+                +infographics(data.optionsInfographics)
+            if data.chartCountAll
               div.product__grid-3-col.product__grid-3-col-2.product_mb40
                 h2.product__title Впечатления от номера
                 +chart({
-                  chart_count_all: data.chart_count_all,
-                  chart_num_1: data.chart_num_1,
-                  chart_num_2: data.chart_num_2,
-                  chart_num_3: data.chart_num_3,
-                  chart_num_4: data.chart_num_4,
+                  chartCountAll: data.chartCountAll,
+                  chartNumAwesome: data.chartNumAwesome,
+                  chartNumGood: data.chartNumGood,
+                  chartNumNotbad: data.chartNumNotbad,
+                  chartNumDisappointed: data.chartNumDisappointed,
                 })
           
           if data.reviews
@@ -78,22 +78,22 @@ block content
 
           div.product__grid-3
             div.product__grid-3-col.product__grid-3-col-1.product_mb40
-              if data.rules_title
-                h2.product__title #{data.rules_title}
-              if data.options_rules
-                +list(data.options_rules)
+              if data.rulesTitle
+                h2.product__title #{data.rulesTitle}
+              if data.optionsRules
+                +list(data.optionsRules)
             div.product__grid-3-col.product__grid-3-col-2.product_mb40
-              if data.cancel_title
-                h2.product__title #{data.cancel_title}
-              if data.cancel_text
-                p.product__text #{data.cancel_text}
+              if data.cancelTitle
+                h2.product__title #{data.cancelTitle}
+              if data.cancelText
+                p.product__text #{data.cancelText}
 
         div.product__body-col.product__body-col-2
           +form-booking({
-            room_number: data.room_number,
-            room_type: data.room_type,
+            roomNumber: data.roomNumber,
+            roomType: data.roomType,
             price: data.price,
-            price_time: data.price_time,
-            list_service: data.list_service,
-            total_price: data.total_price
+            priceTime: data.priceTime,
+            listService: data.listService,
+            totalPrice: data.totalPrice
           })

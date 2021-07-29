@@ -6,15 +6,15 @@ include ../card/card
 //-
   options.classes - Классы блока.
   options.id - ИД блока.
-  options.room_number - Номер апартаментов.
-  options.room_type - Тип апартаментов (люкс).
+  options.roomNumber - Номер апартаментов.
+  options.roomType - Тип апартаментов (люкс).
   options.price - Стоимость апартаментов.
-  options.price_time - Пометка "в сутки" или "в неделю".
-  options.list_service - Список услуг.
-  options.list_service[0].name - Название услуги.
-  options.list_service[0].price - Цена услуги.
-  options.list_service[0].tooltip - Подсказка.
-  options.total_price - Итоговая стоимость.
+  options.priceTime - Пометка "в сутки" или "в неделю".
+  options.listService - Список услуг.
+  options.listService[0].name - Название услуги.
+  options.listService[0].price - Цена услуги.
+  options.listService[0].tooltip - Подсказка.
+  options.totalPrice - Итоговая стоимость.
 
 mixin form-booking(options)
   if !options
@@ -31,24 +31,24 @@ mixin form-booking(options)
       div.form-booking__title.card_mb10
         div.form-booking__title-left
           span.form-booking__title-symbol № 
-          span.form-booking__title-number #{options.room_number}
-          if options.room_type
-            span.form-booking__title-type  #{options.room_type}
+          span.form-booking__title-number #{options.roomNumber}
+          if options.roomType
+            span.form-booking__title-type  #{options.roomType}
         div.form-booking__title-right
           span.form-booking__title-price #{options.price}
-          span.form-booking__title-price-type  #{options.price_time}
+          span.form-booking__title-price-type  #{options.priceTime}
       
       div.card_mb20
         +dropdown({
-          custom_content: true,
+          customContent: true,
           classes: 'dropdown_dates',
-          input_params: {
+          inputParams: {
             label: "Прибытие",
             readonly: true,
             placeholder: "ДД.ММ.ГГГГ",
             classes: 'js-input_result-date-start'
           },
-          input_params2: {
+          inputParams2: {
             label: "Выезд",
             readonly: true,
             placeholder: "ДД.ММ.ГГГГ",
@@ -59,29 +59,29 @@ mixin form-booking(options)
 
       div.card_mb20
         +dropdown({
-          input_params:{
+          inputParams:{
             label: "Гости",
             readonly: true
           },
-          input_params:{
+          inputParams:{
             value: "Сколько гостей"
           }
         })
           +list-counters({
-            text_default: "Сколько гостей",
-            text_one: " гость",
-            text_many: " гостей",
-            array_counters: [
-              {label: "Взрослые", input_name: ""},
-              {label: "Дети", input_name: ""},
-              {label: "Младенцы", input_name: ""}
+            textDefault: "Сколько гостей",
+            textOne: " гость",
+            textMany: " гостей",
+            arrayCounters: [
+              {label: "Взрослые", inputName: ""},
+              {label: "Дети", inputName: ""},
+              {label: "Младенцы", inputName: ""}
             ]
           })
 
-      if options.list_service
+      if options.listService
         div.card_mb20
           table.form-booking__table
-            each item, index in options.list_service
+            each item, index in options.listService
               tr
                 td.form-booking__table-cell #{item.name}
                 td.form-booking__table-cell.form-booking__table_px5 
@@ -89,9 +89,9 @@ mixin form-booking(options)
                     div.form-booking__tooltip(title = item.tooltip)
                 td.form-booking__table-cell.form-booking__table-cell_price #{item.price}
 
-      if options.total_price
+      if options.totalPrice
         div.form-booking__bottom.card_mb20
           span.form-booking__bottom-word Итого
           div.form-booking__bottom-points
-          span.form-booking__bottom-price #{options.total_price}
+          span.form-booking__bottom-price #{options.totalPrice}
       +button({text: "Забронировать", classes: "button_fill button_arrow-left button_wide"})

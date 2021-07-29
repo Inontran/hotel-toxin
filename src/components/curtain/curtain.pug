@@ -3,10 +3,10 @@
   options.id - ИД блока.
   options.username - Имя пользователя. Если этот параметр не указан, 
     то вместо имени будут находиться кнопки входа и регастрации.
-  options.button_login_text - Текст кнопки входа.
-  options.button_login_href - Ссылка кнопки входа.
-  options.button_reg_text - Текст кнопки регистрации.
-  options.button_reg_href - Ссылка кнопки регистрации.
+  options.buttonLoginText - Текст кнопки входа.
+  options.buttonLoginHref - Ссылка кнопки входа.
+  options.buttonRegText - Текст кнопки регистрации.
+  options.buttonRegHref - Ссылка кнопки регистрации.
   options.menuItems - Пукнты главного меню сайта.
   options.menuItems[0].href - Ссылка на страницу.
   options.menuItems[0].name - Текст пункта меню.
@@ -29,15 +29,15 @@ mixin curtain(options)
         if !options.username
           div.curtain_mb15
             +button({
-              text: options.button_login_text, 
+              text: options.buttonLoginText, 
               classes: 'button_outline button_size-md button_wide',
-              href: options.button_login_href ? options.button_login_href : false
+              href: options.buttonLoginHref ? options.buttonLoginHref : false
             })
           div.curtain_mb15
             +button({
-              text: options.button_reg_text, 
+              text: options.buttonRegText, 
               classes: 'button_fill button_size-md button_wide',
-              href: options.button_reg_href ? options.button_reg_href : false
+              href: options.buttonRegHref ? options.buttonRegHref : false
             })
         else
           a.curtain__username #{options.username}

@@ -13,17 +13,17 @@ block content
 
   div.products
     +header({
-      menuItems: data_header.menuItems, 
-      button_login_text: data_header.login_text,
-      button_login_href: data_header.login_href,
-      button_reg_text: data_header.reg_text,
-      button_reg_href: data_header.reg_href
+      menuItems: dataHeader.menuItems, 
+      buttonLoginText: dataHeader.loginText,
+      buttonLoginHref: dataHeader.loginHref,
+      buttonRegText: dataHeader.regText,
+      buttonRegHref: dataHeader.regHref
     })
 
     div.products__container
       div.products__grid
         div.products__left-column.js-products__left-column
-          +filter-products(data.filter_options)
+          +filter-products(data.dataHeader)
         div.products__center-column
           h1.products_mb20 Номера, которые мы для вас подобрали
           div.product_mb20
@@ -32,17 +32,17 @@ block content
               text: 'Показать фильтр'
             })
           div.products__cards-container.products_mb23
-            each data_card in data.cards
+            each dataCard in data.cards
               div.products__card-wrapper.products_mb20
                 +card-product({
-                  gallery: data_card.gallery ? data_card.gallery : false,
-                  room_number: data_card.room_number ? data_card.room_number : false,
-                  room_type: data_card.room_type ? data_card.room_type : false,
-                  price: data_card.price ? data_card.price : false,
-                  price_time: data_card.price_time ? data_card.price_time : false,
-                  count_reviews: data_card.count_reviews ? data_card.count_reviews : false,
-                  room_type: data_card.room_type ? data_card.room_type : false,
-                  rating: data_card.rating ? data_card.rating : false,
+                  gallery: dataCard.gallery ? dataCard.gallery : false,
+                  roomNumber: dataCard.roomNumber ? dataCard.roomNumber : false,
+                  roomType: dataCard.roomType ? dataCard.roomType : false,
+                  price: dataCard.price ? dataCard.price : false,
+                  priceTime: dataCard.priceTime ? dataCard.priceTime : false,
+                  countReviews: dataCard.countReviews ? dataCard.countReviews : false,
+                  roomType: dataCard.roomType ? dataCard.roomType : false,
+                  rating: dataCard.rating ? dataCard.rating : false,
                 })
           div.products__pagination-wrapper
             +pagination({page: 1, perpage: 12, elements: 175, text: "вариантов аренды"})

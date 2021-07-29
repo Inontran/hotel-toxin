@@ -7,10 +7,10 @@
         "@/pages/products/img/image-3.jpg",
         "@/pages/products/img/image-4.jpg"
       ],
-      "room_number": "100",
+      "roomNumber": "100",
       "price": "9 900₽",
-      "price_time": "в сутки",
-      "count_reviews": "145",
+      "priceTime": "в сутки",
+      "countReviews": "145",
       "rating": "5"
     },
     {
@@ -20,12 +20,12 @@
         "@/pages/products/img/image-3.jpg",
         "@/pages/products/img/image-4.jpg"
       ],
-      "room_number": "101",
+      "roomNumber": "101",
       "price": "11 000₽",
-      "price_time": "в день",
-      "count_reviews": "1",
+      "priceTime": "в день",
+      "countReviews": "1",
       "rating": "4",
-      "room_type": "Люкс"
+      "roomType": "Люкс"
     },
     {
       "gallery": [
@@ -34,10 +34,10 @@
         "@/pages/products/img/image-3.jpg",
         "@/pages/products/img/image-4.jpg"
       ],
-      "room_number": "102",
+      "roomNumber": "102",
       "price": "111 000₽",
-      "price_time": "в неделю",
-      "count_reviews": "145",
+      "priceTime": "в неделю",
+      "countReviews": "145",
       "rating": "3"
     },
     {
@@ -47,10 +47,10 @@
         "@/pages/products/img/image-3.jpg",
         "@/pages/products/img/image-4.jpg"
       ],
-      "room_number": "100",
+      "roomNumber": "100",
       "price": "9 900₽",
-      "price_time": "в сутки",
-      "count_reviews": "145",
+      "priceTime": "в сутки",
+      "countReviews": "145",
       "rating": "5"
     },
     {
@@ -60,12 +60,12 @@
         "@/pages/products/img/image-3.jpg",
         "@/pages/products/img/image-4.jpg"
       ],
-      "room_number": "101",
+      "roomNumber": "101",
       "price": "11 000₽",
-      "price_time": "в день",
-      "count_reviews": "1",
+      "priceTime": "в день",
+      "countReviews": "1",
       "rating": "4",
-      "room_type": "Люкс"
+      "roomType": "Люкс"
     },
     {
       "gallery": [
@@ -74,85 +74,85 @@
         "@/pages/products/img/image-3.jpg",
         "@/pages/products/img/image-4.jpg"
       ],
-      "room_number": "102",
+      "roomNumber": "102",
       "price": "111 000₽",
-      "price_time": "в неделю",
-      "count_reviews": "145",
+      "priceTime": "в неделю",
+      "countReviews": "145",
       "rating": "3"
     }
   ],
 
-  "filter_options":{
+  "dataHeader":{
     "isMobile": true,
     
-    "option_dropdown_dates":{
-      "custom_content": true,
+    "optionDropdownDates":{
+      "customContent": true,
       "classes": "dropdown_dates",
-      "input_params":{
+      "inputParams":{
         "label": "Даты пребывания в отеле",
         "readonly": true,
         "classes": "js-input_result-dates"
       }
     },
 
-    "option_dropdown_dates_datepicker":{
+    "optionDropdownDatesDatepicker":{
       "classes": "air-datepicker_inline"
     },
 
-    "option_dropdown_people":{
-      "input_params":{
+    "optionDropdownPeople":{
+      "inputParams":{
         "label": "Гости",
         "readonly": true
       },
-      "text_default": "Сколько гостей",
-      "text_one": " гость",
-      "text_many": " гостей",
-      "array_counters": [
-        {"label": "Взрослые", "input_name": ""},
-        {"label": "Дети", "input_name": ""},
-        {"label": "Младенцы", "input_name": ""}
+      "textDefault": "Сколько гостей",
+      "textOne": " гость",
+      "textMany": " гостей",
+      "arrayCounters": [
+        {"label": "Взрослые", "inputName": ""},
+        {"label": "Дети", "inputName": ""},
+        {"label": "Младенцы", "inputName": ""}
       ]
     },
 
-    "option_slider_range":{
+    "optionSliderRange":{
       "label": "Диапазон цены", 
       "min": 0, 
       "max": 15000, 
       "val1": 5000, 
       "val2": 10000,
-      "text_bottom": "Стоимость за сутки пребывания в номере"
+      "textBottom": "Стоимость за сутки пребывания в номере"
     },
 
-    "checkboxes_title": "Checkbox buttons",
+    "checkboxesTitle": "Checkbox buttons",
     "checkboxes":[
       {"text": "Можно курить"},
       {"text": "Можно с питомцами", "checked": true},
       {"text": "Можно пригласить гостей (до 10 человек)", "checked": true}
     ],
 
-    "checkboxes_big_title": "Доступность",
-    "checkboxes_big":[
+    "checkboxesBigTitle": "Доступность",
+    "checkboxesBig":[
       {"text": "Ширина коридоров в номере не менее 91 см.", "title": "Широкий коридор"},
       {"text": "На 1 этаже вас встретит специалист  и проводит до номера.", "title": "Помощник для инвалидов"}
     ],
 
-    "option_dropdown_feature": {
-      "input_params":{
+    "optionDropdownFeature": {
+      "inputParams":{
         "label": "Удобства номера",
         "readonly": true
       },
-      "array_counters": [
-        {"label": "Спальни", "input_name": ""},
-        {"label": "Кровати", "input_name": ""},
-        {"label": "Ванные комнаты", "input_name": ""}
+      "arrayCounters": [
+        {"label": "Спальни", "inputName": ""},
+        {"label": "Кровати", "inputName": ""},
+        {"label": "Ванные комнаты", "inputName": ""}
       ]
     },
     
-    "collapse_feature_options": {
-      "text": "Дополнительные удобства", 
+    "collapseFeatureOptions": {
+      "text": "Дополнительные удобства",
       "group": "collapse-group-1"
     },
-    "collapse_feature_checkboxes":[
+    "collapseFeatureCheckboxes":[
       {"text": "Завтрак"},
       {"text": "Письменный стол", "checked": true},
       {"text": "Стул для кормления", "checked": true},

@@ -5,13 +5,13 @@ include ../input-number/input-number
   options.classes - Классы блока.
   options.id - ИД блока.
   options.type = 1 - Тип блока со счетчиками. Если 1, тогда блок отображается с кнопками сброса и подтверждения.
-  options.text_default - Текст поля без значений.
-  options.text_one - Текст поля, если сумма всех счетчиков равно 1.
-  options.text_many - Текст поля, если сумма всех счетчиков больше 1.
-  options.array_counters - Массив полей-счетчиков.
-  options.array_counters[0].label - Подпись счетчика.
-  options.array_counters[0].value = 0 - Значение поля счетчика.
-  options.array_counters[0].input_name - Имя поля счетчика.
+  options.textDefault - Текст поля без значений.
+  options.textOne - Текст поля, если сумма всех счетчиков равно 1.
+  options.textMany - Текст поля, если сумма всех счетчиков больше 1.
+  options.arrayCounters - Массив полей-счетчиков.
+  options.arrayCounters[0].label - Подпись счетчика.
+  options.arrayCounters[0].value = 0 - Значение поля счетчика.
+  options.arrayCounters[0].inputName - Имя поля счетчика.
 
 mixin list-counters(options)
   if !options
@@ -29,30 +29,30 @@ mixin list-counters(options)
   if options.type == 2
     - options.classes += ' list-counters_simple'
 
-  if !options.text_default
-    - options.text_default = ''
+  if !options.textDefault
+    - options.textDefault = ''
 
-  if !options.text_one
-    - options.text_one = ''
+  if !options.textOne
+    - options.textOne = ''
 
-  if !options.text_many
-    - options.text_many = ''
+  if !options.textMany
+    - options.textMany = ''
 
 
   div.list-counters.js-list-counters(
     class = options.classes, 
     id = options.id,
-    data-default-text = options.text_default, 
-    data-text-one = options.text_one, 
-    data-text-many = options.text_many
+    data-default-text = options.textDefault, 
+    data-text-one = options.textOne, 
+    data-text-many = options.textMany
   )
-    if options.array_counters
-      each item, index in options.array_counters
+    if options.arrayCounters
+      each item, index in options.arrayCounters
         div.list-counters__counter.js-list-counters__counter
           span.list-counters__counter-label.js-list-counters__counter-label #{item.label}
           +input-number({
             value: item.value ? item.value : 0,
-            name: item.input_name ? item.input_name : '',
+            name: item.inputName ? item.inputName : '',
             min: 0
           })
       if options.type == 1

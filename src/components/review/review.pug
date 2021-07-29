@@ -6,8 +6,9 @@ include ../like-btn/like-btn
   options.avatar - Фотография человека, оставивший отзыв.
   options.isLike = false - Поставил ли лайк пользователь, который просматривает данный отзыв.
   options.username = 'Anonymous' - Имя пользователя, написавший отзыв.
-  options.time_later = 'несколько секунд назад' - Сколько времени прошло после написания отзыва.
-  options.text_review - Текст отзыва.
+  options.timeLater = 'несколько секунд назад' - Сколько времени прошло после написания отзыва.
+  options.textReview - Текст отзыва.
+  options.countLike = 0 - Количество лайков.
 
 mixin review(options)
   if !options
@@ -25,25 +26,25 @@ mixin review(options)
   if !options.isLike
     - options.isLike = false
   
-  if !options.count_like
-    - options.count_like = '0'
+  if !options.countLike
+    - options.countLike = '0'
 
   if !options.username
     - options.username = 'Anonymous'
 
-  if !options.time_later
-    - options.time_later = 'несколько секунд назад'
+  if !options.timeLater
+    - options.timeLater = 'несколько секунд назад'
 
-  if !options.text_review
-    - options.text_review = ''
+  if !options.textReview
+    - options.textReview = ''
 
   div.review(class = options.classes, id = options.id)
     div.review__header
       div.review__avatar(style = 'background-image: url(' + options.avatar + ');')
       div.review__header-text
         p.review__username #{options.username}
-        p.review__time #{options.time_later}
+        p.review__time #{options.timeLater}
     div.review__content
       div.review__like-wrapper
-        +like-btn({value: options.count_like, isLike: options.isLike})
-      p.review__text #{options.text_review}
+        +like-btn({value: options.countLike, isLike: options.isLike})
+      p.review__text #{options.textReview}

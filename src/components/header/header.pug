@@ -8,10 +8,10 @@ include ../button/button
   options.menuItems[0].href - Ссылка на страницу.
   options.menuItems[0].name - Текст пункта меню.
   options.menuItems[0].subitems - Массив подпунктов.
-  options.button_login_text = 'Login' - Текст кнопки входа.
-  options.button_login_href - Ссылка кнопки на страницу входа.
-  options.button_reg_text = 'Register' - Текст кнопки регистрации.
-  options.button_reg_href - Ссылка кнопки на страницу регистрации.
+  options.buttonLoginText = 'Login' - Текст кнопки входа.
+  options.buttonLoginHref - Ссылка кнопки на страницу входа.
+  options.buttonRegText = 'Register' - Текст кнопки регистрации.
+  options.buttonRegHref - Ссылка кнопки на страницу регистрации.
   options.username - Имя пользователя. Если этот параметр не указан, 
     то вместо имени будут находиться кнопки входа и регастрации.
 
@@ -28,11 +28,11 @@ mixin header(options)
   if !options.menuItems
     - options.menuItems = []
 
-  if !options.button_login_text
-    - options.button_login_text = 'Login'
+  if !options.buttonLoginText
+    - options.buttonLoginText = 'Login'
   
-  if !options.button_reg_text
-    - options.button_reg_text = 'Register'
+  if !options.buttonRegText
+    - options.buttonRegText = 'Register'
 
 
   header.header(class = options.classes, id = options.id)
@@ -46,7 +46,7 @@ mixin header(options)
               if val.subitems
                 img.header__main-menu-arrow(src = require('@/components/header/img/expand_more.svg').default, alt = "v")
 
-      a.header__btn-icon.header__btn-icon_profile(href = options.button_login_href ? options.button_login_href : false)
+      a.header__btn-icon.header__btn-icon_profile(href = options.buttonLoginHref ? options.buttonLoginHref : false)
         img(src = require('@/components/header/img/user_icon.svg').default, alt = 'Профиль', title = 'Профиль')
       button.header__btn-icon.header__btn-icon_menu.js-header__btn_show-curtain
         img(src = require('@/components/header/img/menu_icon.svg').default, alt = 'Меню', title = 'Меню')
@@ -54,15 +54,15 @@ mixin header(options)
       if !options.username
         div.header__btn-login
           +button({
-            text: options.button_login_text, 
+            text: options.buttonLoginText, 
             classes: 'button_outline button_size-md',
-            href: options.button_login_href ? options.button_login_href : false
+            href: options.buttonLoginHref ? options.buttonLoginHref : false
           })
         div.header__btn-signup
           +button({
-            text: options.button_reg_text, 
+            text: options.buttonRegText, 
             classes: 'button_fill button_size-md',
-            href: options.button_reg_href ? options.button_reg_href : false
+            href: options.buttonRegHref ? options.buttonRegHref : false
           })
       else
         a.header__username #{options.username}

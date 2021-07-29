@@ -8,16 +8,16 @@ block title
 
 block content
   - data = htmlWebpackPlugin.options.getData()
-  - data.first_display_options.bg_url = require('@/pages/login/img/' + data.first_display_options.bg_url).default
+  - data.firstDisplayOptions.bgUrl = require('@/pages/login/img/' + data.firstDisplayOptions.bgUrl).default
 
   +curtain({
-    menuItems: data_header.menuItems, 
-    button_login_text: data_header.login_text,
-    button_login_href: data_header.login_href,
-    button_reg_text: data_header.reg_text,
-    button_reg_href: data_header.reg_href
+    menuItems: dataHeader.menuItems, 
+    buttonLoginText: dataHeader.loginText,
+    buttonLoginHref: dataHeader.loginHref,
+    buttonRegText: dataHeader.regText,
+    buttonRegHref: dataHeader.regHref
   })
 
-  +first-display(data.first_display_options)
+  +first-display(data.firstDisplayOptions)
     div.first-display__form-wrapper
-      +form-login(data.form_options)
+      +form-login(data.formOptions)

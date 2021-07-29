@@ -11,9 +11,9 @@ include ../input/input
   options.menuItems[0].items - Массив пунктов меню.
   options.menuItems[0].items.href - Ссылка.
   options.menuItems[0].items.name - Название страницы.
-  options.title_subscribe - Заголовок формы с подпиской.
+  options.titleSubscribe - Заголовок формы с подпиской.
   options.text2 - Текст формы подписки.
-  options.copyright_text - Текст об авторских правах.
+  options.copyrightText - Текст об авторских правах.
 
 mixin footer(options)
   if !options
@@ -53,8 +53,8 @@ mixin footer(options)
                 a.link(href = val.href)= val.name
         
         div.footer__col5
-          if options.title_subscribe
-            h3.footer__subtitle #{options.title_subscribe}
+          if options.titleSubscribe
+            h3.footer__subtitle #{options.titleSubscribe}
           if options.text2
             div.footer__text.footer_mb20 #{options.text2}
           form(action="", method="post")
@@ -63,8 +63,8 @@ mixin footer(options)
     div.footer__down.footer_desktop
       div.footer__container
         div.footer__down-wrapper
-          if options.copyright_text
-            p #{options.copyright_text}
+          if options.copyrightText
+            p #{options.copyrightText}
           +social-nets()
 
     div.footer__container.footer_mobile

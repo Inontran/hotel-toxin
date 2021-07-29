@@ -5,19 +5,22 @@
     "@/pages/product/img/image-3.jpg"
   ],
 
-  "options_infographics":{
+  "optionsInfographics":{
     "items": [
-      {  "src": "@/components/infographics/img/insert_emoticon.svg", 
+      { 
+        "src": "@/components/infographics/img/insert_emoticon.svg", 
         "title": "Комфорт", 
         "text": "Шумопоглощающие стены",
         "line": true
       },
-      {  "src": "@/components/infographics/img/location_city.svg", 
+      { 
+        "src": "@/components/infographics/img/location_city.svg", 
         "title": "Удобство", 
         "text": "Окно в каждой из спален",
         "line": true
       },
-      {  "src": "@/components/infographics/img/whatshot.svg", 
+      { 
+        "src": "@/components/infographics/img/whatshot.svg", 
         "title": "Уют", 
         "text": "Номер оснащен камином"
       }
@@ -28,22 +31,22 @@
     {
       "avatar": "@/components/review/img/photo-example.jpg",
       "isLike": true,
-      "count_like": 12,
+      "countLike": 12,
       "username": "Мурад Сарафанов",
-      "time_later": "5 дней назад",
-      "text_review": "Великолепный матрас на кровати в основной спальне! А пуфик вообще потрясающий. И стены, действительно, шумоподавляющие. Выкрикивал комплименты повару — никто не жаловался из соседей."
+      "timeLater": "5 дней назад",
+      "textReview": "Великолепный матрас на кровати в основной спальне! А пуфик вообще потрясающий. И стены, действительно, шумоподавляющие. Выкрикивал комплименты повару — никто не жаловался из соседей."
     },
     {
       "avatar": "@/components/review/img/photo-example.jpg",
-      "count_like": 2,
+      "countLike": 2,
       "username": "Патрисия Стёклышкова",
-      "time_later": "Неделю назад",
-      "text_review": "Обслуживание на высоте! Всё аккуратно, чисто. Завтраки в номер советую заказать, каждый день новое блюдо и десерт как комплимент"
+      "timeLater": "Неделю назад",
+      "textReview": "Обслуживание на высоте! Всё аккуратно, чисто. Завтраки в номер советую заказать, каждый день новое блюдо и десерт как комплимент"
     }
   ],
 
-  "rules_title": "Правила",
-  "options_rules":{
+  "rulesTitle": "Правила",
+  "optionsRules":{
     "items": [
       "Нельзя с питомцами", 
       "Без вечеринок и мероприятий", 
@@ -51,23 +54,23 @@
     ]
   },
 
-  "cancel_title": "Отмена",
-  "cancel_text": "Бесплатная отмена в течение 48 ч. После этого при отмене не позднее чем за 5 дн. до прибытия вы получите полный возврат за вычетом сбора за услуги.",
+  "cancelTitle": "Отмена",
+  "cancelText": "Бесплатная отмена в течение 48 ч. После этого при отмене не позднее чем за 5 дн. до прибытия вы получите полный возврат за вычетом сбора за услуги.",
 
-  "chart_count_all": "260",
-  "chart_num_1": "130",
-  "chart_num_2": "65",
-  "chart_num_3": "65",
-  "chart_num_4": "0",
+  "chartCountAll": "260",
+  "chartNumAwesome": "130",
+  "chartNumGood": "65",
+  "chartNumNotbad": "65",
+  "chartNumDisappointed": "0",
 
-  "room_number": 888,
-  "room_type": "люкс",
+  "roomNumber": 888,
+  "roomType": "люкс",
   "price": "9 990₽",
-  "price_time": "в сутки",
-  "list_service": [
+  "priceTime": "в сутки",
+  "listService": [
     {"name": "9 990₽ х 4 суток", "price": "39 960₽"},
     {"name": "Сбор за услуги: скидка 2 179₽", "price": "0₽", "tooltip": "Подсказка"},
     {"name": "Сбор за дополнительные услуги", "price": "300₽", "tooltip": "Подсказка"}
   ],
-  "total_price": "38 081₽"
+  "totalPrice": "38 081₽"
 }

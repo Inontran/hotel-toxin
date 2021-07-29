@@ -1,15 +1,15 @@
 //-
   options.classes - Классы блока.
   options.id - ИД блока.
-  options.chart_num_1 = 0 - Количество голосов.
-  options.chart_num_2 = 0 - Количество голосов.
-  options.chart_num_3 = 0 - Количество голосов.
-  options.chart_num_4 = 0 - Количество голосов.
-  options.chart_count_all - Общее количество голосов.
-  options.label_1 = 'Великолепно' - Подпись количества голосов (chart_num_1).
-  options.label_2 = 'Хорошо' - Подпись количества голосов (chart_num_2).
-  options.label_3 = 'Удовлетворительно' - Подпись количества голосов (chart_num_3).
-  options.label_4 = 'Разочарован' - Подпись количества голосов (chart_num_4).
+  options.chartNumAwesome = 0 - Количество голосов.
+  options.chartNumGood = 0 - Количество голосов.
+  options.chartNumNotbad = 0 - Количество голосов.
+  options.chartNumDisappointed = 0 - Количество голосов.
+  options.chartCountAll - Общее количество голосов.
+  options.labelAwesome = 'Великолепно' - Подпись количества голосов (chartNumAwesome).
+  options.labelGood = 'Хорошо' - Подпись количества голосов (chartNumGood).
+  options.labelNotbad = 'Удовлетворительно' - Подпись количества голосов (chartNumNotbad).
+  options.labelDisappointed = 'Разочарован' - Подпись количества голосов (chartNumDisappointed).
 
 mixin chart(options)
   if !options
@@ -21,49 +21,49 @@ mixin chart(options)
   if !options.id
     - options.id = ''
 
-  if !options.chart_num_1
-    - options.chart_num_1 = 0
+  if !options.chartNumAwesome
+    - options.chartNumAwesome = 0
 
-  if !options.chart_num_2
-    - options.chart_num_2 = 0
+  if !options.chartNumGood
+    - options.chartNumGood = 0
 
-  if !options.chart_num_3
-    - options.chart_num_3 = 0
+  if !options.chartNumNotbad
+    - options.chartNumNotbad = 0
 
-  if !options.chart_num_4
-    - options.chart_num_4 = 0
+  if !options.chartNumDisappointed
+    - options.chartNumDisappointed = 0
 
-  if !options.label_1
-    - options.label_1 = 'Великолепно'
+  if !options.labelAwesome
+    - options.labelAwesome = 'Великолепно'
 
-  if !options.label_2
-    - options.label_2 = 'Хорошо'
+  if !options.labelGood
+    - options.labelGood = 'Хорошо'
 
-  if !options.label_3
-    - options.label_3 = 'Удовлетворительно'
+  if !options.labelNotbad
+    - options.labelNotbad = 'Удовлетворительно'
 
-  if !options.label_4
-    - options.label_4 = 'Разочарован'
+  if !options.labelDisappointed
+    - options.labelDisappointed = 'Разочарован'
 
   
-  div.chart.js-chart(class = options.classes, id = options.id, data-num-1 = options.chart_num_1, data-num-2 = options.chart_num_2, data-num-3 = options.chart_num_3, data-num-4 = options.chart_num_4)
+  div.chart.js-chart(class = options.classes, id = options.id, data-num-1 = options.chartNumAwesome, data-num-2 = options.chartNumGood, data-num-3 = options.chartNumNotbad, data-num-4 = options.chartNumDisappointed)
     div.chart__container
       div.chart__wrapper
         canvas.chart__picture.js-chart__picture
-        if options.chart_count_all
+        if options.chartCountAll
           div.chart__count
-            div.chart__count-number #{options.chart_count_all}
+            div.chart__count-number #{options.chartCountAll}
             div.chart__count-text голосов
       div.chart__legend
         div.chart__legend-item
           span.chart__legend-icon.chart__legend-icon_awesome
-          span.chart__legend-text #{options.label_1}
+          span.chart__legend-text #{options.labelAwesome}
         div.chart__legend-item
           span.chart__legend-icon.chart__legend-icon_good
-          span.chart__legend-text #{options.label_2}
+          span.chart__legend-text #{options.labelGood}
         div.chart__legend-item
           span.chart__legend-icon.chart__legend-icon_notbad
-          span.chart__legend-text #{options.label_3}
+          span.chart__legend-text #{options.labelNotbad}
         div.chart__legend-item
           span.chart__legend-icon.chart__legend-icon_disappointed
-          span.chart__legend-text #{options.label_4}
+          span.chart__legend-text #{options.labelDisappointed}

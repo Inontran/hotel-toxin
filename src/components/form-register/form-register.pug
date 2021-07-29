@@ -7,7 +7,7 @@ include ../card/card
 //-
   options.classes - Классы блока.
   options.id - ИД блока.
-  options.button_login_href - Ссылка кнопки на страницу входа.
+  options.buttonLoginHref - Ссылка кнопки на страницу входа.
 
 mixin form-register(options)
   if !options
@@ -62,5 +62,5 @@ mixin form-register(options)
           +button({
             text: "Войти", 
             classes: "button_outline",
-            href: options.button_login_href ? options.button_login_href : false
+            href: options.buttonLoginHref ? options.buttonLoginHref : false
           })

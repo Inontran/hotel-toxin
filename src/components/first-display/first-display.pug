@@ -3,7 +3,7 @@ include ../header/header
 //-
   options.classes - Классы блока.
   options.id - ИД блока.
-  options.bg_url - Фоновая картинка.
+  options.bgUrl - Фоновая картинка.
 
 mixin first-display(options)
   if !options
@@ -19,14 +19,14 @@ mixin first-display(options)
   div.first-display(
     class = options.classes, 
     id = options.id,
-    style = options.bg_url ? 'background-image: url(' + options.bg_url + ')' : false
+    style = options.bgUrl ? 'background-image: url(' + options.bgUrl + ')' : false
   )
     +header({
-      menuItems: data_header.menuItems, 
-      button_login_text: data_header.login_text,
-      button_login_href: data_header.login_href,
-      button_reg_text: data_header.reg_text,
-      button_reg_href: data_header.reg_href
+      menuItems: dataHeader.menuItems, 
+      buttonLoginText: dataHeader.login_text,
+      buttonLoginHref: dataHeader.login_href,
+      buttonRegText: dataHeader.reg_text,
+      buttonRegHref: dataHeader.reg_href
     })
 
     div.first-display__content-wrapper

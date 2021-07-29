@@ -8,18 +8,18 @@ include ../air-datepicker/air-datepicker
   options.classes - Классы блока.
   options.id - ИД блока.
   options.isMobile - Параметр, указывающий на то, что фильтр отображется и работает для моб. версии сайта.
-  options.option_dropdown_dates - Параметры для dropdown с календарем.
-  options.option_dropdown_dates_datepicker - Параметры календаря.
-  options.option_dropdown_people - Параметры выпадающего списка гостей.
-  options.option_slider_range - Параметры слайдера диапозона цены.
+  options.optionDropdownDates - Параметры для dropdown с календарем.
+  options.optionDropdownDatesDatepicker - Параметры календаря.
+  options.optionDropdownPeople - Параметры выпадающего списка гостей.
+  options.optionSliderRange - Параметры слайдера диапозона цены.
   options.checkboxes - Массив простых чекбоксов.
   options.checkboxes[0] - Параметры чекбокса.
-  options.checkboxes_title - Заголовок массива простых чекбоксов.
-  options.checkboxes_big - Массив чекбоксов с текстов и заголовком.
-  options.checkboxes_big[0] - Параметры чекбокса.
-  options.checkboxes_big_title - Заголовок массива чекбоксов.
-  options.option_dropdown_feature - Параметры выпадающегося списка удобств номеров.
-  options.collapse_feature_options - Параметры раскрывающегося списка удобств номеров.
+  options.checkboxesTitle - Заголовок массива простых чекбоксов.
+  options.checkboxesBig - Массив чекбоксов с текстов и заголовком.
+  options.checkboxesBig[0] - Параметры чекбокса.
+  options.checkboxesBigTitle - Заголовок массива чекбоксов.
+  options.optionDropdownFeature - Параметры выпадающегося списка удобств номеров.
+  options.collapseFeatureOptions - Параметры раскрывающегося списка удобств номеров.
 
 mixin filter-products(options)
   if !options
@@ -44,44 +44,44 @@ mixin filter-products(options)
             text: 'Скрыть фильтр'
           })
 
-      if options.option_dropdown_dates
+      if options.optionDropdownDates
         div.filter-products_mb20
-          +dropdown(options.option_dropdown_dates)
-            +air-datepicker(options.option_dropdown_dates_datepicker)
+          +dropdown(options.optionDropdownDates)
+            +air-datepicker(options.optionDropdownDatesDatepicker)
 
-      if options.option_dropdown_people
+      if options.optionDropdownPeople
         div.filter-products_mb30
-          +dropdown(options.option_dropdown_people)
-            +list-counters(options.option_dropdown_people)
+          +dropdown(options.optionDropdownPeople)
+            +list-counters(options.optionDropdownPeople)
 
-      if options.option_slider_range
+      if options.optionSliderRange
         div.filter-products_mb30
-          +slider-range(options.option_slider_range)
+          +slider-range(options.optionSliderRange)
 
       if options.checkboxes
         div.filter-products_mb31
-          if options.checkboxes_title
-            h3.filter-products_mb13 #{options.checkboxes_title}
+          if options.checkboxesTitle
+            h3.filter-products_mb13 #{options.checkboxesTitle}
           each val, index in options.checkboxes
               div.filter-products_mb10
                 +checkbox(val)
 
-      if options.checkboxes_big
+      if options.checkboxesBig
         div.filter-products_mb30
-          if options.checkboxes_big_title
-            h3.filter-products_mb16 #{options.checkboxes_big_title}
-          each val, index in options.checkboxes_big
+          if options.checkboxesBigTitle
+            h3.filter-products_mb16 #{options.checkboxesBigTitle}
+          each val, index in options.checkboxesBig
             div.filter-products_mb10
               +checkbox(val)
 
-      if options.option_dropdown_feature
-        - options.option_dropdown_feature.type = 2
+      if options.optionDropdownFeature
+        - options.optionDropdownFeature.type = 2
         div.filter-products_mb16
-          +dropdown(options.option_dropdown_feature)
-            +list-counters(options.option_dropdown_feature)
+          +dropdown(options.optionDropdownFeature)
+            +list-counters(options.optionDropdownFeature)
 
-      if options.collapse_feature_options
-        +collapse(options.collapse_feature_options)
-          each val, index in options.collapse_feature_checkboxes
+      if options.collapseFeatureOptions
+        +collapse(options.collapseFeatureOptions)
+          each val, index in options.collapseFeatureCheckboxes
             div.filter-products_mb10
               +checkbox(val)

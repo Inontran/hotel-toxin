@@ -1,9 +1,9 @@
 {
-  "first_display_options":{
+  "firstDisplayOptions":{
     "classes": "first-display_content-center",
-    "bg_url": "image-4.jpg"
+    "bgUrl": "image-4.jpg"
   },
-  "form_options":{
-    "button_login_href": "login.html"
+  "formOptions":{
+    "buttonLoginHref": "login.html"
   }
 }

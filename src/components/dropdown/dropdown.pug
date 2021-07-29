@@ -8,8 +8,8 @@ include ../list-counters/list-counters
   options.group - Группа выпадающих списков.
     Если задать этот параметр с одинаковым значением у нескольких списков,
     то при раскрытии одного списка все остальные из этой группы будут закрываться.
-  options.input_params - Параметры поля ввода.
-  options.input_params2 - Параметры второго поля ввода.
+  options.inputParams - Параметры поля ввода.
+  options.inputParams2 - Параметры второго поля ввода.
 
 
 mixin dropdown(options)
@@ -25,16 +25,16 @@ mixin dropdown(options)
   if !options.group
     - options.group = ''
 
-  if !options.input_params
-    - options.input_params = {}
+  if !options.inputParams
+    - options.inputParams = {}
 
-  if !options.input_params.classes
-    - options.input_params.classes = 'input_in-dropdown'
+  if !options.inputParams.classes
+    - options.inputParams.classes = 'input_in-dropdown'
   else
-    - options.input_params.classes += ' input_in-dropdown'
+    - options.inputParams.classes += ' input_in-dropdown'
 
 
-  if options.input_params2
+  if options.inputParams2
     - options.classes += ' dropdown_dual-date'
 
 
@@ -43,17 +43,17 @@ mixin dropdown(options)
     id = options.id, 
     data-group = options.group
   )
-    if options.input_params2
+    if options.inputParams2
       div.dropdown__input-dates-wrapper
         div.dropdown__input-wrapper.js-dropdown__input-wrapper
-          +input(options.input_params)
+          +input(options.inputParams)
           button.dropdown__arrow(type = 'button')
         div.dropdown__input-wrapper.js-dropdown__input-wrapper
-          +input(options.input_params2)
+          +input(options.inputParams2)
           button.dropdown__arrow(type = 'button')
     else
       div.dropdown__input-wrapper.js-dropdown__input-wrapper
-        +input(options.input_params)
+        +input(options.inputParams)
         button.dropdown__arrow(type = 'button')
 
     div.dropdown__content
