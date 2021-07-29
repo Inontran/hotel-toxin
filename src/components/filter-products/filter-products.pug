@@ -45,43 +45,43 @@ mixin filter-products(options)
           })
 
       if options.optionDropdownDates
-        div.filter-products_mb20
+        div.filter-products__block-wrapper.filter-products_mb20
           +dropdown(options.optionDropdownDates)
             +air-datepicker(options.optionDropdownDatesDatepicker)
 
       if options.optionDropdownPeople
-        div.filter-products_mb30
+        div.filter-products__block-wrapper.filter-products_mb30
           +dropdown(options.optionDropdownPeople)
             +list-counters(options.optionDropdownPeople)
 
       if options.optionSliderRange
-        div.filter-products_mb30
+        div.filter-products__block-wrapper.filter-products_mb30
           +slider-range(options.optionSliderRange)
 
       if options.checkboxes
-        div.filter-products_mb31
+        div.filter-products__element.filter-products_mb31
           if options.checkboxesTitle
-            h3.filter-products_mb13 #{options.checkboxesTitle}
+            h3.filter-products__element.filter-products_mb13 #{options.checkboxesTitle}
           each val, index in options.checkboxes
-              div.filter-products_mb10
+              div.filter-products__block-wrapper.filter-products_mb10
                 +checkbox(val)
 
       if options.checkboxesBig
-        div.filter-products_mb30
+        div.filter-products__element.filter-products_mb30
           if options.checkboxesBigTitle
-            h3.filter-products_mb16 #{options.checkboxesBigTitle}
+            h3.filter-products__element.filter-products_mb16 #{options.checkboxesBigTitle}
           each val, index in options.checkboxesBig
-            div.filter-products_mb10
+            div.filter-products__block-wrapper.filter-products_mb10
               +checkbox(val)
 
       if options.optionDropdownFeature
         - options.optionDropdownFeature.type = 2
-        div.filter-products_mb16
+        div.filter-products__block-wrapper.filter-products_mb16
           +dropdown(options.optionDropdownFeature)
             +list-counters(options.optionDropdownFeature)
 
       if options.collapseFeatureOptions
         +collapse(options.collapseFeatureOptions)
           each val, index in options.collapseFeatureCheckboxes
-            div.filter-products_mb10
+            div.filter-products__block-wrapper.filter-products_mb10
               +checkbox(val)

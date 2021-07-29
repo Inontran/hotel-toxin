@@ -27,13 +27,13 @@ mixin curtain(options)
     div.curtain__content-wrapper.scrollbar.js-scrollbar.scrollbar_catalina
       div.curtain__top
         if !options.username
-          div.curtain_mb15
+          div.curtain__btn-wrapper.curtain_mb15
             +button({
               text: options.buttonLoginText, 
               classes: 'button_outline button_size-md button_wide',
               href: options.buttonLoginHref ? options.buttonLoginHref : false
             })
-          div.curtain_mb15
+          div.curtain__btn-wrapper.curtain_mb15
             +button({
               text: options.buttonRegText, 
               classes: 'button_fill button_size-md button_wide',
