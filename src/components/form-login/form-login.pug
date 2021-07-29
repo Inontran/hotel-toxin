@@ -19,18 +19,18 @@ mixin form-login(options)
 
   div.form-login(class = options.classes, id = options.id)
     +card({title: "Войти"})
-      div.card_mb10
+      div.form-login_mb10
         +input({
           classes: "input_mask-email",
           placeholder: "Email"
         })
-      div.card_mb20
+      div.form-login_mb20
         +input({
           type: "password",
           placeholder: "Пароль"
         })
 
-      div.card_mb30
+      div.form-login_mb30
         +button({
           text: "Войти", 
           classes: "button_fill button_arrow-left button_wide", 

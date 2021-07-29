@@ -28,7 +28,7 @@ mixin form-booking(options)
 
   div.form-booking(class = options.classes, id = options.id)
     +card()
-      div.form-booking__title.card_mb10
+      div.form-booking__title
         div.form-booking__title-left
           span.form-booking__title-symbol № 
           span.form-booking__title-number #{options.roomNumber}
@@ -37,8 +37,8 @@ mixin form-booking(options)
         div.form-booking__title-right
           span.form-booking__title-price #{options.price}
           span.form-booking__title-price-type  #{options.priceTime}
-      
-      div.card_mb20
+
+      div.form-booking__block-wrapper.form-booking_mb20
         +dropdown({
           customContent: true,
           classes: 'dropdown_dates',
@@ -57,7 +57,7 @@ mixin form-booking(options)
         })
           +air-datepicker({classes: 'air-datepicker_inline'})
 
-      div.card_mb20
+      div.form-booking__block-wrapper.form-booking_mb20
         +dropdown({
           inputParams:{
             label: "Гости",
@@ -79,7 +79,7 @@ mixin form-booking(options)
           })
 
       if options.listService
-        div.card_mb20
+        div.form-booking__block-wrapper.form-booking_mb20
           table.form-booking__table
             each item, index in options.listService
               tr
@@ -90,8 +90,9 @@ mixin form-booking(options)
                 td.form-booking__table-cell.form-booking__table-cell_price #{item.price}
 
       if options.totalPrice
-        div.form-booking__bottom.card_mb20
+        div.form-booking__bottom.form-booking_mb20
           span.form-booking__bottom-word Итого
           div.form-booking__bottom-points
           span.form-booking__bottom-price #{options.totalPrice}
+
       +button({text: "Забронировать", classes: "button_fill button_arrow-left button_wide"})

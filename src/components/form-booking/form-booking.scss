@@ -1,13 +1,16 @@
 @import '@/theme/variables.scss';
 
 .form-booking{
-  
+  &_mb20{
+    margin-bottom: 20px;
+  }
   &__title{
     display: flex;
     align-items: flex-end;
     justify-content: space-between;
     margin-left: -10px;
     margin-right: -10px;
+    margin-bottom: 10px;
 
     &-left, &-right{
       padding: 0 10px 10px;
