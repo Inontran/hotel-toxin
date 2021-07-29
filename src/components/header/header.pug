@@ -52,13 +52,13 @@ mixin header(options)
         img(src = require('@/components/header/img/menu_icon.svg').default, alt = 'Меню', title = 'Меню')
 
       if !options.username
-        div.header__btn1
+        div.header__btn-login
           +button({
             text: options.button_login_text, 
             classes: 'button_outline button_size-md',
             href: options.button_login_href ? options.button_login_href : false
           })
-        div.header__btn2
+        div.header__btn-signup
           +button({
             text: options.button_reg_text, 
             classes: 'button_fill button_size-md',
