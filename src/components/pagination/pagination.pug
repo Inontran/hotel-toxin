@@ -13,9 +13,6 @@ mixin pagination(options)
   if !options.classes
     - options.classes = ''
 
-  if !options.id
-    - options.id = ''
-
   if !options.page
     - options.page = 1
 
@@ -25,7 +22,10 @@ mixin pagination(options)
   if !options.text
     - options.text = ''
 
-  div.pagination.js-pagination(class = options.classes, id = options.id)
+  div.pagination.js-pagination(
+    class = options.classes,
+    id = options.id ? options.id : false
+  )
     div.pagination__wrapper.js-pagination__wrapper(
       data-page = options.page, 
       data-perpage = options.perpage, 

@@ -8,20 +8,20 @@ mixin like-btn(options)
   if !options
     - options = {}
 
-  if !options.value
-    - options.value = ''
-  
   if !options.classes
     - options.classes = ''
 
-  if !options.id
-    - options.id = ''
+  if !options.value
+    - options.value = ''
 
   if !options.name
     - options.name = 'like'
 
   
-  label.like-btn(class = options.classes, id = options.id)
+  label.like-btn(
+    class = options.classes,
+    id = options.id ? options.id : false
+  )
     input.like-btn__check(
       type = 'checkbox', 
       value = options.value, 

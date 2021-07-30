@@ -15,9 +15,6 @@ mixin slider-range(options)
   if !options.classes
     - options.classes = ''
 
-  if !options.id
-    - options.id = ''
-
   if !options.label
     - options.label = ''
 
@@ -34,7 +31,10 @@ mixin slider-range(options)
     - options.val2 = options.max
 
   
-  div.slider-range(class = options.classes, id = options.id)
+  div.slider-range(
+    class = options.classes,
+    id = options.id ? options.id : false
+  )
     div.slider-range__top
       span.slider-range__label #{options.label}
       input.slider-range__input(type="text")
@@ -46,4 +46,4 @@ mixin slider-range(options)
     )
 
     if options.textBottom
-      div.slider-range__text-bottom #{options.textBottom}
+      p.slider-range__text-bottom #{options.textBottom}

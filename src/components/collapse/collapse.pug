@@ -12,9 +12,6 @@ mixin collapse(options)
 
   if !options.classes
     - options.classes = ''
-  
-  if !options.id
-    - options.id = ''
 
   if !options.group
     - options.group = ''
@@ -22,7 +19,11 @@ mixin collapse(options)
   if !options.text
     - options.text = ''
 
-  div.collapse(class = options.classes, id = options.id, data-group = options.group)
+  div.collapse(
+    class = options.classes,
+    id = options.id ? options.id : false
+    data-group = options.group
+  )
     button.collapse__btn(type = 'button')
       h3.collapse__btn-text #{options.text}
       img.collapse__btn-arrow.svg-js(src = require('@/components/collapse/img/expand_more.svg').default, alt = "v")

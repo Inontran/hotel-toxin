@@ -22,9 +22,6 @@ mixin header(options)
   if !options.classes
     - options.classes = ''
 
-  if !options.id
-    - options.id = ''
-
   if !options.menuItems
     - options.menuItems = []
 
@@ -35,7 +32,10 @@ mixin header(options)
     - options.buttonRegText = 'Register'
 
 
-  header.header(class = options.classes, id = options.id)
+  header.header(
+    class = options.classes,
+    id = options.id ? options.id : false
+  )
     div.header__container
       div.header__logo
         +logo()
@@ -46,10 +46,10 @@ mixin header(options)
               if val.subitems
                 img.header__main-menu-arrow(src = require('@/components/header/img/expand_more.svg').default, alt = "v")
 
-      a.header__btn-icon.header__btn-icon_profile(href = options.buttonLoginHref ? options.buttonLoginHref : false)
-        img(src = require('@/components/header/img/user_icon.svg').default, alt = 'Профиль', title = 'Профиль')
-      button.header__btn-icon.header__btn-icon_menu.js-header__btn_show-curtain
-        img(src = require('@/components/header/img/menu_icon.svg').default, alt = 'Меню', title = 'Меню')
+      a.header__btn-icon.header__btn-icon_profile(href = options.buttonLoginHref ? options.buttonLoginHref : false, title = 'Профиль')
+        img(src = require('@/components/header/img/user_icon.svg').default, alt = 'Профиль', role = 'presentation')
+      button.header__btn-icon.header__btn-icon_menu.js-header__btn_show-curtain(title = 'Меню')
+        img(src = require('@/components/header/img/menu_icon.svg').default, alt = 'Меню', role = 'presentation')
 
       if !options.username
         div.header__btn-login

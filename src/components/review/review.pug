@@ -16,9 +16,6 @@ mixin review(options)
 
   if !options.classes
     - options.classes = ''
-  
-  if !options.id
-    - options.id = ''
 
   if !options.avatar
     - options.avatar = require('@/components/review/img/photo-example.jpg').default
@@ -38,12 +35,17 @@ mixin review(options)
   if !options.textReview
     - options.textReview = ''
 
-  div.review(class = options.classes, id = options.id)
-    div.review__header
-      div.review__avatar(style = 'background-image: url(' + options.avatar + ');')
+  article.review(
+    class = options.classes,
+    id = options.id ? options.id : false
+  )
+    header.review__header
+      div.review__avatar-wrapper
+        img.review__avatar(src = options.avatar, alt = 'Фото ' + options.username)
       div.review__header-text
         p.review__username #{options.username}
-        p.review__time #{options.timeLater}
+        p.review__time
+          time #{options.timeLater}
     div.review__content
       div.review__like-wrapper
         +like-btn({value: options.countLike, isLike: options.isLike})

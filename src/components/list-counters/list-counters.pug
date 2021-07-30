@@ -19,9 +19,6 @@ mixin list-counters(options)
 
   if !options.classes
     - options.classes = ''
-  
-  if !options.id
-    - options.id = ''
 
   if !options.type
     - options.type = 1
@@ -41,7 +38,7 @@ mixin list-counters(options)
 
   div.list-counters.js-list-counters(
     class = options.classes, 
-    id = options.id,
+    id = options.id ? options.id : false
     data-default-text = options.textDefault, 
     data-text-one = options.textOne, 
     data-text-many = options.textMany

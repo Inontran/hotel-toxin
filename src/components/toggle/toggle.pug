@@ -9,15 +9,12 @@
 mixin toggle(options)
   if !options
     - options = {}
-  
-  if !options.text
-    - options.text = ''
 
   if !options.classes
     - options.classes = ''
   
-  if !options.id
-    - options.id = ''
+  if !options.text
+    - options.text = ''
 
   if !options.name
     - options.name = ''
@@ -25,13 +22,16 @@ mixin toggle(options)
   if !options.type
     - options.type = 'checkbox'
 
-  label.toggle(class = classes, id = options.id)
+  label.toggle(
+    class = classes,
+    id = options.id ? options.id : false
+  )
     input.toggle__input(
       type = options.type, 
       name = options.name, 
       checked = options.checked ? "checked" : false
     )
-      
-    div.toggle__view
+    
+    span.toggle__view
     if options.text
-      div.toggle__text #{options.text}
+      p.toggle__text #{options.text}

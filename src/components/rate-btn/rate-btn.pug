@@ -9,19 +9,19 @@ mixin rate-btn(options)
   if !options
     - options = {}
 
-  if !options.value
-    - options.value = 0
-  
   if !options.classes
     - options.classes = ''
 
-  if !options.id
-    - options.id = ''
+  if !options.value
+    - options.value = 0
 
   if !options.name
     - options.name = 'rate'
 
-  div.rate-btn.js-rate-btn(class = options.classes, id = options.id)
+  div.rate-btn.js-rate-btn(
+    class = options.classes,
+    id = options.id ? options.id : false
+  )
     input.rate-btn__input.js-rate-btn__input(
       type = "hidden",
       value = options.value,

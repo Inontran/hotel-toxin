@@ -23,9 +23,6 @@ mixin input(options)
   if !options.classes
     - options.classes = ''
 
-  if !options.id
-    - options.id = ''
-
   if !options.type
     - options.type = 'text'
 
@@ -33,7 +30,10 @@ mixin input(options)
     - options.classes += ' input_subscription'
 
   
-  label.input.js-input(class = options.classes, id = options.id)
+  label.input.js-input(
+    class = options.classes, 
+    id = options.id ? options.id : false
+  )
     if options.label
       p.input__label #{options.label}
     input.input__field.js-input__field(
@@ -46,4 +46,4 @@ mixin input(options)
     )
     
     if options.subscription
-      button.input__submit
+      button.input__submit(type = 'submit')

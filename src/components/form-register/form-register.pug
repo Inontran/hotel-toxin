@@ -16,10 +16,10 @@ mixin form-register(options)
   if !options.classes
     - options.classes = ''
 
-  if !options.id
-    - options.id = ''
-
-  div.form-register(class = options.classes, id = options.id)
+  div.form-register(
+    class = options.classes,
+    id = options.id ? options.id : false
+  )
     +card({title: "Регистрация аккаунта"})
       div.form-register_mb10
         +input({

@@ -11,9 +11,6 @@ mixin logo(options)
   if !options.classes
     - options.classes = ''
   
-  if !options.id
-    - options.id = ''
-  
   if !options.src
     - options.src = require('@/components/logo/img/logo.svg').default
   else
@@ -22,5 +19,9 @@ mixin logo(options)
   if !options.href
     - options.href = 'index.html'
 
-  a.logo(href = options.href, class = options.classes, id = options.id)
+  a.logo(
+    href = options.href, 
+    class = options.classes, 
+    id = options.id ? options.id : false
+  )
     img(src = options.src, alt = "Toxin")

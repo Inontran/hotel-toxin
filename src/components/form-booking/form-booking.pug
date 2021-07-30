@@ -23,10 +23,10 @@ mixin form-booking(options)
   if !options.classes
     - options.classes = ''
 
-  if !options.id
-    - options.id = ''
-
-  div.form-booking(class = options.classes, id = options.id)
+  div.form-booking(
+    class = options.classes,
+    id = options.id ? options.id : false
+  )
     +card()
       div.form-booking__title
         div.form-booking__title-left
@@ -90,9 +90,9 @@ mixin form-booking(options)
                 td.form-booking__table-cell.form-booking__table-cell_price #{item.price}
 
       if options.totalPrice
-        div.form-booking__bottom.form-booking_mb20
+        p.form-booking__bottom.form-booking_mb20
           span.form-booking__bottom-word Итого
-          div.form-booking__bottom-points
+          span.form-booking__bottom-points
           span.form-booking__bottom-price #{options.totalPrice}
 
       +button({text: "Забронировать", classes: "button_fill button_arrow-left button_wide"})

@@ -18,9 +18,6 @@ mixin chart(options)
   if !options.classes
     - options.classes = ''
 
-  if !options.id
-    - options.id = ''
-
   if !options.chartNumAwesome
     - options.chartNumAwesome = 0
 
@@ -46,24 +43,31 @@ mixin chart(options)
     - options.labelDisappointed = 'Разочарован'
 
   
-  div.chart.js-chart(class = options.classes, id = options.id, data-num-1 = options.chartNumAwesome, data-num-2 = options.chartNumGood, data-num-3 = options.chartNumNotbad, data-num-4 = options.chartNumDisappointed)
+  div.chart.js-chart(
+    class = options.classes,
+    id = options.id ? options.id : false
+    data-num-1 = options.chartNumAwesome, 
+    data-num-2 = options.chartNumGood, 
+    data-num-3 = options.chartNumNotbad, 
+    data-num-4 = options.chartNumDisappointed
+  )
     div.chart__container
       div.chart__wrapper
         canvas.chart__picture.js-chart__picture
         if options.chartCountAll
-          div.chart__count
-            div.chart__count-number #{options.chartCountAll}
-            div.chart__count-text голосов
-      div.chart__legend
-        div.chart__legend-item
+          p.chart__count
+            span.chart__count-number #{options.chartCountAll}
+            span.chart__count-text голосов
+      ul.chart__legend
+        li.chart__legend-item
           span.chart__legend-icon.chart__legend-icon_awesome
           span.chart__legend-text #{options.labelAwesome}
-        div.chart__legend-item
+        li.chart__legend-item
           span.chart__legend-icon.chart__legend-icon_good
           span.chart__legend-text #{options.labelGood}
-        div.chart__legend-item
+        li.chart__legend-item
           span.chart__legend-icon.chart__legend-icon_notbad
           span.chart__legend-text #{options.labelNotbad}
-        div.chart__legend-item
+        li.chart__legend-item
           span.chart__legend-icon.chart__legend-icon_disappointed
           span.chart__legend-text #{options.labelDisappointed}

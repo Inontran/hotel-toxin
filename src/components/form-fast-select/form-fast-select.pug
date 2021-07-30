@@ -15,13 +15,13 @@ mixin form-fast-select(options)
   if !options.classes
     - options.classes = ''
 
-  if !options.id
-    - options.id = ''
-
   if !options.cardTitle
     - options.cardTitle = 'Найдём номера под ваши пожелания'
 
-  div.form-fast-select(class = options.classes, id = options.id)
+  div.form-fast-select(
+    class = options.classes,
+    id = options.id ? options.id : false
+  )
     +card({title: options.cardTitle})
       div.form-fast-select__block-wrapper.form-fast-select_mb20
         +dropdown({

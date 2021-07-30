@@ -397,7 +397,21 @@ block content
         +air-datepicker({classes: 'air-datepicker_inline'})
         div.guide-page__mb40
         +card-product({
-          gallery: [],
+          gallery: [
+            require("@/pages/guide/img/image-1.jpg").default,
+            require("@/pages/guide/img/image-2.jpg").default,
+            require("@/pages/guide/img/image-3.jpg").default,
+            require("@/pages/guide/img/image-4.jpg").default
+          ],
+          roomNumber: '888',
+          roomType: 'Люкс',
+          price: '9 990₽',
+          priceTime: 'в сутки',
+          countReviews: '145'
+        })
+
+        div.guide-page__mb40
+        +card-product({
           roomNumber: '888',
           roomType: 'Люкс',
           price: '9 990₽',

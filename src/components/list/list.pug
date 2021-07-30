@@ -8,16 +8,16 @@ mixin list(options)
   if !options
     - options = {}
 
+  if !options.classes
+    - options.classes = ''
+
   if !options.items
     - options.items = []
 
-  if !options.classes
-    - options.classes = ''
-  
-  if !options.id
-    - options.id = ''
 
-
-  ul.list(class = options.classes, id = options.id )
+  ul.list(
+    class = options.classes,
+    id = options.id ? options.id : false
+  )
     each val in options.items
       li.list__item #{val}

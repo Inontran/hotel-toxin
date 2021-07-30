@@ -16,9 +16,6 @@ mixin checkbox(options)
 
   if !options.classes
     - options.classes = ''
-  
-  if !options.id
-    - options.id = ''
 
   if !options.name
     - options.name = ''
@@ -27,7 +24,10 @@ mixin checkbox(options)
     - options.value = ''
 
 
-  label.checkbox(class = options.classes, id = options.id)
+  label.checkbox(
+    class = options.classes,
+    id = options.id ? options.id : false
+  )
     input.checkbox__input(
       type = "checkbox", 
       name = options.name, 

@@ -13,9 +13,6 @@ mixin input-number(options)
 
   if options.classes == undefined
     - options.classes = ''
-  
-  if options.id == undefined
-    - options.id = ''
 
   if options.min == undefined
     - options.min = ''
@@ -32,7 +29,10 @@ mixin input-number(options)
   if options.name == undefined
     - options.name = ''
 
-  div.input-number.js-input-number(class = options.classes, id = options.id)
+  div.input-number.js-input-number(
+    class = options.classes,
+    id = options.id ? options.id : false
+  )
     button.input-number__btn-less.js-input-number__btn-less -
     input.input-number__input.js-input-number__input(name = options.name, value = options.value, max = options.max, min = options.min, step = options.step, type = 'number')
     button.input-number__btn-more.js-input-number__btn-more +

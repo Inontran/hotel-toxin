@@ -12,13 +12,10 @@ mixin first-display(options)
   if !options.classes
     - options.classes = ''
 
-  if !options.id
-    - options.id = ''
-
 
   div.first-display(
     class = options.classes, 
-    id = options.id,
+    id = options.id ? options.id : false
     style = options.bgUrl ? 'background-image: url(' + options.bgUrl + ')' : false
   )
     +header({

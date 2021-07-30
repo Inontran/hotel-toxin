@@ -19,11 +19,17 @@ mixin footer(options)
   if !options
     - options = {}
 
+  if !options.classes
+    - options.classes = ''
+
   if !options.menuItems
     - options.menuItems = []
 
 
-  footer.footer
+  footer.footer(
+    class = options.classes, 
+    id = options.id ? options.id : false
+  )
     div.footer__container.footer_desktop
       div.footer__up
         div.footer__col1

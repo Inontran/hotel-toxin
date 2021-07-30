@@ -9,10 +9,10 @@ mixin social-nets(options)
   if !options.classes
     - options.classes = ''
 
-  if !options.id
-    - options.id = ''
-
-  div.social-nets(class = options.classes)
+  div.social-nets(
+    class = options.classes,
+    id = options.id ? options.id : false
+  )
     a.social-nets__link(href="twitter.com", target = "_blank", rel="noopener noreferrer")
       img.social-nets__icon(src = require('@/components/social-nets/img/twitter-icon.svg').default )
     a.social-nets__link(href="fb.com", target = "_blank", rel="noopener noreferrer")

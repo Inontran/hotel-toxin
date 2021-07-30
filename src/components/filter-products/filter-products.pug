@@ -27,13 +27,10 @@ mixin filter-products(options)
 
   if !options.classes
     - options.classes = ''
-  
-  if !options.id
-    - options.id = ''
 
   div.filter-products.js-filter-products(
     class = options.classes,
-    id = options.id,
+    id = options.id ? options.id : false
     class = options.isMobile ? "filter-products_mob-md" : false
   )
     div.filter-products__content-wrapper
@@ -63,8 +60,8 @@ mixin filter-products(options)
           if options.checkboxesTitle
             h3.filter-products__element.filter-products_mb13 #{options.checkboxesTitle}
           each val, index in options.checkboxes
-              div.filter-products__block-wrapper.filter-products_mb10
-                +checkbox(val)
+            div.filter-products__block-wrapper.filter-products_mb10
+              +checkbox(val)
 
       if options.checkboxesBig
         div.filter-products__element.filter-products_mb30

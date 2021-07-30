@@ -10,25 +10,25 @@ mixin radio(options)
   if !options
     - options = {}
   
-  if !options.text
-    - options.text = ''
-
   if !options.classes
     - options.classes = ''
-  
-  if !options.id
-    - options.id = ''
+
+  if !options.text
+    - options.text = ''
 
   if !options.name
     - options.name = ''
 
-  label.radio(class = classes, id = options.id)
+  label.radio(
+    class = classes, 
+    id = options.id ? options.id : false
+  )
     input.radio__input(
       type = "radio", 
       name = options.name, 
       checked = options.checked ? "checked" : false
     )
-      
-    div.radio__view
+    
+    span.radio__view
     if options.text
-      div.radio__text #{options.text}
+      p.radio__text #{options.text}

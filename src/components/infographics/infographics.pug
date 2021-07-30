@@ -13,14 +13,14 @@ mixin infographics(options)
 
   if !options.classes
     - options.classes = ''
-  
-  if !options.id
-    - options.id = ''
 
   if !options.items
     - options.items = ''
 
-  ul.infographics(class = options.classes, id = options.id)
+  ul.infographics(
+    class = options.classes,
+    id = options.id ? options.id : false
+  )
     each item, index in options.items
       if (item.line)
         -var classes_item = 'infographics__item_line'

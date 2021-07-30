@@ -14,10 +14,10 @@ mixin form-login(options)
   if !options.classes
     - options.classes = ''
 
-  if !options.id
-    - options.id = ''
-
-  div.form-login(class = options.classes, id = options.id)
+  div.form-login(
+    class = options.classes,
+    id = options.id ? options.id : false
+  )
     +card({title: "Войти"})
       div.form-login_mb10
         +input({
