@@ -23,13 +23,20 @@ $(function(){
         position: 'fixed',
       });
       $body.attr('data-last-scrolltop', scrollTop_body);
-    } else{
+    } 
+    else{
       scrollTop_body = $body.attr('data-last-scrolltop') ? $body.attr('data-last-scrolltop') : 0;
 
       $pageContentWrapper.css({
         top: '',
         position: '',
       });
+
+      $body.css({
+        top: '',
+        position: '',
+      });
+
       $html.scrollTop(scrollTop_body);
       $body.scrollTop(scrollTop_body);
       $body.attr('data-last-scrolltop', 0);
