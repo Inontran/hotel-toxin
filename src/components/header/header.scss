@@ -77,8 +77,8 @@
     }
   }
 
-  &__btn1,
-  &__btn2,
+  &__btn-login,
+  &__btn-signup,
   &__username{
     @media(max-width: $lg){
       display: none;
