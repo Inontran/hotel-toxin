@@ -25,8 +25,8 @@ mixin collapse(options)
     data-group = options.group
   )
     button.collapse__btn(type = 'button')
-      h3.collapse__btn-text #{options.text}
-      img.collapse__btn-arrow.svg-js(src = require('@/components/collapse/img/expand_more.svg').default, alt = "v")
+      span.collapse__btn-text #{options.text}
+      span.collapse__btn-arrow(src = require('@/components/collapse/img/expand_more.svg').default, alt = "v")
     div.collapse__content
       div.collapse__content-wrapper
         block

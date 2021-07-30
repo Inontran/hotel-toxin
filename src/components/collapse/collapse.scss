@@ -13,7 +13,21 @@
     height: calc_rem(44);
     cursor: pointer;
 
+    &-text{
+      font-size: .85714rem;
+      font-weight: 700;
+      line-height: 1.25;
+      text-transform: uppercase;
+    }
+
     &-arrow{
+      display: inline-block;
+      width: 12px;
+      height: 8px;
+      background-image: url('img/expand_more.svg');
+      background-repeat: no-repeat;
+      background-position: center;
+      background-size: 100% 100%;
       fill: $dark50;
       margin: 0 calc((#{calc_rem(44)} - 12px) / 2);
       transform: rotate(0);
@@ -34,6 +48,28 @@
 
     .collapse__content{
       max-height: 200vh;
+    }
+  }
+
+
+  &.collapse_theme-green{
+    .collapse__btn{
+      height: auto;
+      justify-content: flex-start;
+
+      &-arrow{
+        background-image: url(img/expand_more_green.svg);
+        margin: 0;
+        margin-left: 6px;
+      }
+
+      &-text{
+        font-size: 1rem;
+        font-weight: 400;
+        line-height: 1.7;
+        color: $green;
+        text-transform: none;
+      }
     }
   }
 }

@@ -38,6 +38,11 @@
   &__main-menu{
     list-style: none;
 
+    .curtain__main-menu{
+      padding-left: 15px;
+      padding-top: 10px;
+    }
+
     &-item{
       list-style: none;
       margin-bottom: 15px;

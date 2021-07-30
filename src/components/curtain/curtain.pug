@@ -1,3 +1,5 @@
+include ../collapse/collapse
+
 //-
   options.classes - Классы блока.
   options.id - ИД блока.
@@ -46,6 +48,16 @@ mixin curtain(options)
         nav.curtain__main-menu
           each val, index in options.menuItems
             li.curtain__main-menu-item
-              a.curtain__main-menu-link(href = val.href)= val.name
-                if val.subitems
-                  img.curtain__main-menu-arrow(src = require('@/components/curtain/img/expand_more_green.svg').default, alt = "", role = "presentation")
+              if val.subitems
+                +collapse({
+                  text: val.name,
+                  group: 'mobile-nav',
+                  classes: 'collapse_theme-green'
+                })
+                  nav.curtain__main-menu
+                    each val2, index2 in val.subitems
+                      li.curtain__main-menu-item
+                        a.curtain__main-menu-link(href = val2.href)= val2.name
+                //- img.curtain__main-menu-arrow(src = require('@/components/curtain/img/expand_more_green.svg').default, alt = "", role = "presentation")
+              else
+                a.curtain__main-menu-link(href = val.href)= val.name
