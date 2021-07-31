@@ -11,7 +11,7 @@ $(document).ready(function(){
   });
 
 
-  $body.on('click', '.js-dropdown .js-dropdown__input-wrapper', function(e){
+  $body.on('click', '.js-dropdown .js-dropdown__input-wrapper, .js-dropdown .js-dropdown__btn', function(e){
     e.preventDefault();
     const $dropdown = $(this).closest('.js-dropdown');
     toggleDropdown($dropdown);

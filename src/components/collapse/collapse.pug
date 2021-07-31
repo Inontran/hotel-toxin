@@ -26,7 +26,7 @@ mixin collapse(options)
   )
     button.collapse__btn(type = 'button')
       span.collapse__btn-text #{options.text}
-      span.collapse__btn-arrow(src = require('@/components/collapse/img/expand_more.svg').default, alt = "v")
+      span.collapse__btn-arrow
     div.collapse__content
       div.collapse__content-wrapper
         block

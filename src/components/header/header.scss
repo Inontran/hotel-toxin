@@ -42,10 +42,14 @@
       display: flex;
       align-items: center;
     }
+  }
 
-    &-arrow{
-      flex: none;
-      margin-left: 6px;
+  &__main-submenu{
+    padding: 10px 20px 0;
+
+    &-item{
+      display: block;
+      margin-bottom: 10px;
     }
   }
 

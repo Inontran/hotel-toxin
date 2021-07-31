@@ -28,6 +28,26 @@
     background-repeat: no-repeat;
   }
 
+  &__btn{
+    background: none;
+    box-shadow: none;
+    border: none;
+    color: $dark50;
+    text-decoration: none;
+    font-weight: 400;
+
+    &-arrow{
+      display: inline-block;
+      background-image: url('img/expand_more.svg');
+      background-repeat: no-repeat;
+      background-position: center;
+      background-size: 100% 100%;
+      width: 12px;
+      height: 8px;
+      margin-left: 6px;
+    }
+  }
+
   &__content{
     position: absolute;
     width: 100%;
@@ -42,6 +62,7 @@
     overflow: hidden;
     opacity: 0;
   }
+
 
 
   &_dual-date{
@@ -70,6 +91,7 @@
     }
   }
 
+
   &_dates{
     .dropdown__content{
       top: calc(100% + 5px);
@@ -77,6 +99,18 @@
       width: min-content;
     }
   }
+
+
+  &.dropdown_header{
+    .dropdown__content{
+      border-radius: 4px;
+      left: 50%;
+      transform: translateX(-50%);
+      max-width: 300%;
+      width: auto;
+    }
+  }
+
 
   &_active{
     &:not(.dropdown_dates) .input__field{

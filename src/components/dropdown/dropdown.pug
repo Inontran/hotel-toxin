@@ -22,13 +22,11 @@ mixin dropdown(options)
   if !options.group
     - options.group = ''
 
-  if !options.inputParams
-    - options.inputParams = {}
-
-  if !options.inputParams.classes
-    - options.inputParams.classes = 'input_in-dropdown'
-  else
-    - options.inputParams.classes += ' input_in-dropdown'
+  if options.inputParams
+    if !options.inputParams.classes
+      - options.inputParams.classes = 'input_in-dropdown'
+    else
+      - options.inputParams.classes += ' input_in-dropdown'
 
 
   if options.inputParams2
@@ -48,10 +46,14 @@ mixin dropdown(options)
         div.dropdown__input-wrapper.js-dropdown__input-wrapper
           +input(options.inputParams2)
           button.dropdown__arrow(type = 'button')
-    else
+    else if options.inputParams
       div.dropdown__input-wrapper.js-dropdown__input-wrapper
         +input(options.inputParams)
         button.dropdown__arrow(type = 'button')
+    else
+      button.dropdown__btn.js-dropdown__btn(type = 'button')
+        span.dropdown__btn-text #{options.text}
+        span.dropdown__btn-arrow
 
     div.dropdown__content
       div.dropdown__content-wrapper

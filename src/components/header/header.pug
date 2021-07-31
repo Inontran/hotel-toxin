@@ -1,5 +1,6 @@
 include ../logo/logo
 include ../button/button
+include ../dropdown/dropdown
 
 //-
   options.classes - Классы блока.
@@ -42,9 +43,19 @@ mixin header(options)
       nav.header__main-menu
         each val, index in options.menuItems
           li.header__main-menu-item
-            a.header__main-menu-link(href = val.href)= val.name
-              if val.subitems
-                img.header__main-menu-arrow(src = require('@/components/header/img/expand_more.svg').default, alt = "v")
+            if val.subitems
+              +dropdown({
+                text: val.name,
+                group: 'header-dropdowns',
+                classes: 'dropdown_header'
+              })
+                nav.header__main-submenu
+                  each val2, index2 in val.subitems
+                    li.header__main-submenu-item
+                      a.header__main-menu-link(href = val2.href)= val2.name
+            else
+              a.header__main-menu-link(href = val.href)= val.name
+              
 
       a.header__btn-icon.header__btn-icon_profile(href = options.buttonLoginHref ? options.buttonLoginHref : false, title = 'Профиль')
         img(src = require('@/components/header/img/user_icon.svg').default, alt = 'Профиль', role = 'presentation')
