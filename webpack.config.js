@@ -13,7 +13,6 @@ const postcssSCSS = require('postcss-scss');
 const autoprefixer = require('autoprefixer');
 // const stylelint = require('stylelint');
 // const doiuse = require('doiuse');
-const ProvidePlugin = require('webpack-provide-global-plugin');
 const MomentLocalesPlugin = require('moment-locales-webpack-plugin');
 const crypto = require('crypto');
 const FaviconsWebpackPlugin = require('favicons-webpack-plugin');
