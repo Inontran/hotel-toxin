@@ -20,7 +20,7 @@ $(() => {
       perpage,
       lapping: 0,
       page: currentPage,
-      onSelect: () => {
+      onSelect() {
         let startCountElements = 0;
         const [startEl, endEl] = this.slice;
         if (startEl) {
@@ -30,7 +30,7 @@ $(() => {
         }
         $paginationOutput.text(`${startCountElements} - ${endEl} из ${countElementsOutput} `);
       },
-      onFormat: (type) => {
+      onFormat(type) {
         switch (type) {
           case 'block':
             if (!this.active) {

@@ -345,7 +345,10 @@ module.exports = {
 						],
 						plugins:[
 							'@babel/plugin-proposal-class-properties'
-						]
+						],
+            include: [
+              '@babel/plugin-transform-destructuring'
+            ]
 					}
 				}
 			},
