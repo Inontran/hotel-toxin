@@ -1,8 +1,7 @@
 @import '@/theme/variables.scss';
 
-.collapse{
-
-  &__btn{
+.collapse {
+  &__btn {
     display: flex;
     align-items: center;
     justify-content: space-between;
@@ -13,14 +12,14 @@
     height: calc_rem(44);
     cursor: pointer;
 
-    &-text{
-      font-size: .85714rem;
+    &-text {
+      font-size: 0.85714rem;
       font-weight: 700;
       line-height: 1.25;
       text-transform: uppercase;
     }
 
-    &-arrow{
+    &-arrow {
       display: inline-block;
       width: 12px;
       height: 8px;
@@ -31,39 +30,38 @@
       fill: $dark50;
       margin: 0 calc((#{calc_rem(44)} - 12px) / 2);
       transform: rotate(0);
-      transition: .3s;
+      transition: 0.3s;
     }
   }
 
-  &__content{
+  &__content {
     max-height: 0;
     overflow: hidden;
-    transition: .3s;
+    transition: 0.3s;
   }
 
-  &.collapse_active{
-    .collapse__btn-arrow{
+  &.collapse_active {
+    .collapse__btn-arrow {
       transform: rotate(-180deg);
     }
 
-    .collapse__content{
+    .collapse__content {
       max-height: 200vh;
     }
   }
 
-
-  &.collapse_theme-green{
-    .collapse__btn{
+  &.collapse_theme-green {
+    .collapse__btn {
       height: auto;
       justify-content: flex-start;
 
-      &-arrow{
+      &-arrow {
         background-image: url(img/expand_more_green.svg);
         margin: 0;
         margin-left: 6px;
       }
 
-      &-text{
+      &-text {
         font-size: 1rem;
         font-weight: 400;
         line-height: 1.7;

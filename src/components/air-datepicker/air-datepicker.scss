@@ -1,7 +1,7 @@
 @import '@/theme/variables.scss';
 @import '~air-datepicker/dist/css/datepicker.css';
 
-.air-datepicker{
+.air-datepicker {
   display: inline-block;
   padding: 20px 19px;
   background: $white;
@@ -9,12 +9,12 @@
   border-radius: 4px;
   width: calc_rem(320);
 
-  @media(max-width: $sm){
+  @media (max-width: $sm) {
     padding: 10px;
     width: calc_rem(302);
   }
 
-  &__btns{
+  &__btns {
     display: flex;
     align-items: center;
     justify-content: space-between;
@@ -22,28 +22,28 @@
     line-height: 1;
   }
 
-  .datepicker{
+  .datepicker {
     border: 0;
     border-radius: 0;
     width: 100%;
 
-    &--nav{
+    &--nav {
       border: 0;
       align-items: center;
       padding: 0;
       margin-bottom: 24px;
     }
 
-    &--nav-action{
+    &--nav-action {
       width: calc_rem(17);
       height: calc_rem(18);
       position: relative;
 
-      &:hover{
+      &:hover {
         background: none;
       }
 
-      &:after{
+      &::after {
         content: '';
         position: absolute;
         top: 0;
@@ -55,21 +55,21 @@
         background-position: center;
       }
 
-      
-      svg{
+      svg {
         display: none;
       }
 
-      &[data-action="prev"]:after{
+      &[data-action="prev"]::after {
         background-image: url(img/arrow_forward.svg);
         transform: rotate(180deg);
       }
-      &[data-action="next"]:after{
+
+      &[data-action="next"]::after {
         background-image: url(img/arrow_forward.svg);
       }
     }
 
-    &--nav-title{
+    &--nav-title {
       font-family: 'Quicksand', 'Open Sans', sans-serif;
       font-weight: 700;
       font-size: calc_rem(19);
@@ -78,20 +78,20 @@
       border-radius: 0;
       line-height: 1;
 
-      &:hover{
+      &:hover {
         background: none;
       }
     }
 
-    &--content{
+    &--content {
       padding: 0;
     }
 
-    &--days-names{
+    &--days-names {
       margin: 0;
     }
 
-    &--day-name{
+    &--day-name {
       color: $purple;
       font-size: calc_rem(12);
       line-height: 1.25;
@@ -101,7 +101,7 @@
       height: calc_rem(40);
     }
 
-    &--cell-day{
+    &--cell-day {
       font-size: calc_rem(12);
       line-height: 1.25;
       color: $dark50;
@@ -110,7 +110,7 @@
       position: relative;
       background: none;
 
-      &:after{
+      &::after {
         content: '';
         position: absolute;
         top: 50%;
@@ -122,53 +122,53 @@
         border-radius: 100vh;
       }
 
-      &.-other-month-{
+      &.-other-month- {
         color: $dark25;
       }
 
-      &.-range-from-, 
-      &.-range-to-{
+      &.-range-from-,
+      &.-range-to- {
         color: $white;
         font-weight: 700;
         background: none;
 
-        &:after{
+        &::after {
           background: $gradient1;
         }
       }
 
-      &.-range-from-, 
+      &.-range-from-,
       &.-range-to-,
-      &.-in-range-{
-        &:before{
+      &.-in-range- {
+        &::before {
           content: '';
           position: absolute;
           top: 0;
           height: 100%;
           width: 100%;
           background: $gradient1;
-          opacity: .25;
+          opacity: 0.25;
           z-index: -1;
         }
       }
 
-      &.-range-from-{
-        &:before{
+      &.-range-from- {
+        &::before {
           border-radius: 100vh 0 0 100vh;
         }
       }
 
-      &.-range-to-{
-        &:before{
+      &.-range-to- {
+        &::before {
           border-radius: 0 100vh 100vh 0;
         }
       }
 
-      &.-current-{
+      &.-current- {
         color: $white;
         font-weight: 700;
 
-        &:after{
+        &::after {
           background: $gradient2;
         }
       }

@@ -1,14 +1,13 @@
 @import '@/theme/variables.scss';
 
-
-.pagination{
-
-  &__wrapper{
+.pagination {
+  &__wrapper {
     display: flex;
     align-items: center;
   }
 
-  &__next, &__prev{
+  &__next,
+  &__prev {
     display: inline-block;
     border-radius: 100vh;
     position: relative;
@@ -18,7 +17,7 @@
     width: calc_rem(40);
     height: calc_rem(40);
 
-    &:after{
+    &::after {
       content: '';
       position: absolute;
       top: 50%;
@@ -34,13 +33,13 @@
     }
   }
 
-  &__prev{
-    &:after{
+  &__prev {
+    &::after {
       transform: translate(-50%, -50%) rotate(180deg);
     }
   }
-  
-  &__number{
+
+  &__number {
     display: inline-block;
     min-width: calc_rem(40);
     height: calc_rem(40);
@@ -51,9 +50,9 @@
     color: $dark50;
     padding: 5px;
     background: transparent;
-    transition: .2s;
+    transition: 0.2s;
 
-    &_current{
+    &_current {
       border-radius: 100vh;
       background: $gradient1;
       color: $white;
@@ -61,7 +60,7 @@
     }
   }
 
-  &__text{
+  &__text {
     padding-top: 10px;
     color: $dark75;
   }

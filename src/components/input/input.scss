@@ -1,10 +1,10 @@
 @import '@/theme/variables.scss';
 
-.input{
+.input {
   display: block;
   position: relative;
 
-  &__label{
+  &__label {
     display: block;
     font-weight: 700;
     font-size: calc_rem(12);
@@ -13,7 +13,7 @@
     padding-bottom: 5px;
   }
 
-  &__field{
+  &__field {
     border-radius: 4px;
     background: $white;
     border: 1px solid $dark25;
@@ -23,15 +23,17 @@
     min-height: calc_rem(44);
     width: 100%;
 
-    &:placeholder{
+    &:placeholder {
       color: $dark25;
     }
-    &:hover, &:focus{
+
+    &:hover,
+    &:focus {
       border: 1px solid $dark50;
     }
   }
 
-  &__submit{
+  &__submit {
     position: absolute;
     bottom: 0;
     right: 0;
@@ -48,10 +50,9 @@
     cursor: pointer;
   }
 
-
   &_subscription,
-  &_in-dropdown{
-    .input__field{
+  &_in-dropdown {
+    .input__field {
       padding-right: calc_rem(44);
     }
   }

@@ -1,21 +1,21 @@
 @import '@/theme/variables.scss';
 @import '~owl.carousel/dist/assets/owl.carousel.css';
 
-.card-product{
+.card-product {
   background: $white;
   border-radius: 4px;
-  box-shadow: 0px 10px 20px $dark5;
+  box-shadow: 0 10px 20px $dark5;
   overflow: hidden;
   display: flex;
   flex-direction: column;
 
-  &__gallery{
+  &__gallery {
     position: relative;
     width: 100%;
 
-    .owl-carousel{
-      &:after,
-      &:before{
+    .owl-carousel {
+      &::after,
+      &::before {
         content: '';
         position: absolute;
         top: 0;
@@ -25,18 +25,19 @@
         z-index: 1;
         background: linear-gradient(90deg, rgba(0, 0, 0, 0.5) 0%, rgba(0, 0, 0, 0) 99.99%, rgba(255, 255, 255, 0) 100%);
 
-        @media(min-width: $md){
+        @media (min-width: $md) {
           opacity: 0;
-          transition: opacity .2s;
+          transition: opacity 0.2s;
         }
       }
-      &:before{
+
+      &::before {
         left: auto;
         right: 0;
         transform: rotate(180deg);
       }
-      
-      .owl-nav{
+
+      .owl-nav {
         position: absolute;
         top: 50%;
         transform: translateY(-50%);
@@ -44,12 +45,13 @@
         z-index: 2;
         width: 100%;
 
-        @media(min-width: $md){
+        @media (min-width: $md) {
           opacity: 0;
-          transition: opacity .2s;
+          transition: opacity 0.2s;
         }
 
-        .owl-prev, .owl-next{
+        .owl-prev,
+        .owl-next {
           display: flex;
           align-items: center;
           justify-content: center;
@@ -59,7 +61,7 @@
           width: calc_rem(44);
           height: calc_rem(44);
 
-          span{
+          span {
             width: calc_rem(8);
             height: calc_rem(13);
             background-image: url(img/expand_more.svg);
@@ -69,19 +71,21 @@
             color: transparent;
           }
         }
-        .owl-prev{
+
+        .owl-prev {
           left: 0;
 
-          span{
+          span {
             transform: rotate(180deg);
           }
         }
-        .owl-next{
+
+        .owl-next {
           right: 0;
         }
       }
 
-      .owl-dots{
+      .owl-dots {
         position: absolute;
         right: 13px;
         bottom: 14px;
@@ -89,38 +93,38 @@
         margin: 0 -2px;
         display: flex;
 
-        .owl-dot{
+        .owl-dot {
           width: calc_rem(8);
           height: calc_rem(8);
           border: 1px solid $white;
-          box-shadow: 0px 5px 5px $dark30;
-          transition: .3s;
+          box-shadow: 0 5px 5px $dark30;
+          transition: 0.3s;
           margin: 0 2px;
           border-radius: 100vh;
 
-          &.active{
+          &.active {
             background-color: $white;
           }
         }
       }
     }
 
-    &:hover{
-      .owl-carousel:after,
-      .owl-carousel:before,
-      .owl-nav{
+    &:hover {
+      .owl-carousel::after,
+      .owl-carousel::before,
+      .owl-nav {
         opacity: 1;
       }
     }
   }
 
-  &__img-wrapper{
+  &__img-wrapper {
     display: block;
     position: relative;
     padding-top: 56%;
   }
 
-  &__img{
+  &__img {
     position: absolute;
     top: 50%;
     left: 50%;
@@ -131,14 +135,14 @@
     min-width: 100%;
   }
 
-  &__content{
+  &__content {
     padding: 17px 20px;
     height: 100%;
     display: flex;
     flex-direction: column;
   }
 
-  &__content-top{
+  &__content-top {
     display: flex;
     align-items: flex-end;
     justify-content: space-between;
@@ -147,7 +151,7 @@
     margin-bottom: 8px;
     position: relative;
 
-    &:after{
+    &::after {
       content: '';
       position: absolute;
       bottom: 0;
@@ -157,50 +161,51 @@
       background: $dark10;
     }
 
-    &-left, &-right{
+    &-left,
+    &-right {
       padding: 0 5px 6px;
     }
 
-    &-left{
+    &-left {
       font-weight: 700;
     }
 
-    &-symbol, &-number{
+    &-symbol,
+    &-number {
       font-family: 'Quicksand', 'Montserrat', sans-serif;
     }
 
-    &-symbol{
+    &-symbol {
       font-size: calc_rem(14);
     }
 
-    &-number{
+    &-number {
       font-size: calc_rem(19);
     }
 
-    &-type{
+    &-type {
       font-size: calc_rem(12);
       color: $purple;
       text-transform: uppercase;
     }
 
-    &-right{
+    &-right {
       color: $dark50;
       margin-bottom: 3px;
       text-align: right;
     }
 
-    &-price{
+    &-price {
       font-weight: 700;
       font-size: calc_rem(14);
     }
 
-    &-price-type{
+    &-price-type {
       font-size: calc_rem(12);
     }
   }
 
-
-  &__content-bottom{
+  &__content-bottom {
     display: flex;
     align-items: center;
     justify-content: space-between;
@@ -208,17 +213,20 @@
     margin-right: -5px;
     margin-top: auto;
 
-    &-left, &-right{
+    &-left,
+    &-right {
       margin-left: 5px;
       margin-right: 5px;
       line-height: 1.2857;
     }
   }
 
-  &__reviews-count-number, &__reviews-count-text{
+  &__reviews-count-number,
+  &__reviews-count-text {
     color: $dark50;
   }
-  &__reviews-count-number{
+
+  &__reviews-count-number {
     font-weight: 700;
   }
 }

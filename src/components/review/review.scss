@@ -1,25 +1,25 @@
 @import '@/theme/variables.scss';
 
-.review{
-
-  &__avatar-wrapper, &__like-wrapper{
+.review {
+  &__avatar-wrapper,
+  &__like-wrapper {
     flex-shrink: 0;
     width: calc_rem(48);
     margin-right: 10px;
   }
 
-  &__avatar-wrapper{
+  &__avatar-wrapper {
     display: block;
     position: relative;
     height: calc_rem(48);
     border: 2px solid $white;
     box-sizing: border-box;
-    box-shadow: 0px 10px 20px $dark10;
+    box-shadow: 0 10px 20px $dark10;
     border-radius: 100vh;
     overflow: hidden;
   }
 
-  &__avatar{
+  &__avatar {
     position: absolute;
     top: 50%;
     left: 50%;
@@ -30,27 +30,27 @@
     min-height: 100%;
   }
 
-  &__header{
+  &__header {
     display: flex;
     align-items: center;
     color: $dark75;
     margin-bottom: 10px;
   }
 
-  &__username{
+  &__username {
     font-weight: 700;
   }
 
-  &__content{
+  &__content {
     display: flex;
   }
 
-  &__like-wrapper{
+  &__like-wrapper {
     display: flex;
     justify-content: center;
   }
 
-  &__text{
+  &__text {
     color: $dark75;
   }
 }

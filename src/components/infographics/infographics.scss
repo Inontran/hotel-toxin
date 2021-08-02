@@ -1,21 +1,20 @@
 @import '@/theme/variables.scss';
 
-.infographics{
-
-  &__item{
+.infographics {
+  &__item {
     display: flex;
     align-items: center;
     list-style: none;
     color: $dark75;
 
-    &_line{
+    &_line {
       padding-bottom: 17px;
       margin-bottom: 20px;
       border-bottom: 1px solid $dark10;
     }
   }
 
-  &__image{
+  &__image {
     flex: none;
     width: calc_rem(48);
     height: calc_rem(48);
@@ -25,7 +24,7 @@
     margin-right: 10px;
   }
 
-  &__title{
+  &__title {
     font-weight: 700;
   }
 }

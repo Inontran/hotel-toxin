@@ -1,36 +1,37 @@
 @import '@/theme/variables.scss';
 
-.form-register{
-  &_mb10{
+.form-register {
+  &_mb10 {
     margin-bottom: 10px;
   }
 
-  &_mb20{
+  &_mb20 {
     margin-bottom: 20px;
   }
 
-  &_mb30{
+  &_mb30 {
     margin-bottom: 30px;
   }
 
-  &__gender-radio{
+  &__gender-radio {
     display: flex;
     margin-left: -10px;
     margin-right: -10px;
 
-    .radio{
+    .radio {
       padding: 0 10px 4px;
     }
   }
 
-  &__footer{
+  &__footer {
     display: flex;
     align-items: center;
     justify-content: space-between;
     margin-left: -10px;
     margin-right: -10px;
-    
-    &-text, &-button{
+
+    &-text,
+    &-button {
       margin: 0 10px;
     }
   }

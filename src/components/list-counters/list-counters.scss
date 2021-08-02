@@ -1,41 +1,40 @@
-.list-counters{
+.list-counters {
   &__counter,
-  &__btns-result{
+  &__btns-result {
     display: flex;
     align-items: center;
     justify-content: space-between;
   }
 
-  &__counter{
+  &__counter {
     margin: 7px 7px 7px 15px;
   }
 
-  &__counter-label{
+  &__counter-label {
     font-weight: 700;
     font-size: calc_rem(12);
     text-transform: uppercase;
     line-height: 1.25;
   }
 
-  &__btns-result{
+  &__btns-result {
     margin: 19px 7px 13px 15px;
   }
 
   &__btn-reset,
-  &__btn-submit{
+  &__btn-submit {
     line-height: 1;
   }
 
-  &__btn-reset{
+  &__btn-reset {
     margin-right: auto;
   }
 
-  &__btn-submit{
+  &__btn-submit {
     margin-left: auto;
   }
 
-
-  &_hidden{
+  &_hidden {
     display: none;
   }
 }

@@ -1,26 +1,27 @@
 @import '@/theme/variables.scss';
 
-.form-login{
-  &_mb10{
+.form-login {
+  &_mb10 {
     margin-bottom: 10px;
   }
 
-  &_mb20{
+  &_mb20 {
     margin-bottom: 20px;
   }
 
-  &_mb30{
+  &_mb30 {
     margin-bottom: 30px;
   }
 
-  &__footer{
+  &__footer {
     display: flex;
     align-items: center;
     justify-content: space-between;
     margin-left: -10px;
     margin-right: -10px;
-    
-    &-text, &-button{
+
+    &-text,
+    &-button {
       margin: 0 10px;
     }
   }

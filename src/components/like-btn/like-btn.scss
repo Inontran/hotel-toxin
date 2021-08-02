@@ -1,9 +1,9 @@
 @import '@/theme/variables.scss';
 
-.like-btn{
+.like-btn {
   display: inline-block;
 
-  &__view{
+  &__view {
     display: inline-flex;
     align-items: center;
     justify-content: center;
@@ -17,7 +17,7 @@
     text-align: center;
     padding: 2px 6px 2px 18px;
 
-    &:before{
+    &::before {
       content: '';
       position: absolute;
       top: 1px;
@@ -29,7 +29,7 @@
       z-index: 1;
     }
 
-    &:after{
+    &::after {
       content: '';
       position: absolute;
       top: 50%;
@@ -45,20 +45,20 @@
     }
   }
 
-  &__check:checked + &__view{
+  &__check:checked + &__view {
     color: $purple;
     background: $gradient1;
 
-    &:after{
+    &::after {
       background-image: url(img/favorite.svg);
     }
   }
 
-  &__check{
+  &__check {
     display: none;
   }
-  
-  &__count{
+
+  &__count {
     position: relative;
     z-index: 2;
   }

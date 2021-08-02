@@ -1,11 +1,12 @@
 @font-face {
-    font-family: 'Open Sans';
-    src: url('opensans-bold-webfont.woff2') format('woff2'),
-         url('opensans-bold-webfont.woff') format('woff'),
-         url('opensans-bold-webfont.ttf') format('truetype'),
-         url('opensans-bold-webfont.svg#open_sansbold') format('svg');
-    font-weight: 700;
-    font-style: normal;
-    font-display: swap;
-    unicode-range: U+0400-045F, U+0490-0491, U+04B0-04B1, U+2116;
+  font-family: 'Open Sans';
+  src:
+    url('opensans-bold-webfont.woff2') format('woff2'),
+    url('opensans-bold-webfont.woff') format('woff'),
+    url('opensans-bold-webfont.ttf') format('truetype'),
+    url('opensans-bold-webfont.svg#open_sansbold') format('svg');
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+  unicode-range: U+0400-045F, U+0490-0491, U+04B0-04B1, U+2116;
 }

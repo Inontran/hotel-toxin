@@ -1,6 +1,6 @@
 @import '@/theme/variables.scss';
 
-.curtain{
+.curtain {
   display: flex;
   flex-direction: column;
   height: 100vh;
@@ -10,14 +10,14 @@
   right: 0;
   background-color: $dark75;
   z-index: 1000;
-  transition: .3s;
+  transition: 0.3s;
   transform: translateX(100%);
 
-  &.curtain_show{
+  &.curtain_show {
     transform: translateX(0);
   }
 
-  &__content-wrapper{
+  &__content-wrapper {
     position: relative;
     display: flex;
     flex-direction: column;
@@ -27,47 +27,47 @@
     width: 100%;
   }
 
-  &__top{
+  &__top {
     padding: 15px 15px 0;
   }
 
-  &__middle{
+  &__middle {
     padding: 15px;
   }
 
-  &__main-menu{
+  &__main-menu {
     list-style: none;
 
-    .curtain__main-menu{
+    .curtain__main-menu {
       padding-left: 15px;
       padding-top: 10px;
     }
 
-    &-item{
+    &-item {
       list-style: none;
       margin-bottom: 15px;
 
-      &:last-of-type{
+      &:last-of-type {
         margin-bottom: 0;
       }
     }
 
-    &-link{
+    &-link {
       color: $green;
       text-decoration: none;
     }
 
-    &-arrow{
+    &-arrow {
       margin-left: 10px;
     }
   }
 
-  &__username{
+  &__username {
     font-size: calc_rem(18);
     color: $green;
   }
 
-  &_mb15{
+  &_mb15 {
     margin-bottom: 15px;
   }
 }

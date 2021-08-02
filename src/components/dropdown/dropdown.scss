@@ -1,19 +1,18 @@
 @import '@/theme/variables.scss';
 
-.dropdown{
+.dropdown {
   position: relative;
 
-  &__input-wrapper{
+  .dropdown__input-wrapper {
     position: relative;
     cursor: pointer;
 
-    *{
+    * {
       cursor: pointer;
     }
   }
 
-
-  &__arrow{
+  .dropdown__arrow {
     position: absolute;
     bottom: 0;
     right: 0;
@@ -28,7 +27,7 @@
     background-repeat: no-repeat;
   }
 
-  &__btn{
+  .dropdown__btn {
     background: none;
     box-shadow: none;
     border: none;
@@ -36,7 +35,7 @@
     text-decoration: none;
     font-weight: 400;
 
-    &-arrow{
+    &-arrow {
       display: inline-block;
       background-image: url('img/expand_more.svg');
       background-repeat: no-repeat;
@@ -48,7 +47,7 @@
     }
   }
 
-  &__content{
+  .dropdown__content {
     position: absolute;
     width: 100%;
     top: calc(100% - 1px);
@@ -58,21 +57,19 @@
     border-radius: 0 0 4px 4px;
     background-color: $white;
     max-height: 0;
-    transition: max-height .3s;
+    transition: max-height 0.3s;
     overflow: hidden;
     opacity: 0;
   }
 
-
-
-  &_dual-date{
-    .dropdown__input-dates-wrapper{
+  &.dropdown_dual-date {
+    .dropdown__input-dates-wrapper {
       display: flex;
       justify-content: space-between;
       margin: 0 -10px;
       flex-wrap: wrap;
 
-      .dropdown__input-wrapper{
+      .dropdown__input-wrapper {
         margin: 0 10px;
         min-width: 150px;
         flex-basis: calc(50% - 20px);
@@ -80,10 +77,10 @@
       }
     }
 
-    .dropdown__content{
+    .dropdown__content {
       top: calc(100% - 15px);
 
-      @media(max-width: $sm){
+      @media (max-width: $sm) {
         left: 50%;
         transform: translateX(-50%);
         border-radius: 4px;
@@ -91,18 +88,16 @@
     }
   }
 
-
-  &_dates{
-    .dropdown__content{
+  &.dropdown_dates {
+    .dropdown__content {
       top: calc(100% + 5px);
       border: 0;
       width: min-content;
     }
   }
 
-
-  &.dropdown_header{
-    .dropdown__content{
+  &.dropdown_header {
+    .dropdown__content {
       border-radius: 4px;
       left: 50%;
       transform: translateX(-50%);
@@ -111,29 +106,28 @@
     }
   }
 
-
-  &_active{
-    &:not(.dropdown_dates) .input__field{
+  &.dropdown_active {
+    &:not(.dropdown_dates) .input__field {
       border-color: $dark50;
       border-bottom-left-radius: 0;
       border-bottom-right-radius: 0;
     }
 
-    .dropdown__content{
+    .dropdown__content {
       max-height: 370px;
       opacity: 1;
       overflow-y: auto;
     }
 
-    &.dropdown_dates{
-      .dropdown__content{
+    &.dropdown_dates {
+      .dropdown__content {
         max-height: 100vh;
         overflow: hidden;
       }
     }
   }
 
-  &_hidden{
+  &.dropdown_hidden {
     display: none;
   }
 }

@@ -1,6 +1,6 @@
 @import '@/theme/variables.scss';
 
-.first-display{
+.first-display {
   min-height: 100vh;
   background-image: url(img/example-bg.jpg);
   background-size: cover;
@@ -9,7 +9,7 @@
   display: flex;
   flex-direction: column;
 
-  &__content-wrapper{
+  &__content-wrapper {
     max-width: $max_width_container;
     width: 100%;
     margin: 0 auto;
@@ -19,21 +19,20 @@
     flex-direction: column;
   }
 
-  &__form-wrapper{
+  &__form-wrapper {
     max-width: calc_rem(380);
     width: 100%;
   }
 
-  &__text-bottom{
+  &__text-bottom {
     color: $dark;
     max-width: calc_rem(297);
     text-align: right;
     margin: auto 0 0 auto;
   }
 
-
-  &_content-center{
-    .first-display__content-wrapper{
+  &_content-center {
+    .first-display__content-wrapper {
       align-items: center;
       justify-content: center;
       padding: 30px $padding_container 26px;

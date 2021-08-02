@@ -1,18 +1,18 @@
 @import '@/theme/variables.scss';
 
-.input-number{
+.input-number {
   display: inline-flex;
   align-items: center;
 
-  &__btn-less, 
-  &__btn-more, 
-  &__input{
+  &__btn-less,
+  &__btn-more,
+  &__input {
     width: calc_rem(30);
     height: calc_rem(30);
     text-align: center;
   }
 
-  &__input{
+  &__input {
     font-weight: 700;
     font-size: calc_rem(12);
     text-transform: uppercase;
@@ -23,13 +23,13 @@
     -moz-appearance: textfield;
 
     &::-webkit-outer-spin-button,
-    &::-webkit-inner-spin-button{
+    &::-webkit-inner-spin-button {
       display: none;
     }
   }
 
-  &__btn-less, 
-  &__btn-more{
+  &__btn-less,
+  &__btn-more {
     border-radius: 100vh;
     border: 1px solid $dark25;
     background: $white;
@@ -37,7 +37,8 @@
     color: $dark25;
     cursor: pointer;
   }
-  &_disabled-btn{
-    opacity: .38;
+
+  &_disabled-btn {
+    opacity: 0.38;
   }
 }

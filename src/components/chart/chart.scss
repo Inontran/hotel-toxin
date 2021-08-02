@@ -1,25 +1,25 @@
 @import '@/theme/variables.scss';
 
-.chart{
-  &__container{
+.chart {
+  &__container {
     display: flex;
     align-items: flex-end;
     position: relative;
     flex-wrap: wrap;
   }
 
-  &__wrapper{
+  &__wrapper {
     width: 248px;
     position: relative;
     z-index: 1;
     margin-right: -98px;
   }
 
-  &__picture{
+  &__picture {
     margin: -1px -64px;
   }
 
-  &__count{
+  &__count {
     position: absolute;
     top: 50%;
     left: 60px;
@@ -29,7 +29,7 @@
     color: $purple;
     margin-bottom: 0;
 
-    &-number{
+    &-number {
       display: block;
       font-family: 'Quicksand', 'Montserrat', sans-serif;
       font-size: calc_rem(24);
@@ -37,7 +37,7 @@
       line-height: devide(30, 24);
     }
 
-    &-text{
+    &-text {
       display: block;
       font-size: calc_rem(12);
       font-weight: 700;
@@ -46,22 +46,22 @@
     }
   }
 
-  &__legend{
+  &__legend {
     padding-right: 7px;
     padding-top: 10px;
 
-    &-item{
+    &-item {
       display: flex;
       align-items: flex-start;
       line-height: 1.5;
       margin-bottom: 3px;
 
-      &:last-of-type{
+      &:last-of-type {
         margin-bottom: 0;
       }
     }
-    
-    &-icon{
+
+    &-icon {
       overflow: hidden;
       width: calc_rem(10);
       height: calc_rem(10);
@@ -69,21 +69,24 @@
       margin-right: 5px;
       margin-top: 4px;
 
-      &_awesome{
+      &_awesome {
         background: $gradient3;
       }
-      &_good{
+
+      &_good {
         background: $gradient2;
       }
-      &_notbad{
+
+      &_notbad {
         background: $gradient1;
       }
-      &_disappointed{
+
+      &_disappointed {
         background: $gradient4;
       }
     }
 
-    &-text{
+    &-text {
       font-size: calc_rem(14);
       color: $dark75;
     }

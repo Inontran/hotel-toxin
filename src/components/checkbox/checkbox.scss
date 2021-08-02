@@ -1,13 +1,13 @@
 @import '@/theme/variables.scss';
 
-.checkbox{
+.checkbox {
   display: flex;
 
-  &__input{
+  &__input {
     display: none;
   }
 
-  &__view{
+  &__view {
     position: relative;
     display: inline-block;
     width: calc_rem(20);
@@ -15,10 +15,10 @@
     border-radius: 4px;
     background: $white;
     border: 1px solid $dark25;
-    transition: .2s;
+    transition: 0.2s;
     flex: none;
 
-    &:after{
+    &::after {
       content: '';
       position: absolute;
       top: 3px;
@@ -30,23 +30,23 @@
       background-size: auto;
       background-repeat: no-repeat;
       opacity: 0;
-      transition: .2s;
+      transition: 0.2s;
     }
   }
 
-  &__input:checked + &__view{
+  &__input:checked + &__view {
     border-color: $purple;
 
-    &:after{
+    &::after {
       opacity: 1;
     }
   }
 
-  &__text-wrapper{
+  &__text-wrapper {
     margin-left: 10px;
   }
 
-  &__title{
+  &__title {
     font-size: calc_rem(14);
     font-weight: 700;
     color: $dark75;
@@ -54,14 +54,14 @@
     line-height: 1.2857;
   }
 
-  &__text{
+  &__text {
     line-height: 1.28;
     font-size: calc_rem(14);
     color: $dark50;
     padding-top: 3px;
   }
 
-  &__text-small{
+  &__text-small {
     line-height: 1.16;
     font-size: calc_rem(12);
     color: $dark50;

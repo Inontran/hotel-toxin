@@ -1,10 +1,11 @@
 @import '@/theme/variables.scss';
 
-.form-booking{
-  &_mb20{
+.form-booking {
+  &_mb20 {
     margin-bottom: 20px;
   }
-  &__title{
+
+  &__title {
     display: flex;
     align-items: flex-end;
     justify-content: space-between;
@@ -12,66 +13,68 @@
     margin-right: -10px;
     margin-bottom: 10px;
 
-    &-left, &-right{
+    &-left,
+    &-right {
       padding: 0 10px 10px;
     }
 
-    &-left{
+    &-left {
       font-weight: 700;
     }
 
-    &-symbol, &-number{
+    &-symbol,
+    &-number {
       font-family: 'Quicksand', 'Montserrat', sans-serif;
     }
 
-    &-symbol{
+    &-symbol {
       font-size: calc_rem(14);
     }
 
-    &-number{
+    &-number {
       font-size: calc_rem(24);
     }
 
-    &-type{
+    &-type {
       font-size: calc_rem(12);
       color: $purple;
       text-transform: uppercase;
     }
 
-    &-right{
+    &-right {
       color: $dark50;
     }
 
-    &-price{
+    &-price {
       font-weight: 700;
       font-size: calc_rem(14);
     }
 
-    &-price-type{
+    &-price-type {
       font-size: calc_rem(12);
     }
   }
 
-
-  &__table{
+  &__table {
     color: $dark75;
 
-    &_px5{
+    &_px5 {
       padding-left: 5px;
       padding-right: 5px;
     }
-    &-cell{
+
+    &-cell {
       padding-bottom: 10px;
       vertical-align: top;
 
-      &_price{
+      &_price {
         text-align: right;
         white-space: nowrap;
       }
     }
   }
 
-  &__tooltip{
+  &__tooltip {
     display: inline-block;
     overflow: hidden;
     border-radius: 100vh;
@@ -83,7 +86,7 @@
     line-height: calc_rem(20);
     cursor: pointer;
 
-    &:after{
+    &::after {
       content: 'i';
       font-size: calc-rem(12);
       font-weight: 700;
@@ -91,21 +94,20 @@
     }
   }
 
-
-  &__bottom{
+  &__bottom {
     display: flex;
     align-items: flex-end;
     font-weight: 700;
     font-size: calc_rem(19);
     line-height: 1;
-    
-    &-points{
+
+    &-points {
       border-bottom: 1px dashed $dark25;
       width: 100%;
       margin: 0 5px 4px;
     }
 
-    &-price{
+    &-price {
       white-space: nowrap;
     }
   }

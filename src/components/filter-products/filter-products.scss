@@ -1,33 +1,32 @@
 @import '@/theme/variables.scss';
 
-.filter-products{
-
-  &_mb10{
+.filter-products {
+  &_mb10 {
     margin-bottom: 10px;
   }
 
-  &_mb13{
+  &_mb13 {
     margin-bottom: 13px;
   }
 
-  &_mb16{
+  &_mb16 {
     margin-bottom: 15px;
   }
 
-  &_mb20{
+  &_mb20 {
     margin-bottom: 20px;
   }
 
-  &_mb30{
+  &_mb30 {
     margin-bottom: 29px;
   }
 
-  &_mb31{
+  &_mb31 {
     margin-bottom: 31px;
   }
 
-  &.filter-products_mob-md{
-    @media(max-width: $md){
+  &.filter-products_mob-md {
+    @media (max-width: $md) {
       position: fixed;
       top: 0;
       left: 0;
@@ -37,17 +36,17 @@
       height: 100vh;
       max-width: $xxs;
       transform: translateX(-100%);
-      transition: transform .3s;
+      transition: transform 0.3s;
 
-      @media(min-width: $xxs + 1px){
+      @media (min-width: $xxs + 1px) {
         border-right: 1px solid $dark75;
       }
-  
-      &.filter-products_mob-show{
+
+      &.filter-products_mob-show {
         transform: translateX(0);
       }
-  
-      .filter-products__content-wrapper{
+
+      .filter-products__content-wrapper {
         height: 100%;
         width: 100%;
         overflow: hidden;

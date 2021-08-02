@@ -1,66 +1,67 @@
 @import '@/theme/variables.scss';
 
-.products{
-
-  & &__container{
+.products {
+  & &__container {
     max-width: $max_width_container;
     margin: 0 auto;
     padding: 30px 10px 70px;
   }
 
-  & &__grid{
+  & &__grid {
     display: grid;
     grid-column-gap: 59px;
     grid-template-columns: 266px minmax(calc(100% - 326px), 100%);
 
-    @media(max-width: $lg){
+    @media (max-width: $lg) {
       grid-column-gap: 30px;
     }
-    @media(max-width: $md){
+
+    @media (max-width: $md) {
       grid-template-columns: 100%;
     }
   }
 
-  & &__cards-container{
+  & &__cards-container {
     display: flex;
     margin: 0 -6px;
     flex-wrap: wrap;
   }
 
-  & &__card-wrapper{
+  & &__card-wrapper {
     padding: 0 6px;
     flex: 1 1 33.3333333%;
     max-width: 33.3333333%;
 
-    @media(max-width: $md){
+    @media (max-width: $md) {
       flex: 1 1 50%;
       max-width: 50%;
     }
-    @media(max-width: $xs){
+
+    @media (max-width: $xs) {
       flex: 1 1 100%;
       max-width: 100%;
     }
 
-    .card-product{
+    .card-product {
       height: 100%;
     }
   }
 
-  & &_filter-show{
-    @media(min-width: $md){
+  & &_filter-show {
+    @media (min-width: $md) {
       display: none;
     }
   }
 
-  & &_mb20{
+  & &_mb20 {
     margin-bottom: 20px;
   }
 
-  & &_mb23{
+  & &_mb23 {
     margin-bottom: 23px;
   }
 
-  & &__pagination-wrapper{
+  & &__pagination-wrapper {
     display: flex;
     justify-content: center;
   }

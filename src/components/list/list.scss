@@ -1,14 +1,13 @@
 @import '@/theme/variables.scss';
 
-.list{
-  
-  &__item{
+.list {
+  &__item {
     position: relative;
     color: $dark75;
     list-style: none;
     padding-left: calc_rem(20);
 
-    &:after{
+    &::after {
       content: '';
       position: absolute;
       top: 6px;

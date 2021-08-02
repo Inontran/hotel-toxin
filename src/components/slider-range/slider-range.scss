@@ -1,10 +1,10 @@
 @import '@/theme/variables.scss';
 
-.slider-range{
+.slider-range {
   $size: calc_rem(16);
   $border_width: 2px;
 
-  &__top{
+  &__top {
     display: flex;
     align-items: center;
     justify-content: space-between;
@@ -12,7 +12,7 @@
     padding-bottom: 20px;
   }
 
-  &__label{
+  &__label {
     display: block;
     font-weight: 700;
     font-size: calc_rem(12);
@@ -20,7 +20,7 @@
     line-height: 1.7;
   }
 
-  &__input{
+  &__input {
     text-align: right;
     border: 0;
     box-shadow: none;
@@ -30,9 +30,9 @@
     width: 45%;
   }
 
-  &__slider{
+  &__slider {
     width: calc(100% - #{$size} / 2 - (#{$border_width} * 2));
-    margin: 0 calc(#{$size} / 2 - #{$border_width} );
+    margin: 0 calc(#{$size} / 2 - #{$border_width});
     background: $white;
     border-top: 1px solid $dark25;
     border-bottom: 1px solid $dark25;
@@ -41,31 +41,34 @@
 
     &,
     & .ui-slider-range,
-    & .ui-slider-handle{
+    & .ui-slider-handle {
       cursor: pointer;
     }
 
-    &:after, &:before{
+    &::after,
+    &::before {
       content: '';
       position: absolute;
       top: -1px;
-      height: calc( #{calc_rem(6)} - 2px );
-      width: calc( #{$size} / 2 );
+      height: calc(#{calc_rem(6)} - 2px);
+      width: calc(#{$size} / 2);
       border: 1px solid $dark25;
       background: $white;
     }
-    &:after{
+
+    &::after {
       left: calc(100% - 3px);
       border-radius: 0 100vh 100vh 0;
       border-left: 0;
     }
-    &:before{
+
+    &::before {
       right: calc(100% - 3px);
       border-radius: 100vh 0 0 100vh;
       border-right: 0;
     }
 
-    &.ui-slider-horizontal .ui-slider-handle{
+    &.ui-slider-horizontal .ui-slider-handle {
       top: 50%;
       transform: translateY(-50%);
       width: $size;
@@ -75,14 +78,14 @@
       background: $gradient2;
     }
 
-    .ui-slider-range{
+    .ui-slider-range {
       top: -1px;
       height: calc(100% + 2px);
       background: $gradient2;
     }
   }
 
-  &__text-bottom{
+  &__text-bottom {
     color: $dark50;
     font-size: calc_rem(12);
     margin-top: 10px;

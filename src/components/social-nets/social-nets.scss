@@ -1,18 +1,18 @@
 @import '@/theme/variables.scss';
 
-.social-nets{
+.social-nets {
   display: inline-flex;
   align-items: center;
   justify-content: center;
   margin: 0 -10px;
   padding: 0 3px;
 
-  &__link{
+  &__link {
     display: flex;
     margin: 0 10px;
   }
 
-  &__icon{
+  &__icon {
     flex: none;
   }
 }

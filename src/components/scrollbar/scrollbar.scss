@@ -1,19 +1,19 @@
 @import '@/theme/variables.scss';
 @import '~simplebar/dist/simplebar.css';
 
-.scrollbar{
-  &.scrollbar_catalina{
-    .simplebar-scrollbar{
-      &:before{
+.scrollbar {
+  &.scrollbar_catalina {
+    .simplebar-scrollbar {
+      &::before {
         border-radius: 0;
         background-color: $green;
       }
     }
   }
 
-  &.scrollbar_sierra{
-    .simplebar-scrollbar{
-      &:before{
+  &.scrollbar_sierra {
+    .simplebar-scrollbar {
+      &::before {
         border-radius: 0;
         background-color: $dark;
       }

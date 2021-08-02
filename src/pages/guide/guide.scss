@@ -1,35 +1,36 @@
 @import '@/theme/variables.scss';
 
-.guide-page{
+.guide-page {
   padding-bottom: 69px;
 
-  &_limit-width{
+  &_limit-width {
     max-width: $max_width_container;
     margin: 0 auto;
   }
 
-  &__container{
+  &__container {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     grid-gap: 0 72px;
     padding: 0 $padding_container;
 
-    &_var2{
+    &_var2 {
       grid-template-columns: 380px 380px 320px;
       grid-gap: 0 30px;
     }
   }
 
-  &__col{
+  &__col {
     padding-bottom: 100px;
   }
 
-  &__color-item{
+  &__color-item {
     display: flex;
     align-items: center;
     padding-bottom: $gutter/2;
   }
-  &__color-div{
+
+  &__color-div {
     width: 70px;
     height: 70px;
     border-radius: 6px;
@@ -37,28 +38,34 @@
     flex: none;
     margin-right: $gutter;
   }
-  &__color-text{
+
+  &__color-text {
     font-size: calc_rem(19);
   }
-  @each $name, $val in $colors{
-    .guide-page__color-div_#{$name}{
+
+  @each $name, $val in $colors {
+    .guide-page__color-div_#{$name} {
       background-color: $val;
     }
   }
 
-  &__mb10{
+  &__mb10 {
     margin-bottom: 10px;
   }
-  &__mb16{
+
+  &__mb16 {
     margin-bottom: 16px;
   }
-  &__mb20{
+
+  &__mb20 {
     margin-bottom: 20px;
   }
-  &__mb30{
+
+  &__mb30 {
     margin-bottom: 30px;
   }
-  &__mb40{
+
+  &__mb40 {
     margin-bottom: 40px;
   }
 }

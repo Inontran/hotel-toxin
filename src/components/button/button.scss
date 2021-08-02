@@ -1,6 +1,6 @@
 @import '@/theme/variables.scss';
 
-.button{
+.button {
   position: relative;
   background: none;
   border: none;
@@ -9,23 +9,22 @@
   font-weight: 700;
   line-height: 1.25;
   color: $purple;
-  transition: .3s;
+  transition: 0.3s;
   text-align: center;
   cursor: pointer;
   text-decoration: none;
 
-  &:hover{
+  &:hover {
     color: $dark50;
   }
 
-  &__text{
+  &__text {
     position: relative;
     z-index: 2;
     text-decoration: none;
   }
 
-
-  &_fill{
+  &_fill {
     display: inline-flex;
     align-items: center;
     justify-content: center;
@@ -36,20 +35,21 @@
     min-height: calc_rem(44);
     background: $gradient1;
 
-    &:hover{
+    &:hover {
       color: $white;
-      opacity: .5;
+      opacity: 0.5;
     }
   }
 
-  &_outline{
+  &_outline {
     @extend .button_fill;
-    
-    &, &:hover{
+
+    &,
+    &:hover {
       color: $purple;
     }
 
-    &:after{
+    &::after {
       content: '';
       position: absolute;
       top: 2px;
@@ -61,14 +61,14 @@
     }
   }
 
-  &_wide{
+  &_wide {
     width: 100%;
   }
 
-  &_arrow-left{
+  &_arrow-left {
     padding: calc_rem(5) calc_rem(35);
 
-    &:after{
+    &::after {
       content: '';
       position: absolute;
       top: 50%;
@@ -83,11 +83,11 @@
     }
   }
 
-  &_gray{
+  &_gray {
     color: $dark50;
   }
 
-  &_size-md{
+  &_size-md {
     min-height: calc_rem(34);
   }
 }
