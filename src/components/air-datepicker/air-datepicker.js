@@ -4,10 +4,10 @@ import moment from 'moment';
 
 moment.lang('ru');
 
-
-$(document).ready(function(){
+$(() => {
   const $body = $('body');
-  $body.find('.js-air-datepicker.air-datepicker_inline .js-air-datepicker__wrapper').each(function(){
+
+  $body.find('.js-air-datepicker.air-datepicker_inline .js-air-datepicker__wrapper').each(function () {
     $(this).datepicker({
       range: true,
       inline: true,
@@ -18,37 +18,38 @@ $(document).ready(function(){
     });
   });
 
-
-  $body.on('click',
-    '.js-dropdown .js-air-datepicker .js-air-datepicker__btn-wrapper_clear .js-button',
-    handlerClickClearBtn
-  );
-
-
-  $body.on('click', '.js-air-datepicker .js-air-datepicker__btn-wrapper_submit .js-button', handlerClickSubmitBtn);
-
-
-  function handlerClickClearBtn(event){
+  function handlerClickClearBtn(event) {
     event.preventDefault();
     const $btn = $(event.currentTarget);
     const $datePicker = $btn.closest('.js-air-datepicker');
     $datePicker.find('.js-air-datepicker__wrapper').data('datepicker').clear();
   }
 
+  $body.on(
+    'click',
+    '.js-dropdown .js-air-datepicker .js-air-datepicker__btn-wrapper_clear .js-button',
+    handlerClickClearBtn,
+  );
 
-  function handlerClickSubmitBtn(event){
+  function handlerClickSubmitBtn(event) {
     event.preventDefault();
     const $btn = $(event.currentTarget);
-    var $parentDropdown = $btn.closest('.js-dropdown');
-    var dates = $(this).closest('.js-air-datepicker')
-                      .find('.js-air-datepicker__wrapper')
-                      .data('datepicker').selectedDates;
+    const $parentDropdown = $btn.closest('.js-dropdown');
+    const dates = $(this).closest('.js-air-datepicker')
+      .find('.js-air-datepicker__wrapper')
+      .data('datepicker').selectedDates;
 
     $('.js-input_result-dates .js-input__field', $parentDropdown)
-      .val(moment(dates[0]).format('D MMM') + ' - ' + moment(dates[1]).format('D MMM'));
+      .val(`${moment(dates[0]).format('D MMM')} - ${moment(dates[1]).format('D MMM')}`);
     $('.js-input_result-date-start .js-input__field', $parentDropdown).val(moment(dates[0]).format('DD.MM.YYYY'));
     $('.js-input_result-date-end .js-input__field', $parentDropdown).val(moment(dates[1]).format('DD.MM.YYYY'));
 
     $parentDropdown.removeClass('dropdown_active');
   }
+
+  $body.on(
+    'click',
+    '.js-air-datepicker .js-air-datepicker__btn-wrapper_submit .js-button',
+    handlerClickSubmitBtn,
+  );
 });

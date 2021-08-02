@@ -1,30 +1,35 @@
 import $ from 'jquery';
 import 'webpack-jquery-ui/slider';
 
-$(document).ready(function(){
-  $('body').find('.slider-range__slider').each(function(){
-    var $current_slider = $(this);
-    var $parent = $current_slider.closest('.slider-range');
-    var $current_input = $parent.find('.slider-range__input');
+$(document).ready(() => {
+  $('body').find('.slider-range__slider').each(function () {
+    const $currentSlider = $(this);
+    const $parent = $currentSlider.closest('.slider-range');
+    const $currentInput = $parent.find('.slider-range__input');
 
-    var val_min = parseInt($current_slider.attr('data-min'));
-    var val_max = parseInt($current_slider.attr('data-max'));
-    var val1 = parseInt($current_slider.attr('data-val1'));
-    var val2 = parseInt($current_slider.attr('data-val2'));
+    const valMin = parseInt($currentSlider.attr('data-min'), 10);
+    const valMax = parseInt($currentSlider.attr('data-max'), 10);
+    const val1 = parseInt($currentSlider.attr('data-val1'), 10);
+    const val2 = parseInt($currentSlider.attr('data-val2'), 10);
 
-    $current_slider.slider({
+    $currentSlider.slider({
       range: true,
-      min: val_min,
-      max: val_max,
-      values: [ val1, val2 ],
-      slide: function( event, ui ) {
-        $current_input.val( ui.values[ 0 ] + $.RUBLE + " - " + ui.values[ 1 ] + $.RUBLE );
-      }
+      min: valMin,
+      max: valMax,
+      values: [val1, val2],
+      slide: (event, ui) => {
+        let resultInputVal = '';
+        resultInputVal += ui.values[0] + $.RUBLE;
+        resultInputVal += ' - ';
+        resultInputVal += ui.values[1] + $.RUBLE;
+        $currentInput.val(resultInputVal);
+      },
     });
-    
-    $current_input.val( $current_slider.slider('values', 0 ) + $.RUBLE +
-      ' - ' + $current_slider.slider('values', 1 ) + $.RUBLE );
 
+    let resultInputVal = '';
+    resultInputVal += $currentSlider.slider('values', 0) + $.RUBLE;
+    resultInputVal += ' - ';
+    resultInputVal += $currentSlider.slider('values', 1) + $.RUBLE;
+    $currentInput.val(resultInputVal);
   });
-  
 });

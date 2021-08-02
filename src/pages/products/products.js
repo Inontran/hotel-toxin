@@ -1,15 +1,17 @@
 import $ from 'jquery';
 
-$(function(){
+$(() => {
   const $body = $('body');
-  $body.on('click', '.products_show-filter', function(event){
+
+  function handlerClickShowFilter(event) {
     event.preventDefault();
-    
-    var scrollTop_body = $('html, body').scrollTop() || $(document).scrollTop() || $(window).scrollTop();
-    $body.attr('data-last-scrolltop', scrollTop_body);
-    
+
+    const scrollTopBody = $('html, body').scrollTop() || $(document).scrollTop() || $(window).scrollTop();
+    $body.attr('data-last-scrolltop', scrollTopBody);
+
+    const scrollTopBodyPx = `-${scrollTopBody}px`;
     $('.js-page__content-wrapper').css({
-      top: '-' + scrollTop_body + 'px',
+      top: scrollTopBodyPx,
       position: 'fixed',
     });
     $body.css({
@@ -19,5 +21,7 @@ $(function(){
     });
 
     $('.js-filter-products').addClass('filter-products_mob-show');
-  });
+  }
+
+  $body.on('click', '.products_show-filter', handlerClickShowFilter);
 });

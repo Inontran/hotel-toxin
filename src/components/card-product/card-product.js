@@ -1,8 +1,8 @@
 import $ from 'jquery';
 import 'owl.carousel';
 
-$(document).ready(function(){
-  $('.js-card-product__carousel', 'body').each(function(){
+$(() => {
+  $('.js-card-product__carousel', 'body').each(function () {
     $(this).owlCarousel({
       nav: true,
       dots: true,

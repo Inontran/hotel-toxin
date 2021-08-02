@@ -2,6 +2,8 @@
   "extends": [
     // Базовый набор правил eslint
     "eslint:recommended",
+    // Правила Airbnb
+    "airbnb-base",
     // Правила FSD
     "plugin:fsd/all"
   ],
