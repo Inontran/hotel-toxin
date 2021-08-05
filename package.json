@@ -12,7 +12,9 @@
     "eslint": "eslint --cache --ext .js,.jsx,.ts,.tsx src",
     "eslint:dump": "eslint --print-config ./.eslintrc.json",
     "stylelint": "stylelint 'src/**/*.{css,scss}'",
-    "stylelint:fix": "stylelint 'src/**/*.{css,scss}' --fix"
+    "stylelint:fix": "stylelint 'src/**/*.{css,scss}' --fix",
+    "gulp:images": "gulp images",
+    "gulp:deploy": "gulp deploy"
   },
   "keywords": [
     "FSD",
