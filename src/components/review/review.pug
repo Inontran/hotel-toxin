@@ -10,43 +10,31 @@ include ../like-btn/like-btn
   options.textReview - Текст отзыва.
   options.countLike = 0 - Количество лайков.
 
-mixin review(options)
-  if !options
-    - options = {}
-
-  if !options.classes
-    - options.classes = ''
-
-  if !options.avatar
-    - options.avatar = require('@/components/review/img/photo-example.jpg').default
-
-  if !options.isLike
-    - options.isLike = false
-  
-  if !options.countLike
-    - options.countLike = '0'
-
-  if !options.username
-    - options.username = 'Anonymous'
-
-  if !options.timeLater
-    - options.timeLater = 'несколько секунд назад'
-
-  if !options.textReview
-    - options.textReview = ''
+mixin review(options = {})
+  -
+    const {
+      classes = '',
+      id = false,
+      avatar = require('@/components/review/img/photo-example.jpg').default,
+      isLike = false,
+      countLike = '0',
+      username = 'Anonymous',
+      timeLater = 'несколько секунд назад',
+      textReview = '',
+    } = options;
 
   article.review(
-    class = options.classes,
-    id = options.id ? options.id : false
+    class = classes,
+    id = id ? id : false
   )
     header.review__header
       div.review__avatar-wrapper
-        img.review__avatar(src = options.avatar, alt = 'Фото ' + options.username)
+        img.review__avatar(src = avatar, alt = 'Фото ' + username)
       div.review__header-text
-        p.review__username #{options.username}
+        p.review__username #{username}
         p.review__time
-          time #{options.timeLater}
+          time #{timeLater}
     div.review__content
       div.review__like-wrapper
-        +like-btn({value: options.countLike, isLike: options.isLike})
-      p.review__text #{options.textReview}
+        +like-btn({value: countLike, isLike: isLike})
+      p.review__text #{textReview}

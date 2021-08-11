@@ -6,31 +6,26 @@
   options.elements - Общее количество элементов.
   options.text - Текст.
 
-mixin pagination(options)
-  if !options
-    - options = {}
-
-  if !options.classes
-    - options.classes = ''
-
-  if !options.page
-    - options.page = 1
-
-  if !options.perpage
-    - options.perpage = 10
-
-  if !options.text
-    - options.text = ''
+mixin pagination(options = {})
+  -
+    const {
+      classes = '',
+      id = false,
+      page = 1,
+      perpage = 10,
+      elements = 175,
+      text = '',
+    } = options;
 
   div.pagination.js-pagination(
-    class = options.classes,
-    id = options.id ? options.id : false
+    class = classes,
+    id = id ? id : false
   )
     div.pagination__wrapper.js-pagination__wrapper(
-      data-page = options.page, 
-      data-perpage = options.perpage, 
-      data-elements = options.elements
+      data-page = page, 
+      data-perpage = perpage, 
+      data-elements = elements
     )
     p.pagination__text
       span.pagination__output.js-pagination__output 1 - 12 из 100+ 
-      span #{options.text}
+      span #{text}

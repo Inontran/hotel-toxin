@@ -20,65 +20,78 @@ include ../air-datepicker/air-datepicker
   options.checkboxesBigTitle - Заголовок массива чекбоксов.
   options.optionDropdownFeature - Параметры выпадающегося списка удобств номеров.
   options.collapseFeatureOptions - Параметры раскрывающегося списка удобств номеров.
+  options.collapseFeatureCheckboxes - Массив чекбоксов удобств номеров.
 
-mixin filter-products(options)
-  if !options
-    - options = {}
-
-  if !options.classes
-    - options.classes = ''
+mixin filter-products(options = {})
+  -
+    const {
+      classes = '',
+      id = false,
+      isMobile = false,
+      optionDropdownDates = false,
+      optionDropdownDatesDatepicker = {},
+      optionDropdownPeople = false,
+      optionSliderRange = false,
+      checkboxes = false,
+      checkboxesTitle = false,
+      checkboxesBig = false,
+      checkboxesBigTitle = false,
+      optionDropdownFeature = false,
+      collapseFeatureOptions = false,
+      collapseFeatureCheckboxes = []
+    } = options;
 
   div.filter-products.js-filter-products(
-    class = options.classes,
-    id = options.id ? options.id : false
-    class = options.isMobile ? "filter-products_mob-md" : false
+    class = classes,
+    id = id ? id : false
+    class = isMobile ? "filter-products_mob-md" : false
   )
     div.filter-products__content-wrapper
-      if options.isMobile
+      if isMobile
         div.filter-products__close.filter-products_mb30
           +button({
-            classes: 'button_fill button_size-md products_filter-show js-filter-products_hide-filter',
+            classes: 'button_fill button_size-md js-filter-products_hide-filter',
             text: 'Скрыть фильтр'
           })
 
-      if options.optionDropdownDates
+      if optionDropdownDates
         div.filter-products__block-wrapper.filter-products_mb20
-          +dropdown(options.optionDropdownDates)
-            +air-datepicker(options.optionDropdownDatesDatepicker)
+          +dropdown(optionDropdownDates)
+            +air-datepicker(optionDropdownDatesDatepicker)
 
-      if options.optionDropdownPeople
+      if optionDropdownPeople
         div.filter-products__block-wrapper.filter-products_mb30
-          +dropdown(options.optionDropdownPeople)
-            +list-counters(options.optionDropdownPeople)
+          +dropdown(optionDropdownPeople)
+            +list-counters(optionDropdownPeople)
 
-      if options.optionSliderRange
+      if optionSliderRange
         div.filter-products__block-wrapper.filter-products_mb30
-          +slider-range(options.optionSliderRange)
+          +slider-range(optionSliderRange)
 
-      if options.checkboxes
+      if checkboxes
         div.filter-products__element.filter-products_mb31
-          if options.checkboxesTitle
-            h3.filter-products__element.filter-products_mb13 #{options.checkboxesTitle}
-          each val, index in options.checkboxes
+          if checkboxesTitle
+            h3.filter-products__element.filter-products_mb13 #{checkboxesTitle}
+          each val, index in checkboxes
             div.filter-products__block-wrapper.filter-products_mb10
               +checkbox(val)
 
-      if options.checkboxesBig
+      if checkboxesBig
         div.filter-products__element.filter-products_mb30
-          if options.checkboxesBigTitle
-            h3.filter-products__element.filter-products_mb16 #{options.checkboxesBigTitle}
-          each val, index in options.checkboxesBig
+          if checkboxesBigTitle
+            h3.filter-products__element.filter-products_mb16 #{checkboxesBigTitle}
+          each val, index in checkboxesBig
             div.filter-products__block-wrapper.filter-products_mb10
               +checkbox(val)
 
-      if options.optionDropdownFeature
-        - options.optionDropdownFeature.type = 2
+      if optionDropdownFeature
+        - optionDropdownFeature.type = 2
         div.filter-products__block-wrapper.filter-products_mb16
-          +dropdown(options.optionDropdownFeature)
-            +list-counters(options.optionDropdownFeature)
+          +dropdown(optionDropdownFeature)
+            +list-counters(optionDropdownFeature)
 
-      if options.collapseFeatureOptions
-        +collapse(options.collapseFeatureOptions)
-          each val, index in options.collapseFeatureCheckboxes
+      if collapseFeatureOptions
+        +collapse(collapseFeatureOptions)
+          each val, index in collapseFeatureCheckboxes
             div.filter-products__block-wrapper.filter-products_mb10
               +checkbox(val)

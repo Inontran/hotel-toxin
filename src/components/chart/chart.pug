@@ -11,63 +11,47 @@
   options.labelNotbad = 'Удовлетворительно' - Подпись количества голосов (chartNumNotbad).
   options.labelDisappointed = 'Разочарован' - Подпись количества голосов (chartNumDisappointed).
 
-mixin chart(options)
-  if !options
-    - options = {}
+mixin chart(options = {})
+  -
+    const {
+      classes = '',
+      id = false,
+      chartNumAwesome = 0,
+      chartNumGood = 0,
+      chartNumNotbad = 0,
+      chartNumDisappointed = 0,
+      labelAwesome = 'Великолепно',
+      labelGood = 'Хорошо',
+      labelNotbad = 'Удовлетворительно',
+      labelDisappointed = 'Разочарован',
+      chartCountAll = false,
+    } = options;
 
-  if !options.classes
-    - options.classes = ''
-
-  if !options.chartNumAwesome
-    - options.chartNumAwesome = 0
-
-  if !options.chartNumGood
-    - options.chartNumGood = 0
-
-  if !options.chartNumNotbad
-    - options.chartNumNotbad = 0
-
-  if !options.chartNumDisappointed
-    - options.chartNumDisappointed = 0
-
-  if !options.labelAwesome
-    - options.labelAwesome = 'Великолепно'
-
-  if !options.labelGood
-    - options.labelGood = 'Хорошо'
-
-  if !options.labelNotbad
-    - options.labelNotbad = 'Удовлетворительно'
-
-  if !options.labelDisappointed
-    - options.labelDisappointed = 'Разочарован'
-
-  
   div.chart.js-chart(
-    class = options.classes,
-    id = options.id ? options.id : false
-    data-num-1 = options.chartNumAwesome, 
-    data-num-2 = options.chartNumGood, 
-    data-num-3 = options.chartNumNotbad, 
-    data-num-4 = options.chartNumDisappointed
+    class = classes,
+    id = id ? id : false
+    data-num-1 = chartNumAwesome, 
+    data-num-2 = chartNumGood, 
+    data-num-3 = chartNumNotbad, 
+    data-num-4 = chartNumDisappointed
   )
     div.chart__container
       div.chart__wrapper
         canvas.chart__picture.js-chart__picture
-        if options.chartCountAll
+        if chartCountAll
           p.chart__count
-            span.chart__count-number #{options.chartCountAll}
+            span.chart__count-number #{chartCountAll}
             span.chart__count-text голосов
       ul.chart__legend
         li.chart__legend-item
           span.chart__legend-icon.chart__legend-icon_awesome
-          span.chart__legend-text #{options.labelAwesome}
+          span.chart__legend-text #{labelAwesome}
         li.chart__legend-item
           span.chart__legend-icon.chart__legend-icon_good
-          span.chart__legend-text #{options.labelGood}
+          span.chart__legend-text #{labelGood}
         li.chart__legend-item
           span.chart__legend-icon.chart__legend-icon_notbad
-          span.chart__legend-text #{options.labelNotbad}
+          span.chart__legend-text #{labelNotbad}
         li.chart__legend-item
           span.chart__legend-icon.chart__legend-icon_disappointed
-          span.chart__legend-text #{options.labelDisappointed}
+          span.chart__legend-text #{labelDisappointed}

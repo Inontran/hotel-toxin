@@ -5,25 +5,25 @@ include ../header/header
   options.id - ИД блока.
   options.bgUrl - Фоновая картинка.
 
-mixin first-display(options)
-  if !options
-    - options = {}
-
-  if !options.classes
-    - options.classes = ''
-
+mixin first-display(options = {})
+  -
+    const {
+      classes = '',
+      id = false,
+      bgUrl = false,
+    } = options;
 
   div.first-display(
-    class = options.classes, 
-    id = options.id ? options.id : false
-    style = options.bgUrl ? 'background-image: url(' + options.bgUrl + ')' : false
+    class = classes, 
+    id = id ? id : false,
+    style = bgUrl ? 'background-image: url(' + bgUrl + ')' : false,
   )
     +header({
       menuItems: dataHeader.menuItems, 
-      buttonLoginText: dataHeader.login_text,
-      buttonLoginHref: dataHeader.login_href,
-      buttonRegText: dataHeader.reg_text,
-      buttonRegHref: dataHeader.reg_href
+      buttonLoginText: dataHeader.loginText,
+      buttonLoginHref: dataHeader.loginHref,
+      buttonRegText: dataHeader.regText,
+      buttonRegHref: dataHeader.regHref
     })
 
     div.first-display__content-wrapper

@@ -15,68 +15,72 @@ include ../input/input
   options.text2 - Текст формы подписки.
   options.copyrightText - Текст об авторских правах.
 
-mixin footer(options)
-  if !options
-    - options = {}
-
-  if !options.classes
-    - options.classes = ''
-
-  if !options.menuItems
-    - options.menuItems = []
-
+mixin footer(options = {})
+  -
+    const {
+      classes = '',
+      id = false,
+      text1 = false,
+      menuItems = [],
+      titleSubscribe = false,
+      text2 = false,
+      copyrightText = false,
+    } = options;
 
   footer.footer(
-    class = options.classes, 
-    id = options.id ? options.id : false
+    class = classes, 
+    id = id ? id : false
   )
     div.footer__container.footer_desktop
       div.footer__up
         div.footer__col1
           div.footer__logo-wrapper
             +logo()
-          div.footer__text #{options.text1}
+          div.footer__text #{text1}
         
         div.footer__col2
-          h3.footer__subtitle #{options.menuItems[0].subtitle}
+          if menuItems[0].subtitle
+            h3.footer__subtitle #{menuItems[0].subtitle}
           nav.footer__list
-            each val, index in options.menuItems[0].items
+            each val, index in menuItems[0].items
               li.item
-                a.link(href = val.href)= val.name
+                a.link(href = val.href) #{val.name}
           
         div.footer__col3
-          h3.footer__subtitle #{options.menuItems[1].subtitle}
+          if menuItems[1].subtitle
+            h3.footer__subtitle #{menuItems[1].subtitle}
           nav.footer__list
-            each val, index in options.menuItems[1].items
+            each val, index in menuItems[1].items
               li.item
-                a.link(href = val.href)= val.name
+                a.link(href = val.href) #{val.name}
         
         div.footer__col4
-          h3.footer__subtitle #{options.menuItems[2].subtitle}
+          if menuItems[2].subtitle
+            h3.footer__subtitle #{menuItems[2].subtitle}
           nav.footer__list
-            each val, index in options.menuItems[2].items
+            each val, index in menuItems[2].items
               li.item
-                a.link(href = val.href)= val.name
+                a.link(href = val.href) #{val.name}
         
         div.footer__col5
-          if options.titleSubscribe
-            h3.footer__subtitle #{options.titleSubscribe}
-          if options.text2
-            div.footer__text.footer_mb20 #{options.text2}
+          if titleSubscribe
+            h3.footer__subtitle #{titleSubscribe}
+          if text2
+            div.footer__text.footer_mb20 #{text2}
           form(action="", method="post")
             +input({subscription: true, placeholder: 'Email'})
 
     div.footer__down.footer_desktop
       div.footer__container
         div.footer__down-wrapper
-          if options.copyrightText
-            p #{options.copyrightText}
+          if copyrightText
+            p #{copyrightText}
           +social-nets()
 
     div.footer__container.footer_mobile
       div.footer__container-mobile
         div.footer_mb18(style="display: flex; justify-content: center;")
           +logo()
-        if options.text1
-          div.footer__text.footer_mb28 #{options.text1}
+        if text1
+          div.footer__text.footer_mb28 #{text1}
         +social-nets()

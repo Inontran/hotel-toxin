@@ -7,32 +7,29 @@
   options.value = 0 - Значение поля.
   options.name - Имя поля.
 
-mixin input-number(options)
-  if options == undefined
-    - options = {}
-
-  if options.classes == undefined
-    - options.classes = ''
-
-  if options.min == undefined
-    - options.min = ''
-
-  if options.max == undefined
-    - options.max = ''
-
-  if options.step == undefined
-    - options.step = 1
-
-  if options.value == undefined
-    - options.value = 0
-
-  if options.name == undefined
-    - options.name = ''
+mixin input-number(options = {})
+  -
+    const {
+      classes = '',
+      id = false,
+      min = '',
+      max = '',
+      step = 1,
+      value = 0,
+      name = '',
+    } = options;
 
   div.input-number.js-input-number(
-    class = options.classes,
-    id = options.id ? options.id : false
+    class = classes,
+    id = id ? id : false
   )
     button.input-number__btn-less.js-input-number__btn-less -
-    input.input-number__input.js-input-number__input(name = options.name, value = options.value, max = options.max, min = options.min, step = options.step, type = 'number')
+    input.input-number__input.js-input-number__input(
+      name = name,
+      value = value,
+      max = max,
+      min = min,
+      step = step,
+      type = 'number'
+    )
     button.input-number__btn-more.js-input-number__btn-more +

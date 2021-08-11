@@ -7,39 +7,35 @@
   options.value - Значение input чекбокса (атрибут value).
   options.checked - Помечен ли чекбокс или нет (атрибут checked).
 
-mixin checkbox(options)
-  if !options
-    - options = {}
-  
-  if !options.text
-    - options.text = ''
-
-  if !options.classes
-    - options.classes = ''
-
-  if !options.name
-    - options.name = ''
-
-  if !options.value
-    - options.value = ''
+mixin checkbox(options = {})
+  -
+    const {
+      classes = '',
+      id = false,
+      text = false,
+      name = '',
+      value = '',
+      checked = false,
+      title = false,
+    } = options;
 
 
   label.checkbox(
-    class = options.classes,
-    id = options.id ? options.id : false
+    class = classes,
+    id = id ? id : false
   )
     input.checkbox__input(
       type = "checkbox", 
-      name = options.name, 
-      value = options.value, 
-      checked = options.checked ? "checked" : false
+      name = name, 
+      value = value, 
+      checked = checked ? "checked" : false
     )
 
     div.checkbox__view
     div.checkbox__text-wrapper
-      if options.title
-        p.checkbox__title #{options.title}
-        p.checkbox__text-small #{options.text}
+      if title
+        p.checkbox__title #{title}
+        p.checkbox__text-small #{text}
       else
-        if options.text
-          p.checkbox__text #{options.text}
+        if text
+          p.checkbox__text #{text}

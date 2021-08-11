@@ -7,7 +7,11 @@ block title
   | Toxin Hotel
 
 block content
-  - data = htmlWebpackPlugin.options.getData()
+  -
+    const {
+      formOptions = {},
+      textBottom = false,
+    } = htmlWebpackPlugin.options.getData();
 
   +curtain({
     menuItems: dataHeader.menuItems,
@@ -19,6 +23,6 @@ block content
 
   +first-display(data)
     div.first-display__form-wrapper
-      +form-fast-select(data.formOptions)
-    if data.textBottom
-      div.first-display__text-bottom #{data.textBottom}
+      +form-fast-select(formOptions)
+    if textBottom
+      div.first-display__text-bottom #{textBottom}

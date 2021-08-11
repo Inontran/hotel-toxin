@@ -7,26 +7,24 @@
   options.items[0].text - Текст.
   options.items[0].line - Линия.
 
-mixin infographics(options)
-  if !options
-    - options = {}
-
-  if !options.classes
-    - options.classes = ''
-
-  if !options.items
-    - options.items = ''
+mixin infographics(options = {})
+  -
+    const {
+      classes = '',
+      id = false,
+      items = [],
+    } = options;
 
   ul.infographics(
-    class = options.classes,
-    id = options.id ? options.id : false
+    class = classes,
+    id = id ? id : false
   )
-    each item, index in options.items
+    each item, index in items
       if (item.line)
         -var classes_item = 'infographics__item_line'
       else
         -var classes_item = ''
-        
+
       li.infographics__item(class = classes_item)
         div.infographics__image(style = "background-image: url(" + item.src + ")")
         div.infographics__text-wrapper

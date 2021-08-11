@@ -1,18 +1,20 @@
 //-
   options.classes - Классы блока.
   options.id - ИД блока.
+  options.title - Заголовок карточки.
 
-mixin card(options)
-  if !options
-    - options = {}
-  
-  if !options.classes
-    - options.classes = ''
+mixin card(options = {})
+  -
+    const {
+      classes = '',
+      id = false,
+      title = false,
+    } = options;
 
   div.card(
-    class = options.classes,
-    id = options.id ? options.id : false
+    class = classes,
+    id = id ? id : false
   )
-    if options.title
-      h1.card__title #{options.title}
+    if title
+      h1.card__title #{title}
     block

@@ -4,24 +4,18 @@
   options.src - Ссылка на логотип.
   options.href - Ссылка на главную страницу.
 
-mixin logo(options)
-  if !options
-    - options = {}
-
-  if !options.classes
-    - options.classes = ''
-  
-  if !options.src
-    - options.src = require('@/components/logo/img/logo.svg').default
-  else
-    - options.src = require(option.src).default
-
-  if !options.href
-    - options.href = 'index.html'
+mixin logo(options = {})
+  -
+    const {
+      classes = '',
+      id = false,
+      href = 'index.html',
+      src = require('@/components/logo/img/logo.svg').default,
+    } = options;
 
   a.logo(
-    href = options.href, 
-    class = options.classes, 
-    id = options.id ? options.id : false
+    href = href, 
+    class = classes, 
+    id = id ? id : false
   )
-    img(src = options.src, alt = "Toxin")
+    img(src = src, alt = "Toxin")

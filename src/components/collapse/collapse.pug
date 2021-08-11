@@ -6,26 +6,23 @@
     то при раскрытии одного списка все остальные из этой группы будут закрываться.
   options.text - Текст в кнопке раскрывающего списка.
 
-mixin collapse(options)
-  if !options
-    - options = {}
-
-  if !options.classes
-    - options.classes = ''
-
-  if !options.group
-    - options.group = ''
-
-  if !options.text
-    - options.text = ''
+mixin collapse(options = {})
+  -
+    const {
+      classes = '',
+      id = false,
+      title = false,
+      text = false,
+      group = false,
+    } = options;
 
   div.collapse(
-    class = options.classes,
-    id = options.id ? options.id : false
-    data-group = options.group
+    class = classes,
+    id = id ? id : false
+    data-group = group ? group : false,
   )
     button.collapse__btn(type = 'button')
-      span.collapse__btn-text #{options.text}
+      span.collapse__btn-text #{text}
       span.collapse__btn-arrow
     div.collapse__content
       div.collapse__content-wrapper

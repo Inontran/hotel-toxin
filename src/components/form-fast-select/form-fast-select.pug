@@ -8,21 +8,19 @@ include ../card/card
   options.id - ИД блока.
   options.cardTitle - Заголовок.
 
-mixin form-fast-select(options)
-  if !options
-    - options = {}
-
-  if !options.classes
-    - options.classes = ''
-
-  if !options.cardTitle
-    - options.cardTitle = 'Найдём номера под ваши пожелания'
+mixin form-fast-select(options = {})
+  -
+    const {
+      classes = '',
+      id = false,
+      cardTitle = 'Найдём номера под ваши пожелания',
+    } = options;
 
   div.form-fast-select(
-    class = options.classes,
-    id = options.id ? options.id : false
+    class = classes,
+    id = id ? id : false
   )
-    +card({title: options.cardTitle})
+    +card({title: cardTitle})
       div.form-fast-select__block-wrapper.form-fast-select_mb20
         +dropdown({
           customContent: true,

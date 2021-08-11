@@ -10,40 +10,37 @@
   options.disabled - Атрибут disabled.
   options.subscription - Параметр, указывающий на то, что в поле должна быть кнопка подтверждения.
 
-mixin input(options)
-  if !options
-    - options = {}
-  
-  if !options.placeholder
-    - options.placeholder = ''
+mixin input(options = {})
+  -
+    var {
+      classes = '',
+      id = false,
+      placeholder = '',
+      value = '',
+      type = 'text',
+      subscription = false,
+      readonly = false,
+      disabled = false,
+    } = options;
 
-  if !options.value
-    - options.value = ''
-  
-  if !options.classes
-    - options.classes = ''
-
-  if !options.type
-    - options.type = 'text'
-
-  if options.subscription
-    - options.classes += ' input_subscription'
+  if subscription
+    - classes += ' input_subscription'
 
   
   label.input.js-input(
-    class = options.classes, 
-    id = options.id ? options.id : false
+    class = classes, 
+    id = id ? id : false
   )
-    if options.label
-      p.input__label #{options.label}
+    if label
+      p.input__label #{label}
     input.input__field.js-input__field(
-      value = options.value, 
-      placeholder = options.placeholder, 
-      type = options.type,
-      name = options.name ? options.name : false,
-      readonly = options.readonly ? "readonly" : false, 
-      disabled = options.disabled ? "disabled" : false, 
+      value = value, 
+      placeholder = placeholder, 
+      type = type,
+      name = name ? name : false,
+      readonly = readonly ? "readonly" : false, 
+      disabled = disabled ? "disabled" : false, 
     )
     
-    if options.subscription
+    if subscription
       button.input__submit(type = 'submit')

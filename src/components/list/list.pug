@@ -4,20 +4,17 @@
   options.items - Массив пуктов списка.
   options.items[0] - Текст.
 
-mixin list(options)
-  if !options
-    - options = {}
-
-  if !options.classes
-    - options.classes = ''
-
-  if !options.items
-    - options.items = []
-
+mixin list(options = {})
+  -
+    const {
+      classes = '',
+      id = false,
+      items = [],
+    } = options;
 
   ul.list(
-    class = options.classes,
-    id = options.id ? options.id : false
+    class = classes,
+    id = id ? id : false
   )
-    each val in options.items
+    each val in items
       li.list__item #{val}

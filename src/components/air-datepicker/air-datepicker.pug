@@ -4,16 +4,16 @@ include ../button/button
   options.classes - Классы блока.
   options.id - ИД блока.
 
-mixin air-datepicker(options)
-  if !options
-    - options = {}
-
-  if !options.classes
-    - options.classes = ''
+mixin air-datepicker(options = {})
+  -
+    const {
+      classes = '',
+      id = false,
+    } = options;
 
   div.air-datepicker.js-air-datepicker(
-    class = options.classes,
-    id = options.id ? options.id : false
+    class = classes,
+    id = id ? id : false
   )
     div.air-datepicker__wrapper.js-air-datepicker__wrapper
     div.air-datepicker__btns

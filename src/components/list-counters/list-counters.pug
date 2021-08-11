@@ -13,38 +13,30 @@ include ../input-number/input-number
   options.arrayCounters[0].value = 0 - Значение поля счетчика.
   options.arrayCounters[0].inputName - Имя поля счетчика.
 
-mixin list-counters(options)
-  if !options
-    - options = {}
+mixin list-counters(options = {})
+  -
+    var {
+      classes = '',
+      id = false,
+      type = 1,
+      textDefault = '',
+      textOne = '',
+      textMany = '',
+      arrayCounters = []
+    } = options;
 
-  if !options.classes
-    - options.classes = ''
-
-  if !options.type
-    - options.type = 1
-
-  if options.type == 2
-    - options.classes += ' list-counters_simple'
-
-  if !options.textDefault
-    - options.textDefault = ''
-
-  if !options.textOne
-    - options.textOne = ''
-
-  if !options.textMany
-    - options.textMany = ''
-
+  if type == 2
+    - classes += ' list-counters_simple'
 
   div.list-counters.js-list-counters(
-    class = options.classes, 
-    id = options.id ? options.id : false
-    data-default-text = options.textDefault, 
-    data-text-one = options.textOne, 
-    data-text-many = options.textMany
+    class = classes,
+    id = id ? id : false,
+    data-default-text = textDefault,
+    data-text-one = textOne,
+    data-text-many = textMany,
   )
-    if options.arrayCounters
-      each item, index in options.arrayCounters
+    if arrayCounters
+      each item, index in arrayCounters
         div.list-counters__counter.js-list-counters__counter
           span.list-counters__counter-label.js-list-counters__counter-label #{item.label}
           +input-number({
@@ -52,7 +44,7 @@ mixin list-counters(options)
             name: item.inputName ? item.inputName : '',
             min: 0
           })
-      if options.type == 1
+      if type == 1
         div.list-counters__btns-result
           div.list-counters__btn-reset.js-list-counters__btn-reset
             +button({text: "Очистить", classes: "button_gray"})

@@ -12,55 +12,46 @@ include ../rate-btn/rate-btn
   options.gallery - Галерея картинок.
   options.gallery[0] - Путь до картинки.
 
-mixin card-product(options)
-  if !options
-    - options = {}
-
-  if !options.classes
-    - options.classes = ''
-
-  if !options.roomNumber
-    - options.roomNumber = ''
-
-  if !options.price
-    - options.price = ''
-
-  if !options.priceTime
-    - options.priceTime = ''
-
-  if !options.countReviews
-    - options.countReviews = '0'
-
-  if !options.rating
-    - options.rating = '0'
-
+mixin card-product(options = {})
+  -
+    const {
+      classes = '',
+      id = false,
+      roomNumber = '',
+      roomType = false,
+      price = '',
+      priceTime = '',
+      countReviews = '0',
+      rating = '0',
+      gallery = false
+    } = options;
 
   div.card-product(
-    class = options.classes,
-    id = options.id ? options.id : false
+    class = classes,
+    id = id ? id : false
   )
-    if options.gallery
+    if gallery
       div.card-product__gallery
         div.card-product__carousel.js-card-product__carousel.owl-carousel
-          each val, index in options.gallery
+          each val, index in gallery
             div.card-product__img-wrapper
               img.card-product__img(src = val, alt = 'фото номера')
     div.card-product__content
       div.card-product__content-top
         div.card-product__content-top-left
           span.card-product__content-top-symbol № 
-          span.card-product__content-top-number #{options.roomNumber}
-          if options.roomType
-            span.card-product__content-top-type  #{options.roomType}
+          span.card-product__content-top-number #{roomNumber}
+          if roomType
+            span.card-product__content-top-type  #{roomType}
         div.card-product__content-top-right
-          span.card-product__content-top-price #{options.price}
-          span.card-product__content-top-price-type  #{options.priceTime}
+          span.card-product__content-top-price #{price}
+          span.card-product__content-top-price-type  #{priceTime}
       div.card-product__content-bottom
         div.card-product__content-bottom-left
           +rate-btn({
-            value: options.rating, 
+            value: rating, 
             disabled: true
           })
         div.card-product__content-bottom-right
-          span.card-product__reviews-count-number #{options.countReviews}
+          span.card-product__reviews-count-number #{countReviews}
           span.card-product__reviews-count-text  Отзывов

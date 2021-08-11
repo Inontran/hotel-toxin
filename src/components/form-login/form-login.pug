@@ -7,16 +7,17 @@ include ../card/card
   options.id - ИД блока.
   options.buttonRegHref - Ссылка кнопки на страницу регистрации.
 
-mixin form-login(options)
-  if !options
-    - options = {}
-
-  if !options.classes
-    - options.classes = ''
+mixin form-login(options = {})
+  -
+    const {
+      classes = '',
+      id = false,
+      buttonRegHref = false,
+    } = options;
 
   div.form-login(
-    class = options.classes,
-    id = options.id ? options.id : false
+    class = classes,
+    id = id ? id : false
   )
     +card({title: "Войти"})
       div.form-login_mb10
@@ -43,5 +44,5 @@ mixin form-login(options)
           +button({
             text: "Создать", 
             classes: "button_outline",
-            href: options.buttonRegHref ? options.buttonRegHref : false
+            href: buttonRegHref ? buttonRegHref : false
           })

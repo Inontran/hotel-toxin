@@ -8,42 +8,33 @@
   options.val2 = options.max - Второе значение слайдера, если слайдер работает в режиме диапозона.
   options.textBottom - Дополнительный текст под слайдером.
 
-mixin slider-range(options)
-  if !options
-    - options = {}
+mixin slider-range(options = {})
+  -
+    const {
+      classes = '',
+      id = false,
+      text = false,
+      label = '',
+      min = 0,
+      max = 100,
+      val1 = min,
+      val2 = max,
+      textBottom = false,
+    } = options;
 
-  if !options.classes
-    - options.classes = ''
-
-  if !options.label
-    - options.label = ''
-
-  if !options.min
-    - options.min = 0
-
-  if !options.max
-    - options.max = 100
-
-  if !options.val1
-    - options.val1 = options.min
-
-  if !options.val2
-    - options.val2 = options.max
-
-  
   div.slider-range(
-    class = options.classes,
-    id = options.id ? options.id : false
+    class = classes,
+    id = id ? id : false
   )
     div.slider-range__top
-      span.slider-range__label #{options.label}
+      span.slider-range__label #{label}
       input.slider-range__input(type="text")
     div.slider-range__slider(
-      data-min = options.min, 
-      data-max = options.max, 
-      data-val1 = options.val1, 
-      data-val2 = options.val2
+      data-min = min,
+      data-max = max, 
+      data-val1 = val1, 
+      data-val2 = val2
     )
 
-    if options.textBottom
-      p.slider-range__text-bottom #{options.textBottom}
+    if textBottom
+      p.slider-range__text-bottom #{textBottom}

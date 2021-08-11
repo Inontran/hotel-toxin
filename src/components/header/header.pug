@@ -16,32 +16,29 @@ include ../dropdown/dropdown
   options.username - Имя пользователя. Если этот параметр не указан, 
     то вместо имени будут находиться кнопки входа и регастрации.
 
-mixin header(options)
-  if !options
-    - options = {}
-
-  if !options.classes
-    - options.classes = ''
-
-  if !options.menuItems
-    - options.menuItems = []
-
-  if !options.buttonLoginText
-    - options.buttonLoginText = 'Login'
-  
-  if !options.buttonRegText
-    - options.buttonRegText = 'Register'
+mixin header(options = {})
+  -
+    const {
+      classes = '',
+      id = false,
+      username = false, 
+      buttonLoginText = 'Login',
+      buttonLoginHref = false,
+      buttonRegText = 'Register',
+      buttonRegHref = false,
+      menuItems = [],
+    } = options;
 
 
   header.header(
-    class = options.classes,
-    id = options.id ? options.id : false
+    class = classes,
+    id = id ? id : false
   )
     div.header__container
       div.header__logo
         +logo()
       nav.header__main-menu
-        each val, index in options.menuItems
+        each val, index in menuItems
           li.header__main-menu-item
             if val.subitems
               +dropdown({
@@ -52,28 +49,28 @@ mixin header(options)
                 nav.header__main-submenu
                   each val2, index2 in val.subitems
                     li.header__main-submenu-item
-                      a.header__main-menu-link(href = val2.href)= val2.name
+                      a.header__main-menu-link(href = val2.href) #{val2.name}
             else
-              a.header__main-menu-link(href = val.href)= val.name
+              a.header__main-menu-link(href = val.href) #{val.name}
               
 
-      a.header__btn-icon.header__btn-icon_profile(href = options.buttonLoginHref ? options.buttonLoginHref : false, title = 'Профиль')
+      a.header__btn-icon.header__btn-icon_profile(href = buttonLoginHref ? buttonLoginHref : false, title = 'Профиль')
         img(src = require('@/components/header/img/user_icon.svg').default, alt = 'Профиль', role = 'presentation')
       button.header__btn-icon.header__btn-icon_menu.js-header__btn_show-curtain(title = 'Меню')
         img(src = require('@/components/header/img/menu_icon.svg').default, alt = 'Меню', role = 'presentation')
 
-      if !options.username
+      if !username
         div.header__btn-login
           +button({
-            text: options.buttonLoginText, 
+            text: buttonLoginText, 
             classes: 'button_outline button_size-md',
-            href: options.buttonLoginHref ? options.buttonLoginHref : false
+            href: buttonLoginHref ? buttonLoginHref : false
           })
         div.header__btn-signup
           +button({
-            text: options.buttonRegText, 
+            text: buttonRegText, 
             classes: 'button_fill button_size-md',
-            href: options.buttonRegHref ? options.buttonRegHref : false
+            href: buttonRegHref ? buttonRegHref : false
           })
       else
-        a.header__username #{options.username}
+        a.header__username #{username}

@@ -4,30 +4,25 @@
   options.value - Значение поля и количество лайков.
   options.isLike - Есть лайк или нет.
 
-mixin like-btn(options)
-  if !options
-    - options = {}
+mixin like-btn(options = {})
+  -
+    const {
+      classes = '',
+      id = false,
+      value = '',
+      name = 'like',
+      isLike = false,
+    } = options;
 
-  if !options.classes
-    - options.classes = ''
-
-  if !options.value
-    - options.value = ''
-
-  if !options.name
-    - options.name = 'like'
-
-  
   label.like-btn(
-    class = options.classes,
-    id = options.id ? options.id : false
+    class = classes,
+    id = id ? id : false
   )
     input.like-btn__check(
       type = 'checkbox', 
-      value = options.value, 
-      name = options.name, 
-      checked = options.isLike ? "checked" : false
+      value = value, 
+      name = name, 
+      checked = isLike ? "checked" : false
     )
-
     span.like-btn__view
-      span.like-btn__count #{options.value}
+      span.like-btn__count #{value}

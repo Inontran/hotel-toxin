@@ -6,29 +6,28 @@
   options.value - Значение input чекбокса (атрибут value).
   options.checked - Выбрана ли кнопка или нет (атрибут checked).
 
-mixin radio(options)
-  if !options
-    - options = {}
-  
-  if !options.classes
-    - options.classes = ''
-
-  if !options.text
-    - options.text = ''
-
-  if !options.name
-    - options.name = ''
+mixin radio(options = {})
+  -
+    const {
+      classes = '',
+      id = false,
+      text = false,
+      name = '',
+      value = false,
+      checked = false,
+    } = options;
 
   label.radio(
     class = classes, 
-    id = options.id ? options.id : false
+    id = id ? id : false
   )
     input.radio__input(
       type = "radio", 
-      name = options.name, 
-      checked = options.checked ? "checked" : false
+      name = name, 
+      checked = checked ? "checked" : false,
+      value = value ? value : false,
     )
-    
+
     span.radio__view
-    if options.text
-      p.radio__text #{options.text}
+    if text
+      p.radio__text #{text}

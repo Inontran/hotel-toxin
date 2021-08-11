@@ -2,30 +2,34 @@
   options.classes - Классы блока.
   options.id - ИД блока.
   options.text - текст кнопки.
-  options.isSubmit - задает тип кнопки Submit (bool)
+  options.isSubmit - задает тип кнопки "submit", иначе "button".
   options.tabindex - задает tabindex
   options.href - Ссылка кнопки. Если есть эта опция, то тег будет "а", иначе "button".
 
-mixin button(options)
-  if !options
-    - options = {}
+mixin button(options = {})
+  -
+    const {
+      classes = '',
+      id = false,
+      href = false,
+      tabindex = false,
+      isSubmit = false,
+      text = 'Button',
+    } = options;
 
-  if !options.classes
-    - options.classes = ''
-  
-  if options.href
+  if href
     a.button.js-button(
-      class = options.classes,
-      id = options.id ? options.id : false
-      href = options.href,
-      tabindex = options.tabindex || false
+      class = classes,
+      id = id ? id : false
+      href = href,
+      tabindex = tabindex ? tabindex : false
     )
-      span.button__text= options.text || 'Button'
+      span.button__text #{text}
   else
     button.button.js-button(
-      class = options.classes,
-      id = options.id ? options.id : false
-      type = options.isSubmit ? 'submit' : false,
-      tabindex = options.tabindex || false
+      class = classes,
+      id = id ? id : false
+      type = isSubmit ? 'submit' : 'button',
+      tabindex = tabindex ? tabindex : false
     )
-      span.button__text= options.text || 'Button'
+      span.button__text #{text}

@@ -6,32 +6,29 @@
   options.type - Тип input (атрибут type). Может принимать значения "checkbox" или "radio".
   options.checked = false - Включен или нет (атрибут checked).
 
-mixin toggle(options)
-  if !options
-    - options = {}
-
-  if !options.classes
-    - options.classes = ''
-  
-  if !options.text
-    - options.text = ''
-
-  if !options.name
-    - options.name = ''
-
-  if !options.type
-    - options.type = 'checkbox'
+mixin toggle(options = {})
+  -
+    const {
+      classes = '',
+      id = false,
+      text = false,
+      name = '',
+      value = '',
+      checked = false,
+      type = 'checkbox'
+    } = options;
 
   label.toggle(
     class = classes,
-    id = options.id ? options.id : false
+    id = id ? id : false
   )
     input.toggle__input(
-      type = options.type, 
-      name = options.name, 
-      checked = options.checked ? "checked" : false
+      type = type, 
+      name = name, 
+      checked = checked ? "checked" : false,
+      value = value ? value : false,
     )
     
     span.toggle__view
-    if options.text
-      p.toggle__text #{options.text}
+    if text
+      p.toggle__text #{text}

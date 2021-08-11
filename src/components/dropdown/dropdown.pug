@@ -12,47 +12,48 @@ include ../list-counters/list-counters
   options.inputParams2 - Параметры второго поля ввода.
 
 
-mixin dropdown(options)
-  if !options
-    - options = {}
+mixin dropdown(options = {})
+  -
+    var {
+      classes = '',
+      id = false,
+      text = '',
+      group = false,
+      inputParams = false,
+      inputParams2 = false,
+    } = options;
 
-  if !options.classes
-    - options.classes = ''
-
-  if !options.group
-    - options.group = ''
-
-  if options.inputParams
-    if !options.inputParams.classes
-      - options.inputParams.classes = 'input_in-dropdown'
+  if inputParams
+    if !inputParams.classes
+      - inputParams.classes = 'input_in-dropdown'
     else
-      - options.inputParams.classes += ' input_in-dropdown'
+      - inputParams.classes += ' input_in-dropdown'
 
 
-  if options.inputParams2
-    - options.classes += ' dropdown_dual-date'
+  if inputParams2
+    - classes += ' dropdown_dual-date'
 
 
   div.dropdown.js-dropdown(
-    class = options.classes, 
-    id = options.id ? options.id : false
-    data-group = options.group
+    class = classes, 
+    id = id ? id : false
+    data-group = group ? group : false
   )
-    if options.inputParams2
+    if inputParams2
       div.dropdown__input-dates-wrapper
         div.dropdown__input-wrapper.js-dropdown__input-wrapper
-          +input(options.inputParams)
+          +input(inputParams)
           button.dropdown__arrow(type = 'button')
         div.dropdown__input-wrapper.js-dropdown__input-wrapper
-          +input(options.inputParams2)
+          +input(inputParams2)
           button.dropdown__arrow(type = 'button')
-    else if options.inputParams
+    else if inputParams
       div.dropdown__input-wrapper.js-dropdown__input-wrapper
-        +input(options.inputParams)
+        +input(inputParams)
         button.dropdown__arrow(type = 'button')
     else
       button.dropdown__btn.js-dropdown__btn(type = 'button')
-        span.dropdown__btn-text #{options.text}
+        span.dropdown__btn-text #{text}
         span.dropdown__btn-arrow
 
     div.dropdown__content

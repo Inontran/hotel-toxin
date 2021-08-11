@@ -9,7 +9,11 @@ block title
   | Номера Toxin Hotel
 
 block content
-  - data = htmlWebpackPlugin.options.getData()
+  -
+    const {
+      cards = false,
+      dataProductsPage = {},
+    } = htmlWebpackPlugin.options.getData();
 
   div.products
     +header({
@@ -31,16 +35,16 @@ block content
     div.products__container
       div.products__grid
         div.products__left-column.js-products__left-column
-          +filter-products(data.dataHeader)
+          +filter-products(dataProductsPage)
         div.products__center-column
           h1.products__block-wrapper.products_mb20 Номера, которые мы для вас подобрали
           div.products__block-wrapper.products_mb20
             +button({
-              classes: 'button_fill button_size-md products_filter-show products_show-filter',
+              classes: 'button_fill button_size-md js-products_show-filter',
               text: 'Показать фильтр'
             })
           div.products__cards-container.products_mb23
-            each dataCard in data.cards
+            each dataCard in cards
               div.products__card-wrapper.products_mb20
                 +card-product({
                   gallery: dataCard.gallery ? dataCard.gallery : false,

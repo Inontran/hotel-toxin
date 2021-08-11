@@ -23,5 +23,5 @@ $(() => {
     $('.js-filter-products').addClass('filter-products_mob-show');
   }
 
-  $body.on('click', '.products_show-filter', handlerClickShowFilter);
+  $body.on('click', '.js-products_show-filter', handlerClickShowFilter);
 });

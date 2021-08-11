@@ -16,27 +16,33 @@ include ../card/card
   options.listService[0].tooltip - Подсказка.
   options.totalPrice - Итоговая стоимость.
 
-mixin form-booking(options)
-  if !options
-    - options = {}
-
-  if !options.classes
-    - options.classes = ''
+mixin form-booking(options = {})
+  -
+    const {
+      classes = '',
+      id = false,
+      roomNumber = '',
+      roomType = false,
+      price = '',
+      priceTime = '',
+      listService = false,
+      totalPrice = false,
+    } = options;
 
   div.form-booking(
-    class = options.classes,
-    id = options.id ? options.id : false
+    class = classes,
+    id = id ? id : false
   )
     +card()
       div.form-booking__title
         div.form-booking__title-left
           span.form-booking__title-symbol № 
-          span.form-booking__title-number #{options.roomNumber}
-          if options.roomType
-            span.form-booking__title-type  #{options.roomType}
+          span.form-booking__title-number #{roomNumber}
+          if roomType
+            span.form-booking__title-type  #{roomType}
         div.form-booking__title-right
-          span.form-booking__title-price #{options.price}
-          span.form-booking__title-price-type  #{options.priceTime}
+          span.form-booking__title-price #{price}
+          span.form-booking__title-price-type  #{priceTime}
 
       div.form-booking__block-wrapper.form-booking_mb20
         +dropdown({
@@ -78,10 +84,10 @@ mixin form-booking(options)
             ]
           })
 
-      if options.listService
+      if listService
         div.form-booking__block-wrapper.form-booking_mb20
           table.form-booking__table
-            each item, index in options.listService
+            each item, index in listService
               tr
                 td.form-booking__table-cell #{item.name}
                 td.form-booking__table-cell.form-booking__table_px5 
@@ -89,10 +95,10 @@ mixin form-booking(options)
                     div.form-booking__tooltip(title = item.tooltip)
                 td.form-booking__table-cell.form-booking__table-cell_price #{item.price}
 
-      if options.totalPrice
+      if totalPrice
         p.form-booking__bottom.form-booking_mb20
           span.form-booking__bottom-word Итого
           span.form-booking__bottom-points
-          span.form-booking__bottom-price #{options.totalPrice}
+          span.form-booking__bottom-price #{totalPrice}
 
       +button({text: "Забронировать", classes: "button_fill button_arrow-left button_wide"})

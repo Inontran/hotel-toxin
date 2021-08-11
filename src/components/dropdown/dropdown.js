@@ -17,7 +17,7 @@ $(() => {
 
     const dropdownGroup = $dropdown.attr('data-group');
 
-    if (dropdownGroup !== '' && dropdownGroup !== 'undefined') {
+    if (dropdownGroup !== '' && dropdownGroup !== undefined) {
       const selector = '.js-dropdown';
 
       $body.find(`${selector}[data-group="${dropdownGroup}"]`).each(function () {
@@ -35,7 +35,7 @@ $(() => {
 
   $body.on('click', '.js-dropdown .js-dropdown__input-wrapper, .js-dropdown .js-dropdown__btn', (event) => {
     event.preventDefault();
-    const $dropdown = $(this).closest('.js-dropdown');
+    const $dropdown = $(event.currentTarget).closest('.js-dropdown');
     toggleDropdown($dropdown);
   });
 });

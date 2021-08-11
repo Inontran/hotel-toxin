@@ -9,6 +9,11 @@ block title
 block content
   - data = htmlWebpackPlugin.options.getData()
   - data.firstDisplayOptions.bgUrl = require('@/pages/login/img/' + data.firstDisplayOptions.bgUrl).default
+  -
+    const {
+      formOptions = {},
+      firstDisplayOptions = {},
+    } = data;
 
   +curtain({
     menuItems: dataHeader.menuItems, 
@@ -18,6 +23,6 @@ block content
     buttonRegHref: dataHeader.regHref
   })
 
-  +first-display(data.firstDisplayOptions)
+  +first-display(firstDisplayOptions)
     div.first-display__form-wrapper
-      +form-login(data.formOptions)
+      +form-login(formOptions)
