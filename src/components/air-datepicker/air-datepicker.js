@@ -11,7 +11,6 @@ $(() => {
     $(this).datepicker({
       range: true,
       inline: true,
-      // clearButton: true,
       navTitles: {
         days: 'MM yyyy',
       },
