@@ -25,6 +25,12 @@
     margin-bottom: 31px;
   }
 
+  .filter-products__close{
+    @media (min-width: $md){
+      display: none;
+    }
+  }
+
   &.filter-products_mob-md {
     @media (max-width: $md) {
       position: fixed;

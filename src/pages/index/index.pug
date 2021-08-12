@@ -13,6 +13,13 @@ block content
       textBottom = false,
     } = htmlWebpackPlugin.options.getData();
 
+  +header({
+    menuItems: dataHeader.menuItems, 
+    buttonLoginText: dataHeader.loginText,
+    buttonLoginHref: dataHeader.loginHref,
+    buttonRegText: dataHeader.regText,
+    buttonRegHref: dataHeader.regHref
+  })
   +curtain({
     menuItems: dataHeader.menuItems,
     buttonLoginText: dataHeader.loginText,
@@ -21,8 +28,9 @@ block content
     buttonRegHref: dataHeader.regHref
   })
 
-  +first-display(data)
-    div.first-display__form-wrapper
-      +form-fast-select(formOptions)
-    if textBottom
-      div.first-display__text-bottom #{textBottom}
+  main.page__main
+    +first-display(data)
+      div.first-display__form-wrapper
+        +form-fast-select(formOptions)
+      if textBottom
+        div.first-display__text-bottom #{textBottom}

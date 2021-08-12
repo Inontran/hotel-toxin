@@ -15,6 +15,14 @@ block content
       firstDisplayOptions = {},
     } = data;
 
+  +header({
+    menuItems: dataHeader.menuItems, 
+    buttonLoginText: dataHeader.loginText,
+    buttonLoginHref: dataHeader.loginHref,
+    buttonRegText: dataHeader.regText,
+    buttonRegHref: dataHeader.regHref
+  })
+
   +curtain({
     menuItems: dataHeader.menuItems, 
     buttonLoginText: dataHeader.loginText,
@@ -23,6 +31,7 @@ block content
     buttonRegHref: dataHeader.regHref
   })
 
-  +first-display(firstDisplayOptions)
-    div.first-display__form-wrapper
-      +form-login(formOptions)
+  main.page__main
+    +first-display(firstDisplayOptions)
+      div.first-display__form-wrapper
+        +form-login(formOptions)

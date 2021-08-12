@@ -13,18 +13,10 @@ mixin first-display(options = {})
       bgUrl = false,
     } = options;
 
-  div.first-display(
+  section.first-display.js-first-display(
     class = classes, 
     id = id ? id : false,
     style = bgUrl ? 'background-image: url(' + bgUrl + ')' : false,
   )
-    +header({
-      menuItems: dataHeader.menuItems, 
-      buttonLoginText: dataHeader.loginText,
-      buttonLoginHref: dataHeader.loginHref,
-      buttonRegText: dataHeader.regText,
-      buttonRegHref: dataHeader.regHref
-    })
-
     div.first-display__content-wrapper
       block

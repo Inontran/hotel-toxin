@@ -32,89 +32,90 @@ block content
       totalPrice = false,
     } = htmlWebpackPlugin.options.getData();
 
-  div.product
-    +header({
-      menuItems: dataHeader.menuItems, 
-      buttonLoginText: dataHeader.loginText,
-      buttonLoginHref: dataHeader.loginHref,
-      buttonRegText: dataHeader.regText,
-      buttonRegHref: dataHeader.regHref
-    })
-    +curtain({
-      menuItems: dataHeader.menuItems, 
-      buttonLoginText: dataHeader.loginText,
-      buttonLoginHref: dataHeader.loginHref,
-      buttonRegText: dataHeader.regText,
-      buttonRegHref: dataHeader.regHref
-    })
+  +header({
+    menuItems: dataHeader.menuItems, 
+    buttonLoginText: dataHeader.loginText,
+    buttonLoginHref: dataHeader.loginHref,
+    buttonRegText: dataHeader.regText,
+    buttonRegHref: dataHeader.regHref
+  })
+  +curtain({
+    menuItems: dataHeader.menuItems, 
+    buttonLoginText: dataHeader.loginText,
+    buttonLoginHref: dataHeader.loginHref,
+    buttonRegText: dataHeader.regText,
+    buttonRegHref: dataHeader.regHref
+  })
 
-    if gallery
-      div.product__gallery
-        if !gallery[0]
-          - gallery[0] = ''
-        if !gallery[1]
-          - gallery[1] = ''
-        if !gallery[2]
-          - gallery[2] = ''
-        div.product__gallery-item.product__gallery-item_first(style="background-image: url(" + gallery[0] + ");")
-        div.product__gallery-item.product__gallery-item_second(style="background-image: url(" + gallery[1] + ");")
-        div.product__gallery-item.product__gallery-item_third(style="background-image: url(" + gallery[2] + ");")
+  main.page__main
+    div.product
+      if gallery
+        section.product__gallery
+          if !gallery[0]
+            - gallery[0] = ''
+          if !gallery[1]
+            - gallery[1] = ''
+          if !gallery[2]
+            - gallery[2] = ''
+          div.product__gallery-item.product__gallery-item_first(style="background-image: url(" + gallery[0] + ");")
+          div.product__gallery-item.product__gallery-item_second(style="background-image: url(" + gallery[1] + ");")
+          div.product__gallery-item.product__gallery-item_third(style="background-image: url(" + gallery[2] + ");")
 
-      div.product__carousel.js-product__carousel.owl-carousel
-        if !gallery[0]
-          - gallery[0] = ''
-        if !gallery[1]
-          - gallery[1] = ''
-        if !gallery[2]
-          - gallery[2] = ''
-        div.product__carousel-item(style="background-image: url(" + gallery[0] + ");")
-        div.product__carousel-item(style="background-image: url(" + gallery[1] + ");")
-        div.product__carousel-item(style="background-image: url(" + gallery[2] + ");")
+        section.product__carousel.js-product__carousel.owl-carousel
+          if !gallery[0]
+            - gallery[0] = ''
+          if !gallery[1]
+            - gallery[1] = ''
+          if !gallery[2]
+            - gallery[2] = ''
+          div.product__carousel-item(style="background-image: url(" + gallery[0] + ");")
+          div.product__carousel-item(style="background-image: url(" + gallery[1] + ");")
+          div.product__carousel-item(style="background-image: url(" + gallery[2] + ");")
 
-    div.product__body
-      div.product__body-row
-        div.product__body-col.product__body-col-1
-          div.product__grid-3
-            div.product__grid-3-col.product__grid-3-col-1.product_mb40
-              if optionsInfographics
-                h2.product__title Сведения о номере
-                +infographics(optionsInfographics)
-            if chartCountAll
-              div.product__grid-3-col.product__grid-3-col-2.product_mb40
-                h2.product__title Впечатления от номера
-                +chart({
-                  chartCountAll: chartCountAll,
-                  chartNumAwesome: chartNumAwesome,
-                  chartNumGood: chartNumGood,
-                  chartNumNotbad: chartNumNotbad,
-                  chartNumDisappointed: chartNumDisappointed,
-                })
-          
-          if reviews
-            div.product_mb40
-              h2.product__title Отзывы посетителей номера
-              each val, index in reviews
-                div.product_mb20
-                  +review(val)
+      div.product__body
+        div.product__body-row
+          div.product__body-col.product__body-col-1
+            div.product__grid-3
+              section.product__grid-3-col.product__grid-3-col-1.product_mb40
+                if optionsInfographics
+                  h2.product__title Сведения о номере
+                  +infographics(optionsInfographics)
+              if chartCountAll
+                section.product__grid-3-col.product__grid-3-col-2.product_mb40
+                  h2.product__title Впечатления от номера
+                  +chart({
+                    chartCountAll: chartCountAll,
+                    chartNumAwesome: chartNumAwesome,
+                    chartNumGood: chartNumGood,
+                    chartNumNotbad: chartNumNotbad,
+                    chartNumDisappointed: chartNumDisappointed,
+                  })
+            
+            if reviews
+              section.product__section-reviews.product_mb40
+                h2.product__title Отзывы посетителей номера
+                each val, index in reviews
+                  div.product_mb20
+                    +review(val)
 
-          div.product__grid-3
-            div.product__grid-3-col.product__grid-3-col-1.product_mb40
-              if rulesTitle
-                h2.product__title #{rulesTitle}
-              if optionsRules
-                +list(optionsRules)
-            div.product__grid-3-col.product__grid-3-col-2.product_mb40
-              if cancelTitle
-                h2.product__title #{cancelTitle}
-              if cancelText
-                p.product__text #{cancelText}
+            div.product__grid-3
+              section.product__grid-3-col.product__grid-3-col-1.product_mb40
+                if rulesTitle
+                  h2.product__title #{rulesTitle}
+                if optionsRules
+                  +list(optionsRules)
+              section.product__grid-3-col.product__grid-3-col-2.product_mb40
+                if cancelTitle
+                  h2.product__title #{cancelTitle}
+                if cancelText
+                  p.product__text #{cancelText}
 
-        div.product__body-col.product__body-col-2
-          +form-booking({
-            roomNumber: roomNumber,
-            roomType: roomType,
-            price: price,
-            priceTime: priceTime,
-            listService: listService,
-            totalPrice: totalPrice
-          })
+          div.product__body-col.product__body-col-2
+            +form-booking({
+              roomNumber: roomNumber,
+              roomType: roomType,
+              price: price,
+              priceTime: priceTime,
+              listService: listService,
+              totalPrice: totalPrice
+            })

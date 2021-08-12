@@ -41,10 +41,10 @@ mixin filter-products(options = {})
       collapseFeatureCheckboxes = []
     } = options;
 
-  div.filter-products.js-filter-products(
+  aside.filter-products.js-filter-products(
     class = classes,
-    id = id ? id : false
-    class = isMobile ? "filter-products_mob-md" : false
+    id = id ? id : false,
+    class = isMobile ? "filter-products_mob-md" : false,
   )
     div.filter-products__content-wrapper
       if isMobile

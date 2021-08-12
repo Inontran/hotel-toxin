@@ -2,19 +2,24 @@
 
 .page {
   min-height: 100vh;
-  display: flex;
-  flex-direction: column;
   transition: transform 0.3s;
   transform: translateX(0);
 
-  &__content-wrapper {
+  .page__content-wrapper {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+    width: 100%;
+  }
+
+  .page__main{
     overflow: hidden;
     width: 100%;
     flex-grow: 1;
-    transition: transform 0.3s;
   }
 
-  &_show-curtain {
+  &.page_show-curtain {
     @media (max-width: $sm) {
       transform: translateX(-272px);
     }

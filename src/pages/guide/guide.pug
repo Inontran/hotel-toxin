@@ -133,288 +133,288 @@ block content
     }
 
 
-
-  div.guide-page
-    div.guide-page__container.guide-page_limit-width
-      div.guide-page__col
-        div.guide-page__color-item
-          div.guide-page__color-div.guide-page__color-div_dark
-          div
-            h2 Dark Shade 100%
-            p.guide-page__color-text #1F2041
-        div.guide-page__color-item
-          div.guide-page__color-div.guide-page__color-div_dark75
-          div
-            h2 Dark Shade 75%
-            p.guide-page__color-text #1F2041
-        div.guide-page__color-item
-          div.guide-page__color-div.guide-page__color-div_dark50
-          div
-            h2 Dark Shade 50%
-            p.guide-page__color-text #1F2041
-        div.guide-page__color-item
-          div.guide-page__color-div.guide-page__color-div_dark25
-          div
-            h2 Dark Shade 25%
-            p.guide-page__color-text #1F2041
-        div.guide-page__color-item
-          div.guide-page__color-div.guide-page__color-div_dark5
-          div
-            h2 Dark Shade 5%
-            p.guide-page__color-text #1F2041
-        div.guide-page__color-item
-          div.guide-page__color-div.guide-page__color-div_purple
-          div
-            h2 Purple
-            p.guide-page__color-text #BC9CFF
-        div.guide-page__color-item
-          div.guide-page__color-div.guide-page__color-div_green
-          div
-            h2 Green
-            p.guide-page__color-text #6FCF97
-
-
-      div.guide-page__col
-        h3 Chart Doughnut
-        div.guide-page__mb16
-        +chart({
-          chartCountAll: 260,
-          chartNumAwesome: 130,
-          chartNumGood: 65,
-          chartNumNotbad: 65,
-          chartNumDisappointed: 0,
-        })
-
-      div.guide-page__col
-        h1 This one is the sub-section or widget title
-        div.guide-page__mb20
-        h2 Next one is the item title inside widgets
-        div.guide-page__mb20
-        h3 This is a label or CTA text
-        div.guide-page__mb20
-        p This is the body text which is used for most of the design, like paragraphs, lists, etc.
+  main.page__main
+    div.guide-page
+      div.guide-page__container.guide-page_limit-width
+        div.guide-page__col
+          div.guide-page__color-item
+            div.guide-page__color-div.guide-page__color-div_dark
+            div
+              h2 Dark Shade 100%
+              p.guide-page__color-text #1F2041
+          div.guide-page__color-item
+            div.guide-page__color-div.guide-page__color-div_dark75
+            div
+              h2 Dark Shade 75%
+              p.guide-page__color-text #1F2041
+          div.guide-page__color-item
+            div.guide-page__color-div.guide-page__color-div_dark50
+            div
+              h2 Dark Shade 50%
+              p.guide-page__color-text #1F2041
+          div.guide-page__color-item
+            div.guide-page__color-div.guide-page__color-div_dark25
+            div
+              h2 Dark Shade 25%
+              p.guide-page__color-text #1F2041
+          div.guide-page__color-item
+            div.guide-page__color-div.guide-page__color-div_dark5
+            div
+              h2 Dark Shade 5%
+              p.guide-page__color-text #1F2041
+          div.guide-page__color-item
+            div.guide-page__color-div.guide-page__color-div_purple
+            div
+              h2 Purple
+              p.guide-page__color-text #BC9CFF
+          div.guide-page__color-item
+            div.guide-page__color-div.guide-page__color-div_green
+            div
+              h2 Green
+              p.guide-page__color-text #6FCF97
 
 
-      div.guide-page__col
-        +input({label: "Text Field", placeholder: "Email"})
-        div.guide-page__mb20
-        +input({label: "Subscription Text Field", placeholder: "Email", subscription: true, classes: "input_mask-email"})
-        div.guide-page__mb20
-        +input({label: "Masked text field",classes: "input_mask-date", placeholder: "ДД.ММ.ГГГГ" })
-
-
-      div.guide-page__col
-        h3 Checkbox buttons
-        div.guide-page__mb16
-        +checkbox({text: "Можно курить", checked: true})
-        div.guide-page__mb10
-        +checkbox({text: "Можно пригласить гостей (до 10 человек)"})
-        div.guide-page__mb40
-
-        h3 Radio Buttons
-        div.guide-page__mb16
-        +radio({id: "test4", text: "Мужчина", name: "gender", checked: true})
-        div.guide-page__mb10
-        +radio({id: "test5", text: "Женщина", name: "gender"})
-        div.guide-page__mb40
-
-        h3 Toggle
-        div.guide-page__mb16
-        +toggle({id: "test6", text: "Получать спецпредложения", name: "get", checked: true})
-        div.guide-page__mb40
-
-        h3 Like Button
-        div.guide-page__mb16
-        +like-btn({value: 2})
-        +like-btn({value: 12, isLike: true})
-        div.guide-page__mb40
-
-        h3 Rate Button
-        div.guide-page__mb16
-        +rate-btn({value: 4})
-
-
-      div.guide-page__col
-        +slider-range({label: "Range slider", min: 0, max: 15000, val1: 5000, val2: 10000})
-        div.guide-page__mb40
-
-        h3 Buttons
-        div.guide-page__mb16
-        
-        div.guide-page__mb20
-          +button({text: "click me", classes: "button_fill"})
-          +button({text: "click me", classes: "button_fill button_size-md"})
-        
-        div.guide-page__mb20
-          +button({text: "click me", classes: "button_outline"})
-          +button({text: "click me", classes: "button_outline button_size-md"})
-
-        +button({text: "click me"})
-        div.guide-page__mb20
-        +button({text: "Очистить", classes: "button_gray"})
-        div.guide-page__mb20
-        +button({text: "Перейти к оплате", classes: "button_fill button_arrow-left button_wide"})
-        div.guide-page__mb40
-
-        h3 Pagination
-        div.guide-page__mb16
-        +pagination({page: 1, perpage: 12, elements: 175, text: "вариантов аренды"})
-
-
-      div.guide-page__col
-        +dropdown({
-          inputParams:{
-            label: "Dropdown",
-            readonly: true
-          },
-          inputParams:{
-            value: "Сколько гостей"
-          }
-        })
-          +list-counters({
-            textDefault: "Сколько гостей",
-            textOne: " гость",
-            textMany: " гостей",
-            arrayCounters: [
-              {label: "Взрослые", inputName: ""},
-              {label: "Дети", inputName: ""},
-              {label: "Младенцы", inputName: ""}
-            ]
+        div.guide-page__col
+          h3 Chart Doughnut
+          div.guide-page__mb16
+          +chart({
+            chartCountAll: 260,
+            chartNumAwesome: 130,
+            chartNumGood: 65,
+            chartNumNotbad: 65,
+            chartNumDisappointed: 0,
           })
 
-        div.guide-page__mb20
-        +dropdown({
-          classes: 'dropdown_simple',
-          inputParams:{
-            label: "Dropdown",
-            readonly: true
-          },
-        })
-          +list-counters({
-            type: 2,
-            arrayCounters: [
-              {label: "Спальни"},
-              {label: "Кровати"},
-              {label: "Ванные комнаты"}
-            ]
+        div.guide-page__col
+          h1 This one is the sub-section or widget title
+          div.guide-page__mb20
+          h2 Next one is the item title inside widgets
+          div.guide-page__mb20
+          h3 This is a label or CTA text
+          div.guide-page__mb20
+          p This is the body text which is used for most of the design, like paragraphs, lists, etc.
+
+
+        div.guide-page__col
+          +input({label: "Text Field", placeholder: "Email"})
+          div.guide-page__mb20
+          +input({label: "Subscription Text Field", placeholder: "Email", subscription: true, classes: "input_mask-email"})
+          div.guide-page__mb20
+          +input({label: "Masked text field",classes: "input_mask-date", placeholder: "ДД.ММ.ГГГГ" })
+
+
+        div.guide-page__col
+          h3 Checkbox buttons
+          div.guide-page__mb16
+          +checkbox({text: "Можно курить", checked: true})
+          div.guide-page__mb10
+          +checkbox({text: "Можно пригласить гостей (до 10 человек)"})
+          div.guide-page__mb40
+
+          h3 Radio Buttons
+          div.guide-page__mb16
+          +radio({id: "test4", text: "Мужчина", name: "gender", checked: true})
+          div.guide-page__mb10
+          +radio({id: "test5", text: "Женщина", name: "gender"})
+          div.guide-page__mb40
+
+          h3 Toggle
+          div.guide-page__mb16
+          +toggle({id: "test6", text: "Получать спецпредложения", name: "get", checked: true})
+          div.guide-page__mb40
+
+          h3 Like Button
+          div.guide-page__mb16
+          +like-btn({value: 2})
+          +like-btn({value: 12, isLike: true})
+          div.guide-page__mb40
+
+          h3 Rate Button
+          div.guide-page__mb16
+          +rate-btn({value: 4})
+
+
+        div.guide-page__col
+          +slider-range({label: "Range slider", min: 0, max: 15000, val1: 5000, val2: 10000})
+          div.guide-page__mb40
+
+          h3 Buttons
+          div.guide-page__mb16
+          
+          div.guide-page__mb20
+            +button({text: "click me", classes: "button_fill"})
+            +button({text: "click me", classes: "button_fill button_size-md"})
+          
+          div.guide-page__mb20
+            +button({text: "click me", classes: "button_outline"})
+            +button({text: "click me", classes: "button_outline button_size-md"})
+
+          +button({text: "click me"})
+          div.guide-page__mb20
+          +button({text: "Очистить", classes: "button_gray"})
+          div.guide-page__mb20
+          +button({text: "Перейти к оплате", classes: "button_fill button_arrow-left button_wide"})
+          div.guide-page__mb40
+
+          h3 Pagination
+          div.guide-page__mb16
+          +pagination({page: 1, perpage: 12, elements: 175, text: "вариантов аренды"})
+
+
+        div.guide-page__col
+          +dropdown({
+            inputParams:{
+              label: "Dropdown",
+              readonly: true
+            },
+            inputParams:{
+              value: "Сколько гостей"
+            }
+          })
+            +list-counters({
+              textDefault: "Сколько гостей",
+              textOne: " гость",
+              textMany: " гостей",
+              arrayCounters: [
+                {label: "Взрослые", inputName: ""},
+                {label: "Дети", inputName: ""},
+                {label: "Младенцы", inputName: ""}
+              ]
+            })
+
+          div.guide-page__mb20
+          +dropdown({
+            classes: 'dropdown_simple',
+            inputParams:{
+              label: "Dropdown",
+              readonly: true
+            },
+          })
+            +list-counters({
+              type: 2,
+              arrayCounters: [
+                {label: "Спальни"},
+                {label: "Кровати"},
+                {label: "Ванные комнаты"}
+              ]
+            })
+
+          div.guide-page__mb40
+        
+          +collapse({text: "expandable checkbox list", group: 'collapse-group-1'})
+            p Lorem ipsum dolor sit amet consectetur adipisicing elit. Error, explicabo. Facilis dolorem deleniti consequuntur, sint enim laborum temporibus, iure nihil suscipit minima sapiente rem dignissimos illum quam delectus itaque molestiae.
+          +collapse({text: "expandable checkbox list", group: 'collapse-group-1', is_open: true})
+            +checkbox({text: "Можно курить"})
+            div.guide-page__mb10
+            +checkbox({text: "Можно курить"})
+            div.guide-page__mb10
+            +checkbox({text: "Можно курить"})
+            div.guide-page__mb10
+            +checkbox({text: "Можно курить"})
+          
+
+
+        div.guide-page__col
+          h3 Rich Checkbox Buttons
+          div.guide-page__mb16
+          +checkbox({text: "Ширина коридоров в номере не менее 91 см.", checked: true, title: "Широкий коридор"})
+          div.guide-page__mb10
+          +checkbox({text: "На 1 этаже вас встретит специалист  и проводит до номера.", title: "Помощник для инвалидов"})
+
+
+        div.guide-page__col
+          h3 Bullet list
+          div.guide-page__mb16
+          +list({items: ["Нельзя с питомцами", "Без вечеринок и мероприятий", "Время прибытия — после 13:00, а выезд до 12:00"]})
+
+
+        div.guide-page__col
+          +infographics({items: [
+            {  src: require("@/components/infographics/img/insert_emoticon.svg").default, 
+              title: "Комфорт", 
+              text: "Шумопоглощающие стены",
+              line: true
+            },
+            {  src: require("@/components/infographics/img/location_city.svg").default, 
+              title: "Удобство", 
+              text: "Окно в каждой из спален",
+              line: true
+            },
+            {  src: require("@/components/infographics/img/whatshot.svg").default, 
+              title: "Уют", 
+              text: "Номер оснащен камином"
+            }
+          ]})
+
+      
+        div.guide-page__col
+          +review({
+            avatar: require("@/components/review/img/photo-example.jpg").default,
+            isLike: true,
+            countLike: 12,
+            username: "Мурад Сарафанов",
+            timeLater: "5 дней назад",
+            textReview: "Великолепный матрас на кровати в основной спальне! А пуфик вообще потрясающий. И стены, действительно, шумоподавляющие. Выкрикивал комплименты повару — никто не жаловался из соседей."
           })
 
-        div.guide-page__mb40
-      
-        +collapse({text: "expandable checkbox list", group: 'collapse-group-1'})
-          p Lorem ipsum dolor sit amet consectetur adipisicing elit. Error, explicabo. Facilis dolorem deleniti consequuntur, sint enim laborum temporibus, iure nihil suscipit minima sapiente rem dignissimos illum quam delectus itaque molestiae.
-        +collapse({text: "expandable checkbox list", group: 'collapse-group-1', is_open: true})
-          +checkbox({text: "Можно курить"})
-          div.guide-page__mb10
-          +checkbox({text: "Можно курить"})
-          div.guide-page__mb10
-          +checkbox({text: "Можно курить"})
-          div.guide-page__mb10
-          +checkbox({text: "Можно курить"})
         
+        div.guide-page__col
+          +dropdown({
+            customContent: true,
+            classes: 'dropdown_dates',
+            inputParams:{
+              label: "Даты пребывания в отеле",
+              readonly: true,
+              classes: 'js-input_result-dates'
+            },
+          })
+            +air-datepicker({classes: 'air-datepicker_inline'})
 
+      div.guide-page__container.guide-page__container_var2.guide-page_limit-width
+        div
+          +form-fast-select()
+          div.guide-page__mb40
+          +form-register()
 
-      div.guide-page__col
-        h3 Rich Checkbox Buttons
-        div.guide-page__mb16
-        +checkbox({text: "Ширина коридоров в номере не менее 91 см.", checked: true, title: "Широкий коридор"})
-        div.guide-page__mb10
-        +checkbox({text: "На 1 этаже вас встретит специалист  и проводит до номера.", title: "Помощник для инвалидов"})
+        div
+          +form-booking({
+            roomNumber: 888,
+            roomType: 'люкс',
+            price: '9 990₽',
+            priceTime: 'в сутки',
+            listService: [
+              {name: '9 990₽ х 4 суток', price: '39 960₽'},
+              {name: 'Сбор за услуги: скидка 2 179₽', price: '0₽', tooltip: 'Подсказка'},
+              {name: 'Сбор за дополнительные услуги', price: '300₽', tooltip: 'Подсказка'}
+            ],
+            totalPrice: '38 081₽'
+          })
 
+          div.guide-page__mb40
+          +form-login()
 
-      div.guide-page__col
-        h3 Bullet list
-        div.guide-page__mb16
-        +list({items: ["Нельзя с питомцами", "Без вечеринок и мероприятий", "Время прибытия — после 13:00, а выезд до 12:00"]})
-
-
-      div.guide-page__col
-        +infographics({items: [
-          {  src: require("@/components/infographics/img/insert_emoticon.svg").default, 
-            title: "Комфорт", 
-            text: "Шумопоглощающие стены",
-            line: true
-          },
-          {  src: require("@/components/infographics/img/location_city.svg").default, 
-            title: "Удобство", 
-            text: "Окно в каждой из спален",
-            line: true
-          },
-          {  src: require("@/components/infographics/img/whatshot.svg").default, 
-            title: "Уют", 
-            text: "Номер оснащен камином"
-          }
-        ]})
-
-    
-      div.guide-page__col
-        +review({
-          avatar: require("@/components/review/img/photo-example.jpg").default,
-          isLike: true,
-          countLike: 12,
-          username: "Мурад Сарафанов",
-          timeLater: "5 дней назад",
-          textReview: "Великолепный матрас на кровати в основной спальне! А пуфик вообще потрясающий. И стены, действительно, шумоподавляющие. Выкрикивал комплименты повару — никто не жаловался из соседей."
-        })
-
-      
-      div.guide-page__col
-        +dropdown({
-          customContent: true,
-          classes: 'dropdown_dates',
-          inputParams:{
-            label: "Даты пребывания в отеле",
-            readonly: true,
-            classes: 'js-input_result-dates'
-          },
-        })
+        div
           +air-datepicker({classes: 'air-datepicker_inline'})
+          div.guide-page__mb40
+          +card-product({
+            gallery: [
+              require("@/pages/guide/img/image-1.jpg").default,
+              require("@/pages/guide/img/image-2.jpg").default,
+              require("@/pages/guide/img/image-3.jpg").default,
+              require("@/pages/guide/img/image-4.jpg").default
+            ],
+            roomNumber: '888',
+            roomType: 'Люкс',
+            price: '9 990₽',
+            priceTime: 'в сутки',
+            countReviews: '145'
+          })
 
-    div.guide-page__container.guide-page__container_var2.guide-page_limit-width
-      div
-        +form-fast-select()
-        div.guide-page__mb40
-        +form-register()
-
-      div
-        +form-booking({
-          roomNumber: 888,
-          roomType: 'люкс',
-          price: '9 990₽',
-          priceTime: 'в сутки',
-          listService: [
-            {name: '9 990₽ х 4 суток', price: '39 960₽'},
-            {name: 'Сбор за услуги: скидка 2 179₽', price: '0₽', tooltip: 'Подсказка'},
-            {name: 'Сбор за дополнительные услуги', price: '300₽', tooltip: 'Подсказка'}
-          ],
-          totalPrice: '38 081₽'
-        })
-
-        div.guide-page__mb40
-        +form-login()
-
-      div
-        +air-datepicker({classes: 'air-datepicker_inline'})
-        div.guide-page__mb40
-        +card-product({
-          gallery: [
-            require("@/pages/guide/img/image-1.jpg").default,
-            require("@/pages/guide/img/image-2.jpg").default,
-            require("@/pages/guide/img/image-3.jpg").default,
-            require("@/pages/guide/img/image-4.jpg").default
-          ],
-          roomNumber: '888',
-          roomType: 'Люкс',
-          price: '9 990₽',
-          priceTime: 'в сутки',
-          countReviews: '145'
-        })
-
-        div.guide-page__mb40
-        +card-product({
-          roomNumber: '888',
-          roomType: 'Люкс',
-          price: '9 990₽',
-          priceTime: 'в сутки',
-          countReviews: '145'
-        })
+          div.guide-page__mb40
+          +card-product({
+            roomNumber: '888',
+            roomType: 'Люкс',
+            price: '9 990₽',
+            priceTime: 'в сутки',
+            countReviews: '145'
+          })
