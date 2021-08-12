@@ -1,9 +1,0 @@
-{
-  "firstDisplayOptions":{
-    "classes": "first-display_content-center",
-    "bgUrl": "image-4.jpg"
-  },
-  "formOptions":{
-    "buttonRegHref": "register.html"
-  }
-}
