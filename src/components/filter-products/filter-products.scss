@@ -25,6 +25,10 @@
     margin-bottom: 31px;
   }
 
+  .filter-products__list-checkboxes{
+    list-style: none;
+  }
+
   .filter-products__close{
     @media (min-width: $md){
       display: none;

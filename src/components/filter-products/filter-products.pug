@@ -72,17 +72,19 @@ mixin filter-products(options = {})
         div.filter-products__element.filter-products_mb31
           if checkboxesTitle
             h3.filter-products__element.filter-products_mb13 #{checkboxesTitle}
-          each val, index in checkboxes
-            div.filter-products__block-wrapper.filter-products_mb10
-              +checkbox(val)
+          ul.filter-products__list-checkboxes
+            each val, index in checkboxes
+              li.filter-products__list-checkboxes-item.filter-products_mb10
+                +checkbox(val)
 
       if checkboxesBig
         div.filter-products__element.filter-products_mb30
           if checkboxesBigTitle
             h3.filter-products__element.filter-products_mb16 #{checkboxesBigTitle}
-          each val, index in checkboxesBig
-            div.filter-products__block-wrapper.filter-products_mb10
-              +checkbox(val)
+          ul.filter-products__list-checkboxes
+            each val, index in checkboxesBig
+              li.filter-products__list-checkboxes-item.filter-products_mb10
+                +checkbox(val)
 
       if optionDropdownFeature
         - optionDropdownFeature.type = 2
@@ -92,6 +94,7 @@ mixin filter-products(options = {})
 
       if collapseFeatureOptions
         +collapse(collapseFeatureOptions)
-          each val, index in collapseFeatureCheckboxes
-            div.filter-products__block-wrapper.filter-products_mb10
-              +checkbox(val)
+          ul.filter-products__list-checkboxes
+            each val, index in collapseFeatureCheckboxes
+              li.filter-products__list-checkboxes-item.filter-products_mb10
+                +checkbox(val)
