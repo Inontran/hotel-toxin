@@ -14,7 +14,8 @@
     "stylelint": "stylelint 'src/**/*.{css,scss}'",
     "stylelint:fix": "stylelint 'src/**/*.{css,scss}' --fix",
     "gulp:images": "gulp images",
-    "gulp:deploy": "gulp deploy"
+    "gulp:deploy": "gulp deploy",
+    "gh-deploy": "gh-pages -d dist"
   },
   "keywords": [
     "FSD",
@@ -42,6 +43,7 @@
     "favicons": "^6.2.2",
     "favicons-webpack-plugin": "4.2",
     "file-loader": "^6.2.0",
+    "gh-pages": "^3.2.3",
     "gulp": "^4.0.2",
     "gulp-imagemin": "^7.1.0",
     "gulp-rsync": "^0.0.9",
