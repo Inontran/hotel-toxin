@@ -18,6 +18,6 @@ package-lock.json
 
 .eslintcache
 
-
+dist
 .DS_Store
 stats.json
