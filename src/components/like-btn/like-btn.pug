@@ -14,15 +14,15 @@ mixin like-btn(options = {})
       isLike = false,
     } = options;
 
-  label.like-btn(
+  label.like-btn.js-like-btn(
     class = classes,
     id = id ? id : false
   )
-    input.like-btn__check(
+    input.like-btn__check.js-like-btn__check(
       type = 'checkbox', 
       value = value, 
       name = name, 
       checked = isLike ? "checked" : false
     )
     span.like-btn__view
-      span.like-btn__count #{value}
+      span.like-btn__count.js-like-btn__count #{value}
