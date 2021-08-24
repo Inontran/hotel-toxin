@@ -18,6 +18,7 @@
     background-color: transparent;
     border: 0;
     box-shadow: none;
+    cursor: pointer;
 
     &:focus {
       outline: dotted 1px;
@@ -26,10 +27,14 @@
     &:active {
       outline: none;
     }
+
+    &:disabled{
+      cursor: default;
+    }
   }
 
   @for $i from 0 through 5 {
-    .rate-btn__input {
+    &__input {
       &[value^="#{$i}"] {
         @for $j from 0 through $i {
           & ~ .rate-btn__star-item[data-number-star="#{$j}"] {

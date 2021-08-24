@@ -16,6 +16,7 @@
     background: $white;
     border: 1px solid $dark25;
     transition: 0.2s;
+    cursor: pointer;
 
     &::after {
       content: '';
@@ -32,7 +33,7 @@
     }
   }
 
-  &__input:checked + &__view {
+  &__input:checked ~ &__view {
     border-color: $purple;
 
     &::after {
@@ -47,9 +48,16 @@
     margin-left: 10px;
     padding-top: 3px;
     transition: color 0.2s;
+    cursor: pointer;
   }
 
-  &__input:checked + &__view + &__text {
+  &__input:checked ~ &__view,
+  &__input:checked ~ &__text {
     color: $dark75;
+  }
+
+  &__input:disabled ~ &__view,
+  &__input:disabled ~ &__text{
+    cursor: default;
   }
 }

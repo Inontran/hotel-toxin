@@ -17,6 +17,7 @@
     border: 1px solid $dark25;
     transition: 0.2s;
     flex: none;
+    cursor: pointer;
 
     &::after {
       content: '';
@@ -34,7 +35,7 @@
     }
   }
 
-  &__input:checked + &__view {
+  &__input:checked ~ &__view {
     border-color: $purple;
 
     &::after {
@@ -43,7 +44,8 @@
   }
 
   &__text-wrapper {
-    margin-left: 10px;
+    padding-left: 10px;
+    cursor: pointer;
   }
 
   &__title {
@@ -65,5 +67,10 @@
     line-height: 1.16;
     font-size: calc_rem(12);
     color: $dark50;
+  }
+
+  &__input:disabled ~ &__view,
+  &__input:disabled ~ &__text-wrapper{
+    cursor: default;
   }
 }

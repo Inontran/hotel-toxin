@@ -16,6 +16,7 @@
     background: $white;
     border: 1px solid $dark25;
     transition: 0.2s;
+    cursor: pointer;
 
     &::after {
       content: '';
@@ -31,13 +32,11 @@
     }
   }
 
-  &__input:checked + &__view {
+  &__input:checked ~ &__view {
     border-color: $purple;
 
     &::after {
-      $leftPx: (calc_rem(4) - calc_rem(12));
-
-      left: calc(100% - #{$leftPx});
+      left: calc(100% - #{calc_rem(4)} - #{calc_rem(12)});
       background: $gradient1;
     }
   }
@@ -48,5 +47,11 @@
     color: $dark75;
     margin-left: 10px;
     padding-top: 3px;
+    cursor: pointer;
+  }
+
+  &__input:disabled ~ &__view,
+  &__input:disabled ~ &__text{
+    cursor: default;
   }
 }
