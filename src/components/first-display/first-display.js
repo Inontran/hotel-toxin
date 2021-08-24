@@ -3,6 +3,9 @@ import $ from 'jquery';
 $(() => {
   const $headerSite = $('.js-header');
   const $firstDisplay = $('.js-first-display');
+  if (!$firstDisplay.length) {
+    return;
+  }
 
   const isExistHeader = $headerSite.length;
   const heightFirstDisplayEqual100vh = $firstDisplay[0].offsetHeight === window.innerHeight;
