@@ -2,13 +2,13 @@
 
 .product {
   &__gallery {
-    display: grid;
+    display: none;
     grid-template-rows: 1fr 1fr;
     grid-template-columns: 1fr 1fr 1fr;
     height: 485px;
 
-    @media (max-width: $md) {
-      display: none;
+    @media (min-width: $md) {
+      display: grid;
     }
 
     &-item {
