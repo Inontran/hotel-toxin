@@ -77,7 +77,7 @@ $(() => {
     $listCounters.find('.js-list-counters__counter').each(function () {
       const $counterItem = $(this);
       const valCounter = $('.js-input-number__input', $counterItem).val();
-      if (valCounter !== 0) {
+      if (valCounter !== 0 && valCounter !== '0') {
         if (countNotZeroItems !== 0) {
           result += ', ';
         }
