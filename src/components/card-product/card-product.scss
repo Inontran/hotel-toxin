@@ -122,6 +122,7 @@
     display: block;
     position: relative;
     padding-top: 56%;
+    overflow: hidden;
   }
 
   &__img {
@@ -129,10 +130,6 @@
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
-    height: auto !important;
-    min-height: 100%;
-    width: auto !important;
-    min-width: 100%;
   }
 
   &__content {
