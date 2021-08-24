@@ -91,7 +91,8 @@
       "inputParams":{
         "label": "Даты пребывания в отеле",
         "readonly": true,
-        "classes": "js-input_result-dates"
+        "classes": "js-input_result-dates",
+        "placeholder": "даты от и до включительно"
       }
     },
 
@@ -139,7 +140,8 @@
     "optionDropdownFeature": {
       "inputParams":{
         "label": "Удобства номера",
-        "readonly": true
+        "readonly": true,
+        "placeholder": "Кол-во спален, кроватей и т.д."
       },
       "arrayCounters": [
         {"label": "Спальни", "inputName": ""},
@@ -157,8 +159,6 @@
       {"text": "Письменный стол", "checked": true},
       {"text": "Стул для кормления", "checked": true},
       {"text": "Кроватка", "checked": true},
-      {"text": "Телевизор"},
-      {"text": "Шампунь"},
       {"text": "Телевизор"},
       {"text": "Шампунь"}
     ]
