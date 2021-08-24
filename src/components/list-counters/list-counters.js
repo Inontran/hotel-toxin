@@ -38,14 +38,14 @@ $(() => {
     return summ;
   }
 
-  $('.js-list-counters', $body).each(function () {
+  $('.js-list-counters:not(.list-counters_simple)', $body).each(function () {
     const $listCounters = $(this);
     calcItemsListCounters($listCounters);
   });
 
   $body.on(
     'click',
-    '.js-list-counters:not(.js-list-counters_simple) .js-list-counters__btn-reset .js-button',
+    '.js-list-counters:not(.list-counters_simple) .js-list-counters__btn-reset .js-button',
     (event) => {
       const $btn = $(event.currentTarget);
       const $listCounters = $btn.closest('.js-list-counters');
@@ -56,17 +56,19 @@ $(() => {
 
   $body.on(
     'click',
-    '.js-list-counters:not(.js-list-counters_simple) .js-list-counters__btn-submit .js-button',
+    '.js-list-counters:not(.list-counters_simple) .js-list-counters__btn-submit .js-button',
     (event) => {
       const $btn = $(event.currentTarget);
       const $listCounters = $btn.closest('.js-list-counters');
-
       calcItemsListCounters($listCounters);
     },
   );
 
-  function handlerChangeInputNumber(event) {
-    const $listCounters = $(event.currentTarget).closest('.js-list-counters');
+  function handlerChangeInputNumber($listCounters) {
+    if (!$listCounters.length){
+      return;
+    }
+
     const $dropdown = $listCounters.closest('.js-dropdown');
     if (!$dropdown.length) {
       return;
@@ -93,9 +95,17 @@ $(() => {
     $dropdown.find('.js-dropdown__input-wrapper .js-input__field').val(result);
   }
 
+  $('.js-list-counters.list-counters_simple', $body).each(function () {
+    const $listCounters = $(this);
+    handlerChangeInputNumber($listCounters);
+  });
+
   $body.on(
     'change',
     '.js-list-counters.list-counters_simple .js-input-number .js-input-number__input',
-    handlerChangeInputNumber,
+    (event) => {
+      const $listCounters = $(event.currentTarget).closest('.js-list-counters');
+      handlerChangeInputNumber($listCounters);
+    },
   );
 });
