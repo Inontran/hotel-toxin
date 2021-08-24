@@ -20,22 +20,23 @@ mixin checkbox(options = {})
     } = options;
 
 
-  label.checkbox(
+  div.checkbox(
     class = classes,
     id = id ? id : false
   )
-    input.checkbox__input(
-      type = "checkbox", 
-      name = name, 
-      value = value, 
-      checked = checked ? "checked" : false
-    )
+    label.checkbox__wrapper
+      input.checkbox__input(
+        type = "checkbox", 
+        name = name, 
+        value = value, 
+        checked = checked ? "checked" : false
+      )
 
-    div.checkbox__view
-    div.checkbox__text-wrapper
-      if title
-        p.checkbox__title #{title}
-        p.checkbox__text-small #{text}
-      else
-        if text
-          p.checkbox__text #{text}
+      div.checkbox__view
+      div.checkbox__text-wrapper
+        if title
+          p.checkbox__title #{title}
+          p.checkbox__text-small #{text}
+        else
+          if text
+            p.checkbox__text #{text}

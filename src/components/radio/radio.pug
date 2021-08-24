@@ -17,17 +17,18 @@ mixin radio(options = {})
       checked = false,
     } = options;
 
-  label.radio(
+  div.radio(
     class = classes, 
     id = id ? id : false
   )
-    input.radio__input(
-      type = "radio", 
-      name = name, 
-      checked = checked ? "checked" : false,
-      value = value ? value : false,
-    )
+    label.radio__wrapper
+      input.radio__input(
+        type = "radio", 
+        name = name, 
+        checked = checked ? "checked" : false,
+        value = value ? value : false,
+      )
 
-    span.radio__view
-    if text
-      p.radio__text #{text}
+      span.radio__view
+      if text
+        p.radio__text #{text}

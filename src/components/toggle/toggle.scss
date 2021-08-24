@@ -1,7 +1,12 @@
 @import '@/theme/variables.scss';
 
 .toggle {
-  display: flex;
+  display: block;
+  line-height: 0.6;
+
+  &__wrapper{
+    display: inline-flex;
+  }
 
   &__input {
     display: none;

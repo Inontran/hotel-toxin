@@ -18,17 +18,18 @@ mixin toggle(options = {})
       type = 'checkbox'
     } = options;
 
-  label.toggle(
+  div.toggle(
     class = classes,
     id = id ? id : false
   )
-    input.toggle__input(
-      type = type, 
-      name = name, 
-      checked = checked ? "checked" : false,
-      value = value ? value : false,
-    )
-    
-    span.toggle__view
-    if text
-      p.toggle__text #{text}
+    label.toggle__wrapper
+      input.toggle__input(
+        type = type, 
+        name = name, 
+        checked = checked ? "checked" : false,
+        value = value ? value : false,
+      )
+      
+      span.toggle__view
+      if text
+        p.toggle__text #{text}

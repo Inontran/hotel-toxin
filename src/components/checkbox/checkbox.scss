@@ -1,7 +1,12 @@
 @import '@/theme/variables.scss';
 
 .checkbox {
-  display: flex;
+  display: block;
+  line-height: .6;
+
+  &__wrapper{
+    display: inline-flex;
+  }
 
   &__input {
     display: none;
