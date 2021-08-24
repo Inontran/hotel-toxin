@@ -55,11 +55,13 @@ mixin filter-products(options = {})
           })
 
       if optionDropdownDates
+        - optionDropdownDates.group = 'filterProducts'
         div.filter-products__block-wrapper.filter-products_mb20
           +dropdown(optionDropdownDates)
             +air-datepicker(optionDropdownDatesDatepicker)
 
       if optionDropdownPeople
+        - optionDropdownPeople.group = 'filterProducts'
         div.filter-products__block-wrapper.filter-products_mb30
           +dropdown(optionDropdownPeople)
             +list-counters(optionDropdownPeople)
@@ -88,6 +90,7 @@ mixin filter-products(options = {})
 
       if optionDropdownFeature
         - optionDropdownFeature.type = 2
+        - optionDropdownFeature.group = 'filterProducts'
         div.filter-products__block-wrapper.filter-products_mb16
           +dropdown(optionDropdownFeature)
             +list-counters(optionDropdownFeature)

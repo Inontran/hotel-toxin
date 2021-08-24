@@ -25,6 +25,7 @@ mixin form-fast-select(options = {})
         +dropdown({
           customContent: true,
           classes: 'dropdown_dates',
+          group: 'formFastSelect',
           inputParams: {
             label: "Прибытие",
             readonly: true,
@@ -42,6 +43,7 @@ mixin form-fast-select(options = {})
 
       div.form-fast-select__block-wrapper.form-fast-select_mb30
         +dropdown({
+          group: 'formFastSelect',
           inputParams:{
             label: "Гости",
             readonly: true,

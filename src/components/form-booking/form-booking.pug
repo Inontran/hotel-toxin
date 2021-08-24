@@ -48,6 +48,7 @@ mixin form-booking(options = {})
         +dropdown({
           customContent: true,
           classes: 'dropdown_dates',
+          group: 'formBooking',
           inputParams: {
             label: "Прибытие",
             readonly: true,
@@ -65,6 +66,7 @@ mixin form-booking(options = {})
 
       div.form-booking__block-wrapper.form-booking_mb20
         +dropdown({
+          group: 'formBooking',
           inputParams:{
             label: "Гости",
             readonly: true,
