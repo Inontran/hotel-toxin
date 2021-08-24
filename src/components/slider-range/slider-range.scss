@@ -20,7 +20,7 @@
     line-height: 1.7;
   }
 
-  &__input {
+  &__input-result {
     text-align: right;
     border: 0;
     box-shadow: none;
@@ -28,6 +28,7 @@
     font-size: calc_rem(12);
     text-transform: uppercase;
     width: 45%;
+    outline: none;
   }
 
   &__slider {
