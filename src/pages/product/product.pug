@@ -92,13 +92,13 @@ block content
                   })
             
             if reviews
-              section.product__section-reviews.product_mb40
+              section.product__section-reviews.product_mb40.product_none.product_block-md
                 h2.product__title Отзывы посетителей номера
                 each val, index in reviews
                   div.product_mb20
                     +review(val)
 
-            div.product__grid-3
+            div.product__grid-3.product_none.product_flex-md
               section.product__grid-3-col.product__grid-3-col-1.product_mb40
                 if rulesTitle
                   h2.product__title #{rulesTitle}
@@ -119,3 +119,22 @@ block content
               listService: listService,
               totalPrice: totalPrice
             })
+
+          div.product__body-col.product_none-md
+            if reviews
+              section.product__section-reviews.product_mb40
+                h2.product__title Отзывы посетителей номера
+                each val, index in reviews
+                  div.product_mb20
+                    +review(val)
+            div.product__grid-3
+              section.product__grid-3-col.product__grid-3-col-1.product_mb40
+                if rulesTitle
+                  h2.product__title #{rulesTitle}
+                if optionsRules
+                  +list(optionsRules)
+              section.product__grid-3-col.product__grid-3-col-2.product_mb40
+                if cancelTitle
+                  h2.product__title #{cancelTitle}
+                if cancelText
+                  p.product__text #{cancelText}

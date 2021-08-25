@@ -265,4 +265,22 @@
   &_mb40 {
     margin-bottom: 40px;
   }
+
+  &_none{
+    display: none !important;
+  }
+
+  @media(min-width: $md){
+    &_none-md{
+      display: none !important;
+    }
+
+    &_block-md{
+      display: block !important;
+    }
+
+    &_flex-md{
+      display: flex !important;
+    }
+  }
 }
