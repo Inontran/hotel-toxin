@@ -11,8 +11,13 @@ $(() => {
   });
 
   function toggleDropdown($dropdown) {
-    if (!$dropdown) {
+    if (!$dropdown.length) {
       return;
+    }
+
+    const targetId = $dropdown.attr('data-target');
+    if (targetId && $(`.js-dropdown${targetId}`).length) {
+      $dropdown = $(`.js-dropdown${targetId}`);
     }
 
     const dropdownGroup = $dropdown.attr('data-group');

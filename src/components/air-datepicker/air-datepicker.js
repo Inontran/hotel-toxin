@@ -33,17 +33,22 @@ $(() => {
   function handlerClickSubmitBtn(event) {
     event.preventDefault();
     const $btn = $(event.currentTarget);
-    const $parentDropdown = $btn.closest('.js-dropdown');
-    const dates = $(this).closest('.js-air-datepicker')
-      .find('.js-air-datepicker__wrapper')
-      .data('datepicker').selectedDates;
+    let $parentDropdown = $btn.closest('.js-dropdown');
+    const $datePicker = $btn.closest('.js-air-datepicker');
+    const dates = $datePicker.find('.js-air-datepicker__wrapper').data('datepicker').selectedDates;
 
-    $('.js-input_result-dates .js-input__field', $parentDropdown)
-      .val(`${moment(dates[0]).format('D MMM')} - ${moment(dates[1]).format('D MMM')}`);
-    $('.js-input_result-date-start .js-input__field', $parentDropdown).val(moment(dates[0]).format('DD.MM.YYYY'));
-    $('.js-input_result-date-end .js-input__field', $parentDropdown).val(moment(dates[1]).format('DD.MM.YYYY'));
+    const targetDropdowns = $datePicker.attr('data-target-dropdown');
+    if (targetDropdowns) {
+      $parentDropdown = $(targetDropdowns);
+    } 
+    if ($parentDropdown.length) {
+      $('.js-input_result-dates .js-input__field', $parentDropdown)
+        .val(`${moment(dates[0]).format('D MMM')} - ${moment(dates[1]).format('D MMM')}`);
+      $('.js-input_result-date-start .js-input__field', $parentDropdown).val(moment(dates[0]).format('DD.MM.YYYY'));
+      $('.js-input_result-date-end .js-input__field', $parentDropdown).val(moment(dates[1]).format('DD.MM.YYYY'));
+      $parentDropdown.removeClass('dropdown_active');
+    }
 
-    $parentDropdown.removeClass('dropdown_active');
   }
 
   $body.on(

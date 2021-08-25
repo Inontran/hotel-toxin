@@ -44,25 +44,35 @@ mixin form-booking(options = {})
           span.form-booking__title-price #{price}
           span.form-booking__title-price-type  #{priceTime}
 
-      div.form-booking__block-wrapper.form-booking_mb20
-        +dropdown({
-          customContent: true,
-          classes: 'dropdown_dates',
-          group: 'formBooking',
-          inputParams: {
-            label: "Прибытие",
-            readonly: true,
-            placeholder: "ДД.ММ.ГГГГ",
-            classes: 'js-input_result-date-start'
-          },
-          inputParams2: {
-            label: "Выезд",
-            readonly: true,
-            placeholder: "ДД.ММ.ГГГГ",
-            classes: 'js-input_result-date-end'
-          },
-        })
-          +air-datepicker({classes: 'air-datepicker_inline'})
+      div.form-booking__dates-row
+        div.form-booking__dates-col.form-booking_mb20
+          +dropdown({
+            classes: 'js-dropdown_dates-result',
+            group: 'formBooking',
+            targetId: '#dropdown-datepicker',
+            inputParams: {
+              label: "Прибытие",
+              readonly: true,
+              placeholder: "ДД.ММ.ГГГГ",
+              classes: 'js-input_result-date-start',
+            },
+          })
+        div.form-booking__dates-col.form-booking_mb20
+          +dropdown({
+            classes: 'js-dropdown_dates-result dropdown_dates dropdown_right-align',
+            group: 'formBooking',
+            id: 'dropdown-datepicker',
+            inputParams: {
+              label: "Выезд",
+              readonly: true,
+              placeholder: "ДД.ММ.ГГГГ",
+              classes: 'js-input_result-date-end',
+            },
+          })
+            +air-datepicker({
+              classes: 'air-datepicker_inline',
+              targetDropdown: '.js-dropdown_dates-result',
+            })
 
       div.form-booking__block-wrapper.form-booking_mb20
         +dropdown({

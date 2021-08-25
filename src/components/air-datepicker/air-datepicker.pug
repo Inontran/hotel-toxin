@@ -9,11 +9,13 @@ mixin air-datepicker(options = {})
     const {
       classes = '',
       id = false,
+      targetDropdown = false,
     } = options;
 
   div.air-datepicker.js-air-datepicker(
     class = classes,
-    id = id ? id : false
+    id = id ? id : false,
+    data-target-dropdown = targetDropdown ? targetDropdown : false
   )
     div.air-datepicker__wrapper.js-air-datepicker__wrapper
     div.air-datepicker__btns
