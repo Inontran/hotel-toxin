@@ -21,11 +21,13 @@ mixin review(options = {})
       username = 'Anonymous',
       timeLater = 'несколько секунд назад',
       textReview = '',
+      reviewId = false,
     } = options;
 
-  article.review(
+  article.review.js-review(
     class = classes,
-    id = id ? id : false
+    id = id ? id : false,
+    data-review-id = reviewId ? reviewId : false,
   )
     header.review__header
       div.review__avatar-wrapper
