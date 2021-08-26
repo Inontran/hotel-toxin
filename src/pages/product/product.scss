@@ -258,6 +258,30 @@
     color: $dark75;
   }
 
+  &__header-reviews{
+    display: flex;
+    align-items: baseline;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    margin-left: -10px;
+    margin-right: -10px;
+
+    &-col{
+      padding-left: 10px;
+      padding-right: 10px;
+    }
+  }
+
+  &__text-count-reviews{
+    font-size: calc_rem(14);
+    line-height: 1;
+    color: $dark50;
+  }
+
+  &_mb10 {
+    margin-bottom: 10px;
+  }
+
   &_mb20 {
     margin-bottom: 20px;
   }

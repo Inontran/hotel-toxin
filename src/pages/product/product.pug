@@ -93,7 +93,11 @@ block content
             
             if reviews
               section.product__section-reviews.product_mb40.product_none.product_block-md
-                h2.product__title Отзывы посетителей номера
+                header.product__header-reviews.product_mb10
+                  div.product__header-reviews-col
+                    h2.product__title.product_mb10 Отзывы посетителей номера
+                  div.product__header-reviews-col.product_mb10
+                    span.product__text-count-reviews #{reviews.length} отзыва
                 each val, index in reviews
                   div.product_mb20
                     +review(val)
@@ -123,7 +127,11 @@ block content
           div.product__body-col.product_none-md
             if reviews
               section.product__section-reviews.product_mb40
-                h2.product__title Отзывы посетителей номера
+                header.product__header-reviews.product_mb10
+                  div.product__header-reviews-col
+                    h2.product__title.product_mb10 Отзывы посетителей номера
+                  div.product__header-reviews-col.product_mb10
+                    span.product__text-count-reviews #{reviews.length} отзыва
                 each val, index in reviews
                   div.product_mb20
                     +review(val)
