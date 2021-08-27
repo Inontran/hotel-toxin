@@ -20,8 +20,6 @@ mixin list-counters(options = {})
       id = false,
       type = 1,
       textDefault = '',
-      textOne = '',
-      textMany = '',
       arrayCounters = []
     } = options;
 
@@ -32,17 +30,30 @@ mixin list-counters(options = {})
     class = classes,
     id = id ? id : false,
     data-default-text = textDefault,
-    data-text-one = textOne,
-    data-text-many = textMany,
   )
     if arrayCounters
       each item, index in arrayCounters
-        div.list-counters__counter.js-list-counters__counter
-          span.list-counters__counter-label.js-list-counters__counter-label #{item.label}
+        -
+          var {
+            label = '',
+            value = '',
+            inputName = false,
+            textOneItems = label,
+            textTwoItems = label,
+            textManyItems = label,
+            groupItemId = index,
+          } = item;
+        div.list-counters__counter.js-list-counters__counter(
+          data-text-one-items = textOneItems,
+          data-text-two-items = textTwoItems,
+          data-text-many-items = textManyItems,
+          data-group-item-id = groupItemId,
+        )
+          span.list-counters__counter-label.js-list-counters__counter-label #{label}
           +input-number({
-            value: item.value ? item.value : 0,
-            name: item.inputName ? item.inputName : '',
-            min: 0
+            value: value ? value : 0,
+            name: inputName ? inputName : false,
+            min: 0,
           })
       if type == 1
         div.list-counters__btns-result

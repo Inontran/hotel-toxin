@@ -85,13 +85,29 @@ mixin form-booking(options = {})
         })
           +list-counters({
             textDefault: "Сколько гостей",
-            textOne: " гость",
-            textMany: " гостей",
             arrayCounters: [
-              {label: "Взрослые", inputName: ""},
-              {label: "Дети", inputName: ""},
-              {label: "Младенцы", inputName: ""}
-            ]
+              {
+                label: "Взрослые",
+                groupItemId: 1,
+                textOneItems: 'гость',
+                textTwoItems: 'гостя',
+                textManyItems: 'гостей',
+              },
+              {
+                label: "Дети",
+                groupItemId: 1,
+                textOneItems: 'гость',
+                textTwoItems: 'гостя',
+                textManyItems: 'гостей',
+              },
+              {
+                label: "Младенцы",
+                groupItemId: 2,
+                textOneItems: 'младенец',
+                textTwoItems: 'младенца',
+                textManyItems: 'младенцев',
+              },
+            ],
           })
 
       if listService
