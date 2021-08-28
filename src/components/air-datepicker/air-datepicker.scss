@@ -18,8 +18,14 @@
     display: flex;
     align-items: center;
     justify-content: space-between;
+    flex-wrap: wrap;
     padding-top: 20px;
     line-height: 1;
+    margin: 0 -10px -10px;
+  }
+
+  &__btn-wrapper{
+    padding: 0 10px 10px;
   }
 
   .datepicker {

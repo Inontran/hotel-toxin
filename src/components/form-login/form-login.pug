@@ -38,11 +38,11 @@ mixin form-login(options = {})
           isSubmit: true
         })
 
-      div.form-register__footer
-        p.form-register__footer-text Нет аккаунта на Toxin?
-        div.form-register__footer-button
+      div.form-login__footer
+        p.form-login__footer-text Нет аккаунта на Toxin?
+        div.form-login__footer-button
           +button({
             text: "Создать", 
-            classes: "button_outline",
+            classes: "button_outline button_wide",
             href: buttonRegHref ? buttonRegHref : false
           })

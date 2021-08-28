@@ -31,6 +31,7 @@
       margin: 0 calc((#{calc_rem(44)} - 12px) / 2);
       transform: rotate(0);
       transition: 0.3s;
+      flex: none;
     }
   }
 

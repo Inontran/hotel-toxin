@@ -22,6 +22,7 @@
     border: 1px solid $dark25;
     transition: 0.2s;
     cursor: pointer;
+    flex: none;
 
     &::after {
       content: '';

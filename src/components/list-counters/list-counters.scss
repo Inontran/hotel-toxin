@@ -6,6 +6,7 @@
     display: flex;
     align-items: center;
     justify-content: space-between;
+    flex-wrap: wrap;
   }
 
   &__counter {
@@ -19,8 +20,12 @@
     line-height: 1.25;
   }
 
+  &__input-number-wrapper{
+    margin-left: auto;
+  }
+
   &__btns-result {
-    margin: 19px 7px 13px 15px;
+    margin-top: 19px;
   }
 
   &__btn-reset,
@@ -28,12 +33,11 @@
     line-height: 1;
   }
 
-  &__btn-reset {
-    margin-right: auto;
-  }
-
+  &__btn-reset,
   &__btn-submit {
-    margin-left: auto;
+    padding-left: 15px;
+    padding-right: 7px;
+    padding-bottom: 13px;
   }
 
   &_hidden {

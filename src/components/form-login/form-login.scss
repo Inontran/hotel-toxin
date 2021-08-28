@@ -19,10 +19,12 @@
     justify-content: space-between;
     margin-left: -10px;
     margin-right: -10px;
+    margin-bottom: -10px;
 
     &-text,
     &-button {
-      margin: 0 10px;
+      flex-grow: 1;
+      padding: 0 10px 10px;
     }
   }
 }

@@ -50,11 +50,12 @@ mixin list-counters(options = {})
           data-group-item-id = groupItemId,
         )
           span.list-counters__counter-label.js-list-counters__counter-label #{label}
-          +input-number({
-            value: value ? value : 0,
-            name: inputName ? inputName : false,
-            min: 0,
-          })
+          div.list-counters__input-number-wrapper
+            +input-number({
+              value: value ? value : 0,
+              name: inputName ? inputName : false,
+              min: 0,
+            })
       if type == 1
         div.list-counters__btns-result
           div.list-counters__btn-reset.js-list-counters__btn-reset
