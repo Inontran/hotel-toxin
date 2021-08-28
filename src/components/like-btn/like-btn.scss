@@ -66,5 +66,10 @@
   &__count {
     position: relative;
     z-index: 2;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    overflow: hidden;
+    width: 16px;
+    text-align: center;
   }
 }

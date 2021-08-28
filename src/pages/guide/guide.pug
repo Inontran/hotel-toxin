@@ -271,13 +271,29 @@ block content
           })
             +list-counters({
               textDefault: "Сколько гостей",
-              textOne: " гость",
-              textMany: " гостей",
               arrayCounters: [
-                {label: "Взрослые", inputName: ""},
-                {label: "Дети", inputName: ""},
-                {label: "Младенцы", inputName: ""}
-              ]
+                {
+                  label: "Взрослые",
+                  groupItemId: 1,
+                  textOneItems: 'гость',
+                  textTwoItems: 'гостя',
+                  textManyItems: 'гостей',
+                },
+                {
+                  label: "Дети",
+                  groupItemId: 1,
+                  textOneItems: 'гость',
+                  textTwoItems: 'гостя',
+                  textManyItems: 'гостей',
+                },
+                {
+                  label: "Младенцы",
+                  groupItemId: 2,
+                  textOneItems: 'младенец',
+                  textTwoItems: 'младенца',
+                  textManyItems: 'младенцев',
+                },
+              ],
             })
 
           div.guide-page__mb20
@@ -291,9 +307,24 @@ block content
             +list-counters({
               type: 2,
               arrayCounters: [
-                {label: "Спальни"},
-                {label: "Кровати"},
-                {label: "Ванные комнаты"}
+                {
+                  label: "Спальни",
+                  textOneItems: "Спальня",
+                  textTwoItems: "Спальни",
+                  textManyItems: "Спален"
+                },
+                {
+                  label: "Кровати",
+                  textOneItems: "Кровать",
+                  textTwoItems: "Кровати",
+                  textManyItems: "Кроватей"
+                },
+                {
+                  label: "Ванные комнаты",
+                  textOneItems: "Ванная комната",
+                  textTwoItems: "Ванных комнаты",
+                  textManyItems: "Ванных комнат"
+                }
               ]
             })
 

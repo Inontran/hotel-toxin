@@ -5,13 +5,15 @@ include ../input-number/input-number
   options.classes - Классы блока.
   options.id - ИД блока.
   options.type = 1 - Тип блока со счетчиками. Если 1, тогда блок отображается с кнопками сброса и подтверждения.
-  options.textDefault - Текст поля без значений.
-  options.textOne - Текст поля, если сумма всех счетчиков равно 1.
-  options.textMany - Текст поля, если сумма всех счетчиков больше 1.
+  options.textDefault - Текст поля, если сумма всех счетчиков равна 0.
   options.arrayCounters - Массив полей-счетчиков.
   options.arrayCounters[0].label - Подпись счетчика.
   options.arrayCounters[0].value = 0 - Значение поля счетчика.
   options.arrayCounters[0].inputName - Имя поля счетчика.
+  options.arrayCounters[0].textOneItems - Слово, используемое для вывода результата. Например, "1 Спальня".
+  options.arrayCounters[0].textTwoItems - Слово, используемое для вывода результата. Например, "2 Спальни".
+  options.arrayCounters[0].textManyItems - Слово, используемое для вывода результата. Например, "5 Спален".
+  options.arrayCounters[0].groupItemId - Уникальный номер группы счетчиков, которые нужно считать вместе, а не по отдельности.
 
 mixin list-counters(options = {})
   -

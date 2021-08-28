@@ -28,6 +28,7 @@
     text-align: center;
     color: $purple;
     margin-bottom: 0;
+    text-align: center;
 
     &-number {
       display: block;
@@ -35,6 +36,10 @@
       font-size: calc_rem(24);
       font-weight: 700;
       line-height: devide(30, 24);
+      max-width: 95px;
+      overflow: hidden;
+      white-space: nowrap;
+      text-overflow: ellipsis;
     }
 
     &-text {
@@ -43,6 +48,14 @@
       font-weight: 700;
       line-height: devide(15, 12);
       text-transform: uppercase;
+    }
+
+    &-text,
+    &-number {
+      max-width: 95px;
+      overflow: hidden;
+      white-space: nowrap;
+      text-overflow: ellipsis;
     }
   }
 
@@ -68,6 +81,7 @@
       border-radius: 100vh;
       margin-right: 5px;
       margin-top: 4px;
+      flex: none;
 
       &_awesome {
         background: $gradient3;
