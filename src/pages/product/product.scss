@@ -246,6 +246,10 @@
       flex-basis: 0;
       flex-grow: 1;
       max-width: 100%;
+
+      &-1{
+        max-width: 361px;
+      }
     }
   }
 
@@ -284,6 +288,10 @@
 
   &_mb20 {
     margin-bottom: 20px;
+  }
+
+  &_mb30 {
+    margin-bottom: 30px;
   }
 
   &_mb40 {

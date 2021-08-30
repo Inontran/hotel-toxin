@@ -5,13 +5,14 @@
     margin-bottom: 20px;
   }
 
-  &__title {
+  &__header {
     display: flex;
     align-items: flex-end;
     justify-content: space-between;
     margin-left: -10px;
     margin-right: -10px;
     margin-bottom: 10px;
+    margin-top: 2px;
 
     &-left,
     &-right {
@@ -29,16 +30,21 @@
 
     &-symbol {
       font-size: calc_rem(14);
+      line-height: 1.21;
+      padding-right: 8px;
     }
 
     &-number {
       font-size: calc_rem(24);
+      line-height: 1.21;
     }
 
     &-type {
       font-size: calc_rem(12);
+      line-height: 1.25;
       color: $purple;
       text-transform: uppercase;
+      padding-left: 8px;
     }
 
     &-right {
@@ -74,18 +80,19 @@
   &__table {
     color: $dark75;
 
-    &_px5 {
-      padding-left: 5px;
-      padding-right: 5px;
+    &_px2 {
+      padding-left: 2px;
+      padding-right: 2px;
     }
 
     &-cell {
       padding-bottom: 10px;
       vertical-align: top;
+      line-height: 1.2857;
 
       &_price {
         text-align: right;
-        white-space: nowrap;
+        min-width: 74px;
       }
     }
   }

@@ -7,24 +7,11 @@
         "@/pages/products/img/image-3.jpg",
         "@/pages/products/img/image-4.jpg"
       ],
-      "roomNumber": "100",
+      "roomNumber": "888",
       "price": "9 900₽",
       "priceTime": "в сутки",
       "countReviews": "145",
-      "rating": "5"
-    },
-    {
-      "gallery": [
-        "@/pages/products/img/image-1.jpg",
-        "@/pages/products/img/image-2.jpg",
-        "@/pages/products/img/image-3.jpg",
-        "@/pages/products/img/image-4.jpg"
-      ],
-      "roomNumber": "101",
-      "price": "11 000₽",
-      "priceTime": "в день",
-      "countReviews": "1",
-      "rating": "4",
+      "rating": "5",
       "roomType": "Люкс"
     },
     {
@@ -34,24 +21,11 @@
         "@/pages/products/img/image-3.jpg",
         "@/pages/products/img/image-4.jpg"
       ],
-      "roomNumber": "102",
-      "price": "111 000₽",
-      "priceTime": "в неделю",
-      "countReviews": "145",
-      "rating": "3"
-    },
-    {
-      "gallery": [
-        "@/pages/products/img/image-1.jpg",
-        "@/pages/products/img/image-2.jpg",
-        "@/pages/products/img/image-3.jpg",
-        "@/pages/products/img/image-4.jpg"
-      ],
-      "roomNumber": "100",
+      "roomNumber": "840",
       "price": "9 900₽",
       "priceTime": "в сутки",
-      "countReviews": "145",
-      "rating": "5"
+      "countReviews": "65",
+      "rating": "4"
     },
     {
       "gallery": [
@@ -60,11 +34,11 @@
         "@/pages/products/img/image-3.jpg",
         "@/pages/products/img/image-4.jpg"
       ],
-      "roomNumber": "101",
-      "price": "11 000₽",
-      "priceTime": "в день",
-      "countReviews": "1",
-      "rating": "4",
+      "roomNumber": "980",
+      "price": "8 500₽",
+      "priceTime": "в сутки",
+      "countReviews": "35",
+      "rating": "3",
       "roomType": "Люкс"
     },
     {
@@ -74,10 +48,36 @@
         "@/pages/products/img/image-3.jpg",
         "@/pages/products/img/image-4.jpg"
       ],
-      "roomNumber": "102",
-      "price": "111 000₽",
-      "priceTime": "в неделю",
-      "countReviews": "145",
+      "roomNumber": "856",
+      "price": "7 300₽",
+      "priceTime": "в сутки",
+      "countReviews": "19",
+      "rating": "5"
+    },
+    {
+      "gallery": [
+        "@/pages/products/img/image-1.jpg",
+        "@/pages/products/img/image-2.jpg",
+        "@/pages/products/img/image-3.jpg",
+        "@/pages/products/img/image-4.jpg"
+      ],
+      "roomNumber": "740",
+      "price": "6 000₽",
+      "priceTime": "в сутки",
+      "countReviews": "44",
+      "rating": "4"
+    },
+    {
+      "gallery": [
+        "@/pages/products/img/image-1.jpg",
+        "@/pages/products/img/image-2.jpg",
+        "@/pages/products/img/image-3.jpg",
+        "@/pages/products/img/image-4.jpg"
+      ],
+      "roomNumber": "982",
+      "price": "5 800₽",
+      "priceTime": "в сутки",
+      "countReviews": "56",
       "rating": "3"
     }
   ],
@@ -140,7 +140,7 @@
       "textBottom": "Стоимость за сутки пребывания в номере"
     },
 
-    "checkboxesTitle": "Checkbox buttons",
+    "checkboxesTitle": "Правила дома",
     "checkboxes":[
       {"text": "Можно курить"},
       {"text": "Можно с питомцами", "checked": true},

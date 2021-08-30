@@ -34,15 +34,15 @@ mixin form-booking(options = {})
     id = id ? id : false
   )
     +card()
-      div.form-booking__title
-        div.form-booking__title-left
-          span.form-booking__title-symbol № 
-          span.form-booking__title-number #{roomNumber}
+      header.form-booking__header
+        div.form-booking__header-left
+          span.form-booking__header-symbol №
+          span.form-booking__header-number #{roomNumber}
           if roomType
-            span.form-booking__title-type  #{roomType}
-        div.form-booking__title-right
-          span.form-booking__title-price #{price}
-          span.form-booking__title-price-type  #{priceTime}
+            span.form-booking__header-type #{roomType}
+        div.form-booking__header-right
+          span.form-booking__header-price #{price}
+          span.form-booking__header-price-type  #{priceTime}
 
       div.form-booking__dates-row
         div.form-booking__dates-col.form-booking_mb20
@@ -116,7 +116,7 @@ mixin form-booking(options = {})
             each item, index in listService
               tr
                 td.form-booking__table-cell #{item.name}
-                td.form-booking__table-cell.form-booking__table_px5 
+                td.form-booking__table-cell.form-booking__table_px2
                   if item.tooltip
                     div.form-booking__tooltip(title = item.tooltip)
                 td.form-booking__table-cell.form-booking__table-cell_price #{item.price}

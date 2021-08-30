@@ -37,13 +37,14 @@
       border: 0;
       align-items: center;
       padding: 0;
-      margin-bottom: 24px;
+      margin-bottom: 30px;
     }
 
     &--nav-action {
       width: calc_rem(17);
       height: calc_rem(18);
       position: relative;
+      margin: 3px;
 
       &:hover {
         background: none;
