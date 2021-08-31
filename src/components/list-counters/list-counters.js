@@ -2,9 +2,6 @@ import $ from 'jquery';
 
 $(() => {
   const $body = $('body');
-  let result = '';
-  let countNotZeroItems = 0;
-  let summAllCounters = 0;
 
   function declineWord(number, titles) {
     const numberOfEnding = [2, 0, 1, 1, 1, 2];
@@ -22,6 +19,10 @@ $(() => {
     if (!$dropdown.length) {
       return;
     }
+
+    let result = '';
+    let countNotZeroItems = 0;
+    let summAllCounters = 0;
 
     const collectionGroupIds = new Set();
     $listCounters.find('.js-list-counters__counter[data-group-item-id]').each(function () {
