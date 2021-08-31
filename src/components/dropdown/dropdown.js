@@ -14,27 +14,28 @@ $(() => {
     if (!$dropdown.length) {
       return;
     }
+    let $dropdownsArray = $dropdown;
 
     const targetId = $dropdown.attr('data-target');
     if (targetId && $(`.js-dropdown${targetId}`).length) {
-      $dropdown = $(`.js-dropdown${targetId}`);
+      $dropdownsArray = $(`.js-dropdown${targetId}`);
     }
 
-    const dropdownGroup = $dropdown.attr('data-group');
+    const dropdownGroup = $dropdownsArray.attr('data-group');
 
     if (dropdownGroup !== '' && dropdownGroup !== undefined) {
       const selector = '.js-dropdown';
 
       $body.find(`${selector}[data-group="${dropdownGroup}"]`).each(function () {
         const $dropdownItem = $(this);
-        if ($(selector).index($dropdownItem) === $(selector).index($dropdown)) {
-          $dropdown.toggleClass('dropdown_active');
+        if ($(selector).index($dropdownItem) === $(selector).index($dropdownsArray)) {
+          $dropdownsArray.toggleClass('dropdown_active');
         } else {
           $dropdownItem.removeClass('dropdown_active');
         }
       });
     } else {
-      $dropdown.toggleClass('dropdown_active');
+      $dropdownsArray.toggleClass('dropdown_active');
     }
   }
 

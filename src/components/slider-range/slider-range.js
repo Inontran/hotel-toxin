@@ -14,8 +14,8 @@ $(document).ready(() => {
     const val1 = parseInt($sliderWrapper.attr('data-val1'), 10);
     const val2 = parseInt($sliderWrapper.attr('data-val2'), 10);
 
-    function getFormatValues(values){
-      if (!values.length){
+    function getFormatValues(values) {
+      if (!values.length) {
         return;
       }
 
@@ -26,7 +26,7 @@ $(document).ready(() => {
       $currentInput.val(resultInputVal);
     }
 
-    function writeValuesToInputs(values){
+    function writeValuesToInputs(values) {
       if ($inputMinVal.length && values[0]) {
         $inputMinVal.val(values[0]);
       }

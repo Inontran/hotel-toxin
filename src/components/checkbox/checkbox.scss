@@ -2,9 +2,9 @@
 
 .checkbox {
   display: block;
-  line-height: .6;
+  line-height: 0.6;
 
-  &__wrapper{
+  &__wrapper {
     display: inline-flex;
   }
 
@@ -23,7 +23,6 @@
     transition: 0.2s;
     flex: none;
     cursor: pointer;
-    flex: none;
 
     &::after {
       content: '';
@@ -76,7 +75,7 @@
   }
 
   &__input:disabled ~ &__view,
-  &__input:disabled ~ &__text-wrapper{
+  &__input:disabled ~ &__text-wrapper {
     cursor: default;
   }
 }

@@ -62,21 +62,6 @@
     opacity: 0;
   }
 
-  &.dropdown_dates {
-    .dropdown__content {
-      top: calc(100% + 5px);
-      border: 0;
-      width: min-content;
-    }
-
-    &.dropdown_right-align{
-      .dropdown__content{
-        left: auto;
-        right: 0;
-      }
-    }
-  }
-
   &.dropdown_header {
     .dropdown__content {
       border-radius: 4px;
@@ -84,6 +69,21 @@
       transform: translateX(-50%);
       max-width: 300%;
       width: auto;
+    }
+  }
+
+  &.dropdown_dates {
+    .dropdown__content {
+      top: calc(100% + 5px);
+      border: 0;
+      width: min-content;
+    }
+  }
+
+  &.dropdown_right-align {
+    .dropdown__content {
+      left: auto;
+      right: 0;
     }
   }
 

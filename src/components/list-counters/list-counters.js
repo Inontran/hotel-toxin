@@ -2,8 +2,11 @@ import $ from 'jquery';
 
 $(() => {
   const $body = $('body');
+  let result = '';
+  let countNotZeroItems = 0;
+  let summAllCounters = 0;
 
-  function declineWord(number, titles){
+  function declineWord(number, titles) {
     const numberOfEnding = [2, 0, 1, 1, 1, 2];
     const isLastEnding = number % 100 > 4 && number % 100 < 20;
     const correctEnding = (number % 10 < 5) ? number % 10 : 5;
@@ -11,7 +14,7 @@ $(() => {
   }
 
   function calcItemsListCounters($listCounters) {
-    if (!$listCounters.length){
+    if (!$listCounters.length) {
       return;
     }
 
@@ -47,17 +50,13 @@ $(() => {
       }
     }
 
-    let result = '';
-    let countNotZeroItems = 0;
-    let summAllCounters = 0;
-
     collectionGroupIds.forEach((id) => {
       let groupCounterSumm = 0;
       const $groupCountersById = $listCounters.find(`.js-list-counters__counter[data-group-item-id="${id}"]`);
-      $groupCountersById.each(function(){
+      $groupCountersById.each(function () {
         const $counterItem = $(this);
         const $counterInput = $('.js-input-number__input', $counterItem);
-        if( !$counterInput.length ){
+        if (!$counterInput.length) {
           return;
         }
 
@@ -65,26 +64,26 @@ $(() => {
         groupCounterSumm += valCounter;
       });
 
-      if( groupCounterSumm ){
+      if (groupCounterSumm) {
         getTextFromCounter($groupCountersById.eq(0), groupCounterSumm);
         summAllCounters += groupCounterSumm;
       }
-    })
+    });
 
-    $listCounters.find('.js-list-counters__counter:not([data-group-item-id])').each(function(){
+    $listCounters.find('.js-list-counters__counter:not([data-group-item-id])').each(function () {
       const $counterItem = $(this);
       const $counterInput = $('.js-input-number__input', $counterItem);
-      if( !$counterInput.length ){
+      if (!$counterInput.length) {
         return;
       }
 
       const valCounter = parseInt($counterInput.val(), 10);
-      if(valCounter){
+      if (valCounter) {
         getTextFromCounter($counterItem, valCounter);
       }
     });
 
-    if( summAllCounters === 0 ){
+    if (summAllCounters === 0) {
       result = $listCounters.attr('data-default-text') ? $listCounters.attr('data-default-text') : '';
     }
     $dropdown.find('.js-dropdown__input-wrapper .js-input__field').val(result);

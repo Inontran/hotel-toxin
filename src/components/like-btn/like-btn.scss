@@ -55,7 +55,7 @@
     }
   }
 
-  &__check:disabled ~ &__view{
+  &__check:disabled ~ &__view {
     cursor: default;
   }
 
