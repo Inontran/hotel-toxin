@@ -76,12 +76,12 @@ block content
         div.product__body-row
           div.product__body-col.product__body-col-1
             div.product__grid-3
-              section.product__grid-3-col.product__grid-3-col-1.product_mb30
+              section.product__grid-3-col.product__grid-3-col-1.product_mb33
                 if optionsInfographics
                   h2.product__title Сведения о номере
                   +infographics(optionsInfographics)
               if chartCountAll
-                section.product__grid-3-col.product__grid-3-col-2.product_mb30
+                section.product__grid-3-col.product__grid-3-col-2.product_mb33
                   h2.product__title Впечатления от номера
                   +chart({
                     chartCountAll: chartCountAll,
@@ -92,20 +92,20 @@ block content
                   })
             
             if reviews
-              section.product__section-reviews.product_mb40.product_none.product_block-md
+              section.product__section-reviews.product_mb33.product_none.product_block-md
                 header.product__header-reviews.product_mb10
                   div.product__header-reviews-col
                     h2.product__title.product_mb10 Отзывы посетителей номера
                   div.product__header-reviews-col.product_mb10
                     span.product__text-count-reviews #{reviews.length} отзыва
                 each val, index in reviews
-                  div.product_mb20
+                  div.product_mb23
                     +review(val)
 
             div.product__grid-3.product_none.product_flex-md
               section.product__grid-3-col.product__grid-3-col-1.product_mb40
                 if rulesTitle
-                  h2.product__title #{rulesTitle}
+                  h2.product__title.product_pl20 #{rulesTitle}
                 if optionsRules
                   +list(optionsRules)
               section.product__grid-3-col.product__grid-3-col-2.product_mb40

@@ -156,7 +156,7 @@
   &__body {
     max-width: $max_width_container;
     margin: 0 auto;
-    padding: 70px $padding_container 35px;
+    padding: 70px $padding_container 0;
 
     &-row {
       display: flex;
@@ -290,12 +290,24 @@
     margin-bottom: 20px;
   }
 
+  &_mb23 {
+    margin-bottom: 23px;
+  }
+
   &_mb30 {
     margin-bottom: 30px;
   }
 
+  &_mb33 {
+    margin-bottom: 33px;
+  }
+
   &_mb40 {
     margin-bottom: 40px;
+  }
+
+  &_pl20{
+    padding-left: 20px;
   }
 
   &_none{
