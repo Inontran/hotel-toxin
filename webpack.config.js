@@ -184,6 +184,7 @@ const plugins = () =>{
       outputPath: 'favicons',
       prefix: 'favicons/',
       inject: true,
+      lang: "ru-RU",
       favicons: {
         background: '#fff',
         theme_color: '#BC9CFF',
