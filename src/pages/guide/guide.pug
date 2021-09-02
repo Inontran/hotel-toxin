@@ -24,9 +24,16 @@ include ../../components/form-booking/form-booking
 include ../../components/card-product/card-product
 include ../../components/chart/chart
 
-
-block title
-  | Guide
+block headTags
+  -
+    const {
+      title = "",
+      discription = "",
+      keywords = "",
+    } = htmlWebpackPlugin.options.getData();
+  title #{title}
+  meta(name="discription", content = discription)
+  meta(name="keywords", content = keywords)
 
 block content
   -

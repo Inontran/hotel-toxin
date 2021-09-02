@@ -5,8 +5,16 @@ include ../../components/pagination/pagination
 include ../../components/filter-products/filter-products
 include ../../components/button/button
 
-block title
-  | Номера Toxin Hotel
+block headTags
+  -
+    const {
+      title = "",
+      discription = "",
+      keywords = "",
+    } = htmlWebpackPlugin.options.getData();
+  title #{title}
+  meta(name="discription", content = discription)
+  meta(name="keywords", content = keywords)
 
 block content
   -

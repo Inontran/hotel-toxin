@@ -3,8 +3,16 @@ extends ../base/base.pug
 include ../../components/first-display/first-display
 include ../../components/form-login/form-login
 
-block title
-  | Registration Toxin Hotel
+block headTags
+  -
+    const {
+      title = "",
+      discription = "",
+      keywords = "",
+    } = htmlWebpackPlugin.options.getData();
+  title #{title}
+  meta(name="discription", content = discription)
+  meta(name="keywords", content = keywords)
 
 block content
   - data = htmlWebpackPlugin.options.getData()
