@@ -74,11 +74,6 @@ npm run stylelint:fix
 npm run build
 ```
 
-Затем оптимизировать изображения в директории dist командой:
-```
-npm run gulp:images
-```
-
 После отправить файлы собранного проекта на сервер хостинга:
 ```
 npm run gulp:deploy
