@@ -13,6 +13,16 @@
 - [Страница регистрации](https://inontran.github.io/hotel-toxin/register.html)
 
 ### Описание команд
+Клонирование проекта по SSH:
+```
+git clone git@github.com:Inontran/hotel-toxin.git
+```
+
+Клонирование проекта по HTTPS:
+```
+git clone https://github.com/Inontran/hotel-toxin.git
+```
+
 Установка проекта:
 ```
 npm install
