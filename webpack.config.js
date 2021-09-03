@@ -3,7 +3,6 @@ const path = require('path');
 const fs = require('fs');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const {CleanWebpackPlugin} = require('clean-webpack-plugin');
-const CopyWebpackPlugin = require('copy-webpack-plugin');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 const TerserWebpackPlugin = require('terser-webpack-plugin');
 const OptimizeCssAssetsPlugin = require('optimize-css-assets-webpack-plugin');
@@ -65,7 +64,7 @@ function changePath(path){
 
 
 function iteratorArray(arr){
-  var toString = {}.toString;  // для получение типа объекта
+  var toString = {}.toString;  // для получения типа объекта
   for (var i = 0; i < arr.length; i++){
     if( toString.call(arr[i]) === '[object Object]' ){
       arr[i] = iteratorAllProp(arr[i]);
@@ -81,7 +80,7 @@ function iteratorArray(arr){
 
 
 function iteratorAllProp(obj){
-  var toString = {}.toString;  // для получение типа объекта
+  var toString = {}.toString;  // для получения типа объекта
 
   for(var prop in obj){
     if( toString.call(obj[prop]) === '[object Object]' ){
@@ -155,18 +154,6 @@ const filename = ext => isDev ? `[name]${ext}` : `[name].[hash].${ext}`;
 const plugins = () =>{
   const base = [
     new CleanWebpackPlugin(),
-    new CopyWebpackPlugin({
-      patterns:[
-        {
-          from: `${PATHS.src}/components/**/*.+(png|jpg|svg|gif)`,
-          to: `${PATHS.dist}/img/[path][name].[hash].[ext]`,
-        },
-        {
-          from: `${PATHS.src}/pages/**/*.+(png|jpg|svg|gif)`,
-          to: `${PATHS.dist}/img/[path][name].[hash].[ext]`,
-        }
-      ]
-    }),
     new MiniCssExtractPlugin( filename('css') ),
     new webpack.ProvidePlugin({
       $: 'jquery',
@@ -184,7 +171,7 @@ const plugins = () =>{
       outputPath: 'favicons',
       prefix: 'favicons/',
       inject: true,
-      lang: "ru-RU",
+      lang: 'ru-RU',
       favicons: {
         background: '#fff',
         theme_color: '#BC9CFF',
@@ -195,6 +182,39 @@ const plugins = () =>{
 
   return base;
 };
+
+
+const imagesLoaders = [
+  {
+    loader: 'file-loader',
+    options: {
+      name: 'img/[path][name].[hash].[ext]'
+    }
+  }
+];
+if(isProd){
+  imagesLoaders.push({
+    loader: 'image-webpack-loader',
+    options: {
+      mozjpeg: {
+        progressive: true,
+      },
+      optipng: {
+        enabled: false,
+      },
+      pngquant: {
+        quality: [0.65, 0.90],
+        speed: 4
+      },
+      gifsicle: {
+        interlaced: false,
+      },
+      webp: {
+        quality: 75
+      }
+    }
+  });
+}
 
 
 module.exports = {
@@ -225,7 +245,7 @@ module.exports = {
   module:{
     rules:[
       {
-        test: /\.css$/,
+        test: /\.css$/i,
         use: [
           {
             loader: MiniCssExtractPlugin.loader,
@@ -243,15 +263,12 @@ module.exports = {
         ]
       },
       {
-        test: /\.(png|jpg|svg|gif)$/,
+        test: /\.(png|jpe?g|svg|gif)$/i,
         exclude: `${PATHS.src}/theme/fonts/`,
-        loader: 'file-loader',
-        options: {
-          name: 'img/[path][name].[hash].[ext]'
-        }
+        loaders: imagesLoaders,
       },
       {
-        test: /\.(ttf|woff|woff2|eot|svg)$/,
+        test: /\.(ttf|woff|woff2|eot|svg)$/i,
         include: `${PATHS.src}/theme/fonts/`,
         loader: 'file-loader',
         options: {
@@ -283,7 +300,7 @@ module.exports = {
         ]
       },
       {
-        test: /\.js$/,
+        test: /\.js$/i,
         exclude: /node_modules/,
         loader: {
           loader: 'babel-loader',
@@ -301,7 +318,7 @@ module.exports = {
         }
       },
       {
-        test: /\.pug$/,
+        test: /\.pug$/i,
         loader: {
           loader: 'pug-loader',
           options:{
