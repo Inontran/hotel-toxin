@@ -70,15 +70,12 @@ block content
           div.product__gallery-item.product__gallery-item_third(style="background-image: url(" + gallery[2] + ");")
 
         section.product__carousel.js-product__carousel.owl-carousel
-          if !gallery[0]
-            - gallery[0] = ''
-          if !gallery[1]
-            - gallery[1] = ''
-          if !gallery[2]
-            - gallery[2] = ''
-          div.product__carousel-item(style="background-image: url(" + gallery[0] + ");")
-          div.product__carousel-item(style="background-image: url(" + gallery[1] + ");")
-          div.product__carousel-item(style="background-image: url(" + gallery[2] + ");")
+          if gallery[0]
+            div.product__carousel-item(style="background-image: url(" + gallery[0] + ");")
+          if gallery[1]
+            div.product__carousel-item(style="background-image: url(" + gallery[1] + ");")
+          if gallery[2]
+            div.product__carousel-item(style="background-image: url(" + gallery[2] + ");")
 
       div.product__body
         div.product__body-row
