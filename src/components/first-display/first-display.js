@@ -1,4 +1,5 @@
 import $ from 'jquery';
+require('./first-display.scss');
 
 $(() => {
   const $headerSite = $('.js-header');

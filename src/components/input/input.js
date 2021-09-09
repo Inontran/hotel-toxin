@@ -1,6 +1,8 @@
 import $ from 'jquery';
 import Inputmask from 'inputmask';
 
+require('./input.scss');
+
 $(() => {
   const $inputsDate = $('.js-input.input_mask-date .js-input__field');
 

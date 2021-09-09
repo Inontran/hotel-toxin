@@ -38,8 +38,8 @@ function requireAll(requireContext) {
   return requireContext.keys().map(requireContext);
 }
 
-requireAll(require.context('./components', true, /^\.\/(?!.*(?:__tests__)).*\.(js?)$/));
-requireAll(require.context('./pages', true, /^\.\/(?!.*(?:__tests__)).*\.(js?)$/));
-
-requireAll(require.context('./components', true, /^\.\/(?!.*(?:__tests__)).*\.(scss?)$/));
-requireAll(require.context('./pages', true, /^\.\/(?!.*(?:__tests__)).*\.(scss?)$/));
+requireAll(require.context('@/pages/base/', true, /^\.\/(?!.*(?:__tests__)).*\.(js?)$/));
+requireAll(require.context('@/components/layout', true, /^\.\/(?!.*(?:__tests__)).*\.(js?)$/));
+requireAll(require.context('@/components/header', true, /^\.\/(?!.*(?:__tests__)).*\.(js?)$/));
+requireAll(require.context('@/components/footer', true, /^\.\/(?!.*(?:__tests__)).*\.(js?)$/));
+requireAll(require.context('@/components/curtain', true, /^\.\/(?!.*(?:__tests__)).*\.(js?)$/));

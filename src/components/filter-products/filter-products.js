@@ -1,4 +1,10 @@
 import $ from 'jquery';
+require('./filter-products.scss');
+require('@/components/dropdown/dropdown.js');
+require('@/components/slider-range/slider-range.js');
+require('@/components/checkbox/checkbox.js');
+require('@/components/collapse/collapse.js');
+require('@/components/air-datepicker/air-datepicker.js');
 
 $(() => {
   const $body = $('body');

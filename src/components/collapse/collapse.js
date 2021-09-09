@@ -1,5 +1,7 @@
 import $ from 'jquery';
 
+require('./collapse.scss');
+
 $(() => {
   const $body = $('body');
 

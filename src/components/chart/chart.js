@@ -1,6 +1,8 @@
 import $ from 'jquery';
 import Chart from 'chart.js';
 
+require('./chart.scss');
+
 $(() => {
   function initCharts($chart) {
     if (!$chart.length) {

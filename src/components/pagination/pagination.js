@@ -1,4 +1,6 @@
 import $ from 'jquery';
+require('./jquery.paging.js');
+require('./pagination.scss');
 
 $(() => {
   $('body').find('.js-pagination .js-pagination__wrapper').each(function () {

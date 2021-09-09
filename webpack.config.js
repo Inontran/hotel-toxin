@@ -119,8 +119,10 @@ const htmlPlugins = pages.map(fileName => new HtmlWebpackPlugin({
   },
   filename: `${fileName}.html`,
   template: path.resolve(__dirname, `src/pages/${fileName}/${fileName}.pug`),
+  chunks: fileName,
   alwaysWriteToDisk: true,
-  inject: 'body',
+  inject: 'head',
+  scriptLoading: 'defer',
   hash: true,
   minify:{
     collapseWHiteSpace: isProd
@@ -216,13 +218,15 @@ if(isProd){
   });
 }
 
+const arrayEntry = {};
+pages.forEach(fileName => {
+  arrayEntry[fileName] = `/pages/${fileName}/${fileName}.js`;
+});
 
 module.exports = {
   context: PATHS.src,
   mode: 'development',
-  entry: {
-    bundle: path.join(PATHS.src, '/entry.js')
-  },
+  entry: arrayEntry,
   output:{
     filename: '[name].js',
     path: PATHS.dist,

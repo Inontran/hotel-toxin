@@ -1,4 +1,6 @@
 import $ from 'jquery';
+require('./review.scss');
+require('@/components/like-btn/like-btn.js');
 
 $(() => {
   const $body = $('body');

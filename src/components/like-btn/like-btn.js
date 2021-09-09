@@ -1,4 +1,5 @@
 import $ from 'jquery';
+require('./like-btn.scss');
 
 $(() => {
   const $body = $('body');

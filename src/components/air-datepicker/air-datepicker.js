@@ -2,6 +2,9 @@ import $ from 'jquery';
 import 'air-datepicker';
 import moment from 'moment';
 
+require('./air-datepicker.scss');
+require('@/components/button/button.js');
+
 moment.lang('ru');
 
 $(() => {

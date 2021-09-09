@@ -1,4 +1,5 @@
 import $ from 'jquery';
+require('./rate-btn.scss');
 
 $(() => {
   function handlerClickRateBtn(event) {
