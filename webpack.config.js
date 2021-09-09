@@ -13,12 +13,13 @@ const FaviconsWebpackPlugin = require('favicons-webpack-plugin');
 const isDev = process.env.NODE_ENV === 'development';
 const isProd = process.env.NODE_ENV === 'production';
 
-const pages = [];
-
 const PATHS = {
   src: path.resolve(__dirname, './src'),
   dist: path.resolve(__dirname, './dist')
 };
+
+const pages = [];
+const arrayEntry = {};
 
 fs
   .readdirSync(path.resolve(__dirname, 'src', 'pages'))
@@ -27,6 +28,7 @@ fs
   })
   .forEach((file) => {
     pages.push(file.split('/', 2));
+    arrayEntry[file] = `/pages/${file}/${file}.js`;
   });
 
 
@@ -218,11 +220,6 @@ if(isProd){
   });
 }
 
-const arrayEntry = {};
-pages.forEach(fileName => {
-  arrayEntry[fileName] = `/pages/${fileName}/${fileName}.js`;
-});
-
 module.exports = {
   context: PATHS.src,
   mode: 'development',
@@ -280,7 +277,7 @@ module.exports = {
         },
       },
       {
-        test: /\.(scss|sass)$/,
+        test: /\.(scss|sass)$/i,
         use: [
           {
             loader: MiniCssExtractPlugin.loader,
