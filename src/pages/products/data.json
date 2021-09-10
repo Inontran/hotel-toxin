@@ -5,10 +5,10 @@
   "cards":[
     {
       "gallery": [
-        "@/pages/products/img/image-1.jpg",
-        "@/pages/products/img/image-2.jpg",
-        "@/pages/products/img/image-3.jpg",
-        "@/pages/products/img/image-4.jpg"
+        "image-1.jpg",
+        "image-2.jpg",
+        "image-3.jpg",
+        "image-4.jpg"
       ],
       "roomNumber": "888",
       "price": "9 900₽",
@@ -19,10 +19,10 @@
     },
     {
       "gallery": [
-        "@/pages/products/img/image-1.jpg",
-        "@/pages/products/img/image-2.jpg",
-        "@/pages/products/img/image-3.jpg",
-        "@/pages/products/img/image-4.jpg"
+        "image-1.jpg",
+        "image-2.jpg",
+        "image-3.jpg",
+        "image-4.jpg"
       ],
       "roomNumber": "840",
       "price": "9 900₽",
@@ -32,10 +32,10 @@
     },
     {
       "gallery": [
-        "@/pages/products/img/image-1.jpg",
-        "@/pages/products/img/image-2.jpg",
-        "@/pages/products/img/image-3.jpg",
-        "@/pages/products/img/image-4.jpg"
+        "image-1.jpg",
+        "image-2.jpg",
+        "image-3.jpg",
+        "image-4.jpg"
       ],
       "roomNumber": "980",
       "price": "8 500₽",
@@ -46,10 +46,10 @@
     },
     {
       "gallery": [
-        "@/pages/products/img/image-1.jpg",
-        "@/pages/products/img/image-2.jpg",
-        "@/pages/products/img/image-3.jpg",
-        "@/pages/products/img/image-4.jpg"
+        "image-1.jpg",
+        "image-2.jpg",
+        "image-3.jpg",
+        "image-4.jpg"
       ],
       "roomNumber": "856",
       "price": "7 300₽",
@@ -59,10 +59,10 @@
     },
     {
       "gallery": [
-        "@/pages/products/img/image-1.jpg",
-        "@/pages/products/img/image-2.jpg",
-        "@/pages/products/img/image-3.jpg",
-        "@/pages/products/img/image-4.jpg"
+        "image-1.jpg",
+        "image-2.jpg",
+        "image-3.jpg",
+        "image-4.jpg"
       ],
       "roomNumber": "740",
       "price": "6 000₽",
@@ -72,10 +72,10 @@
     },
     {
       "gallery": [
-        "@/pages/products/img/image-1.jpg",
-        "@/pages/products/img/image-2.jpg",
-        "@/pages/products/img/image-3.jpg",
-        "@/pages/products/img/image-4.jpg"
+        "image-1.jpg",
+        "image-2.jpg",
+        "image-3.jpg",
+        "image-4.jpg"
       ],
       "roomNumber": "982",
       "price": "5 800₽",

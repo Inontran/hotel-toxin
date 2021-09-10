@@ -32,87 +32,10 @@ fs
   });
 
 
-function makeHash(path) {
-  var hashFile = '';
-  const fileStream = fs.readFileSync(path);
-  const hash = crypto.createHash('md4');
-  hash.update(fileStream);
-  hashFile = hash.digest('hex');
-
-  return hashFile;
-}
-
-
-function getFileName(path) {
-  return path.split('\\').pop().split('/').pop();
-}
-
-function appendHashFileName(name, hash){
-  var name_new = name.split('.');
-      name_new[0] += '.' + hash;
-      name_new = name_new.join('.');
-  return name_new;
-}
-
-
-function changePath(path){
-  var hasFile = makeHash( path.replace(/@/, PATHS.src) );
-  var filename = getFileName(path);
-  var name_hash = appendHashFileName(filename, hasFile);
-  path = path.replace(filename, name_hash);
-  path = path.replace(/@/, 'img');
-  return path;
-}
-
-
-function iteratorArray(arr){
-  var toString = {}.toString;  // для получения типа объекта
-  for (var i = 0; i < arr.length; i++){
-    if( toString.call(arr[i]) === '[object Object]' ){
-      arr[i] = iteratorAllProp(arr[i]);
-    }
-    if( toString.call(arr[i]) === '[object String]' ){
-      if( arr[i].includes('@/') ){
-        arr[i] = changePath(arr[i]);
-      }
-    }
-  }
-  return arr;
-}
-
-
-function iteratorAllProp(obj){
-  var toString = {}.toString;  // для получения типа объекта
-
-  for(var prop in obj){
-    if( toString.call(obj[prop]) === '[object Object]' ){
-      obj[prop] = iteratorAllProp(obj[prop]);
-    }
-    if( toString.call(obj[prop]) === '[object Array]' ){
-      obj[prop] = iteratorArray(obj[prop]);
-    }
-    if( toString.call(obj[prop]) === '[object String]' ){
-      if( obj[prop].includes('@/') ){
-        obj[prop] = changePath(obj[prop]);
-      }
-    }
-  }
-
-  return obj;
-}
-
-
 const htmlPlugins = pages.map(fileName => new HtmlWebpackPlugin({
   getData: () => {
     try {
-      var data_obj = JSON.parse(fs.readFileSync(`./src/pages/${fileName}/data.json`, 'utf8'));
-      try {
-        data_obj = iteratorAllProp(data_obj);
-      } catch (error) {
-        console.log(error);
-      }
-
-      return data_obj;
+      return JSON.parse(fs.readFileSync(`./src/pages/${fileName}/data.json`, 'utf8'));
     } catch (e) {
       console.warn(`data.json was not provided for page ${fileName}, because `);
       console.warn(e);

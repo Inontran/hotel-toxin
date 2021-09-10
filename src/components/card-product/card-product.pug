@@ -35,7 +35,11 @@ mixin card-product(options = {})
         div.card-product__carousel.js-card-product__carousel.owl-carousel
           each val, index in gallery
             div.card-product__img-wrapper
-              img.card-product__img(src = val, alt = 'фото номера')
+              if val
+                img.card-product__img(
+                  src = val,
+                  alt = 'фото номера ' + roomNumber
+                )
     div.card-product__content
       div.card-product__content-top
         div.card-product__content-top-left

@@ -59,23 +59,26 @@ block content
     div.product
       if gallery
         section.product__gallery
-          if !gallery[0]
-            - gallery[0] = ''
-          if !gallery[1]
-            - gallery[1] = ''
-          if !gallery[2]
-            - gallery[2] = ''
-          div.product__gallery-item.product__gallery-item_first(style="background-image: url(" + gallery[0] + ");")
-          div.product__gallery-item.product__gallery-item_second(style="background-image: url(" + gallery[1] + ");")
-          div.product__gallery-item.product__gallery-item_third(style="background-image: url(" + gallery[2] + ");")
+          if gallery[0]
+            - gallery[0] = require('@/pages/product/img/' + gallery[0]).default
+            div.product__gallery-item.product__gallery-item_first(
+              style = "background-image: url(" + gallery[0] + ");"
+            )
+          if gallery[1]
+            - gallery[1] = require('@/pages/product/img/' + gallery[1]).default
+            div.product__gallery-item.product__gallery-item_second(
+              style = "background-image: url(" + gallery[1] + ");"
+            )
+          if gallery[2]
+            - gallery[2] = require('@/pages/product/img/' + gallery[2]).default
+            div.product__gallery-item.product__gallery-item_third(
+              style = "background-image: url(" + gallery[2] + ");"
+            )
 
         section.product__carousel.js-product__carousel.owl-carousel
-          if gallery[0]
-            div.product__carousel-item(style="background-image: url(" + gallery[0] + ");")
-          if gallery[1]
-            div.product__carousel-item(style="background-image: url(" + gallery[1] + ");")
-          if gallery[2]
-            div.product__carousel-item(style="background-image: url(" + gallery[2] + ");")
+          each src in gallery
+            if src
+              div.product__carousel-item(style="background-image: url(" + src + ");")
 
       div.product__body
         div.product__body-row
@@ -84,6 +87,10 @@ block content
               section.product__grid-3-col.product__grid-3-col-1.product_mb33
                 if optionsInfographics
                   h2.product__title Сведения о номере
+                  - var index = 0
+                  while index < optionsInfographics.items.length
+                    - optionsInfographics.items[index].src = require('@/pages/product/img/' + optionsInfographics.items[index].src).default
+                    - index++
                   +infographics(optionsInfographics)
               if chartCountAll
                 section.product__grid-3-col.product__grid-3-col-2.product_mb33
@@ -103,9 +110,10 @@ block content
                     h2.product__title.product_mb10 Отзывы посетителей номера
                   div.product__header-reviews-col.product_mb10
                     span.product__text-count-reviews #{reviews.length} отзыва
-                each val, index in reviews
+                each reviewItem, index in reviews
                   div.product_mb23
-                    +review(val)
+                    - reviewItem.avatar = require('@/pages/product/img/' + reviewItem.avatar).default
+                    +review(reviewItem)
 
             div.product__grid-3.product_none.product_flex-md
               section.product__grid-3-col.product__grid-3-col-1.product_mb40

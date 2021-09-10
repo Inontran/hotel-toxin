@@ -3,27 +3,27 @@
   "discription": "Страница номера 888 на сайте бронирования номеров отеля Toxin.",
   "keywords": "Toxin, Hotel, Отель",
   "gallery": [
-    "@/pages/product/img/image-1.jpg",
-    "@/pages/product/img/image-2.jpg",
-    "@/pages/product/img/image-3.jpg"
+    "image-1.jpg",
+    "image-2.jpg",
+    "image-3.jpg"
   ],
 
   "optionsInfographics":{
     "items": [
       { 
-        "src": "@/components/infographics/img/insert_emoticon.svg", 
+        "src": "insert_emoticon.svg", 
         "title": "Комфорт", 
         "text": "Шумопоглощающие стены",
         "line": true
       },
       { 
-        "src": "@/components/infographics/img/location_city.svg", 
+        "src": "location_city.svg", 
         "title": "Удобство", 
         "text": "Окно в каждой из спален",
         "line": true
       },
       { 
-        "src": "@/components/infographics/img/whatshot.svg", 
+        "src": "whatshot.svg", 
         "title": "Уют", 
         "text": "Номер оснащен камином"
       }
@@ -33,7 +33,7 @@
   "reviews":[
     {
       "reviewId": 1,
-      "avatar": "@/components/review/img/photo-example.jpg",
+      "avatar": "photo-example.jpg",
       "isLike": true,
       "countLike": 12,
       "username": "Мурад Сарафанов",
@@ -42,7 +42,7 @@
     },
     {
       "reviewId": 2,
-      "avatar": "@/components/review/img/photo-example.jpg",
+      "avatar": "photo-example.jpg",
       "countLike": 2,
       "username": "Патрисия Стёклышкова",
       "timeLater": "Неделю назад",
