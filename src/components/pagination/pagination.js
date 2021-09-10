@@ -1,5 +1,6 @@
 import $ from 'jquery';
-require('./jquery.paging.js');
+
+require('./jquery.paging');
 require('./pagination.scss');
 
 $(() => {

@@ -1,4 +1,4 @@
 require('./header.scss');
-require('@/components/logo/logo.js');
-require('@/components/button/button.js');
-require('@/components/dropdown/dropdown.js');
+require('@/components/logo/logo');
+require('@/components/button/button');
+require('@/components/dropdown/dropdown');

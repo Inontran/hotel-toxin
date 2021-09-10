@@ -1,5 +1,6 @@
 import $ from 'jquery';
 import 'webpack-jquery-ui/slider';
+
 require('./slider-range.scss');
 
 $(document).ready(() => {

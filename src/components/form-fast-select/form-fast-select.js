@@ -1,6 +1,6 @@
 require('./form-fast-select.scss');
 
-require('@/components/dropdown/dropdown.js');
-require('@/components/air-datepicker/air-datepicker.js');
-require('@/components/button/button.js');
-require('@/components/card/card.js');
+require('@/components/dropdown/dropdown');
+require('@/components/air-datepicker/air-datepicker');
+require('@/components/button/button');
+require('@/components/card/card');

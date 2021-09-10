@@ -3,7 +3,7 @@ import 'air-datepicker';
 import moment from 'moment';
 
 require('./air-datepicker.scss');
-require('@/components/button/button.js');
+require('@/components/button/button');
 
 moment.lang('ru');
 

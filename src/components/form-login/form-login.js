@@ -1,4 +1,4 @@
 require('./form-login.scss');
-require('@/components/button/button.js');
-require('@/components/input/input.js');
-require('@/components/card/card.js');
+require('@/components/button/button');
+require('@/components/input/input');
+require('@/components/card/card');

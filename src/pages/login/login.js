@@ -1,5 +1,5 @@
-require('../../entry.js');
+require('../../entry');
 require('./login.scss');
 
-require('@/components/first-display/first-display.js');
-require('@/components/form-login/form-login.js');
+require('@/components/first-display/first-display');
+require('@/components/form-login/form-login');

@@ -1,7 +1,8 @@
 import $ from 'jquery';
+
 require('./list-counters.scss');
-require('@/components/button/button.js');
-require('@/components/input-number/input-number.js');
+require('@/components/button/button');
+require('@/components/input-number/input-number');
 
 $(() => {
   const $body = $('body');

@@ -1,8 +1,9 @@
 import $ from 'jquery';
+
 require('./dropdown.scss');
-require('@/components/input/input.js');
-require('@/components/button/button.js');
-require('@/components/list-counters/list-counters.js');
+require('@/components/input/input');
+require('@/components/button/button');
+require('@/components/list-counters/list-counters');
 
 $(() => {
   const $body = $('body');

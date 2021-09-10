@@ -1,14 +1,14 @@
-require('../../entry.js');
-require('./product.scss');
-
-require('@/components/form-booking/form-booking.js');
-require('@/components/infographics/infographics.js');
-require('@/components/review/review.js');
-require('@/components/list/list.js');
-require('@/components/chart/chart.js');
-
 import $ from 'jquery';
 import 'owl.carousel';
+
+require('../../entry');
+require('./product.scss');
+
+require('@/components/form-booking/form-booking');
+require('@/components/infographics/infographics');
+require('@/components/review/review');
+require('@/components/list/list');
+require('@/components/chart/chart');
 
 $(document).ready(() => {
   $('.js-product__carousel').each(function () {

@@ -1,12 +1,12 @@
-require('../../entry.js');
+import $ from 'jquery';
+
+require('../../entry');
 require('./products.scss');
 
-require('@/components/card-product/card-product.js');
-require('@/components/pagination/pagination.js');
-require('@/components/filter-products/filter-products.js');
-require('@/components/button/button.js');
-
-import $ from 'jquery';
+require('@/components/card-product/card-product');
+require('@/components/pagination/pagination');
+require('@/components/filter-products/filter-products');
+require('@/components/button/button');
 
 $(() => {
   const $body = $('body');

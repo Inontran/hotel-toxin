@@ -1,10 +1,11 @@
 import $ from 'jquery';
+
 require('./filter-products.scss');
-require('@/components/dropdown/dropdown.js');
-require('@/components/slider-range/slider-range.js');
-require('@/components/checkbox/checkbox.js');
-require('@/components/collapse/collapse.js');
-require('@/components/air-datepicker/air-datepicker.js');
+require('@/components/dropdown/dropdown');
+require('@/components/slider-range/slider-range');
+require('@/components/checkbox/checkbox');
+require('@/components/collapse/collapse');
+require('@/components/air-datepicker/air-datepicker');
 
 $(() => {
   const $body = $('body');
