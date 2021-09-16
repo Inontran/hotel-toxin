@@ -10,21 +10,35 @@ moment.lang('ru');
 $(() => {
   const $body = $('body');
 
-  $body.find('.js-air-datepicker.air-datepicker_inline .js-air-datepicker__wrapper').each(function () {
-    $(this).datepicker({
+  $body.find('.js-air-datepicker.air-datepicker_inline').each(function () {
+    const $airDatepicker = $(this);
+    const attrMinDate = $airDatepicker.data('min-date');
+    let minDateOption;
+    if (attrMinDate === 'today') {
+      minDateOption = new Date();
+    } else if (attrMinDate) {
+      try {
+        minDateOption = new Date(attrMinDate);
+      } catch (error) {
+        console.log(error);
+      }
+    }
+
+    $('.js-air-datepicker__wrapper', $airDatepicker).datepicker({
       range: true,
       inline: true,
       navTitles: {
         days: 'MM yyyy',
       },
+      minDate: minDateOption,
     });
   });
 
   function handlerClickClearBtn(event) {
     event.preventDefault();
     const $btn = $(event.currentTarget);
-    const $datePicker = $btn.closest('.js-air-datepicker');
-    $datePicker.find('.js-air-datepicker__wrapper').data('datepicker').clear();
+    const $airDatepicker = $btn.closest('.js-air-datepicker');
+    $airDatepicker.find('.js-air-datepicker__wrapper').data('datepicker').clear();
   }
 
   $body.on(
@@ -37,10 +51,10 @@ $(() => {
     event.preventDefault();
     const $btn = $(event.currentTarget);
     let $parentDropdown = $btn.closest('.js-dropdown');
-    const $datePicker = $btn.closest('.js-air-datepicker');
-    const dates = $datePicker.find('.js-air-datepicker__wrapper').data('datepicker').selectedDates;
+    const $airDatepicker = $btn.closest('.js-air-datepicker');
+    const dates = $airDatepicker.find('.js-air-datepicker__wrapper').data('datepicker').selectedDates;
 
-    const targetDropdowns = $datePicker.attr('data-target-dropdown');
+    const targetDropdowns = $airDatepicker.attr('data-target-dropdown');
     if (targetDropdowns) {
       $parentDropdown = $(targetDropdowns);
     }

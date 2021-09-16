@@ -179,6 +179,10 @@
           background: $gradient2;
         }
       }
+
+      &.-disabled-{
+        cursor: not-allowed;
+      }
     }
   }
 }
