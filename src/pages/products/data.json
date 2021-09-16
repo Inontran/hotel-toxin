@@ -100,15 +100,16 @@
     },
 
     "optionDropdownDatesDatepicker":{
-      "classes": "air-datepicker_inline"
+      "classes": "air-datepicker_inline",
+      "minDate": "today"
     },
 
     "optionDropdownPeople":{
       "inputParams":{
         "label": "Гости",
-        "readonly": true
+        "readonly": true,
+        "placeholder": "Сколько гостей"
       },
-      "textDefault": "Сколько гостей",
       "arrayCounters": [
         {
           "label": "Взрослые",

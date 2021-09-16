@@ -57,4 +57,12 @@
       padding-right: calc_rem(44);
     }
   }
+
+  &_in-dropdown {
+    .input__field {
+      &::placeholder{
+        color: $dark75;
+      }
+    }
+  }
 }
