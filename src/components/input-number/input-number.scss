@@ -26,6 +26,10 @@
     &::-webkit-inner-spin-button {
       display: none;
     }
+
+    &:read-only{
+      outline: none;
+    }
   }
 
   &__btn-less,

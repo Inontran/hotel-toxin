@@ -17,6 +17,7 @@ mixin input-number(options = {})
       step = 1,
       value = 0,
       name = '',
+      readonly = false,
     } = options;
 
   div.input-number.js-input-number(
@@ -30,6 +31,7 @@ mixin input-number(options = {})
       max = max,
       min = min,
       step = step,
-      type = 'number'
+      type = 'number',
+      readonly = readonly ? 'readonly' : false,
     )
     button.input-number__btn-more.js-input-number__btn-more +
