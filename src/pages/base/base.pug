@@ -41,6 +41,7 @@
 
 -
   var dataFooter = {
+    classes: '',
     footerItems: [
       {
         subtitle: "Навигация",
@@ -129,6 +130,7 @@ html(lang="ru")
 
       block footer
         +footer({
+          classes: dataFooter.classes,
           menuItems: dataFooter.footerItems,
           text1: dataFooter.text1,
           text2: dataFooter.text2,

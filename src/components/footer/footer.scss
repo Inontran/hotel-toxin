@@ -2,7 +2,10 @@
 
 .footer {
   background: $white;
-  border-top: 1px solid #b3b3bc;
+  
+  &_border-top{
+    border-top: 1px solid $dark25;
+  }
 
   &__up {
     display: grid;
@@ -71,7 +74,7 @@
   }
 
   &__down {
-    border-top: 1px solid #d1d1d4;
+    border-top: 1px solid $dark25;
     padding: 23px 0;
   }
 
