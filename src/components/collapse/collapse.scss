@@ -9,7 +9,7 @@
     background: none;
     box-shadow: none;
     width: 100%;
-    height: calc_rem(44);
+    min-height: calc_rem(44);
     cursor: pointer;
 
     &-text {
@@ -54,6 +54,7 @@
   &.collapse_theme-green {
     .collapse__btn {
       height: auto;
+      min-height: auto;
       justify-content: flex-start;
 
       &-arrow {
