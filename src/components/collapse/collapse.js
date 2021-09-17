@@ -7,11 +7,11 @@ $(() => {
 
   function handlerClickCollapse(event) {
     event.preventDefault();
-    const $collapse = $(event.currentTarget).closest('.collapse');
+    const $collapse = $(event.currentTarget).closest('.js-collapse');
     const collapseGroup = $collapse.attr('data-group');
 
     if (collapseGroup !== '' && collapseGroup !== 'undefined') {
-      const selector = '.collapse';
+      const selector = '.js-collapse';
 
       $body.find(`${selector}[data-group="${collapseGroup}"]`).each(function () {
         const $currentCollapse = $(this);
@@ -27,5 +27,5 @@ $(() => {
     }
   }
 
-  $body.on('click', '.collapse .collapse__btn', handlerClickCollapse);
+  $body.on('click', '.js-collapse .js-collapse__btn', handlerClickCollapse);
 });
