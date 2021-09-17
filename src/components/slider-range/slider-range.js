@@ -1,5 +1,6 @@
 import $ from 'jquery';
 import 'webpack-jquery-ui/slider';
+import 'jquery-ui-touch-punch';
 
 require('./slider-range.scss');
 
