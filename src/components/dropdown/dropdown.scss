@@ -73,18 +73,24 @@
     }
   }
 
+  &.dropdown_right-align {
+    .dropdown__content {
+      left: auto;
+      right: 0;
+    }
+  }
+
   &.dropdown_dates {
     .dropdown__content {
       top: calc(100% + 5px);
       border: 0;
       width: min-content;
-    }
-  }
 
-  &.dropdown_right-align {
-    .dropdown__content {
-      left: auto;
-      right: 0;
+      @media(max-width: $xxs + 10px){
+        right: auto;
+        left: 50%;
+        transform: translateX(-50%);
+      }
     }
   }
 
@@ -99,13 +105,6 @@
       max-height: 370px;
       opacity: 1;
       overflow-y: auto;
-    }
-
-    &.dropdown_dates {
-      .dropdown__content {
-        max-height: 100vh;
-        overflow: hidden;
-      }
     }
   }
 
