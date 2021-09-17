@@ -2,15 +2,14 @@
 
 .page {
   min-height: 100vh;
-  transition: transform 0.3s;
-  transform: translateX(0);
-
+  
   .page__content-wrapper {
     min-height: 100vh;
     display: flex;
     flex-direction: column;
-    overflow: hidden;
     width: 100%;
+    transition: transform 0.3s;
+    transform: translateX(0);
   }
 
   .page__main {
@@ -19,8 +18,10 @@
   }
 
   &.page_show-curtain {
-    @media (max-width: $sm) {
-      transform: translateX(-272px);
+    .page__content-wrapper{
+      @media (max-width: $sm) {
+        transform: translateX(-272px);
+      }
     }
   }
 }
