@@ -106,6 +106,12 @@
       opacity: 1;
       overflow-y: auto;
     }
+
+    &.dropdown_dates{
+      .dropdown__content{
+        max-height: none;
+      }
+    }
   }
 
   &.dropdown_hidden {
