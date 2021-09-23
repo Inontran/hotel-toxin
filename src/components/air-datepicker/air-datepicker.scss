@@ -28,6 +28,14 @@
     padding: 0 10px 10px;
   }
 
+  &__btn-wrapper_submit{
+    margin-left: auto;
+  }
+
+  &_hidden{
+    display: none;
+  }
+
   .datepicker {
     border: 0;
     border-radius: 0;
