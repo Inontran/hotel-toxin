@@ -3,16 +3,13 @@
 .guide-page {
   padding-bottom: 69px;
 
-  &_limit-width {
-    max-width: $max_width_container;
-    margin: 0 auto;
-  }
-
   &__container {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     grid-gap: 0 72px;
     padding: 0 $padding_container;
+    max-width: $max_width_container;
+    margin: 0 auto;
 
     &_var2 {
       grid-template-columns: 380px 380px 320px;
