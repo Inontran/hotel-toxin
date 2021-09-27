@@ -1,6 +1,6 @@
 include ../logo/logo
 include ../social-nets/social-nets
-include ../input/input
+include ../input-text/input-text
 
 //-
   options.classes - Классы блока.
@@ -68,7 +68,7 @@ mixin footer(options = {})
           if text2
             div.footer__text.footer_mb20 #{text2}
           form(action="", method="post")
-            +input({subscription: true, placeholder: 'Email'})
+            +input-text({subscription: true, placeholder: 'Email'})
 
     div.footer__down.footer_desktop
       div.footer__container

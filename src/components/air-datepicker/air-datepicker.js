@@ -55,13 +55,13 @@ $(() => {
     }
     if ($parentDropdown.length) {
       const datesFromInputs = [];
-      if ($('.js-input_date_start .js-input__field', $parentDropdown).length) {
-        let valueInputDate = $('.js-input_date_start .js-input__field', $parentDropdown).val();
+      if ($('.js-input-text_date_start .js-input-text__field', $parentDropdown).length) {
+        let valueInputDate = $('.js-input-text_date_start .js-input-text__field', $parentDropdown).val();
         valueInputDate = formatDate(valueInputDate);
         if (valueInputDate) datesFromInputs.push(new Date(valueInputDate)); 
       }
-      if ($('.js-input_date_end .js-input__field', $parentDropdown).length) {
-        let valueInputDate = $('.js-input_date_end .js-input__field', $parentDropdown).val();
+      if ($('.js-input-text_date_end .js-input-text__field', $parentDropdown).length) {
+        let valueInputDate = $('.js-input-text_date_end .js-input-text__field', $parentDropdown).val();
         valueInputDate = formatDate(valueInputDate);
         if (valueInputDate) datesFromInputs.push(new Date(valueInputDate)); 
       }
@@ -88,9 +88,9 @@ $(() => {
       $parentDropdown = $(targetDropdowns);
     }
     if ($parentDropdown.length) {
-      $('.js-input_date_start .js-input__field', $parentDropdown).val('');
-      $('.js-input_date_end .js-input__field', $parentDropdown).val('');
-      $('.js-input_date_range .js-input__field', $parentDropdown).val('');
+      $('.js-input-text_date_start .js-input-text__field', $parentDropdown).val('');
+      $('.js-input-text_date_end .js-input-text__field', $parentDropdown).val('');
+      $('.js-input-text_date_range .js-input-text__field', $parentDropdown).val('');
     }
 
     $btn.closest('.js-air-datepicker__clear-button').addClass('air-datepicker_hidden');
@@ -114,10 +114,10 @@ $(() => {
       $parentDropdown = $(targetDropdowns);
     }
     if ($parentDropdown.length) {
-      $('.js-input_date_range .js-input__field', $parentDropdown)
+      $('.js-input-text_date_range .js-input-text__field', $parentDropdown)
         .val(`${moment(dates[0]).format('D MMM')} - ${moment(dates[1]).format('D MMM')}`);
-      $('.js-input_date_start .js-input__field', $parentDropdown).val(moment(dates[0]).format('DD.MM.YYYY'));
-      $('.js-input_date_end .js-input__field', $parentDropdown).val(moment(dates[1]).format('DD.MM.YYYY'));
+      $('.js-input-text_date_start .js-input-text__field', $parentDropdown).val(moment(dates[0]).format('DD.MM.YYYY'));
+      $('.js-input-text_date_end .js-input-text__field', $parentDropdown).val(moment(dates[1]).format('DD.MM.YYYY'));
       $parentDropdown.removeClass('dropdown_active');
     }
 

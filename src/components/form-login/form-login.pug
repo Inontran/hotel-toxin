@@ -1,5 +1,5 @@
 include ../button/button
-include ../input/input
+include ../input-text/input-text
 include ../card/card
 
 //-
@@ -21,12 +21,12 @@ mixin form-login(options = {})
   )
     +card({title: "Войти"})
       div.form-login_mb10
-        +input({
-          classes: "input_mask_email",
+        +input-text({
+          classes: "input-text_mask_email",
           placeholder: "Email"
         })
       div.form-login_mb20
-        +input({
+        +input-text({
           type: "password",
           placeholder: "Пароль"
         })

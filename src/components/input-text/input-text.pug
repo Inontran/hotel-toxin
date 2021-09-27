@@ -10,7 +10,7 @@
   options.disabled - Атрибут disabled.
   options.subscription - Параметр, указывающий на то, что в поле должна быть кнопка подтверждения.
 
-mixin input(options = {})
+mixin input-text(options = {})
   -
     var {
       classes = '',
@@ -25,16 +25,16 @@ mixin input(options = {})
     } = options;
 
   if subscription
-    - classes += ' input_subscription'
+    - classes += ' input-text_subscription'
 
   
-  label.input.js-input(
+  label.input-text.js-input-text(
     class = classes, 
     id = id ? id : false
   )
     if label
-      p.input__label #{label}
-    input.input__field.js-input__field(
+      p.input-text__label #{label}
+    input.input-text__field.js-input-text__field(
       value = value, 
       placeholder = placeholder, 
       type = type,
@@ -44,4 +44,4 @@ mixin input(options = {})
     )
     
     if subscription
-      button.input__submit(type = 'submit')
+      button.input-text__submit(type = 'submit')

@@ -1,4 +1,4 @@
-include ../input/input
+include ../input-text/input-text
 include ../button/button
 include ../list-counters/list-counters
 
@@ -24,9 +24,9 @@ mixin dropdown(options = {})
 
   if inputParams
     if !inputParams.classes
-      - inputParams.classes = 'input_in-dropdown'
+      - inputParams.classes = 'input-text_in-dropdown'
     else
-      - inputParams.classes += ' input_in-dropdown'
+      - inputParams.classes += ' input-text_in-dropdown'
 
 
   div.dropdown.js-dropdown(
@@ -37,7 +37,7 @@ mixin dropdown(options = {})
   )
     if inputParams
       div.dropdown__input-wrapper.js-dropdown__input-wrapper
-        +input(inputParams)
+        +input-text(inputParams)
         button.dropdown__arrow(type = 'button')
     else
       button.dropdown__btn.js-dropdown__btn(type = 'button')

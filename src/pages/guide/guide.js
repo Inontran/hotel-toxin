@@ -2,7 +2,7 @@ require('../../entry');
 require('./guide.scss');
 
 require('@/components/button/button');
-require('@/components/input/input');
+require('@/components/input-text/input-text');
 require('@/components/checkbox/checkbox');
 require('@/components/radio/radio');
 require('@/components/toggle/toggle');

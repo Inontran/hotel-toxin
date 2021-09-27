@@ -2,7 +2,7 @@ extends ../base/base.pug
 
 
 include ../../components/button/button
-include ../../components/input/input
+include ../../components/input-text/input-text
 include ../../components/checkbox/checkbox
 include ../../components/radio/radio
 include ../../components/toggle/toggle
@@ -204,11 +204,11 @@ block content
 
 
         div.guide-page__col
-          +input({label: "Text Field", placeholder: "Email"})
+          +input-text({label: "Text Field", placeholder: "Email"})
           div.guide-page__mb20
-          +input({label: "Subscription Text Field", placeholder: "Email", subscription: true, classes: "input_mask_email"})
+          +input-text({label: "Subscription Text Field", placeholder: "Email", subscription: true, classes: "input-text_mask_email"})
           div.guide-page__mb20
-          +input({label: "Masked text field",classes: "input_mask_date" })
+          +input-text({label: "Masked text field",classes: "input-text_mask_date" })
 
 
         div.guide-page__col
@@ -402,7 +402,7 @@ block content
             inputParams:{
               label: "Даты пребывания в отеле",
               readonly: true,
-              classes: 'js-input_date_range'
+              classes: 'js-input-text_date_range'
             },
           })
             +air-datepicker({classes: 'air-datepicker_inline'})

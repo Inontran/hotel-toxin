@@ -1,6 +1,6 @@
 @import '@/theme/variables.scss';
 
-.input {
+.input-text {
   display: block;
   position: relative;
 
@@ -53,13 +53,13 @@
 
   &_subscription,
   &_in-dropdown {
-    .input__field {
+    .input-text__field {
       padding-right: calc_rem(44);
     }
   }
 
   &_in-dropdown {
-    .input__field {
+    .input-text__field {
       &::placeholder{
         color: $dark75;
       }

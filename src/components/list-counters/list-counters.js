@@ -94,7 +94,7 @@ $(() => {
     } else {
       $('.js-list-counters__btn-reset', $listCounters).removeClass('list-counters_hidden');
     }
-    $dropdown.find('.js-dropdown__input-wrapper .js-input__field').val(result);
+    $dropdown.find('.js-dropdown__input-wrapper .js-input-text__field').val(result);
   }
 
   $('.js-list-counters:not(.list-counters_simple)', $body).each(function () {

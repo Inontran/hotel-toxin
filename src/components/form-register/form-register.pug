@@ -1,5 +1,5 @@
 include ../button/button
-include ../input/input
+include ../input-text/input-text
 include ../radio/radio
 include ../toggle/toggle
 include ../card/card
@@ -23,29 +23,29 @@ mixin form-register(options = {})
   )
     +card({title: "Регистрация аккаунта"})
       div.form-register_mb10
-        +input({
+        +input-text({
           placeholder: "Имя"
         })
       div.form-register_mb10
-        +input({
+        +input-text({
           placeholder: "Фамилия"
         })
       div.form-register__gender-radio.form-register_mb20
         +radio({text: "Мужчина", name: "gender", checked: true})
         +radio({text: "Женщина", name: "gender"})
       div.form-register_mb20
-        +input({
+        +input-text({
           label: "Дата рождения",
-          classes: "input_mask_date"
+          classes: "input-text_mask_date"
         })
       div.form-register_mb10
-        +input({
+        +input-text({
           label: "Данные для входа в сервис",
-          classes: "input_mask_email",
+          classes: "input-text_mask_email",
           placeholder: "Email"
         })
       div.form-register_mb10
-        +input({
+        +input-text({
           type: "password",
           placeholder: "Пароль"
         })

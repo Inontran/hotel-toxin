@@ -1,7 +1,7 @@
 import $ from 'jquery';
 
 require('./dropdown.scss');
-require('@/components/input/input');
+require('@/components/input-text/input-text');
 require('@/components/button/button');
 require('@/components/list-counters/list-counters');
 

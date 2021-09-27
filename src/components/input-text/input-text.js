@@ -1,10 +1,10 @@
 import $ from 'jquery';
 import Inputmask from 'inputmask';
 
-require('./input.scss');
+require('./input-text.scss');
 
 $(() => {
-  const $inputsDate = $('.js-input.input_mask_date .js-input__field');
+  const $inputsDate = $('.js-input-text.input-text_mask_date .js-input-text__field');
 
   Inputmask('datetime', {
     inputFormat: 'dd.mm.yyyy',
@@ -13,5 +13,5 @@ $(() => {
 
   $inputsDate.attr('placeholder', 'ДД.ММ.ГГГГ');
 
-  Inputmask('email').mask('.js-input.input_mask_email .js-input__field');
+  Inputmask('email').mask('.js-input-text.input-text_mask_email .js-input-text__field');
 });
