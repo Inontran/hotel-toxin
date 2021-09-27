@@ -55,13 +55,13 @@ $(() => {
     }
     if ($parentDropdown.length) {
       const datesFromInputs = [];
-      if ($('.js-input_result-date-start .js-input__field', $parentDropdown).length) {
-        let valueInputDate = $('.js-input_result-date-start .js-input__field', $parentDropdown).val();
+      if ($('.js-input_date_start .js-input__field', $parentDropdown).length) {
+        let valueInputDate = $('.js-input_date_start .js-input__field', $parentDropdown).val();
         valueInputDate = formatDate(valueInputDate);
         if (valueInputDate) datesFromInputs.push(new Date(valueInputDate)); 
       }
-      if ($('.js-input_result-date-end .js-input__field', $parentDropdown).length) {
-        let valueInputDate = $('.js-input_result-date-end .js-input__field', $parentDropdown).val();
+      if ($('.js-input_date_end .js-input__field', $parentDropdown).length) {
+        let valueInputDate = $('.js-input_date_end .js-input__field', $parentDropdown).val();
         valueInputDate = formatDate(valueInputDate);
         if (valueInputDate) datesFromInputs.push(new Date(valueInputDate)); 
       }
@@ -72,7 +72,7 @@ $(() => {
     }
     
     if (!$datepicker.data('datepicker').selectedDates.length) {
-      $('.js-air-datepicker__btn-wrapper_reset', $airDatepicker).addClass('air-datepicker_hidden');
+      $('.js-air-datepicker__clear-button', $airDatepicker).addClass('air-datepicker_hidden');
     }
   });
 
@@ -88,16 +88,17 @@ $(() => {
       $parentDropdown = $(targetDropdowns);
     }
     if ($parentDropdown.length) {
-      $('.js-input_result-date-start .js-input__field', $parentDropdown).val('');
-      $('.js-input_result-date-end .js-input__field', $parentDropdown).val('');
+      $('.js-input_date_start .js-input__field', $parentDropdown).val('');
+      $('.js-input_date_end .js-input__field', $parentDropdown).val('');
+      $('.js-input_date_range .js-input__field', $parentDropdown).val('');
     }
 
-    $btn.closest('.js-air-datepicker__btn-wrapper_reset').addClass('air-datepicker_hidden');
+    $btn.closest('.js-air-datepicker__clear-button').addClass('air-datepicker_hidden');
   }
 
   $body.on(
     'click',
-    '.js-air-datepicker .js-air-datepicker__btn-wrapper_reset .js-button',
+    '.js-air-datepicker .js-air-datepicker__clear-button .js-button',
     handlerClickClearBtn,
   );
 
@@ -113,23 +114,23 @@ $(() => {
       $parentDropdown = $(targetDropdowns);
     }
     if ($parentDropdown.length) {
-      $('.js-input_result-dates .js-input__field', $parentDropdown)
+      $('.js-input_date_range .js-input__field', $parentDropdown)
         .val(`${moment(dates[0]).format('D MMM')} - ${moment(dates[1]).format('D MMM')}`);
-      $('.js-input_result-date-start .js-input__field', $parentDropdown).val(moment(dates[0]).format('DD.MM.YYYY'));
-      $('.js-input_result-date-end .js-input__field', $parentDropdown).val(moment(dates[1]).format('DD.MM.YYYY'));
+      $('.js-input_date_start .js-input__field', $parentDropdown).val(moment(dates[0]).format('DD.MM.YYYY'));
+      $('.js-input_date_end .js-input__field', $parentDropdown).val(moment(dates[1]).format('DD.MM.YYYY'));
       $parentDropdown.removeClass('dropdown_active');
     }
 
     if (dates.length) {
-      $('.js-air-datepicker__btn-wrapper_reset', $airDatepicker).removeClass('air-datepicker_hidden');
+      $('.js-air-datepicker__clear-button', $airDatepicker).removeClass('air-datepicker_hidden');
     } else {
-      $('.js-air-datepicker__btn-wrapper_reset', $airDatepicker).addClass('air-datepicker_hidden');
+      $('.js-air-datepicker__clear-button', $airDatepicker).addClass('air-datepicker_hidden');
     }
   }
 
   $body.on(
     'click',
-    '.js-air-datepicker .js-air-datepicker__btn-wrapper_submit .js-button',
+    '.js-air-datepicker .js-air-datepicker__submit-button .js-button',
     handlerClickSubmitBtn,
   );
 });

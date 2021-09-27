@@ -24,11 +24,12 @@
     margin: 0 -10px -10px;
   }
 
-  &__btn-wrapper {
+  &__clear-button,
+  &__submit-button {
     padding: 0 10px 10px;
   }
 
-  &__btn-wrapper_submit{
+  &__submit-button{
     margin-left: auto;
   }
 

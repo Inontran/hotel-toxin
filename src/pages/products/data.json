@@ -94,7 +94,7 @@
       "inputParams":{
         "label": "Даты пребывания в отеле",
         "readonly": true,
-        "classes": "js-input_result-dates",
+        "classes": "js-input_date_range",
         "placeholder": "даты от и до включительно"
       }
     },
