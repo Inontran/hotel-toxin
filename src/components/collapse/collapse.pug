@@ -21,7 +21,7 @@ mixin collapse(options = {})
     id = id ? id : false
     data-group = group ? group : false,
   )
-    button.collapse__btn.js-collapse(type = 'button')
+    button.collapse__btn.js-collapse__btn(type = 'button')
       span.collapse__btn-text #{text}
       span.collapse__btn-arrow
     div.collapse__content
