@@ -51,14 +51,14 @@
     cursor: pointer;
   }
 
-  &_subscription,
-  &_in-dropdown {
+  &_theme_subscription,
+  &_theme_dropdown {
     .input-text__field {
       padding-right: calc_rem(44);
     }
   }
 
-  &_in-dropdown {
+  &_theme_dropdown {
     .input-text__field {
       &::placeholder{
         color: $dark75;
