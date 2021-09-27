@@ -86,7 +86,7 @@
       border: 0;
       width: min-content;
 
-      @media(max-width: $xxs + 10px){
+      @media (max-width: $xxs + 10px) {
         right: auto;
         left: 50%;
         transform: translateX(-50%);
@@ -107,8 +107,8 @@
       overflow-y: auto;
     }
 
-    &.dropdown_dates{
-      .dropdown__content{
+    &.dropdown_dates {
+      .dropdown__content {
         max-height: none;
       }
     }

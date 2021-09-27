@@ -29,11 +29,11 @@
     padding: 0 10px 10px;
   }
 
-  &__submit-button{
+  &__submit-button {
     margin-left: auto;
   }
 
-  &_hidden{
+  &_hidden {
     display: none;
   }
 
@@ -189,7 +189,7 @@
         }
       }
 
-      &.-disabled-{
+      &.-disabled- {
         cursor: not-allowed;
       }
     }

@@ -88,11 +88,12 @@ $(() => {
       }
     });
 
+    const $btnReset = $('.js-list-counters__btn-reset', $listCounters);
     if (summAllCounters === 0) {
       result = $listCounters.attr('data-default-text') ? $listCounters.attr('data-default-text') : '';
-      $('.js-list-counters__btn-reset', $listCounters).addClass('list-counters_hidden');
+      $btnReset.addClass('list-counters_hidden');
     } else {
-      $('.js-list-counters__btn-reset', $listCounters).removeClass('list-counters_hidden');
+      $btnReset.removeClass('list-counters_hidden');
     }
     $dropdown.find('.js-dropdown__input-wrapper .js-input-text__field').val(result);
   }

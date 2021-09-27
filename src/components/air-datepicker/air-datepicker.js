@@ -8,18 +8,18 @@ require('@/components/button/button');
 moment.lang('ru');
 
 $(() => {
-  function formatDate(strDate){
+  function formatDate(strDate) {
     if (!strDate.length) {
-      return;
+      return '';
     }
 
+    let strFormattedDate = '';
     try {
-      const array = strDate.split('.', 3).reverse();
-      return array.join('-');
+      strFormattedDate = strDate.split('.', 3).reverse().join('-');
     } catch (error) {
       console.debug(error);
     }
-    return;
+    return strFormattedDate;
   }
 
   const $body = $('body');
@@ -55,22 +55,25 @@ $(() => {
     }
     if ($parentDropdown.length) {
       const datesFromInputs = [];
-      if ($('.js-input-text_date_start .js-input-text__field', $parentDropdown).length) {
-        let valueInputDate = $('.js-input-text_date_start .js-input-text__field', $parentDropdown).val();
+      const $inputDateStart = $('.js-input-text_date_start .js-input-text__field', $parentDropdown);
+      if ($inputDateStart.length) {
+        let valueInputDate = $inputDateStart.val();
         valueInputDate = formatDate(valueInputDate);
-        if (valueInputDate) datesFromInputs.push(new Date(valueInputDate)); 
+        if (valueInputDate) datesFromInputs.push(new Date(valueInputDate));
       }
-      if ($('.js-input-text_date_end .js-input-text__field', $parentDropdown).length) {
-        let valueInputDate = $('.js-input-text_date_end .js-input-text__field', $parentDropdown).val();
+
+      const $inputDateEnd = $('.js-input-text_date_end .js-input-text__field', $parentDropdown);
+      if ($inputDateEnd.length) {
+        let valueInputDate = $inputDateEnd.val();
         valueInputDate = formatDate(valueInputDate);
-        if (valueInputDate) datesFromInputs.push(new Date(valueInputDate)); 
+        if (valueInputDate) datesFromInputs.push(new Date(valueInputDate));
       }
 
       if (datesFromInputs.length) {
         $datepicker.data('datepicker').selectDate(datesFromInputs);
       }
     }
-    
+
     if (!$datepicker.data('datepicker').selectedDates.length) {
       $('.js-air-datepicker__clear-button', $airDatepicker).addClass('air-datepicker_hidden');
     }
@@ -121,10 +124,11 @@ $(() => {
       $parentDropdown.removeClass('dropdown_active');
     }
 
+    const $clearBtn = $('.js-air-datepicker__clear-button', $airDatepicker);
     if (dates.length) {
-      $('.js-air-datepicker__clear-button', $airDatepicker).removeClass('air-datepicker_hidden');
+      $clearBtn.removeClass('air-datepicker_hidden');
     } else {
-      $('.js-air-datepicker__clear-button', $airDatepicker).addClass('air-datepicker_hidden');
+      $clearBtn.addClass('air-datepicker_hidden');
     }
   }
 
