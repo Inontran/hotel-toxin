@@ -47,7 +47,7 @@
     }
   }
 
-  & &_filter-show {
+  & &__btn_filter-showing {
     @media (min-width: $md) {
       display: none;
     }
