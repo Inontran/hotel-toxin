@@ -1,6 +1,6 @@
 @import '@/theme/variables.scss';
 
-.collapse {
+.expander {
   &__btn {
     display: flex;
     align-items: center;
@@ -41,18 +41,18 @@
     transition: 0.3s;
   }
 
-  &.collapse_activated {
-    .collapse__btn-arrow {
+  &.expander_activated {
+    .expander__btn-arrow {
       transform: rotate(-180deg);
     }
 
-    .collapse__content {
+    .expander__content {
       max-height: 200vh;
     }
   }
 
-  &.collapse_theme_green {
-    .collapse__btn {
+  &.expander_theme_green {
+    .expander__btn {
       height: auto;
       min-height: auto;
       justify-content: flex-start;

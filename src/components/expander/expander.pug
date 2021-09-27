@@ -6,7 +6,7 @@
     то при раскрытии одного списка все остальные из этой группы будут закрываться.
   options.text - Текст в кнопке раскрывающего списка.
 
-mixin collapse(options = {})
+mixin expander(options = {})
   -
     const {
       classes = '',
@@ -16,14 +16,14 @@ mixin collapse(options = {})
       group = false,
     } = options;
 
-  div.collapse.js-collapse(
+  div.expander.js-expander(
     class = classes,
     id = id ? id : false
     data-group = group ? group : false,
   )
-    button.collapse__btn.js-collapse__btn(type = 'button')
-      span.collapse__btn-text #{text}
-      span.collapse__btn-arrow
-    div.collapse__content
-      div.collapse__content-wrapper
+    button.expander__btn.js-expander__btn(type = 'button')
+      span.expander__btn-text #{text}
+      span.expander__btn-arrow
+    div.expander__content
+      div.expander__content-wrapper
         block

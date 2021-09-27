@@ -1,7 +1,7 @@
 include ../dropdown/dropdown
 include ../slider-range/slider-range
 include ../checkbox/checkbox
-include ../collapse/collapse
+include ../expander/expander
 include ../air-datepicker/air-datepicker
 
 //-
@@ -19,8 +19,8 @@ include ../air-datepicker/air-datepicker
   options.checkboxesBig[0] - Параметры чекбокса.
   options.checkboxesBigTitle - Заголовок массива чекбоксов.
   options.optionDropdownFeature - Параметры выпадающегося списка удобств номеров.
-  options.collapseFeatureOptions - Параметры раскрывающегося списка удобств номеров.
-  options.collapseFeatureCheckboxes - Массив чекбоксов удобств номеров.
+  options.expanderFeatureOptions - Параметры раскрывающегося списка удобств номеров.
+  options.expanderFeatureCheckboxes - Массив чекбоксов удобств номеров.
 
 mixin filter-products(options = {})
   -
@@ -37,8 +37,8 @@ mixin filter-products(options = {})
       checkboxesBig = false,
       checkboxesBigTitle = false,
       optionDropdownFeature = false,
-      collapseFeatureOptions = false,
-      collapseFeatureCheckboxes = []
+      expanderFeatureOptions = false,
+      expanderFeatureCheckboxes = []
     } = options;
 
   aside.filter-products.js-filter-products(
@@ -95,9 +95,9 @@ mixin filter-products(options = {})
           +dropdown(optionDropdownFeature)
             +list-counters(optionDropdownFeature)
 
-      if collapseFeatureOptions
-        +collapse(collapseFeatureOptions)
+      if expanderFeatureOptions
+        +expander(expanderFeatureOptions)
           ul.filter-products__list-checkboxes
-            each val, index in collapseFeatureCheckboxes
+            each val, index in expanderFeatureCheckboxes
               li.filter-products__list-checkboxes-item.filter-products_mb10
                 +checkbox(val)

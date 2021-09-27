@@ -185,11 +185,11 @@
       ]
     },
     
-    "collapseFeatureOptions": {
+    "expanderFeatureOptions": {
       "text": "Дополнительные удобства",
-      "group": "collapse-group-1"
+      "group": "expander-group-1"
     },
-    "collapseFeatureCheckboxes":[
+    "expanderFeatureCheckboxes":[
       {"text": "Завтрак"},
       {"text": "Письменный стол", "checked": true},
       {"text": "Стул для кормления", "checked": true},

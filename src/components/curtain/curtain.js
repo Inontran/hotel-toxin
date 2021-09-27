@@ -1,7 +1,7 @@
 import $ from 'jquery';
 
 require('./curtain.scss');
-require('@/components/collapse/collapse');
+require('@/components/expander/expander');
 
 $(() => {
   const $body = $('body');

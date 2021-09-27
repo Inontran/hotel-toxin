@@ -1,4 +1,4 @@
-include ../collapse/collapse
+include ../expander/expander
 
 //-
   options.classes - Классы блока.
@@ -54,10 +54,10 @@ mixin curtain(options = {})
           each val, index in menuItems
             li.curtain__main-menu-item
               if val.subitems
-                +collapse({
+                +expander({
                   text: val.name,
                   group: 'mobile-nav',
-                  classes: 'collapse_theme_green'
+                  classes: 'expander_theme_green'
                 })
                   nav.curtain__main-menu
                     each val2, index2 in val.subitems

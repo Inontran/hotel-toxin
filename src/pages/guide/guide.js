@@ -11,7 +11,7 @@ require('@/components/rate-btn/rate-btn');
 require('@/components/slider-range/slider-range');
 require('@/components/pagination/pagination');
 require('@/components/list/list');
-require('@/components/collapse/collapse');
+require('@/components/expander/expander');
 require('@/components/infographics/infographics');
 require('@/components/review/review');
 require('@/components/dropdown/dropdown');

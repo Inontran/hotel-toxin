@@ -11,7 +11,7 @@ include ../../components/rate-btn/rate-btn
 include ../../components/slider-range/slider-range
 include ../../components/pagination/pagination
 include ../../components/list/list
-include ../../components/collapse/collapse
+include ../../components/expander/expander
 include ../../components/infographics/infographics
 include ../../components/review/review
 include ../../components/dropdown/dropdown
@@ -338,9 +338,9 @@ block content
 
           div.guide-page__mb40
         
-          +collapse({text: "expandable checkbox list", group: 'collapse-group-1'})
+          +expander({text: "expandable checkbox list", group: 'expander-group-1'})
             p Lorem ipsum dolor sit amet consectetur adipisicing elit. Error, explicabo. Facilis dolorem deleniti consequuntur, sint enim laborum temporibus, iure nihil suscipit minima sapiente rem dignissimos illum quam delectus itaque molestiae.
-          +collapse({text: "expandable checkbox list", group: 'collapse-group-1', is_open: true})
+          +expander({text: "expandable checkbox list", group: 'expander-group-1', is_open: true})
             +checkbox({text: "Можно курить"})
             div.guide-page__mb10
             +checkbox({text: "Можно курить"})

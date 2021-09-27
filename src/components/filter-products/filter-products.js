@@ -4,7 +4,7 @@ require('./filter-products.scss');
 require('@/components/dropdown/dropdown');
 require('@/components/slider-range/slider-range');
 require('@/components/checkbox/checkbox');
-require('@/components/collapse/collapse');
+require('@/components/expander/expander');
 require('@/components/air-datepicker/air-datepicker');
 
 $(() => {
