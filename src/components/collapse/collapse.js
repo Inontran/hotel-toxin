@@ -17,13 +17,13 @@ $(() => {
         const $currentCollapse = $(this);
 
         if ($(selector).index($currentCollapse) === $(selector).index($collapse)) {
-          $collapse.toggleClass('collapse_active');
+          $collapse.toggleClass('collapse_activated');
         } else {
-          $currentCollapse.removeClass('collapse_active');
+          $currentCollapse.removeClass('collapse_activated');
         }
       });
     } else {
-      $collapse.toggleClass('collapse_active');
+      $collapse.toggleClass('collapse_activated');
     }
   }
 

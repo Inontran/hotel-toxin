@@ -41,7 +41,7 @@
     transition: 0.3s;
   }
 
-  &.collapse_active {
+  &.collapse_activated {
     .collapse__btn-arrow {
       transform: rotate(-180deg);
     }
@@ -51,7 +51,7 @@
     }
   }
 
-  &.collapse_theme-green {
+  &.collapse_theme_green {
     .collapse__btn {
       height: auto;
       min-height: auto;

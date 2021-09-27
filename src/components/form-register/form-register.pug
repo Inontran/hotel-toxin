@@ -54,7 +54,7 @@ mixin form-register(options = {})
       div.form-register_mb30
         +button({
           text: "Зарегистрироваться", 
-          classes: "button_fill button_arrow-left button_wide",
+          classes: "button_filled_blue-green-gradient button_theme_arrow button_wide",
           isSubmit: true
         })
       div.form-register__footer
@@ -62,6 +62,6 @@ mixin form-register(options = {})
         div.form-register__footer-button
           +button({
             text: "Войти", 
-            classes: "button_outline button_wide",
+            classes: "button_outlined button_wide",
             href: buttonLoginHref ? buttonLoginHref : false
           })

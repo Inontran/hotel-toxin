@@ -81,20 +81,20 @@
       margin-right: 5px;
       margin-top: 4px;
       flex: none;
-
-      &_awesome {
+  
+      &_theme_yellow {
         background: $gradient3;
       }
-
-      &_good {
+  
+      &_theme_green {
         background: $gradient2;
       }
-
-      &_notbad {
+  
+      &_theme_purple {
         background: $gradient1;
       }
-
-      &_disappointed {
+  
+      &_theme_gray {
         background: $gradient4;
       }
     }

@@ -37,13 +37,13 @@ mixin curtain(options = {})
           div.curtain__btn-wrapper.curtain_mb15
             +button({
               text: buttonLoginText, 
-              classes: 'button_outline button_size-md button_wide',
+              classes: 'button_outlined button_size_md button_wide',
               href: buttonLoginHref ? buttonLoginHref : false
             })
           div.curtain__btn-wrapper.curtain_mb15
             +button({
               text: buttonRegText, 
-              classes: 'button_fill button_size-md button_wide',
+              classes: 'button_filled_blue-green-gradient button_size_md button_wide',
               href: buttonRegHref ? buttonRegHref : false
             })
         else
@@ -57,7 +57,7 @@ mixin curtain(options = {})
                 +collapse({
                   text: val.name,
                   group: 'mobile-nav',
-                  classes: 'collapse_theme-green'
+                  classes: 'collapse_theme_green'
                 })
                   nav.curtain__main-menu
                     each val2, index2 in val.subitems

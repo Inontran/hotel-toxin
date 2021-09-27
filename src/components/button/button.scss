@@ -25,7 +25,7 @@
     text-decoration: none;
   }
 
-  &_fill {
+  &_filled_blue-green-gradient {
     display: inline-flex;
     align-items: center;
     justify-content: center;
@@ -56,8 +56,8 @@
     }
   }
 
-  &_outline {
-    @extend .button_fill;
+  &_outlined {
+    @extend .button_filled_blue-green-gradient;
 
     &::after {
       content: '';
@@ -80,7 +80,7 @@
     width: 100%;
   }
 
-  &_arrow-left {
+  &_theme_arrow {
     padding: calc_rem(5) calc_rem(35);
 
     &::after {
