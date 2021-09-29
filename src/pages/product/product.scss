@@ -157,10 +157,11 @@
   &__body {
     max-width: $max_width_container;
     margin: 0 auto;
-    padding: 70px $padding_container 0;
+    padding: 70px $padding_container calc(70px - 33px);
 
     @media (max-width: $md) {
       padding-top: 35px;
+      padding-bottom: 0;
     }
 
     &-row {
