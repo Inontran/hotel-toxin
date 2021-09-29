@@ -3,7 +3,7 @@
   "discription": "Страница входа на сайт бронирования номеров отеля Toxin.",
   "keywords": "Toxin, Hotel, Отель",
   "firstDisplayOptions":{
-    "classes": "first-display_content-center",
+    "classes": "first-display_align-content_center",
     "bgUrl": "image-4.jpg"
   },
   "formOptions":{

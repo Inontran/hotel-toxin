@@ -11,7 +11,7 @@ $(() => {
   // закрытие dropdown по клику вне этого dropdown
   $body.on('click', '*', (event) => {
     if (!$(event.target).closest('.js-dropdown').length && !$(event.target).hasClass('.js-dropdown')) {
-      $('.js-dropdown').removeClass('dropdown_active');
+      $('.js-dropdown').removeClass('dropdown_avtivated');
     }
   });
 
@@ -34,13 +34,13 @@ $(() => {
       $body.find(`${selector}[data-group="${dropdownGroup}"]`).each(function () {
         const $dropdownItem = $(this);
         if ($(selector).index($dropdownItem) === $(selector).index($dropdownsArray)) {
-          $dropdownsArray.toggleClass('dropdown_active');
+          $dropdownsArray.toggleClass('dropdown_avtivated');
         } else {
-          $dropdownItem.removeClass('dropdown_active');
+          $dropdownItem.removeClass('dropdown_avtivated');
         }
       });
     } else {
-      $dropdownsArray.toggleClass('dropdown_active');
+      $dropdownsArray.toggleClass('dropdown_avtivated');
     }
   }
 

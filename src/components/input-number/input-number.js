@@ -18,15 +18,15 @@ $(() => {
     const inputVal = $input.val();
 
     if (inputMin && inputVal <= inputMin) {
-      $btnLess.addClass('input-number_disabled-btn');
+      $btnLess.addClass('input-number__btn_disabled');
     } else {
-      $btnLess.removeClass('input-number_disabled-btn');
+      $btnLess.removeClass('input-number__btn_disabled');
     }
 
     if (inputMax && inputVal >= inputMax) {
-      $btnMore.addClass('input-number_disabled-btn');
+      $btnMore.addClass('input-number__btn_disabled');
     } else {
-      $btnMore.removeClass('input-number_disabled-btn');
+      $btnMore.removeClass('input-number__btn_disabled');
     }
   }
 

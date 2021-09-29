@@ -323,22 +323,4 @@
   &_pb33 {
     padding-bottom: 33px;
   }
-
-  &_none {
-    display: none !important;
-  }
-
-  @media (min-width: $md) {
-    &_none-md {
-      display: none !important;
-    }
-
-    &_block-md {
-      display: block !important;
-    }
-
-    &_flex-md {
-      display: flex !important;
-    }
-  }
 }

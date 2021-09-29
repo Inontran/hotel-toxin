@@ -121,7 +121,7 @@ $(() => {
         .val(`${moment(dates[0]).format('D MMM')} - ${moment(dates[1]).format('D MMM')}`);
       $('.js-input-text_date_start .js-input-text__field', $parentDropdown).val(moment(dates[0]).format('DD.MM.YYYY'));
       $('.js-input-text_date_end .js-input-text__field', $parentDropdown).val(moment(dates[1]).format('DD.MM.YYYY'));
-      $parentDropdown.removeClass('dropdown_active');
+      $parentDropdown.removeClass('dropdown_avtivated');
     }
 
     const $clearBtn = $('.js-air-datepicker__clear-button', $airDatepicker);

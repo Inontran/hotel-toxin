@@ -11,7 +11,7 @@
     max-width: $max_width_container;
     margin: 0 auto;
 
-    &_var2 {
+    &_theme_2 {
       grid-template-columns: 380px 380px 320px;
       grid-gap: 0 30px;
     }
@@ -27,7 +27,7 @@
     padding-bottom: $gutter/2;
   }
 
-  &__color-div {
+  &__color-rect {
     width: 70px;
     height: 70px;
     border-radius: 6px;
@@ -41,7 +41,7 @@
   }
 
   @each $name, $val in $colors {
-    .guide-page__color-div_#{$name} {
+    .guide-page__color-rect_theme_#{$name} {
       background-color: $val;
     }
   }

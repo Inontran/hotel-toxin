@@ -17,7 +17,7 @@
     flex-grow: 1;
   }
 
-  &.page_show-curtain {
+  &.page_shown-curtain {
     .page__content-wrapper {
       @media (max-width: $sm) {
         transform: translateX(-272px);

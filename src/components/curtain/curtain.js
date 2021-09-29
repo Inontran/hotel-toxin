@@ -12,7 +12,7 @@ $(() => {
     event.preventDefault();
     let scrollTopBody;
 
-    if (!$body.hasClass('page_show-curtain')) {
+    if (!$body.hasClass('page_shown-curtain')) {
       scrollTopBody = $html.scrollTop() || $body.scrollTop() || $(document).scrollTop() || $(window).scrollTop();
       const scrollTopBodyPx = `-${scrollTopBody}px`;
       $pageContentWrapper.css({
@@ -42,7 +42,7 @@ $(() => {
       $body.attr('data-last-scrolltop', 0);
     }
 
-    $body.toggleClass('page_show-curtain');
+    $body.toggleClass('page_shown-curtain');
   }
 
   $body.on('click', '.js-header__btn_show-curtain', handlerClickCurtain);
