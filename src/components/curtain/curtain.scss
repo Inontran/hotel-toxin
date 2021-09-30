@@ -31,6 +31,10 @@
     padding: 15px 15px 0;
   }
 
+  &__top-btn-wrapper {
+    margin-bottom: 15px;
+  }
+
   &__middle {
     padding: 15px;
   }
@@ -65,9 +69,5 @@
   &__username {
     font-size: calc_rem(18);
     color: $green;
-  }
-
-  &_mb15 {
-    margin-bottom: 15px;
   }
 }

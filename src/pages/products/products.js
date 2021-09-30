@@ -28,7 +28,7 @@ $(() => {
       overflow: 'hidden',
     });
 
-    $('.js-filter-products').addClass('filter-products_mob-show');
+    $('.js-filter-products').addClass('filter-products_mobile_visible');
   }
 
   $body.on('click', '.js-products_show-filter', handlerClickShowFilter);

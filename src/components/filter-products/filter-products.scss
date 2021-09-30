@@ -1,41 +1,42 @@
 @import '@/theme/variables.scss';
 
 .filter-products {
-  &_mb10 {
+  & &__list-checkboxes-item {
     margin-bottom: 10px;
   }
 
-  &_mb13 {
+  & &__block-wrapper5 {
     margin-bottom: 13px;
   }
 
-  &_mb16 {
+  & &__block-wrapper4 {
     margin-bottom: 15px;
   }
 
-  &_mb20 {
+  & &__block-wrapper1 {
     margin-bottom: 20px;
   }
 
-  &_mb30 {
+  & &__close,
+  & &__block-wrapper2 {
     margin-bottom: 29px;
   }
 
-  &_mb31 {
+  & &__block-wrapper3 {
     margin-bottom: 31px;
   }
 
-  .filter-products__list-checkboxes {
+  & &__list-checkboxes {
     list-style: none;
   }
 
-  .filter-products__close {
+  & &__close {
     @media (min-width: $md) {
       display: none;
     }
   }
 
-  &.filter-products_mob-md {
+  &.filter-products_mobile {
     @media (max-width: $md) {
       position: fixed;
       top: 0;
@@ -52,7 +53,7 @@
         border-right: 1px solid $dark75;
       }
 
-      &.filter-products_mob-show {
+      &.filter-products_mobile_visible {
         transform: translateX(0);
       }
 

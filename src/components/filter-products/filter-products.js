@@ -13,7 +13,7 @@ $(() => {
   function handlerClickHideBtn(event) {
     event.preventDefault();
     const $btn = $(event.currentTarget);
-    $btn.closest('.js-filter-products').removeClass('filter-products_mob-show');
+    $btn.closest('.js-filter-products').removeClass('filter-products_mobile_visible');
 
     const scrollTopBody = $body.attr('data-last-scrolltop') ? $body.attr('data-last-scrolltop') : 0;
 
@@ -32,9 +32,9 @@ $(() => {
 
   function updateFilterProducts() {
     if (window.matchMedia(`(max-width: ${$.BREAKPOINTS.md}px)`).matches) {
-      $body.prepend($('.js-filter-products.filter-products_mob-md'));
+      $body.prepend($('.js-filter-products.filter-products_mobile'));
     } else {
-      $('.js-products__left-column').append($('.js-filter-products.filter-products_mob-md'));
+      $('.js-products__left-column').append($('.js-filter-products.filter-products_mobile'));
     }
     return false;
   }

@@ -44,11 +44,11 @@ mixin filter-products(options = {})
   aside.filter-products.js-filter-products(
     class = classes,
     id = id ? id : false,
-    class = isMobile ? "filter-products_mob-md" : false,
+    class = isMobile ? "filter-products_mobile" : false,
   )
     div.filter-products__content-wrapper
       if isMobile
-        div.filter-products__close.filter-products_mb30
+        div.filter-products__close
           +button({
             classes: 'button_filled_blue-green-gradient button_size_md js-filter-products_hide-filter',
             text: 'Скрыть фильтр'
@@ -56,42 +56,42 @@ mixin filter-products(options = {})
 
       if optionDropdownDates
         - optionDropdownDates.group = 'filterProducts'
-        div.filter-products__block-wrapper.filter-products_mb20
+        div.filter-products__block-wrapper1
           +dropdown(optionDropdownDates)
             +air-datepicker(optionDropdownDatesDatepicker)
 
       if optionDropdownPeople
         - optionDropdownPeople.group = 'filterProducts'
-        div.filter-products__block-wrapper.filter-products_mb30
+        div.filter-products__block-wrapper2
           +dropdown(optionDropdownPeople)
             +list-counters(optionDropdownPeople)
 
       if optionSliderRange
-        div.filter-products__block-wrapper.filter-products_mb30
+        div.filter-products__block-wrapper2
           +slider-range(optionSliderRange)
 
       if checkboxes
-        div.filter-products__element.filter-products_mb31
+        div.filter-products__block-wrapper3
           if checkboxesTitle
-            h3.filter-products__element.filter-products_mb13 #{checkboxesTitle}
+            h3.filter-products__block-wrapper5 #{checkboxesTitle}
           ul.filter-products__list-checkboxes
             each val, index in checkboxes
-              li.filter-products__list-checkboxes-item.filter-products_mb10
+              li.filter-products__list-checkboxes-item
                 +checkbox(val)
 
       if checkboxesBig
-        div.filter-products__element.filter-products_mb30
+        div.filter-products__block-wrapper2
           if checkboxesBigTitle
-            h3.filter-products__element.filter-products_mb16 #{checkboxesBigTitle}
+            h3.filter-products__block-wrapper4 #{checkboxesBigTitle}
           ul.filter-products__list-checkboxes
             each val, index in checkboxesBig
-              li.filter-products__list-checkboxes-item.filter-products_mb10
+              li.filter-products__list-checkboxes-item
                 +checkbox(val)
 
       if optionDropdownFeature
         - optionDropdownFeature.type = 2
         - optionDropdownFeature.group = 'filterProducts'
-        div.filter-products__block-wrapper.filter-products_mb16
+        div.filter-products__block-wrapper4
           +dropdown(optionDropdownFeature)
             +list-counters(optionDropdownFeature)
 
@@ -99,5 +99,5 @@ mixin filter-products(options = {})
         +expander(expanderFeatureOptions)
           ul.filter-products__list-checkboxes
             each val, index in expanderFeatureCheckboxes
-              li.filter-products__list-checkboxes-item.filter-products_mb10
+              li.filter-products__list-checkboxes-item
                 +checkbox(val)
