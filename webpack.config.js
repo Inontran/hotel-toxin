@@ -45,8 +45,6 @@ const htmlPlugins = pages.map(fileName => new HtmlWebpackPlugin({
   template: path.resolve(__dirname, `src/pages/${fileName}/${fileName}.pug`),
   chunks: fileName,
   alwaysWriteToDisk: true,
-  inject: 'head',
-  scriptLoading: 'defer',
   hash: true,
   minify:{
     collapseWHiteSpace: isProd
