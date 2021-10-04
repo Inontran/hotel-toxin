@@ -7,7 +7,7 @@
     border-top: 1px solid $dark25;
   }
 
-  &__up {
+  & &__up {
     display: grid;
     grid-template-areas: 'col1 col2 col3 col4 col5';
     grid-template-columns: 3fr 2fr 2fr 2fr 3fr;
@@ -15,49 +15,49 @@
     margin: 0 -20px;
   }
 
-  &__container {
+  & &__container {
     max-width: $max_width_container;
     margin: 0 auto;
     padding: 0 10px;
   }
 
-  &__col1 {
+  & &__col1 {
     grid-area: col1;
     padding: 0 20px;
   }
 
-  &__col2 {
+  & &__col2 {
     grid-area: col2;
     padding: 0 20px;
   }
 
-  &__col3 {
+  & &__col3 {
     grid-area: col3;
     padding: 0 20px;
   }
 
-  &__col4 {
+  & &__col4 {
     grid-area: col4;
     padding: 0 20px;
   }
 
-  &__col5 {
+  & &__col5 {
     grid-area: col5;
     padding: 0 20px;
   }
 
-  &__logo-wrapper {
+  & &__logo-wrapper {
     display: flex;
     margin-bottom: 20px;
   }
 
-  &__subtitle {
+  & &__subtitle {
     margin-top: 4px;
     margin-bottom: 23px;
   }
 
-  &__list {
-    .item {
+  & &__list {
+    &-item {
       list-style: none;
       margin-bottom: 21px;
       line-height: 1.21;
@@ -65,26 +65,26 @@
       &:last-of-type {
         margin-bottom: 0;
       }
+    }
 
-      .link {
-        text-decoration: none;
-        color: $dark50;
-      }
+    &-link {
+      text-decoration: none;
+      color: $dark50;
     }
   }
 
-  &__down {
+  & &__down {
     border-top: 1px solid $dark25;
     padding: 23px 0;
   }
 
-  &__down-wrapper {
+  & &__down-wrapper {
     display: flex;
     align-items: center;
     justify-content: space-between;
   }
 
-  &__container-mobile {
+  & &__container-mobile {
     padding: 110px 0;
     text-align: center;
     margin: 0 auto;
@@ -93,42 +93,11 @@
     @media (max-width: $xs) {
       padding: 50px 0;
     }
-
-    .text {
-      padding: 20px 0 25px;
-    }
   }
 
-  &__text {
+  & &__text {
     color: $dark75;
-  }
-
-  &_mb15 {
-    margin-bottom: 15px;
-  }
-
-  &_mb18 {
-    margin-bottom: 18px;
-  }
-
-  &_mb20 {
     margin-bottom: 20px;
-  }
-
-  &_mb21 {
-    margin-bottom: 21px;
-  }
-
-  &_mb25 {
-    margin-bottom: 25px;
-  }
-
-  &_mb28 {
-    margin-bottom: 28px;
-  }
-
-  &_mt4 {
-    margin-top: 4px;
   }
 
   &_desktop {
@@ -140,6 +109,14 @@
   &_mobile {
     @media (min-width: $md+1) {
       display: none;
+    }
+
+    & &__logo-wrapper {
+      margin-bottom: 18px;
+    }
+
+    & &__text {
+      margin-bottom: 28px;
     }
   }
 }

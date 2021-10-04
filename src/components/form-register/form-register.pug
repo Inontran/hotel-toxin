@@ -22,36 +22,38 @@ mixin form-register(options = {})
     id = id ? id : false
   )
     +card({title: "Регистрация аккаунта"})
-      div.form-register_mb10
+      div.form-register__element-wrapper1
         +input-text({
           placeholder: "Имя"
         })
-      div.form-register_mb10
+      div.form-register__element-wrapper1
         +input-text({
           placeholder: "Фамилия"
         })
-      div.form-register__gender-radio.form-register_mb20
-        +radio({text: "Мужчина", name: "gender", checked: true})
-        +radio({text: "Женщина", name: "gender"})
-      div.form-register_mb20
+      div.form-register__gender-radio
+        div.form-register__radio-wrapper
+          +radio({text: "Мужчина", name: "gender", checked: true})
+        div.form-register__radio-wrapper
+          +radio({text: "Женщина", name: "gender"})
+      div.form-register__element-wrapper2
         +input-text({
           label: "Дата рождения",
           classes: "input-text_mask_date"
         })
-      div.form-register_mb10
+      div.form-register__element-wrapper1
         +input-text({
           label: "Данные для входа в сервис",
           classes: "input-text_mask_email",
           placeholder: "Email"
         })
-      div.form-register_mb10
+      div.form-register__element-wrapper1
         +input-text({
           type: "password",
           placeholder: "Пароль"
         })
-      div.form-register_mb20
+      div.form-register__element-wrapper2
         +toggle({text: "Получать спецпредложения"})
-      div.form-register_mb30
+      div.form-register__element-wrapper3
         +button({
           text: "Зарегистрироваться", 
           classes: "button_filled_blue-green-gradient button_theme_arrow button_wide",

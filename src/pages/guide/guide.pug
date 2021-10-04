@@ -184,7 +184,7 @@ block content
 
         div.guide-page__col
           h3 Chart Doughnut
-          div.guide-page__mb16
+          div.guide-page__gap.guide-page__gap_type_2
           +chart({
             chartCountAll: 260,
             chartNumAwesome: 130,
@@ -195,75 +195,75 @@ block content
 
         div.guide-page__col
           h1 This one is the sub-section or widget title
-          div.guide-page__mb20
+          div.guide-page__gap.guide-page__gap_type_3
           h2 Next one is the item title inside widgets
-          div.guide-page__mb20
+          div.guide-page__gap.guide-page__gap_type_3
           h3 This is a label or CTA text
-          div.guide-page__mb20
+          div.guide-page__gap.guide-page__gap_type_3
           p This is the body text which is used for most of the design, like paragraphs, lists, etc.
 
 
         div.guide-page__col
           +input-text({label: "Text Field", placeholder: "Email"})
-          div.guide-page__mb20
+          div.guide-page__gap.guide-page__gap_type_3
           +input-text({label: "Subscription Text Field", placeholder: "Email", subscription: true, classes: "input-text_mask_email"})
-          div.guide-page__mb20
+          div.guide-page__gap.guide-page__gap_type_3
           +input-text({label: "Masked text field",classes: "input-text_mask_date" })
 
 
         div.guide-page__col
           h3 Checkbox buttons
-          div.guide-page__mb16
+          div.guide-page__gap.guide-page__gap_type_2
           +checkbox({text: "Можно курить", checked: true})
-          div.guide-page__mb10
+          div.guide-page__gap.guide-page__gap_type_1
           +checkbox({text: "Можно пригласить гостей (до 10 человек)"})
-          div.guide-page__mb40
+          div.guide-page__gap.guide-page__gap_type_5
 
           h3 Radio Buttons
-          div.guide-page__mb16
+          div.guide-page__gap.guide-page__gap_type_2
           +radio({id: "test4", text: "Мужчина", name: "gender", checked: true})
-          div.guide-page__mb10
+          div.guide-page__gap.guide-page__gap_type_1
           +radio({id: "test5", text: "Женщина", name: "gender"})
-          div.guide-page__mb40
+          div.guide-page__gap.guide-page__gap_type_5
 
           h3 Toggle
-          div.guide-page__mb16
+          div.guide-page__gap.guide-page__gap_type_2
           +toggle({id: "test6", text: "Получать спецпредложения", name: "get", checked: true})
-          div.guide-page__mb40
+          div.guide-page__gap.guide-page__gap_type_5
 
           h3 Like Button
-          div.guide-page__mb16
+          div.guide-page__gap.guide-page__gap_type_2
           +like-btn({value: 2})
           +like-btn({value: 12, isLike: true})
-          div.guide-page__mb40
+          div.guide-page__gap.guide-page__gap_type_5
 
           h3 Rate Button
-          div.guide-page__mb16
+          div.guide-page__gap.guide-page__gap_type_2
           +rate-btn({value: 4})
 
 
         div.guide-page__col
           +slider-range({label: "Range slider", min: 0, max: 15000, val1: 5000, val2: 10000})
-          div.guide-page__mb40
+          div.guide-page__gap.guide-page__gap_type_5
 
           h3 Buttons
-          div.guide-page__mb16
+          div.guide-page__gap.guide-page__gap_type_2
           
-          div.guide-page__mb20
+          div.guide-page__gap.guide-page__gap_type_3
             +button({text: "click me", classes: "button_filled_blue-green-gradient"})
             +button({text: "click me", classes: "button_filled_blue-green-gradient button_size_md"})
           
-          div.guide-page__mb20
+          div.guide-page__gap.guide-page__gap_type_3
             +button({text: "click me", classes: "button_outlined"})
             +button({text: "click me", classes: "button_outlined button_size_md"})
 
           +button({text: "click me"})
-          div.guide-page__mb20
+          div.guide-page__gap.guide-page__gap_type_3
           +button({text: "Перейти к оплате", classes: "button_filled_blue-green-gradient button_theme_arrow button_wide"})
-          div.guide-page__mb40
+          div.guide-page__gap.guide-page__gap_type_5
 
           h3 Pagination
-          div.guide-page__mb16
+          div.guide-page__gap.guide-page__gap_type_2
           +pagination({page: 1, perpage: 12, elements: 175, text: "вариантов аренды"})
 
 
@@ -303,7 +303,7 @@ block content
               ],
             })
 
-          div.guide-page__mb20
+          div.guide-page__gap.guide-page__gap_type_3
           +dropdown({
             group: 'guide-example-dropdowns',
             classes: 'dropdown_simple',
@@ -336,32 +336,32 @@ block content
               ]
             })
 
-          div.guide-page__mb40
+          div.guide-page__gap.guide-page__gap_type_5
         
           +expander({text: "expandable checkbox list", group: 'expander-group-1'})
             p Lorem ipsum dolor sit amet consectetur adipisicing elit. Error, explicabo. Facilis dolorem deleniti consequuntur, sint enim laborum temporibus, iure nihil suscipit minima sapiente rem dignissimos illum quam delectus itaque molestiae.
           +expander({text: "expandable checkbox list", group: 'expander-group-1', is_open: true})
             +checkbox({text: "Можно курить"})
-            div.guide-page__mb10
+            div.guide-page__gap.guide-page__gap_type_1
             +checkbox({text: "Можно курить"})
-            div.guide-page__mb10
+            div.guide-page__gap.guide-page__gap_type_1
             +checkbox({text: "Можно курить"})
-            div.guide-page__mb10
+            div.guide-page__gap.guide-page__gap_type_1
             +checkbox({text: "Можно курить"})
           
 
 
         div.guide-page__col
           h3 Rich Checkbox Buttons
-          div.guide-page__mb16
+          div.guide-page__gap.guide-page__gap_type_2
           +checkbox({text: "Ширина коридоров в номере не менее 91 см.", checked: true, title: "Широкий коридор"})
-          div.guide-page__mb10
+          div.guide-page__gap.guide-page__gap_type_1
           +checkbox({text: "На 1 этаже вас встретит специалист  и проводит до номера.", title: "Помощник для инвалидов"})
 
 
         div.guide-page__col
           h3 Bullet list
-          div.guide-page__mb16
+          div.guide-page__gap.guide-page__gap_type_2
           +list({items: ["Нельзя с питомцами", "Без вечеринок и мероприятий", "Время прибытия — после 13:00, а выезд до 12:00"]})
 
 
@@ -410,7 +410,7 @@ block content
       div.guide-page__container.guide-page__container_theme_2
         div
           +form-fast-select()
-          div.guide-page__mb40
+          div.guide-page__gap.guide-page__gap_type_5
           +form-register()
 
         div
@@ -427,12 +427,12 @@ block content
             totalPrice: '38 081₽'
           })
 
-          div.guide-page__mb40
+          div.guide-page__gap.guide-page__gap_type_5
           +form-login()
 
         div
           +air-datepicker({classes: 'air-datepicker_inline'})
-          div.guide-page__mb40
+          div.guide-page__gap.guide-page__gap_type_5
           +card-product({
             gallery: [
               require("@/pages/guide/img/image-1.jpg").default,
@@ -447,7 +447,7 @@ block content
             countReviews: '145'
           })
 
-          div.guide-page__mb40
+          div.guide-page__gap.guide-page__gap_type_5
           +card-product({
             roomNumber: '888',
             roomType: 'Люкс',

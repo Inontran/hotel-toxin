@@ -45,7 +45,7 @@ mixin form-booking(options = {})
           span.form-booking__header-price-type  #{priceTime}
 
       div.form-booking__dates-row
-        div.form-booking__dates-col.form-booking_mb20
+        div.form-booking__dates-col
           +dropdown({
             classes: 'js-dropdown_dates-result',
             group: 'formBooking',
@@ -57,7 +57,7 @@ mixin form-booking(options = {})
               classes: 'js-input-text_date_start',
             },
           })
-        div.form-booking__dates-col.form-booking_mb20
+        div.form-booking__dates-col
           +dropdown({
             classes: 'js-dropdown_dates-result dropdown_dates dropdown_align_right',
             group: 'formBooking',
@@ -75,7 +75,7 @@ mixin form-booking(options = {})
               minDate: 'today',
             })
 
-      div.form-booking__block-wrapper.form-booking_mb20
+      div.form-booking__input-wrapper
         +dropdown({
           group: 'formBooking',
           inputParams:{
@@ -111,7 +111,7 @@ mixin form-booking(options = {})
           })
 
       if listService
-        div.form-booking__block-wrapper.form-booking_mb20
+        div.form-booking__table-wrapper
           table.form-booking__table
             each item, index in listService
               tr
@@ -122,7 +122,7 @@ mixin form-booking(options = {})
                 td.form-booking__table-cell.form-booking__table-cell_price #{item.price}
 
       if totalPrice
-        p.form-booking__bottom.form-booking_mb20
+        p.form-booking__bottom
           span.form-booking__bottom-word Итого
           span.form-booking__bottom-points
           span.form-booking__bottom-price #{totalPrice}

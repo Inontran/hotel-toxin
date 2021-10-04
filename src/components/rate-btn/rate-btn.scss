@@ -5,7 +5,7 @@
   align-items: center;
   margin: 0 1px;
 
-  &__star-item {
+  & &__star-item {
     display: block;
     width: calc_rem(20);
     height: calc_rem(19);
@@ -34,7 +34,7 @@
   }
 
   @for $i from 0 through 5 {
-    &__input {
+    & &__input {
       &[value^="#{$i}"] {
         @for $j from 0 through $i {
           & ~ .rate-btn__star-item[data-number-star="#{$j}"] {

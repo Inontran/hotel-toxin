@@ -1,42 +1,42 @@
 @import '../../theme/variables.scss';
 
 .list-counters {
-  &__counter,
-  &__btns-result {
+  & &__counter,
+  & &__btns-result {
     display: flex;
     align-items: center;
     justify-content: space-between;
     flex-wrap: wrap;
   }
 
-  &__counter {
+  & &__counter {
     margin: 7px 7px 7px 15px;
   }
 
-  &__counter-label {
+  & &__counter-label {
     font-weight: 700;
     font-size: calc_rem(12);
     text-transform: uppercase;
     line-height: 1.25;
   }
 
-  &__input-number-wrapper {
+  & &__input-number-wrapper {
     margin-left: auto;
   }
 
-  &__btns-result {
+  & &__btns-result {
     margin-top: 19px;
   }
 
-  &__btn-reset,
-  &__btn-submit {
+  & &__btn-reset,
+  & &__btn-submit {
     line-height: 1;
     padding-left: 15px;
     padding-right: 7px;
     padding-bottom: 13px;
   }
 
-  &__btn-submit {
+  & &__btn-submit {
     margin-left: auto;
   }
 

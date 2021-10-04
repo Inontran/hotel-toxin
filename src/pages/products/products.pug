@@ -49,15 +49,15 @@ block content
           div.products__left-column.js-products__left-column
             +filter-products(dataProductsPage)
           section.products__center-column
-            h1.products__block-wrapper.products_mb20 Номера, которые мы для вас подобрали
-            div.products__block-wrapper.products__btn_filter-showing.products_mb20
+            h1.products__title Номера, которые мы для вас подобрали
+            div.products__btn_filter-showing
               +button({
                 classes: 'button_filled_blue-green-gradient button_size_md js-products_show-filter',
                 text: 'Показать фильтр'
               })
-            div.products__cards-container.products_mb23
+            div.products__cards-container
               each dataCard in cards
-                div.products__card-wrapper.products_mb20
+                div.products__card-wrapper
                   - var index = 0
                   while index < dataCard.gallery.length
                     - dataCard.gallery[index] = require('@/pages/products/img/' + dataCard.gallery[index]).default

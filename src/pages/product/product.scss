@@ -2,7 +2,7 @@
 @import 'owl.carousel';
 
 .product {
-  &__gallery {
+  & &__gallery {
     display: none;
     grid-template-rows: 1fr 1fr;
     grid-template-columns: 1fr 1fr 1fr;
@@ -34,7 +34,7 @@
     }
   }
 
-  &__carousel {
+  & &__carousel {
     position: relative;
     width: 100%;
 
@@ -154,7 +154,7 @@
     }
   }
 
-  &__body {
+  & &__body {
     max-width: $max_width_container;
     margin: 0 auto;
     padding: 70px $padding_container calc(70px - 33px);
@@ -218,7 +218,7 @@
     }
   }
 
-  &__grid-3 {
+  & &__grid-3 {
     display: flex;
     flex-wrap: wrap;
     margin-right: -35px;
@@ -237,6 +237,10 @@
 
     @media (max-width: $xs) {
       flex-direction: column;
+    }
+
+    &.product__grid-3_type_2 {
+      padding-bottom: 33px;
     }
 
     &-col {
@@ -264,64 +268,50 @@
     }
   }
 
-  &__title {
+  & &__title {
     color: $dark;
     margin-bottom: 20px;
+
+    &_theme_review {
+      margin-bottom: 0;
+    }
+
+    &_theme_rules {
+      padding-left: 20px;
+    }
   }
 
-  &__text {
+  & &__text {
     color: $dark75;
   }
 
-  &__header-reviews {
+  & &__section-reviews {
+    margin-bottom: 33px;
+  }
+
+  & &__header-reviews {
     display: flex;
     align-items: baseline;
     justify-content: space-between;
     flex-wrap: wrap;
     margin-left: -10px;
     margin-right: -10px;
+    margin-bottom: 10px;
 
     &-col {
       padding-left: 10px;
       padding-right: 10px;
+      margin-bottom: 10px;
     }
   }
 
-  &__text-count-reviews {
-    font-size: calc_rem(14);
-    line-height: 1;
-    color: $dark50;
-  }
-
-  &_mb10 {
-    margin-bottom: 10px;
-  }
-
-  &_mb20 {
-    margin-bottom: 20px;
-  }
-
-  &_mb23 {
+  & &__review-wrapper {
     margin-bottom: 23px;
   }
 
-  &_mb30 {
-    margin-bottom: 30px;
-  }
-
-  &_mb33 {
-    margin-bottom: 33px;
-  }
-
-  &_mb40 {
-    margin-bottom: 40px;
-  }
-
-  &_pl20 {
-    padding-left: 20px;
-  }
-
-  &_pb33 {
-    padding-bottom: 33px;
+  & &__text-count-reviews {
+    font-size: calc_rem(14);
+    line-height: 1;
+    color: $dark50;
   }
 }

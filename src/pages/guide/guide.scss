@@ -3,7 +3,7 @@
 .guide-page {
   padding-bottom: 69px;
 
-  &__container {
+  & &__container {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     grid-gap: 0 72px;
@@ -17,52 +17,54 @@
     }
   }
 
-  &__col {
+  & &__col {
     padding-bottom: 100px;
   }
 
-  &__color-item {
+  & &__color-item {
     display: flex;
     align-items: center;
     padding-bottom: $gutter/2;
   }
 
-  &__color-rect {
+  & &__color-rect {
     width: 70px;
     height: 70px;
     border-radius: 6px;
     overflow: hidden;
     flex: none;
     margin-right: $gutter;
-  }
 
-  &__color-text {
-    font-size: calc_rem(19);
-  }
-
-  @each $name, $val in $colors {
-    .guide-page__color-rect_theme_#{$name} {
-      background-color: $val;
+    @each $name, $val in $colors {
+      &_theme_#{$name} {
+        background-color: $val;
+      }
     }
   }
 
-  &__mb10 {
-    margin-bottom: 10px;
+  & &__color-text {
+    font-size: calc_rem(19);
   }
 
-  &__mb16 {
-    margin-bottom: 16px;
-  }
+  & &__gap {
+    &_type_1 {
+      margin-bottom: 10px;
+    }
 
-  &__mb20 {
-    margin-bottom: 20px;
-  }
+    &_type_2 {
+      margin-bottom: 16px;
+    }
 
-  &__mb30 {
-    margin-bottom: 30px;
-  }
+    &_type_3 {
+      margin-bottom: 20px;
+    }
 
-  &__mb40 {
-    margin-bottom: 40px;
+    &_type_4 {
+      margin-bottom: 30px;
+    }
+
+    &_type_5 {
+      margin-bottom: 40px;
+    }
   }
 }

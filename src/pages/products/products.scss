@@ -21,14 +21,18 @@
     }
   }
 
+  & &__title {
+    margin-bottom: 20px;
+  }
+
   & &__cards-container {
     display: flex;
-    margin: 0 -6px;
+    margin: 0 -6px 23px;
     flex-wrap: wrap;
   }
 
   & &__card-wrapper {
-    padding: 0 6px;
+    padding: 0 6px 20px;
     flex: 1 1 33.3333333%;
     max-width: 33.3333333%;
 
@@ -48,17 +52,11 @@
   }
 
   & &__btn_filter-showing {
+    margin-bottom: 20px;
+
     @media (min-width: $md) {
       display: none;
     }
-  }
-
-  & &_mb20 {
-    margin-bottom: 20px;
-  }
-
-  & &_mb23 {
-    margin-bottom: 23px;
   }
 
   & &__pagination-wrapper {

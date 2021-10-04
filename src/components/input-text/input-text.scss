@@ -4,7 +4,7 @@
   display: block;
   position: relative;
 
-  &__label {
+  & &__label {
     display: block;
     font-weight: 700;
     font-size: calc_rem(12);
@@ -13,7 +13,7 @@
     padding-bottom: 5px;
   }
 
-  &__field {
+  & &__field {
     border-radius: 4px;
     background: $white;
     border: 1px solid $dark25;
@@ -34,7 +34,7 @@
     }
   }
 
-  &__submit {
+  & &__submit {
     position: absolute;
     bottom: 0;
     right: 0;
@@ -51,14 +51,14 @@
     cursor: pointer;
   }
 
-  &_theme_subscription,
-  &_theme_dropdown {
+  &.input-text_theme_subscription,
+  &.input-text_theme_dropdown {
     .input-text__field {
       padding-right: calc_rem(44);
     }
   }
 
-  &_theme_dropdown {
+  &.input-text_theme_dropdown {
     .input-text__field {
       &::placeholder {
         color: $dark75;

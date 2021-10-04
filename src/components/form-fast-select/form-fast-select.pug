@@ -22,7 +22,7 @@ mixin form-fast-select(options = {})
   )
     +card({title: cardTitle})
       div.form-fast-select__dates-row
-        div.form-fast-select__dates-col.form-fast-select_mb20
+        div.form-fast-select__dates-col
           +dropdown({
             classes: 'js-dropdown_form-fast-select-dates-result',
             group: 'formFastSelect',
@@ -34,7 +34,7 @@ mixin form-fast-select(options = {})
               classes: 'js-input-text_date_start',
             },
           })
-        div.form-fast-select__dates-col.form-fast-select_mb20
+        div.form-fast-select__dates-col
           +dropdown({
             classes: 'js-dropdown_form-fast-select-dates-result dropdown_dates dropdown_align_right',
             group: 'formFastSelect',
@@ -52,7 +52,7 @@ mixin form-fast-select(options = {})
               minDate: 'today',
             })
 
-      div.form-fast-select__block-wrapper.form-fast-select_mb30
+      div.form-fast-select__input-wrapper
         +dropdown({
           group: 'formFastSelect',
           inputParams:{

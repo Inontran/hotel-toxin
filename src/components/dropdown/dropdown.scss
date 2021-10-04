@@ -3,7 +3,7 @@
 .dropdown {
   position: relative;
 
-  .dropdown__input-wrapper {
+  & &__input-wrapper {
     position: relative;
     cursor: pointer;
 
@@ -12,7 +12,7 @@
     }
   }
 
-  .dropdown__arrow {
+  & &__arrow {
     position: absolute;
     bottom: 0;
     right: 0;
@@ -27,7 +27,7 @@
     background-repeat: no-repeat;
   }
 
-  .dropdown__btn {
+  & &__btn {
     background: none;
     box-shadow: none;
     border: none;
@@ -48,7 +48,7 @@
     }
   }
 
-  .dropdown__content {
+  & &__content {
     position: absolute;
     width: 100%;
     top: calc(100% - 1px);

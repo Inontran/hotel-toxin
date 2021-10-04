@@ -1,7 +1,7 @@
 @import '@/theme/variables.scss';
 
 .list {
-  &__item {
+  & &__item {
     position: relative;
     color: $dark75;
     list-style: none;

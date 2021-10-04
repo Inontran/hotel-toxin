@@ -4,15 +4,15 @@
   display: block;
   line-height: 0.6;
 
-  &__wrapper {
+  & &__wrapper {
     display: inline-flex;
   }
 
-  &__input {
+  & &__input {
     display: none;
   }
 
-  &__view {
+  & &__view {
     position: relative;
     display: inline-block;
     width: calc_rem(40);
@@ -38,7 +38,7 @@
     }
   }
 
-  &__input:checked ~ &__view {
+  & &__input:checked ~ &__view {
     border-color: $purple;
 
     &::after {
@@ -47,7 +47,7 @@
     }
   }
 
-  &__text {
+  & &__text {
     line-height: 1.28;
     font-size: calc_rem(14);
     color: $dark75;
@@ -56,8 +56,8 @@
     cursor: pointer;
   }
 
-  &__input:disabled ~ &__view,
-  &__input:disabled ~ &__text {
+  & &__input:disabled ~ &__view,
+  & &__input:disabled ~ &__text {
     cursor: default;
   }
 }

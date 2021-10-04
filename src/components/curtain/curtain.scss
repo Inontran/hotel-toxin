@@ -17,7 +17,7 @@
     transform: translateX(0);
   }
 
-  &__content-wrapper {
+  & &__content-wrapper {
     position: relative;
     display: flex;
     flex-direction: column;
@@ -27,19 +27,19 @@
     width: 100%;
   }
 
-  &__top {
+  & &__top {
     padding: 15px 15px 0;
   }
 
-  &__top-btn-wrapper {
+  & &__top-btn-wrapper {
     margin-bottom: 15px;
   }
 
-  &__middle {
+  & &__middle {
     padding: 15px;
   }
 
-  &__main-menu {
+  & &__main-menu {
     list-style: none;
 
     .curtain__main-menu {
@@ -66,7 +66,7 @@
     }
   }
 
-  &__username {
+  & &__username {
     font-size: calc_rem(18);
     color: $green;
   }
