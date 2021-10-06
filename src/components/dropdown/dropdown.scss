@@ -63,7 +63,7 @@
     opacity: 0;
   }
 
-  &.dropdown_theme_header {
+  &.dropdown_theme_plain {
     .dropdown__content {
       border-radius: 4px;
       left: 50%;
@@ -94,7 +94,7 @@
     }
   }
 
-  &.dropdown_avtivated {
+  &.dropdown_aсtivated {
     &:not(.dropdown_dates) .input__field {
       border-color: $dark50;
       border-bottom-left-radius: 0;

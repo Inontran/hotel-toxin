@@ -6,45 +6,45 @@
   &_bordered_top {
     border-top: 1px solid $dark25;
   }
-
-  & &__up {
+  
+  & &__container {
+    max-width: $max_width_container;
+    margin: 0 auto;
+    padding: 0 10px;
+  }
+  
+  & &__top-content {
     display: grid;
     grid-template-areas: 'col1 col2 col3 col4 col5';
     grid-template-columns: 3fr 2fr 2fr 2fr 3fr;
     padding: 100px 0;
     margin: 0 -20px;
   }
-
-  & &__container {
-    max-width: $max_width_container;
-    margin: 0 auto;
-    padding: 0 10px;
-  }
-
-  & &__col1 {
-    grid-area: col1;
+  
+  & &__top-content-col{
     padding: 0 20px;
-  }
 
-  & &__col2 {
-    grid-area: col2;
-    padding: 0 20px;
+    &_first {
+      grid-area: col1;
+    }
+  
+    &_second {
+      grid-area: col2;
+    }
+  
+    &_third {
+      grid-area: col3;
+    }
+  
+    &_fourth {
+      grid-area: col4;
+    }
+  
+    &_fifth {
+      grid-area: col5;
+    }
   }
-
-  & &__col3 {
-    grid-area: col3;
-    padding: 0 20px;
-  }
-
-  & &__col4 {
-    grid-area: col4;
-    padding: 0 20px;
-  }
-
-  & &__col5 {
-    grid-area: col5;
-    padding: 0 20px;
-  }
+  
 
   & &__logo-wrapper {
     display: flex;
@@ -57,28 +57,29 @@
   }
 
   & &__list {
-    &-item {
-      list-style: none;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+
+    &-link {
+      display: inline-block;
+      text-decoration: none;
+      color: $dark50;
       margin-bottom: 21px;
       line-height: 1.21;
-
+  
       &:last-of-type {
         margin-bottom: 0;
       }
     }
-
-    &-link {
-      text-decoration: none;
-      color: $dark50;
-    }
   }
 
-  & &__down {
+  & &__bottom-content {
     border-top: 1px solid $dark25;
     padding: 23px 0;
   }
 
-  & &__down-wrapper {
+  & &__bottom-content-wrapper {
     display: flex;
     align-items: center;
     justify-content: space-between;
@@ -111,11 +112,12 @@
       display: none;
     }
 
-    & &__logo-wrapper {
+    & .footer__logo-wrapper {
+      justify-content: center;
       margin-bottom: 18px;
     }
 
-    & &__text {
+    & .footer__text {
       margin-bottom: 28px;
     }
   }

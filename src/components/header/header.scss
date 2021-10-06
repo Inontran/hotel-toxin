@@ -97,7 +97,7 @@
     }
   }
 
-  & &__btn-icon {
+  & &__icon-btn {
     background: none;
     border: 0;
     box-shadow: none;
@@ -107,13 +107,13 @@
     cursor: pointer;
     margin-left: 20px;
 
-    &_profile {
+    &_type_profile {
       @media (min-width: $lg) {
         display: none;
       }
     }
 
-    &_menu {
+    &_type_menu {
       @media (min-width: $sm) {
         display: none;
       }

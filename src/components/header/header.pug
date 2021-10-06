@@ -44,7 +44,7 @@ mixin header(options = {})
               +dropdown({
                 text: val.name,
                 group: 'header-dropdowns',
-                classes: 'dropdown_theme_header'
+                classes: 'dropdown_theme_plain'
               })
                 nav.header__main-submenu
                   each val2, index2 in val.subitems
@@ -54,10 +54,24 @@ mixin header(options = {})
               a.header__main-menu-link(href = val.href) #{val.name}
               
 
-      a.header__btn-icon.header__btn-icon_profile(href = buttonLoginHref ? buttonLoginHref : false, title = 'Профиль')
-        img(src = require('@/components/header/img/user_icon.svg').default, alt = 'Профиль', role = 'presentation')
-      button.header__btn-icon.header__btn-icon_menu.js-header__btn_show-curtain(title = 'Меню')
-        img(src = require('@/components/header/img/menu_icon.svg').default, alt = 'Меню', role = 'presentation')
+      a.header__icon-btn.header__icon-btn_type_profile(
+        href = buttonLoginHref ? buttonLoginHref : false,
+        title = 'Профиль'
+      )
+        img(
+          src = require('@/components/header/img/user_icon.svg').default,
+          alt = 'Профиль',
+          role = 'presentation'
+        )
+      button.header__icon-btn.header__icon-btn_type_menu.js-header__btn_show-curtain(
+        title = 'Меню',
+        type = 'button',
+      )
+        img(
+          src = require('@/components/header/img/menu_icon.svg').default,
+          alt = 'Меню',
+          role = 'presentation'
+        )
 
       if !username
         div.header__btn-login

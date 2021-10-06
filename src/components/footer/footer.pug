@@ -32,54 +32,51 @@ mixin footer(options = {})
     id = id ? id : false
   )
     div.footer__container.footer_desktop
-      div.footer__up
-        div.footer__col1
+      div.footer__top-content
+        div.footer__top-content-col.footer__top-content-col_first
           div.footer__logo-wrapper
             +logo()
           div.footer__text #{text1}
         
-        div.footer__col2
+        div.footer__top-content-col.footer__top-content-col_second
           if menuItems[0].subtitle
             h3.footer__subtitle #{menuItems[0].subtitle}
           nav.footer__list
             each val, index in menuItems[0].items
-              li.footer__list-item
-                a.footer__list-link(href = val.href) #{val.name}
+              a.footer__list-link(href = val.href) #{val.name}
           
-        div.footer__col3
+        div.footer__top-content-col.footer__top-content-col_third
           if menuItems[1].subtitle
             h3.footer__subtitle #{menuItems[1].subtitle}
           nav.footer__list
             each val, index in menuItems[1].items
-              li.footer__list-item
-                a.footer__list-link(href = val.href) #{val.name}
+              a.footer__list-link(href = val.href) #{val.name}
         
-        div.footer__col4
+        div.footer__top-content-col.footer__top-content-col_fourth
           if menuItems[2].subtitle
             h3.footer__subtitle #{menuItems[2].subtitle}
           nav.footer__list
             each val, index in menuItems[2].items
-              li.footer__list-item
-                a.footer__list-link(href = val.href) #{val.name}
+              a.footer__list-link(href = val.href) #{val.name}
         
-        div.footer__col5
+        div.footer__top-content-col.footer__top-content-col_fifth
           if titleSubscribe
             h3.footer__subtitle #{titleSubscribe}
           if text2
             div.footer__text #{text2}
-          form(action="", method="post")
+          form(method="post")
             +input-text({subscription: true, placeholder: 'Email'})
 
-    div.footer__down.footer_desktop
+    div.footer__bottom-content.footer_desktop
       div.footer__container
-        div.footer__down-wrapper
+        div.footer__bottom-content-wrapper
           if copyrightText
             p #{copyrightText}
           +social-nets()
 
     div.footer__container.footer_mobile
       div.footer__container-mobile
-        div.footer__logo-wrapper(style="display: flex; justify-content: center;")
+        div.footer__logo-wrapper
           +logo()
         if text1
           div.footer__text #{text1}
