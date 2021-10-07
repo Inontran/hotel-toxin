@@ -7,10 +7,13 @@
     border-top: 1px solid $dark25;
   }
   
-  & &__container {
+  & &__container,
+  & &__bottom-content-wrapper {
     max-width: $max_width_container;
-    margin: 0 auto;
-    padding: 0 10px;
+    margin-left: auto;
+    margin-right: auto;
+    padding-left: 10px;
+    padding-right: 10px;
   }
   
   & &__top-content {
@@ -19,6 +22,13 @@
     grid-template-columns: 3fr 2fr 2fr 2fr 3fr;
     padding: 100px 0;
     margin: 0 -20px;
+
+    @media (max-width: $md+1) {
+      grid-template-areas: 'col1';
+      grid-template-columns: 1fr;
+      padding-top: 110px;
+      padding-bottom: 0;
+    }
   }
   
   & &__top-content-col{
@@ -26,6 +36,12 @@
 
     &_first {
       grid-area: col1;
+
+      @media (max-width: $md+1) {
+        max-width: 600px;
+        margin-left: auto;
+        margin-right: auto;
+      }
     }
   
     &_second {
@@ -43,12 +59,25 @@
     &_fifth {
       grid-area: col5;
     }
+
+    @media (max-width: $md+1) {
+      &_second,
+      &_third,
+      &_fourth,
+      &_fifth {
+        display: none;
+      }
+    }
   }
-  
 
   & &__logo-wrapper {
     display: flex;
     margin-bottom: 20px;
+
+    @media (max-width: $md+1){
+      justify-content: center;
+      margin-bottom: 18px;
+    }
   }
 
   & &__subtitle {
@@ -76,49 +105,47 @@
 
   & &__bottom-content {
     border-top: 1px solid $dark25;
-    padding: 23px 0;
+    padding-top: 23px;
+    padding-bottom: 23px;
+
+    @media (max-width: $md+1) {
+      border: 0;
+      padding-top: 0;
+      padding-bottom: 110px;
+    }
   }
 
   & &__bottom-content-wrapper {
     display: flex;
     align-items: center;
     justify-content: space-between;
-  }
 
-  & &__container-mobile {
-    padding: 110px 0;
-    text-align: center;
-    margin: 0 auto;
-    max-width: 560px;
-
-    @media (max-width: $xs) {
-      padding: 50px 0;
+    @media (max-width: $md+1) {
+      justify-content: center;
     }
   }
 
-  & &__text {
+  & &__text,
+  & &__text-subscription,
+  & &__text-copyright {
     color: $dark75;
+  }
+
+  & &__text,
+  & &__text-subscription {
     margin-bottom: 20px;
   }
 
-  &_desktop {
+  & &__text {
     @media (max-width: $md+1) {
-      display: none;
+      text-align: center;
+      margin-bottom: 28px;
     }
   }
 
-  &_mobile {
-    @media (min-width: $md+1) {
+  & &__text-copyright {
+    @media (max-width: $md+1) {
       display: none;
-    }
-
-    & .footer__logo-wrapper {
-      justify-content: center;
-      margin-bottom: 18px;
-    }
-
-    & .footer__text {
-      margin-bottom: 28px;
     }
   }
 }
