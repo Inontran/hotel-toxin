@@ -1,6 +1,7 @@
 include ../logo/logo
 include ../social-nets/social-nets
 include ../input-text/input-text
+include ../heading/heading
 
 //-
   options.classes - Классы блока.
@@ -40,28 +41,44 @@ mixin footer(options = {})
         
         div.footer__top-content-col.footer__top-content-col_second
           if menuItems[0].subtitle
-            h3.footer__subtitle #{menuItems[0].subtitle}
+            div.footer__title-wrapper
+              +heading({
+                text: menuItems[0].subtitle,
+                classes: 'heading_small',
+              })
           nav.footer__list
             each val, index in menuItems[0].items
               a.footer__list-link(href = val.href) #{val.name}
           
         div.footer__top-content-col.footer__top-content-col_third
           if menuItems[1].subtitle
-            h3.footer__subtitle #{menuItems[1].subtitle}
+            div.footer__title-wrapper
+              +heading({
+                text: menuItems[1].subtitle,
+                classes: 'heading_small',
+              })
           nav.footer__list
             each val, index in menuItems[1].items
               a.footer__list-link(href = val.href) #{val.name}
         
         div.footer__top-content-col.footer__top-content-col_fourth
           if menuItems[2].subtitle
-            h3.footer__subtitle #{menuItems[2].subtitle}
+            div.footer__title-wrapper
+              +heading({
+                text: menuItems[2].subtitle,
+                classes: 'heading_small',
+              })
           nav.footer__list
             each val, index in menuItems[2].items
               a.footer__list-link(href = val.href) #{val.name}
         
         div.footer__top-content-col.footer__top-content-col_fifth
           if titleSubscribe
-            h3.footer__subtitle #{titleSubscribe}
+            div.footer__title-wrapper
+              +heading({
+                text: titleSubscribe,
+                classes: 'heading_small',
+              })
           if text2
             p.footer__text-subscription #{text2}
           form(method="post")

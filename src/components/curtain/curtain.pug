@@ -49,8 +49,8 @@ mixin curtain(options = {})
         else
           a.curtain__username #{username}
       
-      div.curtain__middle
-        nav.curtain__main-menu
+      nav.curtain__middle
+        ul.curtain__main-menu
           each val, index in menuItems
             li.curtain__main-menu-item
               if val.subitems

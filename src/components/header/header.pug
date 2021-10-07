@@ -34,10 +34,10 @@ mixin header(options = {})
     class = classes,
     id = id ? id : false
   )
-    div.header__container
+    nav.header__container
       div.header__logo
         +logo()
-      nav.header__main-menu
+      ul.header__main-menu
         each val, index in menuItems
           li.header__main-menu-item
             if val.subitems
@@ -46,7 +46,7 @@ mixin header(options = {})
                 group: 'header-dropdowns',
                 classes: 'dropdown_theme_plain'
               })
-                nav.header__main-submenu
+                ul.header__main-submenu
                   each val2, index2 in val.subitems
                     li.header__main-submenu-item
                       a.header__main-menu-link(href = val2.href) #{val2.name}
@@ -61,7 +61,7 @@ mixin header(options = {})
         img(
           src = require('@/components/header/img/user_icon.svg').default,
           alt = 'Профиль',
-          role = 'presentation'
+          role = 'img'
         )
       button.header__icon-btn.header__icon-btn_type_menu.js-header__btn_show-curtain(
         title = 'Меню',
@@ -70,7 +70,7 @@ mixin header(options = {})
         img(
           src = require('@/components/header/img/menu_icon.svg').default,
           alt = 'Меню',
-          role = 'presentation'
+          role = 'img'
         )
 
       if !username
