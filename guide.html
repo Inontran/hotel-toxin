@@ -7,7 +7,7 @@
     <title>Toxin Hotel гайд</title>
     <meta name="discription" content="Страница для разработчиков, в которой находятся руководство по стилю и элементам пользовательского интерефейса.">
     <meta name="keywords" content="Toxin, Hotel, Guide, Гайд, Отель, UI-kit">
-  <link rel="icon" href="favicons/favicon.svg"><link href="vendors~guide~index~login~product~products~register.css?59b21c2b2d1182d5e6e1" rel="stylesheet"><link href="vendors~guide~index~product~products.css?59b21c2b2d1182d5e6e1" rel="stylesheet"><link href="vendors~guide~products.css?59b21c2b2d1182d5e6e1" rel="stylesheet"><link href="guide~index~login~product~products~register.css?59b21c2b2d1182d5e6e1" rel="stylesheet"><link href="guide~products.css?59b21c2b2d1182d5e6e1" rel="stylesheet"><link href="guide~product.css?59b21c2b2d1182d5e6e1" rel="stylesheet"><link href="guide.css?59b21c2b2d1182d5e6e1" rel="stylesheet"></head>
+  <link rel="icon" href="favicons/favicon.svg"><link href="vendors~guide~index~login~product~products~register.css?03000dbed757d2212b8b" rel="stylesheet"><link href="vendors~guide~index~product~products.css?03000dbed757d2212b8b" rel="stylesheet"><link href="vendors~guide~products.css?03000dbed757d2212b8b" rel="stylesheet"><link href="guide~index~login~product~products~register.css?03000dbed757d2212b8b" rel="stylesheet"><link href="guide~products.css?03000dbed757d2212b8b" rel="stylesheet"><link href="guide~product.css?03000dbed757d2212b8b" rel="stylesheet"><link href="guide.css?03000dbed757d2212b8b" rel="stylesheet"></head>
   <body class="page">
     <div class="page__content-wrapper js-page__content-wrapper">
       <header class="header js-header">
@@ -27,16 +27,16 @@
             </li>
             <li class="header__main-menu-item"><a class="header__main-menu-link" href="/mock-address/change-me">Documentation</a>
             </li>
-          </ul><a class="header__icon-btn header__icon-btn_type_profile" title="Профиль"><img src="img/components/header/img/user_icon.2920d008446b4870bfd75cac00dafcc0.svg" alt="Профиль" role="presentation"></a>
-          <button class="header__icon-btn header__icon-btn_type_menu js-header__btn_show-curtain" title="Меню" type="button"><img src="img/components/header/img/menu_icon.e16c871fb7320b37b85d7f87a6078fb3.svg" alt="Меню" role="presentation"></button><a class="header__username">Cosmin Negoita</a>
+          </ul><a class="header__icon-btn header__icon-btn_type_profile" title="Профиль"><img src="img/components/header/img/user_icon.2920d008446b4870bfd75cac00dafcc0.svg" alt="Профиль" role="img"></a>
+          <button class="header__icon-btn header__icon-btn_type_menu js-header__btn_show-curtain" title="Меню" type="button"><img src="img/components/header/img/menu_icon.e16c871fb7320b37b85d7f87a6078fb3.svg" alt="Меню" role="img"></button><a class="header__username">Cosmin Negoita</a>
         </nav>
       </header>
       <aside class="curtain">
         <div class="curtain__content-wrapper scrollbar js-scrollbar scrollbar_theme_catalina">
           <div class="curtain__top"><a class="curtain__username">Cosmin Negoita</a>
           </div>
-          <div class="curtain__middle">
-            <nav class="curtain__main-menu">
+          <nav class="curtain__middle">
+            <ul class="curtain__main-menu">
               <li class="curtain__main-menu-item"><a class="curtain__main-menu-link" href="/index.html">Home</a>
               </li>
               <li class="curtain__main-menu-item"><a class="curtain__main-menu-link" href="/mock-address/change-me">About Us</a>
@@ -49,8 +49,8 @@
               </li>
               <li class="curtain__main-menu-item"><a class="curtain__main-menu-link" href="/mock-address/change-me">Documentation</a>
               </li>
-            </nav>
-          </div>
+            </ul>
+          </nav>
         </div>
       </aside>
       <main class="page__main">
@@ -135,19 +135,16 @@
               <p>This is the body text which is used for most of the design, like paragraphs, lists, etc.</p>
             </div>
             <div class="guide-page__col">
-              <label class="input-text js-input-text">
-                <p class="input-text__label">Text Field</p>
+              <label class="input-text js-input-text"><span class="input-text__label">Text Field</span>
                 <input class="input-text__field js-input-text__field" value="" placeholder="Email" type="text">
               </label>
               <div class="guide-page__gap guide-page__gap_type_3"></div>
-              <label class="input-text js-input-text input-text_mask_email input-text_theme_subscription">
-                <p class="input-text__label">Subscription Text Field</p>
+              <label class="input-text js-input-text input-text_mask_email input-text_theme_subscription"><span class="input-text__label">Subscription Text Field</span>
                 <input class="input-text__field js-input-text__field" value="" placeholder="Email" type="text">
                 <button class="input-text__submit" type="submit"></button>
               </label>
               <div class="guide-page__gap guide-page__gap_type_3"></div>
-              <label class="input-text js-input-text input-text_mask_date">
-                <p class="input-text__label">Masked text field</p>
+              <label class="input-text js-input-text input-text_mask_date"><span class="input-text__label">Masked text field</span>
                 <input class="input-text__field js-input-text__field" value="" placeholder="" type="text">
               </label>
             </div>
@@ -253,8 +250,7 @@
             <div class="guide-page__col">
               <div class="dropdown js-dropdown" data-group="guide-example-dropdowns">
                 <div class="dropdown__input-wrapper js-dropdown__input-wrapper">
-                  <label class="input-text js-input-text input-text_theme_dropdown">
-                    <p class="input-text__label">Dropdown</p>
+                  <label class="input-text js-input-text input-text_theme_dropdown"><span class="input-text__label">Dropdown</span>
                     <input class="input-text__field js-input-text__field" value="Сколько гостей" placeholder="" type="text" readonly="readonly">
                   </label>
                   <button class="dropdown__arrow" type="button"></button>
@@ -266,7 +262,7 @@
                         <div class="list-counters__input-number-wrapper">
                           <div class="input-number js-input-number">
                             <button class="input-number__btn-less js-input-number__btn-less">-</button>
-                            <input class="input-number__input js-input-number__input" value="0" max="" min="0" step="1" type="number" readonly="readonly">
+                            <input class="input-number__input js-input-number__input" value="0" step="1" type="number" readonly="readonly">
                             <button class="input-number__btn-more js-input-number__btn-more">+</button>
                           </div>
                         </div>
@@ -275,7 +271,7 @@
                         <div class="list-counters__input-number-wrapper">
                           <div class="input-number js-input-number">
                             <button class="input-number__btn-less js-input-number__btn-less">-</button>
-                            <input class="input-number__input js-input-number__input" value="0" max="" min="0" step="1" type="number" readonly="readonly">
+                            <input class="input-number__input js-input-number__input" value="0" step="1" type="number" readonly="readonly">
                             <button class="input-number__btn-more js-input-number__btn-more">+</button>
                           </div>
                         </div>
@@ -284,7 +280,7 @@
                         <div class="list-counters__input-number-wrapper">
                           <div class="input-number js-input-number">
                             <button class="input-number__btn-less js-input-number__btn-less">-</button>
-                            <input class="input-number__input js-input-number__input" value="0" max="" min="0" step="1" type="number" readonly="readonly">
+                            <input class="input-number__input js-input-number__input" value="0" step="1" type="number" readonly="readonly">
                             <button class="input-number__btn-more js-input-number__btn-more">+</button>
                           </div>
                         </div>
@@ -304,8 +300,7 @@
               <div class="guide-page__gap guide-page__gap_type_3"></div>
               <div class="dropdown js-dropdown dropdown_simple" data-group="guide-example-dropdowns">
                 <div class="dropdown__input-wrapper js-dropdown__input-wrapper">
-                  <label class="input-text js-input-text input-text_theme_dropdown">
-                    <p class="input-text__label">Dropdown</p>
+                  <label class="input-text js-input-text input-text_theme_dropdown"><span class="input-text__label">Dropdown</span>
                     <input class="input-text__field js-input-text__field" value="" placeholder="" type="text" readonly="readonly">
                   </label>
                   <button class="dropdown__arrow" type="button"></button>
@@ -317,7 +312,7 @@
                         <div class="list-counters__input-number-wrapper">
                           <div class="input-number js-input-number">
                             <button class="input-number__btn-less js-input-number__btn-less">-</button>
-                            <input class="input-number__input js-input-number__input" value="0" max="" min="0" step="1" type="number" readonly="readonly">
+                            <input class="input-number__input js-input-number__input" value="0" step="1" type="number" readonly="readonly">
                             <button class="input-number__btn-more js-input-number__btn-more">+</button>
                           </div>
                         </div>
@@ -326,7 +321,7 @@
                         <div class="list-counters__input-number-wrapper">
                           <div class="input-number js-input-number">
                             <button class="input-number__btn-less js-input-number__btn-less">-</button>
-                            <input class="input-number__input js-input-number__input" value="0" max="" min="0" step="1" type="number" readonly="readonly">
+                            <input class="input-number__input js-input-number__input" value="0" step="1" type="number" readonly="readonly">
                             <button class="input-number__btn-more js-input-number__btn-more">+</button>
                           </div>
                         </div>
@@ -335,7 +330,7 @@
                         <div class="list-counters__input-number-wrapper">
                           <div class="input-number js-input-number">
                             <button class="input-number__btn-less js-input-number__btn-less">-</button>
-                            <input class="input-number__input js-input-number__input" value="0" max="" min="0" step="1" type="number" readonly="readonly">
+                            <input class="input-number__input js-input-number__input" value="0" step="1" type="number" readonly="readonly">
                             <button class="input-number__btn-more js-input-number__btn-more">+</button>
                           </div>
                         </div>
@@ -483,8 +478,7 @@
             <div class="guide-page__col">
               <div class="dropdown js-dropdown dropdown_dates">
                 <div class="dropdown__input-wrapper js-dropdown__input-wrapper">
-                  <label class="input-text js-input-text js-input-text_date_range input-text_theme_dropdown">
-                    <p class="input-text__label">Даты пребывания в отеле</p>
+                  <label class="input-text js-input-text js-input-text_date_range input-text_theme_dropdown"><span class="input-text__label">Даты пребывания в отеле</span>
                     <input class="input-text__field js-input-text__field" value="" placeholder="" type="text" readonly="readonly">
                   </label>
                   <button class="dropdown__arrow" type="button"></button>
@@ -516,8 +510,7 @@
                     <div class="form-fast-select__dates-col">
                       <div class="dropdown js-dropdown js-dropdown_form-fast-select-dates-result" data-group="formFastSelect" data-target="#dropdown-datepicker2">
                         <div class="dropdown__input-wrapper js-dropdown__input-wrapper">
-                          <label class="input-text js-input-text js-input-text_date_start input-text_theme_dropdown">
-                            <p class="input-text__label">Прибытие</p>
+                          <label class="input-text js-input-text js-input-text_date_start input-text_theme_dropdown"><span class="input-text__label">Прибытие</span>
                             <input class="input-text__field js-input-text__field" value="" placeholder="ДД.ММ.ГГГГ" type="text" readonly="readonly">
                           </label>
                           <button class="dropdown__arrow" type="button"></button>
@@ -527,8 +520,7 @@
                     <div class="form-fast-select__dates-col">
                       <div class="dropdown js-dropdown js-dropdown_form-fast-select-dates-result dropdown_dates dropdown_align_right" id="dropdown-datepicker2" data-group="formFastSelect">
                         <div class="dropdown__input-wrapper js-dropdown__input-wrapper">
-                          <label class="input-text js-input-text js-input-text_date_end input-text_theme_dropdown">
-                            <p class="input-text__label">Выезд</p>
+                          <label class="input-text js-input-text js-input-text_date_end input-text_theme_dropdown"><span class="input-text__label">Выезд</span>
                             <input class="input-text__field js-input-text__field" value="" placeholder="ДД.ММ.ГГГГ" type="text" readonly="readonly">
                           </label>
                           <button class="dropdown__arrow" type="button"></button>
@@ -554,8 +546,7 @@
                   <div class="form-fast-select__input-wrapper">
                     <div class="dropdown js-dropdown" data-group="formFastSelect">
                       <div class="dropdown__input-wrapper js-dropdown__input-wrapper">
-                        <label class="input-text js-input-text input-text_theme_dropdown">
-                          <p class="input-text__label">Гости</p>
+                        <label class="input-text js-input-text input-text_theme_dropdown"><span class="input-text__label">Гости</span>
                           <input class="input-text__field js-input-text__field" value="" placeholder="Сколько гостей" type="text" readonly="readonly">
                         </label>
                         <button class="dropdown__arrow" type="button"></button>
@@ -567,7 +558,7 @@
                               <div class="list-counters__input-number-wrapper">
                                 <div class="input-number js-input-number">
                                   <button class="input-number__btn-less js-input-number__btn-less">-</button>
-                                  <input class="input-number__input js-input-number__input" value="0" max="" min="0" step="1" type="number" readonly="readonly">
+                                  <input class="input-number__input js-input-number__input" value="0" step="1" type="number" readonly="readonly">
                                   <button class="input-number__btn-more js-input-number__btn-more">+</button>
                                 </div>
                               </div>
@@ -576,7 +567,7 @@
                               <div class="list-counters__input-number-wrapper">
                                 <div class="input-number js-input-number">
                                   <button class="input-number__btn-less js-input-number__btn-less">-</button>
-                                  <input class="input-number__input js-input-number__input" value="0" max="" min="0" step="1" type="number" readonly="readonly">
+                                  <input class="input-number__input js-input-number__input" value="0" step="1" type="number" readonly="readonly">
                                   <button class="input-number__btn-more js-input-number__btn-more">+</button>
                                 </div>
                               </div>
@@ -585,7 +576,7 @@
                               <div class="list-counters__input-number-wrapper">
                                 <div class="input-number js-input-number">
                                   <button class="input-number__btn-less js-input-number__btn-less">-</button>
-                                  <input class="input-number__input js-input-number__input" value="0" max="" min="0" step="1" type="number" readonly="readonly">
+                                  <input class="input-number__input js-input-number__input" value="0" step="1" type="number" readonly="readonly">
                                   <button class="input-number__btn-more js-input-number__btn-more">+</button>
                                 </div>
                               </div>
@@ -639,14 +630,12 @@
                     </div>
                   </div>
                   <div class="form-register__element-wrapper2">
-                    <label class="input-text js-input-text input-text_mask_date">
-                      <p class="input-text__label">Дата рождения</p>
+                    <label class="input-text js-input-text input-text_mask_date"><span class="input-text__label">Дата рождения</span>
                       <input class="input-text__field js-input-text__field" value="" placeholder="" type="text">
                     </label>
                   </div>
                   <div class="form-register__element-wrapper1">
-                    <label class="input-text js-input-text input-text_mask_email">
-                      <p class="input-text__label">Данные для входа в сервис</p>
+                    <label class="input-text js-input-text input-text_mask_email"><span class="input-text__label">Данные для входа в сервис</span>
                       <input class="input-text__field js-input-text__field" value="" placeholder="Email" type="text">
                     </label>
                   </div>
@@ -687,8 +676,7 @@
                     <div class="form-booking__dates-col">
                       <div class="dropdown js-dropdown js-dropdown_dates-result" data-group="formBooking" data-target="#dropdown-datepicker">
                         <div class="dropdown__input-wrapper js-dropdown__input-wrapper">
-                          <label class="input-text js-input-text js-input-text_date_start input-text_theme_dropdown">
-                            <p class="input-text__label">Прибытие</p>
+                          <label class="input-text js-input-text js-input-text_date_start input-text_theme_dropdown"><span class="input-text__label">Прибытие</span>
                             <input class="input-text__field js-input-text__field" value="" placeholder="ДД.ММ.ГГГГ" type="text" readonly="readonly">
                           </label>
                           <button class="dropdown__arrow" type="button"></button>
@@ -698,8 +686,7 @@
                     <div class="form-booking__dates-col">
                       <div class="dropdown js-dropdown js-dropdown_dates-result dropdown_dates dropdown_align_right" id="dropdown-datepicker" data-group="formBooking">
                         <div class="dropdown__input-wrapper js-dropdown__input-wrapper">
-                          <label class="input-text js-input-text js-input-text_date_end input-text_theme_dropdown">
-                            <p class="input-text__label">Выезд</p>
+                          <label class="input-text js-input-text js-input-text_date_end input-text_theme_dropdown"><span class="input-text__label">Выезд</span>
                             <input class="input-text__field js-input-text__field" value="" placeholder="ДД.ММ.ГГГГ" type="text" readonly="readonly">
                           </label>
                           <button class="dropdown__arrow" type="button"></button>
@@ -725,8 +712,7 @@
                   <div class="form-booking__input-wrapper">
                     <div class="dropdown js-dropdown" data-group="formBooking">
                       <div class="dropdown__input-wrapper js-dropdown__input-wrapper">
-                        <label class="input-text js-input-text input-text_theme_dropdown">
-                          <p class="input-text__label">Гости</p>
+                        <label class="input-text js-input-text input-text_theme_dropdown"><span class="input-text__label">Гости</span>
                           <input class="input-text__field js-input-text__field" value="" placeholder="Сколько гостей" type="text" readonly="readonly">
                         </label>
                         <button class="dropdown__arrow" type="button"></button>
@@ -738,7 +724,7 @@
                               <div class="list-counters__input-number-wrapper">
                                 <div class="input-number js-input-number">
                                   <button class="input-number__btn-less js-input-number__btn-less">-</button>
-                                  <input class="input-number__input js-input-number__input" value="0" max="" min="0" step="1" type="number" readonly="readonly">
+                                  <input class="input-number__input js-input-number__input" value="0" step="1" type="number" readonly="readonly">
                                   <button class="input-number__btn-more js-input-number__btn-more">+</button>
                                 </div>
                               </div>
@@ -747,7 +733,7 @@
                               <div class="list-counters__input-number-wrapper">
                                 <div class="input-number js-input-number">
                                   <button class="input-number__btn-less js-input-number__btn-less">-</button>
-                                  <input class="input-number__input js-input-number__input" value="0" max="" min="0" step="1" type="number" readonly="readonly">
+                                  <input class="input-number__input js-input-number__input" value="0" step="1" type="number" readonly="readonly">
                                   <button class="input-number__btn-more js-input-number__btn-more">+</button>
                                 </div>
                               </div>
@@ -756,7 +742,7 @@
                               <div class="list-counters__input-number-wrapper">
                                 <div class="input-number js-input-number">
                                   <button class="input-number__btn-less js-input-number__btn-less">-</button>
-                                  <input class="input-number__input js-input-number__input" value="0" max="" min="0" step="1" type="number" readonly="readonly">
+                                  <input class="input-number__input js-input-number__input" value="0" step="1" type="number" readonly="readonly">
                                   <button class="input-number__btn-more js-input-number__btn-more">+</button>
                                 </div>
                               </div>
@@ -948,10 +934,10 @@
         <div class="footer__bottom-content">
           <div class="footer__bottom-content-wrapper">
             <p class="footer__text-copyright">Copyright © 2018 Toxin UI Kit. All rights reserved.</p>
-            <aside class="social-nets"><a class="social-nets__link" href="/mock-address/change-me" target="_blank" rel="noopener noreferrer"><img class="social-nets__icon" src="img/components/social-nets/img/twitter-icon.680551ca8b147d9593a94de4d9860d01.svg"></a><a class="social-nets__link" href="/mock-address/change-me" target="_blank" rel="noopener noreferrer"><img class="social-nets__icon" src="img/components/social-nets/img/fb-icon.4b4a4e32a59b0316075ec5998596e581.svg"></a><a class="social-nets__link" href="/mock-address/change-me" target="_blank" rel="noopener noreferrer"><img class="social-nets__icon" src="img/components/social-nets/img/insta-icon.c54ef15fbdc6cd69b00a8d74dbbdfa09.svg"></a></aside>
+            <aside class="social-nets"><a class="social-nets__link" href="/mock-address/change-me" target="_blank" rel="noopener noreferrer"><img class="social-nets__icon" src="img/components/social-nets/img/twitter-icon.680551ca8b147d9593a94de4d9860d01.svg" alt="twitter"></a><a class="social-nets__link" href="/mock-address/change-me" target="_blank" rel="noopener noreferrer"><img class="social-nets__icon" src="img/components/social-nets/img/fb-icon.4b4a4e32a59b0316075ec5998596e581.svg" alt="facebook"></a><a class="social-nets__link" href="/mock-address/change-me" target="_blank" rel="noopener noreferrer"><img class="social-nets__icon" src="img/components/social-nets/img/insta-icon.c54ef15fbdc6cd69b00a8d74dbbdfa09.svg" alt="instagram"></a></aside>
           </div>
         </div>
       </footer>
     </div>
-  <script src="vendors~guide~index~login~product~products~register.js?59b21c2b2d1182d5e6e1"></script><script src="vendors~guide~index~product~products.js?59b21c2b2d1182d5e6e1"></script><script src="vendors~guide~product~products.js?59b21c2b2d1182d5e6e1"></script><script src="vendors~guide~product.js?59b21c2b2d1182d5e6e1"></script><script src="vendors~guide~products.js?59b21c2b2d1182d5e6e1"></script><script src="guide~index~login~product~products~register.js?59b21c2b2d1182d5e6e1"></script><script src="guide~products.js?59b21c2b2d1182d5e6e1"></script><script src="guide~product.js?59b21c2b2d1182d5e6e1"></script><script src="guide.js?59b21c2b2d1182d5e6e1"></script></body>
+  <script src="vendors~guide~index~login~product~products~register.js?03000dbed757d2212b8b"></script><script src="vendors~guide~index~product~products.js?03000dbed757d2212b8b"></script><script src="vendors~guide~product~products.js?03000dbed757d2212b8b"></script><script src="vendors~guide~product.js?03000dbed757d2212b8b"></script><script src="vendors~guide~products.js?03000dbed757d2212b8b"></script><script src="guide~index~login~product~products~register.js?03000dbed757d2212b8b"></script><script src="guide~products.js?03000dbed757d2212b8b"></script><script src="guide~product.js?03000dbed757d2212b8b"></script><script src="guide.js?03000dbed757d2212b8b"></script></body>
 </html>
