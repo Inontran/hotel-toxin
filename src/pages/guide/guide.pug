@@ -23,6 +23,7 @@ include ../../components/form-login/form-login
 include ../../components/form-booking/form-booking
 include ../../components/card-product/card-product
 include ../../components/chart/chart
+include ../../components/heading/heading
 
 block headTags
   -
@@ -194,11 +195,23 @@ block content
           })
 
         div.guide-page__col
-          h1 This one is the sub-section or widget title
+          +heading({
+            text: 'This one is the sub-section or widget title',
+            classes: 'heading_large',
+            tag: 'h1',
+          })
           div.guide-page__gap.guide-page__gap_type_3
-          h2 Next one is the item title inside widgets
+          +heading({
+            text: 'Next one is the item title inside widgets',
+            classes: 'heading_middle',
+            tag: 'h2',
+          })
           div.guide-page__gap.guide-page__gap_type_3
-          h3 This is a label or CTA text
+          +heading({
+            text: 'This is a label or CTA text',
+            classes: 'heading_small',
+            tag: 'h3',
+          })
           div.guide-page__gap.guide-page__gap_type_3
           p This is the body text which is used for most of the design, like paragraphs, lists, etc.
 
