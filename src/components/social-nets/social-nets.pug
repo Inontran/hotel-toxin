@@ -4,18 +4,30 @@
 
 mixin social-nets(options = {})
   -
-    var {
+    const {
       classes = '',
       id = false,
     } = options;
 
-  div.social-nets(
+  aside.social-nets(
     class = classes,
     id = id ? id : false
   )
-    a.social-nets__link(href="/mock-address/change-me", target = "_blank", rel="noopener noreferrer")
+    a.social-nets__link(
+      href = "/mock-address/change-me",
+      target = "_blank",
+      rel = "noopener noreferrer"
+    )
       img.social-nets__icon(src = require('@/components/social-nets/img/twitter-icon.svg').default )
-    a.social-nets__link(href="/mock-address/change-me", target = "_blank", rel="noopener noreferrer")
+    a.social-nets__link(
+      href = "/mock-address/change-me",
+      target = "_blank",
+      rel = "noopener noreferrer"
+    )
       img.social-nets__icon(src = require('@/components/social-nets/img/fb-icon.svg').default )
-    a.social-nets__link(href="/mock-address/change-me", target = "_blank", rel="noopener noreferrer")
+    a.social-nets__link(
+      href = "/mock-address/change-me",
+      target = "_blank",
+      rel = "noopener noreferrer"
+    )
       img.social-nets__icon(src = require('@/components/social-nets/img/insta-icon.svg').default )
