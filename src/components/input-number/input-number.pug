@@ -12,8 +12,8 @@ mixin input-number(options = {})
     const {
       classes = '',
       id = false,
-      min = '',
-      max = '',
+      min = false,
+      max = false,
       step = 1,
       value = 0,
       name = '',
@@ -28,8 +28,8 @@ mixin input-number(options = {})
     input.input-number__input.js-input-number__input(
       name = name,
       value = value,
-      max = max,
-      min = min,
+      max = max ? max : false,
+      min = min ? min : false,
       step = step,
       type = 'number',
       readonly = readonly ? 'readonly' : false,

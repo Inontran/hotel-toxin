@@ -18,16 +18,25 @@ mixin social-nets(options = {})
       target = "_blank",
       rel = "noopener noreferrer"
     )
-      img.social-nets__icon(src = require('@/components/social-nets/img/twitter-icon.svg').default )
+      img.social-nets__icon(
+        src = require('@/components/social-nets/img/twitter-icon.svg').default,
+        alt = 'twitter',
+      )
     a.social-nets__link(
       href = "/mock-address/change-me",
       target = "_blank",
       rel = "noopener noreferrer"
     )
-      img.social-nets__icon(src = require('@/components/social-nets/img/fb-icon.svg').default )
+      img.social-nets__icon(
+        src = require('@/components/social-nets/img/fb-icon.svg').default,
+        alt = 'facebook',
+      )
     a.social-nets__link(
       href = "/mock-address/change-me",
       target = "_blank",
       rel = "noopener noreferrer"
     )
-      img.social-nets__icon(src = require('@/components/social-nets/img/insta-icon.svg').default )
+      img.social-nets__icon(
+        src = require('@/components/social-nets/img/insta-icon.svg').default,
+        alt = 'instagram',
+      )
