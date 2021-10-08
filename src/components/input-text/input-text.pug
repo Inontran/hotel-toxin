@@ -1,3 +1,5 @@
+include ../heading/heading
+
 //-
   options.classes - Классы блока.
   options.id - ИД блока.
@@ -33,7 +35,12 @@ mixin input-text(options = {})
     id = id ? id : false
   )
     if label
-      span.input-text__label #{label}
+      span.input-text__label
+        +heading({
+          text: label,
+          classes: 'heading_small',
+          tag: 'span',
+        })
     input.input-text__field.js-input-text__field(
       value = value, 
       placeholder = placeholder, 

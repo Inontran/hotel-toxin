@@ -3,6 +3,7 @@ include ../slider-range/slider-range
 include ../checkbox/checkbox
 include ../expander/expander
 include ../air-datepicker/air-datepicker
+include ../heading/heading
 
 //-
   options.classes - Классы блока.
@@ -73,7 +74,11 @@ mixin filter-products(options = {})
       if checkboxes
         div.filter-products__block-wrapper3
           if checkboxesTitle
-            h3.filter-products__block-wrapper5 #{checkboxesTitle}
+            div.filter-products__block-wrapper5
+              +heading({
+                text: checkboxesTitle,
+                classes: 'heading_small',
+              })
           ul.filter-products__list-checkboxes
             each val, index in checkboxes
               li.filter-products__list-checkboxes-item
@@ -82,7 +87,11 @@ mixin filter-products(options = {})
       if checkboxesBig
         div.filter-products__block-wrapper2
           if checkboxesBigTitle
-            h3.filter-products__block-wrapper4 #{checkboxesBigTitle}
+            div.filter-products__block-wrapper4
+              +heading({
+                text: checkboxesBigTitle,
+                classes: 'heading_small',
+              })
           ul.filter-products__list-checkboxes
             each val, index in checkboxesBig
               li.filter-products__list-checkboxes-item

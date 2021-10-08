@@ -1,3 +1,5 @@
+include ../heading/heading
+
 //-
   options.classes - Классы блока.
   options.id - ИД блока.
@@ -14,7 +16,7 @@ mixin slider-range(options = {})
       classes = '',
       id = false,
       text = false,
-      label = '',
+      label = false,
       min = 0,
       max = 100,
       val1 = min,
@@ -27,7 +29,13 @@ mixin slider-range(options = {})
     id = id ? id : false
   )
     div.slider-range__top
-      span.slider-range__label #{label}
+      if label
+        span.slider-range__label
+          +heading({
+            text: label,
+            classes: 'heading_small',
+            tag: 'span',
+          })
       input.slider-range__input-result.js-slider-range__input-result(
         type = 'text',
         readonly

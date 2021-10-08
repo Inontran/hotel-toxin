@@ -2,6 +2,8 @@ import $ from 'jquery';
 import 'webpack-jquery-ui/slider';
 import 'jquery-ui-touch-punch';
 
+require('@/components/heading/heading');
+
 require('./slider-range.scss');
 
 $(document).ready(() => {

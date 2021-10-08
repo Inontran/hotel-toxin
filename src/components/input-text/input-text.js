@@ -1,6 +1,8 @@
 import $ from 'jquery';
 import Inputmask from 'inputmask';
 
+require('@/components/heading/heading');
+
 require('./input-text.scss');
 
 $(() => {

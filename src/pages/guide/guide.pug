@@ -184,7 +184,11 @@ block content
 
 
         div.guide-page__col
-          h3 Chart Doughnut
+          +heading({
+            text: 'Chart Doughnut',
+            classes: 'heading_small',
+            tag: 'h3',
+          })
           div.guide-page__gap.guide-page__gap_type_2
           +chart({
             chartCountAll: 260,
@@ -225,32 +229,52 @@ block content
 
 
         div.guide-page__col
-          h3 Checkbox buttons
+          +heading({
+            text: 'Checkbox buttons',
+            classes: 'heading_small',
+            tag: 'h3',
+          })
           div.guide-page__gap.guide-page__gap_type_2
           +checkbox({text: "Можно курить", checked: true})
           div.guide-page__gap.guide-page__gap_type_1
           +checkbox({text: "Можно пригласить гостей (до 10 человек)"})
           div.guide-page__gap.guide-page__gap_type_5
 
-          h3 Radio Buttons
+          +heading({
+            text: 'Radio Buttons',
+            classes: 'heading_small',
+            tag: 'h3',
+          })
           div.guide-page__gap.guide-page__gap_type_2
           +radio({id: "test4", text: "Мужчина", name: "gender", checked: true})
           div.guide-page__gap.guide-page__gap_type_1
           +radio({id: "test5", text: "Женщина", name: "gender"})
           div.guide-page__gap.guide-page__gap_type_5
 
-          h3 Toggle
+          +heading({
+            text: 'Toggle',
+            classes: 'heading_small',
+            tag: 'h3',
+          })
           div.guide-page__gap.guide-page__gap_type_2
           +toggle({id: "test6", text: "Получать спецпредложения", name: "get", checked: true})
           div.guide-page__gap.guide-page__gap_type_5
 
-          h3 Like Button
+          +heading({
+            text: 'Like Button',
+            classes: 'heading_small',
+            tag: 'h3',
+          })
           div.guide-page__gap.guide-page__gap_type_2
           +like-btn({value: 2})
           +like-btn({value: 12, isLike: true})
           div.guide-page__gap.guide-page__gap_type_5
 
-          h3 Rate Button
+          +heading({
+            text: 'Rate Button',
+            classes: 'heading_small',
+            tag: 'h3',
+          })
           div.guide-page__gap.guide-page__gap_type_2
           +rate-btn({value: 4})
 
@@ -259,7 +283,11 @@ block content
           +slider-range({label: "Range slider", min: 0, max: 15000, val1: 5000, val2: 10000})
           div.guide-page__gap.guide-page__gap_type_5
 
-          h3 Buttons
+          +heading({
+            text: 'Buttons',
+            classes: 'heading_small',
+            tag: 'h3',
+          })
           div.guide-page__gap.guide-page__gap_type_2
           
           div.guide-page__gap.guide-page__gap_type_3
@@ -275,7 +303,11 @@ block content
           +button({text: "Перейти к оплате", classes: "button_filled_blue-green-gradient button_theme_arrow button_wide"})
           div.guide-page__gap.guide-page__gap_type_5
 
-          h3 Pagination
+          +heading({
+            text: 'Pagination',
+            classes: 'heading_small',
+            tag: 'h3',
+          })
           div.guide-page__gap.guide-page__gap_type_2
           +pagination({page: 1, perpage: 12, elements: 175, text: "вариантов аренды"})
 
@@ -365,7 +397,11 @@ block content
 
 
         div.guide-page__col
-          h3 Rich Checkbox Buttons
+          +heading({
+            text: 'Rich Checkbox Buttons',
+            classes: 'heading_small',
+            tag: 'h3',
+          })
           div.guide-page__gap.guide-page__gap_type_2
           +checkbox({text: "Ширина коридоров в номере не менее 91 см.", checked: true, title: "Широкий коридор"})
           div.guide-page__gap.guide-page__gap_type_1
@@ -373,7 +409,11 @@ block content
 
 
         div.guide-page__col
-          h3 Bullet list
+          +heading({
+            text: 'Bullet list',
+            classes: 'heading_small',
+            tag: 'h3',
+          })
           div.guide-page__gap.guide-page__gap_type_2
           +list({items: ["Нельзя с питомцами", "Без вечеринок и мероприятий", "Время прибытия — после 13:00, а выезд до 12:00"]})
 

@@ -1,11 +1,13 @@
 import $ from 'jquery';
 
-require('./filter-products.scss');
 require('@/components/dropdown/dropdown');
 require('@/components/slider-range/slider-range');
 require('@/components/checkbox/checkbox');
 require('@/components/expander/expander');
 require('@/components/air-datepicker/air-datepicker');
+require('@/components/heading/heading');
+
+require('./filter-products.scss');
 
 $(() => {
   const $body = $('body');

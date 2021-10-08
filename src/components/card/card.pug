@@ -1,3 +1,5 @@
+include ../heading/heading
+
 //-
   options.classes - Классы блока.
   options.id - ИД блока.
@@ -16,5 +18,10 @@ mixin card(options = {})
     id = id ? id : false
   )
     if title
-      h1.card__title #{title}
+      div.card__title
+        +heading({
+          text: title,
+          classes: 'heading_large',
+          tag: 'h1',
+        })
     block

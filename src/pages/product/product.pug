@@ -5,6 +5,7 @@ include ../../components/infographics/infographics
 include ../../components/review/review
 include ../../components/list/list
 include ../../components/chart/chart
+include ../../components/heading/heading
 
 block headTags
   -
@@ -88,7 +89,12 @@ block content
             div.product__grid-3.product__grid-3_type_2
               section.product__grid-3-col.product__grid-3-col-1
                 if optionsInfographics
-                  h2.product__title Сведения о номере
+                  div.product__title
+                    +heading({
+                      text: 'Сведения о номере',
+                      classes: 'heading_middle',
+                      tag: 'h2',
+                    })
                   - var index = 0
                   while index < optionsInfographics.items.length
                     - optionsInfographics.items[index].src = require('@/pages/product/img/' + optionsInfographics.items[index].src).default
@@ -96,7 +102,12 @@ block content
                   +infographics(optionsInfographics)
               if chartCountAll
                 section.product__grid-3-col.product__grid-3-col-2
-                  h2.product__title Впечатления от номера
+                  div.product__title
+                    +heading({
+                      text: 'Впечатления от номера',
+                      classes: 'heading_middle',
+                      tag: 'h2',
+                    })
                   +chart({
                     chartCountAll: chartCountAll,
                     chartNumAwesome: chartNumAwesome,
@@ -109,7 +120,12 @@ block content
               section.product__section-reviews
                 header.product__header-reviews
                   div.product__header-reviews-col
-                    h2.product__title.product__title_theme_review Отзывы посетителей номера
+                    div.product__title.product__title_theme_review
+                      +heading({
+                        text: 'Отзывы посетителей номера',
+                        classes: 'heading_middle',
+                        tag: 'h2',
+                      })
                   div.product__header-reviews-col
                     span.product__text-count-reviews #{reviews.length} отзыва
                 each reviewItem, index in reviews
@@ -120,12 +136,22 @@ block content
             div.product__grid-3
               section.product__grid-3-col.product__grid-3-col-1
                 if rulesTitle
-                  h2.product__title.product__title_theme_rules #{rulesTitle}
+                  div.product__title.product__title_theme_rules
+                    +heading({
+                      text: rulesTitle,
+                      classes: 'heading_middle',
+                      tag: 'h2',
+                    })
                 if optionsRules
                   +list(optionsRules)
               section.product__grid-3-col.product__grid-3-col-2
                 if cancelTitle
-                  h2.product__title #{cancelTitle}
+                  div.product__title
+                    +heading({
+                      text: cancelTitle,
+                      classes: 'heading_middle',
+                      tag: 'h2',
+                    })
                 if cancelText
                   p.product__text #{cancelText}
 

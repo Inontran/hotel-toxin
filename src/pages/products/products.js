@@ -1,12 +1,14 @@
 import $ from 'jquery';
 
 require('../../entry');
-require('./products.scss');
 
 require('@/components/card-product/card-product');
 require('@/components/pagination/pagination');
 require('@/components/filter-products/filter-products');
 require('@/components/button/button');
+require('@/components/heading/heading');
+
+require('./products.scss');
 
 $(() => {
   const $body = $('body');

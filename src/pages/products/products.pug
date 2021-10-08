@@ -4,6 +4,7 @@ include ../../components/card-product/card-product
 include ../../components/pagination/pagination
 include ../../components/filter-products/filter-products
 include ../../components/button/button
+include ../../components/heading/heading
 
 block headTags
   -
@@ -49,7 +50,12 @@ block content
           div.products__left-column.js-products__left-column
             +filter-products(dataProductsPage)
           section.products__center-column
-            h1.products__title Номера, которые мы для вас подобрали
+            div.products__title
+              +heading({
+                text: 'Номера, которые мы для вас подобрали',
+                classes: 'heading_large',
+                tag: 'h1',
+              })
             div.products__btn_filter-showing
               +button({
                 classes: 'button_filled_blue-green-gradient button_size_md js-products_show-filter',
