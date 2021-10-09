@@ -49,20 +49,45 @@ mixin header(options = {})
                 ul.header__main-submenu
                   each val2, index2 in val.subitems
                     li.header__main-submenu-item
-                      a.header__main-menu-link(href = val2.href) #{val2.name}
+                      a.header__main-submenu-link(href = val2.href) #{val2.name}
             else
               a.header__main-menu-link(href = val.href) #{val.name}
-              
 
-      a.header__icon-btn.header__icon-btn_type_profile(
-        href = buttonLoginHref ? buttonLoginHref : false,
-        title = 'Профиль'
-      )
-        img(
-          src = require('@/components/header/img/user_icon.svg').default,
-          alt = 'Профиль',
+
+      if !username
+        button.header__icon-btn.header__icon-btn_type_profile.js-header__btn_show-auth-btns(
+          title = 'Профиль'
+          type = 'button',
         )
-      button.header__icon-btn.header__icon-btn_type_menu.js-header__btn_show-curtain(
+          img(
+            src = require('@/components/header/img/user_icon.svg').default,
+            alt = 'Профиль',
+          )
+        div.header__auth-btns
+          div.header__auth-btn
+            +button({
+              text: buttonLoginText, 
+              classes: 'button_outlined button_size_md button_theme_header-mobile',
+              href: buttonLoginHref ? buttonLoginHref : false
+            })
+          div.header__auth-btn
+            +button({
+              text: buttonRegText, 
+              classes: 'button_filled_blue-green-gradient button_size_md button_theme_header-mobile',
+              href: buttonRegHref ? buttonRegHref : false
+            })
+      else
+        a.header__icon-btn.header__icon-btn_type_profile(
+          href = buttonLoginHref ? buttonLoginHref : '/mock-address/change-me',
+          title = 'Профиль'
+        )
+          img(
+            src = require('@/components/header/img/user_icon.svg').default,
+            alt = 'Профиль',
+          )
+        a.header__username #{username}
+
+      button.header__icon-btn.header__icon-btn_type_menu.js-header__btn_show-mainmenu(
         title = 'Меню',
         type = 'button',
       )
@@ -70,19 +95,3 @@ mixin header(options = {})
           src = require('@/components/header/img/menu_icon.svg').default,
           alt = 'Меню',
         )
-
-      if !username
-        div.header__btn-login
-          +button({
-            text: buttonLoginText, 
-            classes: 'button_outlined button_size_md',
-            href: buttonLoginHref ? buttonLoginHref : false
-          })
-        div.header__btn-signup
-          +button({
-            text: buttonRegText, 
-            classes: 'button_filled_blue-green-gradient button_size_md',
-            href: buttonRegHref ? buttonRegHref : false
-          })
-      else
-        a.header__username #{username}

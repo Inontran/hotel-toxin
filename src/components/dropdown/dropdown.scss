@@ -64,6 +64,15 @@
   }
 
   &.dropdown_theme_plain {
+    @media (max-width: $sm) {
+      display: flex;
+      justify-content: center;
+
+      .dropdown__btn{
+        padding: 14px 10px;
+      }
+    }
+
     .dropdown__content {
       border-radius: 4px;
       left: 50%;

@@ -101,4 +101,26 @@
   &_size_md {
     min-height: calc_rem(34);
   }
+
+  &_theme_header-mobile {
+    @media (max-width: $lg) {
+      font-size: 1rem;
+      text-transform: none;
+      text-align: center;
+      border: 0;
+      padding: 13px 10px;
+      display: flex;
+      
+      &,
+      &:hover {
+        color: $dark50;
+        font-weight: 400;
+      }
+  
+      &::after,
+      &::before {
+        content: none;
+      }
+    }
+  }
 }
