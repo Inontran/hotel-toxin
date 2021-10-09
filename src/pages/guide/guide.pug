@@ -24,6 +24,7 @@ include ../../components/form-booking/form-booking
 include ../../components/card-product/card-product
 include ../../components/chart/chart
 include ../../components/heading/heading
+include ../../components/form-subscription/form-subscription
 
 block headTags
   -
@@ -251,7 +252,11 @@ block content
         div.guide-page__col
           +input-text({label: "Text Field", placeholder: "Email"})
           div.guide-page__gap.guide-page__gap_type_3
-          +input-text({label: "Subscription Text Field", placeholder: "Email", subscription: true, classes: "input-text_mask_email"})
+          +form-subscription({
+            inputParams: {
+              label: "Subscription Text Field",
+            }
+          })
           div.guide-page__gap.guide-page__gap_type_3
           +input-text({label: "Masked text field",classes: "input-text_mask_date" })
 

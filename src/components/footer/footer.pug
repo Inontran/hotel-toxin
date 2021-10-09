@@ -2,6 +2,7 @@ include ../logo/logo
 include ../social-nets/social-nets
 include ../input-text/input-text
 include ../heading/heading
+include ../form-subscription/form-subscription
 
 //-
   options.classes - Классы блока.
@@ -81,8 +82,7 @@ mixin footer(options = {})
               })
           if text2
             p.footer__text-subscription #{text2}
-          form(method="post")
-            +input-text({subscription: true, placeholder: 'Email'})
+          +form-subscription()
 
     div.footer__bottom-content
       div.footer__bottom-content-wrapper

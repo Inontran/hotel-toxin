@@ -1,0 +1,30 @@
+include ../input-text/input-text
+
+//-
+  options.classes - Классы блока.
+  options.id - ИД блока.
+  options.inputParams - Параметры поля ввода.
+
+mixin form-subscription(options = {})
+  -
+    var {
+      classes = '',
+      id = false,
+      inputParams = {},
+    } = options;
+
+  if inputParams.placeholder == undefined
+    -inputParams.placeholder = 'Email'
+
+  if inputParams.classes == undefined
+    -inputParams.classes = 'input-text_mask_email'
+
+  -inputParams.classes += ' input-text_theme_subscription'
+
+  form.form-subscription(
+    class = classes,
+    id = id ? id : false,
+    method = 'post',
+  )
+    +input-text(inputParams)
+    button.form-subscription__submit(type = 'submit')

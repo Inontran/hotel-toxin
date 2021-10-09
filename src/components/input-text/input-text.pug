@@ -10,7 +10,6 @@ include ../heading/heading
   options.name - Название input (атрибут name).
   options.readonly - Атрибут readonly.
   options.disabled - Атрибут disabled.
-  options.subscription - Параметр, указывающий на то, что в поле должна быть кнопка подтверждения.
 
 mixin input-text(options = {})
   -
@@ -25,10 +24,6 @@ mixin input-text(options = {})
       disabled = false,
       label = false,
     } = options;
-
-  if subscription
-    - classes += ' input-text_theme_subscription'
-
   
   label.input-text.js-input-text(
     class = classes, 
@@ -49,6 +44,3 @@ mixin input-text(options = {})
       readonly = readonly ? "readonly" : false, 
       disabled = disabled ? "disabled" : false, 
     )
-    
-    if subscription
-      button.input-text__submit(type = 'submit')

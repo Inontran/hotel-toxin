@@ -24,3 +24,4 @@ require('@/components/form-booking/form-booking');
 require('@/components/card-product/card-product');
 require('@/components/chart/chart');
 require('@/components/heading/heading');
+require('@/components/form-subscription/form-subscription');
