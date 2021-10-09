@@ -16,12 +16,4 @@
     width: 100%;
     flex-grow: 1;
   }
-
-  &.page_shown-curtain {
-    .page__content-wrapper {
-      @media (max-width: $sm) {
-        transform: translateX(-272px);
-      }
-    }
-  }
 }

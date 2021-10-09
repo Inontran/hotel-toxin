@@ -42,4 +42,3 @@ requireAll(require.context('@/pages/base/', true, /^\.\/(?!.*(?:__tests__)).*\.(
 requireAll(require.context('@/components/layout', true, /^\.\/(?!.*(?:__tests__)).*\.(js?)$/));
 requireAll(require.context('@/components/header', true, /^\.\/(?!.*(?:__tests__)).*\.(js?)$/));
 requireAll(require.context('@/components/footer', true, /^\.\/(?!.*(?:__tests__)).*\.(js?)$/));
-requireAll(require.context('@/components/curtain', true, /^\.\/(?!.*(?:__tests__)).*\.(js?)$/));
