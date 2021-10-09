@@ -7,7 +7,7 @@
     <title>Номер 888 | Toxin Hotel</title>
     <meta name="discription" content="Страница номера 888 на сайте бронирования номеров отеля Toxin.">
     <meta name="keywords" content="Toxin, Hotel, Отель">
-  <link rel="icon" href="favicons/favicon.svg"><link href="vendors~guide~index~login~product~products~register.css?f87ba6f4c53671d9d2a5" rel="stylesheet"><link href="vendors~guide~index~product~products.css?f87ba6f4c53671d9d2a5" rel="stylesheet"><link href="guide~index~login~product~products~register.css?f87ba6f4c53671d9d2a5" rel="stylesheet"><link href="guide~product.css?f87ba6f4c53671d9d2a5" rel="stylesheet"><link href="product.css?f87ba6f4c53671d9d2a5" rel="stylesheet"></head>
+  <link rel="icon" href="favicons/favicon.svg"><link href="vendors~guide~index~login~product~products~register.css?13897560761b4b89d85a" rel="stylesheet"><link href="vendors~guide~index~product~products.css?13897560761b4b89d85a" rel="stylesheet"><link href="guide~index~login~product~products~register.css?13897560761b4b89d85a" rel="stylesheet"><link href="guide~product.css?13897560761b4b89d85a" rel="stylesheet"><link href="product.css?13897560761b4b89d85a" rel="stylesheet"></head>
   <body class="page">
     <div class="page__content-wrapper js-page__content-wrapper">
       <header class="header js-header">
@@ -23,9 +23,9 @@
                 <div class="dropdown__content">
                   <div class="dropdown__content-wrapper">
                     <ul class="header__main-submenu">
-                      <li class="header__main-submenu-item"><a class="header__main-menu-link" href="/mock-address/change-me">Долгосрочная аренда</a></li>
-                      <li class="header__main-submenu-item"><a class="header__main-menu-link" href="/mock-address/change-me">Выгул собак</a></li>
-                      <li class="header__main-submenu-item"><a class="header__main-menu-link" href="/mock-address/change-me">Массаж ног</a></li>
+                      <li class="header__main-submenu-item"><a class="header__main-submenu-link" href="/mock-address/change-me">Долгосрочная аренда</a></li>
+                      <li class="header__main-submenu-item"><a class="header__main-submenu-link" href="/mock-address/change-me">Выгул собак</a></li>
+                      <li class="header__main-submenu-item"><a class="header__main-submenu-link" href="/mock-address/change-me">Массаж ног</a></li>
                     </ul>
                   </div>
                 </div>
@@ -41,18 +41,21 @@
                 <div class="dropdown__content">
                   <div class="dropdown__content-wrapper">
                     <ul class="header__main-submenu">
-                      <li class="header__main-submenu-item"><a class="header__main-menu-link" href="/mock-address/change-me">Договор</a></li>
+                      <li class="header__main-submenu-item"><a class="header__main-submenu-link" href="/mock-address/change-me">Договор</a></li>
                     </ul>
                   </div>
                 </div>
               </div>
             </li>
-          </ul><a class="header__icon-btn header__icon-btn_type_profile" href="login.html" title="Профиль"><img src="img/components/header/img/user_icon.2920d008446b4870bfd75cac00dafcc0.svg" alt="Профиль"></a>
-          <button class="header__icon-btn header__icon-btn_type_menu js-header__btn_show-curtain" title="Меню" type="button"><img src="img/components/header/img/menu_icon.e16c871fb7320b37b85d7f87a6078fb3.svg" alt="Меню"></button>
-          <div class="header__btn-login"><a class="button js-button button_outlined button_size_md" href="login.html"><span class="button__text">Войти</span></a>
+          </ul>
+          <button class="header__icon-btn header__icon-btn_type_profile js-header__btn_show-auth-btns" title="Профиль" type="button"><img src="img/components/header/img/user_icon.2920d008446b4870bfd75cac00dafcc0.svg" alt="Профиль"></button>
+          <div class="header__auth-btns">
+            <div class="header__auth-btn"><a class="button js-button button_outlined button_size_md button_theme_header-mobile" href="login.html"><span class="button__text">Войти</span></a>
+            </div>
+            <div class="header__auth-btn"><a class="button js-button button_filled_blue-green-gradient button_size_md button_theme_header-mobile" href="register.html"><span class="button__text">Зарегистрироваться</span></a>
+            </div>
           </div>
-          <div class="header__btn-signup"><a class="button js-button button_filled_blue-green-gradient button_size_md" href="register.html"><span class="button__text">Зарегистрироваться</span></a>
-          </div>
+          <button class="header__icon-btn header__icon-btn_type_menu js-header__btn_show-mainmenu" title="Меню" type="button"><img src="img/components/header/img/menu_icon.e16c871fb7320b37b85d7f87a6078fb3.svg" alt="Меню"></button>
         </nav>
       </header>
       <aside class="curtain">
@@ -118,7 +121,9 @@
               <div class="product__body-col product__body-col-1">
                 <div class="product__grid-3 product__grid-3_type_2">
                   <section class="product__grid-3-col product__grid-3-col-1">
-                    <h2 class="product__title">Сведения о номере</h2>
+                    <div class="product__title">
+                      <h2 class="heading heading_middle">Сведения о номере</h2>
+                    </div>
                     <ul class="infographics">
                       <li class="infographics__item infographics__item_line">
                         <div class="infographics__image" style="background-image: url(img/pages/product/img/insert_emoticon.dbc41c926815e8ece384d22cdb5964ed.svg)"></div>
@@ -144,7 +149,9 @@
                     </ul>
                   </section>
                   <section class="product__grid-3-col product__grid-3-col-2">
-                    <h2 class="product__title">Впечатления от номера</h2>
+                    <div class="product__title">
+                      <h2 class="heading heading_middle">Впечатления от номера</h2>
+                    </div>
                     <div class="chart js-chart" data-num-1="130" data-num-2="65" data-num-3="65" data-num-4="0">
                       <div class="chart__container">
                         <div class="chart__wrapper">
@@ -164,7 +171,9 @@
                 <section class="product__section-reviews">
                   <header class="product__header-reviews">
                     <div class="product__header-reviews-col">
-                      <h2 class="product__title product__title_theme_review">Отзывы посетителей номера</h2>
+                      <div class="product__title product__title_theme_review">
+                        <h2 class="heading heading_middle">Отзывы посетителей номера</h2>
+                      </div>
                     </div>
                     <div class="product__header-reviews-col"><span class="product__text-count-reviews">2 отзыва</span></div>
                   </header>
@@ -213,7 +222,9 @@
                 </section>
                 <div class="product__grid-3">
                   <section class="product__grid-3-col product__grid-3-col-1">
-                    <h2 class="product__title product__title_theme_rules">Правила</h2>
+                    <div class="product__title product__title_theme_rules">
+                      <h2 class="heading heading_middle">Правила</h2>
+                    </div>
                     <ul class="list">
                       <li class="list__item">Нельзя с питомцами</li>
                       <li class="list__item">Без вечеринок и мероприятий</li>
@@ -221,7 +232,9 @@
                     </ul>
                   </section>
                   <section class="product__grid-3-col product__grid-3-col-2">
-                    <h2 class="product__title">Отмена</h2>
+                    <div class="product__title">
+                      <h2 class="heading heading_middle">Отмена</h2>
+                    </div>
                     <p class="product__text">Бесплатная отмена в течение 48 ч. После этого при отмене не позднее чем за 5 дн. до прибытия вы получите полный возврат за вычетом сбора за услуги.</p>
                   </section>
                 </div>
@@ -238,7 +251,7 @@
                       <div class="form-booking__dates-col">
                         <div class="dropdown js-dropdown js-dropdown_dates-result" data-group="formBooking" data-target="#dropdown-datepicker">
                           <div class="dropdown__input-wrapper js-dropdown__input-wrapper">
-                            <label class="input-text js-input-text js-input-text_date_start input-text_theme_dropdown"><span class="input-text__label">Прибытие</span>
+                            <label class="input-text js-input-text js-input-text_date_start input-text_theme_dropdown"><span class="input-text__label"><span class="heading heading_small">Прибытие</span></span>
                               <input class="input-text__field js-input-text__field" value="" placeholder="ДД.ММ.ГГГГ" type="text" readonly="readonly">
                             </label>
                             <button class="dropdown__arrow" type="button"></button>
@@ -248,7 +261,7 @@
                       <div class="form-booking__dates-col">
                         <div class="dropdown js-dropdown js-dropdown_dates-result dropdown_dates dropdown_align_right" id="dropdown-datepicker" data-group="formBooking">
                           <div class="dropdown__input-wrapper js-dropdown__input-wrapper">
-                            <label class="input-text js-input-text js-input-text_date_end input-text_theme_dropdown"><span class="input-text__label">Выезд</span>
+                            <label class="input-text js-input-text js-input-text_date_end input-text_theme_dropdown"><span class="input-text__label"><span class="heading heading_small">Выезд</span></span>
                               <input class="input-text__field js-input-text__field" value="" placeholder="ДД.ММ.ГГГГ" type="text" readonly="readonly">
                             </label>
                             <button class="dropdown__arrow" type="button"></button>
@@ -274,7 +287,7 @@
                     <div class="form-booking__input-wrapper">
                       <div class="dropdown js-dropdown" data-group="formBooking">
                         <div class="dropdown__input-wrapper js-dropdown__input-wrapper">
-                          <label class="input-text js-input-text input-text_theme_dropdown"><span class="input-text__label">Гости</span>
+                          <label class="input-text js-input-text input-text_theme_dropdown"><span class="input-text__label"><span class="heading heading_small">Гости</span></span>
                             <input class="input-text__field js-input-text__field" value="" placeholder="Сколько гостей" type="text" readonly="readonly">
                           </label>
                           <button class="dropdown__arrow" type="button"></button>
@@ -389,11 +402,11 @@
                 <p class="heading heading_small">Подписка</p>
               </div>
               <p class="footer__text-subscription">Получайте специальные предложения и новости сервиса</p>
-              <form method="post">
-                <label class="input-text js-input-text input-text_theme_subscription">
+              <form class="form-subscription" method="post">
+                <label class="input-text js-input-text input-text_mask_email input-text_theme_subscription">
                   <input class="input-text__field js-input-text__field" value="" placeholder="Email" type="text">
-                  <button class="input-text__submit" type="submit"></button>
                 </label>
+                <button class="form-subscription__submit" type="submit"></button>
               </form>
             </div>
           </div>
@@ -406,5 +419,5 @@
         </div>
       </footer>
     </div>
-  <script src="vendors~guide~index~login~product~products~register.js?f87ba6f4c53671d9d2a5"></script><script src="vendors~guide~index~product~products.js?f87ba6f4c53671d9d2a5"></script><script src="vendors~guide~product~products.js?f87ba6f4c53671d9d2a5"></script><script src="vendors~guide~product.js?f87ba6f4c53671d9d2a5"></script><script src="guide~index~login~product~products~register.js?f87ba6f4c53671d9d2a5"></script><script src="guide~product.js?f87ba6f4c53671d9d2a5"></script><script src="product.js?f87ba6f4c53671d9d2a5"></script></body>
+  <script src="vendors~guide~index~login~product~products~register.js?13897560761b4b89d85a"></script><script src="vendors~guide~index~product~products.js?13897560761b4b89d85a"></script><script src="vendors~guide~product~products.js?13897560761b4b89d85a"></script><script src="vendors~guide~product.js?13897560761b4b89d85a"></script><script src="guide~index~login~product~products~register.js?13897560761b4b89d85a"></script><script src="guide~product.js?13897560761b4b89d85a"></script><script src="product.js?13897560761b4b89d85a"></script></body>
 </html>

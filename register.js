@@ -162,6 +162,8 @@
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
+__webpack_require__(/*! @/components/heading/heading */ "./components/heading/heading.js");
+
 __webpack_require__(/*! ./card.scss */ "./components/card/card.scss");
 
 /***/ }),

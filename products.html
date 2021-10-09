@@ -7,7 +7,7 @@
     <title>Номера отеля | Toxin Hotel</title>
     <meta name="discription" content="Страница номеров на сайте бронирования номеров отеля Toxin.">
     <meta name="keywords" content="Toxin, Hotel, Отель, номера">
-  <link rel="icon" href="favicons/favicon.svg"><link href="vendors~guide~index~login~product~products~register.css?f87ba6f4c53671d9d2a5" rel="stylesheet"><link href="vendors~guide~index~product~products.css?f87ba6f4c53671d9d2a5" rel="stylesheet"><link href="vendors~guide~products.css?f87ba6f4c53671d9d2a5" rel="stylesheet"><link href="guide~index~login~product~products~register.css?f87ba6f4c53671d9d2a5" rel="stylesheet"><link href="guide~products.css?f87ba6f4c53671d9d2a5" rel="stylesheet"><link href="products.css?f87ba6f4c53671d9d2a5" rel="stylesheet"></head>
+  <link rel="icon" href="favicons/favicon.svg"><link href="vendors~guide~index~login~product~products~register.css?13897560761b4b89d85a" rel="stylesheet"><link href="vendors~guide~index~product~products.css?13897560761b4b89d85a" rel="stylesheet"><link href="vendors~guide~products.css?13897560761b4b89d85a" rel="stylesheet"><link href="guide~index~login~product~products~register.css?13897560761b4b89d85a" rel="stylesheet"><link href="guide~products.css?13897560761b4b89d85a" rel="stylesheet"><link href="products.css?13897560761b4b89d85a" rel="stylesheet"></head>
   <body class="page">
     <div class="page__content-wrapper js-page__content-wrapper">
       <header class="header js-header">
@@ -23,9 +23,9 @@
                 <div class="dropdown__content">
                   <div class="dropdown__content-wrapper">
                     <ul class="header__main-submenu">
-                      <li class="header__main-submenu-item"><a class="header__main-menu-link" href="/mock-address/change-me">Долгосрочная аренда</a></li>
-                      <li class="header__main-submenu-item"><a class="header__main-menu-link" href="/mock-address/change-me">Выгул собак</a></li>
-                      <li class="header__main-submenu-item"><a class="header__main-menu-link" href="/mock-address/change-me">Массаж ног</a></li>
+                      <li class="header__main-submenu-item"><a class="header__main-submenu-link" href="/mock-address/change-me">Долгосрочная аренда</a></li>
+                      <li class="header__main-submenu-item"><a class="header__main-submenu-link" href="/mock-address/change-me">Выгул собак</a></li>
+                      <li class="header__main-submenu-item"><a class="header__main-submenu-link" href="/mock-address/change-me">Массаж ног</a></li>
                     </ul>
                   </div>
                 </div>
@@ -41,18 +41,21 @@
                 <div class="dropdown__content">
                   <div class="dropdown__content-wrapper">
                     <ul class="header__main-submenu">
-                      <li class="header__main-submenu-item"><a class="header__main-menu-link" href="/mock-address/change-me">Договор</a></li>
+                      <li class="header__main-submenu-item"><a class="header__main-submenu-link" href="/mock-address/change-me">Договор</a></li>
                     </ul>
                   </div>
                 </div>
               </div>
             </li>
-          </ul><a class="header__icon-btn header__icon-btn_type_profile" href="login.html" title="Профиль"><img src="img/components/header/img/user_icon.2920d008446b4870bfd75cac00dafcc0.svg" alt="Профиль"></a>
-          <button class="header__icon-btn header__icon-btn_type_menu js-header__btn_show-curtain" title="Меню" type="button"><img src="img/components/header/img/menu_icon.e16c871fb7320b37b85d7f87a6078fb3.svg" alt="Меню"></button>
-          <div class="header__btn-login"><a class="button js-button button_outlined button_size_md" href="login.html"><span class="button__text">Войти</span></a>
+          </ul>
+          <button class="header__icon-btn header__icon-btn_type_profile js-header__btn_show-auth-btns" title="Профиль" type="button"><img src="img/components/header/img/user_icon.2920d008446b4870bfd75cac00dafcc0.svg" alt="Профиль"></button>
+          <div class="header__auth-btns">
+            <div class="header__auth-btn"><a class="button js-button button_outlined button_size_md button_theme_header-mobile" href="login.html"><span class="button__text">Войти</span></a>
+            </div>
+            <div class="header__auth-btn"><a class="button js-button button_filled_blue-green-gradient button_size_md button_theme_header-mobile" href="register.html"><span class="button__text">Зарегистрироваться</span></a>
+            </div>
           </div>
-          <div class="header__btn-signup"><a class="button js-button button_filled_blue-green-gradient button_size_md" href="register.html"><span class="button__text">Зарегистрироваться</span></a>
-          </div>
+          <button class="header__icon-btn header__icon-btn_type_menu js-header__btn_show-mainmenu" title="Меню" type="button"><img src="img/components/header/img/menu_icon.e16c871fb7320b37b85d7f87a6078fb3.svg" alt="Меню"></button>
         </nav>
       </header>
       <aside class="curtain">
@@ -114,7 +117,7 @@
                     <div class="filter-products__block-wrapper1">
                       <div class="dropdown js-dropdown dropdown_dates" data-group="filterProducts">
                         <div class="dropdown__input-wrapper js-dropdown__input-wrapper">
-                          <label class="input-text js-input-text js-input-text_date_range input-text_theme_dropdown"><span class="input-text__label">Даты пребывания в отеле</span>
+                          <label class="input-text js-input-text js-input-text_date_range input-text_theme_dropdown"><span class="input-text__label"><span class="heading heading_small">Даты пребывания в отеле</span></span>
                             <input class="input-text__field js-input-text__field" value="" placeholder="даты от и до включительно" type="text" readonly="readonly">
                           </label>
                           <button class="dropdown__arrow" type="button"></button>
@@ -139,7 +142,7 @@
                     <div class="filter-products__block-wrapper2">
                       <div class="dropdown js-dropdown" data-group="filterProducts">
                         <div class="dropdown__input-wrapper js-dropdown__input-wrapper">
-                          <label class="input-text js-input-text input-text_theme_dropdown"><span class="input-text__label">Гости</span>
+                          <label class="input-text js-input-text input-text_theme_dropdown"><span class="input-text__label"><span class="heading heading_small">Гости</span></span>
                             <input class="input-text__field js-input-text__field" value="" placeholder="Сколько гостей" type="text" readonly="readonly">
                           </label>
                           <button class="dropdown__arrow" type="button"></button>
@@ -189,7 +192,7 @@
                     </div>
                     <div class="filter-products__block-wrapper2">
                       <div class="slider-range js-slider-range">
-                        <div class="slider-range__top"><span class="slider-range__label">Диапазон цены</span>
+                        <div class="slider-range__top"><span class="slider-range__label"><span class="heading heading_small">Диапазон цены</span></span>
                           <input class="slider-range__input-result js-slider-range__input-result" type="text" readonly="readonly">
                         </div>
                         <div class="slider-range__slider js-slider-range__slider" data-min="0" data-max="15000" data-val1="5000" data-val2="10000"></div>
@@ -199,7 +202,9 @@
                       </div>
                     </div>
                     <div class="filter-products__block-wrapper3">
-                      <h3 class="filter-products__block-wrapper5">Правила дома</h3>
+                      <div class="filter-products__block-wrapper5">
+                        <p class="heading heading_small">Правила дома</p>
+                      </div>
                       <ul class="filter-products__list-checkboxes">
                         <li class="filter-products__list-checkboxes-item">
                           <div class="checkbox">
@@ -237,7 +242,9 @@
                       </ul>
                     </div>
                     <div class="filter-products__block-wrapper2">
-                      <h3 class="filter-products__block-wrapper4">Доступность</h3>
+                      <div class="filter-products__block-wrapper4">
+                        <p class="heading heading_small">Доступность</p>
+                      </div>
                       <ul class="filter-products__list-checkboxes">
                         <li class="filter-products__list-checkboxes-item">
                           <div class="checkbox">
@@ -268,7 +275,7 @@
                     <div class="filter-products__block-wrapper4">
                       <div class="dropdown js-dropdown" data-group="filterProducts">
                         <div class="dropdown__input-wrapper js-dropdown__input-wrapper">
-                          <label class="input-text js-input-text input-text_theme_dropdown"><span class="input-text__label">Удобства номера</span>
+                          <label class="input-text js-input-text input-text_theme_dropdown"><span class="input-text__label"><span class="heading heading_small">Удобства номера</span></span>
                             <input class="input-text__field js-input-text__field" value="" placeholder="Кол-во спален, кроватей и т.д." type="text" readonly="readonly">
                           </label>
                           <button class="dropdown__arrow" type="button"></button>
@@ -387,7 +394,9 @@
                 </aside>
               </div>
               <section class="products__center-column">
-                <h1 class="products__title">Номера, которые мы для вас подобрали</h1>
+                <div class="products__title">
+                  <h1 class="heading heading_large">Номера, которые мы для вас подобрали</h1>
+                </div>
                 <div class="products__btn_filter-showing">
                   <button class="button js-button button_filled_blue-green-gradient button_size_md js-products_show-filter" type="button"><span class="button__text">Показать фильтр</span></button>
                 </div>
@@ -654,11 +663,11 @@
                 <p class="heading heading_small">Подписка</p>
               </div>
               <p class="footer__text-subscription">Получайте специальные предложения и новости сервиса</p>
-              <form method="post">
-                <label class="input-text js-input-text input-text_theme_subscription">
+              <form class="form-subscription" method="post">
+                <label class="input-text js-input-text input-text_mask_email input-text_theme_subscription">
                   <input class="input-text__field js-input-text__field" value="" placeholder="Email" type="text">
-                  <button class="input-text__submit" type="submit"></button>
                 </label>
+                <button class="form-subscription__submit" type="submit"></button>
               </form>
             </div>
           </div>
@@ -671,5 +680,5 @@
         </div>
       </footer>
     </div>
-  <script src="vendors~guide~index~login~product~products~register.js?f87ba6f4c53671d9d2a5"></script><script src="vendors~guide~index~product~products.js?f87ba6f4c53671d9d2a5"></script><script src="vendors~guide~product~products.js?f87ba6f4c53671d9d2a5"></script><script src="vendors~guide~products.js?f87ba6f4c53671d9d2a5"></script><script src="guide~index~login~product~products~register.js?f87ba6f4c53671d9d2a5"></script><script src="guide~products.js?f87ba6f4c53671d9d2a5"></script><script src="products.js?f87ba6f4c53671d9d2a5"></script></body>
+  <script src="vendors~guide~index~login~product~products~register.js?13897560761b4b89d85a"></script><script src="vendors~guide~index~product~products.js?13897560761b4b89d85a"></script><script src="vendors~guide~product~products.js?13897560761b4b89d85a"></script><script src="vendors~guide~products.js?13897560761b4b89d85a"></script><script src="guide~index~login~product~products~register.js?13897560761b4b89d85a"></script><script src="guide~products.js?13897560761b4b89d85a"></script><script src="products.js?13897560761b4b89d85a"></script></body>
 </html>

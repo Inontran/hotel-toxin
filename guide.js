@@ -346,6 +346,8 @@ __webpack_require__(/*! @/components/chart/chart */ "./components/chart/chart.js
 
 __webpack_require__(/*! @/components/heading/heading */ "./components/heading/heading.js");
 
+__webpack_require__(/*! @/components/form-subscription/form-subscription */ "./components/form-subscription/form-subscription.js");
+
 /***/ }),
 
 /***/ "./pages/guide/guide.scss":

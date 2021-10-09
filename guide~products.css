@@ -131,9 +131,6 @@
 
 .slider-range .slider-range__label {
   display: block;
-  font-weight: 700;
-  font-size: 0.85714rem;
-  text-transform: uppercase;
   line-height: 1.7; }
 
 .slider-range .slider-range__input-result {

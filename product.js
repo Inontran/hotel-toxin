@@ -377,8 +377,6 @@ __webpack_require__.r(__webpack_exports__);
 
 __webpack_require__(/*! ../../entry */ "./entry.js");
 
-__webpack_require__(/*! ./product.scss */ "./pages/product/product.scss");
-
 __webpack_require__(/*! @/components/form-booking/form-booking */ "./components/form-booking/form-booking.js");
 
 __webpack_require__(/*! @/components/infographics/infographics */ "./components/infographics/infographics.js");
@@ -388,6 +386,10 @@ __webpack_require__(/*! @/components/review/review */ "./components/review/revie
 __webpack_require__(/*! @/components/list/list */ "./components/list/list.js");
 
 __webpack_require__(/*! @/components/chart/chart */ "./components/chart/chart.js");
+
+__webpack_require__(/*! @/components/heading/heading */ "./components/heading/heading.js");
+
+__webpack_require__(/*! ./product.scss */ "./pages/product/product.scss");
 
 jquery__WEBPACK_IMPORTED_MODULE_0___default()(document).ready(() => {
   jquery__WEBPACK_IMPORTED_MODULE_0___default()('.js-product__carousel').each(function () {

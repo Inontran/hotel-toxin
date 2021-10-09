@@ -168,8 +168,6 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var jquery__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(jquery__WEBPACK_IMPORTED_MODULE_0__);
 
 
-__webpack_require__(/*! ./filter-products.scss */ "./components/filter-products/filter-products.scss");
-
 __webpack_require__(/*! @/components/dropdown/dropdown */ "./components/dropdown/dropdown.js");
 
 __webpack_require__(/*! @/components/slider-range/slider-range */ "./components/slider-range/slider-range.js");
@@ -179,6 +177,10 @@ __webpack_require__(/*! @/components/checkbox/checkbox */ "./components/checkbox
 __webpack_require__(/*! @/components/expander/expander */ "./components/expander/expander.js");
 
 __webpack_require__(/*! @/components/air-datepicker/air-datepicker */ "./components/air-datepicker/air-datepicker.js");
+
+__webpack_require__(/*! @/components/heading/heading */ "./components/heading/heading.js");
+
+__webpack_require__(/*! ./filter-products.scss */ "./components/filter-products/filter-products.scss");
 
 jquery__WEBPACK_IMPORTED_MODULE_0___default()(() => {
   const $body = jquery__WEBPACK_IMPORTED_MODULE_0___default()('body');
@@ -255,8 +257,6 @@ __webpack_require__.r(__webpack_exports__);
 
 __webpack_require__(/*! ../../entry */ "./entry.js");
 
-__webpack_require__(/*! ./products.scss */ "./pages/products/products.scss");
-
 __webpack_require__(/*! @/components/card-product/card-product */ "./components/card-product/card-product.js");
 
 __webpack_require__(/*! @/components/pagination/pagination */ "./components/pagination/pagination.js");
@@ -264,6 +264,10 @@ __webpack_require__(/*! @/components/pagination/pagination */ "./components/pagi
 __webpack_require__(/*! @/components/filter-products/filter-products */ "./components/filter-products/filter-products.js");
 
 __webpack_require__(/*! @/components/button/button */ "./components/button/button.js");
+
+__webpack_require__(/*! @/components/heading/heading */ "./components/heading/heading.js");
+
+__webpack_require__(/*! ./products.scss */ "./pages/products/products.scss");
 
 jquery__WEBPACK_IMPORTED_MODULE_0___default()(() => {
   const $body = jquery__WEBPACK_IMPORTED_MODULE_0___default()('body');

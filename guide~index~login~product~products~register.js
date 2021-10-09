@@ -302,8 +302,6 @@ webpackContext.id = "./components/footer sync recursive ^\\.\\/(?!.*(?:__tests__
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-__webpack_require__(/*! ./footer.scss */ "./components/footer/footer.scss");
-
 __webpack_require__(/*! @/components/logo/logo */ "./components/logo/logo.js");
 
 __webpack_require__(/*! @/components/social-nets/social-nets */ "./components/social-nets/social-nets.js");
@@ -312,12 +310,40 @@ __webpack_require__(/*! @/components/input-text/input-text */ "./components/inpu
 
 __webpack_require__(/*! @/components/heading/heading */ "./components/heading/heading.js");
 
+__webpack_require__(/*! @/components/form-subscription/form-subscription */ "./components/form-subscription/form-subscription.js");
+
+__webpack_require__(/*! ./footer.scss */ "./components/footer/footer.scss");
+
 /***/ }),
 
 /***/ "./components/footer/footer.scss":
 /*!***************************************!*\
   !*** ./components/footer/footer.scss ***!
   \***************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+// extracted by mini-css-extract-plugin
+
+/***/ }),
+
+/***/ "./components/form-subscription/form-subscription.js":
+/*!***********************************************************!*\
+  !*** ./components/form-subscription/form-subscription.js ***!
+  \***********************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+__webpack_require__(/*! @/components/input-text/input-text */ "./components/input-text/input-text.js");
+
+__webpack_require__(/*! ./form-subscription.scss */ "./components/form-subscription/form-subscription.scss");
+
+/***/ }),
+
+/***/ "./components/form-subscription/form-subscription.scss":
+/*!*************************************************************!*\
+  !*** ./components/form-subscription/form-subscription.scss ***!
+  \*************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -362,16 +388,44 @@ webpackContext.id = "./components/header sync recursive ^\\.\\/(?!.*(?:__tests__
 /*!*************************************!*\
   !*** ./components/header/header.js ***!
   \*************************************/
-/*! no static exports found */
-/***/ (function(module, exports, __webpack_require__) {
+/*! no exports provided */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
 
-__webpack_require__(/*! ./header.scss */ "./components/header/header.scss");
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var jquery__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! jquery */ "../node_modules/jquery/dist/jquery.js");
+/* harmony import */ var jquery__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(jquery__WEBPACK_IMPORTED_MODULE_0__);
+
 
 __webpack_require__(/*! @/components/logo/logo */ "./components/logo/logo.js");
 
 __webpack_require__(/*! @/components/button/button */ "./components/button/button.js");
 
 __webpack_require__(/*! @/components/dropdown/dropdown */ "./components/dropdown/dropdown.js");
+
+__webpack_require__(/*! ./header.scss */ "./components/header/header.scss");
+
+jquery__WEBPACK_IMPORTED_MODULE_0___default()(() => {
+  const $body = jquery__WEBPACK_IMPORTED_MODULE_0___default()('body');
+
+  function handleBtnShowMainmenuClick(event) {
+    const $btn = jquery__WEBPACK_IMPORTED_MODULE_0___default()(event.currentTarget);
+    const $header = $btn.closest('.js-header');
+    $header.removeClass('header_shown-auth-btns');
+    $header.toggleClass('header_shown-mainmenu');
+  }
+
+  $body.on('click', '.js-header .js-header__btn_show-mainmenu', handleBtnShowMainmenuClick);
+
+  function handleBtnShowAuthBtnsClick(event) {
+    const $btn = jquery__WEBPACK_IMPORTED_MODULE_0___default()(event.currentTarget);
+    const $header = $btn.closest('.js-header');
+    $header.removeClass('header_shown-mainmenu');
+    $header.toggleClass('header_shown-auth-btns');
+  }
+
+  $body.on('click', '.js-header .js-header__btn_show-auth-btns', handleBtnShowAuthBtnsClick);
+});
 
 /***/ }),
 
@@ -515,6 +569,8 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var inputmask__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(inputmask__WEBPACK_IMPORTED_MODULE_1__);
 
 
+
+__webpack_require__(/*! @/components/heading/heading */ "./components/heading/heading.js");
 
 __webpack_require__(/*! ./input-text.scss */ "./components/input-text/input-text.scss");
 

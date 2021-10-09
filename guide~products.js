@@ -973,6 +973,8 @@ __webpack_require__.r(__webpack_exports__);
 
 
 
+__webpack_require__(/*! @/components/heading/heading */ "./components/heading/heading.js");
+
 __webpack_require__(/*! ./slider-range.scss */ "./components/slider-range/slider-range.scss");
 
 jquery__WEBPACK_IMPORTED_MODULE_0___default()(document).ready(() => {
