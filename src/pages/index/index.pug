@@ -1,7 +1,7 @@
 extends ../base/base.pug
 
 include ../../components/first-display/first-display
-include ../../components/form-fast-select/form-fast-select
+include ../../components/form-room-search/form-room-search
 
 block headTags
   -
@@ -32,6 +32,6 @@ block content
   main.page__main
     +first-display(data)
       div.first-display__form-wrapper
-        +form-fast-select(formOptions)
+        +form-room-search(formOptions)
       if textBottom
         div.first-display__text-bottom #{textBottom}

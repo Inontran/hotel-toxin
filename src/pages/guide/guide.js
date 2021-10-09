@@ -17,7 +17,7 @@ require('@/components/review/review');
 require('@/components/dropdown/dropdown');
 require('@/components/air-datepicker/air-datepicker');
 require('@/components/form-register/form-register');
-require('@/components/form-fast-select/form-fast-select');
+require('@/components/form-room-search/form-room-search');
 require('@/components/form-login/form-login');
 require('@/components/form-booking/form-booking');
 require('@/components/card-product/card-product');
