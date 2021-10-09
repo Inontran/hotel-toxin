@@ -27,16 +27,16 @@ mixin checkbox(options = {})
     label.checkbox__wrapper
       input.checkbox__input(
         type = "checkbox", 
-        name = name, 
-        value = value, 
+        name = name ? name : false, 
+        value = value ? value : false, 
         checked = checked ? "checked" : false
       )
 
-      div.checkbox__view
-      div.checkbox__text-wrapper
+      span.checkbox__view
+      span.checkbox__text-wrapper
         if title
-          p.checkbox__title #{title}
-          p.checkbox__small-text #{text}
+          span.checkbox__title #{title}
+          span.checkbox__small-text #{text}
         else
           if text
-            p.checkbox__text #{text}
+            span.checkbox__text #{text}

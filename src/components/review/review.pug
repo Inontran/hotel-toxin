@@ -19,7 +19,8 @@ mixin review(options = {})
       isLike = false,
       countLike = '0',
       username = 'Anonymous',
-      timeLater = 'несколько секунд назад',
+      datetime = false,
+      timeLater = datetime,
       textReview = '',
       reviewId = false,
     } = options;
@@ -34,8 +35,8 @@ mixin review(options = {})
         img.review__avatar(src = avatar, alt = 'Фото ' + username)
       div.review__header-text
         p.review__username #{username}
-        p.review__time
-          time #{timeLater}
+        if datetime
+          time.review__time(datetime = datetime) #{timeLater}
     div.review__content
       div.review__like-wrapper
         +like-btn({value: countLike, isLike: isLike})
