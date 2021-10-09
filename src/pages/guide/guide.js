@@ -16,7 +16,6 @@ require('@/components/infographics/infographics');
 require('@/components/review/review');
 require('@/components/dropdown/dropdown');
 require('@/components/air-datepicker/air-datepicker');
-require('@/components/card/card');
 require('@/components/form-register/form-register');
 require('@/components/form-fast-select/form-fast-select');
 require('@/components/form-login/form-login');

@@ -1,4 +1,5 @@
-require('./form-login.scss');
 require('@/components/button/button');
 require('@/components/input-text/input-text');
-require('@/components/card/card');
+require('@/components/heading/heading');
+
+require('./form-login.scss');

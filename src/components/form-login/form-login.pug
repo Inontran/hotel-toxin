@@ -1,6 +1,6 @@
 include ../button/button
 include ../input-text/input-text
-include ../card/card
+include ../heading/heading
 
 //-
   options.classes - Классы блока.
@@ -19,30 +19,35 @@ mixin form-login(options = {})
     class = classes,
     id = id ? id : false
   )
-    +card({title: "Войти"})
-      div.form-login__element-wrapper1
-        +input-text({
-          classes: "input-text_mask_email",
-          placeholder: "Email"
-        })
-      div.form-login__element-wrapper2
-        +input-text({
-          type: "password",
-          placeholder: "Пароль"
-        })
+    div.form-login__title-wrapper
+      +heading({
+        text: 'Войти',
+        classes: 'heading_large',
+        tag: 'h1',
+      })
+    div.form-login__element-wrapper1
+      +input-text({
+        classes: "input-text_mask_email",
+        placeholder: "Email"
+      })
+    div.form-login__element-wrapper2
+      +input-text({
+        type: "password",
+        placeholder: "Пароль"
+      })
 
-      div.form-login__element-wrapper3
+    div.form-login__element-wrapper3
+      +button({
+        text: "Войти", 
+        classes: "button_filled_blue-green-gradient button_theme_arrow button_wide", 
+        isSubmit: true
+      })
+
+    div.form-login__footer
+      p.form-login__footer-text Нет аккаунта на Toxin?
+      div.form-login__footer-button
         +button({
-          text: "Войти", 
-          classes: "button_filled_blue-green-gradient button_theme_arrow button_wide", 
-          isSubmit: true
+          text: "Создать", 
+          classes: "button_outlined",
+          href: buttonRegHref ? buttonRegHref : false
         })
-
-      div.form-login__footer
-        p.form-login__footer-text Нет аккаунта на Toxin?
-        div.form-login__footer-button
-          +button({
-            text: "Создать", 
-            classes: "button_outlined",
-            href: buttonRegHref ? buttonRegHref : false
-          })

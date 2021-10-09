@@ -2,7 +2,7 @@ include ../button/button
 include ../input-text/input-text
 include ../radio/radio
 include ../toggle/toggle
-include ../card/card
+include ../heading/heading
 
 //-
   options.classes - Классы блока.
@@ -21,49 +21,54 @@ mixin form-register(options = {})
     class = classes,
     id = id ? id : false
   )
-    +card({title: "Регистрация аккаунта"})
-      div.form-register__element-wrapper1
-        +input-text({
-          placeholder: "Имя"
-        })
-      div.form-register__element-wrapper1
-        +input-text({
-          placeholder: "Фамилия"
-        })
-      div.form-register__gender-radio
-        div.form-register__radio-wrapper
-          +radio({text: "Мужчина", name: "gender", checked: true})
-        div.form-register__radio-wrapper
-          +radio({text: "Женщина", name: "gender"})
-      div.form-register__element-wrapper2
-        +input-text({
-          label: "Дата рождения",
-          classes: "input-text_mask_date"
-        })
-      div.form-register__element-wrapper1
-        +input-text({
-          label: "Данные для входа в сервис",
-          classes: "input-text_mask_email",
-          placeholder: "Email"
-        })
-      div.form-register__element-wrapper1
-        +input-text({
-          type: "password",
-          placeholder: "Пароль"
-        })
-      div.form-register__element-wrapper2
-        +toggle({text: "Получать спецпредложения"})
-      div.form-register__element-wrapper3
+    div.form-register__title-wrapper
+      +heading({
+        text: 'Регистрация аккаунта',
+        classes: 'heading_large',
+        tag: 'h1'
+      })
+    div.form-register__element-wrapper1
+      +input-text({
+        placeholder: "Имя"
+      })
+    div.form-register__element-wrapper1
+      +input-text({
+        placeholder: "Фамилия"
+      })
+    div.form-register__gender-radio
+      div.form-register__radio-wrapper
+        +radio({text: "Мужчина", name: "gender", checked: true})
+      div.form-register__radio-wrapper
+        +radio({text: "Женщина", name: "gender"})
+    div.form-register__element-wrapper2
+      +input-text({
+        label: "Дата рождения",
+        classes: "input-text_mask_date"
+      })
+    div.form-register__element-wrapper1
+      +input-text({
+        label: "Данные для входа в сервис",
+        classes: "input-text_mask_email",
+        placeholder: "Email"
+      })
+    div.form-register__element-wrapper1
+      +input-text({
+        type: "password",
+        placeholder: "Пароль"
+      })
+    div.form-register__element-wrapper2
+      +toggle({text: "Получать спецпредложения"})
+    div.form-register__element-wrapper3
+      +button({
+        text: "Зарегистрироваться", 
+        classes: "button_filled_blue-green-gradient button_theme_arrow button_wide",
+        isSubmit: true
+      })
+    div.form-register__footer
+      p.form-register__footer-text Уже есть аккаунт на Toxin
+      div.form-register__footer-button
         +button({
-          text: "Зарегистрироваться", 
-          classes: "button_filled_blue-green-gradient button_theme_arrow button_wide",
-          isSubmit: true
+          text: "Войти", 
+          classes: "button_outlined button_wide",
+          href: buttonLoginHref ? buttonLoginHref : false
         })
-      div.form-register__footer
-        p.form-register__footer-text Уже есть аккаунт на Toxin
-        div.form-register__footer-button
-          +button({
-            text: "Войти", 
-            classes: "button_outlined button_wide",
-            href: buttonLoginHref ? buttonLoginHref : false
-          })
