@@ -14,7 +14,7 @@
   & &__title-wrapper {
     margin-bottom: 20px;
   }
-  
+
   & &__element-wrapper {
     &_type_first {
       margin-bottom: 10px;
@@ -23,14 +23,10 @@
     &_type_second {
       margin-bottom: 20px;
     }
-  
+
     &_type_third {
       margin-bottom: 30px;
     }
-  }
-
-  & &__gender-radio {
-    margin-bottom: 20px;
   }
 
   & &__gender-radio {
@@ -38,6 +34,7 @@
     flex-wrap: wrap;
     margin-left: -10px;
     margin-right: -10px;
+    margin-bottom: 20px;
   }
 
   & &__radio-wrapper {

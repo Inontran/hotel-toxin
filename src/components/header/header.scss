@@ -55,12 +55,12 @@
     &-item {
       display: inline-block;
       padding: 0 9px;
-      
+
       @media (max-width: $sm) {
         display: block;
         border-top: 1px solid $dark25;
-  
-        &:last-of-type{
+
+        &:last-of-type {
           border-bottom: 1px solid $dark50;
         }
       }
@@ -71,8 +71,8 @@
     & .header__main-menu {
       @media (max-width: $sm) {
         transform: translateY(0);
-        transition: transform .3s;
-        box-shadow: 0px 8px 10px 0px $dark25;
+        transition: transform 0.3s;
+        box-shadow: 0 8px 10px 0 $dark25;
       }
     }
   }
@@ -85,7 +85,7 @@
       margin-bottom: 10px;
     }
 
-    &-link{
+    &-link {
       color: $dark50;
       text-decoration: none;
       font-weight: 400;
@@ -117,24 +117,24 @@
   }
 
   &.header_shown-auth-btns {
-    & .header__auth-btns{
+    & .header__auth-btns {
       @media (max-width: $lg) {
         transform: translateY(0);
-        transition: transform .3s;
-        box-shadow: 0px 8px 10px 0px $dark25;
+        transition: transform 0.3s;
+        box-shadow: 0 8px 10px 0 $dark25;
       }
     }
   }
 
-  & &__auth-btn{
+  & &__auth-btn {
     max-width: 250px;
     padding: 0 10px;
 
     @media (max-width: $lg) {
       max-width: none;
       border-top: 1px solid $dark25;
-  
-      &:last-of-type{
+
+      &:last-of-type {
         border-bottom: 1px solid $dark50;
       }
     }
@@ -147,6 +147,10 @@
     position: relative;
     max-width: 250px;
 
+    @media (max-width: $lg) {
+      display: none;
+    }
+
     &::after {
       content: '';
       position: absolute;
@@ -156,12 +160,6 @@
       height: 30px;
       width: 1px;
       background-color: $dark10;
-    }
-  }
-
-  & &__username {
-    @media (max-width: $lg) {
-      display: none;
     }
   }
 

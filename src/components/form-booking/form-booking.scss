@@ -10,7 +10,7 @@
   @media (max-width: 400px) {
     padding: 20px 9px 20px;
   }
-  
+
   & &__header {
     display: flex;
     align-items: flex-end;
@@ -86,12 +86,12 @@
   & &__table {
     color: $dark75;
     width: 100%;
-    
+
     &-cell {
       padding-bottom: 10px;
       vertical-align: top;
       line-height: 1.2857;
-      
+
       &_with-tooltip {
         padding-left: 2px;
         padding-right: 2px;

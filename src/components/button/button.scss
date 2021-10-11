@@ -110,13 +110,13 @@
       border: 0;
       padding: 13px 10px;
       display: flex;
-      
+
       &,
       &:hover {
         color: $dark50;
         font-weight: 400;
       }
-  
+
       &::after,
       &::before {
         content: none;

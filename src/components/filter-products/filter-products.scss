@@ -9,26 +9,22 @@
     &_type_first {
       margin-bottom: 13px;
     }
-  
+
     &_type_second {
       margin-bottom: 15px;
     }
-  
+
     &_type_third {
       margin-bottom: 20px;
     }
-  
+
     &_type_fourth {
       margin-bottom: 29px;
     }
-  
+
     &_type_fifth {
       margin-bottom: 31px;
     }
-  }
-
-  & &__close {
-    margin-bottom: 29px;
   }
 
   & &__list-checkboxes {
@@ -36,6 +32,8 @@
   }
 
   & &__close {
+    margin-bottom: 29px;
+
     @media (min-width: $md) {
       display: none;
     }
