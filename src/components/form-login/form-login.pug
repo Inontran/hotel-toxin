@@ -25,18 +25,18 @@ mixin form-login(options = {})
         classes: 'heading_large',
         tag: 'h1',
       })
-    div.form-login__element-wrapper1
+    div.form-login__element-wrapper.form-login__element-wrapper_type_first
       +input-text({
         classes: "input-text_mask_email",
         placeholder: "Email"
       })
-    div.form-login__element-wrapper2
+    div.form-login__element-wrapper.form-login__element-wrapper_type_second
       +input-text({
         type: "password",
         placeholder: "Пароль"
       })
 
-    div.form-login__element-wrapper3
+    div.form-login__element-wrapper.form-login__element-wrapper_type_third
       +button({
         text: "Войти", 
         classes: "button_filled_blue-green-gradient button_theme_arrow button_wide", 

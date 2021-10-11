@@ -27,11 +27,11 @@ mixin form-register(options = {})
         classes: 'heading_large',
         tag: 'h1'
       })
-    div.form-register__element-wrapper1
+    div.form-register__element-wrapper.form-register__element-wrapper_type_first
       +input-text({
         placeholder: "Имя"
       })
-    div.form-register__element-wrapper1
+    div.form-register__element-wrapper.form-register__element-wrapper_type_first
       +input-text({
         placeholder: "Фамилия"
       })
@@ -40,25 +40,25 @@ mixin form-register(options = {})
         +radio({text: "Мужчина", name: "gender", checked: true})
       div.form-register__radio-wrapper
         +radio({text: "Женщина", name: "gender"})
-    div.form-register__element-wrapper2
+    div.form-register__element-wrapper.form-register__element-wrapper_type_second
       +input-text({
         label: "Дата рождения",
         classes: "input-text_mask_date"
       })
-    div.form-register__element-wrapper1
+    div.form-register__element-wrapper.form-register__element-wrapper_type_first
       +input-text({
         label: "Данные для входа в сервис",
         classes: "input-text_mask_email",
         placeholder: "Email"
       })
-    div.form-register__element-wrapper1
+    div.form-register__element-wrapper.form-register__element-wrapper_type_first
       +input-text({
         type: "password",
         placeholder: "Пароль"
       })
-    div.form-register__element-wrapper2
+    div.form-register__element-wrapper.form-register__element-wrapper_type_second
       +toggle({text: "Получать спецпредложения"})
-    div.form-register__element-wrapper3
+    div.form-register__element-wrapper.form-register__element-wrapper_type_third
       +button({
         text: "Зарегистрироваться", 
         classes: "button_filled_blue-green-gradient button_theme_arrow button_wide",
