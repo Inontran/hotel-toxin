@@ -115,10 +115,10 @@ mixin form-booking(options = {})
           each item, index in listService
             tr
               td.form-booking__table-cell #{item.name}
-              td.form-booking__table-cell.form-booking__table_px2
+              td.form-booking__table-cell.form-booking__table-cell_with-tooltip
                 if item.tooltip
                   div.form-booking__tooltip(title = item.tooltip)
-              td.form-booking__table-cell.form-booking__table-cell_price #{item.price}
+              td.form-booking__table-cell.form-booking__table-cell_with-price #{item.price}
 
     if totalPrice
       p.form-booking__bottom

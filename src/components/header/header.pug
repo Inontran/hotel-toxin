@@ -44,7 +44,7 @@ mixin header(options = {})
               +dropdown({
                 text: val.name,
                 group: 'header-dropdowns',
-                classes: 'dropdown_theme_plain'
+                classes: 'dropdown_adapted-for-header'
               })
                 ul.header__main-submenu
                   each val2, index2 in val.subitems
@@ -67,13 +67,13 @@ mixin header(options = {})
           div.header__auth-btn
             +button({
               text: buttonLoginText, 
-              classes: 'button_outlined button_size_md button_theme_header-mobile',
+              classes: 'button_outlined button_size_md button_adapted-for-header',
               href: buttonLoginHref ? buttonLoginHref : false
             })
           div.header__auth-btn
             +button({
               text: buttonRegText, 
-              classes: 'button_filled_blue-green-gradient button_size_md button_theme_header-mobile',
+              classes: 'button_filled_blue-green-gradient button_size_md button_adapted-for-header',
               href: buttonRegHref ? buttonRegHref : false
             })
       else

@@ -11,7 +11,7 @@
     max-width: $max_width_container;
     margin: 0 auto;
 
-    &_theme_2 {
+    &_with-fixed-col {
       grid-template-columns: 380px 380px 320px;
       grid-gap: 0 30px;
     }
@@ -47,23 +47,23 @@
   }
 
   & &__gap {
-    &_type_1 {
+    &_type_first {
       margin-bottom: 10px;
     }
 
-    &_type_2 {
+    &_type_second {
       margin-bottom: 16px;
     }
 
-    &_type_3 {
+    &_type_third {
       margin-bottom: 20px;
     }
 
-    &_type_4 {
+    &_type_fourth {
       margin-bottom: 30px;
     }
 
-    &_type_5 {
+    &_type_fifth {
       margin-bottom: 40px;
     }
   }

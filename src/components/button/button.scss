@@ -102,7 +102,7 @@
     min-height: calc_rem(34);
   }
 
-  &_theme_header-mobile {
+  &_adapted-for-header {
     @media (max-width: $lg) {
       font-size: 1rem;
       text-transform: none;

@@ -78,9 +78,9 @@ block content
 
       div.product__body
         div.product__body-row
-          div.product__body-col.product__body-col-1
-            div.product__grid-3.product__grid-3_type_2
-              section.product__grid-3-col.product__grid-3-col-1
+          div.product__body-col.product__body-col_first
+            div.product__small-grid
+              section.product__small-grid-col.product__small-grid-col_first
                 if optionsInfographics
                   div.product__title
                     +heading({
@@ -94,7 +94,7 @@ block content
                     - index++
                   +infographics(optionsInfographics)
               if chartCountAll
-                section.product__grid-3-col.product__grid-3-col-2
+                section.product__small-grid-col
                   div.product__title
                     +heading({
                       text: 'Впечатления от номера',
@@ -126,8 +126,8 @@ block content
                     - reviewItem.avatar = require('@/pages/product/img/' + reviewItem.avatar).default
                     +review(reviewItem)
 
-            div.product__grid-3
-              section.product__grid-3-col.product__grid-3-col-1
+            div.product__small-grid.product__small-grid_type_2
+              section.product__small-grid-col.product__small-grid-col_first
                 if rulesTitle
                   div.product__title.product__title_theme_rules
                     +heading({
@@ -137,7 +137,7 @@ block content
                     })
                 if optionsRules
                   +list(optionsRules)
-              section.product__grid-3-col.product__grid-3-col-2
+              section.product__small-grid-col
                 if cancelTitle
                   div.product__title
                     +heading({
@@ -148,7 +148,7 @@ block content
                 if cancelText
                   p.product__text #{cancelText}
 
-          div.product__body-col.product__body-col-2
+          div.product__body-col.product__body-col_second
             +form-booking({
               roomNumber: roomNumber,
               roomType: roomType,

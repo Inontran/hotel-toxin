@@ -216,7 +216,7 @@ block content
             classes: 'heading_small',
             tag: 'h3',
           })
-          div.guide-page__gap.guide-page__gap_type_2
+          div.guide-page__gap.guide-page__gap_type_second
           +chart({
             chartCountAll: 260,
             chartNumAwesome: 130,
@@ -231,31 +231,31 @@ block content
             classes: 'heading_large',
             tag: 'h1',
           })
-          div.guide-page__gap.guide-page__gap_type_3
+          div.guide-page__gap.guide-page__gap_type_third
           +heading({
             text: 'Next one is the item title inside widgets',
             classes: 'heading_middle',
             tag: 'h2',
           })
-          div.guide-page__gap.guide-page__gap_type_3
+          div.guide-page__gap.guide-page__gap_type_third
           +heading({
             text: 'This is a label or CTA text',
             classes: 'heading_small',
             tag: 'h3',
           })
-          div.guide-page__gap.guide-page__gap_type_3
+          div.guide-page__gap.guide-page__gap_type_third
           p This is the body text which is used for most of the design, like paragraphs, lists, etc.
 
 
         div.guide-page__col
           +input-text({label: "Text Field", placeholder: "Email"})
-          div.guide-page__gap.guide-page__gap_type_3
+          div.guide-page__gap.guide-page__gap_type_third
           +form-subscription({
             inputParams: {
               label: "Subscription Text Field",
             }
           })
-          div.guide-page__gap.guide-page__gap_type_3
+          div.guide-page__gap.guide-page__gap_type_third
           +input-text({label: "Masked text field",classes: "input-text_mask_date" })
 
 
@@ -265,81 +265,81 @@ block content
             classes: 'heading_small',
             tag: 'h3',
           })
-          div.guide-page__gap.guide-page__gap_type_2
+          div.guide-page__gap.guide-page__gap_type_second
           +checkbox({text: "Можно курить", checked: true})
-          div.guide-page__gap.guide-page__gap_type_1
+          div.guide-page__gap.guide-page__gap_type_first
           +checkbox({text: "Можно пригласить гостей (до 10 человек)"})
-          div.guide-page__gap.guide-page__gap_type_5
+          div.guide-page__gap.guide-page__gap_type_fifth
 
           +heading({
             text: 'Radio Buttons',
             classes: 'heading_small',
             tag: 'h3',
           })
-          div.guide-page__gap.guide-page__gap_type_2
+          div.guide-page__gap.guide-page__gap_type_second
           +radio({id: "test4", text: "Мужчина", name: "gender", checked: true})
-          div.guide-page__gap.guide-page__gap_type_1
+          div.guide-page__gap.guide-page__gap_type_first
           +radio({id: "test5", text: "Женщина", name: "gender"})
-          div.guide-page__gap.guide-page__gap_type_5
+          div.guide-page__gap.guide-page__gap_type_fifth
 
           +heading({
             text: 'Toggle',
             classes: 'heading_small',
             tag: 'h3',
           })
-          div.guide-page__gap.guide-page__gap_type_2
+          div.guide-page__gap.guide-page__gap_type_second
           +toggle({id: "test6", text: "Получать спецпредложения", name: "get", checked: true})
-          div.guide-page__gap.guide-page__gap_type_5
+          div.guide-page__gap.guide-page__gap_type_fifth
 
           +heading({
             text: 'Like Button',
             classes: 'heading_small',
             tag: 'h3',
           })
-          div.guide-page__gap.guide-page__gap_type_2
+          div.guide-page__gap.guide-page__gap_type_second
           +like-btn({value: 2})
           +like-btn({value: 12, isLike: true})
-          div.guide-page__gap.guide-page__gap_type_5
+          div.guide-page__gap.guide-page__gap_type_fifth
 
           +heading({
             text: 'Rate Button',
             classes: 'heading_small',
             tag: 'h3',
           })
-          div.guide-page__gap.guide-page__gap_type_2
+          div.guide-page__gap.guide-page__gap_type_second
           +rate-btn({value: 4})
 
 
         div.guide-page__col
           +slider-range({label: "Range slider", min: 0, max: 15000, val1: 5000, val2: 10000})
-          div.guide-page__gap.guide-page__gap_type_5
+          div.guide-page__gap.guide-page__gap_type_fifth
 
           +heading({
             text: 'Buttons',
             classes: 'heading_small',
             tag: 'h3',
           })
-          div.guide-page__gap.guide-page__gap_type_2
+          div.guide-page__gap.guide-page__gap_type_second
           
-          div.guide-page__gap.guide-page__gap_type_3
+          div.guide-page__gap.guide-page__gap_type_third
             +button({text: "click me", classes: "button_filled_blue-green-gradient"})
             +button({text: "click me", classes: "button_filled_blue-green-gradient button_size_md"})
           
-          div.guide-page__gap.guide-page__gap_type_3
+          div.guide-page__gap.guide-page__gap_type_third
             +button({text: "click me", classes: "button_outlined"})
             +button({text: "click me", classes: "button_outlined button_size_md"})
 
           +button({text: "click me"})
-          div.guide-page__gap.guide-page__gap_type_3
+          div.guide-page__gap.guide-page__gap_type_third
           +button({text: "Перейти к оплате", classes: "button_filled_blue-green-gradient button_theme_arrow button_wide"})
-          div.guide-page__gap.guide-page__gap_type_5
+          div.guide-page__gap.guide-page__gap_type_fifth
 
           +heading({
             text: 'Pagination',
             classes: 'heading_small',
             tag: 'h3',
           })
-          div.guide-page__gap.guide-page__gap_type_2
+          div.guide-page__gap.guide-page__gap_type_second
           +pagination({page: 1, perpage: 12, elements: 175, text: "вариантов аренды"})
 
 
@@ -379,7 +379,7 @@ block content
               ],
             })
 
-          div.guide-page__gap.guide-page__gap_type_3
+          div.guide-page__gap.guide-page__gap_type_third
           +dropdown({
             group: 'guide-example-dropdowns',
             classes: 'dropdown_simple',
@@ -412,17 +412,17 @@ block content
               ]
             })
 
-          div.guide-page__gap.guide-page__gap_type_5
+          div.guide-page__gap.guide-page__gap_type_fifth
         
           +expander({text: "expandable checkbox list", group: 'expander-group-1'})
             p Lorem ipsum dolor sit amet consectetur adipisicing elit. Error, explicabo. Facilis dolorem deleniti consequuntur, sint enim laborum temporibus, iure nihil suscipit minima sapiente rem dignissimos illum quam delectus itaque molestiae.
           +expander({text: "expandable checkbox list", group: 'expander-group-1', is_open: true})
             +checkbox({text: "Можно курить"})
-            div.guide-page__gap.guide-page__gap_type_1
+            div.guide-page__gap.guide-page__gap_type_first
             +checkbox({text: "Можно курить"})
-            div.guide-page__gap.guide-page__gap_type_1
+            div.guide-page__gap.guide-page__gap_type_first
             +checkbox({text: "Можно курить"})
-            div.guide-page__gap.guide-page__gap_type_1
+            div.guide-page__gap.guide-page__gap_type_first
             +checkbox({text: "Можно курить"})
           
 
@@ -433,9 +433,9 @@ block content
             classes: 'heading_small',
             tag: 'h3',
           })
-          div.guide-page__gap.guide-page__gap_type_2
+          div.guide-page__gap.guide-page__gap_type_second
           +checkbox({text: "Ширина коридоров в номере не менее 91 см.", checked: true, title: "Широкий коридор"})
-          div.guide-page__gap.guide-page__gap_type_1
+          div.guide-page__gap.guide-page__gap_type_first
           +checkbox({text: "На 1 этаже вас встретит специалист  и проводит до номера.", title: "Помощник для инвалидов"})
 
 
@@ -445,7 +445,7 @@ block content
             classes: 'heading_small',
             tag: 'h3',
           })
-          div.guide-page__gap.guide-page__gap_type_2
+          div.guide-page__gap.guide-page__gap_type_second
           +list({items: ["Нельзя с питомцами", "Без вечеринок и мероприятий", "Время прибытия — после 13:00, а выезд до 12:00"]})
 
 
@@ -492,10 +492,10 @@ block content
           })
             +air-datepicker({classes: 'air-datepicker_inline'})
 
-      div.guide-page__container.guide-page__container_theme_2
+      div.guide-page__container.guide-page__container_with-fixed-col
         div
           +form-room-search()
-          div.guide-page__gap.guide-page__gap_type_5
+          div.guide-page__gap.guide-page__gap_type_fifth
           +form-register()
 
         div
@@ -512,12 +512,12 @@ block content
             totalPrice: '38 081₽'
           })
 
-          div.guide-page__gap.guide-page__gap_type_5
+          div.guide-page__gap.guide-page__gap_type_fifth
           +form-login()
 
         div
           +air-datepicker({classes: 'air-datepicker_inline'})
-          div.guide-page__gap.guide-page__gap_type_5
+          div.guide-page__gap.guide-page__gap_type_fifth
           +card-product({
             gallery: [
               require("@/pages/guide/img/image-1.jpg").default,
@@ -532,7 +532,7 @@ block content
             countReviews: '145'
           })
 
-          div.guide-page__gap.guide-page__gap_type_5
+          div.guide-page__gap.guide-page__gap_type_fifth
           +card-product({
             roomNumber: '888',
             roomType: 'Люкс',

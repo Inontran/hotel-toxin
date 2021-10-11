@@ -57,24 +57,24 @@ mixin filter-products(options = {})
 
       if optionDropdownDates
         - optionDropdownDates.group = 'filterProducts'
-        div.filter-products__block-wrapper1
+        div.filter-products__input-group.filter-products__input-group_type_third
           +dropdown(optionDropdownDates)
             +air-datepicker(optionDropdownDatesDatepicker)
 
       if optionDropdownPeople
         - optionDropdownPeople.group = 'filterProducts'
-        div.filter-products__block-wrapper2
+        div.filter-products__input-group.filter-products__input-group_type_fourth
           +dropdown(optionDropdownPeople)
             +list-counters(optionDropdownPeople)
 
       if optionSliderRange
-        div.filter-products__block-wrapper2
+        div.filter-products__input-group.filter-products__input-group_type_fourth
           +slider-range(optionSliderRange)
 
       if checkboxes
-        div.filter-products__block-wrapper3
+        div.filter-products__input-group.filter-products__input-group_type_fifth
           if checkboxesTitle
-            div.filter-products__block-wrapper5
+            div.filter-products__input-group.filter-products__input-group_type_first
               +heading({
                 text: checkboxesTitle,
                 classes: 'heading_small',
@@ -85,9 +85,9 @@ mixin filter-products(options = {})
                 +checkbox(val)
 
       if checkboxesBig
-        div.filter-products__block-wrapper2
+        div.filter-products__input-group.filter-products__input-group_type_fourth
           if checkboxesBigTitle
-            div.filter-products__block-wrapper4
+            div.filter-products__input-group.filter-products__input-group_type_second
               +heading({
                 text: checkboxesBigTitle,
                 classes: 'heading_small',
@@ -100,7 +100,7 @@ mixin filter-products(options = {})
       if optionDropdownFeature
         - optionDropdownFeature.type = 2
         - optionDropdownFeature.group = 'filterProducts'
-        div.filter-products__block-wrapper4
+        div.filter-products__input-group.filter-products__input-group_type_second
           +dropdown(optionDropdownFeature)
             +list-counters(optionDropdownFeature)
 
