@@ -55,8 +55,8 @@ mixin header(options = {})
 
 
       if !username
-        button.header__icon-btn.header__icon-btn_type_profile.js-header__btn_show-auth-btns(
-          title = 'Профиль'
+        button.header__icon-btn.header__icon-btn_type_profile.js-header__icon-btn_type_profile(
+          title = 'Профиль',
           type = 'button',
         )
           img(
@@ -87,7 +87,7 @@ mixin header(options = {})
           )
         a.header__username #{username}
 
-      button.header__icon-btn.header__icon-btn_type_menu.js-header__btn_show-mainmenu(
+      button.header__icon-btn.header__icon-btn_type_menu.js-header__icon-btn_type_menu(
         title = 'Меню',
         type = 'button',
       )

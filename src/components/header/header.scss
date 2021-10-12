@@ -67,7 +67,7 @@
     }
   }
 
-  &.header_shown-mainmenu {
+  &.header_shown-main-menu {
     & .header__main-menu {
       @media (max-width: $sm) {
         transform: translateY(0);
