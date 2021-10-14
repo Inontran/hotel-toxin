@@ -3,6 +3,7 @@ import $ from 'jquery';
 require('@/components/logo/logo');
 require('@/components/button/button');
 require('@/components/dropdown/dropdown');
+require('@/components/list/list');
 
 require('./header.scss');
 

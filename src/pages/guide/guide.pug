@@ -446,7 +446,20 @@ block content
             tag: 'h3',
           })
           div.guide-page__gap.guide-page__gap_type_second
-          +list({items: ["Нельзя с питомцами", "Без вечеринок и мероприятий", "Время прибытия — после 13:00, а выезд до 12:00"]})
+          +list({
+            classes: 'list_with-big-dots',
+            items: [
+              {
+                text: 'Нельзя с питомцами',
+              },
+              {
+                text: 'Без вечеринок и мероприятий',
+              },
+              {
+                text: 'Время прибытия — после 13:00, а выезд до 12:00',
+              },
+            ]
+          })
 
 
         div.guide-page__col

@@ -2,7 +2,8 @@
   options.classes - Классы блока.
   options.id - ИД блока.
   options.items - Массив пуктов списка.
-  options.items[0] - Текст.
+  options.items[0].text - Текст.
+  options.items[0].href - Адрес ссылки.
 
 mixin list(options = {})
   -
@@ -16,5 +17,9 @@ mixin list(options = {})
     class = classes,
     id = id ? id : false
   )
-    each val in items
-      li.list__item #{val}
+    each item in items
+      if (item.href)
+        li.list__item
+          a.list__item-link(href = item.href) #{item.text || item.name}
+      else
+        li.list__item #{item.text || item.name}

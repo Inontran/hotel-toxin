@@ -1,6 +1,7 @@
 include ../logo/logo
 include ../button/button
 include ../dropdown/dropdown
+include ../list/list
 
 //-
   options.classes - Классы блока.
@@ -46,10 +47,10 @@ mixin header(options = {})
                 group: 'header-dropdowns',
                 classes: 'dropdown_adapted-for-header'
               })
-                ul.header__main-submenu
-                  each val2, index2 in val.subitems
-                    li.header__main-submenu-item
-                      a.header__main-submenu-link(href = val2.href) #{val2.name}
+                +list({
+                  classes: 'list_with-gray-items',
+                  items: val.subitems
+                })
             else
               a.header__main-menu-link(href = val.href) #{val.name}
 

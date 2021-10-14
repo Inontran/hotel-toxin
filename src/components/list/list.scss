@@ -1,25 +1,42 @@
 @import '@/theme/variables.scss';
 
 .list {
-  & &__item {
-    position: relative;
-    color: $dark75;
-    list-style: none;
-    padding-left: calc_rem(20);
+  &.list_with-big-dots {
+    .list__item {
+      position: relative;
+      color: $dark75;
+      list-style: none;
+      padding-left: calc_rem(20);
+  
+      &:not(:last-of-type) {
+        margin-bottom: 10px;
+      }
+  
+      &::after {
+        content: '';
+        position: absolute;
+        top: 6px;
+        left: 0;
+        width: calc_rem(10);
+        height: calc_rem(10);
+        border-radius: 100vh;
+        background: $dark25;
+      }
+    }
+  }
 
-    &:not(:last-of-type) {
+  &.list_with-gray-items {
+    padding: 10px 20px 0;
+
+    .list__item {
+      display: block;
       margin-bottom: 10px;
     }
 
-    &::after {
-      content: '';
-      position: absolute;
-      top: 6px;
-      left: 0;
-      width: calc_rem(10);
-      height: calc_rem(10);
-      border-radius: 100vh;
-      background: $dark25;
+    .list__item-link {
+      color: $dark50;
+      text-decoration: none;
+      font-weight: 400;
     }
   }
 }

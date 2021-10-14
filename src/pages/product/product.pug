@@ -136,7 +136,10 @@ block content
                       tag: 'h2',
                     })
                 if optionsRules
-                  +list(optionsRules)
+                  +list({
+                    classes: 'list_with-big-dots',
+                    items: optionsRules.items,
+                  })
               section.product__small-grid-col
                 if cancelTitle
                   div.product__title
