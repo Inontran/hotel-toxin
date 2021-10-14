@@ -77,21 +77,6 @@
     }
   }
 
-  & &__main-submenu {
-    padding: 10px 20px 0;
-
-    &-item {
-      display: block;
-      margin-bottom: 10px;
-    }
-
-    &-link {
-      color: $dark50;
-      text-decoration: none;
-      font-weight: 400;
-    }
-  }
-
   & &__auth-btns {
     grid-area: btns;
     display: inline-flex;

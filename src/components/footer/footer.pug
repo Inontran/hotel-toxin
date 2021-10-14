@@ -34,13 +34,13 @@ mixin footer(options = {})
     id = id ? id : false
   )
     div.footer__container
-      div.footer__top-content
-        div.footer__top-content-col.footer__top-content-col_first
+      div.footer__main-content
+        div.footer__main-content-col.footer__main-content-col_with-logo
           div.footer__logo-wrapper
             +logo()
           p.footer__text #{text1}
         
-        div.footer__top-content-col.footer__top-content-col_second
+        div.footer__main-content-col.footer__main-content-col_with-nav
           if menuItems[0].subtitle
             div.footer__title-wrapper
               +heading({
@@ -51,7 +51,7 @@ mixin footer(options = {})
             each val, index in menuItems[0].items
               a.footer__list-link(href = val.href) #{val.name}
           
-        div.footer__top-content-col.footer__top-content-col_third
+        div.footer__main-content-col.footer__main-content-col_with-about
           if menuItems[1].subtitle
             div.footer__title-wrapper
               +heading({
@@ -62,7 +62,7 @@ mixin footer(options = {})
             each val, index in menuItems[1].items
               a.footer__list-link(href = val.href) #{val.name}
         
-        div.footer__top-content-col.footer__top-content-col_fourth
+        div.footer__main-content-col.footer__main-content-col_with-support
           if menuItems[2].subtitle
             div.footer__title-wrapper
               +heading({
@@ -73,7 +73,7 @@ mixin footer(options = {})
             each val, index in menuItems[2].items
               a.footer__list-link(href = val.href) #{val.name}
         
-        div.footer__top-content-col.footer__top-content-col_fifth
+        div.footer__main-content-col.footer__main-content-col_with-subscription
           if titleSubscribe
             div.footer__title-wrapper
               +heading({
@@ -84,8 +84,8 @@ mixin footer(options = {})
             p.footer__text-subscription #{text2}
           +form-subscription()
 
-    div.footer__bottom-content
-      div.footer__bottom-content-wrapper
+    div.footer__copyright
+      div.footer__copyright-wrapper
         if copyrightText
           p.footer__text-copyright #{copyrightText}
         +social-nets()
