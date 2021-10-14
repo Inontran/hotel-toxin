@@ -1,11 +1,11 @@
-include ../input-text/input-text
+include ../../input-text/input-text
 
 //-
   options.classes - Классы блока.
   options.id - ИД блока.
   options.inputParams - Параметры поля ввода.
 
-mixin form-subscription(options = {})
+mixin subscription(options = {})
   -
     var {
       classes = '',
@@ -21,10 +21,10 @@ mixin form-subscription(options = {})
 
   -inputParams.classes += ' input-text_theme_subscription'
 
-  form.form-subscription(
+  form.subscription(
     class = classes,
     id = id ? id : false,
     method = 'post',
   )
     +input-text(inputParams)
-    button.form-subscription__submit(type = 'submit')
+    button.subscription__submit(type = 'submit')

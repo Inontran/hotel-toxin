@@ -23,7 +23,7 @@ include ../../components/form/room-reservation/room-reservation
 include ../../components/card-product/card-product
 include ../../components/chart/chart
 include ../../components/heading/heading
-include ../../components/form-subscription/form-subscription
+include ../../components/form/subscription/subscription
 
 block headTags
   -
@@ -250,7 +250,7 @@ block content
         div.guide-page__col
           +input-text({label: "Text Field", placeholder: "Email"})
           div.guide-page__gap.guide-page__gap_type_third
-          +form-subscription({
+          +subscription({
             inputParams: {
               label: "Subscription Text Field",
             }
