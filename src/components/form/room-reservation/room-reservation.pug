@@ -1,7 +1,7 @@
-include ../dropdown/dropdown
-include ../air-datepicker/air-datepicker
-include ../button/button
-include ../heading/heading
+include ../../dropdown/dropdown
+include ../../air-datepicker/air-datepicker
+include ../../button/button
+include ../../heading/heading
 
 //-
   options.classes - Классы блока.
@@ -16,7 +16,7 @@ include ../heading/heading
   options.listService[0].tooltip - Подсказка.
   options.totalPrice - Итоговая стоимость.
 
-mixin form-booking(options = {})
+mixin room-reservation(options = {})
   -
     const {
       classes = '',
@@ -29,22 +29,22 @@ mixin form-booking(options = {})
       totalPrice = false,
     } = options;
 
-  div.form-booking(
+  div.room-reservation(
     class = classes,
     id = id ? id : false
   )
-    header.form-booking__header
-      div.form-booking__header-left
-        span.form-booking__header-symbol №
-        span.form-booking__header-number #{roomNumber}
+    header.room-reservation__header
+      div.room-reservation__header-left
+        span.room-reservation__header-symbol №
+        span.room-reservation__header-number #{roomNumber}
         if roomType
-          span.form-booking__header-type #{roomType}
-      div.form-booking__header-right
-        span.form-booking__header-price #{price}
-        span.form-booking__header-price-type  #{priceTime}
+          span.room-reservation__header-type #{roomType}
+      div.room-reservation__header-right
+        span.room-reservation__header-price #{price}
+        span.room-reservation__header-price-type  #{priceTime}
 
-    div.form-booking__dates-row
-      div.form-booking__dates-col
+    div.room-reservation__dates-row
+      div.room-reservation__dates-col
         +dropdown({
           classes: 'js-dropdown_dates-result',
           group: 'formBooking',
@@ -56,7 +56,7 @@ mixin form-booking(options = {})
             classes: 'js-input-text_date_start',
           },
         })
-      div.form-booking__dates-col
+      div.room-reservation__dates-col
         +dropdown({
           classes: 'js-dropdown_dates-result dropdown_dates dropdown_align_right',
           group: 'formBooking',
@@ -74,7 +74,7 @@ mixin form-booking(options = {})
             minDate: 'today',
           })
 
-    div.form-booking__input-wrapper
+    div.room-reservation__input-wrapper
       +dropdown({
         group: 'formBooking',
         inputParams:{
@@ -110,21 +110,21 @@ mixin form-booking(options = {})
         })
 
     if listService
-      div.form-booking__table-wrapper
-        table.form-booking__table
+      div.room-reservation__table-wrapper
+        table.room-reservation__table
           each item, index in listService
             tr
-              td.form-booking__table-cell #{item.name}
-              td.form-booking__table-cell.form-booking__table-cell_with-tooltip
+              td.room-reservation__table-cell #{item.name}
+              td.room-reservation__table-cell.room-reservation__table-cell_with-tooltip
                 if item.tooltip
-                  div.form-booking__tooltip(title = item.tooltip)
-              td.form-booking__table-cell.form-booking__table-cell_with-price #{item.price}
+                  div.room-reservation__tooltip(title = item.tooltip)
+              td.room-reservation__table-cell.room-reservation__table-cell_with-price #{item.price}
 
     if totalPrice
-      p.form-booking__bottom
-        span.form-booking__bottom-word Итого
-        span.form-booking__bottom-points
-        span.form-booking__bottom-price #{totalPrice}
+      p.room-reservation__bottom
+        span.room-reservation__bottom-word Итого
+        span.room-reservation__bottom-points
+        span.room-reservation__bottom-price #{totalPrice}
 
     +button({
       text: "Забронировать",

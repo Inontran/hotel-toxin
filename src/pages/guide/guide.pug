@@ -19,7 +19,7 @@ include ../../components/air-datepicker/air-datepicker
 include ../../components/form-register/form-register
 include ../../components/form/room-search/room-search
 include ../../components/form-login/form-login
-include ../../components/form-booking/form-booking
+include ../../components/form/room-reservation/room-reservation
 include ../../components/card-product/card-product
 include ../../components/chart/chart
 include ../../components/heading/heading
@@ -512,7 +512,7 @@ block content
           +form-register()
 
         div
-          +form-booking({
+          +room-reservation({
             roomNumber: 888,
             roomType: 'люкс',
             price: '9 990₽',

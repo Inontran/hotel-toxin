@@ -1,6 +1,6 @@
 extends ../base/base.pug
 
-include ../../components/form-booking/form-booking
+include ../../components/form/room-reservation/room-reservation
 include ../../components/infographics/infographics
 include ../../components/review/review
 include ../../components/list/list
@@ -152,7 +152,7 @@ block content
                   p.product__text #{cancelText}
 
           div.product__body-col.product__body-col_second
-            +form-booking({
+            +room-reservation({
               roomNumber: roomNumber,
               roomType: roomType,
               price: price,
