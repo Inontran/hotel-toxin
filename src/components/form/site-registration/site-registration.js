@@ -4,4 +4,4 @@ require('@/components/radio/radio');
 require('@/components/toggle/toggle');
 require('@/components/heading/heading');
 
-require('./form-register.scss');
+require('./site-registration.scss');
