@@ -1,5 +1,6 @@
 require('../../entry');
-require('./index.scss');
 
 require('@/components/first-display/first-display');
-require('@/components/form-room-search/form-room-search');
+require('@/components/form/room-search/room-search');
+
+require('./index.scss');
