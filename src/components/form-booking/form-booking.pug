@@ -126,4 +126,8 @@ mixin form-booking(options = {})
         span.form-booking__bottom-points
         span.form-booking__bottom-price #{totalPrice}
 
-    +button({text: "Забронировать", classes: "button_filled_blue-green-gradient button_theme_arrow button_wide"})
+    +button({
+      text: "Забронировать",
+      classes: "button_filled_blue-green-gradient button_theme_arrow button_wide",
+      type: 'submit'
+    })

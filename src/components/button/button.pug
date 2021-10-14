@@ -13,7 +13,7 @@ mixin button(options = {})
       id = false,
       href = false,
       tabindex = false,
-      isSubmit = false,
+      type = false,
       text = 'Button',
     } = options;
 
@@ -29,7 +29,7 @@ mixin button(options = {})
     button.button.js-button(
       class = classes,
       id = id ? id : false
-      type = isSubmit ? 'submit' : 'button',
+      type = type ? type : 'button',
       tabindex = tabindex ? tabindex : false
     )
       span.button__text #{text}
