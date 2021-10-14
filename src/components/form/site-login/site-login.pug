@@ -1,13 +1,13 @@
-include ../button/button
-include ../input-text/input-text
-include ../heading/heading
+include ../../button/button
+include ../../input-text/input-text
+include ../../heading/heading
 
 //-
   options.classes - Классы блока.
   options.id - ИД блока.
   options.buttonRegHref - Ссылка кнопки на страницу регистрации.
 
-mixin form-login(options = {})
+mixin site-login(options = {})
   -
     const {
       classes = '',
@@ -15,37 +15,37 @@ mixin form-login(options = {})
       buttonRegHref = false,
     } = options;
 
-  div.form-login(
+  div.site-login(
     class = classes,
     id = id ? id : false
   )
-    div.form-login__title-wrapper
+    div.site-login__title-wrapper
       +heading({
         text: 'Войти',
         classes: 'heading_large',
         tag: 'h1',
       })
-    div.form-login__element-wrapper.form-login__element-wrapper_type_first
+    div.site-login__element-wrapper.site-login__element-wrapper_type_first
       +input-text({
         classes: "input-text_mask_email",
         placeholder: "Email"
       })
-    div.form-login__element-wrapper.form-login__element-wrapper_type_second
+    div.site-login__element-wrapper.site-login__element-wrapper_type_second
       +input-text({
         type: "password",
         placeholder: "Пароль"
       })
 
-    div.form-login__element-wrapper.form-login__element-wrapper_type_third
+    div.site-login__element-wrapper.site-login__element-wrapper_type_third
       +button({
         text: "Войти", 
         classes: "button_filled_blue-green-gradient button_theme_arrow button_wide", 
         type: 'submit'
       })
 
-    div.form-login__footer
-      p.form-login__footer-text Нет аккаунта на Toxin?
-      div.form-login__footer-button
+    div.site-login__footer
+      p.site-login__footer-text Нет аккаунта на Toxin?
+      div.site-login__footer-button
         +button({
           text: "Создать", 
           classes: "button_outlined",

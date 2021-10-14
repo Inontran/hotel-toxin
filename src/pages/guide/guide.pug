@@ -18,7 +18,7 @@ include ../../components/dropdown/dropdown
 include ../../components/air-datepicker/air-datepicker
 include ../../components/form-register/form-register
 include ../../components/form/room-search/room-search
-include ../../components/form-login/form-login
+include ../../components/form/site-login/site-login
 include ../../components/form/room-reservation/room-reservation
 include ../../components/card-product/card-product
 include ../../components/chart/chart
@@ -526,7 +526,7 @@ block content
           })
 
           div.guide-page__gap.guide-page__gap_type_fifth
-          +form-login()
+          +site-login()
 
         div
           +air-datepicker({classes: 'air-datepicker_inline'})
