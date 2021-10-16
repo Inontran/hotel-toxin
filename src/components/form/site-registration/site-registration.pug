@@ -27,43 +27,56 @@ mixin site-registration(options = {})
         classes: 'heading_large',
         tag: 'h1'
       })
+
     div.site-registration__element-wrapper.site-registration__element-wrapper_type_first
       +input-text({
         placeholder: "Имя"
       })
+
     div.site-registration__element-wrapper.site-registration__element-wrapper_type_first
       +input-text({
         placeholder: "Фамилия"
       })
+
     div.site-registration__gender-radio
       div.site-registration__radio-wrapper
         +radio({text: "Мужчина", name: "gender", checked: true})
       div.site-registration__radio-wrapper
         +radio({text: "Женщина", name: "gender"})
+
     div.site-registration__element-wrapper.site-registration__element-wrapper_type_second
       +input-text({
         label: "Дата рождения",
         classes: "input-text_mask_date"
       })
+
+    div.site-registration__element-wrapper.site-registration__element-wrapper_type_fourth
+      +heading({
+        text: 'Данные для входа в сервис',
+        classes: 'heading_small',
+      })
     div.site-registration__element-wrapper.site-registration__element-wrapper_type_first
       +input-text({
-        label: "Данные для входа в сервис",
         classes: "input-text_mask_email",
         placeholder: "Email"
       })
+
     div.site-registration__element-wrapper.site-registration__element-wrapper_type_first
       +input-text({
         type: "password",
         placeholder: "Пароль"
       })
+
     div.site-registration__element-wrapper.site-registration__element-wrapper_type_second
       +toggle({text: "Получать спецпредложения"})
+
     div.site-registration__element-wrapper.site-registration__element-wrapper_type_third
       +button({
         text: "Зарегистрироваться", 
         classes: "button_filled_blue-green-gradient button_theme_arrow button_wide",
         type: 'submit'
       })
+
     div.site-registration__footer
       p.site-registration__footer-text Уже есть аккаунт на Toxin
       div.site-registration__footer-button
