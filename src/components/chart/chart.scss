@@ -1,25 +1,25 @@
 @import '@/theme/variables.scss';
 
 .chart {
-  & &__container {
+  &__container {
     display: flex;
     align-items: flex-end;
     position: relative;
     flex-wrap: wrap;
   }
 
-  & &__wrapper {
+  &__wrapper {
     width: 248px;
     position: relative;
     z-index: 1;
     margin-right: -98px;
   }
 
-  & &__picture {
+  &__picture {
     margin: -1px -64px;
   }
 
-  & &__count {
+  &__count {
     position: absolute;
     top: 50%;
     left: 60px;
@@ -58,7 +58,7 @@
     }
   }
 
-  & &__legend {
+  &__legend {
     padding-right: 7px;
     padding-top: 10px;
 

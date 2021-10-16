@@ -4,15 +4,15 @@
   display: block;
   line-height: 0.6;
 
-  & &__wrapper {
+  &__wrapper {
     display: inline-flex;
   }
 
-  & &__input {
+  &__input {
     display: none;
   }
 
-  & &__view {
+  &__view {
     position: relative;
     display: inline-block;
     width: calc_rem(20);
@@ -40,7 +40,7 @@
     }
   }
 
-  & &__input:checked ~ &__view {
+  &__input:checked ~ &__view {
     border-color: $purple;
 
     &::after {
@@ -48,12 +48,12 @@
     }
   }
 
-  & &__text-wrapper {
+  &__text-wrapper {
     padding-left: 10px;
     cursor: pointer;
   }
 
-  & &__title {
+  &__title {
     display: block;
     font-size: calc_rem(14);
     font-weight: 700;
@@ -62,7 +62,7 @@
     line-height: 1.2857;
   }
 
-  & &__text {
+  &__text {
     display: block;
     line-height: 1.28;
     font-size: calc_rem(14);
@@ -70,15 +70,15 @@
     padding-top: 3px;
   }
 
-  & &__small-text {
+  &__small-text {
     display: block;
     line-height: 1.16;
     font-size: calc_rem(12);
     color: $dark50;
   }
 
-  & &__input:disabled ~ &__view,
-  & &__input:disabled ~ &__text-wrapper {
+  &__input:disabled ~ &__view,
+  &__input:disabled ~ &__text-wrapper {
     cursor: default;
   }
 }

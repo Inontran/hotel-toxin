@@ -11,11 +11,11 @@
     padding: 20px 9px 20px;
   }
 
-  & &__title-wrapper {
+  &__title-wrapper {
     margin-bottom: 20px;
   }
 
-  & &__dates-row {
+  &__dates-row {
     display: flex;
     flex-wrap: wrap;
     justify-content: space-between;
@@ -23,7 +23,7 @@
     margin-right: -10px;
   }
 
-  & &__dates-col {
+  &__dates-col {
     flex-basis: calc(50% - 20px);
     flex-grow: 1;
     margin-left: 10px;
@@ -32,7 +32,7 @@
     min-width: 150px;
   }
 
-  & &__input-wrapper {
+  &__input-wrapper {
     margin-bottom: 30px;
   }
 }

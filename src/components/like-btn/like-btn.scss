@@ -3,7 +3,7 @@
 .like-btn {
   display: inline-flex;
 
-  & &__view {
+  &__view {
     display: inline-flex;
     align-items: center;
     justify-content: center;
@@ -46,7 +46,7 @@
     }
   }
 
-  & &__check:checked ~ &__view {
+  &__check:checked ~ &__view {
     color: $purple;
     background: $gradient1;
 
@@ -55,15 +55,15 @@
     }
   }
 
-  & &__check:disabled ~ &__view {
+  &__check:disabled ~ &__view {
     cursor: default;
   }
 
-  & &__check {
+  &__check {
     display: none;
   }
 
-  & &__count {
+  &__count {
     position: relative;
     z-index: 2;
     white-space: nowrap;

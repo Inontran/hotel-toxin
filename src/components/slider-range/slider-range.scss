@@ -4,7 +4,7 @@
   $size: calc_rem(16);
   $border_width: 2px;
 
-  & &__top {
+  &__top {
     display: flex;
     align-items: center;
     justify-content: space-between;
@@ -12,12 +12,12 @@
     padding-bottom: 20px;
   }
 
-  & &__label {
+  &__label {
     display: block;
     line-height: 1.7;
   }
 
-  & &__input-result {
+  &__input-result {
     text-align: right;
     border: 0;
     box-shadow: none;
@@ -28,7 +28,7 @@
     outline: none;
   }
 
-  & &__slider {
+  &__slider {
     width: calc(100% - #{$size} / 2 - (#{$border_width} * 2));
     margin: 0 calc(#{$size} / 2 - #{$border_width});
     background: $white;
@@ -38,8 +38,8 @@
     position: relative;
 
     &,
-    & .ui-slider-range,
-    & .ui-slider-handle {
+    .ui-slider-range,
+    .ui-slider-handle {
       cursor: pointer;
     }
 
@@ -83,7 +83,7 @@
     }
   }
 
-  & &__text-bottom {
+  &__text-bottom {
     color: $dark50;
     font-size: calc_rem(12);
     margin-top: 10px;

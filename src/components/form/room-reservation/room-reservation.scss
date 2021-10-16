@@ -11,7 +11,7 @@
     padding: 20px 9px 20px;
   }
 
-  & &__header {
+  &__header {
     display: flex;
     align-items: flex-end;
     justify-content: space-between;
@@ -67,7 +67,7 @@
     }
   }
 
-  & &__dates-row {
+  &__dates-row {
     display: flex;
     flex-wrap: wrap;
     justify-content: space-between;
@@ -75,7 +75,7 @@
     margin-right: -10px;
   }
 
-  & &__dates-col {
+  &__dates-col {
     flex-basis: calc(50% - 20px);
     flex-grow: 1;
     margin-left: 10px;
@@ -83,7 +83,7 @@
     min-width: 150px;
   }
 
-  & &__table {
+  &__table {
     color: $dark75;
     width: 100%;
 
@@ -104,7 +104,7 @@
     }
   }
 
-  & &__tooltip {
+  &__tooltip {
     display: inline-block;
     overflow: hidden;
     border-radius: 100vh;
@@ -124,7 +124,7 @@
     }
   }
 
-  & &__bottom {
+  &__bottom {
     display: flex;
     align-items: flex-end;
     font-weight: 700;
@@ -142,10 +142,10 @@
     }
   }
 
-  & &__dates-col,
-  & &__bottom,
-  & &__table-wrapper,
-  & &__input-wrapper {
+  &__dates-col,
+  &__bottom,
+  &__table-wrapper,
+  &__input-wrapper {
     margin-bottom: 20px;
   }
 }

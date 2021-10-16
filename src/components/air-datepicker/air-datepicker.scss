@@ -14,7 +14,7 @@
     width: calc_rem(302);
   }
 
-  & &__btns {
+  &__btns {
     display: flex;
     align-items: center;
     justify-content: space-between;
@@ -24,12 +24,12 @@
     margin: 0 -10px -10px;
   }
 
-  & &__clear-button,
-  & &__submit-button {
+  &__clear-button,
+  &__submit-button {
     padding: 0 10px 10px;
   }
 
-  & &__submit-button {
+  &__submit-button {
     margin-left: auto;
   }
 

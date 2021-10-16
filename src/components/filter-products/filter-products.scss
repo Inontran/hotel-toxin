@@ -1,11 +1,11 @@
 @import '@/theme/variables.scss';
 
 .filter-products {
-  & &__list-checkboxes-item {
+  &__list-checkboxes-item {
     margin-bottom: 10px;
   }
 
-  & &__input-group {
+  &__input-group {
     &_type_first {
       margin-bottom: 13px;
     }
@@ -27,11 +27,11 @@
     }
   }
 
-  & &__list-checkboxes {
+  &__list-checkboxes {
     list-style: none;
   }
 
-  & &__close {
+  &__close {
     margin-bottom: 29px;
 
     @media (min-width: $md) {

@@ -3,7 +3,7 @@
 .guide-page {
   padding-bottom: 69px;
 
-  & &__container {
+  &__container {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     grid-gap: 0 72px;
@@ -17,17 +17,17 @@
     }
   }
 
-  & &__col {
+  &__col {
     padding-bottom: 100px;
   }
 
-  & &__color-item {
+  &__color-item {
     display: flex;
     align-items: center;
     padding-bottom: $gutter/2;
   }
 
-  & &__color-rect {
+  &__color-rect {
     width: 70px;
     height: 70px;
     border-radius: 6px;
@@ -42,11 +42,11 @@
     }
   }
 
-  & &__color-text {
+  &__color-text {
     font-size: calc_rem(19);
   }
 
-  & &__gap {
+  &__gap {
     &_type_first {
       margin-bottom: 10px;
     }

@@ -7,8 +7,8 @@
     border-top: 1px solid $dark25;
   }
 
-  & &__container,
-  & &__copyright-wrapper {
+  &__container,
+  &__copyright-wrapper {
     max-width: $max_width_container;
     margin-left: auto;
     margin-right: auto;
@@ -16,7 +16,7 @@
     padding-right: 10px;
   }
 
-  & &__main-content {
+  &__main-content {
     display: grid;
     grid-template-areas: 'col1 col2 col3 col4 col5';
     grid-template-columns: 3fr 2fr 2fr 2fr 3fr;
@@ -31,7 +31,7 @@
     }
   }
 
-  & &__main-content-col {
+  &__main-content-col {
     padding: 0 20px;
 
     &_with-logo {
@@ -70,7 +70,7 @@
     }
   }
 
-  & &__logo-wrapper {
+  &__logo-wrapper {
     display: flex;
     margin-bottom: 20px;
 
@@ -80,12 +80,12 @@
     }
   }
 
-  & &__title-wrapper {
+  &__title-wrapper {
     margin-top: 4px;
     margin-bottom: 23px;
   }
 
-  & &__list {
+  &__list {
     display: flex;
     flex-direction: column;
     align-items: flex-start;
@@ -103,7 +103,7 @@
     }
   }
 
-  & &__copyright {
+  &__copyright {
     border-top: 1px solid $dark25;
     padding-top: 23px;
     padding-bottom: 23px;
@@ -115,7 +115,7 @@
     }
   }
 
-  & &__copyright-wrapper {
+  &__copyright-wrapper {
     display: flex;
     align-items: center;
     justify-content: space-between;
@@ -125,25 +125,25 @@
     }
   }
 
-  & &__text,
-  & &__text-subscription,
-  & &__text-copyright {
+  &__text,
+  &__text-subscription,
+  &__text-copyright {
     color: $dark75;
   }
 
-  & &__text,
-  & &__text-subscription {
+  &__text,
+  &__text-subscription {
     margin-bottom: 20px;
   }
 
-  & &__text {
+  &__text {
     @media (max-width: $md+1) {
       text-align: center;
       margin-bottom: 28px;
     }
   }
 
-  & &__text-copyright {
+  &__text-copyright {
     @media (max-width: $md+1) {
       display: none;
     }

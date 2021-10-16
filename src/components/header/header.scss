@@ -5,7 +5,7 @@
   width: 100%;
   z-index: 3;
 
-  & &__container {
+  &__container {
     position: relative;
     display: grid;
     grid-template-areas: 'logo nav-menu btns';
@@ -17,12 +17,12 @@
     background-color: $white;
   }
 
-  & &__logo {
+  &__logo {
     grid-area: logo;
     display: flex;
   }
 
-  & &__main-menu {
+  &__main-menu {
     grid-area: nav-menu;
     list-style: none;
     margin-left: auto;
@@ -68,7 +68,7 @@
   }
 
   &.header_shown-main-menu {
-    & .header__main-menu {
+    .header__main-menu {
       @media (max-width: $sm) {
         transform: translateY(0);
         transition: transform 0.3s;
@@ -77,7 +77,7 @@
     }
   }
 
-  & &__auth-btns {
+  &__auth-btns {
     grid-area: btns;
     display: inline-flex;
     justify-content: center;
@@ -102,7 +102,7 @@
   }
 
   &.header_shown-auth-btns {
-    & .header__auth-btns {
+    .header__auth-btns {
       @media (max-width: $lg) {
         transform: translateY(0);
         transition: transform 0.3s;
@@ -111,7 +111,7 @@
     }
   }
 
-  & &__auth-btn {
+  &__auth-btn {
     max-width: 250px;
     padding: 0 10px;
 
@@ -125,7 +125,7 @@
     }
   }
 
-  & &__username {
+  &__username {
     color: $dark50;
     padding-left: 30px;
     margin-left: 15px;
@@ -148,7 +148,7 @@
     }
   }
 
-  & &__icon-btn {
+  &__icon-btn {
     background: none;
     border: 0;
     box-shadow: none;

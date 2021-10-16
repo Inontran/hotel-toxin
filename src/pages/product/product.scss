@@ -2,7 +2,7 @@
 @import 'owl.carousel';
 
 .product {
-  & &__gallery {
+  &__gallery {
     display: none;
     grid-template-rows: 1fr 1fr;
     grid-template-columns: 1fr 1fr 1fr;
@@ -34,7 +34,7 @@
     }
   }
 
-  & &__carousel {
+  &__carousel {
     position: relative;
     width: 100%;
 
@@ -154,7 +154,7 @@
     }
   }
 
-  & &__body {
+  &__body {
     max-width: $max_width_container;
     margin: 0 auto;
     padding: 70px $padding_container calc(70px - 33px);
@@ -218,7 +218,7 @@
     }
   }
 
-  & &__small-grid {
+  &__small-grid {
     display: flex;
     flex-wrap: wrap;
     margin-right: -35px;
@@ -266,7 +266,7 @@
     }
   }
 
-  & &__title {
+  &__title {
     color: $dark;
     margin-bottom: 20px;
 
@@ -279,15 +279,15 @@
     }
   }
 
-  & &__text {
+  &__text {
     color: $dark75;
   }
 
-  & &__section-reviews {
+  &__section-reviews {
     margin-bottom: 33px;
   }
 
-  & &__header-reviews {
+  &__header-reviews {
     display: flex;
     align-items: baseline;
     justify-content: space-between;
@@ -303,11 +303,11 @@
     }
   }
 
-  & &__review-wrapper {
+  &__review-wrapper {
     margin-bottom: 23px;
   }
 
-  & &__text-count-reviews {
+  &__text-count-reviews {
     font-size: calc_rem(14);
     line-height: 1;
     color: $dark50;
