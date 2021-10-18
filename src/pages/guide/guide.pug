@@ -4,8 +4,6 @@ extends ../base/base.pug
 include ../../components/button/button
 include ../../components/input-text/input-text
 include ../../components/checkbox/checkbox
-include ../../components/radio/radio
-include ../../components/toggle/toggle
 include ../../components/like-btn/like-btn
 include ../../components/rate-btn/rate-btn
 include ../../components/slider-range/slider-range
@@ -277,9 +275,20 @@ block content
             tag: 'h3',
           })
           div.guide-page__gap.guide-page__gap_type_second
-          +radio({id: "test4", text: "Мужчина", name: "gender", checked: true})
+          +checkbox({
+            classes: 'checkbox_type_radio',
+            text: "Мужчина",
+            name: "gender",
+            type: "radio",
+            checked: true,
+          })
           div.guide-page__gap.guide-page__gap_type_first
-          +radio({id: "test5", text: "Женщина", name: "gender"})
+          +checkbox({
+            classes: 'checkbox_type_radio',
+            text: "Женщина",
+            name: "gender",
+            type: "radio",
+          })
           div.guide-page__gap.guide-page__gap_type_fifth
 
           +heading({
@@ -288,7 +297,12 @@ block content
             tag: 'h3',
           })
           div.guide-page__gap.guide-page__gap_type_second
-          +toggle({id: "test6", text: "Получать спецпредложения", name: "get", checked: true})
+          +checkbox({
+            classes: 'checkbox_type_toggle',
+            text: "Получать спецпредложения",
+            name: "get",
+            checked: true,
+          })
           div.guide-page__gap.guide-page__gap_type_fifth
 
           +heading({
