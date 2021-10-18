@@ -28,13 +28,12 @@ mixin checkbox(options = {})
   )
     label.checkbox__wrapper
       input.checkbox__input(
-        type = type ? type : false,
+        type = type,
         name = name ? name : false,
         value = value ? value : false,
         checked = checked ? "checked" : false,
       )
-
-      span.checkbox__view
+      span.checkbox__custom-input
       span.checkbox__text-wrapper
         if title
           span.checkbox__title #{title}
