@@ -34,13 +34,13 @@
     padding-left: 15px;
     padding-right: 7px;
     padding-bottom: 13px;
+
+    &_hidden {
+      display: none;
+    }
   }
 
   &__btn-submit {
     margin-left: auto;
-  }
-
-  &_hidden {
-    display: none;
   }
 }

@@ -91,9 +91,9 @@ $(() => {
     const $btnReset = $('.js-list-counters__btn-reset', $listCounters);
     if (summAllCounters === 0) {
       result = $listCounters.attr('data-default-text') ? $listCounters.attr('data-default-text') : '';
-      $btnReset.addClass('list-counters_hidden');
+      $btnReset.addClass('list-counters__btn-reset_hidden');
     } else {
-      $btnReset.removeClass('list-counters_hidden');
+      $btnReset.removeClass('list-counters__btn-reset_hidden');
     }
     $dropdown.find('.js-dropdown__input-wrapper .js-input-text__field').val(result);
   }

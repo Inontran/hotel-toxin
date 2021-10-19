@@ -35,12 +35,12 @@ mixin footer(options = {})
   )
     div.footer__container
       div.footer__main-content
-        div.footer__main-content-col.footer__main-content-col_with-logo
+        div.footer__logo
           div.footer__logo-wrapper
             +logo()
           p.footer__text #{text1}
         
-        div.footer__main-content-col.footer__main-content-col_with-nav
+        div.footer__nav-items-menu
           if menuItems[0].subtitle
             div.footer__title-wrapper
               +heading({
@@ -51,7 +51,7 @@ mixin footer(options = {})
             each val, index in menuItems[0].items
               a.footer__list-link(href = val.href) #{val.name}
           
-        div.footer__main-content-col.footer__main-content-col_with-about
+        div.footer__about-items-menu
           if menuItems[1].subtitle
             div.footer__title-wrapper
               +heading({
@@ -62,7 +62,7 @@ mixin footer(options = {})
             each val, index in menuItems[1].items
               a.footer__list-link(href = val.href) #{val.name}
         
-        div.footer__main-content-col.footer__main-content-col_with-support
+        div.footer__support-items-menu
           if menuItems[2].subtitle
             div.footer__title-wrapper
               +heading({
@@ -73,7 +73,7 @@ mixin footer(options = {})
             each val, index in menuItems[2].items
               a.footer__list-link(href = val.href) #{val.name}
         
-        div.footer__main-content-col.footer__main-content-col_with-subscription
+        div.footer__subscription
           if titleSubscribe
             div.footer__title-wrapper
               +heading({

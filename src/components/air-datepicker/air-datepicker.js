@@ -126,9 +126,9 @@ $(() => {
 
     const $clearBtn = $('.js-air-datepicker__clear-button', $airDatepicker);
     if (dates.length) {
-      $clearBtn.removeClass('air-datepicker_hidden');
+      $clearBtn.removeClass('air-datepicker__clear-button_hidden');
     } else {
-      $clearBtn.addClass('air-datepicker_hidden');
+      $clearBtn.addClass('air-datepicker__clear-button_hidden');
     }
   }
 

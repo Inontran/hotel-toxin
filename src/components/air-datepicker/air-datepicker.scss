@@ -27,14 +27,14 @@
   &__clear-button,
   &__submit-button {
     padding: 0 10px 10px;
+
+    &_hidden {
+      display: none;
+    }
   }
 
   &__submit-button {
     margin-left: auto;
-  }
-
-  &_hidden {
-    display: none;
   }
 
   .datepicker {
