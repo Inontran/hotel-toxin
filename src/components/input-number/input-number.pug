@@ -28,8 +28,8 @@ mixin input-number(options = {})
     input.input-number__input.js-input-number__input(
       name = name,
       value = value,
-      max = max ? max : false,
-      min = min ? min : false,
+      max = (max !== false) ? max : false,
+      min = (min !== false) ? min : false,
       step = step,
       type = 'number',
       readonly = readonly ? 'readonly' : false,
