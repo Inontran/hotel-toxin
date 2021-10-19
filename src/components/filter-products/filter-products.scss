@@ -5,26 +5,27 @@
     margin-bottom: 10px;
   }
 
-  &__input-group {
-    &_type_first {
-      margin-bottom: 13px;
-    }
+  &__input-dates {
+    margin-bottom: 20px;
+  }
 
-    &_type_second {
-      margin-bottom: 15px;
-    }
+  &__input-number-guests,
+  &__range-price,
+  &__accessibility-checkboxes {
+    margin-bottom: 29px;
+  }
 
-    &_type_third {
-      margin-bottom: 20px;
-    }
+  &__rules-checkboxes {
+    margin-bottom: 31px;
+  }
 
-    &_type_fourth {
-      margin-bottom: 29px;
-    }
+  &__rules-subtitle {
+    margin-bottom: 13px;
+  }
 
-    &_type_fifth {
-      margin-bottom: 31px;
-    }
+  &__accessibility-subtitle,
+  &__selection-amenities {
+    margin-bottom: 15px;
   }
 
   &__list-checkboxes {

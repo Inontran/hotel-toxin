@@ -57,24 +57,24 @@ mixin filter-products(options = {})
 
       if optionDropdownDates
         - optionDropdownDates.group = 'filterProducts'
-        div.filter-products__input-group.filter-products__input-group_type_third
+        div.filter-products__input-dates
           +dropdown(optionDropdownDates)
             +air-datepicker(optionDropdownDatesDatepicker)
 
       if optionDropdownPeople
         - optionDropdownPeople.group = 'filterProducts'
-        div.filter-products__input-group.filter-products__input-group_type_fourth
+        div.filter-products__input-number-guests 
           +dropdown(optionDropdownPeople)
             +list-counters(optionDropdownPeople)
 
       if optionSliderRange
-        div.filter-products__input-group.filter-products__input-group_type_fourth
+        div.filter-products__range-price
           +slider-range(optionSliderRange)
 
       if checkboxes
-        div.filter-products__input-group.filter-products__input-group_type_fifth
+        div.filter-products__rules-checkboxes
           if checkboxesTitle
-            div.filter-products__input-group.filter-products__input-group_type_first
+            div.filter-products__rules-subtitle
               +heading({
                 text: checkboxesTitle,
                 classes: 'heading_small',
@@ -85,9 +85,9 @@ mixin filter-products(options = {})
                 +checkbox(val)
 
       if checkboxesBig
-        div.filter-products__input-group.filter-products__input-group_type_fourth
+        div.filter-products__accessibility-checkboxes
           if checkboxesBigTitle
-            div.filter-products__input-group.filter-products__input-group_type_second
+            div.filter-products__accessibility-subtitle
               +heading({
                 text: checkboxesBigTitle,
                 classes: 'heading_small',
@@ -100,7 +100,7 @@ mixin filter-products(options = {})
       if optionDropdownFeature
         - optionDropdownFeature.type = 2
         - optionDropdownFeature.group = 'filterProducts'
-        div.filter-products__input-group.filter-products__input-group_type_second
+        div.filter-products__selection-amenities
           +dropdown(optionDropdownFeature)
             +list-counters(optionDropdownFeature)
 
