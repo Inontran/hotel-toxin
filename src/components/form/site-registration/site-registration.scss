@@ -15,25 +15,27 @@
     margin-bottom: 20px;
   }
 
-  &__element-wrapper {
-    &_type_first {
-      margin-bottom: 10px;
-    }
-
-    &_type_second {
-      margin-bottom: 20px;
-    }
-
-    &_type_third {
-      margin-bottom: 30px;
-    }
-
-    &_type_fourth {
-      margin-bottom: 5px;
-    }
+  &__input-name,
+  &__input-surname,
+  &__input-email,
+  &__input-password {
+    margin-bottom: 10px;
   }
 
-  &__gender-radio {
+  &__input-date-birthday,
+  &__toggle-subscription {
+    margin-bottom: 20px;
+  }
+
+  &__btn-registration {
+    margin-bottom: 30px;
+  }
+
+  &__subtitle-wrapper {
+    margin-bottom: 5px;
+  }
+
+  &__genders {
     display: flex;
     flex-wrap: wrap;
     margin-left: -10px;

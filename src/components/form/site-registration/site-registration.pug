@@ -27,17 +27,17 @@ mixin site-registration(options = {})
         tag: 'h1'
       })
 
-    div.site-registration__element-wrapper.site-registration__element-wrapper_type_first
+    div.site-registration__input-name
       +input-text({
         placeholder: "Имя"
       })
 
-    div.site-registration__element-wrapper.site-registration__element-wrapper_type_first
+    div.site-registration__input-surname
       +input-text({
         placeholder: "Фамилия"
       })
 
-    div.site-registration__gender-radio
+    div.site-registration__genders
       div.site-registration__radio-wrapper
         +checkbox({
           classes: "checkbox_type_radio",
@@ -54,36 +54,36 @@ mixin site-registration(options = {})
           type: "radio",
         })
 
-    div.site-registration__element-wrapper.site-registration__element-wrapper_type_second
+    div.site-registration__input-date-birthday
       +input-text({
         label: "Дата рождения",
         classes: "input-text_mask_date"
       })
 
-    div.site-registration__element-wrapper.site-registration__element-wrapper_type_fourth
+    div.site-registration__subtitle-wrapper
       +heading({
         text: 'Данные для входа в сервис',
         classes: 'heading_small',
       })
-    div.site-registration__element-wrapper.site-registration__element-wrapper_type_first
+    div.site-registration__input-email
       +input-text({
         classes: "input-text_mask_email",
         placeholder: "Email"
       })
 
-    div.site-registration__element-wrapper.site-registration__element-wrapper_type_first
+    div.site-registration__input-password
       +input-text({
         type: "password",
         placeholder: "Пароль"
       })
 
-    div.site-registration__element-wrapper.site-registration__element-wrapper_type_second
+    div.site-registration__toggle-subscription
       +checkbox({
         classes: "checkbox_type_toggle",
         text: "Получать спецпредложения",
       })
 
-    div.site-registration__element-wrapper.site-registration__element-wrapper_type_third
+    div.site-registration__btn-registration
       +button({
         text: "Зарегистрироваться", 
         classes: "button_filled_blue-green-gradient button_theme_arrow button_wide",
