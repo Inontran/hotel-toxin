@@ -25,18 +25,18 @@ mixin site-login(options = {})
         classes: 'heading_large',
         tag: 'h1',
       })
-    div.site-login__element-wrapper.site-login__element-wrapper_type_first
+    div.site-login__input-email
       +input-text({
         classes: "input-text_mask_email",
         placeholder: "Email"
       })
-    div.site-login__element-wrapper.site-login__element-wrapper_type_second
+    div.site-login__input-password
       +input-text({
         type: "password",
         placeholder: "Пароль"
       })
 
-    div.site-login__element-wrapper.site-login__element-wrapper_type_third
+    div.site-login__btn-login
       +button({
         text: "Войти", 
         classes: "button_filled_blue-green-gradient button_theme_arrow button_wide", 
