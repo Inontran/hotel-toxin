@@ -124,8 +124,11 @@ $(() => {
     if ($parentDropdown.length) {
       $('.js-input-text_date_range .js-input-text__field', $parentDropdown)
         .val(`${moment(dates[0]).format('D MMM')} - ${moment(dates[1]).format('D MMM')}`);
-      $('.js-input-text_type_start-date .js-input-text__field', $parentDropdown).val(moment(dates[0]).format('DD.MM.YYYY'));
-      $('.js-input-text_type_end-date .js-input-text__field', $parentDropdown).val(moment(dates[1]).format('DD.MM.YYYY'));
+      $('.js-input-text_type_start-date .js-input-text__field', $parentDropdown)
+        .val(moment(dates[0]).format('DD.MM.YYYY'));
+      $('.js-input-text_type_end-date .js-input-text__field', $parentDropdown)
+        .val(moment(dates[1]).format('DD.MM.YYYY'));
+
       $parentDropdown.removeClass('dropdown_aсtivated');
     }
 
