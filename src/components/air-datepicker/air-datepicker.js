@@ -75,7 +75,7 @@ $(() => {
     }
 
     if (!$datepicker.data('datepicker').selectedDates.length) {
-      $('.js-air-datepicker__clear-button', $airDatepicker).addClass('air-datepicker_hidden');
+      $('.js-air-datepicker__clear-button', $airDatepicker).addClass('air-datepicker__clear-button_hidden');
     }
   });
 
@@ -96,7 +96,7 @@ $(() => {
       $('.js-input-text_date_range .js-input-text__field', $parentDropdown).val('');
     }
 
-    $btn.closest('.js-air-datepicker__clear-button').addClass('air-datepicker_hidden');
+    $btn.closest('.js-air-datepicker__clear-button').addClass('air-datepicker__clear-button_hidden');
   }
 
   $body.on(
