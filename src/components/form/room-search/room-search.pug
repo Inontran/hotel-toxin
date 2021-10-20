@@ -16,7 +16,7 @@ mixin room-search(options = {})
       title = 'Найдём номера под ваши пожелания',
     } = options;
 
-  div.room-search(
+  form.room-search(
     class = classes,
     id = id ? id : false
   )
@@ -29,31 +29,31 @@ mixin room-search(options = {})
     div.room-search__dates-row
       div.room-search__dates-col
         +dropdown({
-          classes: 'js-dropdown_room-search-dates-result',
+          classes: 'js-dropdown_type_datepicker-output dropdown_type_datepicker-output',
           group: 'formFastSelect',
           targetId: '#dropdown-datepicker2',
           inputParams: {
             label: "Прибытие",
             readonly: true,
             placeholder: "ДД.ММ.ГГГГ",
-            classes: 'js-input-text_date_start',
+            classes: 'js-input-text_type_start-date input-text_type_start-date',
           },
         })
       div.room-search__dates-col
         +dropdown({
-          classes: 'js-dropdown_room-search-dates-result dropdown_dates dropdown_align_right',
+          classes: 'js-dropdown_type_datepicker-output dropdown_type_datepicker-output dropdown_dates dropdown_align_right',
           group: 'formFastSelect',
           id: 'dropdown-datepicker2',
           inputParams: {
             label: "Выезд",
             readonly: true,
             placeholder: "ДД.ММ.ГГГГ",
-            classes: 'js-input-text_date_end',
+            classes: 'js-input-text_type_end-date input-text_type_end-date',
           },
         })
           +air-datepicker({
             classes: 'air-datepicker_inline',
-            targetDropdown: '.js-dropdown_room-search-dates-result',
+            targetDropdown: '.js-dropdown_type_datepicker-output',
             minDate: 'today',
           })
 

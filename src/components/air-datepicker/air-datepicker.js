@@ -55,14 +55,14 @@ $(() => {
     }
     if ($parentDropdown.length) {
       const datesFromInputs = [];
-      const $inputDateStart = $('.js-input-text_date_start .js-input-text__field', $parentDropdown);
+      const $inputDateStart = $('.js-input-text_type_start-date .js-input-text__field', $parentDropdown);
       if ($inputDateStart.length) {
         let valueInputDate = $inputDateStart.val();
         valueInputDate = formatDate(valueInputDate);
         if (valueInputDate) datesFromInputs.push(new Date(valueInputDate));
       }
 
-      const $inputDateEnd = $('.js-input-text_date_end .js-input-text__field', $parentDropdown);
+      const $inputDateEnd = $('.js-input-text_type_end-date .js-input-text__field', $parentDropdown);
       if ($inputDateEnd.length) {
         let valueInputDate = $inputDateEnd.val();
         valueInputDate = formatDate(valueInputDate);
@@ -91,8 +91,8 @@ $(() => {
       $parentDropdown = $(targetDropdowns);
     }
     if ($parentDropdown.length) {
-      $('.js-input-text_date_start .js-input-text__field', $parentDropdown).val('');
-      $('.js-input-text_date_end .js-input-text__field', $parentDropdown).val('');
+      $('.js-input-text_type_start-date .js-input-text__field', $parentDropdown).val('');
+      $('.js-input-text_type_end-date .js-input-text__field', $parentDropdown).val('');
       $('.js-input-text_date_range .js-input-text__field', $parentDropdown).val('');
     }
 
@@ -111,16 +111,21 @@ $(() => {
     let $parentDropdown = $btn.closest('.js-dropdown');
     const $airDatepicker = $btn.closest('.js-air-datepicker');
     const dates = $airDatepicker.find('.js-air-datepicker__wrapper').data('datepicker').selectedDates;
+    const $form = $airDatepicker.closest('form');
 
     const targetDropdowns = $airDatepicker.attr('data-target-dropdown');
     if (targetDropdowns) {
-      $parentDropdown = $(targetDropdowns);
+      if ($form.length) {
+        $parentDropdown = $(targetDropdowns, $form);
+      } else {
+        $parentDropdown = $(targetDropdowns);
+      }
     }
     if ($parentDropdown.length) {
       $('.js-input-text_date_range .js-input-text__field', $parentDropdown)
         .val(`${moment(dates[0]).format('D MMM')} - ${moment(dates[1]).format('D MMM')}`);
-      $('.js-input-text_date_start .js-input-text__field', $parentDropdown).val(moment(dates[0]).format('DD.MM.YYYY'));
-      $('.js-input-text_date_end .js-input-text__field', $parentDropdown).val(moment(dates[1]).format('DD.MM.YYYY'));
+      $('.js-input-text_type_start-date .js-input-text__field', $parentDropdown).val(moment(dates[0]).format('DD.MM.YYYY'));
+      $('.js-input-text_type_end-date .js-input-text__field', $parentDropdown).val(moment(dates[1]).format('DD.MM.YYYY'));
       $parentDropdown.removeClass('dropdown_aсtivated');
     }
 
