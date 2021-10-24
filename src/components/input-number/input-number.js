@@ -11,22 +11,22 @@ $(() => {
     }
 
     const $input = $('.js-input-number__input', $counterBtns);
-    const $btnLess = $('.js-input-number__btn-less', $counterBtns);
-    const $btnMore = $('.js-input-number__btn-more', $counterBtns);
-    const inputMin = $input.attr('min');
-    const inputMax = $input.attr('max');
+    const $btnLess = $('.js-input-number__btn_decreasing', $counterBtns);
+    const $btnMore = $('.js-input-number__btn_increasing', $counterBtns);
+    const inputMinVal = $input.attr('min');
+    const inputMaxVal = $input.attr('max');
     const inputVal = $input.val();
 
-    if (inputMin && inputVal <= inputMin) {
-      $btnLess.addClass('input-number__btn_disabled');
+    if (inputMinVal && inputVal <= inputMinVal) {
+      $btnLess.attr('disabled', '');
     } else {
-      $btnLess.removeClass('input-number__btn_disabled');
+      $btnLess.removeAttr('disabled');
     }
 
-    if (inputMax && inputVal >= inputMax) {
-      $btnMore.addClass('input-number__btn_disabled');
+    if (inputMaxVal && inputVal >= inputMaxVal) {
+      $btnMore.attr('disabled', '');
     } else {
-      $btnMore.removeClass('input-number__btn_disabled');
+      $btnMore.removeAttr('disabled');
     }
   }
 
@@ -41,9 +41,9 @@ $(() => {
     const $input = $('.js-input-number__input', $counterBtns);
     const value = $input.val();
 
-    if ($btn.hasClass('js-input-number__btn-less')) {
+    if ($btn.hasClass('js-input-number__btn_decreasing')) {
       $input[0].stepDown();
-    } else if ($btn.hasClass('js-input-number__btn-more')) {
+    } else if ($btn.hasClass('js-input-number__btn_increasing')) {
       $input[0].stepUp();
     }
 
@@ -52,8 +52,8 @@ $(() => {
     }
   }
 
-  $body.on('click', '.js-input-number .js-input-number__btn-less', handlerClickCounterBtns);
-  $body.on('click', '.js-input-number .js-input-number__btn-more', handlerClickCounterBtns);
+  $body.on('click', '.js-input-number .js-input-number__btn_decreasing', handlerClickCounterBtns);
+  $body.on('click', '.js-input-number .js-input-number__btn_increasing', handlerClickCounterBtns);
 
   function handlerChangeInputCounterBtns(event) {
     const $input = $(event.currentTarget);

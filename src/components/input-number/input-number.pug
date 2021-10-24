@@ -24,7 +24,7 @@ mixin input-number(options = {})
     class = classes,
     id = id ? id : false
   )
-    button.input-number__btn-less.js-input-number__btn-less(type = 'button') -
+    button.input-number__btn.input-number__btn_decreasing.js-input-number__btn_decreasing(type = 'button') -
     input.input-number__input.js-input-number__input(
       name = name,
       value = value,
@@ -34,4 +34,4 @@ mixin input-number(options = {})
       type = 'number',
       readonly = readonly ? 'readonly' : false,
     )
-    button.input-number__btn-more.js-input-number__btn-more(type = 'button') +
+    button.input-number__btn.input-number__btn_increasing.js-input-number__btn_increasing(type = 'button') +

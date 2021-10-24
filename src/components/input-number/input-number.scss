@@ -4,8 +4,7 @@
   display: inline-flex;
   align-items: center;
 
-  &__btn-less,
-  &__btn-more,
+  &__btn,
   &__input {
     width: calc_rem(30);
     height: calc_rem(30);
@@ -32,17 +31,17 @@
     }
   }
 
-  &__btn-less,
-  &__btn-more {
+  &__btn {
     border-radius: 100vh;
     border: 1px solid $dark25;
     background: $white;
     line-height: calc_rem(30);
     color: $dark25;
     cursor: pointer;
-  }
 
-  &__btn_disabled {
-    opacity: 0.38;
+    &:disabled {
+      cursor: default;
+      opacity: 0.38;
+    }
   }
 }
