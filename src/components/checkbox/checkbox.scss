@@ -118,45 +118,4 @@
       cursor: pointer;
     }
   }
-
-  &.checkbox_type_radio {
-    .checkbox__custom-input {
-      width: calc_rem(20);
-      height: calc_rem(20);
-      border-radius: 100vh;
-      border: 1px solid $dark25;
-
-      &::after {
-        content: '';
-        position: absolute;
-        top: 50%;
-        left: 50%;
-        transform: translate(-50%, -50%);
-        width: calc_rem(12);
-        height: calc_rem(12);
-        background: $gradient1;
-        border-radius: 100vh;
-        opacity: 0;
-      }
-    }
-
-    .checkbox__input:checked ~ .checkbox__custom-input {
-      border-color: $purple;
-
-      &::after {
-        opacity: 1;
-      }
-    }
-
-    .checkbox__text {
-      color: $dark50;
-      padding-top: 1px;
-      transition: color 0.2s;
-    }
-
-    .checkbox__input:checked ~ .checkbox__custom-input,
-    .checkbox__input:checked ~ .checkbox__text {
-      color: $dark75;
-    }
-  }
 }

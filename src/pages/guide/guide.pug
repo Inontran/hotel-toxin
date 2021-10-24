@@ -22,6 +22,7 @@ include ../../components/card-product/card-product
 include ../../components/chart/chart
 include ../../components/heading/heading
 include ../../components/form/subscription/subscription
+include ../../components/radio/radio
 
 block headTags
   -
@@ -289,19 +290,15 @@ block content
             tag: 'h3',
           })
           div.guide-page__gap.guide-page__gap_type_second
-          +checkbox({
-            classes: 'checkbox_type_radio',
+          +radio({
             text: 'Мужчина',
             name: 'gender',
-            type: 'radio',
             checked: true,
           })
           div.guide-page__gap.guide-page__gap_type_first
-          +checkbox({
-            classes: 'checkbox_type_radio',
+          +radio({
             text: 'Женщина',
             name: 'gender',
-            type: 'radio',
           })
           div.guide-page__gap.guide-page__gap_type_fifth
 

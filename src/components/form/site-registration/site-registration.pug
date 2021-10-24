@@ -2,6 +2,7 @@ include ../../button/button
 include ../../input-text/input-text
 include ../../checkbox/checkbox
 include ../../heading/heading
+include ../../radio/radio
 
 //-
   options.classes - Классы блока.
@@ -39,19 +40,15 @@ mixin site-registration(options = {})
 
     div.site-registration__genders
       div.site-registration__radio-wrapper
-        +checkbox({
-          classes: 'checkbox_type_radio',
+        +radio({
           text: 'Мужчина',
           name: 'gender',
-          type: 'radio',
           checked: true,
         })
       div.site-registration__radio-wrapper
-        +checkbox({
-          classes: 'checkbox_type_radio',
+        +radio({
           text: 'Женщина',
           name: 'gender',
-          type: 'radio',
         })
 
     div.site-registration__input-date-birthday

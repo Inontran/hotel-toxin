@@ -17,6 +17,7 @@ require('@/components/air-datepicker/air-datepicker');
 require('@/components/card-product/card-product');
 require('@/components/chart/chart');
 require('@/components/heading/heading');
+require('@/components/radio/radio');
 require('@/components/form/subscription/subscription');
 require('@/components/form/site-registration/site-registration');
 require('@/components/form/site-login/site-login');
