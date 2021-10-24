@@ -27,19 +27,19 @@ mixin site-login(options = {})
       })
     div.site-login__input-email
       +input-text({
-        classes: "input-text_mask_email",
-        placeholder: "Email"
+        classes: 'input-text_mask_email',
+        placeholder: 'Email'
       })
     div.site-login__input-password
       +input-text({
-        type: "password",
-        placeholder: "Пароль"
+        type: 'password',
+        placeholder: 'Пароль'
       })
 
     div.site-login__btn-login
       +button({
-        text: "Войти", 
-        classes: "button_filled_blue-green-gradient button_theme_arrow button_wide", 
+        text: 'Войти', 
+        classes: 'button_filled_blue-green-gradient button_theme_arrow button_wide', 
         type: 'submit'
       })
 
@@ -47,7 +47,7 @@ mixin site-login(options = {})
       p.site-login__footer-text Нет аккаунта на Toxin?
       div.site-login__footer-button
         +button({
-          text: "Создать", 
-          classes: "button_outlined",
+          text: 'Создать', 
+          classes: 'button_outlined',
           href: buttonRegHref ? buttonRegHref : false
         })

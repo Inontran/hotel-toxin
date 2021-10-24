@@ -6,13 +6,13 @@ include ../../components/form/site-login/site-login
 block headTags
   -
     const {
-      title = "",
-      discription = "",
-      keywords = "",
+      title = '',
+      discription = '',
+      keywords = '',
     } = htmlWebpackPlugin.options.getData();
   title #{title}
-  meta(name="discription", content = discription)
-  meta(name="keywords", content = keywords)
+  meta(name='discription', content = discription)
+  meta(name='keywords', content = keywords)
 
 block content
   - data = htmlWebpackPlugin.options.getData()

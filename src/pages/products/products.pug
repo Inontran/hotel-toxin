@@ -9,13 +9,13 @@ include ../../components/heading/heading
 block headTags
   -
     const {
-      title = "",
-      discription = "",
-      keywords = "",
+      title = '',
+      discription = '',
+      keywords = '',
     } = htmlWebpackPlugin.options.getData();
   title #{title}
-  meta(name="discription", content = discription)
-  meta(name="keywords", content = keywords)
+  meta(name='discription', content = discription)
+  meta(name='keywords', content = keywords)
 
 block content
   -
@@ -71,4 +71,9 @@ block content
                     rating: dataCard.rating ? dataCard.rating : false,
                   })
             div.products__pagination-wrapper
-              +pagination({page: 1, perpage: 12, elements: 175, text: "вариантов аренды"})
+              +pagination({
+                page: 1,
+                perpage: 12,
+                elements: 175,
+                text: 'вариантов аренды'
+              })

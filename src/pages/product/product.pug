@@ -10,13 +10,13 @@ include ../../components/heading/heading
 block headTags
   -
     const {
-      title = "",
-      discription = "",
-      keywords = "",
+      title = '',
+      discription = '',
+      keywords = '',
     } = htmlWebpackPlugin.options.getData();
   title #{title}
-  meta(name="discription", content = discription)
-  meta(name="keywords", content = keywords)
+  meta(name='discription', content = discription)
+  meta(name='keywords', content = keywords)
 
 block content
   -
@@ -58,23 +58,23 @@ block content
           if gallery[0]
             - gallery[0] = require('@/pages/product/img/' + gallery[0]).default
             div.product__main-img(
-              style = "background-image: url(" + gallery[0] + ");"
+              style = 'background-image: url(' + gallery[0] + ');'
             )
           if gallery[1]
             - gallery[1] = require('@/pages/product/img/' + gallery[1]).default
             div.product__upper-small-img(
-              style = "background-image: url(" + gallery[1] + ");"
+              style = 'background-image: url(' + gallery[1] + ');'
             )
           if gallery[2]
             - gallery[2] = require('@/pages/product/img/' + gallery[2]).default
             div.product__bottom-small-img(
-              style = "background-image: url(" + gallery[2] + ");"
+              style = 'background-image: url(' + gallery[2] + ');'
             )
 
         section.product__carousel.js-product__carousel.owl-carousel
           each src in gallery
             if src
-              div.product__carousel-item(style="background-image: url(" + src + ");")
+              div.product__carousel-item(style='background-image: url(' + src + ');')
 
       div.product__body
         div.product__body-row

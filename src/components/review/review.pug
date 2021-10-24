@@ -39,5 +39,8 @@ mixin review(options = {})
           time.review__time(datetime = datetime) #{timeLater}
     div.review__content
       div.review__like-wrapper
-        +like-btn({value: countLike, isLike: isLike})
+        +like-btn({
+          value: countLike,
+          isLike: isLike
+        })
       p.review__text #{textReview}

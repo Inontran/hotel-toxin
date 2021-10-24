@@ -29,35 +29,35 @@ mixin site-registration(options = {})
 
     div.site-registration__input-name
       +input-text({
-        placeholder: "Имя"
+        placeholder: 'Имя'
       })
 
     div.site-registration__input-surname
       +input-text({
-        placeholder: "Фамилия"
+        placeholder: 'Фамилия'
       })
 
     div.site-registration__genders
       div.site-registration__radio-wrapper
         +checkbox({
-          classes: "checkbox_type_radio",
-          text: "Мужчина",
-          name: "gender",
-          type: "radio",
+          classes: 'checkbox_type_radio',
+          text: 'Мужчина',
+          name: 'gender',
+          type: 'radio',
           checked: true,
         })
       div.site-registration__radio-wrapper
         +checkbox({
-          classes: "checkbox_type_radio",
-          text: "Женщина",
-          name: "gender",
-          type: "radio",
+          classes: 'checkbox_type_radio',
+          text: 'Женщина',
+          name: 'gender',
+          type: 'radio',
         })
 
     div.site-registration__input-date-birthday
       +input-text({
-        label: "Дата рождения",
-        classes: "input-text_mask_date"
+        label: 'Дата рождения',
+        classes: 'input-text_mask_date'
       })
 
     div.site-registration__subtitle-wrapper
@@ -67,26 +67,26 @@ mixin site-registration(options = {})
       })
     div.site-registration__input-email
       +input-text({
-        classes: "input-text_mask_email",
-        placeholder: "Email"
+        classes: 'input-text_mask_email',
+        placeholder: 'Email'
       })
 
     div.site-registration__input-password
       +input-text({
-        type: "password",
-        placeholder: "Пароль"
+        type: 'password',
+        placeholder: 'Пароль'
       })
 
     div.site-registration__toggle-subscription
       +checkbox({
-        classes: "checkbox_type_toggle",
-        text: "Получать спецпредложения",
+        classes: 'checkbox_type_toggle',
+        text: 'Получать спецпредложения',
       })
 
     div.site-registration__btn-registration
       +button({
-        text: "Зарегистрироваться", 
-        classes: "button_filled_blue-green-gradient button_theme_arrow button_wide",
+        text: 'Зарегистрироваться', 
+        classes: 'button_filled_blue-green-gradient button_theme_arrow button_wide',
         type: 'submit'
       })
 
@@ -94,7 +94,7 @@ mixin site-registration(options = {})
       p.site-registration__footer-text Уже есть аккаунт на Toxin
       div.site-registration__footer-button
         +button({
-          text: "Войти", 
-          classes: "button_outlined button_wide",
+          text: 'Войти', 
+          classes: 'button_outlined button_wide',
           href: buttonLoginHref ? buttonLoginHref : false
         })

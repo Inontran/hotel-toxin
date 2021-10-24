@@ -26,13 +26,13 @@ include ../../components/form/subscription/subscription
 block headTags
   -
     const {
-      title = "",
-      discription = "",
-      keywords = "",
+      title = '',
+      discription = '',
+      keywords = '',
     } = htmlWebpackPlugin.options.getData();
   title #{title}
-  meta(name="discription", content = discription)
-  meta(name="keywords", content = keywords)
+  meta(name='discription', content = discription)
+  meta(name='keywords', content = keywords)
 
 block content
   -
@@ -65,7 +65,10 @@ block content
       ],
       username: 'Cosmin Negoita'
     }
-  +header({menuItems: dataHeader.menuItems, username: dataHeader.username})
+  +header({
+    menuItems: dataHeader.menuItems,
+    username: dataHeader.username
+  })
   
 
   -
@@ -246,15 +249,21 @@ block content
 
 
         div.guide-page__col
-          +input-text({label: "Text Field", placeholder: "Email"})
+          +input-text({
+            label: 'Text Field',
+            placeholder: 'Email'
+          })
           div.guide-page__gap.guide-page__gap_type_third
           +subscription({
             inputParams: {
-              label: "Subscription Text Field",
+              label: 'Subscription Text Field',
             }
           })
           div.guide-page__gap.guide-page__gap_type_third
-          +input-text({label: "Masked text field",classes: "input-text_mask_date" })
+          +input-text({
+            label: 'Masked text field',
+            classes: 'input-text_mask_date'
+          })
 
 
         div.guide-page__col
@@ -264,9 +273,14 @@ block content
             tag: 'h3',
           })
           div.guide-page__gap.guide-page__gap_type_second
-          +checkbox({text: "Можно курить", checked: true})
+          +checkbox({
+            text: 'Можно курить',
+            checked: true
+          })
           div.guide-page__gap.guide-page__gap_type_first
-          +checkbox({text: "Можно пригласить гостей (до 10 человек)"})
+          +checkbox({
+            text: 'Можно пригласить гостей (до 10 человек)'
+          })
           div.guide-page__gap.guide-page__gap_type_fifth
 
           +heading({
@@ -277,17 +291,17 @@ block content
           div.guide-page__gap.guide-page__gap_type_second
           +checkbox({
             classes: 'checkbox_type_radio',
-            text: "Мужчина",
-            name: "gender",
-            type: "radio",
+            text: 'Мужчина',
+            name: 'gender',
+            type: 'radio',
             checked: true,
           })
           div.guide-page__gap.guide-page__gap_type_first
           +checkbox({
             classes: 'checkbox_type_radio',
-            text: "Женщина",
-            name: "gender",
-            type: "radio",
+            text: 'Женщина',
+            name: 'gender',
+            type: 'radio',
           })
           div.guide-page__gap.guide-page__gap_type_fifth
 
@@ -299,8 +313,8 @@ block content
           div.guide-page__gap.guide-page__gap_type_second
           +checkbox({
             classes: 'checkbox_type_toggle',
-            text: "Получать спецпредложения",
-            name: "get",
+            text: 'Получать спецпредложения',
+            name: 'get',
             checked: true,
           })
           div.guide-page__gap.guide-page__gap_type_fifth
@@ -311,8 +325,13 @@ block content
             tag: 'h3',
           })
           div.guide-page__gap.guide-page__gap_type_second
-          +like-btn({value: 2})
-          +like-btn({value: 12, isLike: true})
+          +like-btn({
+            value: 2
+          })
+          +like-btn({
+            value: 12,
+            isLike: true
+          })
           div.guide-page__gap.guide-page__gap_type_fifth
 
           +heading({
@@ -321,11 +340,19 @@ block content
             tag: 'h3',
           })
           div.guide-page__gap.guide-page__gap_type_second
-          +rate-btn({value: 4})
+          +rate-btn({
+            value: 4
+          })
 
 
         div.guide-page__col
-          +slider-range({label: "Range slider", min: 0, max: 15000, val1: 5000, val2: 10000})
+          +slider-range({
+            label: 'Range slider',
+            min: 0,
+            max: 15000,
+            val1: 5000,
+            val2: 10000
+          })
           div.guide-page__gap.guide-page__gap_type_fifth
 
           +heading({
@@ -336,16 +363,33 @@ block content
           div.guide-page__gap.guide-page__gap_type_second
           
           div.guide-page__gap.guide-page__gap_type_third
-            +button({text: "click me", classes: "button_filled_blue-green-gradient"})
-            +button({text: "click me", classes: "button_filled_blue-green-gradient button_size_md"})
+            +button({
+              text: 'click me',
+              classes: 'button_filled_blue-green-gradient'
+            })
+            +button({
+              text: 'click me',
+              classes: 'button_filled_blue-green-gradient button_size_md'
+            })
           
           div.guide-page__gap.guide-page__gap_type_third
-            +button({text: "click me", classes: "button_outlined"})
-            +button({text: "click me", classes: "button_outlined button_size_md"})
+            +button({
+              text: 'click me',
+              classes: 'button_outlined'
+            })
+            +button({
+              text: 'click me',
+              classes: 'button_outlined button_size_md'
+            })
 
-          +button({text: "click me"})
+          +button({
+            text: 'click me'
+          })
           div.guide-page__gap.guide-page__gap_type_third
-          +button({text: "Перейти к оплате", classes: "button_filled_blue-green-gradient button_theme_arrow button_wide"})
+          +button({
+            text: 'Перейти к оплате',
+            classes: 'button_filled_blue-green-gradient button_theme_arrow button_wide'
+          })
           div.guide-page__gap.guide-page__gap_type_fifth
 
           +heading({
@@ -354,37 +398,42 @@ block content
             tag: 'h3',
           })
           div.guide-page__gap.guide-page__gap_type_second
-          +pagination({page: 1, perpage: 12, elements: 175, text: "вариантов аренды"})
+          +pagination({
+            page: 1,
+            perpage: 12,
+            elements: 175,
+            text: 'вариантов аренды'
+          })
 
 
         div.guide-page__col
           +dropdown({
             group: 'guide-example-dropdowns',
             inputParams:{
-              label: "Dropdown",
+              label: 'Dropdown',
               readonly: true,
-              value: "Сколько гостей"
+              value: 'Сколько гостей'
             }
           })
             +list-counters({
-              textDefault: "Сколько гостей",
+              textDefault: 'Сколько гостей',
               arrayCounters: [
                 {
-                  label: "Взрослые",
+                  label: 'Взрослые',
                   groupItemId: 1,
                   textOneItems: 'гость',
                   textTwoItems: 'гостя',
                   textManyItems: 'гостей',
                 },
                 {
-                  label: "Дети",
+                  label: 'Дети',
                   groupItemId: 1,
                   textOneItems: 'гость',
                   textTwoItems: 'гостя',
                   textManyItems: 'гостей',
                 },
                 {
-                  label: "Младенцы",
+                  label: 'Младенцы',
                   groupItemId: 2,
                   textOneItems: 'младенец',
                   textTwoItems: 'младенца',
@@ -398,7 +447,7 @@ block content
             group: 'guide-example-dropdowns',
             classes: 'dropdown_simple',
             inputParams:{
-              label: "Dropdown",
+              label: 'Dropdown',
               readonly: true
             },
           })
@@ -406,38 +455,53 @@ block content
               type: 2,
               arrayCounters: [
                 {
-                  label: "Спальни",
-                  textOneItems: "Спальня",
-                  textTwoItems: "Спальни",
-                  textManyItems: "Спален"
+                  label: 'Спальни',
+                  textOneItems: 'Спальня',
+                  textTwoItems: 'Спальни',
+                  textManyItems: 'Спален'
                 },
                 {
-                  label: "Кровати",
-                  textOneItems: "Кровать",
-                  textTwoItems: "Кровати",
-                  textManyItems: "Кроватей"
+                  label: 'Кровати',
+                  textOneItems: 'Кровать',
+                  textTwoItems: 'Кровати',
+                  textManyItems: 'Кроватей'
                 },
                 {
-                  label: "Ванные комнаты",
-                  textOneItems: "Ванная комната",
-                  textTwoItems: "Ванных комнаты",
-                  textManyItems: "Ванных комнат"
+                  label: 'Ванные комнаты',
+                  textOneItems: 'Ванная комната',
+                  textTwoItems: 'Ванных комнаты',
+                  textManyItems: 'Ванных комнат'
                 }
               ]
             })
 
           div.guide-page__gap.guide-page__gap_type_fifth
         
-          +expander({text: "expandable checkbox list", group: 'expander-group-1'})
+          +expander({
+            text: 'expandable checkbox list',
+            group: 'expander-group-1'
+          })
             p Lorem ipsum dolor sit amet consectetur adipisicing elit. Error, explicabo. Facilis dolorem deleniti consequuntur, sint enim laborum temporibus, iure nihil suscipit minima sapiente rem dignissimos illum quam delectus itaque molestiae.
-          +expander({text: "expandable checkbox list", group: 'expander-group-1', is_open: true})
-            +checkbox({text: "Можно курить"})
+          +expander({
+            text: 'expandable checkbox list',
+            group: 'expander-group-1',
+            is_open: true
+          })
+            +checkbox({
+              text: 'Можно курить'
+            })
             div.guide-page__gap.guide-page__gap_type_first
-            +checkbox({text: "Можно курить"})
+            +checkbox({
+              text: 'Можно курить'
+            })
             div.guide-page__gap.guide-page__gap_type_first
-            +checkbox({text: "Можно курить"})
+            +checkbox({
+              text: 'Можно курить'
+            })
             div.guide-page__gap.guide-page__gap_type_first
-            +checkbox({text: "Можно курить"})
+            +checkbox({
+              text: 'Можно курить'
+            })
           
 
 
@@ -448,9 +512,16 @@ block content
             tag: 'h3',
           })
           div.guide-page__gap.guide-page__gap_type_second
-          +checkbox({text: "Ширина коридоров в номере не менее 91 см.", checked: true, title: "Широкий коридор"})
+          +checkbox({
+            text: 'Ширина коридоров в номере не менее 91 см.',
+            checked: true,
+            title: 'Широкий коридор'
+          })
           div.guide-page__gap.guide-page__gap_type_first
-          +checkbox({text: "На 1 этаже вас встретит специалист  и проводит до номера.", title: "Помощник для инвалидов"})
+          +checkbox({
+            text: 'На 1 этаже вас встретит специалист  и проводит до номера.',
+            title: 'Помощник для инвалидов'
+          })
 
 
         div.guide-page__col
@@ -478,32 +549,35 @@ block content
 
         div.guide-page__col
           +infographics({items: [
-            {  src: require("@/components/infographics/img/insert_emoticon.svg").default, 
-              title: "Комфорт", 
-              text: "Шумопоглощающие стены",
+            {
+              src: require('@/components/infographics/img/insert_emoticon.svg').default, 
+              title: 'Комфорт', 
+              text: 'Шумопоглощающие стены',
               line: true
             },
-            {  src: require("@/components/infographics/img/location_city.svg").default, 
-              title: "Удобство", 
-              text: "Окно в каждой из спален",
+            {
+              src: require('@/components/infographics/img/location_city.svg').default, 
+              title: 'Удобство', 
+              text: 'Окно в каждой из спален',
               line: true
             },
-            {  src: require("@/components/infographics/img/whatshot.svg").default, 
-              title: "Уют", 
-              text: "Номер оснащен камином"
+            {
+              src: require('@/components/infographics/img/whatshot.svg').default, 
+              title: 'Уют', 
+              text: 'Номер оснащен камином'
             }
           ]})
 
       
         div.guide-page__col
           +review({
-            avatar: require("@/components/review/img/photo-example.jpg").default,
+            avatar: require('@/components/review/img/photo-example.jpg').default,
             isLike: true,
             countLike: 12,
-            username: "Мурад Сарафанов",
-            timeLater: "5 дней назад",
+            username: 'Мурад Сарафанов',
+            timeLater: '5 дней назад',
             datetime: '2021-10-09T15:26',
-            textReview: "Великолепный матрас на кровати в основной спальне! А пуфик вообще потрясающий. И стены, действительно, шумоподавляющие. Выкрикивал комплименты повару — никто не жаловался из соседей."
+            textReview: 'Великолепный матрас на кровати в основной спальне! А пуфик вообще потрясающий. И стены, действительно, шумоподавляющие. Выкрикивал комплименты повару — никто не жаловался из соседей.'
           })
 
         
@@ -512,12 +586,14 @@ block content
             customContent: true,
             classes: 'dropdown_dates',
             inputParams:{
-              label: "Даты пребывания в отеле",
+              label: 'Даты пребывания в отеле',
               readonly: true,
               classes: 'js-input-text_date_range'
             },
           })
-            +air-datepicker({classes: 'air-datepicker_inline'})
+            +air-datepicker({
+              classes: 'air-datepicker_inline'
+            })
 
       div.guide-page__container.guide-page__container_with-fixed-col
         div
@@ -532,9 +608,9 @@ block content
             price: '9 990₽',
             priceTime: 'в сутки',
             listService: [
-              {name: '9 990₽ х 4 суток', price: '39 960₽'},
-              {name: 'Сбор за услуги: скидка 2 179₽', price: '0₽', tooltip: 'Подсказка'},
-              {name: 'Сбор за дополнительные услуги', price: '300₽', tooltip: 'Подсказка'}
+              { name: '9 990₽ х 4 суток', price: '39 960₽' },
+              { name: 'Сбор за услуги: скидка 2 179₽', price: '0₽', tooltip: 'Подсказка' },
+              { name: 'Сбор за дополнительные услуги', price: '300₽', tooltip: 'Подсказка' }
             ],
             totalPrice: '38 081₽'
           })
@@ -543,14 +619,16 @@ block content
           +site-login()
 
         div
-          +air-datepicker({classes: 'air-datepicker_inline'})
+          +air-datepicker({
+            classes: 'air-datepicker_inline'
+          })
           div.guide-page__gap.guide-page__gap_type_fifth
           +card-product({
             gallery: [
-              require("@/pages/guide/img/image-1.jpg").default,
-              require("@/pages/guide/img/image-2.jpg").default,
-              require("@/pages/guide/img/image-3.jpg").default,
-              require("@/pages/guide/img/image-4.jpg").default
+              require('@/pages/guide/img/image-1.jpg').default,
+              require('@/pages/guide/img/image-2.jpg').default,
+              require('@/pages/guide/img/image-3.jpg').default,
+              require('@/pages/guide/img/image-4.jpg').default
             ],
             roomNumber: '888',
             roomType: 'Люкс',

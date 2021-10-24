@@ -22,7 +22,7 @@ mixin rate-btn(options = {})
     id = id ? id : false
   )
     input.rate-btn__input.js-rate-btn__input(
-      type = "hidden",
+      type = 'hidden',
       value = value ? value : false,
       name = name
     )
@@ -30,5 +30,5 @@ mixin rate-btn(options = {})
         button.rate-btn__star-item.js-rate-btn__star-item(
           type = 'button',
           data-number-star = i, 
-          disabled = disabled ? "disabled" : false
+          disabled = disabled ? 'disabled' : false
         )

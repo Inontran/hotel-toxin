@@ -6,7 +6,7 @@ include ../heading/heading
   options.label - Подпись поля.
   options.placeholder - Текст внутри поля, пока в нем отсутствует значение.
   options.value - Значение поля.
-  options.type = "text" - Тип поля.
+  options.type = 'text' - Тип поля.
   options.name - Название input (атрибут name).
   options.readonly - Атрибут readonly.
   options.disabled - Атрибут disabled.
@@ -41,6 +41,6 @@ mixin input-text(options = {})
       placeholder = placeholder, 
       type = type,
       name = name ? name : false,
-      readonly = readonly ? "readonly" : false, 
-      disabled = disabled ? "disabled" : false, 
+      readonly = readonly ? 'readonly' : false, 
+      disabled = disabled ? 'disabled' : false, 
     )

@@ -33,9 +33,9 @@ mixin room-search(options = {})
           group: 'formFastSelect',
           targetId: '#dropdown-datepicker2',
           inputParams: {
-            label: "Прибытие",
+            label: 'Прибытие',
             readonly: true,
-            placeholder: "ДД.ММ.ГГГГ",
+            placeholder: 'ДД.ММ.ГГГГ',
             classes: 'js-input-text_type_start-date input-text_type_start-date',
           },
         })
@@ -45,9 +45,9 @@ mixin room-search(options = {})
           group: 'formFastSelect',
           id: 'dropdown-datepicker2',
           inputParams: {
-            label: "Выезд",
+            label: 'Выезд',
             readonly: true,
-            placeholder: "ДД.ММ.ГГГГ",
+            placeholder: 'ДД.ММ.ГГГГ',
             classes: 'js-input-text_type_end-date input-text_type_end-date',
           },
         })
@@ -61,29 +61,29 @@ mixin room-search(options = {})
       +dropdown({
         group: 'formFastSelect',
         inputParams:{
-          label: "Гости",
+          label: 'Гости',
           readonly: true,
-          placeholder: "Сколько гостей",
+          placeholder: 'Сколько гостей',
         }
       })
         +list-counters({
           arrayCounters: [
             {
-              label: "Взрослые",
+              label: 'Взрослые',
               groupItemId: 1,
               textOneItems: 'гость',
               textTwoItems: 'гостя',
               textManyItems: 'гостей',
             },
             {
-              label: "Дети",
+              label: 'Дети',
               groupItemId: 1,
               textOneItems: 'гость',
               textTwoItems: 'гостя',
               textManyItems: 'гостей',
             },
             {
-              label: "Младенцы",
+              label: 'Младенцы',
               groupItemId: 2,
               textOneItems: 'младенец',
               textTwoItems: 'младенца',
@@ -93,7 +93,7 @@ mixin room-search(options = {})
         })
 
     +button({
-      text: "Подобрать номер",
-      classes: "button_filled_blue-green-gradient button_theme_arrow button_wide",
+      text: 'Подобрать номер',
+      classes: 'button_filled_blue-green-gradient button_theme_arrow button_wide',
       type: 'submit',
     })
