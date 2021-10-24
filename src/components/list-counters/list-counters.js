@@ -88,12 +88,12 @@ $(() => {
       }
     });
 
-    const $btnReset = $('.js-list-counters__btn-reset', $listCounters);
+    const $btnReset = $('.js-list-counters__btn_type_reset', $listCounters);
     if (summAllCounters === 0) {
       result = $listCounters.attr('data-default-text') ? $listCounters.attr('data-default-text') : '';
-      $btnReset.addClass('list-counters__btn-reset_hidden');
+      $btnReset.addClass('list-counters__btn_hidden');
     } else {
-      $btnReset.removeClass('list-counters__btn-reset_hidden');
+      $btnReset.removeClass('list-counters__btn_hidden');
     }
     $dropdown.find('.js-dropdown__input-wrapper .js-input-text__field').val(result);
   }
@@ -105,7 +105,7 @@ $(() => {
 
   $body.on(
     'click',
-    '.js-list-counters:not(.list-counters_simple) .js-list-counters__btn-reset .js-button',
+    '.js-list-counters:not(.list-counters_simple) .js-list-counters__btn_type_reset .js-button',
     (event) => {
       const $btn = $(event.currentTarget);
       const $listCounters = $btn.closest('.js-list-counters');
@@ -116,7 +116,7 @@ $(() => {
 
   $body.on(
     'click',
-    '.js-list-counters:not(.list-counters_simple) .js-list-counters__btn-submit .js-button',
+    '.js-list-counters:not(.list-counters_simple) .js-list-counters__btn_type_submit .js-button',
     (event) => {
       const $btn = $(event.currentTarget);
       const $listCounters = $btn.closest('.js-list-counters');

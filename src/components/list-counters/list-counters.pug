@@ -61,7 +61,7 @@ mixin list-counters(options = {})
             })
       if type == 1
         div.list-counters__btns-result
-          div.list-counters__btn-reset.js-list-counters__btn-reset
+          div.list-counters__btn.list-counters__btn_type_reset.js-list-counters__btn_type_reset
             +button({text: "Очистить"})
-          div.list-counters__btn-submit.js-list-counters__btn-submit
+          div.list-counters__btn.list-counters__btn_type_submit.js-list-counters__btn_type_submit
             +button({text: "Применить"})

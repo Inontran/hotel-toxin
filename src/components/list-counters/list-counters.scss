@@ -28,8 +28,7 @@
     margin-top: 19px;
   }
 
-  &__btn-reset,
-  &__btn-submit {
+  &__btn {
     line-height: 1;
     padding-left: 15px;
     padding-right: 7px;
@@ -40,7 +39,7 @@
     }
   }
 
-  &__btn-submit {
+  &__btn_type_submit {
     margin-left: auto;
   }
 }
