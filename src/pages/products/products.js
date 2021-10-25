@@ -37,7 +37,7 @@ $(() => {
     $('.js-products__filter').addClass('products__filter_mobile_visible');
   }
 
-  $body.on('click', '.js-products_show-filter', handlerClickShowFilter);
+  $body.on('click', '.js-products__filter-showing-btn .js-button', handlerClickShowFilter);
 });
 
 
@@ -68,7 +68,7 @@ $(() => {
     if (window.matchMedia(`(max-width: ${$.BREAKPOINTS.md}px)`).matches) {
       $body.prepend($('.js-products__filter.products__filter_mobile'));
     } else {
-      $('.js-products__left-column').append($('.js-products__filter.products__filter_mobile'));
+      $('.js-products__filter-wrapper').append($('.js-products__filter.products__filter_mobile'));
     }
     return false;
   }
