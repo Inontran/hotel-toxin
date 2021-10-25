@@ -2,9 +2,13 @@ import $ from 'jquery';
 
 require('../../entry');
 
+require('@/components/dropdown/dropdown');
+require('@/components/slider-range/slider-range');
+require('@/components/checkbox/checkbox');
+require('@/components/expander/expander');
+require('@/components/air-datepicker/air-datepicker');
 require('@/components/card-product/card-product');
 require('@/components/pagination/pagination');
-require('@/components/filter-products/filter-products');
 require('@/components/button/button');
 require('@/components/heading/heading');
 
@@ -30,8 +34,57 @@ $(() => {
       overflow: 'hidden',
     });
 
-    $('.js-filter-products').addClass('filter-products_mobile_visible');
+    $('.js-products__filter').addClass('products__filter_mobile_visible');
   }
 
   $body.on('click', '.js-products_show-filter', handlerClickShowFilter);
+});
+
+
+$(() => {
+  const $body = $('body');
+
+  function handlerClickHideBtn(event) {
+    event.preventDefault();
+    const $btn = $(event.currentTarget);
+    $btn.closest('.js-products__filter').removeClass('products__filter_mobile_visible');
+
+    const scrollTopBody = $body.attr('data-last-scrolltop') ? $body.attr('data-last-scrolltop') : 0;
+
+    $('.js-page__content-wrapper, body').css({
+      top: '',
+      position: '',
+    });
+    $body.css({
+      overflow: '',
+    });
+    $('html, body').scrollTop(scrollTopBody);
+    $body.attr('data-last-scrolltop', 0);
+  }
+
+  $body.on('click', '.js-products__filter_hide-filter', handlerClickHideBtn);
+
+  function updateFilterProducts() {
+    if (window.matchMedia(`(max-width: ${$.BREAKPOINTS.md}px)`).matches) {
+      $body.prepend($('.js-products__filter.products__filter_mobile'));
+    } else {
+      $('.js-products__left-column').append($('.js-products__filter.products__filter_mobile'));
+    }
+    return false;
+  }
+
+  updateFilterProducts();
+
+  let timerFilter = null;
+
+  function handlerResizeFilterProducts() {
+    if (timerFilter !== null) {
+      clearTimeout(timerFilter);
+    }
+    timerFilter = setTimeout(() => {
+      updateFilterProducts();
+    }, 50);
+  }
+
+  $(window).resize(handlerResizeFilterProducts);
 });

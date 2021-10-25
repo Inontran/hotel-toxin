@@ -85,117 +85,113 @@
     }
   ],
 
-  "dataProductsPage":{
-    "isMobile": true,
-    
-    "optionDropdownDates":{
-      "customContent": true,
-      "classes": "dropdown_dates",
-      "inputParams":{
-        "label": "Даты пребывания в отеле",
-        "readonly": true,
-        "classes": "js-input-text_date_range",
-        "placeholder": "даты от и до включительно"
+  "optionDropdownDates":{
+    "customContent": true,
+    "classes": "dropdown_dates",
+    "inputParams":{
+      "label": "Даты пребывания в отеле",
+      "readonly": true,
+      "classes": "js-input-text_date_range",
+      "placeholder": "даты от и до включительно"
+    }
+  },
+
+  "optionDropdownDatesDatepicker":{
+    "classes": "air-datepicker_inline",
+    "minDate": "today"
+  },
+
+  "optionDropdownPeople":{
+    "inputParams":{
+      "label": "Гости",
+      "readonly": true,
+      "placeholder": "Сколько гостей"
+    },
+    "arrayCounters": [
+      {
+        "label": "Взрослые",
+        "groupItemId": 1,
+        "textOneItems": "гость",
+        "textTwoItems": "гостя",
+        "textManyItems": "гостей"
+      },
+      {
+        "label": "Дети",
+        "groupItemId": 1,
+        "textOneItems": "гость",
+        "textTwoItems": "гостя",
+        "textManyItems": "гостей"
+      },
+      {
+        "label": "Младенцы",
+        "groupItemId": 2,
+        "textOneItems": "младенец",
+        "textTwoItems": "младенца",
+        "textManyItems": "младенцев"
       }
-    },
-
-    "optionDropdownDatesDatepicker":{
-      "classes": "air-datepicker_inline",
-      "minDate": "today"
-    },
-
-    "optionDropdownPeople":{
-      "inputParams":{
-        "label": "Гости",
-        "readonly": true,
-        "placeholder": "Сколько гостей"
-      },
-      "arrayCounters": [
-        {
-          "label": "Взрослые",
-          "groupItemId": 1,
-          "textOneItems": "гость",
-          "textTwoItems": "гостя",
-          "textManyItems": "гостей"
-        },
-        {
-          "label": "Дети",
-          "groupItemId": 1,
-          "textOneItems": "гость",
-          "textTwoItems": "гостя",
-          "textManyItems": "гостей"
-        },
-        {
-          "label": "Младенцы",
-          "groupItemId": 2,
-          "textOneItems": "младенец",
-          "textTwoItems": "младенца",
-          "textManyItems": "младенцев"
-        }
-      ]
-    },
-
-    "optionSliderRange":{
-      "label": "Диапазон цены", 
-      "min": 0, 
-      "max": 15000, 
-      "val1": 5000, 
-      "val2": 10000,
-      "textBottom": "Стоимость за сутки пребывания в номере"
-    },
-
-    "checkboxesTitle": "Правила дома",
-    "checkboxes":[
-      {"text": "Можно курить"},
-      {"text": "Можно с питомцами", "checked": true},
-      {"text": "Можно пригласить гостей (до 10 человек)", "checked": true}
-    ],
-
-    "checkboxesBigTitle": "Доступность",
-    "checkboxesBig":[
-      {"text": "Ширина коридоров в номере не менее 91 см.", "title": "Широкий коридор"},
-      {"text": "На 1 этаже вас встретит специалист  и проводит до номера.", "title": "Помощник для инвалидов"}
-    ],
-
-    "optionDropdownFeature": {
-      "inputParams":{
-        "label": "Удобства номера",
-        "readonly": true,
-        "placeholder": "Кол-во спален, кроватей и т.д."
-      },
-      "arrayCounters": [
-        {
-          "label": "Спальни",
-          "textOneItems": "Спальня",
-          "textTwoItems": "Спальни",
-          "textManyItems": "Спален"
-        },
-        {
-          "label": "Кровати",
-          "textOneItems": "Кровать",
-          "textTwoItems": "Кровати",
-          "textManyItems": "Кроватей"
-        },
-        {
-          "label": "Ванные комнаты",
-          "textOneItems": "Ванная комната",
-          "textTwoItems": "Ванных комнаты",
-          "textManyItems": "Ванных комнат"
-        }
-      ]
-    },
-    
-    "expanderFeatureOptions": {
-      "text": "Дополнительные удобства",
-      "group": "expander-group-1"
-    },
-    "expanderFeatureCheckboxes":[
-      {"text": "Завтрак"},
-      {"text": "Письменный стол", "checked": true},
-      {"text": "Стул для кормления", "checked": true},
-      {"text": "Кроватка", "checked": true},
-      {"text": "Телевизор"},
-      {"text": "Шампунь"}
     ]
-  }
+  },
+
+  "optionSliderRange":{
+    "label": "Диапазон цены", 
+    "min": 0, 
+    "max": 15000, 
+    "val1": 5000, 
+    "val2": 10000,
+    "textBottom": "Стоимость за сутки пребывания в номере"
+  },
+
+  "checkboxesTitle": "Правила дома",
+  "checkboxes":[
+    {"text": "Можно курить"},
+    {"text": "Можно с питомцами", "checked": true},
+    {"text": "Можно пригласить гостей (до 10 человек)", "checked": true}
+  ],
+
+  "checkboxesBigTitle": "Доступность",
+  "checkboxesBig":[
+    {"text": "Ширина коридоров в номере не менее 91 см.", "title": "Широкий коридор"},
+    {"text": "На 1 этаже вас встретит специалист  и проводит до номера.", "title": "Помощник для инвалидов"}
+  ],
+
+  "optionDropdownFeature": {
+    "inputParams":{
+      "label": "Удобства номера",
+      "readonly": true,
+      "placeholder": "Кол-во спален, кроватей и т.д."
+    },
+    "arrayCounters": [
+      {
+        "label": "Спальни",
+        "textOneItems": "Спальня",
+        "textTwoItems": "Спальни",
+        "textManyItems": "Спален"
+      },
+      {
+        "label": "Кровати",
+        "textOneItems": "Кровать",
+        "textTwoItems": "Кровати",
+        "textManyItems": "Кроватей"
+      },
+      {
+        "label": "Ванные комнаты",
+        "textOneItems": "Ванная комната",
+        "textTwoItems": "Ванных комнаты",
+        "textManyItems": "Ванных комнат"
+      }
+    ]
+  },
+  
+  "expanderFeatureOptions": {
+    "text": "Дополнительные удобства",
+    "group": "expander-group-1"
+  },
+  "expanderFeatureCheckboxes":[
+    {"text": "Завтрак"},
+    {"text": "Письменный стол", "checked": true},
+    {"text": "Стул для кормления", "checked": true},
+    {"text": "Кроватка", "checked": true},
+    {"text": "Телевизор"},
+    {"text": "Шампунь"}
+  ]
 }

@@ -1,8 +1,12 @@
 extends ../base/base.pug
 
+include ../../components/dropdown/dropdown
+include ../../components/slider-range/slider-range
+include ../../components/checkbox/checkbox
+include ../../components/expander/expander
+include ../../components/air-datepicker/air-datepicker
 include ../../components/card-product/card-product
 include ../../components/pagination/pagination
-include ../../components/filter-products/filter-products
 include ../../components/button/button
 include ../../components/heading/heading
 
@@ -22,6 +26,17 @@ block content
     const {
       cards = false,
       dataProductsPage = {},
+      optionDropdownDates = false,
+      optionDropdownDatesDatepicker = {},
+      optionDropdownPeople = false,
+      optionSliderRange = false,
+      checkboxes = false,
+      checkboxesTitle = false,
+      checkboxesBig = false,
+      checkboxesBigTitle = false,
+      optionDropdownFeature = false,
+      expanderFeatureOptions = false,
+      expanderFeatureCheckboxes = []
     } = htmlWebpackPlugin.options.getData();
 
   - dataFooter.classes = 'footer_bordered_top';
@@ -36,45 +51,107 @@ block content
 
   main.page__main
     div.products
-
       div.products__container
-        div.products__grid
-          div.products__left-column.js-products__left-column
-            +filter-products(dataProductsPage)
-          section.products__center-column
-            div.products__title
-              +heading({
-                text: 'Номера, которые мы для вас подобрали',
-                classes: 'heading_large',
-                tag: 'h1',
-              })
-            div.products__btn_filter-showing
-              +button({
-                classes: 'button_filled_blue-green-gradient button_size_md js-products_show-filter',
-                text: 'Показать фильтр'
-              })
-            div.products__cards-container
-              each dataCard in cards
-                div.products__card-wrapper
-                  - var index = 0
-                  while index < dataCard.gallery.length
-                    - dataCard.gallery[index] = require('@/pages/products/img/' + dataCard.gallery[index]).default
-                    - index++
-                  +card-product({
-                    classes: 'card-product_full-height',
-                    gallery: dataCard.gallery ? dataCard.gallery : false,
-                    roomNumber: dataCard.roomNumber ? dataCard.roomNumber : false,
-                    roomType: dataCard.roomType ? dataCard.roomType : false,
-                    price: dataCard.price ? dataCard.price : false,
-                    priceTime: dataCard.priceTime ? dataCard.priceTime : false,
-                    countReviews: dataCard.countReviews ? dataCard.countReviews : false,
-                    roomType: dataCard.roomType ? dataCard.roomType : false,
-                    rating: dataCard.rating ? dataCard.rating : false,
-                  })
-            div.products__pagination-wrapper
-              +pagination({
-                page: 1,
-                perpage: 12,
-                elements: 175,
-                text: 'вариантов аренды'
-              })
+        div.products__left-column.js-products__left-column
+
+          form.products__filter.js-products__filter
+            div.products__filter-content-wrapper
+              div.products__filter-close-btn
+                +button({
+                  classes: 'button_filled_blue-green-gradient button_size_md js-products__filter_hide-filter',
+                  text: 'Скрыть фильтр'
+                })
+
+              if optionDropdownDates
+                - optionDropdownDates.group = 'filterProducts'
+                div.products__filter-input-dates
+                  +dropdown(optionDropdownDates)
+                    +air-datepicker(optionDropdownDatesDatepicker)
+
+              if optionDropdownPeople
+                - optionDropdownPeople.group = 'filterProducts'
+                div.products__filter-input-number-guests 
+                  +dropdown(optionDropdownPeople)
+                    +list-counters(optionDropdownPeople)
+
+              if optionSliderRange
+                div.products__filter-range-price
+                  +slider-range(optionSliderRange)
+
+              if checkboxes
+                div.products__filter-rules-checkboxes
+                  if checkboxesTitle
+                    div.products__filter-rules-subtitle
+                      +heading({
+                        text: checkboxesTitle,
+                        classes: 'heading_small',
+                      })
+                  ul.products__filter-list-checkboxes
+                    each val, index in checkboxes
+                      li.products__filter-list-checkboxes-item
+                        +checkbox(val)
+
+              if checkboxesBig
+                div.products__filter-accessibility-checkboxes
+                  if checkboxesBigTitle
+                    div.products__filter-accessibility-subtitle
+                      +heading({
+                        text: checkboxesBigTitle,
+                        classes: 'heading_small',
+                      })
+                  ul.products__filter-list-checkboxes
+                    each val, index in checkboxesBig
+                      li.products__filter-list-checkboxes-item
+                        +checkbox(val)
+
+              if optionDropdownFeature
+                - optionDropdownFeature.type = 2
+                - optionDropdownFeature.group = 'filterProducts'
+                div.products__filter-selection-amenities
+                  +dropdown(optionDropdownFeature)
+                    +list-counters(optionDropdownFeature)
+
+              if expanderFeatureOptions
+                +expander(expanderFeatureOptions)
+                  ul.products__filter-list-checkboxes
+                    each val, index in expanderFeatureCheckboxes
+                      li.products__filter-list-checkboxes-item
+                        +checkbox(val)
+
+        section.products__center-column
+          div.products__title
+            +heading({
+              text: 'Номера, которые мы для вас подобрали',
+              classes: 'heading_large',
+              tag: 'h1',
+            })
+          div.products__btn_filter-showing
+            +button({
+              classes: 'button_filled_blue-green-gradient button_size_md js-products_show-filter',
+              text: 'Показать фильтр'
+            })
+          div.products__cards-container
+            each dataCard in cards
+              div.products__card-wrapper
+                - var index = 0
+                while index < dataCard.gallery.length
+                  - dataCard.gallery[index] = require('@/pages/products/img/' + dataCard.gallery[index]).default
+                  - index++
+                +card-product({
+                  classes: 'card-product_full-height',
+                  gallery: dataCard.gallery ? dataCard.gallery : false,
+                  roomNumber: dataCard.roomNumber ? dataCard.roomNumber : false,
+                  roomType: dataCard.roomType ? dataCard.roomType : false,
+                  price: dataCard.price ? dataCard.price : false,
+                  priceTime: dataCard.priceTime ? dataCard.priceTime : false,
+                  countReviews: dataCard.countReviews ? dataCard.countReviews : false,
+                  roomType: dataCard.roomType ? dataCard.roomType : false,
+                  rating: dataCard.rating ? dataCard.rating : false,
+                })
+          div.products__pagination-wrapper
+            +pagination({
+              page: 1,
+              perpage: 12,
+              elements: 175,
+              text: 'вариантов аренды'
+            })
