@@ -28,34 +28,32 @@ mixin slider-range(options = {})
     class = classes,
     id = id ? id : false
   )
-    div.slider-range__top
+    div.slider-range__label-wrapper
       if label
-        span.slider-range__label
+        div.slider-range__label
           +heading({
             text: label,
             classes: 'heading_small',
             tag: 'span',
           })
-      input.slider-range__input-result.js-slider-range__input-result(
-        type = 'text',
-        readonly
-      )
+      div.slider-range__formatted-output.js-slider-range__formatted-output
+      
     div.slider-range__slider.js-slider-range__slider(
       data-min = min,
       data-max = max, 
       data-val1 = val1, 
       data-val2 = val2
     )
-    input.js-slider-range__min-val(
+    input.slider-range__input-min-val.js-slider-range__input-min-val(
       type = 'hidden',
       name = 'min-val',
       value = val1,
     )
-    input.js-slider-range__max-val(
+    input.slider-range__input-max-val.js-slider-range__input-max-val(
       type = 'hidden',
       name = 'max-val',
       value = val2,
     )
 
     if textBottom
-      p.slider-range__text-bottom #{textBottom}
+      p.slider-range__text #{textBottom}

@@ -10,9 +10,9 @@ $(document).ready(() => {
   $('body').find('.js-slider-range').each(function () {
     const $currentSlider = $(this);
     const $sliderWrapper = $currentSlider.find('.js-slider-range__slider');
-    const $currentInput = $currentSlider.find('.js-slider-range__input-result');
-    const $inputMinVal = $currentSlider.find('.js-slider-range__min-val');
-    const $inputMaxVal = $currentSlider.find('.js-slider-range__max-val');
+    const $formattedOutput = $currentSlider.find('.js-slider-range__formatted-output');
+    const $inputMinVal = $currentSlider.find('.js-slider-range__input-min-val');
+    const $inputMaxVal = $currentSlider.find('.js-slider-range__input-max-val');
 
     const valMin = parseInt($sliderWrapper.attr('data-min'), 10);
     const valMax = parseInt($sliderWrapper.attr('data-max'), 10);
@@ -28,7 +28,7 @@ $(document).ready(() => {
       resultInputVal += values[0] + $.RUBLE;
       resultInputVal += ' - ';
       resultInputVal += values[1] + $.RUBLE;
-      $currentInput.val(resultInputVal);
+      $formattedOutput.text(resultInputVal);
     }
 
     function writeValuesToInputs(values) {
