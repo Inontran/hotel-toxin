@@ -46,13 +46,13 @@ $(() => {
 
           case 'next':
             if (this.active || this.page === 1) {
-              return '<a href="#" class="pagination__next">></a>';
+              return '<a href="#" class="pagination__forward-btn">></a>';
             }
             return '';
 
           case 'prev':
             if (this.active || this.page === this.pages) {
-              return '<a href="#" class="pagination__prev"><</a>';
+              return '<a href="#" class="pagination__back-btn"><</a>';
             }
             return '';
 

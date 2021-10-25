@@ -6,8 +6,8 @@
     align-items: center;
   }
 
-  &__next,
-  &__prev {
+  &__forward-btn,
+  &__back-btn {
     display: inline-block;
     border-radius: 100vh;
     position: relative;
@@ -33,7 +33,7 @@
     }
   }
 
-  &__prev {
+  &__back-btn {
     &::after {
       transform: translate(-50%, -50%) rotate(180deg);
     }
