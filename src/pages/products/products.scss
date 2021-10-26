@@ -96,25 +96,23 @@
   }
 
   &__cards-container {
-    display: flex;
-    margin: 0 -6px 23px;
-    flex-wrap: wrap;
-  }
-
-  &__card-wrapper {
-    padding: 0 6px 20px;
-    flex: 1 1 33.3333333%;
-    max-width: 33.3333333%;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    row-gap: 20px;
+    column-gap: 12px;
+    margin-bottom: 43px;
 
     @media (max-width: $md) {
-      flex: 1 1 50%;
-      max-width: 50%;
+      grid-template-columns: repeat(2, 1fr);
     }
 
     @media (max-width: $xs) {
-      flex: 1 1 100%;
-      max-width: 100%;
+      grid-template-columns: repeat(1, 1fr);
     }
+  }
+
+  &__card-wrapper {
+    display: grid;
   }
 
   &__filter-showing-btn {
