@@ -33,18 +33,18 @@ mixin room-reservation(options = {})
     class = classes,
     id = id ? id : false
   )
-    header.room-reservation__header
-      div.room-reservation__header-left
-        span.room-reservation__header-symbol №
-        span.room-reservation__header-number #{roomNumber}
+    div.room-reservation__room-info
+      div.room-reservation__room-name
+        span.room-reservation__symbol №
+        span.room-reservation__room-number #{roomNumber}
         if roomType
-          span.room-reservation__header-type #{roomType}
-      div.room-reservation__header-right
-        span.room-reservation__header-price #{price}
-        span.room-reservation__header-price-type  #{priceTime}
+          span.room-reservation__room-type #{roomType}
+      div.room-reservation__room-price
+        span.room-reservation__room-number-price #{price}
+        span.room-reservation__room-payment-period  #{priceTime}
 
-    div.room-reservation__dates-row
-      div.room-reservation__dates-col
+    div.room-reservation__dates-container
+      div.room-reservation__input-dates-wrapper
         +dropdown({
           classes: 'js-dropdown_type_datepicker-output dropdown_type_datepicker-output',
           group: 'formBooking',
@@ -56,7 +56,7 @@ mixin room-reservation(options = {})
             classes: 'js-input-text_type_start-date input-text_type_start-date',
           },
         })
-      div.room-reservation__dates-col
+      div.room-reservation__input-dates-wrapper
         +dropdown({
           classes: 'js-dropdown_type_datepicker-output dropdown_type_datepicker-output dropdown_with-dates dropdown_align_right',
           group: 'formBooking',
@@ -121,10 +121,10 @@ mixin room-reservation(options = {})
               td.room-reservation__table-cell.room-reservation__table-cell_with-price #{item.price}
 
     if totalPrice
-      p.room-reservation__bottom
-        span.room-reservation__bottom-word Итого
-        span.room-reservation__bottom-points
-        span.room-reservation__bottom-price #{totalPrice}
+      p.room-reservation__total-price-wrapper
+        span.room-reservation__word Итого
+        span.room-reservation__points
+        span.room-reservation__total-price #{totalPrice}
 
     +button({
       text: "Забронировать",

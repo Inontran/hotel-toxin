@@ -11,75 +11,64 @@
     padding: 20px 9px 20px;
   }
 
-  &__header {
+  &__room-info {
     display: flex;
     align-items: flex-end;
     justify-content: space-between;
-    margin-left: -10px;
-    margin-right: -10px;
     margin-bottom: 10px;
     margin-top: 2px;
-
-    &-left,
-    &-right {
-      padding: 0 10px 10px;
-    }
-
-    &-left {
-      font-weight: 700;
-    }
-
-    &-symbol,
-    &-number {
-      font-family: 'Montserrat', sans-serif;
-    }
-
-    &-symbol {
-      font-size: calc_rem(14);
-      line-height: 1.21;
-      padding-right: 8px;
-    }
-
-    &-number {
-      font-size: calc_rem(24);
-      line-height: 1.21;
-    }
-
-    &-type {
-      font-size: calc_rem(12);
-      line-height: 1.25;
-      color: $purple;
-      text-transform: uppercase;
-      padding-left: 8px;
-    }
-
-    &-right {
-      color: $dark50;
-    }
-
-    &-price {
-      font-weight: 700;
-      font-size: calc_rem(14);
-    }
-
-    &-price-type {
-      font-size: calc_rem(12);
-    }
   }
 
-  &__dates-row {
-    display: flex;
-    flex-wrap: wrap;
+  &__room-name,
+  &__room-price {
+    padding-bottom: 10px;
+  }
+
+  &__room-name {
+    font-weight: 700;
+    padding-right: 10px;
+  }
+
+  &__symbol {
+    font-size: calc_rem(14);
+    line-height: 1.21;
+    padding-right: 8px;
+  }
+
+  &__room-number {
+    font-size: calc_rem(24);
+    line-height: 1.21;
+  }
+
+  &__room-type {
+    font-size: calc_rem(12);
+    line-height: 1.25;
+    color: $purple;
+    text-transform: uppercase;
+    padding-left: 8px;
+  }
+
+  &__room-price {
+    color: $dark50;
+  }
+
+  &__room-number-price {
+    font-weight: 700;
+    font-size: calc_rem(14);
+  }
+
+  &__room-payment-period {
+    font-size: calc_rem(12);
+  }
+
+  &__dates-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
     justify-content: space-between;
-    margin-left: -10px;
-    margin-right: -10px;
+    column-gap: 20px;
   }
 
-  &__dates-col {
-    flex-basis: calc(50% - 20px);
-    flex-grow: 1;
-    margin-left: 10px;
-    margin-right: 10px;
+  &__input-dates-wrapper {
     min-width: 150px;
   }
 
@@ -124,26 +113,27 @@
     }
   }
 
-  &__bottom {
+  &__total-price-wrapper {
     display: flex;
     align-items: flex-end;
     font-weight: 700;
     font-size: calc_rem(19);
     line-height: 1;
 
-    &-points {
-      border-bottom: 1px dashed $dark25;
-      width: 100%;
-      margin: 0 5px 4px;
-    }
-
-    &-price {
-      white-space: nowrap;
-    }
   }
 
-  &__dates-col,
-  &__bottom,
+  &__points {
+    flex-grow: 1;
+    border-bottom: 1px dashed $dark25;
+    margin: 0 5px 4px;
+  }
+
+  &__total-price {
+    white-space: nowrap;
+  }
+
+  &__input-dates-wrapper,
+  &__total-price-wrapper,
   &__table-wrapper,
   &__input-wrapper {
     margin-bottom: 20px;
