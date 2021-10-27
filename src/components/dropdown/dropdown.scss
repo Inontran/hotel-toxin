@@ -89,7 +89,7 @@
     }
   }
 
-  &.dropdown_dates {
+  &.dropdown_with-dates {
     .dropdown__content {
       top: calc(100% + 5px);
       border: 0;
@@ -104,7 +104,7 @@
   }
 
   &.dropdown_aсtivated {
-    &:not(.dropdown_dates) .input__field {
+    &:not(.dropdown_with-dates) .input__field {
       border-color: $dark50;
       border-bottom-left-radius: 0;
       border-bottom-right-radius: 0;
@@ -116,7 +116,7 @@
       overflow-y: auto;
     }
 
-    &.dropdown_dates {
+    &.dropdown_with-dates {
       .dropdown__content {
         max-height: none;
       }

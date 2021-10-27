@@ -87,7 +87,7 @@
 
   "optionDropdownDates":{
     "customContent": true,
-    "classes": "dropdown_dates",
+    "classes": "dropdown_with-dates",
     "inputParams":{
       "label": "Даты пребывания в отеле",
       "readonly": true,
