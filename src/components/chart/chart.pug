@@ -29,15 +29,16 @@ mixin chart(options = {})
 
   div.chart.js-chart(
     class = classes,
-    id = id ? id : false
+    id = id ? id : false,
     data-num-1 = chartNumAwesome, 
     data-num-2 = chartNumGood, 
     data-num-3 = chartNumNotbad, 
-    data-num-4 = chartNumDisappointed
+    data-num-4 = chartNumDisappointed,
   )
     div.chart__container
-      div.chart__wrapper
-        canvas.chart__picture.js-chart__picture
+      div.chart__diagram-container
+        div.chart__diagram
+          canvas.chart__picture.js-chart__picture
         if chartCountAll
           p.chart__count
             span.chart__count-number #{chartCountAll}

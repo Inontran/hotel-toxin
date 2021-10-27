@@ -8,15 +8,23 @@
     flex-wrap: wrap;
   }
 
-  &__wrapper {
-    width: 248px;
+  &__diagram-container {
+    width: 150px;
+    height: 124px;
     position: relative;
     z-index: 1;
-    margin-right: -98px;
+  }
+
+  &__diagram {
+    width: 248px;
+    height: 124px;
+    position: absolute;
+    top: 0;
+    left: 0;
   }
 
   &__picture {
-    margin: -1px -64px;
+    transform: translate(-64px, -1px);
   }
 
   &__count {
