@@ -170,35 +170,19 @@
       display: flex;
       flex-wrap: wrap;
       justify-content: center;
-      margin-right: -35px;
-      margin-left: -35px;
-
-      @media (max-width: $lg) {
-        margin-right: -20px;
-        margin-left: -20px;
-      }
-
-      @media (max-width: $md) {
-        margin-right: -10px;
-        margin-left: -10px;
-      }
     }
   }
 
-  &__main-col-body,
-  &__side-col-body {
+  &__main-col-body{
     padding-bottom: 35px;
-    padding-right: 35px;
-    padding-left: 35px;
+    padding-right: 70px;
 
     @media (max-width: $lg) {
-      padding-right: 20px;
-      padding-left: 20px;
+      padding-right: 40px;
     }
 
     @media (max-width: $md) {
-      padding-right: 10px;
-      padding-left: 10px;
+      padding-right: 0;
     }
   }
 
