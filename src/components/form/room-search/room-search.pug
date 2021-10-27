@@ -26,8 +26,8 @@ mixin room-search(options = {})
         classes: 'heading_large',
         tag: 'h1'
       })
-    div.room-search__dates-row
-      div.room-search__dates-col
+    div.room-search__dates-container
+      div.room-search__input-dates-wrapper
         +dropdown({
           classes: 'js-dropdown_type_datepicker-output dropdown_type_datepicker-output',
           group: 'formFastSelect',
@@ -39,7 +39,7 @@ mixin room-search(options = {})
             classes: 'js-input-text_type_start-date input-text_type_start-date',
           },
         })
-      div.room-search__dates-col
+      div.room-search__input-dates-wrapper
         +dropdown({
           classes: 'js-dropdown_type_datepicker-output dropdown_type_datepicker-output dropdown_with-dates dropdown_align_right',
           group: 'formFastSelect',
