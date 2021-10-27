@@ -80,7 +80,7 @@ block content
         div.product__body-row
           div.product__main-col-body
             div.product__small-grid
-              section.product__room-details-col
+              section.product__room-details
                 if optionsInfographics
                   div.product__title
                     +heading({
@@ -94,7 +94,7 @@ block content
                     - index++
                   +infographics(optionsInfographics)
               if chartCountAll
-                section.product__room-rating-col
+                section.product__room-rating
                   div.product__title
                     +heading({
                       text: 'Впечатления от номера',
@@ -112,22 +112,20 @@ block content
             if reviews
               section.product__section-reviews
                 header.product__header-reviews
-                  div.product__header-reviews-col
-                    div.product__title.product__title_theme_review
-                      +heading({
-                        text: 'Отзывы посетителей номера',
-                        classes: 'heading_middle',
-                        tag: 'h2',
-                      })
-                  div.product__header-reviews-col
-                    span.product__text-count-reviews #{reviews.length} отзыва
+                  div.product__title.product__title_theme_review
+                    +heading({
+                      text: 'Отзывы посетителей номера',
+                      classes: 'heading_middle',
+                      tag: 'h2',
+                    })
+                  span.product__text-count-reviews #{reviews.length} отзыва
                 each reviewItem, index in reviews
                   div.product__review-wrapper
                     - reviewItem.avatar = require('@/pages/product/img/' + reviewItem.avatar).default
                     +review(reviewItem)
 
-            div.product__small-grid.product__small-grid_with-indent
-              section.product__rules-col
+            div.product__small-grid
+              section.product__rules
                 if rulesTitle
                   div.product__title.product__title_theme_rules
                     +heading({
@@ -140,7 +138,7 @@ block content
                     classes: 'list_with-big-dots',
                     items: optionsRules.items,
                   })
-              section.product__rule-cancel-col
+              section.product__rule-cancel
                 if cancelTitle
                   div.product__title
                     +heading({
