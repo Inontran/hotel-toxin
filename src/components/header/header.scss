@@ -80,11 +80,11 @@
 
   &__auth-btns {
     grid-area: btns;
-    display: inline-flex;
+    display: grid;
+    grid-template-columns: repeat(2, auto);
+    column-gap: 20px;
     justify-content: center;
     padding-left: 18px;
-    margin-left: -10px;
-    margin-right: -10px;
 
     @media (max-width: $lg) {
       position: absolute;
