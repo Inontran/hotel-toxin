@@ -41,21 +41,21 @@ mixin card-product(options = {})
                   alt = 'фото номера ' + roomNumber
                 )
     div.card-product__content
-      div.card-product__content-top
-        div.card-product__content-top-left
-          span.card-product__content-top-symbol №
-          span.card-product__content-top-number #{roomNumber}
+      div.card-product__room-info
+        div.card-product__room-name
+          span.card-product__symbol №
+          span.card-product__room-number #{roomNumber}
           if roomType
-            span.card-product__content-top-type #{roomType}
-        div.card-product__content-top-right
-          span.card-product__content-top-price #{price}
-          span.card-product__content-top-price-type  #{priceTime}
-      div.card-product__content-bottom
-        div.card-product__content-bottom-left
+            span.card-product__room-type #{roomType}
+        div.card-product__room-price
+          span.card-product__room-number-price #{price}
+          span.card-product__room-payment-period  #{priceTime}
+      div.card-product__reviews-container
+        div.card-product__stars-wrapper
           +rate-btn({
             value: rating, 
             disabled: true
           })
-        div.card-product__content-bottom-right
+        div.card-product__count-reviews-wrapper
           span.card-product__reviews-count-number #{countReviews}
           span.card-product__reviews-count-text  Отзывов
