@@ -2,7 +2,7 @@
 
 .list-counters {
   &__counter,
-  &__btns-result {
+  &__btns {
     display: flex;
     align-items: center;
     justify-content: space-between;
@@ -24,7 +24,7 @@
     margin-left: auto;
   }
 
-  &__btns-result {
+  &__btns {
     margin-top: 19px;
   }
 
@@ -37,9 +37,9 @@
     &_hidden {
       display: none;
     }
-  }
-
-  &__btn_type_submit {
-    margin-left: auto;
+    
+    &_type_submit {
+      margin-left: auto;
+    }
   }
 }

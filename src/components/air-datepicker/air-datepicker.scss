@@ -19,21 +19,24 @@
     align-items: center;
     justify-content: space-between;
     flex-wrap: wrap;
-    padding-top: 20px;
+    padding-top: 10px;
     line-height: 1;
-    margin: 0 -10px -10px;
   }
 
   &__btn {
-    padding: 0 10px 10px;
+    padding-top: 10px;
 
     &_hidden {
       display: none;
     }
-  }
 
-  &__btn_type_submit {
-    margin-left: auto;
+    &_type_reset {
+      padding-right: 10px;
+    }
+
+    &_type_submit {
+      margin-left: auto;
+    }
   }
 
   .datepicker {
