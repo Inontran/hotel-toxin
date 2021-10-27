@@ -23,12 +23,9 @@
   }
 
   &__input-date-birthday,
-  &__toggle-subscription {
-    margin-bottom: 20px;
-  }
-
+  &__toggle-subscription,
   &__btn-registration {
-    margin-bottom: 30px;
+    margin-bottom: 20px;
   }
 
   &__subtitle-wrapper {
@@ -38,13 +35,11 @@
   &__genders {
     display: flex;
     flex-wrap: wrap;
-    margin-left: -10px;
-    margin-right: -10px;
     margin-bottom: 20px;
   }
 
   &__radio-wrapper {
-    padding: 0 10px 4px;
+    padding: 0 10px 4px 0;
   }
 
   &__footer {
@@ -52,14 +47,14 @@
     align-items: center;
     justify-content: space-between;
     flex-wrap: wrap;
-    margin-left: -10px;
-    margin-right: -10px;
-    margin-bottom: -10px;
 
     &-text,
     &-button {
-      flex-grow: 1;
-      padding: 0 10px 10px;
+      padding-top: 10px;
+    }
+    
+    &-text {
+      padding-right: 10px;
     }
   }
 }
