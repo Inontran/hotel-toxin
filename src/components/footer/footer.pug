@@ -33,56 +33,55 @@ mixin footer(options = {})
     class = classes, 
     id = id ? id : false
   )
-    div.footer__container
-      div.footer__main-content
-        div.footer__logo
-          div.footer__logo-wrapper
-            +logo()
-          p.footer__text #{text1}
+    div.footer__main-content
+      div.footer__logo
+        div.footer__logo-wrapper
+          +logo()
+        p.footer__text #{text1}
+      
+      div.footer__nav-items-menu
+        if menuItems[0].subtitle
+          div.footer__title-wrapper
+            +heading({
+              text: menuItems[0].subtitle,
+              classes: 'heading_small',
+            })
+        nav.footer__list
+          each val, index in menuItems[0].items
+            a.footer__list-link(href = val.href) #{val.name}
         
-        div.footer__nav-items-menu
-          if menuItems[0].subtitle
-            div.footer__title-wrapper
-              +heading({
-                text: menuItems[0].subtitle,
-                classes: 'heading_small',
-              })
-          nav.footer__list
-            each val, index in menuItems[0].items
-              a.footer__list-link(href = val.href) #{val.name}
-          
-        div.footer__about-items-menu
-          if menuItems[1].subtitle
-            div.footer__title-wrapper
-              +heading({
-                text: menuItems[1].subtitle,
-                classes: 'heading_small',
-              })
-          nav.footer__list
-            each val, index in menuItems[1].items
-              a.footer__list-link(href = val.href) #{val.name}
-        
-        div.footer__support-items-menu
-          if menuItems[2].subtitle
-            div.footer__title-wrapper
-              +heading({
-                text: menuItems[2].subtitle,
-                classes: 'heading_small',
-              })
-          nav.footer__list
-            each val, index in menuItems[2].items
-              a.footer__list-link(href = val.href) #{val.name}
-        
-        div.footer__subscription
-          if titleSubscribe
-            div.footer__title-wrapper
-              +heading({
-                text: titleSubscribe,
-                classes: 'heading_small',
-              })
-          if text2
-            p.footer__text-subscription #{text2}
-          +subscription()
+      div.footer__about-items-menu
+        if menuItems[1].subtitle
+          div.footer__title-wrapper
+            +heading({
+              text: menuItems[1].subtitle,
+              classes: 'heading_small',
+            })
+        nav.footer__list
+          each val, index in menuItems[1].items
+            a.footer__list-link(href = val.href) #{val.name}
+      
+      div.footer__support-items-menu
+        if menuItems[2].subtitle
+          div.footer__title-wrapper
+            +heading({
+              text: menuItems[2].subtitle,
+              classes: 'heading_small',
+            })
+        nav.footer__list
+          each val, index in menuItems[2].items
+            a.footer__list-link(href = val.href) #{val.name}
+      
+      div.footer__subscription
+        if titleSubscribe
+          div.footer__title-wrapper
+            +heading({
+              text: titleSubscribe,
+              classes: 'heading_small',
+            })
+        if text2
+          p.footer__text-subscription #{text2}
+        +subscription()
 
     div.footer__copyright
       div.footer__copyright-wrapper

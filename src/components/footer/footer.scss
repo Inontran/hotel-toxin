@@ -7,7 +7,7 @@
     border-top: 1px solid $dark25;
   }
 
-  &__container,
+  &__main-content,
   &__copyright-wrapper {
     max-width: $max_width_container;
     margin-left: auto;
@@ -20,8 +20,9 @@
     display: grid;
     grid-template-areas: 'col1 col2 col3 col4 col5';
     grid-template-columns: 3fr 2fr 2fr 2fr 3fr;
-    padding: 100px 0;
-    margin: 0 -20px;
+    padding-top: 100px;
+    padding-bottom: 100px;
+    column-gap: 40px;
 
     @media (max-width: $md+1) {
       grid-template-areas: 'col1';
@@ -29,14 +30,6 @@
       padding-top: 110px;
       padding-bottom: 0;
     }
-  }
-
-  &__logo,
-  &__nav-items-menu,
-  &__about-items-menu,
-  &__support-items-menu,
-  &__subscription {
-    padding: 0 20px;
   }
 
   &__logo {
