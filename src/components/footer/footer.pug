@@ -87,4 +87,5 @@ mixin footer(options = {})
       div.footer__copyright-wrapper
         if copyrightText
           p.footer__text-copyright #{copyrightText}
-        +social-nets()
+        div.footer__social-links
+          +social-nets()

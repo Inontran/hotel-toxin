@@ -1,15 +1,14 @@
 @import '@/theme/variables.scss';
 
 .social-nets {
-  display: inline-flex;
+  display: inline-grid;
+  grid-auto-flow: column;
+  column-gap: 20px;
   align-items: center;
   justify-content: center;
-  margin: 0 -10px;
-  padding: 0 3px;
 
   &__item {
     list-style: none;
-    margin: 0 10px;
   }
 
   &__link {
