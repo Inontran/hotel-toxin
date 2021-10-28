@@ -90,7 +90,6 @@
         right: 13px;
         bottom: 14px;
         z-index: 1;
-        margin: 0 -2px;
         display: flex;
 
         .owl-dot {
@@ -99,7 +98,7 @@
           border: 1px solid $white;
           box-shadow: 0 5px 5px $dark30;
           transition: 0.3s;
-          margin: 0 2px;
+          margin-left: 4px;
           border-radius: 100vh;
 
           &.active {
