@@ -1,6 +1,21 @@
 @import '@/theme/variables.scss';
 
 .list {
+  &.list_with-gray-items {
+    padding: 10px 20px 0;
+
+    .list__item {
+      display: block;
+      margin-bottom: 10px;
+    }
+
+    .list__item-link {
+      color: $dark50;
+      text-decoration: none;
+      font-weight: 400;
+    }
+  }
+
   &.list_with-big-dots {
     .list__item {
       position: relative;
@@ -22,21 +37,6 @@
         border-radius: 100vh;
         background: $dark25;
       }
-    }
-  }
-
-  &.list_with-gray-items {
-    padding: 10px 20px 0;
-
-    .list__item {
-      display: block;
-      margin-bottom: 10px;
-    }
-
-    .list__item-link {
-      color: $dark50;
-      text-decoration: none;
-      font-weight: 400;
     }
   }
 }

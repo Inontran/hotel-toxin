@@ -8,11 +8,11 @@
     max-width: $max_width_container;
     margin: 0 auto;
     padding: 30px 10px 70px;
-  
+
     @media (max-width: $lg) {
       grid-column-gap: 30px;
     }
-  
+
     @media (max-width: $md) {
       grid-template-columns: 100%;
     }
@@ -42,7 +42,6 @@
       &.products__filter_mobile_visible {
         transform: translateX(0);
       }
-
     }
 
     &-content-wrapper {
@@ -58,37 +57,37 @@
     &-list-checkboxes-item {
       margin-bottom: 10px;
     }
-  
+
     &-input-dates {
       margin-bottom: 20px;
     }
-  
+
     &-input-number-guests,
     &-range-price,
     &-accessibility-checkboxes {
       margin-bottom: 29px;
     }
-  
+
     &-rules-checkboxes {
       margin-bottom: 31px;
     }
-  
+
     &-rules-subtitle {
       margin-bottom: 13px;
     }
-  
+
     &-accessibility-subtitle,
     &-selection-amenities {
       margin-bottom: 15px;
     }
-  
+
     &-list-checkboxes {
       list-style: none;
     }
-  
+
     &-close-btn {
       margin-bottom: 29px;
-  
+
       @media (min-width: $md) {
         display: none;
       }
