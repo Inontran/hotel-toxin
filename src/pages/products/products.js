@@ -62,7 +62,7 @@ $(() => {
     $body.attr('data-last-scrolltop', 0);
   }
 
-  $body.on('click', '.js-products__filter_hide-filter', handlerClickHideBtn);
+  $body.on('click', '.js-products__filter-close-btn .js-button', handlerClickHideBtn);
 
   function updateFilterProducts() {
     if (window.matchMedia(`(max-width: ${$.BREAKPOINTS.md}px)`).matches) {
