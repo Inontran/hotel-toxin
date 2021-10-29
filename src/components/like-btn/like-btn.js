@@ -8,8 +8,8 @@ $(() => {
   function handlerChangeLikeBtn(event) {
     const $likeInput = $(event.currentTarget);
     const $likeBtn = $likeInput.closest('.js-like-btn');
-    const $likeCountView = $likeBtn.find('.js-like-btn__count');
-    const doExistAllElements = !$likeBtn.length || !$likeCountView.length || !$likeInput.length;
+    const $likeAmountView = $likeBtn.find('.js-like-btn__amount');
+    const doExistAllElements = !$likeBtn.length || !$likeAmountView.length || !$likeInput.length;
     if (doExistAllElements) {
       return;
     }
@@ -24,8 +24,8 @@ $(() => {
     }
 
     $likeInput.val(countLikes);
-    $likeCountView.text(countLikes);
+    $likeAmountView.text(countLikes);
   }
 
-  $body.on('change', '.js-like-btn__check', handlerChangeLikeBtn);
+  $body.on('change', '.js-like-btn__input', handlerChangeLikeBtn);
 });

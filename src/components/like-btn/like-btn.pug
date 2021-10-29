@@ -18,11 +18,11 @@ mixin like-btn(options = {})
     class = classes,
     id = id ? id : false
   )
-    input.like-btn__check.js-like-btn__check(
+    input.like-btn__input.js-like-btn__input(
       type = 'checkbox', 
       value = value, 
       name = name, 
       checked = isLike ? 'checked' : false
     )
     span.like-btn__view
-      span.like-btn__count.js-like-btn__count #{value}
+      span.like-btn__amount.js-like-btn__amount #{value}

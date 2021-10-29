@@ -46,7 +46,7 @@
     }
   }
 
-  &__check:checked ~ &__view {
+  &__input:checked ~ &__view {
     color: $purple;
     background: $gradient1;
 
@@ -55,15 +55,15 @@
     }
   }
 
-  &__check:disabled ~ &__view {
+  &__input:disabled ~ &__view {
     cursor: default;
   }
 
-  &__check {
+  &__input {
     display: none;
   }
 
-  &__count {
+  &__amount {
     position: relative;
     z-index: 2;
     white-space: nowrap;
