@@ -79,37 +79,37 @@
       &:last-of-type {
         margin-bottom: 0;
       }
-    }
-
-    &-icon {
-      overflow: hidden;
-      width: calc_rem(10);
-      height: calc_rem(10);
-      border-radius: 100vh;
-      margin-right: 5px;
-      margin-top: 4px;
-      flex: none;
-
-      &_theme_yellow {
-        background: $gradient3;
+  
+      &-icon {
+        overflow: hidden;
+        width: calc_rem(10);
+        height: calc_rem(10);
+        border-radius: 100vh;
+        margin-right: 5px;
+        margin-top: 4px;
+        flex: none;
+  
+        &_theme_yellow {
+          background: $gradient3;
+        }
+  
+        &_theme_green {
+          background: $gradient2;
+        }
+  
+        &_theme_purple {
+          background: $gradient1;
+        }
+  
+        &_theme_gray {
+          background: $gradient4;
+        }
       }
-
-      &_theme_green {
-        background: $gradient2;
+  
+      &-text {
+        font-size: calc_rem(14);
+        color: $dark75;
       }
-
-      &_theme_purple {
-        background: $gradient1;
-      }
-
-      &_theme_gray {
-        background: $gradient4;
-      }
-    }
-
-    &-text {
-      font-size: calc_rem(14);
-      color: $dark75;
     }
   }
 }
