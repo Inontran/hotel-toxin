@@ -82,8 +82,8 @@
       line-height: 1.2857;
 
       &_with-tooltip {
-        padding-left: 2px;
-        padding-right: 2px;
+        position: relative;
+        padding-right: 24px;
       }
 
       &_with-price {
@@ -94,11 +94,13 @@
   }
 
   &__tooltip {
+    position: absolute;
+    top: 0;
+    right: 0;
     display: inline-block;
     overflow: hidden;
     border-radius: 100vh;
     border: 1px solid $dark25;
-    position: relative;
     width: calc_rem(20);
     height: calc_rem(20);
     text-align: center;
