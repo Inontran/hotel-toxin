@@ -86,85 +86,84 @@ block content
                   alt = 'Фото номера ' + roomNumber,
                 )
 
-      div.product__body
-        div.product__body-row
-          div.product__main-col-body
-            div.product__small-grid
-              section.product__room-details
-                if optionsInfographics
-                  div.product__title
-                    +heading({
-                      text: 'Сведения о номере',
-                      classes: 'heading_middle',
-                      tag: 'h2',
-                    })
-                  - var index = 0
-                  while index < optionsInfographics.items.length
-                    - optionsInfographics.items[index].src = require('@/pages/product/img/' + optionsInfographics.items[index].src).default
-                    - index++
-                  +infographics(optionsInfographics)
-              if chartCountAll
-                section.product__room-rating
-                  div.product__title
-                    +heading({
-                      text: 'Впечатления от номера',
-                      classes: 'heading_middle',
-                      tag: 'h2',
-                    })
-                  +chart({
-                    chartCountAll: chartCountAll,
-                    chartNumAwesome: chartNumAwesome,
-                    chartNumGood: chartNumGood,
-                    chartNumNotbad: chartNumNotbad,
-                    chartNumDisappointed: chartNumDisappointed,
+      div.product__container
+        div.product__main-content
+          div.product__room-main-info
+            section.product__room-details
+              if optionsInfographics
+                div.product__title
+                  +heading({
+                    text: 'Сведения о номере',
+                    classes: 'heading_middle',
+                    tag: 'h1',
                   })
-            
-            if reviews
-              section.product__section-reviews
-                header.product__header-reviews
-                  div.product__title.product__title_theme_review
-                    +heading({
-                      text: 'Отзывы посетителей номера',
-                      classes: 'heading_middle',
-                      tag: 'h2',
-                    })
-                  span.product__text-count-reviews #{reviews.length} отзыва
-                each reviewItem, index in reviews
-                  div.product__review-wrapper
-                    - reviewItem.avatar = require('@/pages/product/img/' + reviewItem.avatar).default
-                    +review(reviewItem)
-
-            div.product__small-grid
-              section.product__rules
-                if rulesTitle
-                  div.product__title.product__title_theme_rules
-                    +heading({
-                      text: rulesTitle,
-                      classes: 'heading_middle',
-                      tag: 'h2',
-                    })
-                if optionsRules
-                  +list({
-                    classes: 'list_with-big-dots',
-                    items: optionsRules.items,
+                - var index = 0
+                while index < optionsInfographics.items.length
+                  - optionsInfographics.items[index].src = require('@/pages/product/img/' + optionsInfographics.items[index].src).default
+                  - index++
+                +infographics(optionsInfographics)
+            if chartCountAll
+              section.product__room-rating
+                div.product__title
+                  +heading({
+                    text: 'Впечатления от номера',
+                    classes: 'heading_middle',
+                    tag: 'h2',
                   })
-              section.product__rule-cancel
-                if cancelTitle
-                  div.product__title
-                    +heading({
-                      text: cancelTitle,
-                      classes: 'heading_middle',
-                      tag: 'h2',
-                    })
-                if cancelText
-                  p.product__text #{cancelText}
+                +chart({
+                  chartCountAll: chartCountAll,
+                  chartNumAwesome: chartNumAwesome,
+                  chartNumGood: chartNumGood,
+                  chartNumNotbad: chartNumNotbad,
+                  chartNumDisappointed: chartNumDisappointed,
+                })
+          
+          if reviews
+            section.product__section-reviews
+              header.product__header-reviews
+                div.product__title.product__title_theme_review
+                  +heading({
+                    text: 'Отзывы посетителей номера',
+                    classes: 'heading_middle',
+                    tag: 'h2',
+                  })
+                span.product__amount-reviews #{reviews.length} отзыва
+              each reviewItem, index in reviews
+                div.product__review-wrapper
+                  - reviewItem.avatar = require('@/pages/product/img/' + reviewItem.avatar).default
+                  +review(reviewItem)
 
-          div.product__side-col-body
-            +room-reservation({
-              roomNumber: roomNumber,
-              roomType: roomType,
-              price: price,
-              priceTime: priceTime,
-              listService: listService,
-              totalPrice: totalPrice
-            })
+          div.product__rule-texts-container
+            section.product__rules
+              if rulesTitle
+                div.product__title.product__title_theme_rules
+                  +heading({
+                    text: rulesTitle,
+                    classes: 'heading_middle',
+                    tag: 'h2',
+                  })
+              if optionsRules
+                +list({
+                  classes: 'list_with-big-dots',
+                  items: optionsRules.items,
+                })
+            section.product__cancellation-text-wrapper
+              if cancelTitle
+                div.product__title
+                  +heading({
+                    text: cancelTitle,
+                    classes: 'heading_middle',
+                    tag: 'h2',
+                  })
+              if cancelText
+                p.product__cancellation-text #{cancelText}
+
+        div.product__form-wrapper
+          +room-reservation({
+            roomNumber: roomNumber,
+            roomType: roomType,
+            price: price,
+            priceTime: priceTime,
+            listService: listService,
+            totalPrice: totalPrice
+          })
