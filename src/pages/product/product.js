@@ -18,7 +18,7 @@ $(document).ready(() => {
       nav: true,
       dots: true,
       items: 1,
-      loop: false,
+      loop: true,
     });
   });
 });

@@ -57,24 +57,34 @@ block content
         section.product__gallery
           if gallery[0]
             - gallery[0] = require('@/pages/product/img/' + gallery[0]).default
-            div.product__main-img(
-              style = 'background-image: url(' + gallery[0] + ');'
-            )
+            div.product__gallery-main-item
+              img.product__gallery-img(
+                src = gallery[0],
+                alt = 'Фото номера ' + roomNumber,
+              )
           if gallery[1]
             - gallery[1] = require('@/pages/product/img/' + gallery[1]).default
-            div.product__upper-small-img(
-              style = 'background-image: url(' + gallery[1] + ');'
-            )
+            div.product__gallery-upper-small-item
+              img.product__gallery-img(
+                src = gallery[1],
+                alt = 'Фото номера ' + roomNumber,
+              )
           if gallery[2]
             - gallery[2] = require('@/pages/product/img/' + gallery[2]).default
-            div.product__bottom-small-img(
-              style = 'background-image: url(' + gallery[2] + ');'
-            )
+            div.product__gallery-bottom-small-item
+              img.product__gallery-img(
+                src = gallery[2],
+                alt = 'Фото номера ' + roomNumber,
+              )
 
         section.product__carousel.js-product__carousel.owl-carousel
           each src in gallery
             if src
-              div.product__carousel-item(style='background-image: url(' + src + ');')
+              div.product__carousel-item
+                img.product__carousel-img(
+                  src = src,
+                  alt = 'Фото номера ' + roomNumber,
+                )
 
       div.product__body
         div.product__body-row
