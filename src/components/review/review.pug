@@ -38,7 +38,7 @@ mixin review(options = {})
         if datetime
           time.review__time(datetime = datetime) #{timeLater}
     div.review__content
-      div.review__like-wrapper
+      form.review__like-wrapper
         +like-btn({
           value: countLike,
           isLike: isLike
