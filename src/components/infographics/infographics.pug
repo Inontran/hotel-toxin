@@ -21,15 +21,20 @@ mixin infographics(options = {})
   )
     each item, index in items
       if (item.line)
-        -var classes_item = 'infographics__item_with-line'
+        -var modifierItem = 'infographics__item_with-line'
       else
-        -var classes_item = ''
+        -var modifierItem = ''
 
-      li.infographics__item(class = classes_item)
+      li.infographics__item(class = modifierItem)
         if item.src
-          div.infographics__image(
-            style = 'background-image: url(' + item.src + ')'
-          )
+          //- div.infographics__image(
+          //-   style = 'background-image: url(' + item.src + ')'
+          //- )
+          div.infographics__icon-wrapper
+            img.infographics__icon(
+              src = item.src,
+              alt = item.title,
+            )
         div.infographics__text-wrapper
           p.infographics__title #{item.title}
           p.infographics__text #{item.text}

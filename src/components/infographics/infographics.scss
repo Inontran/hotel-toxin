@@ -24,6 +24,21 @@
     margin-right: 10px;
   }
 
+  &__icon-wrapper {
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    flex: none;
+    width: calc_rem(48);
+    height: calc_rem(48);
+    margin-right: 10px;
+  }
+
+  &__icon {
+    max-width: 100%;
+    max-height: 100%;
+  }
+
   &__title {
     font-weight: 700;
   }
