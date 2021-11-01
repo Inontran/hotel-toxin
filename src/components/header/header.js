@@ -1,14 +1,19 @@
 import $ from 'jquery';
 
+import Dropdown from '@/components/dropdown/dropdown';
+
 require('@/components/logo/logo');
 require('@/components/button/button');
-require('@/components/dropdown/dropdown');
 require('@/components/list/list');
 
 require('./header.scss');
 
 $(() => {
   const $body = $('body');
+
+  $('.js-header .js-dropdown').each(function() {
+    new Dropdown($(this));
+  });
 
   function handleBtnShowMainmenuClick(event) {
     const $btn = $(event.currentTarget);

@@ -3,6 +3,7 @@ import $ from 'jquery';
 import AirDatepicker from '@/components/air-datepicker/air-datepicker';
 import RoomReservation from '@/components/form/room-reservation/room-reservation';
 import RoomSearch from '@/components/form/room-search/room-search';
+import Dropdown from '@/components/dropdown/dropdown';
 
 require('../../entry');
 require('./guide.scss');
@@ -39,4 +40,15 @@ $(() => {
   $('.js-room-search').each(function() {
     new RoomSearch($(this));
   });
+
+  // закрытие dropdown по клику вне этого dropdown
+  $body.on('click', '*', (event) => {
+    if (!$(event.target).closest('.js-dropdown').length && !$(event.target).hasClass('.js-dropdown')) {
+      $('.js-dropdown').removeClass('dropdown_aсtivated');
+    }
+  });
+
+  new Dropdown($('#example-dropdown'));
+  new Dropdown($('#example-dropdown2'));
+  new Dropdown($('#example-dropdown3'));
 });

@@ -1,37 +1,58 @@
 import $ from 'jquery';
 
-require('./dropdown.scss');
 require('@/components/input-text/input-text');
 require('@/components/button/button');
 require('@/components/list-counters/list-counters');
 
-$(() => {
-  const $body = $('body');
+require('./dropdown.scss');
 
-  // закрытие dropdown по клику вне этого dropdown
-  $body.on('click', '*', (event) => {
-    if (!$(event.target).closest('.js-dropdown').length && !$(event.target).hasClass('.js-dropdown')) {
-      $('.js-dropdown').removeClass('dropdown_aсtivated');
+class Dropdown {
+  _$dropdown;
+  _$toggleBtn;
+  _$inputWrapper;
+
+  constructor($dropdown) {
+    this._$dropdown = $dropdown;
+    this._init();
+  }
+
+  _init() {
+    this._$toggleBtn = $('.js-dropdown__btn', this._$dropdown);
+    this._$inputWrapper = $('.js-dropdown__input-wrapper', this._$dropdown);
+
+    this._bindEventListeners();
+    this._addEventListeners();
+  }
+
+  _bindEventListeners() {
+    this._handlerClickToggleBtn = this._handlerClickToggleBtn.bind(this);
+  }
+
+  _addEventListeners() {
+    if (this._$toggleBtn?.length) {
+      this._$toggleBtn.on('click', this._handlerClickToggleBtn);
     }
-  });
-
-  function toggleDropdown($dropdown) {
-    if (!$dropdown.length) {
-      return;
+    if (this._$inputWrapper?.length) {
+      this._$inputWrapper.on('click', this._handlerClickToggleBtn);
     }
-    let $dropdownsArray = $dropdown;
+  }
 
-    const targetId = $dropdown.attr('data-target');
+  _handlerClickToggleBtn(event) {
+    event.preventDefault();
+
+    let $dropdownsArray = this._$dropdown;
+
+    const targetId = this._$dropdown.attr('data-target');
     if (targetId && $(`.js-dropdown${targetId}`).length) {
       $dropdownsArray = $(`.js-dropdown${targetId}`);
     }
 
     const dropdownGroup = $dropdownsArray.attr('data-group');
 
-    if (dropdownGroup !== '' && dropdownGroup !== undefined) {
+    if (dropdownGroup) {
       const selector = '.js-dropdown';
 
-      $body.find(`${selector}[data-group="${dropdownGroup}"]`).each(function () {
+      $(`${selector}[data-group="${dropdownGroup}"]`).each(function () {
         const $dropdownItem = $(this);
         if ($(selector).index($dropdownItem) === $(selector).index($dropdownsArray)) {
           $dropdownsArray.toggleClass('dropdown_aсtivated');
@@ -43,10 +64,6 @@ $(() => {
       $dropdownsArray.toggleClass('dropdown_aсtivated');
     }
   }
+}
 
-  $body.on('click', '.js-dropdown .js-dropdown__input-wrapper, .js-dropdown .js-dropdown__btn', (event) => {
-    event.preventDefault();
-    const $dropdown = $(event.currentTarget).closest('.js-dropdown');
-    toggleDropdown($dropdown);
-  });
-});
+export default Dropdown

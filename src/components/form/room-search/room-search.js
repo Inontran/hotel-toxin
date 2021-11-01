@@ -1,8 +1,8 @@
 import $ from 'jquery';
 
 import AirDatepicker from '@/components/air-datepicker/air-datepicker';
+import Dropdown from '@/components/dropdown/dropdown';
 
-require('@/components/dropdown/dropdown');
 require('@/components/button/button');
 require('@/components/heading/heading');
 
@@ -20,6 +20,10 @@ class RoomSearch {
   _init() {
     const $airDatepicker = $('.js-air-datepicker', this._$roomSearch);
     this._airDatepicker = new AirDatepicker($airDatepicker);
+
+    $('.js-dropdown', this._$roomSearch).each(function() {
+      new Dropdown($(this));
+    });
   }
 }
 

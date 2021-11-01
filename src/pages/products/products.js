@@ -1,10 +1,10 @@
 import $ from 'jquery';
 
 import AirDatepicker from '@/components/air-datepicker/air-datepicker';
+import Dropdown from '@/components/dropdown/dropdown';
 
 require('../../entry');
 
-require('@/components/dropdown/dropdown');
 require('@/components/slider-range/slider-range');
 require('@/components/checkbox/checkbox');
 require('@/components/expander/expander');
@@ -17,8 +17,21 @@ require('./products.scss');
 
 $(() => {
   const $body = $('body');
+  
+  // закрытие dropdown по клику вне этого dropdown
+  $body.on('click', '*', (event) => {
+    if (!$(event.target).closest('.js-dropdown').length && !$(event.target).hasClass('.js-dropdown')) {
+      $('.js-dropdown').removeClass('dropdown_aсtivated');
+    }
+  });
 
-  new AirDatepicker($('.js-products__filter .js-air-datepicker'));
+  $('.js-products__filter .js-air-datepicker').each(function() {
+    new AirDatepicker($(this));
+  });
+
+  $('.js-products__filter .js-dropdown').each(function() {
+    new Dropdown($(this));
+  });
 
   function handlerClickShowFilter(event) {
     event.preventDefault();
