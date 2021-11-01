@@ -6,6 +6,7 @@ import RoomSearch from '@/components/form/room-search/room-search';
 import Dropdown from '@/components/dropdown/dropdown';
 import CardProduct from '@/components/card-product/card-product';
 import Diagram from '@/components/diagram/diagram';
+import Expander from '@/components/expander/expander';
 
 require('../../entry');
 require('./guide.scss');
@@ -18,7 +19,6 @@ require('@/components/rate-btn/rate-btn');
 require('@/components/slider-range/slider-range');
 require('@/components/pagination/pagination');
 require('@/components/list/list');
-require('@/components/expander/expander');
 require('@/components/infographics/infographics');
 require('@/components/review/review');
 require('@/components/dropdown/dropdown');
@@ -31,15 +31,15 @@ require('@/components/form/room-search/room-search');
 
 $(() => {
   const $body = $('body');
-  
+
   new AirDatepicker($('#example-datepicker'));
   new AirDatepicker($('#example-datepicker2'));
 
-  $('.js-room-reservation').each(function() {
+  $('.guide-page .js-room-reservation').each(function() {
     new RoomReservation($(this));
   });
 
-  $('.js-room-search').each(function() {
+  $('.guide-page .js-room-search').each(function() {
     new RoomSearch($(this));
   });
 
@@ -54,11 +54,15 @@ $(() => {
   new Dropdown($('#example-dropdown2'));
   new Dropdown($('#example-dropdown3'));
 
-  $('.js-card-product').each(function() {
+  $('.guide-page .js-card-product').each(function() {
     new CardProduct($(this));
   });
 
-  $('.js-diagram').each(function () {
+  $('.guide-page .js-diagram').each(function () {
     new Diagram($(this));
+  });
+
+  $('.guide-page .js-expander').each(function() {
+    new Expander($(this));
   });
 });

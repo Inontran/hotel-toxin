@@ -2,30 +2,42 @@ import $ from 'jquery';
 
 require('./expander.scss');
 
-$(() => {
-  const $body = $('body');
+class Expander {
+  _$expander;
+  _$btn;
 
-  function handlerClickCollapse(event) {
+  constructor($expander) {
+    this._$expander = $expander;
+    this._init();
+  }
+
+  _init() {
+    this._$btn = $('.js-expander__btn', this._$expander);
+    this._handleBtnClick = this._handleBtnClick.bind(this);
+    this._$btn.on('click', this._handleBtnClick);
+  }
+
+  _handleBtnClick(event) {
     event.preventDefault();
-    const $expander = $(event.currentTarget).closest('.js-expander');
-    const expanderGroup = $expander.attr('data-group');
+    const $expander = this._$expander;
+    const expanderGroup = this._$expander.attr('data-group');
 
-    if (expanderGroup !== '' && expanderGroup !== 'undefined') {
+    if (expanderGroup) {
       const selector = '.js-expander';
 
-      $body.find(`${selector}[data-group="${expanderGroup}"]`).each(function () {
-        const $currentCollapse = $(this);
+      $(`${selector}[data-group="${expanderGroup}"]`).each(function () {
+        const $currentExpander = $(this);
 
-        if ($(selector).index($currentCollapse) === $(selector).index($expander)) {
+        if ($(selector).index($currentExpander) === $(selector).index($expander)) {
           $expander.toggleClass('expander_activated');
         } else {
-          $currentCollapse.removeClass('expander_activated');
+          $currentExpander.removeClass('expander_activated');
         }
       });
     } else {
       $expander.toggleClass('expander_activated');
     }
   }
+}
 
-  $body.on('click', '.js-expander .js-expander__btn', handlerClickCollapse);
-});
+export default Expander
