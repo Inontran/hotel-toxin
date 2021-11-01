@@ -1,5 +1,13 @@
+import $ from 'jquery';
+
+import FirstDisplay from '@/components/first-display/first-display';
+
 require('../../entry');
+
+require('@/components/form/site-registration/site-registration');
+
 require('./register.scss');
 
-require('@/components/first-display/first-display');
-require('@/components/form/site-registration/site-registration');
+$(() => {
+  new FirstDisplay($('.js-first-display'));
+});

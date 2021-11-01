@@ -1,6 +1,13 @@
+import $ from 'jquery';
+
+import FirstDisplay from '@/components/first-display/first-display';
+import RoomSearch from '@/components/form/room-search/room-search';
+
 require('../../entry');
 
-require('@/components/first-display/first-display');
-require('@/components/form/room-search/room-search');
-
 require('./index.scss');
+
+$(() => {
+  new FirstDisplay($('.js-first-display'));
+  new RoomSearch($('.js-room-search'));
+});
