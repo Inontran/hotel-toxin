@@ -4,6 +4,7 @@ import AirDatepicker from '@/components/air-datepicker/air-datepicker';
 import Dropdown from '@/components/dropdown/dropdown';
 import CardProduct from '@/components/card-product/card-product';
 import Expander from '@/components/expander/expander';
+import Header from '@/components/header/header';
 
 require('../../entry');
 
@@ -17,6 +18,8 @@ require('./products.scss');
 
 $(() => {
   const $body = $('body');
+
+  new Header($('.js-header'));
   
   // закрытие dropdown по клику вне этого dropdown
   $body.on('click', '*', (event) => {

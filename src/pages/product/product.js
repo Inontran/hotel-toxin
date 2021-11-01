@@ -2,6 +2,7 @@ import $ from 'jquery';
 import 'owl.carousel';
 
 import Diagram from '@/components/diagram/diagram';
+import Header from '@/components/header/header';
 
 require('../../entry');
 
@@ -14,6 +15,8 @@ require('@/components/form/room-reservation/room-reservation');
 require('./product.scss');
 
 $(document).ready(() => {
+  new Header($('.js-header'));
+
   $('.js-product__carousel').each(function () {
     $(this).owlCarousel({
       nav: true,

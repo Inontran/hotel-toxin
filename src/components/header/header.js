@@ -8,28 +8,47 @@ require('@/components/list/list');
 
 require('./header.scss');
 
-$(() => {
-  const $body = $('body');
+class Header {
+  _$header;
+  _$btnMenu;
+  _$btnProfile;
 
-  $('.js-header .js-dropdown').each(function() {
-    new Dropdown($(this));
-  });
-
-  function handleBtnShowMainmenuClick(event) {
-    const $btn = $(event.currentTarget);
-    const $header = $btn.closest('.js-header');
-    $header.removeClass('header_shown-auth-btns');
-    $header.toggleClass('header_shown-main-menu');
+  constructor($header) {
+    this._$header = $header;
+    this._init();
   }
 
-  $body.on('click', '.js-header .js-header__icon-btn_type_menu', handleBtnShowMainmenuClick);
+  _init() {
+    this._$btnMenu = $('.js-header__icon-btn_type_menu', this._$header);
+    this._$btnProfile = $('.js-header__icon-btn_type_profile', this._$header);
 
-  function handleBtnShowAuthBtnsClick(event) {
-    const $btn = $(event.currentTarget);
-    const $header = $btn.closest('.js-header');
-    $header.removeClass('header_shown-main-menu');
-    $header.toggleClass('header_shown-auth-btns');
+    $('.js-dropdown', this._$header).each(function() {
+      new Dropdown($(this));
+    });
+
+    this._bindEventListeners();
+    this._addEventListeners();
   }
 
-  $body.on('click', '.js-header .js-header__icon-btn_type_profile', handleBtnShowAuthBtnsClick);
-});
+  _bindEventListeners() {
+    this._handleBtnShowMainmenuClick = this._handleBtnShowMainmenuClick.bind(this);
+    this._handleBtnShowAuthBtnsClick = this._handleBtnShowAuthBtnsClick.bind(this);
+  }
+
+  _addEventListeners() {
+    this._$btnMenu.on('click', this._handleBtnShowMainmenuClick);
+    this._$btnProfile.on('click', this._handleBtnShowAuthBtnsClick);
+  }
+
+  _handleBtnShowMainmenuClick() {
+    this._$header.removeClass('header_shown-auth-btns');
+    this._$header.toggleClass('header_shown-main-menu');
+  }
+
+  _handleBtnShowAuthBtnsClick() {
+    this._$header.removeClass('header_shown-main-menu');
+    this._$header.toggleClass('header_shown-auth-btns');
+  }
+}
+
+export default Header

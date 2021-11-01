@@ -1,15 +1,15 @@
 import $ from 'jquery';
 
 import AirDatepicker from '@/components/air-datepicker/air-datepicker';
-import RoomReservation from '@/components/form/room-reservation/room-reservation';
-import RoomSearch from '@/components/form/room-search/room-search';
 import Dropdown from '@/components/dropdown/dropdown';
 import CardProduct from '@/components/card-product/card-product';
 import Diagram from '@/components/diagram/diagram';
 import Expander from '@/components/expander/expander';
+import Header from '@/components/header/header';
+import RoomReservation from '@/components/form/room-reservation/room-reservation';
+import RoomSearch from '@/components/form/room-search/room-search';
 
 require('../../entry');
-require('./guide.scss');
 
 require('@/components/button/button');
 require('@/components/input-text/input-text');
@@ -21,7 +21,6 @@ require('@/components/pagination/pagination');
 require('@/components/list/list');
 require('@/components/infographics/infographics');
 require('@/components/review/review');
-require('@/components/dropdown/dropdown');
 require('@/components/heading/heading');
 require('@/components/radio/radio');
 require('@/components/form/subscription/subscription');
@@ -29,8 +28,12 @@ require('@/components/form/site-registration/site-registration');
 require('@/components/form/site-login/site-login');
 require('@/components/form/room-search/room-search');
 
+require('./guide.scss');
+
 $(() => {
   const $body = $('body');
+
+  new Header($('.js-header'));
 
   new AirDatepicker($('#example-datepicker'));
   new AirDatepicker($('#example-datepicker2'));
