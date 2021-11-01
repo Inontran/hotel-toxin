@@ -23,7 +23,7 @@ $(document).ready(() => {
     });
   });
 
-  $('.js-diagram').each(function () {
+  $('.js-product .js-diagram').each(function () {
     new Diagram($(this));
   });
 });

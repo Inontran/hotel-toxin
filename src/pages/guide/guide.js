@@ -35,11 +35,11 @@ $(() => {
   new AirDatepicker($('#example-datepicker'));
   new AirDatepicker($('#example-datepicker2'));
 
-  $('.guide-page .js-room-reservation').each(function() {
+  $('.js-room-reservation').each(function() {
     new RoomReservation($(this));
   });
 
-  $('.guide-page .js-room-search').each(function() {
+  $('.js-room-search').each(function() {
     new RoomSearch($(this));
   });
 
@@ -54,15 +54,15 @@ $(() => {
   new Dropdown($('#example-dropdown2'));
   new Dropdown($('#example-dropdown3'));
 
-  $('.guide-page .js-card-product').each(function() {
+  $('.js-card-product').each(function() {
     new CardProduct($(this));
   });
 
-  $('.guide-page .js-diagram').each(function () {
+  $('.js-diagram').each(function () {
     new Diagram($(this));
   });
 
-  $('.guide-page .js-expander').each(function() {
+  $('.js-expander').each(function() {
     new Expander($(this));
   });
 });
