@@ -2,32 +2,38 @@ import $ from 'jquery';
 import 'air-datepicker';
 import moment from 'moment';
 
-require('./air-datepicker.scss');
 require('@/components/button/button');
 
-moment.lang('ru');
+require('./air-datepicker.scss');
 
-$(() => {
-  function formatDate(strDate) {
-    if (!strDate.length) {
-      return '';
-    }
+class AirDatepicker {
+  _$airDatepicker;
+  _$submitBtnWrapper;
+  _$submitBtn;
+  _$resetBtnWrapper;
+  _$resetBtn;
 
-    let strFormattedDate = '';
-    try {
-      strFormattedDate = strDate.split('.', 3).reverse().join('-');
-    } catch (error) {
-      console.debug(error);
-    }
-    return strFormattedDate;
+  constructor($airDatepicker) {
+    this._$airDatepicker = $airDatepicker;
+    this._init();
+  }
+  
+  _init() {
+    moment.lang('ru');
+
+    this._$submitBtnWrapper = $('.js-air-datepicker__btn_type_submit', this._$airDatepicker);
+    this._$submitBtn = $('.js-air-datepicker__btn_type_submit .js-button', this._$airDatepicker);
+    this._$resetBtnWrapper = $('.js-air-datepicker__btn_type_reset', this._$airDatepicker);
+    this._$resetBtn = $('.js-air-datepicker__btn_type_reset .js-button', this._$airDatepicker);
+
+    this._initDatepicker();
+    this._bindEventListeners();
+    this._addEventListeners();
   }
 
-  const $body = $('body');
-
-  $body.find('.js-air-datepicker.air-datepicker_inline').each(function () {
-    const $airDatepicker = $(this);
-    const attrMinDate = $airDatepicker.data('min-date');
+  _initDatepicker() {
     let minDateOption;
+    const attrMinDate = this._$airDatepicker.data('min-date');
     if (attrMinDate === 'today') {
       minDateOption = new Date();
     } else if (attrMinDate) {
@@ -38,7 +44,7 @@ $(() => {
       }
     }
 
-    const $datepicker = $('.js-air-datepicker__wrapper', $airDatepicker);
+    const $datepicker = $('.js-air-datepicker__wrapper', this._$airDatepicker);
     $datepicker.datepicker({
       range: true,
       inline: true,
@@ -48,8 +54,8 @@ $(() => {
       minDate: minDateOption,
     });
 
-    let $parentDropdown = $airDatepicker.closest('.js-dropdown');
-    const targetDropdowns = $airDatepicker.attr('data-target-dropdown');
+    let $parentDropdown = this._$airDatepicker.closest('.js-dropdown');
+    const targetDropdowns = this._$airDatepicker.attr('data-target-dropdown');
     if (targetDropdowns) {
       $parentDropdown = $(targetDropdowns);
     }
@@ -58,14 +64,14 @@ $(() => {
       const $inputDateStart = $('.js-input-text_type_start-date .js-input-text__field', $parentDropdown);
       if ($inputDateStart.length) {
         let valueInputDate = $inputDateStart.val();
-        valueInputDate = formatDate(valueInputDate);
+        valueInputDate = AirDatepicker.formatDate(valueInputDate);
         if (valueInputDate) datesFromInputs.push(new Date(valueInputDate));
       }
 
       const $inputDateEnd = $('.js-input-text_type_end-date .js-input-text__field', $parentDropdown);
       if ($inputDateEnd.length) {
         let valueInputDate = $inputDateEnd.val();
-        valueInputDate = formatDate(valueInputDate);
+        valueInputDate = AirDatepicker.formatDate(valueInputDate);
         if (valueInputDate) datesFromInputs.push(new Date(valueInputDate));
       }
 
@@ -75,18 +81,27 @@ $(() => {
     }
 
     if (!$datepicker.data('datepicker').selectedDates.length) {
-      $('.js-air-datepicker__btn_type_reset', $airDatepicker).addClass('air-datepicker__btn_hidden');
+      this._$resetBtnWrapper.addClass('air-datepicker__btn_hidden');
     }
-  });
+  }
 
-  function handlerClickClearBtn(event) {
+  _bindEventListeners() {
+    this._handlerClickSubmitBtn = this._handlerClickSubmitBtn.bind(this);
+    this._handlerClickResetBtn = this._handlerClickResetBtn.bind(this);
+  }
+
+  _addEventListeners() {
+    this._$submitBtn.on('click', this._handlerClickSubmitBtn);
+    this._$resetBtn.on('click', this._handlerClickResetBtn);
+  }
+
+  _handlerClickResetBtn(event) {
     event.preventDefault();
     const $btn = $(event.currentTarget);
-    const $airDatepicker = $btn.closest('.js-air-datepicker');
-    $airDatepicker.find('.js-air-datepicker__wrapper').data('datepicker').clear();
+    $('.js-air-datepicker__wrapper', this._$airDatepicker).data('datepicker').clear();
 
-    let $parentDropdown = $airDatepicker.closest('.js-dropdown');
-    const targetDropdowns = $airDatepicker.attr('data-target-dropdown');
+    let $parentDropdown = this._$airDatepicker.closest('.js-dropdown');
+    const targetDropdowns = this._$airDatepicker.attr('data-target-dropdown');
     if (targetDropdowns) {
       $parentDropdown = $(targetDropdowns);
     }
@@ -96,24 +111,17 @@ $(() => {
       $('.js-input-text_date_range .js-input-text__field', $parentDropdown).val('');
     }
 
-    $btn.closest('.js-air-datepicker__btn_type_reset').addClass('air-datepicker__btn_hidden');
+    this._$resetBtnWrapper.addClass('air-datepicker__btn_hidden');
   }
 
-  $body.on(
-    'click',
-    '.js-air-datepicker .js-air-datepicker__btn_type_reset .js-button',
-    handlerClickClearBtn,
-  );
-
-  function handlerClickSubmitBtn(event) {
+  _handlerClickSubmitBtn(event) {
     event.preventDefault();
     const $btn = $(event.currentTarget);
     let $parentDropdown = $btn.closest('.js-dropdown');
-    const $airDatepicker = $btn.closest('.js-air-datepicker');
-    const dates = $airDatepicker.find('.js-air-datepicker__wrapper').data('datepicker').selectedDates;
-    const $form = $airDatepicker.closest('form');
+    const dates = $('.js-air-datepicker__wrapper', this._$airDatepicker).data('datepicker').selectedDates;
+    const $form = this._$airDatepicker.closest('form');
 
-    const targetDropdowns = $airDatepicker.attr('data-target-dropdown');
+    const targetDropdowns = this._$airDatepicker.attr('data-target-dropdown');
     if (targetDropdowns) {
       if ($form.length) {
         $parentDropdown = $(targetDropdowns, $form);
@@ -132,17 +140,26 @@ $(() => {
       $parentDropdown.removeClass('dropdown_aсtivated');
     }
 
-    const $clearBtn = $('.js-air-datepicker__btn_type_reset', $airDatepicker);
     if (dates.length) {
-      $clearBtn.removeClass('air-datepicker__btn_hidden');
+      this._$resetBtnWrapper.removeClass('air-datepicker__btn_hidden');
     } else {
-      $clearBtn.addClass('air-datepicker__btn_hidden');
+      this._$resetBtnWrapper.addClass('air-datepicker__btn_hidden');
     }
   }
 
-  $body.on(
-    'click',
-    '.js-air-datepicker .js-air-datepicker__btn_type_submit .js-button',
-    handlerClickSubmitBtn,
-  );
-});
+  static formatDate(strDate) {
+    if (!strDate.length) {
+      return '';
+    }
+    
+    let strFormattedDate = '';
+    try {
+      strFormattedDate = strDate.split('.', 3).reverse().join('-');
+    } catch (error) {
+      console.debug(error);
+    }
+    return strFormattedDate;
+  }
+}
+
+export default AirDatepicker;

@@ -6,7 +6,7 @@ require('@/components/dropdown/dropdown');
 require('@/components/slider-range/slider-range');
 require('@/components/checkbox/checkbox');
 require('@/components/expander/expander');
-require('@/components/air-datepicker/air-datepicker');
+// require('@/components/air-datepicker/air-datepicker');
 require('@/components/card-product/card-product');
 require('@/components/pagination/pagination');
 require('@/components/button/button');
