@@ -1,6 +1,8 @@
 import $ from 'jquery';
 
 import AirDatepicker from '@/components/air-datepicker/air-datepicker';
+import RoomReservation from '@/components/form/room-reservation/room-reservation';
+import RoomSearch from '@/components/form/room-search/room-search';
 
 require('../../entry');
 require('./guide.scss');
@@ -24,10 +26,17 @@ require('@/components/radio/radio');
 require('@/components/form/subscription/subscription');
 require('@/components/form/site-registration/site-registration');
 require('@/components/form/site-login/site-login');
-require('@/components/form/room-reservation/room-reservation');
 require('@/components/form/room-search/room-search');
 
 $(() => {
   new AirDatepicker($('#example-datepicker'));
   new AirDatepicker($('#example-datepicker2'));
+
+  $('.js-room-reservation').each(function() {
+    new RoomReservation($(this));
+  });
+
+  $('.js-room-search').each(function() {
+    new RoomSearch($(this));
+  });
 });
