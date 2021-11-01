@@ -1,6 +1,6 @@
 @import '@/theme/variables.scss';
 
-.chart {
+.diagram {
   &__container {
     display: flex;
     align-items: flex-end;
@@ -8,14 +8,14 @@
     flex-wrap: wrap;
   }
 
-  &__diagram-container {
+  &__chart-container {
     width: 150px;
     height: 124px;
     position: relative;
     z-index: 1;
   }
 
-  &__diagram {
+  &__chart {
     width: 248px;
     height: 124px;
     position: absolute;

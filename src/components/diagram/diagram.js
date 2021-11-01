@@ -1,15 +1,19 @@
 import $ from 'jquery';
 import Chart from 'chart.js';
 
-require('./chart.scss');
+require('./diagram.scss');
 
-$(() => {
-  function initCharts($chart) {
-    if (!$chart.length) {
-      return;
-    }
+class Diagram {
+  _$diagram;
+  _chart;
 
-    const $chartPicture = $chart.find('.js-chart__picture');
+  constructor($diagram) {
+    this._$diagram = $diagram;
+    this._init();
+  }
+
+  _init() {
+    const $chartPicture = $('.js-diagram__picture', this._$diagram);
     const ctx = $chartPicture.get(0).getContext('2d');
     const gradient1 = ctx.createLinearGradient(0, 0, 0, 180);
     gradient1.addColorStop(0, $.COLORS.purple);
@@ -27,10 +31,10 @@ $(() => {
     gradient4.addColorStop(0, '#919191');
     gradient4.addColorStop(1, '#3D4975');
 
-    const num1 = $chart.attr('data-num-1') ? $chart.attr('data-num-1') : 0;
-    const num2 = $chart.attr('data-num-2') ? $chart.attr('data-num-2') : 0;
-    const num3 = $chart.attr('data-num-3') ? $chart.attr('data-num-3') : 0;
-    const num4 = $chart.attr('data-num-4') ? $chart.attr('data-num-4') : 0;
+    const num1 = this._$diagram.attr('data-num-1') ? this._$diagram.attr('data-num-1') : 0;
+    const num2 = this._$diagram.attr('data-num-2') ? this._$diagram.attr('data-num-2') : 0;
+    const num3 = this._$diagram.attr('data-num-3') ? this._$diagram.attr('data-num-3') : 0;
+    const num4 = this._$diagram.attr('data-num-4') ? this._$diagram.attr('data-num-4') : 0;
 
     const data = {
       datasets: [{
@@ -74,14 +78,12 @@ $(() => {
       cutoutPercentage: 90,
     };
 
-    new Chart(ctx, {
+    this._chart = new Chart(ctx, {
       type: 'doughnut',
       data,
       options,
     });
   }
+}
 
-  $('body').find('.js-chart').each(function () {
-    initCharts($(this));
-  });
-});
+export default Diagram
