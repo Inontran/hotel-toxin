@@ -2,13 +2,13 @@ import $ from 'jquery';
 
 import AirDatepicker from '@/components/air-datepicker/air-datepicker';
 import Dropdown from '@/components/dropdown/dropdown';
+import CardProduct from '@/components/card-product/card-product';
 
 require('../../entry');
 
 require('@/components/slider-range/slider-range');
 require('@/components/checkbox/checkbox');
 require('@/components/expander/expander');
-require('@/components/card-product/card-product');
 require('@/components/pagination/pagination');
 require('@/components/button/button');
 require('@/components/heading/heading');
@@ -31,6 +31,10 @@ $(() => {
 
   $('.js-products__filter .js-dropdown').each(function() {
     new Dropdown($(this));
+  });
+
+  $('.js-card-product').each(function() {
+    new CardProduct($(this));
   });
 
   function handlerClickShowFilter(event) {

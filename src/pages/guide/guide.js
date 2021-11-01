@@ -4,6 +4,7 @@ import AirDatepicker from '@/components/air-datepicker/air-datepicker';
 import RoomReservation from '@/components/form/room-reservation/room-reservation';
 import RoomSearch from '@/components/form/room-search/room-search';
 import Dropdown from '@/components/dropdown/dropdown';
+import CardProduct from '@/components/card-product/card-product';
 
 require('../../entry');
 require('./guide.scss');
@@ -20,7 +21,6 @@ require('@/components/expander/expander');
 require('@/components/infographics/infographics');
 require('@/components/review/review');
 require('@/components/dropdown/dropdown');
-require('@/components/card-product/card-product');
 require('@/components/chart/chart');
 require('@/components/heading/heading');
 require('@/components/radio/radio');
@@ -51,4 +51,8 @@ $(() => {
   new Dropdown($('#example-dropdown'));
   new Dropdown($('#example-dropdown2'));
   new Dropdown($('#example-dropdown3'));
+
+  $('.js-card-product').each(function() {
+    new CardProduct($(this));
+  });
 });
