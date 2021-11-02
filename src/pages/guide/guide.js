@@ -9,6 +9,7 @@ import Header from '@/components/header/header';
 import RoomReservation from '@/components/form/room-reservation/room-reservation';
 import RoomSearch from '@/components/form/room-search/room-search';
 import LikeBtn from '@/components/like-btn/like-btn';
+import Review from '@/components/review/review';
 
 require('../../entry');
 
@@ -20,7 +21,6 @@ require('@/components/slider-range/slider-range');
 require('@/components/pagination/pagination');
 require('@/components/list/list');
 require('@/components/infographics/infographics');
-require('@/components/review/review');
 require('@/components/heading/heading');
 require('@/components/radio/radio');
 require('@/components/form/subscription/subscription');
@@ -71,4 +71,6 @@ $(() => {
 
   new LikeBtn($('#example-like-btn'));
   new LikeBtn($('#example-like-btn2'));
+
+  new Review($('#example-review'));
 });
