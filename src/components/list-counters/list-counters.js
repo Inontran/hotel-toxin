@@ -1,11 +1,16 @@
 import $ from 'jquery';
 
+import InputNumber from '@/components/input-number/input-number';
+
 require('./list-counters.scss');
 require('@/components/button/button');
-require('@/components/input-number/input-number');
 
 $(() => {
   const $body = $('body');
+
+  $('.js-list-counters .js-input-number').each(function() {
+    new InputNumber($(this));
+  });
 
   function declineWord(number, titles) {
     const numberOfEnding = [2, 0, 1, 1, 1, 2];
