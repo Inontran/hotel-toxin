@@ -25,7 +25,7 @@ class LikeBtn {
   }
 
   _addEventListeners() {
-    this._$likeBtnInput.on('click', this._handlerLikeBtnChange);
+    this._$likeBtnInput.on('change', this._handlerLikeBtnChange);
   }
 
   _handlerLikeBtnChange() {

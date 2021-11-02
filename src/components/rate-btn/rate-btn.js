@@ -2,21 +2,44 @@ import $ from 'jquery';
 
 require('./rate-btn.scss');
 
-$(() => {
-  function handlerClickRateBtn(event) {
-    event.preventDefault();
-    const $btn = $(event.currentTarget);
-    const $rateBtn = $btn.closest('.js-rate-btn');
-    const $inputRate = $rateBtn.find('.js-rate-btn__input');
-    const starRate = $btn.attr('data-number-star');
-    const currentRate = $inputRate.val();
+class RateBtn {
+  _$rateBtn;
+  _$input;
+  _$stars;
 
-    if (starRate === '1' && currentRate === '1') {
-      $inputRate.val(0);
-    } else {
-      $inputRate.val(starRate);
-    }
+  constructor($rateBtn) {
+    this._$rateBtn = $rateBtn;
+    this._init();
   }
 
-  $('body').on('click', '.js-rate-btn .js-rate-btn__star-item', handlerClickRateBtn);
-});
+  _init() {
+    this._$input = $('.js-rate-btn__input', this._$rateBtn);
+    this._$stars = $('.js-rate-btn__star-item', this._$rateBtn);
+
+    this._bindEventListeners();
+    this._addEventListeners();
+  }
+
+  _bindEventListeners() {
+    this._handlerRateBtnClick = this._handlerRateBtnClick.bind(this);
+  }
+
+  _addEventListeners() {
+    this._$stars.on('click', this._handlerRateBtnClick);
+  }
+
+  _handlerRateBtnClick(event) {
+    event.preventDefault();
+    const $btn = $(event.currentTarget);
+    const starRate = $btn.attr('data-number-star');
+    const currentRate = this._$input.val();
+
+    if (starRate === '1' && currentRate === '1') {
+      this._$input.val(0);
+    } else {
+      this._$input.val(starRate);
+    }
+  }
+}
+
+export default RateBtn

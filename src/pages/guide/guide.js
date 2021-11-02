@@ -10,13 +10,13 @@ import RoomReservation from '@/components/form/room-reservation/room-reservation
 import RoomSearch from '@/components/form/room-search/room-search';
 import LikeBtn from '@/components/like-btn/like-btn';
 import Review from '@/components/review/review';
+import RateBtn from '@/components/rate-btn/rate-btn';
 
 require('../../entry');
 
 require('@/components/button/button');
 require('@/components/input-text/input-text');
 require('@/components/checkbox/checkbox');
-require('@/components/rate-btn/rate-btn');
 require('@/components/slider-range/slider-range');
 require('@/components/pagination/pagination');
 require('@/components/list/list');
@@ -73,4 +73,6 @@ $(() => {
   new LikeBtn($('#example-like-btn2'));
 
   new Review($('#example-review'));
+
+  new RateBtn($('#example-rate-btn'));
 });

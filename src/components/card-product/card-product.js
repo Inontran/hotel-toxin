@@ -1,8 +1,9 @@
 import $ from 'jquery';
 import 'owl.carousel';
 
+import RateBtn from '@/components/rate-btn/rate-btn';
+
 require('@/components/button/button');
-require('@/components/rate-btn/rate-btn');
 
 require('./card-product.scss');
 
@@ -22,6 +23,10 @@ class CardProduct {
         items: 1,
         loop: true,
       });
+    });
+
+    $('.js-rate-btn', this._$card).each(function() {
+      new RateBtn($(this));
     });
   }
 }
