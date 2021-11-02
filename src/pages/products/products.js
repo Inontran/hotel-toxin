@@ -5,10 +5,10 @@ import Dropdown from '@/components/dropdown/dropdown';
 import CardProduct from '@/components/card-product/card-product';
 import Expander from '@/components/expander/expander';
 import Header from '@/components/header/header';
+import SliderRange from '@/components/slider-range/slider-range';
 
 require('../../entry');
 
-require('@/components/slider-range/slider-range');
 require('@/components/checkbox/checkbox');
 require('@/components/pagination/pagination');
 require('@/components/button/button');
@@ -21,15 +21,15 @@ $(() => {
 
   new Header($('.js-header'));
   
+  $('.js-products__filter .js-air-datepicker').each(function() {
+    new AirDatepicker($(this));
+  });
+  
   // закрытие dropdown по клику вне этого dropdown
   $body.on('click', '*', (event) => {
     if (!$(event.target).closest('.js-dropdown').length && !$(event.target).hasClass('.js-dropdown')) {
       $('.js-dropdown').removeClass('dropdown_aсtivated');
     }
-  });
-
-  $('.js-products__filter .js-air-datepicker').each(function() {
-    new AirDatepicker($(this));
   });
 
   $('.js-products__filter .js-dropdown').each(function() {
@@ -42,6 +42,10 @@ $(() => {
 
   $('.js-products__filter .js-expander').each(function() {
     new Expander($(this));
+  });
+
+  $('.js-products__filter .js-slider-range').each(function() {
+    new SliderRange($(this));
   });
 
   function handlerClickShowFilter(event) {

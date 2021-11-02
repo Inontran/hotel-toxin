@@ -11,13 +11,13 @@ import RoomSearch from '@/components/form/room-search/room-search';
 import LikeBtn from '@/components/like-btn/like-btn';
 import Review from '@/components/review/review';
 import RateBtn from '@/components/rate-btn/rate-btn';
+import SliderRange from '@/components/slider-range/slider-range';
 
 require('../../entry');
 
 require('@/components/button/button');
 require('@/components/input-text/input-text');
 require('@/components/checkbox/checkbox');
-require('@/components/slider-range/slider-range');
 require('@/components/pagination/pagination');
 require('@/components/list/list');
 require('@/components/infographics/infographics');
@@ -75,4 +75,6 @@ $(() => {
   new Review($('#example-review'));
 
   new RateBtn($('#example-rate-btn'));
+
+  new SliderRange($('#example-slider'));
 });
