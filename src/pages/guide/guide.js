@@ -8,13 +8,13 @@ import Expander from '@/components/expander/expander';
 import Header from '@/components/header/header';
 import RoomReservation from '@/components/form/room-reservation/room-reservation';
 import RoomSearch from '@/components/form/room-search/room-search';
+import LikeBtn from '@/components/like-btn/like-btn';
 
 require('../../entry');
 
 require('@/components/button/button');
 require('@/components/input-text/input-text');
 require('@/components/checkbox/checkbox');
-require('@/components/like-btn/like-btn');
 require('@/components/rate-btn/rate-btn');
 require('@/components/slider-range/slider-range');
 require('@/components/pagination/pagination');
@@ -68,4 +68,7 @@ $(() => {
   $('.js-expander').each(function() {
     new Expander($(this));
   });
+
+  new LikeBtn($('#example-like-btn'));
+  new LikeBtn($('#example-like-btn2'));
 });

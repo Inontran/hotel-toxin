@@ -2,30 +2,45 @@ import $ from 'jquery';
 
 require('./like-btn.scss');
 
-$(() => {
-  const $body = $('body');
+class LikeBtn {
+  _$likeBtn;
+  _$likeBtnInput;
+  _$likeBtnAmountLabel;
 
-  function handlerChangeLikeBtn(event) {
-    const $likeInput = $(event.currentTarget);
-    const $likeBtn = $likeInput.closest('.js-like-btn');
-    const $likeAmountView = $likeBtn.find('.js-like-btn__amount');
-    const doExistAllElements = !$likeBtn.length || !$likeAmountView.length || !$likeInput.length;
-    if (doExistAllElements) {
-      return;
-    }
+  constructor($likeBtn) {
+    this._$likeBtn = $likeBtn;
+    this._init();
+  }
 
-    let countLikes = $likeInput.val();
+  _init() {
+    this._$likeBtnInput = $('.js-like-btn__input', this._$likeBtn);
+    this._$likeBtnAmountLabel = $('.js-like-btn__amount', this._$likeBtn);
+
+    this._bindEventListeners();
+    this._addEventListeners();
+  }
+
+  _bindEventListeners() {
+    this._handlerLikeBtnChange = this._handlerLikeBtnChange.bind(this);
+  }
+
+  _addEventListeners() {
+    this._$likeBtnInput.on('click', this._handlerLikeBtnChange);
+  }
+
+  _handlerLikeBtnChange() {
+    let countLikes = this._$likeBtnInput.val();
     countLikes = countLikes ? parseInt(countLikes, 10) : 0;
-    if ($likeInput.prop('checked')) {
+    if (this._$likeBtnInput.prop('checked')) {
       countLikes += 1;
     } else {
       countLikes -= 1;
       countLikes = countLikes < 0 ? 0 : countLikes;
     }
 
-    $likeInput.val(countLikes);
-    $likeAmountView.text(countLikes);
+    this._$likeBtnInput.val(countLikes);
+    this._$likeBtnAmountLabel.text(countLikes);
   }
+}
 
-  $body.on('change', '.js-like-btn__input', handlerChangeLikeBtn);
-});
+export default LikeBtn
