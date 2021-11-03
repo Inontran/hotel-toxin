@@ -410,7 +410,7 @@ block content
         div.guide-page__col
           +dropdown({
             group: 'guide-example-dropdowns',
-            id: 'example-dropdown2',
+            id: 'example-dropdown',
             inputParams:{
               label: 'Dropdown',
               readonly: true,
@@ -419,6 +419,7 @@ block content
           })
             +list-counters({
               textDefault: 'Сколько гостей',
+              id: 'example-list-counters',
               arrayCounters: [
                 {
                   label: 'Взрослые',
@@ -448,7 +449,7 @@ block content
           +dropdown({
             group: 'guide-example-dropdowns',
             classes: 'dropdown_simple',
-            id: 'example-dropdown3',
+            id: 'example-dropdown2',
             inputParams:{
               label: 'Dropdown',
               readonly: true
@@ -456,6 +457,7 @@ block content
           })
             +list-counters({
               type: 2,
+              id: 'example-list-counters2',
               arrayCounters: [
                 {
                   label: 'Спальни',
@@ -589,7 +591,7 @@ block content
           +dropdown({
             customContent: true,
             classes: 'dropdown_with-dates',
-            id: 'example-dropdown',
+            id: 'example-dropdown3',
             inputParams:{
               label: 'Даты пребывания в отеле',
               readonly: true,

@@ -75,6 +75,20 @@ class InputNumber {
     this._init();
   }
 
+  getInput() {
+    return this._$input;
+  }
+
+  getValue() {
+    return parseInt(this._$input.val(), 10);
+  }
+
+  setValue(newValue) {
+    if (newValue !== this._$input.val()) {
+      this._$input.val(newValue).trigger('change');
+    }
+  }
+
   _init() {
     this._$input = $('.js-input-number__input', this._$inputNumber);
     this._$btnDecreasing = $('.js-input-number__btn_decreasing', this._$inputNumber);
@@ -98,17 +112,25 @@ class InputNumber {
   }
 
   _disableBtns() {
-    const inputMinVal = this._$input.attr('min');
-    const inputMaxVal = this._$input.attr('max');
-    const inputVal = this._$input.val();
+    let minVal = null;
+    try {
+      minVal = parseInt(this._$input.attr('min'), 10);
+    } catch (error) {}
 
-    if (inputMinVal && inputVal <= inputMinVal) {
+    const currentValue = parseInt(this._$input.val());
+
+    if (minVal !== null && currentValue <= minVal) {
       this._$btnDecreasing.attr('disabled', '');
     } else {
       this._$btnDecreasing.removeAttr('disabled');
     }
 
-    if (inputMaxVal && inputVal >= inputMaxVal) {
+    let maxVal = null;
+    try {
+      maxVal = parseInt(this._$input.attr('max'), 10);
+    } catch (error) {}
+
+    if (maxVal !== null && currentValue >= maxVal) {
       this._$btnIncreasing.attr('disabled', '');
     } else {
       this._$btnIncreasing.removeAttr('disabled');
@@ -120,19 +142,21 @@ class InputNumber {
   }
 
   _handleBtnIncreasingClick() {
-    const value = this._$input.val();
+    const currentValue = this._$input.val();
     this._$input[0].stepUp();
-
-    if (this._$input.val() !== value) {
+    
+    if (this._$input.val() !== currentValue) {
+      this._inputValue = parseInt(this._$input.val());
       this._$input[0].dispatchEvent(new Event('change', { bubbles: true }));
     }
   }
 
   _handleBtnDecreasingClick() {
-    const value = this._$input.val();
+    const currentValue = this._$input.val();
     this._$input[0].stepDown();
-
-    if (this._$input.val() !== value) {
+    
+    if (this._$input.val() !== currentValue) {
+      this._inputValue = parseInt(this._$input.val());
       this._$input[0].dispatchEvent(new Event('change', { bubbles: true }));
     }
   }

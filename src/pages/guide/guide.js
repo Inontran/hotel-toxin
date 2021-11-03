@@ -12,6 +12,7 @@ import LikeBtn from '@/components/like-btn/like-btn';
 import Review from '@/components/review/review';
 import RateBtn from '@/components/rate-btn/rate-btn';
 import SliderRange from '@/components/slider-range/slider-range';
+import ListCounters from '@/components/list-counters/list-counters';
 
 require('../../entry');
 
@@ -46,17 +47,6 @@ $(() => {
     new RoomSearch($(this));
   });
 
-  // закрытие dropdown по клику вне этого dropdown
-  $body.on('click', '*', (event) => {
-    if (!$(event.target).closest('.js-dropdown').length && !$(event.target).hasClass('.js-dropdown')) {
-      $('.js-dropdown').removeClass('dropdown_aсtivated');
-    }
-  });
-
-  new Dropdown($('#example-dropdown'));
-  new Dropdown($('#example-dropdown2'));
-  new Dropdown($('#example-dropdown3'));
-
   $('.js-card-product').each(function() {
     new CardProduct($(this));
   });
@@ -77,4 +67,34 @@ $(() => {
   new RateBtn($('#example-rate-btn'));
 
   new SliderRange($('#example-slider'));
+
+  // закрытие dropdown по клику вне этого dropdown
+  $body.on('click', '*', (event) => {
+    if (!$(event.target).closest('.js-dropdown').length && !$(event.target).hasClass('.js-dropdown')) {
+      $('.js-dropdown').removeClass('dropdown_aсtivated');
+    }
+  });
+  
+  const exampleDropdown = new Dropdown($('#example-dropdown'));
+  const exampleDropdown2 = new Dropdown($('#example-dropdown2'));
+  new Dropdown($('#example-dropdown3'));
+
+  const exampleListCounters = new ListCounters($('#example-list-counters'));
+  const exampleListCounters2 = new ListCounters($('#example-list-counters2'));
+
+  exampleListCounters.addEventListener('change-list-counters', function() {
+    const formattedOutput = exampleListCounters.getFormattedOutput();
+    const $dropdown = $('#example-dropdown');
+    if ($dropdown.length) {
+      $dropdown.find('.js-dropdown__input-wrapper .js-input-text__field').val(formattedOutput);
+    }
+  });
+
+  exampleListCounters2.addEventListener('change-list-counters', function() {
+    const formattedOutput = exampleListCounters2.getFormattedOutput();
+    const $dropdown = $('#example-dropdown2');
+    if ($dropdown.length) {
+      $dropdown.find('.js-dropdown__input-wrapper .js-input-text__field').val(formattedOutput);
+    }
+  });
 });
