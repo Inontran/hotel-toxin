@@ -16,9 +16,34 @@ class Dropdown {
     this._init();
   }
 
+  toggle(typeAction) {
+    switch (typeAction) {
+      case 'hide':
+        this._$dropdown.removeClass('dropdown_aсtivated');
+        break;
+
+      case 'show':
+        this._$dropdown.addClass('dropdown_aсtivated');
+        break;
+    
+      default:
+        this._$dropdown.toggleClass('dropdown_aсtivated');
+        break;
+    }
+  }
+
+  getValue() {
+    return this._$input.val();
+  }
+
+  setValue(newValue) {
+    this._$input.val(newValue);
+  }
+
   _init() {
     this._$toggleBtn = $('.js-dropdown__btn', this._$dropdown);
     this._$inputWrapper = $('.js-dropdown__input-wrapper', this._$dropdown);
+    this._$input = $('.js-input-text__field', this._$dropdown);
 
     this._bindEventListeners();
     this._addEventListeners();

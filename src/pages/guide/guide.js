@@ -74,27 +74,22 @@ $(() => {
       $('.js-dropdown').removeClass('dropdown_aсtivated');
     }
   });
+
+  new Dropdown($('#example-dropdown3'));
   
   const exampleDropdown = new Dropdown($('#example-dropdown'));
-  const exampleDropdown2 = new Dropdown($('#example-dropdown2'));
-  new Dropdown($('#example-dropdown3'));
-
   const exampleListCounters = new ListCounters($('#example-list-counters'));
-  const exampleListCounters2 = new ListCounters($('#example-list-counters2'));
 
   exampleListCounters.addEventListener('change-list-counters', function() {
     const formattedOutput = exampleListCounters.getFormattedOutput();
-    const $dropdown = $('#example-dropdown');
-    if ($dropdown.length) {
-      $dropdown.find('.js-dropdown__input-wrapper .js-input-text__field').val(formattedOutput);
-    }
+    exampleDropdown.setValue(formattedOutput);
   });
+
+  const exampleDropdown2 = new Dropdown($('#example-dropdown2'));
+  const exampleListCounters2 = new ListCounters($('#example-list-counters2'));
 
   exampleListCounters2.addEventListener('change-list-counters', function() {
     const formattedOutput = exampleListCounters2.getFormattedOutput();
-    const $dropdown = $('#example-dropdown2');
-    if ($dropdown.length) {
-      $dropdown.find('.js-dropdown__input-wrapper .js-input-text__field').val(formattedOutput);
-    }
+    exampleDropdown2.setValue(formattedOutput);
   });
 });
