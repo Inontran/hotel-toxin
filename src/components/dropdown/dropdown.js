@@ -10,6 +10,7 @@ class Dropdown {
   _$dropdown;
   _$toggleBtn;
   _$inputWrapper;
+  _$input;
 
   constructor($dropdown) {
     this._$dropdown = $dropdown;

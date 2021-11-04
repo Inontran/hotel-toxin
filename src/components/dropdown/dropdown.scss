@@ -104,7 +104,7 @@
   }
 
   &.dropdown_aсtivated {
-    &:not(.dropdown_with-dates) .input__field {
+    &:not(.dropdown_with-dates) .input-text__field {
       border-color: $dark50;
       border-bottom-left-radius: 0;
       border-bottom-right-radius: 0;
