@@ -36,7 +36,14 @@ $(() => {
 
   new Header($('.js-header'));
 
-  new AirDatepicker($('#example-datepicker'));
+  const dropdownWithDates = new Dropdown($('#example-dropdown3'));
+  const exampleAirDatepicker = new AirDatepicker($('#example-datepicker'));
+  exampleAirDatepicker.addEventListener('change-air-datepicker', () => {
+    const formattedDates = exampleAirDatepicker.getFormattedDates();
+    dropdownWithDates.setValue(formattedDates);
+    dropdownWithDates.toggle('hide');
+  });
+
   new AirDatepicker($('#example-datepicker2'));
 
   $('.js-room-reservation').each(function() {
@@ -74,8 +81,6 @@ $(() => {
       $('.js-dropdown').removeClass('dropdown_aсtivated');
     }
   });
-
-  new Dropdown($('#example-dropdown3'));
   
   const exampleDropdown = new Dropdown($('#example-dropdown'));
   const exampleListCounters = new ListCounters($('#example-list-counters'));

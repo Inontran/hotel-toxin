@@ -29,31 +29,28 @@ mixin room-search(options = {})
     div.room-search__dates-container
       div.room-search__input-dates-wrapper
         +dropdown({
-          classes: 'js-dropdown_type_datepicker-output dropdown_type_datepicker-output',
+          classes: 'js-dropdown_with-date-arrival dropdown_with-date-arrival',
           group: 'formFastSelect',
           targetId: '#dropdown-datepicker2',
           inputParams: {
             label: 'Прибытие',
             readonly: true,
             placeholder: 'ДД.ММ.ГГГГ',
-            classes: 'js-input-text_type_start-date input-text_type_start-date',
           },
         })
       div.room-search__input-dates-wrapper
         +dropdown({
-          classes: 'js-dropdown_type_datepicker-output dropdown_type_datepicker-output dropdown_with-dates dropdown_align_right',
+          classes: 'js-dropdown_with-date-departure dropdown_with-date-departure dropdown_with-dates dropdown_align_right',
           group: 'formFastSelect',
           id: 'dropdown-datepicker2',
           inputParams: {
             label: 'Выезд',
             readonly: true,
             placeholder: 'ДД.ММ.ГГГГ',
-            classes: 'js-input-text_type_end-date input-text_type_end-date',
           },
         })
           +air-datepicker({
             classes: 'air-datepicker_inline',
-            targetDropdown: '.js-dropdown_type_datepicker-output',
             minDate: 'today',
           })
 

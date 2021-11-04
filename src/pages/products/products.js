@@ -21,10 +21,6 @@ $(() => {
   const $body = $('body');
 
   new Header($('.js-header'));
-  
-  $('.js-products__filter .js-air-datepicker').each(function() {
-    new AirDatepicker($(this));
-  });
 
   // закрытие dropdown по клику вне этого dropdown
   $body.on('click', '*', (event) => {
@@ -34,6 +30,12 @@ $(() => {
   });
 
   const dropdownWithDates = new Dropdown($('.js-dropdown.js-dropdown_with-dates'));
+  const datepicker = new AirDatepicker($('.js-air-datepicker'));
+  datepicker.addEventListener('change-air-datepicker', () => {
+    const formattedDates = datepicker.getFormattedDates();
+    dropdownWithDates.setValue(formattedDates);
+    dropdownWithDates.toggle('hide');
+  });
 
   const dropdownWithGuests = new Dropdown($('.js-dropdown.js-dropdown_with-guests'));
   const listCounterWithGuests = new ListCounters($('.js-list-counters.js-list-counters_with-guests'));

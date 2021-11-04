@@ -46,31 +46,28 @@ mixin room-reservation(options = {})
     div.room-reservation__dates-container
       div.room-reservation__input-dates-wrapper
         +dropdown({
-          classes: 'js-dropdown_type_datepicker-output dropdown_type_datepicker-output',
+          classes: 'js-dropdown_with-date-arrival dropdown_with-date-arrival',
           group: 'formBooking',
           targetId: '#dropdown-datepicker',
           inputParams: {
             label: "Прибытие",
             readonly: true,
             placeholder: "ДД.ММ.ГГГГ",
-            classes: 'js-input-text_type_start-date input-text_type_start-date',
           },
         })
       div.room-reservation__input-dates-wrapper
         +dropdown({
-          classes: 'js-dropdown_type_datepicker-output dropdown_type_datepicker-output dropdown_with-dates dropdown_align_right',
+          classes: 'js-dropdown_with-date-departure dropdown_with-date-departure dropdown_with-dates dropdown_align_right',
           group: 'formBooking',
           id: 'dropdown-datepicker',
           inputParams: {
             label: "Выезд",
             readonly: true,
             placeholder: "ДД.ММ.ГГГГ",
-            classes: 'js-input-text_type_end-date input-text_type_end-date',
           },
         })
           +air-datepicker({
             classes: 'air-datepicker_inline',
-            targetDropdown: '.js-dropdown_type_datepicker-output',
             minDate: 'today',
           })
 

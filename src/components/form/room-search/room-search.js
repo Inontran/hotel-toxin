@@ -21,9 +21,29 @@ class RoomSearch {
     const $airDatepicker = $('.js-air-datepicker', this._$roomSearch);
     this._airDatepicker = new AirDatepicker($airDatepicker);
 
-    $('.js-dropdown', this._$roomSearch).each(function() {
-      new Dropdown($(this));
-    });
+    this._dropdownWithDateArrival = new Dropdown($('.js-dropdown_with-date-arrival', this._$roomSearch));
+    this._dropdownWithDateDeparture = new Dropdown($('.js-dropdown_with-date-departure', this._$roomSearch));
+
+    this._bindEventListeners();
+    this._addEventListeners();
+  }
+
+  _bindEventListeners() {
+    this._handleDatepickerChange = this._handleDatepickerChange.bind(this);
+  }
+
+  _addEventListeners() {
+    this._airDatepicker.addEventListener('change-air-datepicker', this._handleDatepickerChange);
+  }
+
+  _handleDatepickerChange() {
+    const formattedDateStart = this._airDatepicker.getFormattedDateStart();
+    this._dropdownWithDateArrival.setValue(formattedDateStart);
+    this._dropdownWithDateArrival.toggle('hide');
+
+    const formattedDateEnd = this._airDatepicker.getFormattedDateEnd();
+    this._dropdownWithDateDeparture.setValue(formattedDateEnd);
+    this._dropdownWithDateDeparture.toggle('hide');
   }
 }
 
