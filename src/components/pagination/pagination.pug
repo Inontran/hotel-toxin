@@ -20,12 +20,11 @@ mixin pagination(options = {})
   div.pagination.js-pagination(
     class = classes,
     id = id ? id : false
+    data-page = page, 
+    data-perpage = perpage, 
+    data-elements = elements
   )
-    div.pagination__wrapper.js-pagination__wrapper(
-      data-page = page, 
-      data-perpage = perpage, 
-      data-elements = elements
-    )
+    div.pagination__wrapper.js-pagination__wrapper
     p.pagination__text
       span.pagination__output.js-pagination__output 1 - 12 из 100+ 
       span #{text}

@@ -7,11 +7,11 @@ import Expander from '@/components/expander/expander';
 import Header from '@/components/header/header';
 import SliderRange from '@/components/slider-range/slider-range';
 import ListCounters from '@/components/list-counters/list-counters';
+import Pagination from '@/components/pagination/pagination';
 
 require('../../entry');
 
 require('@/components/checkbox/checkbox');
-require('@/components/pagination/pagination');
 require('@/components/button/button');
 require('@/components/heading/heading');
 
@@ -64,6 +64,8 @@ $(() => {
   $('.js-products__filter .js-slider-range').each(function() {
     new SliderRange($(this));
   });
+
+  new Pagination($('.js-pagination'));
 
   function handlerClickShowFilter(event) {
     event.preventDefault();

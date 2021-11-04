@@ -3,13 +3,22 @@ import $ from 'jquery';
 require('./jquery.paging');
 require('./pagination.scss');
 
-$(() => {
-  $('body').find('.js-pagination .js-pagination__wrapper').each(function () {
-    const $pagination = $(this);
-    const currentPage = $pagination.attr('data-page');
-    const perpage = $pagination.attr('data-perpage');
-    const countElements = $pagination.attr('data-elements');
-    const $paginationOutput = $pagination.closest('.js-pagination').find('.js-pagination__output');
+class Pagination {
+  _$pagination;
+  _$paginationWrapper;
+  _$textAmount;
+
+  constructor($pagination) {
+    this._$pagination = $pagination;
+    this._init();
+  }
+
+  _init() {
+    const currentPage = this._$pagination.attr('data-page');
+    const perpage = this._$pagination.attr('data-perpage');
+    const countElements = this._$pagination.attr('data-elements');
+    this._$textAmount = $('.js-pagination__output', this._$pagination);
+    this._$paginationWrapper = $('.js-pagination__wrapper', this._$pagination);
 
     let countElementsOutput = '';
     if (countElements >= 100) {
@@ -18,7 +27,8 @@ $(() => {
       countElementsOutput = countElements;
     }
 
-    $pagination.paging(countElements, {
+    const that = this;
+    this._$paginationWrapper.paging(countElements, {
       format: '< [ (q-) ncn (-p) ] >',
       perpage,
       lapping: 0,
@@ -31,7 +41,7 @@ $(() => {
         } else {
           startCountElements = 1;
         }
-        $paginationOutput.text(`${startCountElements} - ${endEl} из ${countElementsOutput} `);
+        that._$textAmount.text(`${startCountElements} - ${endEl} из ${countElementsOutput} `);
       },
       onFormat(type) {
         switch (type) {
@@ -97,5 +107,7 @@ $(() => {
         }
       },
     });
-  });
-});
+  }
+}
+
+export default Pagination
