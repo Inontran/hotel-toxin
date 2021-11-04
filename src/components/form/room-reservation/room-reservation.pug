@@ -73,6 +73,7 @@ mixin room-reservation(options = {})
 
     div.room-reservation__input-wrapper
       +dropdown({
+        classes: 'dropdown_with-guests js-dropdown_with-guests',
         group: 'formBooking',
         inputParams:{
           label: "Гости",
@@ -81,6 +82,7 @@ mixin room-reservation(options = {})
         }
       })
         +list-counters({
+          classes: 'list-counters_with-guests js-list-counters_with-guests',
           arrayCounters: [
             {
               label: "Взрослые",

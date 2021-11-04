@@ -56,6 +56,7 @@ mixin room-search(options = {})
 
     div.room-search__input-wrapper
       +dropdown({
+        classes: 'dropdown_with-guests js-dropdown_with-guests',
         group: 'formFastSelect',
         inputParams:{
           label: 'Гости',
@@ -64,6 +65,7 @@ mixin room-search(options = {})
         }
       })
         +list-counters({
+          classes: 'list-counters_with-guests js-list-counters_with-guests',
           arrayCounters: [
             {
               label: 'Взрослые',
