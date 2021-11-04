@@ -38,23 +38,25 @@ $(() => {
 
   const dropdownWithDates = new Dropdown($('#example-dropdown3'));
   const exampleAirDatepicker = new AirDatepicker($('#example-datepicker'));
-  exampleAirDatepicker.addEventListener('change-air-datepicker', () => {
+
+  function handleDatepickerChange() {
     const formattedDates = exampleAirDatepicker.getFormattedDates();
     dropdownWithDates.setValue(formattedDates);
     dropdownWithDates.toggle('hide');
-  });
+  }
+  exampleAirDatepicker.addEventListener('change-air-datepicker', handleDatepickerChange);
 
   new AirDatepicker($('#example-datepicker2'));
 
-  $('.js-room-reservation').each(function() {
+  $('.js-room-reservation').each(function () {
     new RoomReservation($(this));
   });
 
-  $('.js-room-search').each(function() {
+  $('.js-room-search').each(function () {
     new RoomSearch($(this));
   });
 
-  $('.js-card-product').each(function() {
+  $('.js-card-product').each(function () {
     new CardProduct($(this));
   });
 
@@ -62,7 +64,7 @@ $(() => {
     new Diagram($(this));
   });
 
-  $('.js-expander').each(function() {
+  $('.js-expander').each(function () {
     new Expander($(this));
   });
 
@@ -81,22 +83,26 @@ $(() => {
       $('.js-dropdown').removeClass('dropdown_aсtivated');
     }
   });
-  
+
   const exampleDropdown = new Dropdown($('#example-dropdown'));
   const exampleListCounters = new ListCounters($('#example-list-counters'));
 
-  exampleListCounters.addEventListener('change-list-counters', function() {
+  function handleListCountersChange() {
     const formattedOutput = exampleListCounters.getFormattedOutput();
     exampleDropdown.setValue(formattedOutput);
-  });
+  }
+
+  exampleListCounters.addEventListener('change-list-counters', handleListCountersChange);
 
   const exampleDropdown2 = new Dropdown($('#example-dropdown2'));
   const exampleListCounters2 = new ListCounters($('#example-list-counters2'));
 
-  exampleListCounters2.addEventListener('change-list-counters', function() {
+  function handleListCounters2Change() {
     const formattedOutput = exampleListCounters2.getFormattedOutput();
     exampleDropdown2.setValue(formattedOutput);
-  });
+  }
+
+  exampleListCounters2.addEventListener('change-list-counters', handleListCounters2Change);
 
   new Pagination($('.js-pagination'));
 });

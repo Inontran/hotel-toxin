@@ -34,7 +34,7 @@ $(document).ready(() => {
     new Review($(this));
   });
 
-  $('.js-room-reservation').each(function() {
+  $('.js-room-reservation').each(function () {
     new RoomReservation($(this));
   });
 });

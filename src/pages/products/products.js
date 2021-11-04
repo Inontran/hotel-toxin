@@ -31,37 +31,41 @@ $(() => {
 
   const dropdownWithDates = new Dropdown($('.js-dropdown.js-dropdown_with-dates'));
   const datepicker = new AirDatepicker($('.js-air-datepicker'));
-  datepicker.addEventListener('change-air-datepicker', () => {
+
+  function handleDatepickerChange() {
     const formattedDates = datepicker.getFormattedDates();
     dropdownWithDates.setValue(formattedDates);
     dropdownWithDates.toggle('hide');
-  });
+  }
+  datepicker.addEventListener('change-air-datepicker', handleDatepickerChange);
 
   const dropdownWithGuests = new Dropdown($('.js-dropdown.js-dropdown_with-guests'));
   const listCounterWithGuests = new ListCounters($('.js-list-counters.js-list-counters_with-guests'));
 
-  listCounterWithGuests.addEventListener('change-list-counters', () => {
+  function handleListCounterWithGuestsChange() {
     const formattedOutput = listCounterWithGuests.getFormattedOutput();
     dropdownWithGuests.setValue(formattedOutput);
-  });
+  }
+  listCounterWithGuests.addEventListener('change-list-counters', handleListCounterWithGuestsChange);
 
   const dropdownWithFeatures = new Dropdown($('.js-dropdown.js-dropdown_with-features'));
   const listCounterWithFeatures = new ListCounters($('.js-list-counters.js-list-counters_with-features'));
 
-  listCounterWithFeatures.addEventListener('change-list-counters', () => {
+  function handleListCounterWithFeatures() {
     const formattedOutput = listCounterWithFeatures.getFormattedOutput();
     dropdownWithFeatures.setValue(formattedOutput);
-  });
+  }
+  listCounterWithFeatures.addEventListener('change-list-counters', handleListCounterWithFeatures);
 
-  $('.js-products .js-card-product').each(function() {
+  $('.js-products .js-card-product').each(function () {
     new CardProduct($(this));
   });
 
-  $('.js-products__filter .js-expander').each(function() {
+  $('.js-products__filter .js-expander').each(function () {
     new Expander($(this));
   });
 
-  $('.js-products__filter .js-slider-range').each(function() {
+  $('.js-products__filter .js-slider-range').each(function () {
     new SliderRange($(this));
   });
 
@@ -89,7 +93,6 @@ $(() => {
 
   $body.on('click', '.js-products__filter-showing-btn .js-button', handlerClickShowFilter);
 });
-
 
 $(() => {
   const $body = $('body');

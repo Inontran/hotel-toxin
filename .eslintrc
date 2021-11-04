@@ -15,7 +15,8 @@
       }
     ],
     // добавил это исключение, так линтер не понимает алиесы webpack
-    "import/no-unresolved": 0
+    "import/no-unresolved": 0,
+    "no-new": 1
   },
   "parserOptions": {
     "sourceType": "module"
