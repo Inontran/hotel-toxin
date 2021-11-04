@@ -6,6 +6,7 @@ import CardProduct from '@/components/card-product/card-product';
 import Expander from '@/components/expander/expander';
 import Header from '@/components/header/header';
 import SliderRange from '@/components/slider-range/slider-range';
+import ListCounters from '@/components/list-counters/list-counters';
 
 require('../../entry');
 
@@ -24,7 +25,7 @@ $(() => {
   $('.js-products__filter .js-air-datepicker').each(function() {
     new AirDatepicker($(this));
   });
-  
+
   // закрытие dropdown по клику вне этого dropdown
   $body.on('click', '*', (event) => {
     if (!$(event.target).closest('.js-dropdown').length && !$(event.target).hasClass('.js-dropdown')) {
@@ -32,8 +33,22 @@ $(() => {
     }
   });
 
-  $('.js-products__filter .js-dropdown').each(function() {
-    new Dropdown($(this));
+  const dropdownWithDates = new Dropdown($('.js-dropdown.js-dropdown_with-dates'));
+
+  const dropdownWithGuests = new Dropdown($('.js-dropdown.js-dropdown_with-guests'));
+  const listCounterWithGuests = new ListCounters($('.js-list-counters.js-list-counters_with-guests'));
+
+  listCounterWithGuests.addEventListener('change-list-counters', () => {
+    const formattedOutput = listCounterWithGuests.getFormattedOutput();
+    dropdownWithGuests.setValue(formattedOutput);
+  });
+
+  const dropdownWithFeatures = new Dropdown($('.js-dropdown.js-dropdown_with-features'));
+  const listCounterWithFeatures = new ListCounters($('.js-list-counters.js-list-counters_with-features'));
+
+  listCounterWithFeatures.addEventListener('change-list-counters', () => {
+    const formattedOutput = listCounterWithFeatures.getFormattedOutput();
+    dropdownWithFeatures.setValue(formattedOutput);
   });
 
   $('.js-products .js-card-product').each(function() {

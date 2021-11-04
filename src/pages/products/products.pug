@@ -29,12 +29,14 @@ block content
       optionDropdownDates = false,
       optionDropdownDatesDatepicker = {},
       optionDropdownPeople = false,
+      optionListCountersPeople = false,
       optionSliderRange = false,
       checkboxes = false,
       checkboxesTitle = false,
       checkboxesBig = false,
       checkboxesBigTitle = false,
       optionDropdownFeature = false,
+      optionListCountersFeature = false,
       expanderFeatureOptions = false,
       expanderFeatureCheckboxes = []
     } = htmlWebpackPlugin.options.getData();
@@ -63,16 +65,20 @@ block content
                 })
 
               if optionDropdownDates
+                - optionDropdownDates.customContent = true
                 - optionDropdownDates.group = 'filterProducts'
+                - optionDropdownDates.classes = 'dropdown_with-dates js-dropdown_with-dates'
                 div.products__filter-input-dates
                   +dropdown(optionDropdownDates)
                     +air-datepicker(optionDropdownDatesDatepicker)
 
               if optionDropdownPeople
                 - optionDropdownPeople.group = 'filterProducts'
+                - optionDropdownPeople.classes = 'dropdown_with-guests js-dropdown_with-guests'
                 div.products__filter-input-number-guests
                   +dropdown(optionDropdownPeople)
-                    +list-counters(optionDropdownPeople)
+                    - optionListCountersPeople.classes = 'list-counters_with-guests js-list-counters_with-guests'
+                    +list-counters(optionListCountersPeople)
 
               if optionSliderRange
                 div.products__filter-range-price
@@ -105,11 +111,13 @@ block content
                         +checkbox(val)
 
               if optionDropdownFeature
-                - optionDropdownFeature.type = 2
                 - optionDropdownFeature.group = 'filterProducts'
+                - optionDropdownFeature.classes = 'dropdown_with-features js-dropdown_with-features'
                 div.products__filter-selection-amenities
                   +dropdown(optionDropdownFeature)
-                    +list-counters(optionDropdownFeature)
+                    - optionListCountersFeature.type = 2
+                    - optionListCountersFeature.classes = 'list-counters_with-features js-list-counters_with-features'
+                    +list-counters(optionListCountersFeature)
 
               if expanderFeatureOptions
                 +expander(expanderFeatureOptions)

@@ -86,8 +86,6 @@
   ],
 
   "optionDropdownDates":{
-    "customContent": true,
-    "classes": "dropdown_with-dates",
     "inputParams":{
       "label": "Даты пребывания в отеле",
       "readonly": true,
@@ -106,7 +104,10 @@
       "label": "Гости",
       "readonly": true,
       "placeholder": "Сколько гостей"
-    },
+    }
+  },
+
+  "optionListCountersPeople":{
     "arrayCounters": [
       {
         "label": "Взрослые",
@@ -159,7 +160,10 @@
       "label": "Удобства номера",
       "readonly": true,
       "placeholder": "Кол-во спален, кроватей и т.д."
-    },
+    }
+  },
+
+  "optionListCountersFeature": {
     "arrayCounters": [
       {
         "label": "Спальни",
