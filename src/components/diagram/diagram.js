@@ -1,6 +1,8 @@
 import $ from 'jquery';
 import Chart from 'chart.js';
 
+import { COLORS } from '@/shared/constants';
+
 require('./diagram.scss');
 
 class Diagram {
@@ -16,11 +18,11 @@ class Diagram {
     const $chartPicture = $('.js-diagram__picture', this._$diagram);
     const ctx = $chartPicture.get(0).getContext('2d');
     const gradient1 = ctx.createLinearGradient(0, 0, 0, 180);
-    gradient1.addColorStop(0, $.COLORS.purple);
+    gradient1.addColorStop(0, COLORS.purple);
     gradient1.addColorStop(1, '#8BA4F9');
 
     const gradient2 = ctx.createLinearGradient(0, 0, 0, 180);
-    gradient2.addColorStop(0, $.COLORS.green);
+    gradient2.addColorStop(0, COLORS.green);
     gradient2.addColorStop(1, '#66D2EA');
 
     const gradient3 = ctx.createLinearGradient(0, 0, 0, 180);
@@ -70,7 +72,7 @@ class Diagram {
         align: 'start',
         labels: {
           boxWidth: 10,
-          fontColor: $.COLORS.dark75,
+          fontColor: COLORS.dark75,
           fontSize: 14,
           fontFamily: "'Montserrat', 'sans-serif'",
         },

@@ -6,7 +6,7 @@ import Header from '@/components/header/header';
 import Review from '@/components/review/review';
 import RoomReservation from '@/components/form/room-reservation/room-reservation';
 
-require('../../entry');
+require('@/shared/base/base.js');
 
 require('@/components/infographic/infographic');
 require('@/components/list/list');

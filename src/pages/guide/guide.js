@@ -15,7 +15,7 @@ import SliderRange from '@/components/slider-range/slider-range';
 import ListCounters from '@/components/list-counters/list-counters';
 import Pagination from '@/components/pagination/pagination';
 
-require('../../entry');
+require('@/shared/base/base.js');
 
 require('@/components/button/button');
 require('@/components/input-text/input-text');

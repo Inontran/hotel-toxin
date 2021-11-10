@@ -1,5 +1,6 @@
 import $ from 'jquery';
 
+import { BREAKPOINTS } from '@/shared/constants';
 import AirDatepicker from '@/components/air-datepicker/air-datepicker';
 import Dropdown from '@/components/dropdown/dropdown';
 import CardProduct from '@/components/card-product/card-product';
@@ -9,7 +10,7 @@ import SliderRange from '@/components/slider-range/slider-range';
 import ListCounters from '@/components/list-counters/list-counters';
 import Pagination from '@/components/pagination/pagination';
 
-require('../../entry');
+require('@/shared/base/base.js');
 
 require('@/components/checkbox/checkbox');
 require('@/components/button/button');
@@ -118,7 +119,7 @@ $(() => {
   $body.on('click', '.js-products__filter-close-btn .js-button', handlerClickHideBtn);
 
   function updateFilterProducts() {
-    if (window.matchMedia(`(max-width: ${$.BREAKPOINTS.md}px)`).matches) {
+    if (window.matchMedia(`(max-width: ${BREAKPOINTS.md}px)`).matches) {
       $body.prepend($('.js-products__filter.products__filter_mobile'));
     } else {
       $('.js-products__filter-wrapper').append($('.js-products__filter.products__filter_mobile'));

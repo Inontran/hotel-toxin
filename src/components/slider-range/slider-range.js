@@ -2,6 +2,7 @@ import $ from 'jquery';
 import 'webpack-jquery-ui/slider';
 import 'jquery-ui-touch-punch';
 
+import { RUBLE_SIGN } from '@/shared/constants';
 require('@/components/heading/heading');
 
 require('./slider-range.scss');
@@ -51,9 +52,9 @@ class SliderRange {
     }
 
     let resultInputVal = '';
-    resultInputVal += values[0] + $.RUBLE;
+    resultInputVal += values[0] + RUBLE_SIGN;
     resultInputVal += ' - ';
-    resultInputVal += values[1] + $.RUBLE;
+    resultInputVal += values[1] + RUBLE_SIGN;
     this._$formattedOutput.text(resultInputVal);
   }
 
