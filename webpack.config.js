@@ -32,9 +32,13 @@ fs
 
 
 const htmlPlugins = pages.map(fileName => new HtmlWebpackPlugin({
-  getData: () => {
+  getData: (pathToJson) => {
     try {
-      return JSON.parse(fs.readFileSync(`./src/pages/${fileName}/data.json`, 'utf8'));
+      if (pathToJson) {
+        return JSON.parse(fs.readFileSync(`${PATHS.src}/${pathToJson}`, 'utf8'));
+      } else {
+        return JSON.parse(fs.readFileSync(`${PATHS.src}/pages/${fileName}/data.json`, 'utf8'));
+      }
     } catch (e) {
       console.warn(`data.json was not provided for page ${fileName}, because `);
       console.warn(e);
