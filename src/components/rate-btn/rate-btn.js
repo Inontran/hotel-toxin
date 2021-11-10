@@ -1,6 +1,6 @@
 import $ from 'jquery';
 
-require('./rate-btn.scss');
+import './rate-btn.scss';
 
 class RateBtn {
   _$rateBtn;

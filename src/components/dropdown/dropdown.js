@@ -1,8 +1,8 @@
 import $ from 'jquery';
 
-require('@/components/input-text/input-text');
+import '@/components/input-text/input-text';
 
-require('./dropdown.scss');
+import './dropdown.scss';
 
 class Dropdown {
   _$dropdown;

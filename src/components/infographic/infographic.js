@@ -1,1 +1,1 @@
-require('./infographic.scss');
+import './infographic.scss';

@@ -3,7 +3,7 @@ import Chart from 'chart.js';
 
 import { COLORS } from '@/shared/constants';
 
-require('./diagram.scss');
+import './diagram.scss';
 
 class Diagram {
   _$diagram;

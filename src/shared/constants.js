@@ -1,6 +1,6 @@
-export const RUBLE_SIGN = '₽';
+const RUBLE_SIGN = '₽';
 
-export const COLORS = {
+const COLORS = {
   dark: '#1f2041',
   dark75: 'rgba(#1f2041, .75)',
   dark50: 'rgba(#1f2041, .50)',
@@ -14,14 +14,14 @@ export const COLORS = {
   black: '#000',
 };
 
-export const GRADIENTS = {
+const GRADIENTS = {
   purple: `linear-gradient(180deg, ${COLORS.purple} 0%, #8BA4F9 100%)`,
   green: `linear-gradient(180deg, ${COLORS.green} 0%, #66D2EA 100%)`,
   yellow: 'linear-gradient(180deg, #FFE39C 0%, #FFBA9C 100%)',
   gray: 'linear-gradient(180deg, #919191 0%, #3D4975 100%)',
 };
 
-export const BREAKPOINTS = {
+const BREAKPOINTS = {
   xxs: 320,
   xs: 575,
   sm: 767,
@@ -29,3 +29,5 @@ export const BREAKPOINTS = {
   lg: 1199,
   xl: 1440,
 };
+
+export { RUBLE_SIGN, COLORS, GRADIENTS, BREAKPOINTS };

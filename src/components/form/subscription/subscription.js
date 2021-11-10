@@ -1,3 +1,3 @@
-require('@/components/input-text/input-text');
+import '@/components/input-text/input-text';
 
-require('./subscription.scss');
+import './subscription.scss';

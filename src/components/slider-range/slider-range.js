@@ -3,9 +3,9 @@ import 'webpack-jquery-ui/slider';
 import 'jquery-ui-touch-punch';
 
 import { RUBLE_SIGN } from '@/shared/constants';
-require('@/components/heading/heading');
+import '@/components/heading/heading';
 
-require('./slider-range.scss');
+import './slider-range.scss';
 
 class SliderRange {
   _$sliderRange;

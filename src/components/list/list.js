@@ -1,1 +1,1 @@
-require('./list.scss');
+import './list.scss';

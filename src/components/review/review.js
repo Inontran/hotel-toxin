@@ -2,7 +2,7 @@ import $ from 'jquery';
 
 import LikeBtn from '@/components/like-btn/like-btn';
 
-require('./review.scss');
+import './review.scss';
 
 class Review {
   _$review;

@@ -1,6 +1,6 @@
 import $ from 'jquery';
 
-require('./expander.scss');
+import './expander.scss';
 
 class Expander {
   _$expander;

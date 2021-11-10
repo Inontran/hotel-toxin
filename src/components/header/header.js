@@ -2,11 +2,11 @@ import $ from 'jquery';
 
 import Dropdown from '@/components/dropdown/dropdown';
 
-require('@/components/logo/logo');
-require('@/components/button/button');
-require('@/components/list/list');
+import '@/components/logo/logo';
+import '@/components/button/button';
+import '@/components/list/list';
 
-require('./header.scss');
+import './header.scss';
 
 class Header {
   _$header;

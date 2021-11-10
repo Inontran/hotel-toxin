@@ -3,11 +3,10 @@ import $ from 'jquery';
 import AirDatepicker from '@/components/air-datepicker/air-datepicker';
 import Dropdown from '@/components/dropdown/dropdown';
 import ListCounters from '@/components/list-counters/list-counters';
+import '@/components/button/button';
+import '@/components/heading/heading';
 
-require('@/components/button/button');
-require('@/components/heading/heading');
-
-require('./room-reservation.scss');
+import './room-reservation.scss';
 
 class RoomReservation {
   _$roomReservation;

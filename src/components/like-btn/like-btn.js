@@ -1,6 +1,6 @@
 import $ from 'jquery';
 
-require('./like-btn.scss');
+import './like-btn.scss';
 
 class LikeBtn {
   _$likeBtn;

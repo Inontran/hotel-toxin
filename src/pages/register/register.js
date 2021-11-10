@@ -1,13 +1,12 @@
 import $ from 'jquery';
 
+import '@/shared/base/base.js';
+
 import FirstDisplay from '@/components/first-display/first-display';
 import Header from '@/components/header/header';
+import '@/components/form/site-registration/site-registration';
 
-require('@/shared/base/base.js');
-
-require('@/components/form/site-registration/site-registration');
-
-require('./register.scss');
+import './register.scss';
 
 $(() => {
   new Header($('.js-header'));

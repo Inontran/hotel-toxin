@@ -1,35 +1,33 @@
 import $ from 'jquery';
 
+import '@/shared/base/base.js';
+
 import AirDatepicker from '@/components/air-datepicker/air-datepicker';
 import Dropdown from '@/components/dropdown/dropdown';
 import CardProduct from '@/components/card-product/card-product';
 import Diagram from '@/components/diagram/diagram';
 import Expander from '@/components/expander/expander';
 import Header from '@/components/header/header';
-import RoomReservation from '@/components/form/room-reservation/room-reservation';
-import RoomSearch from '@/components/form/room-search/room-search';
 import LikeBtn from '@/components/like-btn/like-btn';
 import Review from '@/components/review/review';
 import RateBtn from '@/components/rate-btn/rate-btn';
 import SliderRange from '@/components/slider-range/slider-range';
 import ListCounters from '@/components/list-counters/list-counters';
 import Pagination from '@/components/pagination/pagination';
+import '@/components/button/button';
+import '@/components/input-text/input-text';
+import '@/components/checkbox/checkbox';
+import '@/components/list/list';
+import '@/components/infographic/infographic';
+import '@/components/heading/heading';
+import '@/components/radio/radio';
+import RoomReservation from '@/components/form/room-reservation/room-reservation';
+import RoomSearch from '@/components/form/room-search/room-search';
+import '@/components/form/subscription/subscription';
+import '@/components/form/site-registration/site-registration';
+import '@/components/form/site-login/site-login';
 
-require('@/shared/base/base.js');
-
-require('@/components/button/button');
-require('@/components/input-text/input-text');
-require('@/components/checkbox/checkbox');
-require('@/components/list/list');
-require('@/components/infographic/infographic');
-require('@/components/heading/heading');
-require('@/components/radio/radio');
-require('@/components/form/subscription/subscription');
-require('@/components/form/site-registration/site-registration');
-require('@/components/form/site-login/site-login');
-require('@/components/form/room-search/room-search');
-
-require('./guide.scss');
+import './guide.scss';
 
 $(() => {
   const $body = $('body');

@@ -2,10 +2,9 @@ import $ from 'jquery';
 import 'owl.carousel';
 
 import RateBtn from '@/components/rate-btn/rate-btn';
+import '@/components/button/button';
 
-require('@/components/button/button');
-
-require('./card-product.scss');
+import './card-product.scss';
 
 class CardProduct {
   _$card;

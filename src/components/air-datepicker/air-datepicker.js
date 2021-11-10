@@ -2,9 +2,9 @@ import $ from 'jquery';
 import 'air-datepicker';
 import moment from 'moment';
 
-require('@/components/button/button');
+import '@/components/button/button';
 
-require('./air-datepicker.scss');
+import './air-datepicker.scss';
 
 class AirDatepicker extends EventTarget{
   _$airDatepicker;

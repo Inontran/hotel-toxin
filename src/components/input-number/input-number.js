@@ -1,6 +1,6 @@
 import $ from 'jquery';
 
-require('./input-number.scss');
+import './input-number.scss';
 
 $(() => {
   // const $body = $('body');

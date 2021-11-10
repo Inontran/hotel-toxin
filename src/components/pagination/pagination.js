@@ -1,7 +1,7 @@
 import $ from 'jquery';
 
-require('./jquery.paging');
-require('./pagination.scss');
+import './jquery.paging';
+import './pagination.scss';
 
 class Pagination {
   _$pagination;

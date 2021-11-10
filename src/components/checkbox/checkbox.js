@@ -1,1 +1,1 @@
-require('./checkbox.scss');
+import './checkbox.scss';

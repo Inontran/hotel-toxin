@@ -1,1 +1,1 @@
-require('./layout.scss');
+import './layout.scss';

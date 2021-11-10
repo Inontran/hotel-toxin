@@ -1,5 +1,5 @@
-require('@/components/button/button');
-require('@/components/input-text/input-text');
-require('@/components/heading/heading');
+import '@/components/button/button';
+import '@/components/input-text/input-text';
+import '@/components/heading/heading';
 
-require('./site-login.scss');
+import './site-login.scss';

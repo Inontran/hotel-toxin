@@ -1,6 +1,8 @@
 import $ from 'jquery';
 
+import '@/shared/base/base.js';
 import { BREAKPOINTS } from '@/shared/constants';
+
 import AirDatepicker from '@/components/air-datepicker/air-datepicker';
 import Dropdown from '@/components/dropdown/dropdown';
 import CardProduct from '@/components/card-product/card-product';
@@ -9,14 +11,11 @@ import Header from '@/components/header/header';
 import SliderRange from '@/components/slider-range/slider-range';
 import ListCounters from '@/components/list-counters/list-counters';
 import Pagination from '@/components/pagination/pagination';
+import '@/components/checkbox/checkbox';
+import '@/components/button/button';
+import '@/components/heading/heading';
 
-require('@/shared/base/base.js');
-
-require('@/components/checkbox/checkbox');
-require('@/components/button/button');
-require('@/components/heading/heading');
-
-require('./products.scss');
+import './products.scss';
 
 $(() => {
   const $body = $('body');

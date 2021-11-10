@@ -1,1 +1,1 @@
-require('./heading.scss');
+import './heading.scss';

@@ -1,7 +1,7 @@
-require('@/components/button/button');
-require('@/components/input-text/input-text');
-require('@/components/checkbox/checkbox');
-require('@/components/heading/heading');
-require('@/components/radio/radio');
+import '@/components/button/button';
+import '@/components/input-text/input-text';
+import '@/components/checkbox/checkbox';
+import '@/components/heading/heading';
+import '@/components/radio/radio';
 
-require('./site-registration.scss');
+import './site-registration.scss';

@@ -1,6 +1,6 @@
 import $ from 'jquery';
 
-require('./first-display.scss');
+import './first-display.scss';
 
 class FirstDisplay {
   _$firstDisplay;

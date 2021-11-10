@@ -2,6 +2,6 @@ import 'normalize.css';
 
 import '@/theme/global.scss';
 
-require('@/components/footer/footer');
+import '@/components/footer/footer';
 
-require('./base.scss');
+import './base.scss';

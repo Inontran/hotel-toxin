@@ -1,1 +1,1 @@
-require('./logo.scss');
+import './logo.scss';

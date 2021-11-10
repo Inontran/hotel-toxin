@@ -1,18 +1,17 @@
 import $ from 'jquery';
 import 'owl.carousel';
 
+import '@/shared/base/base.js';
+
 import Diagram from '@/components/diagram/diagram';
 import Header from '@/components/header/header';
 import Review from '@/components/review/review';
+import '@/components/infographic/infographic';
+import '@/components/list/list';
+import '@/components/heading/heading';
 import RoomReservation from '@/components/form/room-reservation/room-reservation';
 
-require('@/shared/base/base.js');
-
-require('@/components/infographic/infographic');
-require('@/components/list/list');
-require('@/components/heading/heading');
-
-require('./product.scss');
+import './product.scss';
 
 $(document).ready(() => {
   new Header($('.js-header'));

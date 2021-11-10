@@ -1,1 +1,1 @@
-require('./social-nets.scss');
+import './social-nets.scss';

@@ -1,1 +1,1 @@
-require('./button.scss');
+import './button.scss';

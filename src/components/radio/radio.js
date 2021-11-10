@@ -1,1 +1,1 @@
-require('./radio.scss');
+import './radio.scss';
