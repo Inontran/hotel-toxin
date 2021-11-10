@@ -17,6 +17,8 @@ block headTags
 block content
   -
     const {
+      dataHeader = commonDataHeader,
+      dataFooter = commonDataFooter,
       formOptions = {},
       textBottom = false,
     } = htmlWebpackPlugin.options.getData();

@@ -1,5 +1,5 @@
 {
-  "dataHeader": {
+  "commonDataHeader": {
     "menuItems": [
       {
         "name": "О нас",
@@ -35,7 +35,7 @@
     "regText": "Зарегистрироваться",
     "regHref": "register.html"
   },
-  "dataFooter": {
+  "commonDataFooter": {
     "footerItems": [
       {
         "subtitle": "Навигация",

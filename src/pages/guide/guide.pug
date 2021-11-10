@@ -24,6 +24,7 @@ include ../../components/heading/heading
 include ../../components/form/subscription/subscription
 include ../../components/radio/radio
 
+
 block headTags
   -
     const {
@@ -37,111 +38,15 @@ block headTags
 
 block content
   -
-    var dataHeader = {
-      menuItems: [
-        {
-          name: 'Home',
-          href: '/index.html'
-        },
-        {
-          name: 'About Us',
-          href: '/mock-address/change-me'
-        },
-        {
-          name: 'Services',
-          href: '/mock-address/change-me'
-        },
-        {
-          name: 'Careers',
-          href: '/mock-address/change-me'
-        },
-        {
-          name: 'News',
-          href: '/mock-address/change-me'
-        },
-        {
-          name: 'Documentation',
-          href: '/mock-address/change-me'
-        }
-      ],
-      username: 'Cosmin Negoita'
-    }
+    const {
+      dataHeader = commonDataHeader,
+      dataFooter = commonDataFooter,
+    } = htmlWebpackPlugin.options.getData();
+    
   +header({
     menuItems: dataHeader.menuItems,
-    username: dataHeader.username
+    username: dataHeader.username,
   })
-  
-
-  -
-    var dataFooter = {
-      classes: 'footer_bordered_top',
-      footerItems: [
-        {
-          subtitle: 'Navigation',
-          items: [
-            {
-              name: 'About Us',
-              href: '/mock-address/change-me'
-            },
-            {
-              name: 'News',
-              href: '/mock-address/change-me'
-            },
-            {
-              name: 'Support',
-              href: '/mock-address/change-me'
-            },
-            {
-              name: 'Products',
-              href: '/mock-address/change-me'
-            },
-          ]
-        },
-        {
-          subtitle: 'About Us',
-          items: [
-            {
-              name: 'Who we are',
-              href: '/mock-address/change-me'
-            },
-            {
-              name: 'Our team',
-              href: '/mock-address/change-me'
-            },
-            {
-              name: 'Careers',
-              href: '/mock-address/change-me'
-            },
-            {
-              name: 'Investors',
-              href: '/mock-address/change-me'
-            },
-          ]
-        },
-        {
-          subtitle: 'Support',
-          items: [
-            {
-              name: 'Documentation',
-              href: '/mock-address/change-me'
-            },
-            {
-              name: 'Community',
-              href: '/mock-address/change-me'
-            },
-            {
-              name: 'Get in Touch',
-              href: '/mock-address/change-me'
-            },
-          ]
-        }
-      ],
-      text1: 'Lorem ipsum dolor sit amet consectetur adipiscing elit aliquam eget nullam pellentesque aliquam curabitur cociis.',
-      text2: 'Receive our latest news and promotions in your inbox!',
-      titleSubscribe: 'Subscribe to our newsletter',
-      copyrightText: 'Copyright © 2018 Toxin UI Kit. All rights reserved.'
-    }
-
 
   main.page__main
     div.guide-page
