@@ -7,7 +7,7 @@
   options.items[0].text - Текст.
   options.items[0].line - Линия.
 
-mixin infographics(options = {})
+mixin infographic(options = {})
   -
     const {
       classes = '',
@@ -15,27 +15,24 @@ mixin infographics(options = {})
       items = [],
     } = options;
 
-  ul.infographics(
+  ul.infographic(
     class = classes,
     id = id ? id : false
   )
     each item, index in items
       if (item.line)
-        -var modifierItem = 'infographics__item_with-line'
+        -var modifierItem = 'infographic__item_with-line'
       else
         -var modifierItem = ''
 
-      li.infographics__item(class = modifierItem)
+      li.infographic__item(class = modifierItem)
         if item.src
-          //- div.infographics__image(
-          //-   style = 'background-image: url(' + item.src + ')'
-          //- )
-          div.infographics__icon-wrapper
-            img.infographics__icon(
+          div.infographic__icon-wrapper
+            img.infographic__icon(
               src = item.src,
               alt = item.title,
             )
-        div.infographics__text-wrapper
-          p.infographics__title #{item.title}
-          p.infographics__text #{item.text}
+        div.infographic__text-wrapper
+          p.infographic__title #{item.title}
+          p.infographic__text #{item.text}
 

@@ -8,7 +8,7 @@ import RoomReservation from '@/components/form/room-reservation/room-reservation
 
 require('../../entry');
 
-require('@/components/infographics/infographics');
+require('@/components/infographic/infographic');
 require('@/components/list/list');
 require('@/components/heading/heading');
 

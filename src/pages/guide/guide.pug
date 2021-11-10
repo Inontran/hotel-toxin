@@ -10,7 +10,7 @@ include ../../components/slider-range/slider-range
 include ../../components/pagination/pagination
 include ../../components/list/list
 include ../../components/expander/expander
-include ../../components/infographics/infographics
+include ../../components/infographic/infographic
 include ../../components/review/review
 include ../../components/dropdown/dropdown
 include ../../components/air-datepicker/air-datepicker
@@ -553,21 +553,21 @@ block content
 
 
         div.guide-page__col
-          +infographics({items: [
+          +infographic({items: [
             {
-              src: require('@/components/infographics/img/insert_emoticon.svg').default, 
+              src: require('@/components/infographic/img/insert_emoticon.svg').default, 
               title: 'Комфорт', 
               text: 'Шумопоглощающие стены',
               line: true
             },
             {
-              src: require('@/components/infographics/img/location_city.svg').default, 
+              src: require('@/components/infographic/img/location_city.svg').default, 
               title: 'Удобство', 
               text: 'Окно в каждой из спален',
               line: true
             },
             {
-              src: require('@/components/infographics/img/whatshot.svg').default, 
+              src: require('@/components/infographic/img/whatshot.svg').default, 
               title: 'Уют', 
               text: 'Номер оснащен камином'
             }

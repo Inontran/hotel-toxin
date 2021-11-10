@@ -1,7 +1,7 @@
 extends ../base/base.pug
 
 include ../../components/form/room-reservation/room-reservation
-include ../../components/infographics/infographics
+include ../../components/infographic/infographic
 include ../../components/review/review
 include ../../components/list/list
 include ../../components/diagram/diagram
@@ -101,7 +101,7 @@ block content
                 while index < optionsInfographics.items.length
                   - optionsInfographics.items[index].src = require('@/pages/product/img/' + optionsInfographics.items[index].src).default
                   - index++
-                +infographics(optionsInfographics)
+                +infographic(optionsInfographics)
             if chartCountAll
               section.product__room-rating
                 div.product__title
