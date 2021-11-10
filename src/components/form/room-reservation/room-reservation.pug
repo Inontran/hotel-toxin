@@ -114,9 +114,11 @@ mixin room-reservation(options = {})
         table.room-reservation__table
           each item, index in listService
             tr
-              td.room-reservation__table-cell.room-reservation__table-cell_with-tooltip #{item.name}
-                if item.tooltip
+              if item.tooltip
+                td.room-reservation__table-cell.room-reservation__table-cell_with-tooltip #{item.name}
                   div.room-reservation__tooltip(title = item.tooltip)
+              else
+                td.room-reservation__table-cell #{item.name}
               td.room-reservation__table-cell.room-reservation__table-cell_with-price #{item.price}
 
     if totalPrice
