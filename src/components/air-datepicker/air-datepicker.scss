@@ -151,7 +151,7 @@
         background: none;
 
         &::after {
-          background: $gradient1;
+          background: $gradientPurple;
         }
       }
 
@@ -164,7 +164,7 @@
           top: 0;
           height: 100%;
           width: 100%;
-          background: $gradient1;
+          background: $gradientPurple;
           opacity: 0.25;
           z-index: -1;
         }
@@ -187,7 +187,7 @@
         font-weight: 700;
 
         &::after {
-          background: $gradient2;
+          background: $gradientGreen;
         }
       }
 

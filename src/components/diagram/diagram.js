@@ -17,21 +17,21 @@ class Diagram {
   _init() {
     const $chartPicture = $('.js-diagram__picture', this._$diagram);
     const ctx = $chartPicture.get(0).getContext('2d');
-    const gradient1 = ctx.createLinearGradient(0, 0, 0, 180);
-    gradient1.addColorStop(0, COLORS.purple);
-    gradient1.addColorStop(1, '#8BA4F9');
+    const gradientPurple = ctx.createLinearGradient(0, 0, 0, 180);
+    gradientPurple.addColorStop(0, COLORS.purple);
+    gradientPurple.addColorStop(1, '#8BA4F9');
 
-    const gradient2 = ctx.createLinearGradient(0, 0, 0, 180);
-    gradient2.addColorStop(0, COLORS.green);
-    gradient2.addColorStop(1, '#66D2EA');
+    const gradientGreen = ctx.createLinearGradient(0, 0, 0, 180);
+    gradientGreen.addColorStop(0, COLORS.green);
+    gradientGreen.addColorStop(1, '#66D2EA');
 
-    const gradient3 = ctx.createLinearGradient(0, 0, 0, 180);
-    gradient3.addColorStop(0, '#FFE39C');
-    gradient3.addColorStop(1, '#FFBA9C');
+    const gradientYellow = ctx.createLinearGradient(0, 0, 0, 180);
+    gradientYellow.addColorStop(0, '#FFE39C');
+    gradientYellow.addColorStop(1, '#FFBA9C');
 
-    const gradient4 = ctx.createLinearGradient(0, 0, 0, 180);
-    gradient4.addColorStop(0, '#919191');
-    gradient4.addColorStop(1, '#3D4975');
+    const gradientGray = ctx.createLinearGradient(0, 0, 0, 180);
+    gradientGray.addColorStop(0, '#919191');
+    gradientGray.addColorStop(1, '#3D4975');
 
     const num1 = this._$diagram.attr('data-num-1') ? this._$diagram.attr('data-num-1') : 0;
     const num2 = this._$diagram.attr('data-num-2') ? this._$diagram.attr('data-num-2') : 0;
@@ -42,10 +42,10 @@ class Diagram {
       datasets: [{
         data: [num3, num2, num1, num4],
         backgroundColor: [
-          gradient1,
-          gradient2,
-          gradient3,
-          gradient4,
+          gradientPurple,
+          gradientGreen,
+          gradientYellow,
+          gradientGray,
         ],
       }],
 

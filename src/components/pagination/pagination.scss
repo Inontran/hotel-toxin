@@ -11,7 +11,7 @@
     display: inline-block;
     border-radius: 100vh;
     position: relative;
-    background: $gradient2;
+    background: $gradientGreen;
     text-indent: 100px;
     overflow: hidden;
     width: calc_rem(40);
@@ -54,7 +54,7 @@
 
     &_current {
       border-radius: 100vh;
-      background: $gradient1;
+      background: $gradientPurple;
       color: $white;
       font-weight: 700;
     }

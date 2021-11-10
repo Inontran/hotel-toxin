@@ -48,7 +48,7 @@
 
   &__input:checked ~ &__view {
     color: $purple;
-    background: $gradient1;
+    background: $gradientPurple;
 
     &::after {
       background-image: url(img/favorite.svg);

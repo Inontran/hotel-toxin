@@ -108,7 +108,7 @@
 
       &::after {
         left: calc(100% - #{calc_rem(4)} - #{calc_rem(12)});
-        background: $gradient1;
+        background: $gradientPurple;
       }
     }
 
