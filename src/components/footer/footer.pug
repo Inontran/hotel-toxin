@@ -7,14 +7,14 @@ include ../form/subscription/subscription
 //-
   options.classes - Классы блока.
   options.id - ИД блока.
-  options.text1 - Текст под логотипом.
+  options.mainText - Текст под логотипом.
   options.menuItems - Массив колонок пунктов меню.
   options.menuItems[0].subtitle - Заголовок колонки.
   options.menuItems[0].items - Массив пунктов меню.
   options.menuItems[0].items.href - Ссылка.
   options.menuItems[0].items.name - Название страницы.
-  options.titleSubscribe - Заголовок формы с подпиской.
-  options.text2 - Текст формы подписки.
+  options.subscriptionHeading - Заголовок формы с подпиской.
+  options.subscriptionText - Текст формы подписки.
   options.copyrightText - Текст об авторских правах.
 
 mixin footer(options = {})
@@ -22,10 +22,10 @@ mixin footer(options = {})
     const {
       classes = '',
       id = false,
-      text1 = false,
+      mainText = false,
       menuItems = [],
-      titleSubscribe = false,
-      text2 = false,
+      subscriptionHeading = false,
+      subscriptionText = false,
       copyrightText = false,
     } = options;
 
@@ -37,7 +37,7 @@ mixin footer(options = {})
       div.footer__logo
         div.footer__logo-wrapper
           +logo()
-        p.footer__text #{text1}
+        p.footer__text #{mainText}
       
       div.footer__nav-items-menu
         if menuItems[0].subtitle
@@ -79,14 +79,14 @@ mixin footer(options = {})
             a.footer__list-link(href = val.href) #{val.name}
       
       div.footer__subscription
-        if titleSubscribe
+        if subscriptionHeading
           div.footer__title-wrapper
             +heading({
-              text: titleSubscribe,
+              text: subscriptionHeading,
               classes: 'heading_small',
             })
-        if text2
-          p.footer__text-subscription #{text2}
+        if subscriptionText
+          p.footer__text-subscription #{subscriptionText}
         +subscription()
 
     div.footer__copyright

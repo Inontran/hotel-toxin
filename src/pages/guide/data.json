@@ -7,27 +7,22 @@
     "menuItems": [
       {
         "name": "Home",
-        "href": "/index.html"
+        "href": "index.html"
       },
       {
-        "name": "About Us",
-        "href": "/mock-address/change-me"
+        "name": "About Us"
       },
       {
-        "name": "Services",
-        "href": "/mock-address/change-me"
+        "name": "Services"
       },
       {
-        "name": "Careers",
-        "href": "/mock-address/change-me"
+        "name": "Careers"
       },
       {
-        "name": "News",
-        "href": "/mock-address/change-me"
+        "name": "News"
       },
       {
-        "name": "Documentation",
-        "href": "/mock-address/change-me"
+        "name": "Documentation"
       }
     ],
     "username": "Cosmin Negoita"
@@ -40,20 +35,16 @@
         "subtitle": "Navigation",
         "items": [
           {
-            "name": "About Us",
-            "href": "/mock-address/change-me"
+            "name": "About Us"
           },
           {
-            "name": "News",
-            "href": "/mock-address/change-me"
+            "name": "News"
           },
           {
-            "name": "Support",
-            "href": "/mock-address/change-me"
+            "name": "Support"
           },
           {
-            "name": "Products",
-            "href": "/mock-address/change-me"
+            "name": "Products"
           }
         ]
       },
@@ -61,20 +52,16 @@
         "subtitle": "About Us",
         "items": [
           {
-            "name": "Who we are",
-            "href": "/mock-address/change-me"
+            "name": "Who we are"
           },
           {
-            "name": "Our team",
-            "href": "/mock-address/change-me"
+            "name": "Our team"
           },
           {
-            "name": "Careers",
-            "href": "/mock-address/change-me"
+            "name": "Careers"
           },
           {
-            "name": "Investors",
-            "href": "/mock-address/change-me"
+            "name": "Investors"
           }
         ]
       },
@@ -82,23 +69,20 @@
         "subtitle": "Support",
         "items": [
           {
-            "name": "Documentation",
-            "href": "/mock-address/change-me"
+            "name": "Documentation"
           },
           {
-            "name": "Community",
-            "href": "/mock-address/change-me"
+            "name": "Community"
           },
           {
-            "name": "Get in Touch",
-            "href": "/mock-address/change-me"
+            "name": "Get in Touch"
           }
         ]
       }
     ],
-    "text1": "Lorem ipsum dolor sit amet consectetur adipiscing elit aliquam eget nullam pellentesque aliquam curabitur cociis.",
-    "text2": "Receive our latest news and promotions in your inbox!",
-    "titleSubscribe": "Subscribe to our newsletter",
+    "mainText": "Lorem ipsum dolor sit amet consectetur adipiscing elit aliquam eget nullam pellentesque aliquam curabitur cociis.",
+    "subscriptionText": "Receive our latest news and promotions in your inbox!",
+    "subscriptionHeading": "Subscribe to our newsletter",
     "copyrightText": "Copyright © 2018 Toxin UI Kit. All rights reserved."
   }
 }
