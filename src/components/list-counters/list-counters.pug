@@ -17,7 +17,7 @@ include ../input-number/input-number
 
 mixin list-counters(options = {})
   -
-    var {
+    let {
       classes = '',
       id = false,
       type = 1,
@@ -36,7 +36,7 @@ mixin list-counters(options = {})
     if arrayCounters
       each item, index in arrayCounters
         -
-          var {
+          const {
             label = '',
             value = '',
             inputName = false,

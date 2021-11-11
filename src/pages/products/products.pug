@@ -144,7 +144,7 @@ block content
           div.products__cards-container
             each dataCard in cards
               div.products__card-wrapper
-                - var index = 0
+                - let index = 0
                 while index < dataCard.gallery.length
                   - dataCard.gallery[index] = require('@/pages/products/img/' + dataCard.gallery[index]).default
                   - index++
