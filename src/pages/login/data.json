@@ -1,6 +1,6 @@
 {
   "title": "Вход | Toxin Hotel",
-  "discription": "Страница входа на сайт бронирования номеров отеля Toxin.",
+  "description": "Страница входа на сайт бронирования номеров отеля Toxin.",
   "keywords": "Toxin, Hotel, Отель",
   "firstDisplayOptions":{
     "classes": "first-display_align-content_center",

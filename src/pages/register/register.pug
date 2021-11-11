@@ -7,11 +7,11 @@ block headTags
   -
     const {
       title = '',
-      discription = '',
+      description = '',
       keywords = '',
     } = htmlWebpackPlugin.options.getData();
   title #{title}
-  meta(name='discription', content = discription)
+  meta(name='description', content = description)
   meta(name='keywords', content = keywords)
 
 block content
