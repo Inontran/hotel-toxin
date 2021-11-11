@@ -2,31 +2,26 @@
   "commonDataHeader": {
     "menuItems": [
       {
-        "name": "О нас",
-        "href": "/mock-address/change-me"
+        "name": "О нас"
       },
       {
         "name": "Услуги",
-        "href": "/mock-address/change-me",
         "subitems": [
-          { "name": "Долгосрочная аренда", "href": "/mock-address/change-me" },
-          { "name": "Выгул собак", "href": "/mock-address/change-me" },
-          { "name": "Массаж ног", "href": "/mock-address/change-me" }
+          { "name": "Долгосрочная аренда" },
+          { "name": "Выгул собак" },
+          { "name": "Массаж ног" }
         ]
       },
       {
-        "name": "Вакансии",
-        "href": "/mock-address/change-me"
+        "name": "Вакансии"
       },
       {
-        "name": "Новости",
-        "href": "/mock-address/change-me"
+        "name": "Новости"
       },
       {
         "name": "Соглашения",
-        "href": "/mock-address/change-me",
         "subitems": [
-          { "name": "Договор", "href": "/mock-address/change-me" }
+          { "name": "Договор" }
         ]
       }
     ],
@@ -35,26 +30,23 @@
     "regText": "Зарегистрироваться",
     "regHref": "register.html"
   },
+  
   "commonDataFooter": {
     "footerItems": [
       {
         "subtitle": "Навигация",
         "items": [
           {
-            "name": "О нас",
-            "href": "/mock-address/change-me"
+            "name": "О нас"
           },
           {
-            "name": "Новости",
-            "href": "/mock-address/change-me"
+            "name": "Новости"
           },
           {
-            "name": "Служба поддержки",
-            "href": "/mock-address/change-me"
+            "name": "Служба поддержки"
           },
           {
-            "name": "Услуги",
-            "href": "/mock-address/change-me"
+            "name": "Услуги"
           }
         ]
       },
@@ -62,20 +54,16 @@
         "subtitle": "О нас",
         "items": [
           {
-            "name": "О сервисе",
-            "href": "/mock-address/change-me"
+            "name": "О сервисе"
           },
           {
-            "name": "Наша команда",
-            "href": "/mock-address/change-me"
+            "name": "Наша команда"
           },
           {
-            "name": "Вакансии",
-            "href": "/mock-address/change-me"
+            "name": "Вакансии"
           },
           {
-            "name": "Инвесторы",
-            "href": "/mock-address/change-me"
+            "name": "Инвесторы"
           }
         ]
       },
@@ -83,16 +71,13 @@
         "subtitle": "Служба поддержки",
         "items": [
           {
-            "name": "Соглашения",
-            "href": "/mock-address/change-me"
+            "name": "Соглашения"
           },
           {
-            "name": "Сообщества",
-            "href": "/mock-address/change-me"
+            "name": "Сообщества"
           },
           {
-            "name": "Связь с нами",
-            "href": "/mock-address/change-me"
+            "name": "Связь с нами"
           }
         ]
       }

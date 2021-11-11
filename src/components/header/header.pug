@@ -42,6 +42,9 @@ mixin header(options = {})
         each val, index in menuItems
           li.header__main-menu-item
             if val.subitems
+              each subitem in val.subitems
+                if !subitem.href
+                  -subitem.href = '/mock-address/change-me'
               +dropdown({
                 text: val.name,
                 group: 'header-dropdowns',
@@ -52,6 +55,8 @@ mixin header(options = {})
                   items: val.subitems
                 })
             else
+              if !val.href
+                -val.href = '/mock-address/change-me'
               a.header__main-menu-link(href = val.href) #{val.name}
 
 

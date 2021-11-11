@@ -48,6 +48,8 @@ mixin footer(options = {})
             })
         nav.footer__list
           each val, index in menuItems[0].items
+            if !val.href
+              -val.href = '/mock-address/change-me'
             a.footer__list-link(href = val.href) #{val.name}
         
       div.footer__about-items-menu
@@ -59,6 +61,8 @@ mixin footer(options = {})
             })
         nav.footer__list
           each val, index in menuItems[1].items
+            if !val.href
+              -val.href = '/mock-address/change-me'
             a.footer__list-link(href = val.href) #{val.name}
       
       div.footer__support-items-menu
@@ -70,6 +74,8 @@ mixin footer(options = {})
             })
         nav.footer__list
           each val, index in menuItems[2].items
+            if !val.href
+              -val.href = '/mock-address/change-me'
             a.footer__list-link(href = val.href) #{val.name}
       
       div.footer__subscription
