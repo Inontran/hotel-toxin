@@ -61,9 +61,10 @@
   }
 
   &__text {
-    padding-top: 10px;
     color: $dark75;
     line-height: 1.4;
+    padding-top: 10px;
     padding-left: 6px;
+    margin: 0;
   }
 }

@@ -7,12 +7,12 @@ include ../form/subscription/subscription
 //-
   options.classes - Классы блока.
   options.id - ИД блока.
-  options.mainText - Текст под логотипом.
   options.menuItems - Массив колонок пунктов меню.
   options.menuItems[0].subtitle - Заголовок колонки.
   options.menuItems[0].items - Массив пунктов меню.
   options.menuItems[0].items.href - Ссылка.
   options.menuItems[0].items.name - Название страницы.
+  options.mainText - Текст под логотипом.
   options.subscriptionHeading - Заголовок формы с подпиской.
   options.subscriptionText - Текст формы подписки.
   options.copyrightText - Текст об авторских правах.
@@ -22,8 +22,8 @@ mixin footer(options = {})
     const {
       classes = '',
       id = false,
-      mainText = false,
       menuItems = [],
+      mainText = false,
       subscriptionHeading = false,
       subscriptionText = false,
       copyrightText = false,

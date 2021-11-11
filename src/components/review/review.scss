@@ -39,6 +39,7 @@
 
   &__username {
     font-weight: 700;
+    margin: 0;
   }
 
   &__content {
@@ -53,5 +54,6 @@
 
   &__text {
     color: $dark75;
+    margin: 0;
   }
 }

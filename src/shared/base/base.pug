@@ -12,9 +12,9 @@ include ../../components/footer/footer
 doctype html
 html(lang='ru')
   head
-    meta(charset='UTF-8')
+    meta(charset='utf-8')
     meta(name='viewport', content='width=device-width, initial-scale=1.0')
-    link(rel='mask-icon', color='#BC9CFF', href=require('@/components/logo/img/logo-mini.svg').default)
+    link(rel='mask-icon', color='#bc9cff', href=require('@/components/logo/img/logo-mini.svg').default)
     block headTags
   
   body.page
@@ -25,8 +25,8 @@ html(lang='ru')
         +footer({
           classes: dataFooter.classes,
           menuItems: dataFooter.footerItems,
-          text1: dataFooter.text1,
-          text2: dataFooter.text2,
-          titleSubscribe: dataFooter.titleSubscribe,
+          mainText: dataFooter.mainText,
+          subscriptionText: dataFooter.subscriptionText,
+          subscriptionHeading: dataFooter.subscriptionHeading,
           copyrightText: dataFooter.copyrightText
         })

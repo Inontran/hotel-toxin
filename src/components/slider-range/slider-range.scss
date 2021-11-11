@@ -48,7 +48,7 @@
       content: '';
       position: absolute;
       top: -1px;
-      height: calc(#{calc_rem(6)} - 2px);
+      height: calc_rem(6);
       width: calc(#{$size} / 2);
       border: 1px solid $dark25;
       background: $white;

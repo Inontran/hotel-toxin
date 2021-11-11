@@ -391,7 +391,7 @@ block content
             text: 'expandable checkbox list',
             group: 'expander-group-1'
           })
-            p Lorem ipsum dolor sit amet consectetur adipisicing elit. Error, explicabo. Facilis dolorem deleniti consequuntur, sint enim laborum temporibus, iure nihil suscipit minima sapiente rem dignissimos illum quam delectus itaque molestiae.
+            div Lorem ipsum dolor sit amet consectetur adipisicing elit. Error, explicabo. Facilis dolorem deleniti consequuntur, sint enim laborum temporibus, iure nihil suscipit minima sapiente rem dignissimos illum quam delectus itaque molestiae.
           +expander({
             text: 'expandable checkbox list',
             group: 'expander-group-1',
@@ -458,25 +458,27 @@ block content
 
 
         div.guide-page__col
-          +infographic({items: [
-            {
-              src: require('@/components/infographic/img/insert_emoticon.svg').default, 
-              title: 'Комфорт', 
-              text: 'Шумопоглощающие стены',
-              line: true
-            },
-            {
-              src: require('@/components/infographic/img/location_city.svg').default, 
-              title: 'Удобство', 
-              text: 'Окно в каждой из спален',
-              line: true
-            },
-            {
-              src: require('@/components/infographic/img/whatshot.svg').default, 
-              title: 'Уют', 
-              text: 'Номер оснащен камином'
-            }
-          ]})
+          +infographic({
+            items: [
+              {
+                src: require('@/components/infographic/img/insert_emoticon.svg').default, 
+                title: 'Комфорт', 
+                text: 'Шумопоглощающие стены',
+                line: true
+              },
+              {
+                src: require('@/components/infographic/img/location_city.svg').default, 
+                title: 'Удобство', 
+                text: 'Окно в каждой из спален',
+                line: true
+              },
+              {
+                src: require('@/components/infographic/img/whatshot.svg').default, 
+                title: 'Уют', 
+                text: 'Номер оснащен камином'
+              }
+            ]
+          })
 
       
         div.guide-page__col

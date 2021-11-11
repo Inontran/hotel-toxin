@@ -20,10 +20,9 @@ mixin infographic(options = {})
     id = id ? id : false
   )
     each item, index in items
+      - let modifierItem = ''
       if (item.line)
-        -const modifierItem = 'infographic__item_with-line'
-      else
-        -const modifierItem = ''
+        - modifierItem = 'infographic__item_with-line'
 
       li.infographic__item(class = modifierItem)
         if item.src

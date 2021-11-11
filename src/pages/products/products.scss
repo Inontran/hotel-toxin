@@ -34,10 +34,7 @@
       max-width: $xxs;
       transform: translateX(-100%);
       transition: transform 0.3s;
-
-      @media (min-width: $xxs + 1px) {
-        border-right: 1px solid $dark75;
-      }
+      border-right: 1px solid $dark75;
 
       &.products__filter_mobile_visible {
         transform: translateX(0);
@@ -83,6 +80,8 @@
 
     &-list-checkboxes {
       list-style: none;
+      margin: 0;
+      padding-left: 0;
     }
 
     &-close-btn {

@@ -35,6 +35,7 @@
     z-index: -1;
     text-align: center;
     color: $purple;
+    margin-top: 0;
     margin-bottom: 0;
 
     &-number {
@@ -69,6 +70,8 @@
   &__legend {
     padding-right: 7px;
     padding-top: 10px;
+    padding-left: 0;
+    margin: 0;
 
     &-item {
       display: flex;
