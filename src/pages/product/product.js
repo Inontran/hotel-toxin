@@ -2,7 +2,6 @@ import $ from 'jquery';
 import 'owl.carousel';
 
 import '@/shared/base/base.js';
-
 import Diagram from '@/components/diagram/diagram';
 import Header from '@/components/header/header';
 import Review from '@/components/review/review';

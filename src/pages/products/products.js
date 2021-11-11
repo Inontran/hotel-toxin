@@ -2,7 +2,6 @@ import $ from 'jquery';
 
 import '@/shared/base/base.js';
 import { BREAKPOINTS } from '@/shared/constants';
-
 import AirDatepicker from '@/components/air-datepicker/air-datepicker';
 import Dropdown from '@/components/dropdown/dropdown';
 import CardProduct from '@/components/card-product/card-product';

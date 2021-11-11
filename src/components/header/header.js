@@ -1,7 +1,6 @@
 import $ from 'jquery';
 
 import Dropdown from '@/components/dropdown/dropdown';
-
 import '@/components/logo/logo';
 import '@/components/button/button';
 import '@/components/list/list';
