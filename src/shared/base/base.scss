@@ -3,13 +3,13 @@
 .page {
   min-height: 100vh;
 
-  .page__content-wrapper {
+  &__content-wrapper {
     min-height: 100vh;
     display: flex;
     flex-direction: column;
   }
 
-  .page__main {
+  &__main {
     width: 100%;
     flex-grow: 1;
   }
