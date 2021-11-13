@@ -12,8 +12,8 @@
     grid-template-areas: 'logo nav-menu btns';
     align-items: center;
     grid-template-columns: auto 1fr auto auto auto;
-    padding: 15px $padding_container;
-    max-width: $max_width_container;
+    padding: 15px $padding-container;
+    max-width: $max-width-container;
     margin: 0 auto;
     background-color: $white;
   }

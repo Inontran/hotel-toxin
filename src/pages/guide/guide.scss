@@ -8,8 +8,8 @@
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     grid-gap: 0 72px;
-    padding: 0 $padding_container;
-    max-width: $max_width_container;
+    padding: 0 $padding-container;
+    max-width: $max-width-container;
     margin: 0 auto;
 
     &_with-fixed-col {

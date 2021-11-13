@@ -175,9 +175,9 @@
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
-    max-width: $max_width_container;
+    max-width: $max-width-container;
     margin: 0 auto;
-    padding: 70px $padding_container calc(70px - 33px);
+    padding: 70px $padding-container calc(70px - 33px);
 
     @media (max-width: $md) {
       padding-top: 35px;
