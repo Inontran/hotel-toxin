@@ -4,14 +4,14 @@
   &__avatar-wrapper,
   &__like-wrapper {
     flex-shrink: 0;
-    width: calc_rem(48);
+    width: calc-rem(48);
     margin-right: 10px;
   }
 
   &__avatar-wrapper {
     display: block;
     position: relative;
-    height: calc_rem(48);
+    height: calc-rem(48);
     border: 2px solid $white;
     box-sizing: border-box;
     box-shadow: 0 10px 20px $dark10;

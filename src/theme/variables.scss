@@ -41,7 +41,7 @@ $gutter: 40px;
 $max-width-container: 1180px;
 $padding-container: 10px;
 
-@function calc_rem($val_px) {
+@function calc-rem($val_px) {
   $result: #{$val_px / $font-size-base + 'rem'};
 
   @return $result;

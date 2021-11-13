@@ -14,8 +14,8 @@
     background: $gradientGreen;
     text-indent: 100px;
     overflow: hidden;
-    width: calc_rem(40);
-    height: calc_rem(40);
+    width: calc-rem(40);
+    height: calc-rem(40);
 
     &::after {
       content: '';
@@ -41,12 +41,12 @@
 
   &__number {
     display: inline-block;
-    min-width: calc_rem(40);
-    height: calc_rem(40);
+    min-width: calc-rem(40);
+    height: calc-rem(40);
     text-decoration: none;
     text-align: center;
-    line-height: calc(#{calc_rem(40)} - 10px);
-    font-size: calc_rem(12);
+    line-height: calc(#{calc-rem(40)} - 10px);
+    font-size: calc-rem(12);
     color: $dark50;
     padding: 5px;
     background: transparent;

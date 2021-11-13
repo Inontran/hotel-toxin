@@ -7,11 +7,11 @@
   background: $white;
   border: 1px solid $dark25;
   border-radius: 4px;
-  width: calc_rem(320);
+  width: calc-rem(320);
 
   @media (max-width: $sm) {
     padding: 10px;
-    width: calc_rem(302);
+    width: calc-rem(302);
   }
 
   &__btns {
@@ -52,8 +52,8 @@
     }
 
     &--nav-action {
-      width: calc_rem(17);
-      height: calc_rem(18);
+      width: calc-rem(17);
+      height: calc-rem(18);
       position: relative;
       margin: 3px;
 
@@ -90,7 +90,7 @@
     &--nav-title {
       font-family: 'Montserrat', sans-serif;
       font-weight: 700;
-      font-size: calc_rem(19);
+      font-size: calc-rem(19);
       color: $dark;
       padding: 0;
       border-radius: 0;
@@ -111,20 +111,20 @@
 
     &--day-name {
       color: $purple;
-      font-size: calc_rem(12);
+      font-size: calc-rem(12);
       line-height: 1.25;
       font-weight: 700;
       text-transform: none;
-      width: calc_rem(40);
-      height: calc_rem(40);
+      width: calc-rem(40);
+      height: calc-rem(40);
     }
 
     &--cell-day {
-      font-size: calc_rem(12);
+      font-size: calc-rem(12);
       line-height: 1.25;
       color: $dark50;
-      width: calc_rem(40);
-      height: calc_rem(40);
+      width: calc-rem(40);
+      height: calc-rem(40);
       position: relative;
       background: none;
 

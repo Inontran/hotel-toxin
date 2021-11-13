@@ -9,7 +9,7 @@
     background: none;
     box-shadow: none;
     width: 100%;
-    min-height: calc_rem(44);
+    min-height: calc-rem(44);
     cursor: pointer;
     padding: 0;
 
@@ -29,7 +29,7 @@
       background-position: center;
       background-size: 100% 100%;
       fill: $dark50;
-      margin: 0 calc((#{calc_rem(44)} - 12px) / 2);
+      margin: 0 calc((#{calc-rem(44)} - 12px) / 2);
       transform: rotate(0);
       transition: 0.3s;
       flex: none;

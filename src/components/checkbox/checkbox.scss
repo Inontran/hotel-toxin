@@ -15,8 +15,8 @@
   &__custom-input {
     position: relative;
     display: inline-block;
-    width: calc_rem(20);
-    height: calc_rem(20);
+    width: calc-rem(20);
+    height: calc-rem(20);
     border-radius: 4px;
     background: $white;
     border: 1px solid $dark25;
@@ -55,7 +55,7 @@
 
   &__title {
     display: block;
-    font-size: calc_rem(14);
+    font-size: calc-rem(14);
     font-weight: 700;
     color: $dark75;
     margin: 2px 0 5px;
@@ -65,7 +65,7 @@
   &__text {
     display: block;
     line-height: 1.28;
-    font-size: calc_rem(14);
+    font-size: calc-rem(14);
     color: $dark50;
     padding-top: 3px;
   }
@@ -73,7 +73,7 @@
   &__small-text {
     display: block;
     line-height: 1.16;
-    font-size: calc_rem(12);
+    font-size: calc-rem(12);
     color: $dark50;
   }
 
@@ -84,18 +84,18 @@
 
   &.checkbox_type_toggle {
     .checkbox__custom-input {
-      width: calc_rem(40);
-      height: calc_rem(20);
+      width: calc-rem(40);
+      height: calc-rem(20);
       border-radius: 100vh;
 
       &::after {
         content: '';
         position: absolute;
         top: 50%;
-        left: calc_rem(4);
+        left: calc-rem(4);
         transform: translateY(-50%);
-        width: calc_rem(12);
-        height: calc_rem(12);
+        width: calc-rem(12);
+        height: calc-rem(12);
         background: $dark25;
         border-radius: 100vh;
         opacity: 1;
@@ -107,7 +107,7 @@
       border-color: $purple;
 
       &::after {
-        left: calc(100% - #{calc_rem(4)} - #{calc_rem(12)});
+        left: calc(100% - #{calc-rem(4)} - #{calc-rem(12)});
         background: $gradientPurple;
       }
     }

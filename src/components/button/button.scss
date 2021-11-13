@@ -5,7 +5,7 @@
   background: none;
   border: none;
   font-family: 'Montserrat', sans-serif;
-  font-size: calc_rem(12);
+  font-size: calc-rem(12);
   text-transform: uppercase;
   font-weight: 700;
   line-height: 1.25;
@@ -33,8 +33,8 @@
     border: 0;
     border-radius: 100vh;
     color: $white;
-    padding: calc_rem(5) calc_rem(20);
-    min-height: calc_rem(44);
+    padding: calc-rem(5) calc-rem(20);
+    min-height: calc-rem(44);
     overflow: hidden;
 
     &::before {
@@ -82,7 +82,7 @@
   }
 
   &_theme_arrow {
-    padding: calc_rem(5) calc_rem(35);
+    padding: calc-rem(5) calc-rem(35);
 
     &::after {
       content: '';
@@ -100,7 +100,7 @@
   }
 
   &_size_md {
-    min-height: calc_rem(34);
+    min-height: calc-rem(34);
   }
 
   &_adapted-for-header {

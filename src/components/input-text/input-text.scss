@@ -14,10 +14,10 @@
     border-radius: 4px;
     background: $white;
     border: 1px solid $dark25;
-    font-size: calc_rem(14);
+    font-size: calc-rem(14);
     line-height: 1.2857;
     padding: 12px 15px;
-    min-height: calc_rem(44);
+    min-height: calc-rem(44);
     width: 100%;
     color: $dark75;
 
@@ -34,7 +34,7 @@
   &.input-text_theme_subscription,
   &.input-text_theme_dropdown {
     .input-text__field {
-      padding-right: calc_rem(44);
+      padding-right: calc-rem(44);
     }
   }
 

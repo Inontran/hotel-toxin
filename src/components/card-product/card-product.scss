@@ -58,12 +58,12 @@
           position: absolute;
           top: 50%;
           transform: translateY(-50%);
-          width: calc_rem(44);
-          height: calc_rem(44);
+          width: calc-rem(44);
+          height: calc-rem(44);
 
           span {
-            width: calc_rem(8);
-            height: calc_rem(13);
+            width: calc-rem(8);
+            height: calc-rem(13);
             background-image: url(img/expand_more.svg);
             background-position: center;
             background-repeat: no-repeat;
@@ -93,8 +93,8 @@
         display: flex;
 
         .owl-dot {
-          width: calc_rem(8);
-          height: calc_rem(8);
+          width: calc-rem(8);
+          height: calc-rem(8);
           border: 1px solid $white;
           box-shadow: 0 5px 5px $dark30;
           transition: 0.3s;
@@ -157,18 +157,18 @@
   }
 
   &__symbol {
-    font-size: calc_rem(14);
+    font-size: calc-rem(14);
     line-height: 1.21;
     padding-right: 8px;
   }
 
   &__room-number {
-    font-size: calc_rem(19);
+    font-size: calc-rem(19);
     line-height: 1.21;
   }
 
   &__room-type {
-    font-size: calc_rem(12);
+    font-size: calc-rem(12);
     line-height: 1.25;
     color: $purple;
     text-transform: uppercase;
@@ -182,11 +182,11 @@
 
   &__room-number-price {
     font-weight: 700;
-    font-size: calc_rem(14);
+    font-size: calc-rem(14);
   }
 
   &__room-payment-period {
-    font-size: calc_rem(12);
+    font-size: calc-rem(12);
   }
 
   &__reviews-container {

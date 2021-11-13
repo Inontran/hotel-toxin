@@ -1,7 +1,7 @@
 @import '@/theme/variables.scss';
 
 .slider-range {
-  $size: calc_rem(16);
+  $size: calc-rem(16);
   $border_width: 2px;
 
   &__label-wrapper {
@@ -22,7 +22,7 @@
     border: 0;
     box-shadow: none;
     color: $dark50;
-    font-size: calc_rem(12);
+    font-size: calc-rem(12);
     text-transform: uppercase;
     width: 45%;
     outline: none;
@@ -34,7 +34,7 @@
     background: $white;
     border-top: 1px solid $dark25;
     border-bottom: 1px solid $dark25;
-    height: calc_rem(6);
+    height: calc-rem(6);
     position: relative;
 
     &,
@@ -48,7 +48,7 @@
       content: '';
       position: absolute;
       top: -1px;
-      height: calc_rem(6);
+      height: calc-rem(6);
       width: calc(#{$size} / 2);
       border: 1px solid $dark25;
       background: $white;
@@ -85,7 +85,7 @@
 
   &__text {
     color: $dark50;
-    font-size: calc_rem(12);
+    font-size: calc-rem(12);
     margin-top: 10px;
     margin-bottom: 0;
   }

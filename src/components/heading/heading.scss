@@ -6,15 +6,15 @@
   margin: 0;
 
   &.heading_large {
-    font-size: calc_rem(24);
+    font-size: calc-rem(24);
   }
 
   &.heading_middle {
-    font-size: calc_rem(19);
+    font-size: calc-rem(19);
   }
 
   &.heading_small {
-    font-size: calc_rem(12);
+    font-size: calc-rem(12);
     text-transform: uppercase;
   }
 }

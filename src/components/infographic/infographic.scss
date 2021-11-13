@@ -19,8 +19,8 @@
 
   &__image {
     flex: none;
-    width: calc_rem(48);
-    height: calc_rem(48);
+    width: calc-rem(48);
+    height: calc-rem(48);
     background-position: center;
     background-size: auto;
     background-repeat: no-repeat;
@@ -32,8 +32,8 @@
     justify-content: center;
     align-items: center;
     flex: none;
-    width: calc_rem(48);
-    height: calc_rem(48);
+    width: calc-rem(48);
+    height: calc-rem(48);
     margin-right: 10px;
   }
 
