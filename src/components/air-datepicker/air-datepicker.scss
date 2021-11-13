@@ -1,5 +1,7 @@
-@import '@/theme/variables.scss';
 @import '~air-datepicker/dist/css/datepicker.css';
+
+@import '@/theme/variables.scss';
+@import '@/shared/functions.scss';
 
 .air-datepicker {
   display: inline-block;

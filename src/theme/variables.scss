@@ -40,15 +40,3 @@ $font-size-base: 14;
 $gutter: 40px;
 $max-width-container: 1180px;
 $padding-container: 10px;
-
-@function calc-rem($val_px) {
-  $result: #{$val_px / $font-size-base + 'rem'};
-
-  @return $result;
-}
-
-@function divide($num1, $num2) {
-  $result: $num1 / $num2;
-
-  @return $result;
-}

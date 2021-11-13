@@ -1,5 +1,7 @@
-@import '@/theme/variables.scss';
 @import 'owl.carousel';
+
+@import '@/theme/variables.scss';
+@import '@/shared/functions.scss';
 
 .product {
   &__gallery {

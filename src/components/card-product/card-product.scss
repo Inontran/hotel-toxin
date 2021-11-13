@@ -1,5 +1,7 @@
+@import 'owl.carousel';
+
 @import '@/theme/variables.scss';
-@import '~owl.carousel/dist/assets/owl.carousel.css';
+@import '@/shared/functions.scss';
 
 .card-product {
   background: $white;
