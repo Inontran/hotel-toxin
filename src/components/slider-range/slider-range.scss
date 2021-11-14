@@ -3,7 +3,7 @@
 
 .slider-range {
   $size: calc-rem(16);
-  $border_width: 2px;
+  $border-width: 2px;
 
   &__label-wrapper {
     display: flex;
@@ -30,8 +30,8 @@
   }
 
   &__slider {
-    width: calc(100% - #{$size} / 2 - (#{$border_width} * 2));
-    margin: 0 calc(#{$size} / 2 - #{$border_width});
+    width: calc(100% - #{$size} / 2 - (#{$border-width} * 2));
+    margin: 0 calc(#{$size} / 2 - #{$border-width});
     background: $white;
     border-top: 1px solid $dark25;
     border-bottom: 1px solid $dark25;
@@ -72,7 +72,7 @@
       transform: translateY(-50%);
       width: $size;
       height: $size;
-      border: $border_width solid $white;
+      border: $border-width solid $white;
       border-radius: 100vh;
       background: $gradientGreen;
     }
