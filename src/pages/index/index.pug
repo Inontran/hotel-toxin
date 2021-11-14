@@ -21,7 +21,7 @@ block content
       dataHeader = {},
       dataFooter = {},
       formOptions = {},
-      textBottom = false,
+      firstDisplayText = false,
     } = htmlWebpackPlugin.options.getData();
 
   +header({
@@ -33,10 +33,9 @@ block content
   })
 
   main.page__main
-    +first-display(data)
-      div.first-display__form-wrapper
-        +room-search(formOptions)
-      if textBottom
-        div.first-display__text-bottom #{textBottom}
+    +first-display({
+      text: firstDisplayText,
+    })
+      +room-search(formOptions)
 
   +footer(dataFooter)

@@ -9,6 +9,7 @@ mixin first-display(options = {})
       classes = '',
       id = false,
       bgUrl = false,
+      text = false,
     } = options;
 
   div.first-display.js-first-display(
@@ -17,4 +18,7 @@ mixin first-display(options = {})
     style = bgUrl ? 'background-image: url(' + bgUrl + ')' : false,
   )
     div.first-display__content-wrapper
-      block
+      div.first-display__form-wrapper
+        block
+      if text
+        div.first-display__text #{text}
