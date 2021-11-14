@@ -19,11 +19,12 @@ block headTags
   meta(name='description', content = description)
   meta(name='keywords', content = keywords)
 
+block header
+  +header()
+
 block content
   -
     const {
-      dataHeader = {},
-      dataFooter = {},
       gallery = false,
       optionsInfographics = false,
       chartCountAll = false,
@@ -44,131 +45,123 @@ block content
       totalPrice = false,
     } = htmlWebpackPlugin.options.getData();
 
-  - dataFooter.classes = 'footer_bordered_top';
+  div.product.js-product
+    if gallery
+      section.product__gallery
+        if gallery[0]
+          - gallery[0] = require('@/pages/product/img/' + gallery[0]).default
+          div.product__gallery-main-item
+            img.product__gallery-img(
+              src = gallery[0],
+              alt = 'Фото номера ' + roomNumber,
+            )
+        if gallery[1]
+          - gallery[1] = require('@/pages/product/img/' + gallery[1]).default
+          div.product__gallery-upper-small-item
+            img.product__gallery-img(
+              src = gallery[1],
+              alt = 'Фото номера ' + roomNumber,
+            )
+        if gallery[2]
+          - gallery[2] = require('@/pages/product/img/' + gallery[2]).default
+          div.product__gallery-bottom-small-item
+            img.product__gallery-img(
+              src = gallery[2],
+              alt = 'Фото номера ' + roomNumber,
+            )
 
-  +header({
-    menuItems: dataHeader.menuItems, 
-    buttonLoginText: dataHeader.loginText,
-    buttonLoginHref: dataHeader.loginHref,
-    buttonRegText: dataHeader.regText,
-    buttonRegHref: dataHeader.regHref
+      section.product__carousel.js-product__carousel.owl-carousel
+        each src in gallery
+          if src
+            div.product__carousel-item
+              img.product__carousel-img(
+                src = src,
+                alt = 'Фото номера ' + roomNumber,
+              )
+
+    div.product__container
+      div.product__main-content
+        div.product__room-main-info
+          section.product__room-details
+            if optionsInfographics
+              div.product__title
+                +heading({
+                  text: 'Сведения о номере',
+                  classes: 'heading_middle',
+                  tag: 'h1',
+                })
+              - let index = 0
+              while index < optionsInfographics.items.length
+                - optionsInfographics.items[index].src = require('@/pages/product/img/' + optionsInfographics.items[index].src).default
+                - index++
+              +infographic(optionsInfographics)
+          if chartCountAll
+            section.product__room-rating
+              div.product__title
+                +heading({
+                  text: 'Впечатления от номера',
+                  classes: 'heading_middle',
+                  tag: 'h2',
+                })
+              +diagram({
+                chartCountAll: chartCountAll,
+                chartNumAwesome: chartNumAwesome,
+                chartNumGood: chartNumGood,
+                chartNumNotbad: chartNumNotbad,
+                chartNumDisappointed: chartNumDisappointed,
+              })
+        
+        if reviews
+          section.product__section-reviews
+            header.product__header-reviews
+              div.product__title.product__title_theme_review
+                +heading({
+                  text: 'Отзывы посетителей номера',
+                  classes: 'heading_middle',
+                  tag: 'h2',
+                })
+              span.product__amount-reviews #{reviews.length} отзыва
+            each reviewItem, index in reviews
+              div.product__review-wrapper
+                - reviewItem.avatar = require('@/pages/product/img/' + reviewItem.avatar).default
+                +review(reviewItem)
+
+        div.product__container-with-rules
+          section.product__rules
+            if rulesTitle
+              div.product__title.product__title_theme_rules
+                +heading({
+                  text: rulesTitle,
+                  classes: 'heading_middle',
+                  tag: 'h2',
+                })
+            if optionsRules
+              +list({
+                classes: 'list_with-big-dots',
+                items: optionsRules.items,
+              })
+          section.product__cancellation-text-wrapper
+            if cancelTitle
+              div.product__title
+                +heading({
+                  text: cancelTitle,
+                  classes: 'heading_middle',
+                  tag: 'h2',
+                })
+            if cancelText
+              p.product__cancellation-text #{cancelText}
+
+      div.product__form-wrapper
+        +room-reservation({
+          roomNumber: roomNumber,
+          roomType: roomType,
+          price: price,
+          priceTime: priceTime,
+          listService: listService,
+          totalPrice: totalPrice
+        })
+
+block footer
+  +footer({
+    classes: 'footer_bordered_top',
   })
-
-  main.page__main
-    div.product.js-product
-      if gallery
-        section.product__gallery
-          if gallery[0]
-            - gallery[0] = require('@/pages/product/img/' + gallery[0]).default
-            div.product__gallery-main-item
-              img.product__gallery-img(
-                src = gallery[0],
-                alt = 'Фото номера ' + roomNumber,
-              )
-          if gallery[1]
-            - gallery[1] = require('@/pages/product/img/' + gallery[1]).default
-            div.product__gallery-upper-small-item
-              img.product__gallery-img(
-                src = gallery[1],
-                alt = 'Фото номера ' + roomNumber,
-              )
-          if gallery[2]
-            - gallery[2] = require('@/pages/product/img/' + gallery[2]).default
-            div.product__gallery-bottom-small-item
-              img.product__gallery-img(
-                src = gallery[2],
-                alt = 'Фото номера ' + roomNumber,
-              )
-
-        section.product__carousel.js-product__carousel.owl-carousel
-          each src in gallery
-            if src
-              div.product__carousel-item
-                img.product__carousel-img(
-                  src = src,
-                  alt = 'Фото номера ' + roomNumber,
-                )
-
-      div.product__container
-        div.product__main-content
-          div.product__room-main-info
-            section.product__room-details
-              if optionsInfographics
-                div.product__title
-                  +heading({
-                    text: 'Сведения о номере',
-                    classes: 'heading_middle',
-                    tag: 'h1',
-                  })
-                - let index = 0
-                while index < optionsInfographics.items.length
-                  - optionsInfographics.items[index].src = require('@/pages/product/img/' + optionsInfographics.items[index].src).default
-                  - index++
-                +infographic(optionsInfographics)
-            if chartCountAll
-              section.product__room-rating
-                div.product__title
-                  +heading({
-                    text: 'Впечатления от номера',
-                    classes: 'heading_middle',
-                    tag: 'h2',
-                  })
-                +diagram({
-                  chartCountAll: chartCountAll,
-                  chartNumAwesome: chartNumAwesome,
-                  chartNumGood: chartNumGood,
-                  chartNumNotbad: chartNumNotbad,
-                  chartNumDisappointed: chartNumDisappointed,
-                })
-          
-          if reviews
-            section.product__section-reviews
-              header.product__header-reviews
-                div.product__title.product__title_theme_review
-                  +heading({
-                    text: 'Отзывы посетителей номера',
-                    classes: 'heading_middle',
-                    tag: 'h2',
-                  })
-                span.product__amount-reviews #{reviews.length} отзыва
-              each reviewItem, index in reviews
-                div.product__review-wrapper
-                  - reviewItem.avatar = require('@/pages/product/img/' + reviewItem.avatar).default
-                  +review(reviewItem)
-
-          div.product__container-with-rules
-            section.product__rules
-              if rulesTitle
-                div.product__title.product__title_theme_rules
-                  +heading({
-                    text: rulesTitle,
-                    classes: 'heading_middle',
-                    tag: 'h2',
-                  })
-              if optionsRules
-                +list({
-                  classes: 'list_with-big-dots',
-                  items: optionsRules.items,
-                })
-            section.product__cancellation-text-wrapper
-              if cancelTitle
-                div.product__title
-                  +heading({
-                    text: cancelTitle,
-                    classes: 'heading_middle',
-                    tag: 'h2',
-                  })
-              if cancelText
-                p.product__cancellation-text #{cancelText}
-
-        div.product__form-wrapper
-          +room-reservation({
-            roomNumber: roomNumber,
-            roomType: roomType,
-            price: price,
-            priceTime: priceTime,
-            listService: listService,
-            totalPrice: totalPrice
-          })
-
-  +footer(dataFooter)

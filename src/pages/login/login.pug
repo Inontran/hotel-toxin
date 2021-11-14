@@ -15,27 +15,20 @@ block headTags
   meta(name='description', content = description)
   meta(name='keywords', content = keywords)
 
+block header
+  +header()
+
 block content
   - data = htmlWebpackPlugin.options.getData()
   - data.firstDisplayOptions.bgUrl = require('@/pages/login/img/' + data.firstDisplayOptions.bgUrl).default
   -
     const {
-      dataHeader = {},
-      dataFooter = {},
       formOptions = {},
       firstDisplayOptions = {},
     } = data;
 
-  +header({
-    menuItems: dataHeader.menuItems, 
-    buttonLoginText: dataHeader.loginText,
-    buttonLoginHref: dataHeader.loginHref,
-    buttonRegText: dataHeader.regText,
-    buttonRegHref: dataHeader.regHref
-  })
+  +first-display(firstDisplayOptions)
+    +site-login(formOptions)
 
-  main.page__main
-    +first-display(firstDisplayOptions)
-      +site-login(formOptions)
-
+block footer
   +footer(dataFooter)

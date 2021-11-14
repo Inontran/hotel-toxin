@@ -23,11 +23,12 @@ block headTags
   meta(name='description', content = description)
   meta(name='keywords', content = keywords)
 
+block header 
+  +header()
+
 block content
   -
     const {
-      dataHeader = {},
-      dataFooter = {},
       cards = false,
       dataProductsPage = {},
       optionDropdownDates = false,
@@ -45,127 +46,119 @@ block content
       expanderFeatureCheckboxes = []
     } = htmlWebpackPlugin.options.getData();
 
-  - dataFooter.classes = 'footer_bordered_top';
+  div.products.js-products
+    div.products__container
+      div.products__filter-wrapper.js-products__filter-wrapper
 
-  +header({
-    menuItems: dataHeader.menuItems, 
-    buttonLoginText: dataHeader.loginText,
-    buttonLoginHref: dataHeader.loginHref,
-    buttonRegText: dataHeader.regText,
-    buttonRegHref: dataHeader.regHref
+        form.products__filter.js-products__filter
+          div.products__filter-content-wrapper
+            div.products__filter-close-btn.js-products__filter-close-btn
+              +button({
+                classes: 'button_filled_blue-green-gradient button_size_md',
+                text: 'Скрыть фильтр'
+              })
+
+            if optionDropdownDates
+              - optionDropdownDates.customContent = true
+              - optionDropdownDates.group = 'filterProducts'
+              - optionDropdownDates.classes = 'dropdown_with-dates js-dropdown_with-dates'
+              div.products__filter-input-dates
+                +dropdown(optionDropdownDates)
+                  +air-datepicker(optionDropdownDatesDatepicker)
+
+            if optionDropdownPeople
+              - optionDropdownPeople.group = 'filterProducts'
+              - optionDropdownPeople.classes = 'dropdown_with-guests js-dropdown_with-guests'
+              div.products__filter-input-number-guests
+                +dropdown(optionDropdownPeople)
+                  - optionListCountersPeople.classes = 'list-counters_with-guests js-list-counters_with-guests'
+                  +list-counters(optionListCountersPeople)
+
+            if optionSliderRange
+              div.products__filter-range-price
+                +slider-range(optionSliderRange)
+
+            if checkboxes
+              div.products__filter-rules-checkboxes
+                if checkboxesTitle
+                  div.products__filter-rules-subtitle
+                    +heading({
+                      text: checkboxesTitle,
+                      classes: 'heading_small',
+                    })
+                ul.products__filter-list-checkboxes
+                  each val, index in checkboxes
+                    li.products__filter-list-checkboxes-item
+                      +checkbox(val)
+
+            if checkboxesBig
+              div.products__filter-accessibility-checkboxes
+                if checkboxesBigTitle
+                  div.products__filter-accessibility-subtitle
+                    +heading({
+                      text: checkboxesBigTitle,
+                      classes: 'heading_small',
+                    })
+                ul.products__filter-list-checkboxes
+                  each val, index in checkboxesBig
+                    li.products__filter-list-checkboxes-item
+                      +checkbox(val)
+
+            if optionDropdownFeature
+              - optionDropdownFeature.group = 'filterProducts'
+              - optionDropdownFeature.classes = 'dropdown_with-features js-dropdown_with-features'
+              div.products__filter-selection-amenities
+                +dropdown(optionDropdownFeature)
+                  - optionListCountersFeature.type = 2
+                  - optionListCountersFeature.classes = 'list-counters_with-features js-list-counters_with-features'
+                  +list-counters(optionListCountersFeature)
+
+            if expanderFeatureOptions
+              +expander(expanderFeatureOptions)
+                ul.products__filter-list-checkboxes
+                  each val, index in expanderFeatureCheckboxes
+                    li.products__filter-list-checkboxes-item
+                      +checkbox(val)
+
+      section.products__main-content
+        div.products__title
+          +heading({
+            text: 'Номера, которые мы для вас подобрали',
+            classes: 'heading_large',
+            tag: 'h1',
+          })
+        div.products__filter-showing-btn.js-products__filter-showing-btn
+          +button({
+            classes: 'button_filled_blue-green-gradient button_size_md',
+            text: 'Показать фильтр'
+          })
+        div.products__cards-container
+          each dataCard in cards
+            div.products__card-wrapper
+              - let index = 0
+              while index < dataCard.gallery.length
+                - dataCard.gallery[index] = require('@/pages/products/img/' + dataCard.gallery[index]).default
+                - index++
+              +card-product({
+                classes: 'card-product_with-height',
+                gallery: dataCard.gallery ? dataCard.gallery : false,
+                roomNumber: dataCard.roomNumber ? dataCard.roomNumber : false,
+                roomType: dataCard.roomType ? dataCard.roomType : false,
+                price: dataCard.price ? dataCard.price : false,
+                priceTime: dataCard.priceTime ? dataCard.priceTime : false,
+                countReviews: dataCard.countReviews ? dataCard.countReviews : false,
+                roomType: dataCard.roomType ? dataCard.roomType : false,
+                rating: dataCard.rating ? dataCard.rating : false,
+              })
+        div.products__pagination-wrapper
+          +pagination({
+            page: 1,
+            perpage: 12,
+            elements: 175,
+            text: 'вариантов аренды'
+          })
+
+block footer
+  +footer({
+    classes: 'footer_bordered_top',
   })
-
-  main.page__main
-    div.products.js-products
-      div.products__container
-        div.products__filter-wrapper.js-products__filter-wrapper
-
-          form.products__filter.js-products__filter
-            div.products__filter-content-wrapper
-              div.products__filter-close-btn.js-products__filter-close-btn
-                +button({
-                  classes: 'button_filled_blue-green-gradient button_size_md',
-                  text: 'Скрыть фильтр'
-                })
-
-              if optionDropdownDates
-                - optionDropdownDates.customContent = true
-                - optionDropdownDates.group = 'filterProducts'
-                - optionDropdownDates.classes = 'dropdown_with-dates js-dropdown_with-dates'
-                div.products__filter-input-dates
-                  +dropdown(optionDropdownDates)
-                    +air-datepicker(optionDropdownDatesDatepicker)
-
-              if optionDropdownPeople
-                - optionDropdownPeople.group = 'filterProducts'
-                - optionDropdownPeople.classes = 'dropdown_with-guests js-dropdown_with-guests'
-                div.products__filter-input-number-guests
-                  +dropdown(optionDropdownPeople)
-                    - optionListCountersPeople.classes = 'list-counters_with-guests js-list-counters_with-guests'
-                    +list-counters(optionListCountersPeople)
-
-              if optionSliderRange
-                div.products__filter-range-price
-                  +slider-range(optionSliderRange)
-
-              if checkboxes
-                div.products__filter-rules-checkboxes
-                  if checkboxesTitle
-                    div.products__filter-rules-subtitle
-                      +heading({
-                        text: checkboxesTitle,
-                        classes: 'heading_small',
-                      })
-                  ul.products__filter-list-checkboxes
-                    each val, index in checkboxes
-                      li.products__filter-list-checkboxes-item
-                        +checkbox(val)
-
-              if checkboxesBig
-                div.products__filter-accessibility-checkboxes
-                  if checkboxesBigTitle
-                    div.products__filter-accessibility-subtitle
-                      +heading({
-                        text: checkboxesBigTitle,
-                        classes: 'heading_small',
-                      })
-                  ul.products__filter-list-checkboxes
-                    each val, index in checkboxesBig
-                      li.products__filter-list-checkboxes-item
-                        +checkbox(val)
-
-              if optionDropdownFeature
-                - optionDropdownFeature.group = 'filterProducts'
-                - optionDropdownFeature.classes = 'dropdown_with-features js-dropdown_with-features'
-                div.products__filter-selection-amenities
-                  +dropdown(optionDropdownFeature)
-                    - optionListCountersFeature.type = 2
-                    - optionListCountersFeature.classes = 'list-counters_with-features js-list-counters_with-features'
-                    +list-counters(optionListCountersFeature)
-
-              if expanderFeatureOptions
-                +expander(expanderFeatureOptions)
-                  ul.products__filter-list-checkboxes
-                    each val, index in expanderFeatureCheckboxes
-                      li.products__filter-list-checkboxes-item
-                        +checkbox(val)
-
-        section.products__main-content
-          div.products__title
-            +heading({
-              text: 'Номера, которые мы для вас подобрали',
-              classes: 'heading_large',
-              tag: 'h1',
-            })
-          div.products__filter-showing-btn.js-products__filter-showing-btn
-            +button({
-              classes: 'button_filled_blue-green-gradient button_size_md',
-              text: 'Показать фильтр'
-            })
-          div.products__cards-container
-            each dataCard in cards
-              div.products__card-wrapper
-                - let index = 0
-                while index < dataCard.gallery.length
-                  - dataCard.gallery[index] = require('@/pages/products/img/' + dataCard.gallery[index]).default
-                  - index++
-                +card-product({
-                  classes: 'card-product_with-height',
-                  gallery: dataCard.gallery ? dataCard.gallery : false,
-                  roomNumber: dataCard.roomNumber ? dataCard.roomNumber : false,
-                  roomType: dataCard.roomType ? dataCard.roomType : false,
-                  price: dataCard.price ? dataCard.price : false,
-                  priceTime: dataCard.priceTime ? dataCard.priceTime : false,
-                  countReviews: dataCard.countReviews ? dataCard.countReviews : false,
-                  roomType: dataCard.roomType ? dataCard.roomType : false,
-                  rating: dataCard.rating ? dataCard.rating : false,
-                })
-          div.products__pagination-wrapper
-            +pagination({
-              page: 1,
-              perpage: 12,
-              elements: 175,
-              text: 'вариантов аренды'
-            })
-
-  +footer(dataFooter)

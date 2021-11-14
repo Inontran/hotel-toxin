@@ -15,27 +15,20 @@ block headTags
   meta(name='description', content = description)
   meta(name='keywords', content = keywords)
 
+block header
+  +header()
+
 block content
   -
     const {
-      dataHeader = {},
-      dataFooter = {},
       formOptions = {},
       firstDisplayText = false,
     } = htmlWebpackPlugin.options.getData();
 
-  +header({
-    menuItems: dataHeader.menuItems, 
-    buttonLoginText: dataHeader.loginText,
-    buttonLoginHref: dataHeader.loginHref,
-    buttonRegText: dataHeader.regText,
-    buttonRegHref: dataHeader.regHref
+  +first-display({
+    text: firstDisplayText,
   })
+    +room-search(formOptions)
 
-  main.page__main
-    +first-display({
-      text: firstDisplayText,
-    })
-      +room-search(formOptions)
-
-  +footer(dataFooter)
+block footer
+  +footer()

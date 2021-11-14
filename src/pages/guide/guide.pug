@@ -36,11 +36,10 @@ block headTags
   meta(name='description', content = description)
   meta(name='keywords', content = keywords)
 
-block content
+block header
   -
     const {
       dataHeader = {},
-      dataFooter = {},
     } = htmlWebpackPlugin.options.getData();
     
   +header({
@@ -48,518 +47,524 @@ block content
     username: dataHeader.username,
   })
 
-  main.page__main
-    div.guide-page
-      div.guide-page__container
-        div.guide-page__col
-          div.guide-page__color-item
-            div.guide-page__color-rect.guide-page__color-rect_theme_dark
-            div
-              +heading({
-                text: 'Dark Shade 100%',
-                classes: 'heading_middle',
-                tag: 'h2',
-              })
-              p.guide-page__color-text #1F2041
-          div.guide-page__color-item
-            div.guide-page__color-rect.guide-page__color-rect_theme_dark75
-            div
-              +heading({
-                text: 'Dark Shade 75%',
-                classes: 'heading_middle',
-                tag: 'h2',
-              })
-              p.guide-page__color-text #1F2041
-          div.guide-page__color-item
-            div.guide-page__color-rect.guide-page__color-rect_theme_dark50
-            div
-              +heading({
-                text: 'Dark Shade 50%',
-                classes: 'heading_middle',
-                tag: 'h2',
-              })
-              p.guide-page__color-text #1F2041
-          div.guide-page__color-item
-            div.guide-page__color-rect.guide-page__color-rect_theme_dark25
-            div
-              +heading({
-                text: 'Dark Shade 25%',
-                classes: 'heading_middle',
-                tag: 'h2',
-              })
-              p.guide-page__color-text #1F2041
-          div.guide-page__color-item
-            div.guide-page__color-rect.guide-page__color-rect_theme_dark5
-            div
-              +heading({
-                text: 'Dark Shade 5%',
-                classes: 'heading_middle',
-                tag: 'h2',
-              })
-              p.guide-page__color-text #1F2041
-          div.guide-page__color-item
-            div.guide-page__color-rect.guide-page__color-rect_theme_purple
-            div
-              +heading({
-                text: 'Purple',
-                classes: 'heading_middle',
-                tag: 'h2',
-              })
-              p.guide-page__color-text #BC9CFF
-          div.guide-page__color-item
-            div.guide-page__color-rect.guide-page__color-rect_theme_green
-            div
-              +heading({
-                text: 'Green',
-                classes: 'heading_middle',
-                tag: 'h2',
-              })
-              p.guide-page__color-text #6FCF97
-
-
-        div.guide-page__col
-          +heading({
-            text: 'Chart Doughnut',
-            classes: 'heading_small',
-            tag: 'h3',
-          })
-          div.guide-page__gap.guide-page__gap_type_second
-          +diagram({
-            chartCountAll: 260,
-            chartNumAwesome: 130,
-            chartNumGood: 65,
-            chartNumNotbad: 65,
-            chartNumDisappointed: 0,
-          })
-
-        div.guide-page__col
-          +heading({
-            text: 'This one is the sub-section or widget title',
-            classes: 'heading_large',
-            tag: 'h1',
-          })
-          div.guide-page__gap.guide-page__gap_type_third
-          +heading({
-            text: 'Next one is the item title inside widgets',
-            classes: 'heading_middle',
-            tag: 'h2',
-          })
-          div.guide-page__gap.guide-page__gap_type_third
-          +heading({
-            text: 'This is a label or CTA text',
-            classes: 'heading_small',
-            tag: 'h3',
-          })
-          div.guide-page__gap.guide-page__gap_type_third
-          p This is the body text which is used for most of the design, like paragraphs, lists, etc.
-
-
-        div.guide-page__col
-          +input-text({
-            label: 'Text Field',
-            placeholder: 'Email'
-          })
-          div.guide-page__gap.guide-page__gap_type_third
-          +subscription({
-            inputParams: {
-              label: 'Subscription Text Field',
-            }
-          })
-          div.guide-page__gap.guide-page__gap_type_third
-          +input-text({
-            label: 'Masked text field',
-            classes: 'input-text_mask_date'
-          })
-
-
-        div.guide-page__col
-          +heading({
-            text: 'Checkbox buttons',
-            classes: 'heading_small',
-            tag: 'h3',
-          })
-          div.guide-page__gap.guide-page__gap_type_second
-          +checkbox({
-            text: 'Можно курить',
-            checked: true
-          })
-          div.guide-page__gap.guide-page__gap_type_first
-          +checkbox({
-            text: 'Можно пригласить гостей (до 10 человек)'
-          })
-          div.guide-page__gap.guide-page__gap_type_fifth
-
-          +heading({
-            text: 'Radio Buttons',
-            classes: 'heading_small',
-            tag: 'h3',
-          })
-          div.guide-page__gap.guide-page__gap_type_second
-          +radio({
-            text: 'Мужчина',
-            name: 'gender',
-            checked: true,
-          })
-          div.guide-page__gap.guide-page__gap_type_first
-          +radio({
-            text: 'Женщина',
-            name: 'gender',
-          })
-          div.guide-page__gap.guide-page__gap_type_fifth
-
-          +heading({
-            text: 'Toggle',
-            classes: 'heading_small',
-            tag: 'h3',
-          })
-          div.guide-page__gap.guide-page__gap_type_second
-          +checkbox({
-            classes: 'checkbox_type_toggle',
-            text: 'Получать спецпредложения',
-            name: 'get',
-            checked: true,
-          })
-          div.guide-page__gap.guide-page__gap_type_fifth
-
-          +heading({
-            text: 'Like Button',
-            classes: 'heading_small',
-            tag: 'h3',
-          })
-          div.guide-page__gap.guide-page__gap_type_second
-          +like-btn({
-            value: 2,
-            id: 'example-like-btn',
-          })
-          +like-btn({
-            value: 12,
-            id: 'example-like-btn2',
-            isLike: true
-          })
-          div.guide-page__gap.guide-page__gap_type_fifth
-
-          +heading({
-            text: 'Rate Button',
-            classes: 'heading_small',
-            tag: 'h3',
-          })
-          div.guide-page__gap.guide-page__gap_type_second
-          +rate-btn({
-            value: 4,
-            id: 'example-rate-btn',
-          })
-
-
-        div.guide-page__col
-          +slider-range({
-            id: 'example-slider',
-            label: 'Range slider',
-            min: 0,
-            max: 15000,
-            val1: 5000,
-            val2: 10000
-          })
-          div.guide-page__gap.guide-page__gap_type_fifth
-
-          +heading({
-            text: 'Buttons',
-            classes: 'heading_small',
-            tag: 'h3',
-          })
-          div.guide-page__gap.guide-page__gap_type_second
-          
-          div.guide-page__gap.guide-page__gap_type_third
-            +button({
-              text: 'click me',
-              classes: 'button_filled_blue-green-gradient'
+block content
+  div.guide-page
+    div.guide-page__container
+      div.guide-page__col
+        div.guide-page__color-item
+          div.guide-page__color-rect.guide-page__color-rect_theme_dark
+          div
+            +heading({
+              text: 'Dark Shade 100%',
+              classes: 'heading_middle',
+              tag: 'h2',
             })
-            +button({
-              text: 'click me',
-              classes: 'button_filled_blue-green-gradient button_size_md'
+            p.guide-page__color-text #1F2041
+        div.guide-page__color-item
+          div.guide-page__color-rect.guide-page__color-rect_theme_dark75
+          div
+            +heading({
+              text: 'Dark Shade 75%',
+              classes: 'heading_middle',
+              tag: 'h2',
             })
-          
-          div.guide-page__gap.guide-page__gap_type_third
-            +button({
-              text: 'click me',
-              classes: 'button_outlined'
+            p.guide-page__color-text #1F2041
+        div.guide-page__color-item
+          div.guide-page__color-rect.guide-page__color-rect_theme_dark50
+          div
+            +heading({
+              text: 'Dark Shade 50%',
+              classes: 'heading_middle',
+              tag: 'h2',
             })
-            +button({
-              text: 'click me',
-              classes: 'button_outlined button_size_md'
+            p.guide-page__color-text #1F2041
+        div.guide-page__color-item
+          div.guide-page__color-rect.guide-page__color-rect_theme_dark25
+          div
+            +heading({
+              text: 'Dark Shade 25%',
+              classes: 'heading_middle',
+              tag: 'h2',
             })
-
-          +button({
-            text: 'click me'
-          })
-          div.guide-page__gap.guide-page__gap_type_third
-          +button({
-            text: 'Перейти к оплате',
-            classes: 'button_filled_blue-green-gradient button_theme_arrow button_wide'
-          })
-          div.guide-page__gap.guide-page__gap_type_fifth
-
-          +heading({
-            text: 'Pagination',
-            classes: 'heading_small',
-            tag: 'h3',
-          })
-          div.guide-page__gap.guide-page__gap_type_second
-          +pagination({
-            page: 1,
-            perpage: 12,
-            elements: 175,
-            text: 'вариантов аренды'
-          })
-
-
-        div.guide-page__col
-          +dropdown({
-            group: 'guide-example-dropdowns',
-            id: 'example-dropdown',
-            inputParams:{
-              label: 'Dropdown',
-              readonly: true,
-              value: 'Сколько гостей'
-            }
-          })
-            +list-counters({
-              textDefault: 'Сколько гостей',
-              id: 'example-list-counters',
-              arrayCounters: [
-                {
-                  label: 'Взрослые',
-                  groupItemId: 1,
-                  textOneItems: 'гость',
-                  textTwoItems: 'гостя',
-                  textManyItems: 'гостей',
-                },
-                {
-                  label: 'Дети',
-                  groupItemId: 1,
-                  textOneItems: 'гость',
-                  textTwoItems: 'гостя',
-                  textManyItems: 'гостей',
-                },
-                {
-                  label: 'Младенцы',
-                  groupItemId: 2,
-                  textOneItems: 'младенец',
-                  textTwoItems: 'младенца',
-                  textManyItems: 'младенцев',
-                },
-              ],
+            p.guide-page__color-text #1F2041
+        div.guide-page__color-item
+          div.guide-page__color-rect.guide-page__color-rect_theme_dark5
+          div
+            +heading({
+              text: 'Dark Shade 5%',
+              classes: 'heading_middle',
+              tag: 'h2',
             })
-
-          div.guide-page__gap.guide-page__gap_type_third
-          +dropdown({
-            group: 'guide-example-dropdowns',
-            classes: 'dropdown_simple',
-            id: 'example-dropdown2',
-            inputParams:{
-              label: 'Dropdown',
-              readonly: true
-            },
-          })
-            +list-counters({
-              type: 2,
-              id: 'example-list-counters2',
-              arrayCounters: [
-                {
-                  label: 'Спальни',
-                  textOneItems: 'Спальня',
-                  textTwoItems: 'Спальни',
-                  textManyItems: 'Спален'
-                },
-                {
-                  label: 'Кровати',
-                  textOneItems: 'Кровать',
-                  textTwoItems: 'Кровати',
-                  textManyItems: 'Кроватей'
-                },
-                {
-                  label: 'Ванные комнаты',
-                  textOneItems: 'Ванная комната',
-                  textTwoItems: 'Ванных комнаты',
-                  textManyItems: 'Ванных комнат'
-                }
-              ]
+            p.guide-page__color-text #1F2041
+        div.guide-page__color-item
+          div.guide-page__color-rect.guide-page__color-rect_theme_purple
+          div
+            +heading({
+              text: 'Purple',
+              classes: 'heading_middle',
+              tag: 'h2',
             })
+            p.guide-page__color-text #BC9CFF
+        div.guide-page__color-item
+          div.guide-page__color-rect.guide-page__color-rect_theme_green
+          div
+            +heading({
+              text: 'Green',
+              classes: 'heading_middle',
+              tag: 'h2',
+            })
+            p.guide-page__color-text #6FCF97
 
-          div.guide-page__gap.guide-page__gap_type_fifth
+
+      div.guide-page__col
+        +heading({
+          text: 'Chart Doughnut',
+          classes: 'heading_small',
+          tag: 'h3',
+        })
+        div.guide-page__gap.guide-page__gap_type_second
+        +diagram({
+          chartCountAll: 260,
+          chartNumAwesome: 130,
+          chartNumGood: 65,
+          chartNumNotbad: 65,
+          chartNumDisappointed: 0,
+        })
+
+      div.guide-page__col
+        +heading({
+          text: 'This one is the sub-section or widget title',
+          classes: 'heading_large',
+          tag: 'h1',
+        })
+        div.guide-page__gap.guide-page__gap_type_third
+        +heading({
+          text: 'Next one is the item title inside widgets',
+          classes: 'heading_middle',
+          tag: 'h2',
+        })
+        div.guide-page__gap.guide-page__gap_type_third
+        +heading({
+          text: 'This is a label or CTA text',
+          classes: 'heading_small',
+          tag: 'h3',
+        })
+        div.guide-page__gap.guide-page__gap_type_third
+        p This is the body text which is used for most of the design, like paragraphs, lists, etc.
+
+
+      div.guide-page__col
+        +input-text({
+          label: 'Text Field',
+          placeholder: 'Email'
+        })
+        div.guide-page__gap.guide-page__gap_type_third
+        +subscription({
+          inputParams: {
+            label: 'Subscription Text Field',
+          }
+        })
+        div.guide-page__gap.guide-page__gap_type_third
+        +input-text({
+          label: 'Masked text field',
+          classes: 'input-text_mask_date'
+        })
+
+
+      div.guide-page__col
+        +heading({
+          text: 'Checkbox buttons',
+          classes: 'heading_small',
+          tag: 'h3',
+        })
+        div.guide-page__gap.guide-page__gap_type_second
+        +checkbox({
+          text: 'Можно курить',
+          checked: true
+        })
+        div.guide-page__gap.guide-page__gap_type_first
+        +checkbox({
+          text: 'Можно пригласить гостей (до 10 человек)'
+        })
+        div.guide-page__gap.guide-page__gap_type_fifth
+
+        +heading({
+          text: 'Radio Buttons',
+          classes: 'heading_small',
+          tag: 'h3',
+        })
+        div.guide-page__gap.guide-page__gap_type_second
+        +radio({
+          text: 'Мужчина',
+          name: 'gender',
+          checked: true,
+        })
+        div.guide-page__gap.guide-page__gap_type_first
+        +radio({
+          text: 'Женщина',
+          name: 'gender',
+        })
+        div.guide-page__gap.guide-page__gap_type_fifth
+
+        +heading({
+          text: 'Toggle',
+          classes: 'heading_small',
+          tag: 'h3',
+        })
+        div.guide-page__gap.guide-page__gap_type_second
+        +checkbox({
+          classes: 'checkbox_type_toggle',
+          text: 'Получать спецпредложения',
+          name: 'get',
+          checked: true,
+        })
+        div.guide-page__gap.guide-page__gap_type_fifth
+
+        +heading({
+          text: 'Like Button',
+          classes: 'heading_small',
+          tag: 'h3',
+        })
+        div.guide-page__gap.guide-page__gap_type_second
+        +like-btn({
+          value: 2,
+          id: 'example-like-btn',
+        })
+        +like-btn({
+          value: 12,
+          id: 'example-like-btn2',
+          isLike: true
+        })
+        div.guide-page__gap.guide-page__gap_type_fifth
+
+        +heading({
+          text: 'Rate Button',
+          classes: 'heading_small',
+          tag: 'h3',
+        })
+        div.guide-page__gap.guide-page__gap_type_second
+        +rate-btn({
+          value: 4,
+          id: 'example-rate-btn',
+        })
+
+
+      div.guide-page__col
+        +slider-range({
+          id: 'example-slider',
+          label: 'Range slider',
+          min: 0,
+          max: 15000,
+          val1: 5000,
+          val2: 10000
+        })
+        div.guide-page__gap.guide-page__gap_type_fifth
+
+        +heading({
+          text: 'Buttons',
+          classes: 'heading_small',
+          tag: 'h3',
+        })
+        div.guide-page__gap.guide-page__gap_type_second
         
-          +expander({
-            text: 'expandable checkbox list',
-            group: 'expander-group-1'
+        div.guide-page__gap.guide-page__gap_type_third
+          +button({
+            text: 'click me',
+            classes: 'button_filled_blue-green-gradient'
           })
-            div Lorem ipsum dolor sit amet consectetur adipisicing elit. Error, explicabo. Facilis dolorem deleniti consequuntur, sint enim laborum temporibus, iure nihil suscipit minima sapiente rem dignissimos illum quam delectus itaque molestiae.
-          +expander({
-            text: 'expandable checkbox list',
-            group: 'expander-group-1',
-            is_open: true
+          +button({
+            text: 'click me',
+            classes: 'button_filled_blue-green-gradient button_size_md'
           })
-            +checkbox({
-              text: 'Можно курить'
-            })
-            div.guide-page__gap.guide-page__gap_type_first
-            +checkbox({
-              text: 'Можно курить'
-            })
-            div.guide-page__gap.guide-page__gap_type_first
-            +checkbox({
-              text: 'Можно курить'
-            })
-            div.guide-page__gap.guide-page__gap_type_first
-            +checkbox({
-              text: 'Можно курить'
-            })
-          
-
-
-        div.guide-page__col
-          +heading({
-            text: 'Rich Checkbox Buttons',
-            classes: 'heading_small',
-            tag: 'h3',
+        
+        div.guide-page__gap.guide-page__gap_type_third
+          +button({
+            text: 'click me',
+            classes: 'button_outlined'
           })
-          div.guide-page__gap.guide-page__gap_type_second
-          +checkbox({
-            text: 'Ширина коридоров в номере не менее 91 см.',
-            checked: true,
-            title: 'Широкий коридор'
-          })
-          div.guide-page__gap.guide-page__gap_type_first
-          +checkbox({
-            text: 'На 1 этаже вас встретит специалист  и проводит до номера.',
-            title: 'Помощник для инвалидов'
+          +button({
+            text: 'click me',
+            classes: 'button_outlined button_size_md'
           })
 
+        +button({
+          text: 'click me'
+        })
+        div.guide-page__gap.guide-page__gap_type_third
+        +button({
+          text: 'Перейти к оплате',
+          classes: 'button_filled_blue-green-gradient button_theme_arrow button_wide'
+        })
+        div.guide-page__gap.guide-page__gap_type_fifth
 
-        div.guide-page__col
-          +heading({
-            text: 'Bullet list',
-            classes: 'heading_small',
-            tag: 'h3',
-          })
-          div.guide-page__gap.guide-page__gap_type_second
-          +list({
-            classes: 'list_with-big-dots',
-            items: [
+        +heading({
+          text: 'Pagination',
+          classes: 'heading_small',
+          tag: 'h3',
+        })
+        div.guide-page__gap.guide-page__gap_type_second
+        +pagination({
+          page: 1,
+          perpage: 12,
+          elements: 175,
+          text: 'вариантов аренды'
+        })
+
+
+      div.guide-page__col
+        +dropdown({
+          group: 'guide-example-dropdowns',
+          id: 'example-dropdown',
+          inputParams:{
+            label: 'Dropdown',
+            readonly: true,
+            value: 'Сколько гостей'
+          }
+        })
+          +list-counters({
+            textDefault: 'Сколько гостей',
+            id: 'example-list-counters',
+            arrayCounters: [
               {
-                text: 'Нельзя с питомцами',
+                label: 'Взрослые',
+                groupItemId: 1,
+                textOneItems: 'гость',
+                textTwoItems: 'гостя',
+                textManyItems: 'гостей',
               },
               {
-                text: 'Без вечеринок и мероприятий',
+                label: 'Дети',
+                groupItemId: 1,
+                textOneItems: 'гость',
+                textTwoItems: 'гостя',
+                textManyItems: 'гостей',
               },
               {
-                text: 'Время прибытия — после 13:00, а выезд до 12:00',
+                label: 'Младенцы',
+                groupItemId: 2,
+                textOneItems: 'младенец',
+                textTwoItems: 'младенца',
+                textManyItems: 'младенцев',
               },
-            ]
+            ],
           })
 
-
-        div.guide-page__col
-          +infographic({
-            items: [
+        div.guide-page__gap.guide-page__gap_type_third
+        +dropdown({
+          group: 'guide-example-dropdowns',
+          classes: 'dropdown_simple',
+          id: 'example-dropdown2',
+          inputParams:{
+            label: 'Dropdown',
+            readonly: true
+          },
+        })
+          +list-counters({
+            type: 2,
+            id: 'example-list-counters2',
+            arrayCounters: [
               {
-                src: require('@/components/infographic/img/insert_emoticon.svg').default, 
-                title: 'Комфорт', 
-                text: 'Шумопоглощающие стены',
-                line: true
+                label: 'Спальни',
+                textOneItems: 'Спальня',
+                textTwoItems: 'Спальни',
+                textManyItems: 'Спален'
               },
               {
-                src: require('@/components/infographic/img/location_city.svg').default, 
-                title: 'Удобство', 
-                text: 'Окно в каждой из спален',
-                line: true
+                label: 'Кровати',
+                textOneItems: 'Кровать',
+                textTwoItems: 'Кровати',
+                textManyItems: 'Кроватей'
               },
               {
-                src: require('@/components/infographic/img/whatshot.svg').default, 
-                title: 'Уют', 
-                text: 'Номер оснащен камином'
+                label: 'Ванные комнаты',
+                textOneItems: 'Ванная комната',
+                textTwoItems: 'Ванных комнаты',
+                textManyItems: 'Ванных комнат'
               }
             ]
           })
 
+        div.guide-page__gap.guide-page__gap_type_fifth
       
-        div.guide-page__col
-          +review({
-            id: '#example-review',
-            avatar: require('@/components/review/img/photo-example.jpg').default,
-            isLike: true,
-            countLike: 12,
-            username: 'Мурад Сарафанов',
-            timeLater: '5 дней назад',
-            datetime: '2021-10-09T15:26',
-            textReview: 'Великолепный матрас на кровати в основной спальне! А пуфик вообще потрясающий. И стены, действительно, шумоподавляющие. Выкрикивал комплименты повару — никто не жаловался из соседей.'
+        +expander({
+          text: 'expandable checkbox list',
+          group: 'expander-group-1'
+        })
+          div Lorem ipsum dolor sit amet consectetur adipisicing elit. Error, explicabo. Facilis dolorem deleniti consequuntur, sint enim laborum temporibus, iure nihil suscipit minima sapiente rem dignissimos illum quam delectus itaque molestiae.
+        +expander({
+          text: 'expandable checkbox list',
+          group: 'expander-group-1',
+          is_open: true
+        })
+          +checkbox({
+            text: 'Можно курить'
           })
-
+          div.guide-page__gap.guide-page__gap_type_first
+          +checkbox({
+            text: 'Можно курить'
+          })
+          div.guide-page__gap.guide-page__gap_type_first
+          +checkbox({
+            text: 'Можно курить'
+          })
+          div.guide-page__gap.guide-page__gap_type_first
+          +checkbox({
+            text: 'Можно курить'
+          })
         
-        div.guide-page__col
-          +dropdown({
-            customContent: true,
-            classes: 'dropdown_with-dates',
-            id: 'example-dropdown3',
-            inputParams:{
-              label: 'Даты пребывания в отеле',
-              readonly: true,
-              classes: 'js-input-text_date_range'
+
+
+      div.guide-page__col
+        +heading({
+          text: 'Rich Checkbox Buttons',
+          classes: 'heading_small',
+          tag: 'h3',
+        })
+        div.guide-page__gap.guide-page__gap_type_second
+        +checkbox({
+          text: 'Ширина коридоров в номере не менее 91 см.',
+          checked: true,
+          title: 'Широкий коридор'
+        })
+        div.guide-page__gap.guide-page__gap_type_first
+        +checkbox({
+          text: 'На 1 этаже вас встретит специалист  и проводит до номера.',
+          title: 'Помощник для инвалидов'
+        })
+
+
+      div.guide-page__col
+        +heading({
+          text: 'Bullet list',
+          classes: 'heading_small',
+          tag: 'h3',
+        })
+        div.guide-page__gap.guide-page__gap_type_second
+        +list({
+          classes: 'list_with-big-dots',
+          items: [
+            {
+              text: 'Нельзя с питомцами',
             },
-          })
-            +air-datepicker({
-              classes: 'air-datepicker_inline',
-              id: 'example-datepicker',
-            })
+            {
+              text: 'Без вечеринок и мероприятий',
+            },
+            {
+              text: 'Время прибытия — после 13:00, а выезд до 12:00',
+            },
+          ]
+        })
 
-      div.guide-page__container.guide-page__container_with-fixed-col
-        div
-          +room-search()
-          div.guide-page__gap.guide-page__gap_type_fifth
-          +site-registration()
 
-        div
-          +room-reservation({
-            roomNumber: 888,
-            roomType: 'люкс',
-            price: '9 990₽',
-            priceTime: 'в сутки',
-            listService: [
-              { name: '9 990₽ х 4 суток', price: '39 960₽' },
-              { name: 'Сбор за услуги: скидка 2 179₽', price: '0₽', tooltip: 'Подсказка' },
-              { name: 'Сбор за дополнительные услуги', price: '300₽', tooltip: 'Подсказка' }
-            ],
-            totalPrice: '38 081₽'
-          })
+      div.guide-page__col
+        +infographic({
+          items: [
+            {
+              src: require('@/components/infographic/img/insert_emoticon.svg').default, 
+              title: 'Комфорт', 
+              text: 'Шумопоглощающие стены',
+              line: true
+            },
+            {
+              src: require('@/components/infographic/img/location_city.svg').default, 
+              title: 'Удобство', 
+              text: 'Окно в каждой из спален',
+              line: true
+            },
+            {
+              src: require('@/components/infographic/img/whatshot.svg').default, 
+              title: 'Уют', 
+              text: 'Номер оснащен камином'
+            }
+          ]
+        })
 
-          div.guide-page__gap.guide-page__gap_type_fifth
-          +site-login()
+    
+      div.guide-page__col
+        +review({
+          id: '#example-review',
+          avatar: require('@/components/review/img/photo-example.jpg').default,
+          isLike: true,
+          countLike: 12,
+          username: 'Мурад Сарафанов',
+          timeLater: '5 дней назад',
+          datetime: '2021-10-09T15:26',
+          textReview: 'Великолепный матрас на кровати в основной спальне! А пуфик вообще потрясающий. И стены, действительно, шумоподавляющие. Выкрикивал комплименты повару — никто не жаловался из соседей.'
+        })
 
-        div
+      
+      div.guide-page__col
+        +dropdown({
+          customContent: true,
+          classes: 'dropdown_with-dates',
+          id: 'example-dropdown3',
+          inputParams:{
+            label: 'Даты пребывания в отеле',
+            readonly: true,
+            classes: 'js-input-text_date_range'
+          },
+        })
           +air-datepicker({
             classes: 'air-datepicker_inline',
-            id: 'example-datepicker2',
-          })
-          div.guide-page__gap.guide-page__gap_type_fifth
-          +card-product({
-            gallery: [
-              require('@/pages/guide/img/image-1.jpg').default,
-              require('@/pages/guide/img/image-2.jpg').default,
-              require('@/pages/guide/img/image-3.jpg').default,
-              require('@/pages/guide/img/image-4.jpg').default
-            ],
-            roomNumber: '888',
-            roomType: 'Люкс',
-            price: '9 990₽',
-            priceTime: 'в сутки',
-            countReviews: '145'
+            id: 'example-datepicker',
           })
 
-          div.guide-page__gap.guide-page__gap_type_fifth
-          +card-product({
-            roomNumber: '888',
-            roomType: 'Люкс',
-            price: '9 990₽',
-            priceTime: 'в сутки',
-            countReviews: '145'
-          })
+    div.guide-page__container.guide-page__container_with-fixed-col
+      div
+        +room-search()
+        div.guide-page__gap.guide-page__gap_type_fifth
+        +site-registration()
+
+      div
+        +room-reservation({
+          roomNumber: 888,
+          roomType: 'люкс',
+          price: '9 990₽',
+          priceTime: 'в сутки',
+          listService: [
+            { name: '9 990₽ х 4 суток', price: '39 960₽' },
+            { name: 'Сбор за услуги: скидка 2 179₽', price: '0₽', tooltip: 'Подсказка' },
+            { name: 'Сбор за дополнительные услуги', price: '300₽', tooltip: 'Подсказка' }
+          ],
+          totalPrice: '38 081₽'
+        })
+
+        div.guide-page__gap.guide-page__gap_type_fifth
+        +site-login()
+
+      div
+        +air-datepicker({
+          classes: 'air-datepicker_inline',
+          id: 'example-datepicker2',
+        })
+        div.guide-page__gap.guide-page__gap_type_fifth
+        +card-product({
+          gallery: [
+            require('@/pages/guide/img/image-1.jpg').default,
+            require('@/pages/guide/img/image-2.jpg').default,
+            require('@/pages/guide/img/image-3.jpg').default,
+            require('@/pages/guide/img/image-4.jpg').default
+          ],
+          roomNumber: '888',
+          roomType: 'Люкс',
+          price: '9 990₽',
+          priceTime: 'в сутки',
+          countReviews: '145'
+        })
+
+        div.guide-page__gap.guide-page__gap_type_fifth
+        +card-product({
+          roomNumber: '888',
+          roomType: 'Люкс',
+          price: '9 990₽',
+          priceTime: 'в сутки',
+          countReviews: '145'
+        })
+
+block footer
+  -
+    const {
+      dataFooter = {},
+    } = htmlWebpackPlugin.options.getData();
 
   +footer(dataFooter)
