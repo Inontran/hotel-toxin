@@ -20,13 +20,23 @@ include ../form/subscription/subscription
 mixin footer(options = {})
   -
     const {
-      classes = '',
-      id = false,
-      menuItems = [],
-      mainText = false,
-      subscriptionHeading = false,
-      subscriptionText = false,
-      copyrightText = false,
+      defaultClasses = '',
+      defaultId = false,
+      defaultMenuItems = [],
+      defaultMainText = false,
+      defaultSubscriptionHeading = false,
+      defaultSubscriptionText = false,
+      defaultCopyrightText = false,
+    } = htmlWebpackPlugin.options.getData('components/footer/data.json');
+  -
+    const {
+      classes = defaultClasses,
+      id = defaultId,
+      menuItems = defaultMenuItems,
+      mainText = defaultMainText,
+      subscriptionHeading = defaultSubscriptionHeading,
+      subscriptionText = defaultSubscriptionText,
+      copyrightText = defaultCopyrightText,
     } = options;
 
   footer.footer(

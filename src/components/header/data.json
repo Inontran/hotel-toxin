@@ -1,0 +1,31 @@
+{
+  "defaultMenuItems": [
+    {
+      "name": "О нас"
+    },
+    {
+      "name": "Услуги",
+      "subitems": [
+        { "name": "Долгосрочная аренда" },
+        { "name": "Выгул собак" },
+        { "name": "Массаж ног" }
+      ]
+    },
+    {
+      "name": "Вакансии"
+    },
+    {
+      "name": "Новости"
+    },
+    {
+      "name": "Соглашения",
+      "subitems": [
+        { "name": "Договор" }
+      ]
+    }
+  ],
+  "defaultButtonLoginText": "Войти",
+  "defaultButtonLoginHref": "login.html",
+  "defaultButtonRegText": "Зарегистрироваться",
+  "defaultButtonRegHref": "register.html"
+}

@@ -20,14 +20,25 @@ include ../list/list
 mixin header(options = {})
   -
     const {
-      classes = '',
-      id = false,
-      username = false, 
-      buttonLoginText = 'Login',
-      buttonLoginHref = false,
-      buttonRegText = 'Register',
-      buttonRegHref = false,
-      menuItems = [],
+      defaultClasses = '',
+      defaultId = false,
+      defaulUsername = false, 
+      defaultButtonLoginText = 'Login',
+      defaultButtonLoginHref = false,
+      defaultButtonRegText = 'Register',
+      defaultButtonRegHref = false,
+      defaultMenuItems = [],
+    } = htmlWebpackPlugin.options.getData('components/header/data.json');
+  -
+    const {
+      classes = defaultClasses,
+      id = defaultId,
+      username = defaulUsername, 
+      buttonLoginText = defaultButtonLoginText,
+      buttonLoginHref = defaultButtonLoginHref,
+      buttonRegText = defaultButtonRegText,
+      buttonRegHref = defaultButtonRegHref,
+      menuItems = defaultMenuItems,
     } = options;
 
 

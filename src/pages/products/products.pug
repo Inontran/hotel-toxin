@@ -1,5 +1,6 @@
 extends ../../shared/base/base.pug
 
+include ../../components/header/header
 include ../../components/dropdown/dropdown
 include ../../components/slider-range/slider-range
 include ../../components/checkbox/checkbox
@@ -25,8 +26,8 @@ block headTags
 block content
   -
     const {
-      dataHeader = commonDataHeader,
-      dataFooter = commonDataFooter,
+      dataHeader = {},
+      dataFooter = {},
       cards = false,
       dataProductsPage = {},
       optionDropdownDates = false,
@@ -166,3 +167,5 @@ block content
               elements: 175,
               text: 'вариантов аренды'
             })
+
+  +footer(dataFooter)

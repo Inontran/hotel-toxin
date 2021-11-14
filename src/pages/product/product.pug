@@ -1,11 +1,12 @@
 extends ../../shared/base/base.pug
 
-include ../../components/form/room-reservation/room-reservation
+include ../../components/header/header
 include ../../components/infographic/infographic
 include ../../components/review/review
 include ../../components/list/list
 include ../../components/diagram/diagram
 include ../../components/heading/heading
+include ../../components/form/room-reservation/room-reservation
 
 block headTags
   -
@@ -21,8 +22,8 @@ block headTags
 block content
   -
     const {
-      dataHeader = commonDataHeader,
-      dataFooter = commonDataFooter,
+      dataHeader = {},
+      dataFooter = {},
       gallery = false,
       optionsInfographics = false,
       chartCountAll = false,
@@ -169,3 +170,5 @@ block content
             listService: listService,
             totalPrice: totalPrice
           })
+
+  +footer(dataFooter)

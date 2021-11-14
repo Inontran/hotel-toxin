@@ -1,6 +1,6 @@
 extends ../../shared/base/base.pug
 
-
+include ../../components/header/header
 include ../../components/button/button
 include ../../components/input-text/input-text
 include ../../components/checkbox/checkbox
@@ -39,8 +39,8 @@ block headTags
 block content
   -
     const {
-      dataHeader = commonDataHeader,
-      dataFooter = commonDataFooter,
+      dataHeader = {},
+      dataFooter = {},
     } = htmlWebpackPlugin.options.getData();
     
   +header({
@@ -561,3 +561,5 @@ block content
             priceTime: 'в сутки',
             countReviews: '145'
           })
+
+  +footer(dataFooter)

@@ -1,5 +1,6 @@
 extends ../../shared/base/base.pug
 
+include ../../components/header/header
 include ../../components/first-display/first-display
 include ../../components/form/site-login/site-login
 
@@ -19,8 +20,8 @@ block content
   - data.firstDisplayOptions.bgUrl = require('@/pages/login/img/' + data.firstDisplayOptions.bgUrl).default
   -
     const {
-      dataHeader = commonDataHeader,
-      dataFooter = commonDataFooter,
+      dataHeader = {},
+      dataFooter = {},
       formOptions = {},
       firstDisplayOptions = {},
     } = data;
@@ -37,3 +38,5 @@ block content
     +first-display(firstDisplayOptions)
       div.first-display__form-wrapper
         +site-login(formOptions)
+
+  +footer(dataFooter)

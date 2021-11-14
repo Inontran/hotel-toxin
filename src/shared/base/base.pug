@@ -1,10 +1,3 @@
--
-  const {
-    commonDataHeader = false,
-    commonDataFooter = false,
-  } = htmlWebpackPlugin.options.getData('shared/base/data.json');
-
-include ../../components/header/header
 include ../../components/footer/footer
 
 
@@ -19,13 +12,3 @@ html(lang='ru')
   body.page
     div.page__content-wrapper.js-page__content-wrapper
       block content
-
-      block footer
-        +footer({
-          classes: dataFooter.classes,
-          menuItems: dataFooter.footerItems,
-          mainText: dataFooter.mainText,
-          subscriptionText: dataFooter.subscriptionText,
-          subscriptionHeading: dataFooter.subscriptionHeading,
-          copyrightText: dataFooter.copyrightText
-        })

@@ -1,5 +1,6 @@
 extends ../../shared/base/base.pug
 
+include ../../components/header/header
 include ../../components/first-display/first-display
 include ../../components/form/room-search/room-search
 
@@ -17,8 +18,8 @@ block headTags
 block content
   -
     const {
-      dataHeader = commonDataHeader,
-      dataFooter = commonDataFooter,
+      dataHeader = {},
+      dataFooter = {},
       formOptions = {},
       textBottom = false,
     } = htmlWebpackPlugin.options.getData();
@@ -37,3 +38,5 @@ block content
         +room-search(formOptions)
       if textBottom
         div.first-display__text-bottom #{textBottom}
+
+  +footer(dataFooter)

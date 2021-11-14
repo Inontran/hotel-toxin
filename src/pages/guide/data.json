@@ -30,7 +30,7 @@
 
   "dataFooter": {
     "classes": "footer_bordered_top",
-    "footerItems": [
+    "menuItems": [
       {
         "subtitle": "Navigation",
         "items": [
