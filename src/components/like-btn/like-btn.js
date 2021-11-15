@@ -13,11 +13,14 @@ class LikeBtn {
   }
 
   _init() {
-    this._$likeBtnInput = $('.js-like-btn__input', this._$likeBtn);
-    this._$likeBtnAmountLabel = $('.js-like-btn__amount', this._$likeBtn);
-
+    this._findDOMElements();
     this._bindEventListeners();
     this._addEventListeners();
+  }
+  
+  _findDOMElements() {
+    this._$likeBtnInput = $('.js-like-btn__input', this._$likeBtn);
+    this._$likeBtnAmountLabel = $('.js-like-btn__amount', this._$likeBtn);
   }
 
   _bindEventListeners() {

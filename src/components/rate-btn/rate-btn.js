@@ -13,11 +13,14 @@ class RateBtn {
   }
 
   _init() {
-    this._$input = $('.js-rate-btn__input', this._$rateBtn);
-    this._$stars = $('.js-rate-btn__star-item', this._$rateBtn);
-
+    this._findDOMElements();
     this._bindEventListeners();
     this._addEventListeners();
+  }
+  
+  _findDOMElements() {
+    this._$input = $('.js-rate-btn__input', this._$rateBtn);
+    this._$stars = $('.js-rate-btn__star-item', this._$rateBtn);
   }
 
   _bindEventListeners() {

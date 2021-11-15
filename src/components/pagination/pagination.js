@@ -14,11 +14,10 @@ class Pagination {
   }
 
   _init() {
+    this._findDOMElements();
     const currentPage = this._$pagination.attr('data-page');
     const perpage = this._$pagination.attr('data-perpage');
     const countElements = this._$pagination.attr('data-elements');
-    this._$textAmount = $('.js-pagination__output', this._$pagination);
-    this._$paginationWrapper = $('.js-pagination__wrapper', this._$pagination);
 
     let countElementsOutput = '';
     if (countElements >= 100) {
@@ -107,6 +106,11 @@ class Pagination {
         }
       },
     });
+  }
+
+  _findDOMElements() {
+    this._$textAmount = $('.js-pagination__output', this._$pagination);
+    this._$paginationWrapper = $('.js-pagination__wrapper', this._$pagination);
   }
 }
 

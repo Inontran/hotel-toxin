@@ -20,16 +20,13 @@ class SliderRange {
   }
 
   _init() {
-    this._$sliderWrapper = $('.js-slider-range__slider', this._$sliderRange);
-    this._$formattedOutput = $('.js-slider-range__formatted-output', this._$sliderRange);
-    this._$inputMinVal = $('.js-slider-range__input-min-val', this._$sliderRange);
-    this._$inputMaxVal = $('.js-slider-range__input-max-val', this._$sliderRange);
-
+    this._findDOMElements();
+    
     const valMin = parseInt(this._$sliderWrapper.attr('data-min'), 10);
     const valMax = parseInt(this._$sliderWrapper.attr('data-max'), 10);
     const val1 = parseInt(this._$sliderWrapper.attr('data-val1'), 10);
     const val2 = parseInt(this._$sliderWrapper.attr('data-val2'), 10);
-
+    
     this._$sliderWrapper.slider({
       range: true,
       min: valMin,
@@ -42,8 +39,15 @@ class SliderRange {
         this._getFormatValues(ui.values);
       },
     });
-
+    
     this._getFormatValues(this._$sliderWrapper.slider('values'));
+  }
+  
+  _findDOMElements() {
+    this._$sliderWrapper = $('.js-slider-range__slider', this._$sliderRange);
+    this._$formattedOutput = $('.js-slider-range__formatted-output', this._$sliderRange);
+    this._$inputMinVal = $('.js-slider-range__input-min-val', this._$sliderRange);
+    this._$inputMaxVal = $('.js-slider-range__input-max-val', this._$sliderRange);
   }
 
   _getFormatValues(values) {

@@ -44,16 +44,18 @@ class AirDatepicker extends EventTarget{
   
   _init() {
     moment.lang('ru');
-
+    this._eventChange = new CustomEvent('change-air-datepicker');
+    this._findDOMElements();
+    this._initDatepicker();
+    this._bindEventListeners();
+    this._addEventListeners();
+  }
+  
+  _findDOMElements() {
     this._$submitBtnWrapper = $('.js-air-datepicker__btn_type_submit', this._$airDatepicker);
     this._$submitBtn = $('.js-air-datepicker__btn_type_submit .js-button', this._$airDatepicker);
     this._$resetBtnWrapper = $('.js-air-datepicker__btn_type_reset', this._$airDatepicker);
     this._$resetBtn = $('.js-air-datepicker__btn_type_reset .js-button', this._$airDatepicker);
-    this._eventChange = new CustomEvent('change-air-datepicker');
-
-    this._initDatepicker();
-    this._bindEventListeners();
-    this._addEventListeners();
   }
 
   _initDatepicker() {

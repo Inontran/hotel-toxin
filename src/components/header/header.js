@@ -18,15 +18,21 @@ class Header {
   }
 
   _init() {
+    this._findDOMElements();
+    this._initDropdowns();
+    this._bindEventListeners();
+    this._addEventListeners();
+  }
+  
+  _findDOMElements(){
     this._$btnMenu = $('.js-header__icon-btn_type_menu', this._$header);
     this._$btnProfile = $('.js-header__icon-btn_type_profile', this._$header);
-
+  }
+  
+  _initDropdowns() {
     $('.js-dropdown', this._$header).each(function() {
       new Dropdown($(this));
     });
-
-    this._bindEventListeners();
-    this._addEventListeners();
   }
 
   _bindEventListeners() {

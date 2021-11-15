@@ -40,12 +40,15 @@ class Dropdown {
   }
 
   _init() {
+    this._findDOMElements();
+    this._bindEventListeners();
+    this._addEventListeners();
+  }
+  
+  _findDOMElements() {
     this._$toggleBtn = $('.js-dropdown__btn', this._$dropdown);
     this._$inputWrapper = $('.js-dropdown__input-wrapper', this._$dropdown);
     this._$input = $('.js-input-text__field', this._$dropdown);
-
-    this._bindEventListeners();
-    this._addEventListeners();
   }
 
   _bindEventListeners() {

@@ -28,13 +28,16 @@ class InputNumber {
   }
 
   _init() {
-    this._$input = $('.js-input-number__input', this._$inputNumber);
-    this._$btnDecreasing = $('.js-input-number__btn_decreasing', this._$inputNumber);
-    this._$btnIncreasing = $('.js-input-number__btn_increasing', this._$inputNumber);
-
+    this._findDOMElements();
     this._bindEventListeners();
     this._addEventListerners();
     this._disableBtns();
+  }
+  
+  _findDOMElements() {
+    this._$input = $('.js-input-number__input', this._$inputNumber);
+    this._$btnDecreasing = $('.js-input-number__btn_decreasing', this._$inputNumber);
+    this._$btnIncreasing = $('.js-input-number__btn_increasing', this._$inputNumber);
   }
 
   _bindEventListeners() {
