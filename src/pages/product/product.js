@@ -8,7 +8,7 @@ import Review from '@/components/review/review';
 import '@/components/infographic/infographic';
 import '@/components/list/list';
 import '@/components/heading/heading';
-import '@/components/footer/footer';
+import Footer from '@/components/footer/footer';
 import RoomReservation from '@/components/form/room-reservation/room-reservation';
 
 import './product.scss';
@@ -36,4 +36,6 @@ $(document).ready(() => {
   $('.js-room-reservation').each(function () {
     new RoomReservation($(this));
   });
+
+  new Footer($('.js-footer'));
 });

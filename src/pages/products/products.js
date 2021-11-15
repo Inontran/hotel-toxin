@@ -13,7 +13,7 @@ import Pagination from '@/components/pagination/pagination';
 import '@/components/checkbox/checkbox';
 import '@/components/button/button';
 import '@/components/heading/heading';
-import '@/components/footer/footer';
+import Footer from '@/components/footer/footer';
 
 import './products.scss';
 
@@ -21,6 +21,8 @@ $(() => {
   const $body = $('body');
 
   new Header($('.js-header'));
+
+  new Footer($('.js-footer'));
 
   // закрытие dropdown по клику вне этого dropdown
   $body.on('click', '*', (event) => {

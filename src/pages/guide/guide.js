@@ -20,7 +20,7 @@ import '@/components/list/list';
 import '@/components/infographic/infographic';
 import '@/components/heading/heading';
 import '@/components/radio/radio';
-import '@/components/footer/footer';
+import Footer from '@/components/footer/footer';
 import RoomReservation from '@/components/form/room-reservation/room-reservation';
 import RoomSearch from '@/components/form/room-search/room-search';
 import Subscription from '@/components/form/subscription/subscription';
@@ -117,5 +117,9 @@ $(() => {
 
   $('#example-subscription').each(function () {
     new Subscription($(this));
+  });
+
+  $('.js-footer').each(function () {
+    new Footer($(this));
   });
 });
