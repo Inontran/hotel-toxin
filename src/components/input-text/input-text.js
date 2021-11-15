@@ -5,15 +5,46 @@ import '@/components/heading/heading';
 
 import './input-text.scss';
 
-$(() => {
-  const $inputsDate = $('.js-input-text.input-text_mask_date .js-input-text__field');
+class InputText {
+  _$inputText;
+  _$input;
 
-  Inputmask('datetime', {
-    inputFormat: 'dd.mm.yyyy',
-    placeholder: 'ДД.ММ.ГГГГ',
-  }).mask($inputsDate);
+  constructor($inputText) {
+    this._$inputText = $inputText;
+    this._init();
+  }
 
-  $inputsDate.attr('placeholder', 'ДД.ММ.ГГГГ');
+  getInput() {
+    return this._$input;
+  }
 
-  Inputmask('email').mask('.js-input-text.input-text_mask_email .js-input-text__field');
-});
+  getValue() {
+    return this._$input.val();
+  }
+
+  setValue(newValue) {
+    this._$input.val(newValue);
+  }
+
+  _init() {
+    this._findDOMElements()
+
+    if (this._$inputText.hasClass('input-text_mask_date')) {
+      Inputmask('datetime', {
+        inputFormat: 'dd.mm.yyyy',
+        placeholder: 'ДД.ММ.ГГГГ',
+      }).mask(this._$input);
+
+      this._$input.attr('placeholder', 'ДД.ММ.ГГГГ');
+
+    } else if (this._$inputText.hasClass('input-text_mask_email')) {
+      Inputmask('email').mask(this._$input);
+    }
+  }
+
+  _findDOMElements() {
+    this._$input = $('.js-input-text__field', this._$inputText);
+  }
+}
+
+export default InputText

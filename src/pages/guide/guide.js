@@ -14,7 +14,7 @@ import SliderRange from '@/components/slider-range/slider-range';
 import ListCounters from '@/components/list-counters/list-counters';
 import Pagination from '@/components/pagination/pagination';
 import '@/components/button/button';
-import '@/components/input-text/input-text';
+import InputText from '@/components/input-text/input-text';
 import '@/components/checkbox/checkbox';
 import '@/components/list/list';
 import '@/components/infographic/infographic';
@@ -64,6 +64,10 @@ $(() => {
 
   $('.js-expander').each(function () {
     new Expander($(this));
+  });
+
+  $('.js-input-text').each(function () {
+    new InputText($(this));
   });
 
   new LikeBtn($('#example-like-btn'));

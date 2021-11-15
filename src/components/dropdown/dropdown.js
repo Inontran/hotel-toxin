@@ -1,6 +1,6 @@
 import $ from 'jquery';
 
-import '@/components/input-text/input-text';
+import InputText from '@/components/input-text/input-text';
 
 import './dropdown.scss';
 
@@ -8,7 +8,7 @@ class Dropdown {
   _$dropdown;
   _$toggleBtn;
   _$inputWrapper;
-  _$input;
+  _inputText;
 
   constructor($dropdown) {
     this._$dropdown = $dropdown;
@@ -32,14 +32,16 @@ class Dropdown {
   }
 
   getValue() {
-    return this._$input.val();
+    return this._inputText.getValue();
   }
 
   setValue(newValue) {
-    this._$input.val(newValue);
+    this._inputText.setValue(newValue);
   }
 
   _init() {
+    this._inputText = new InputText($('.js-input-text', this._$dropdown));
+
     this._findDOMElements();
     this._bindEventListeners();
     this._addEventListeners();
@@ -48,7 +50,6 @@ class Dropdown {
   _findDOMElements() {
     this._$toggleBtn = $('.js-dropdown__btn', this._$dropdown);
     this._$inputWrapper = $('.js-dropdown__input-wrapper', this._$dropdown);
-    this._$input = $('.js-input-text__field', this._$dropdown);
   }
 
   _bindEventListeners() {
