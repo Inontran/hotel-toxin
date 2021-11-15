@@ -24,7 +24,7 @@ import '@/components/footer/footer';
 import RoomReservation from '@/components/form/room-reservation/room-reservation';
 import RoomSearch from '@/components/form/room-search/room-search';
 import '@/components/form/subscription/subscription';
-import '@/components/form/site-registration/site-registration';
+import SiteRegistration from '@/components/form/site-registration/site-registration';
 import SiteLogin from '@/components/form/site-login/site-login';
 
 import './guide.scss';
@@ -109,5 +109,9 @@ $(() => {
 
   $('.js-site-login').each(function () {
     new SiteLogin($(this));
+  });
+
+  $('.js-site-registration').each(function () {
+    new SiteRegistration($(this));
   });
 });
