@@ -77,7 +77,7 @@ mixin header(options = {})
           type = 'button',
         )
           img(
-            src = require('@/components/header/img/user_icon.svg').default,
+            src = require('@/shared/img/user-icon.svg').default,
             alt = 'Профиль',
           )
         div.header__auth-btns
@@ -99,7 +99,7 @@ mixin header(options = {})
           title = 'Профиль'
         )
           img(
-            src = require('@/components/header/img/user_icon.svg').default,
+            src = require('@/shared/img/user-icon.svg').default,
             alt = 'Профиль',
           )
         a.header__username #{username}
@@ -109,6 +109,6 @@ mixin header(options = {})
         type = 'button',
       )
         img(
-          src = require('@/components/header/img/menu_icon.svg').default,
+          src = require('@/shared/img/menu-icon.svg').default,
           alt = 'Меню',
         )

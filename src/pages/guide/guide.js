@@ -20,6 +20,7 @@ import '@/components/list/list';
 import '@/components/infographic/infographic';
 import '@/components/heading/heading';
 import '@/components/radio/radio';
+import '@/components/footer/footer';
 import RoomReservation from '@/components/form/room-reservation/room-reservation';
 import RoomSearch from '@/components/form/room-search/room-search';
 import '@/components/form/subscription/subscription';

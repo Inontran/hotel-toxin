@@ -39,7 +39,7 @@
       transform: translateY(-50%);
       width: calc-rem(10);
       height: calc-rem(8);
-      background-image: url(img/favorite_border.svg);
+      background-image: url(../../shared/img/heart-gray-o.svg);
       background-position: center;
       background-repeat: no-repeat;
       background-size: cover;
@@ -52,7 +52,7 @@
     background: $gradientPurple;
 
     &::after {
-      background-image: url(img/favorite.svg);
+      background-image: url(../../shared/img/heart-purple.svg);
     }
   }
 

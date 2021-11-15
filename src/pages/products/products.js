@@ -13,6 +13,7 @@ import Pagination from '@/components/pagination/pagination';
 import '@/components/checkbox/checkbox';
 import '@/components/button/button';
 import '@/components/heading/heading';
+import '@/components/footer/footer';
 
 import './products.scss';
 

@@ -25,7 +25,7 @@
       display: inline-block;
       width: 12px;
       height: 8px;
-      background-image: url('img/expand_more.svg');
+      background-image: url(../../shared/img/arrow-down-gray.svg);
       background-repeat: no-repeat;
       background-position: center;
       background-size: 100% 100%;
@@ -50,28 +50,6 @@
 
     .expander__content {
       max-height: 200vh;
-    }
-  }
-
-  &.expander_theme_green {
-    .expander__btn {
-      height: auto;
-      min-height: auto;
-      justify-content: flex-start;
-
-      &-arrow {
-        background-image: url(img/expand_more_green.svg);
-        margin: 0;
-        margin-left: 6px;
-      }
-
-      &-text {
-        font-size: 1rem;
-        font-weight: 400;
-        line-height: 1.7;
-        color: $green;
-        text-transform: none;
-      }
     }
   }
 }

@@ -93,7 +93,7 @@ const plugins = () =>{
         localesToKeep: ['es-us', 'ru'],
     }),
     new FaviconsWebpackPlugin({
-      logo: PATHS.src + '/components/logo/img/logo-mini.svg',
+      logo: PATHS.src + '/shared/img/logo-mini.svg',
       cache: true,
       publicPath: '',
       outputPath: 'favicons',

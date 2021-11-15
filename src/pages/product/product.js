@@ -8,6 +8,7 @@ import Review from '@/components/review/review';
 import '@/components/infographic/infographic';
 import '@/components/list/list';
 import '@/components/heading/heading';
+import '@/components/footer/footer';
 import RoomReservation from '@/components/form/room-reservation/room-reservation';
 
 import './product.scss';

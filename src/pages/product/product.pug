@@ -1,6 +1,7 @@
 extends ../../shared/base/base.pug
 
 include ../../components/header/header
+include ../../components/footer/footer
 include ../../components/infographic/infographic
 include ../../components/review/review
 include ../../components/list/list
@@ -92,7 +93,7 @@ block content
                 })
               - let index = 0
               while index < optionsInfographics.items.length
-                - optionsInfographics.items[index].src = require('@/pages/product/img/' + optionsInfographics.items[index].src).default
+                - optionsInfographics.items[index].src = require('@/shared/img/' + optionsInfographics.items[index].src).default
                 - index++
               +infographic(optionsInfographics)
           if chartCountAll

@@ -11,13 +11,13 @@
   "optionsInfographics":{
     "items": [
       { 
-        "src": "insert_emoticon.svg", 
+        "src": "insert-emoticon.svg", 
         "title": "Комфорт", 
         "text": "Шумопоглощающие стены",
         "line": true
       },
       { 
-        "src": "location_city.svg", 
+        "src": "location-city.svg", 
         "title": "Удобство", 
         "text": "Окно в каждой из спален",
         "line": true
@@ -33,7 +33,7 @@
   "reviews":[
     {
       "reviewId": 1,
-      "avatar": "photo-example.jpg",
+      "avatar": "user-avatar-example.jpg",
       "isLike": true,
       "countLike": 12,
       "username": "Мурад Сарафанов",
@@ -43,7 +43,7 @@
     },
     {
       "reviewId": 2,
-      "avatar": "photo-example.jpg",
+      "avatar": "user-avatar-example.jpg",
       "countLike": 2,
       "username": "Патрисия Стёклышкова",
       "timeLater": "Неделю назад",

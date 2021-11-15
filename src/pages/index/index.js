@@ -3,6 +3,7 @@ import $ from 'jquery';
 import '@/shared/base/base';
 import FirstDisplay from '@/components/first-display/first-display';
 import Header from '@/components/header/header';
+import '@/components/footer/footer';
 import RoomSearch from '@/components/form/room-search/room-search';
 
 import './index.scss';

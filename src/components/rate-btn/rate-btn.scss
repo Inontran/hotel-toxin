@@ -9,7 +9,7 @@
     display: block;
     width: calc-rem(20);
     height: calc-rem(19);
-    background-image: url(img/star_border.svg);
+    background-image: url(../../shared/img/star-purple-o.svg);
     background-size: cover;
     background-repeat: no-repeat;
     background-position: center;
@@ -38,7 +38,7 @@
       &[value^="#{$i}"] {
         @for $j from 0 through $i {
           & ~ .rate-btn__star-item[data-number-star="#{$j}"] {
-            background-image: url(img/star.svg);
+            background-image: url(../../shared/img/star-purple.svg);
           }
         }
       }
