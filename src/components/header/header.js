@@ -36,21 +36,21 @@ class Header {
   }
 
   _bindEventListeners() {
-    this._handleBtnShowMainmenuClick = this._handleBtnShowMainmenuClick.bind(this);
-    this._handleBtnShowAuthBtnsClick = this._handleBtnShowAuthBtnsClick.bind(this);
+    this._handleBtnMenuClick = this._handleBtnMenuClick.bind(this);
+    this._handleBtnProfileClick = this._handleBtnProfileClick.bind(this);
   }
 
   _addEventListeners() {
-    this._$btnMenu.on('click', this._handleBtnShowMainmenuClick);
-    this._$btnProfile.on('click', this._handleBtnShowAuthBtnsClick);
+    this._$btnMenu.on('click', this._handleBtnMenuClick);
+    this._$btnProfile.on('click', this._handleBtnProfileClick);
   }
 
-  _handleBtnShowMainmenuClick() {
+  _handleBtnMenuClick() {
     this._$header.removeClass('header_shown-auth-btns');
     this._$header.toggleClass('header_shown-main-menu');
   }
 
-  _handleBtnShowAuthBtnsClick() {
+  _handleBtnProfileClick() {
     this._$header.removeClass('header_shown-main-menu');
     this._$header.toggleClass('header_shown-auth-btns');
   }
