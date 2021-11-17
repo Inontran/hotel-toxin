@@ -1,0 +1,192 @@
+.air-datepicker {
+  display: inline-block;
+  padding: 20px 19px;
+  background: #fff;
+  border: 1px solid rgba(31, 32, 65, 0.25);
+  border-radius: 4px;
+  width: 22.85714rem; }
+  @media (max-width: 767px) {
+    .air-datepicker {
+      padding: 10px;
+      width: 21.57143rem; } }
+  .air-datepicker__btns {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    padding-top: 10px;
+    line-height: 1; }
+  .air-datepicker__btn {
+    padding-top: 10px; }
+    .air-datepicker__btn_hidden {
+      display: none; }
+    .air-datepicker__btn_type_reset {
+      padding-right: 10px; }
+    .air-datepicker__btn_type_submit {
+      margin-left: auto; }
+  .air-datepicker .datepicker {
+    border: 0;
+    border-radius: 0;
+    width: 100%; }
+    .air-datepicker .datepicker--nav {
+      border: 0;
+      align-items: center;
+      padding: 0;
+      margin-bottom: 30px; }
+    .air-datepicker .datepicker--nav-action {
+      width: 1.21429rem;
+      height: 1.28571rem;
+      position: relative;
+      margin: 3px; }
+      .air-datepicker .datepicker--nav-action:hover {
+        background: none; }
+      .air-datepicker .datepicker--nav-action::after {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background-size: 100% 100%;
+        background-repeat: no-repeat;
+        background-position: center; }
+      .air-datepicker .datepicker--nav-action svg {
+        display: none; }
+      .air-datepicker .datepicker--nav-action[data-action="prev"]::after {
+        background-image: url(img/shared/img/arrow-forward.eec7abcd8c598f229ba344ba2f3eae5b.svg);
+        transform: rotate(180deg); }
+      .air-datepicker .datepicker--nav-action[data-action="next"]::after {
+        background-image: url(img/shared/img/arrow-forward.eec7abcd8c598f229ba344ba2f3eae5b.svg); }
+    .air-datepicker .datepicker--nav-title {
+      font-family: 'Montserrat', sans-serif;
+      font-weight: 700;
+      font-size: 1.35714rem;
+      color: #1f2041;
+      padding: 0;
+      border-radius: 0;
+      line-height: 1; }
+      .air-datepicker .datepicker--nav-title:hover {
+        background: none; }
+    .air-datepicker .datepicker--content {
+      padding: 0; }
+    .air-datepicker .datepicker--days-names {
+      margin: 0; }
+    .air-datepicker .datepicker--day-name {
+      color: #bc9cff;
+      font-size: 0.85714rem;
+      line-height: 1.25;
+      font-weight: 700;
+      text-transform: none;
+      width: 2.85714rem;
+      height: 2.85714rem; }
+    .air-datepicker .datepicker--cell-day {
+      font-size: 0.85714rem;
+      line-height: 1.25;
+      color: rgba(31, 32, 65, 0.5);
+      width: 2.85714rem;
+      height: 2.85714rem;
+      position: relative;
+      background: none; }
+      .air-datepicker .datepicker--cell-day::after {
+        content: '';
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        width: 100%;
+        height: 100%;
+        z-index: -1;
+        border-radius: 100vh; }
+      .air-datepicker .datepicker--cell-day.-other-month- {
+        color: rgba(31, 32, 65, 0.25); }
+      .air-datepicker .datepicker--cell-day.-range-from-, .air-datepicker .datepicker--cell-day.-range-to- {
+        color: #fff;
+        font-weight: 700;
+        background: none; }
+        .air-datepicker .datepicker--cell-day.-range-from-::after, .air-datepicker .datepicker--cell-day.-range-to-::after {
+          background: linear-gradient(180deg, #bc9cff 0%, #8ba4f9 100%); }
+      .air-datepicker .datepicker--cell-day.-range-from-::before, .air-datepicker .datepicker--cell-day.-range-to-::before, .air-datepicker .datepicker--cell-day.-in-range-::before {
+        content: '';
+        position: absolute;
+        top: 0;
+        height: 100%;
+        width: 100%;
+        background: linear-gradient(180deg, #bc9cff 0%, #8ba4f9 100%);
+        opacity: 0.25;
+        z-index: -1; }
+      .air-datepicker .datepicker--cell-day.-range-from-::before {
+        border-radius: 100vh 0 0 100vh; }
+      .air-datepicker .datepicker--cell-day.-range-to-::before {
+        border-radius: 0 100vh 100vh 0; }
+      .air-datepicker .datepicker--cell-day.-current- {
+        color: #fff;
+        font-weight: 700; }
+        .air-datepicker .datepicker--cell-day.-current-::after {
+          background: linear-gradient(180deg, #6fcf97 0%, #66d2ea 100%); }
+      .air-datepicker .datepicker--cell-day.-disabled- {
+        cursor: not-allowed; }
+
+.input-number {
+  display: inline-flex;
+  align-items: center; }
+  .input-number__btn, .input-number__input {
+    width: 2.14286rem;
+    height: 2.14286rem;
+    text-align: center; }
+  .input-number__input {
+    font-weight: 700;
+    font-size: 0.85714rem;
+    text-transform: uppercase;
+    line-height: 1.25;
+    padding: 0 3px;
+    border: 0;
+    background: none;
+    -moz-appearance: textfield; }
+    .input-number__input::-webkit-outer-spin-button, .input-number__input::-webkit-inner-spin-button {
+      display: none; }
+    .input-number__input:read-only {
+      outline: none; }
+  .input-number__btn {
+    border-radius: 100vh;
+    border: 1px solid rgba(31, 32, 65, 0.25);
+    background: #fff;
+    line-height: 2.14286rem;
+    color: rgba(31, 32, 65, 0.25);
+    cursor: pointer; }
+    .input-number__btn:disabled {
+      cursor: default;
+      opacity: 0.38; }
+
+.list-counters__counter, .list-counters__btns {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap; }
+
+.list-counters__counter {
+  margin: 7px 7px 7px 15px; }
+
+.list-counters__counter-label {
+  font-weight: 700;
+  font-size: 0.85714rem;
+  text-transform: uppercase;
+  line-height: 1.25; }
+
+.list-counters__input-number-wrapper {
+  margin-left: auto; }
+
+.list-counters__btns {
+  margin-top: 19px; }
+
+.list-counters__btn {
+  line-height: 1;
+  padding-left: 15px;
+  padding-right: 7px;
+  padding-bottom: 13px; }
+  .list-counters__btn_hidden {
+    display: none; }
+  .list-counters__btn_type_submit {
+    margin-left: auto; }
+
+
+/*# sourceMappingURL=guide~index~product~products.css.map*/

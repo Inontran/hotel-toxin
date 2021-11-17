@@ -1,0 +1,322 @@
+.diagram__container {
+  display: flex;
+  align-items: flex-end;
+  position: relative;
+  flex-wrap: wrap; }
+
+.diagram__chart-container {
+  width: 150px;
+  height: 124px;
+  position: relative;
+  z-index: 1; }
+
+.diagram__chart {
+  width: 248px;
+  height: 124px;
+  position: absolute;
+  top: 0;
+  left: 0; }
+
+.diagram__picture {
+  transform: translate(-64px, -1px); }
+
+.diagram__count {
+  position: absolute;
+  top: 50%;
+  left: 60px;
+  transform: translate(-50%, -50%);
+  z-index: -1;
+  text-align: center;
+  color: #bc9cff;
+  margin-top: 0;
+  margin-bottom: 0; }
+  .diagram__count-number {
+    display: block;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 1.71429rem;
+    font-weight: 700;
+    line-height: 1.25;
+    max-width: 95px;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis; }
+  .diagram__count-text {
+    display: block;
+    font-size: 0.85714rem;
+    font-weight: 700;
+    line-height: 1.25;
+    text-transform: uppercase; }
+  .diagram__count-text, .diagram__count-number {
+    max-width: 95px;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis; }
+
+.diagram__legend {
+  padding-right: 7px;
+  padding-top: 10px;
+  padding-left: 0;
+  margin: 0; }
+  .diagram__legend-item {
+    display: flex;
+    align-items: flex-start;
+    line-height: 1.5;
+    margin-bottom: 3px; }
+    .diagram__legend-item:last-of-type {
+      margin-bottom: 0; }
+    .diagram__legend-item-icon {
+      overflow: hidden;
+      width: 0.71429rem;
+      height: 0.71429rem;
+      border-radius: 100vh;
+      margin-right: 5px;
+      margin-top: 4px;
+      flex: none; }
+      .diagram__legend-item-icon_theme_yellow {
+        background: linear-gradient(180deg, #ffe39c 0%, #ffba9c 100%); }
+      .diagram__legend-item-icon_theme_green {
+        background: linear-gradient(180deg, #6fcf97 0%, #66d2ea 100%); }
+      .diagram__legend-item-icon_theme_purple {
+        background: linear-gradient(180deg, #bc9cff 0%, #8ba4f9 100%); }
+      .diagram__legend-item-icon_theme_gray {
+        background: linear-gradient(180deg, #919191 0%, #3d4975 100%); }
+    .diagram__legend-item-text {
+      font-size: 1rem;
+      color: rgba(31, 32, 65, 0.75); }
+
+.like-btn {
+  display: inline-flex; }
+  .like-btn__view {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    height: 1.42857rem;
+    min-width: 2.85714rem;
+    font-size: 0.71429rem;
+    color: rgba(31, 32, 65, 0.25);
+    border-radius: 100vh;
+    background: rgba(31, 32, 65, 0.25);
+    position: relative;
+    text-align: center;
+    padding: 2px 6px 2px 18px;
+    cursor: pointer; }
+    .like-btn__view::before {
+      content: '';
+      position: absolute;
+      top: 1px;
+      left: 1px;
+      width: calc(100% - 2px);
+      height: calc(100% - 2px);
+      border-radius: 100vh;
+      background: #fff;
+      z-index: 1; }
+    .like-btn__view::after {
+      content: '';
+      position: absolute;
+      top: 50%;
+      left: 0.35714rem;
+      transform: translateY(-50%);
+      width: 0.71429rem;
+      height: 0.57143rem;
+      background-image: url(img/shared/img/heart-gray-o.69d1f53200b2364767d20745d014dbf3.svg);
+      background-position: center;
+      background-repeat: no-repeat;
+      background-size: cover;
+      z-index: 2; }
+  .like-btn__input:checked ~ .like-btn__view {
+    color: #bc9cff;
+    background: linear-gradient(180deg, #bc9cff 0%, #8ba4f9 100%); }
+    .like-btn__input:checked ~ .like-btn__view::after {
+      background-image: url(img/shared/img/heart-purple.f2fff94b2388480323aa514b31dbf70b.svg); }
+  .like-btn__input:disabled ~ .like-btn__view {
+    cursor: default; }
+  .like-btn__input {
+    display: none; }
+  .like-btn__amount {
+    position: relative;
+    z-index: 2;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    overflow: hidden;
+    width: 16px;
+    text-align: center; }
+
+.review__avatar-wrapper, .review__like-wrapper {
+  flex-shrink: 0;
+  width: 3.42857rem;
+  margin-right: 10px; }
+
+.review__avatar-wrapper {
+  display: block;
+  position: relative;
+  height: 3.42857rem;
+  border: 2px solid #fff;
+  box-sizing: border-box;
+  box-shadow: 0 10px 20px rgba(31, 32, 65, 0.1);
+  border-radius: 100vh;
+  overflow: hidden; }
+
+.review__avatar {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: auto;
+  min-width: 100%;
+  height: auto;
+  min-height: 100%; }
+
+.review__header {
+  display: flex;
+  align-items: center;
+  color: rgba(31, 32, 65, 0.75);
+  margin-bottom: 10px; }
+
+.review__username {
+  font-weight: 700;
+  margin: 0; }
+
+.review__content {
+  display: flex; }
+
+.review__like-wrapper {
+  display: flex;
+  justify-content: center;
+  align-items: flex-start; }
+
+.review__text {
+  color: rgba(31, 32, 65, 0.75);
+  margin: 0; }
+
+.infographic {
+  padding: 0;
+  margin: 0; }
+  .infographic__item {
+    display: flex;
+    align-items: center;
+    list-style: none;
+    color: rgba(31, 32, 65, 0.75); }
+    .infographic__item_with-line {
+      padding-bottom: 20px;
+      margin-bottom: 20px;
+      border-bottom: 1px solid rgba(31, 32, 65, 0.1); }
+  .infographic__image {
+    flex: none;
+    width: 3.42857rem;
+    height: 3.42857rem;
+    background-position: center;
+    background-size: auto;
+    background-repeat: no-repeat;
+    margin-right: 10px; }
+  .infographic__icon-wrapper {
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    flex: none;
+    width: 3.42857rem;
+    height: 3.42857rem;
+    margin-right: 10px; }
+  .infographic__icon {
+    max-width: 100%;
+    max-height: 100%; }
+  .infographic__title, .infographic__text {
+    margin: 0;
+    padding: 0; }
+  .infographic__title {
+    font-weight: 700; }
+
+.room-reservation {
+  background-color: #fff;
+  border: 1px solid rgba(0, 0, 0, 0.12);
+  box-shadow: 0 0 25px rgba(0, 0, 0, 0.2);
+  border-radius: 4px;
+  padding: 40px 29px 30px; }
+  @media (max-width: 400px) {
+    .room-reservation {
+      padding: 20px 9px 20px; } }
+  .room-reservation__room-info {
+    display: flex;
+    align-items: flex-end;
+    justify-content: space-between;
+    margin-bottom: 10px;
+    margin-top: 2px; }
+  .room-reservation__room-name, .room-reservation__room-price {
+    padding-bottom: 10px; }
+  .room-reservation__room-name {
+    font-weight: 700;
+    padding-right: 10px; }
+  .room-reservation__symbol {
+    font-size: 1rem;
+    line-height: 1.21;
+    padding-right: 8px; }
+  .room-reservation__room-number {
+    font-size: 1.71429rem;
+    line-height: 1.21; }
+  .room-reservation__room-type {
+    font-size: 0.85714rem;
+    line-height: 1.25;
+    color: #bc9cff;
+    text-transform: uppercase;
+    padding-left: 8px; }
+  .room-reservation__room-price {
+    color: rgba(31, 32, 65, 0.5); }
+  .room-reservation__room-number-price {
+    font-weight: 700;
+    font-size: 1rem; }
+  .room-reservation__room-payment-period {
+    font-size: 0.85714rem; }
+  .room-reservation__dates-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+    justify-content: space-between;
+    column-gap: 20px; }
+  .room-reservation__input-dates-wrapper {
+    min-width: 150px; }
+  .room-reservation__table {
+    color: rgba(31, 32, 65, 0.75);
+    width: 100%; }
+    .room-reservation__table-cell {
+      padding-bottom: 10px;
+      vertical-align: top;
+      line-height: 1.2857; }
+      .room-reservation__table-cell_with-tooltip {
+        position: relative;
+        padding-right: 24px; }
+      .room-reservation__table-cell_with-price {
+        text-align: right;
+        min-width: 74px; }
+  .room-reservation__tooltip {
+    position: absolute;
+    top: 0;
+    right: 0;
+    display: inline-block;
+    overflow: hidden;
+    border-radius: 100vh;
+    border: 1px solid rgba(31, 32, 65, 0.25);
+    width: 1.42857rem;
+    height: 1.42857rem;
+    text-align: center;
+    line-height: 1.42857rem;
+    cursor: pointer; }
+    .room-reservation__tooltip::after {
+      content: 'i';
+      font-size: 0.85714rem;
+      font-weight: 700;
+      color: rgba(31, 32, 65, 0.25); }
+  .room-reservation__total-price-wrapper {
+    display: flex;
+    align-items: flex-end;
+    font-weight: 700;
+    font-size: 1.35714rem;
+    line-height: 1; }
+  .room-reservation__points {
+    flex-grow: 1;
+    border-bottom: 1px dashed rgba(31, 32, 65, 0.25);
+    margin: 0 5px 4px; }
+  .room-reservation__total-price {
+    white-space: nowrap; }
+  .room-reservation__input-dates-wrapper, .room-reservation__total-price-wrapper, .room-reservation__table-wrapper, .room-reservation__input-wrapper {
+    margin-bottom: 20px; }
+
+
+/*# sourceMappingURL=guide~product.css.map*/
