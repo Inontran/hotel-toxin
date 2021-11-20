@@ -74,13 +74,13 @@
       height: $size;
       border: $border-width solid $white;
       border-radius: 100vh;
-      background: $gradientGreen;
+      background: $gradient-green;
     }
 
     .ui-slider-range {
       top: -1px;
       height: calc(100% + 2px);
-      background: $gradientGreen;
+      background: $gradient-green;
     }
   }
 

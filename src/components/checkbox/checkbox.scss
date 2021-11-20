@@ -109,7 +109,7 @@
 
       &::after {
         left: calc(100% - #{calc-rem(4)} - #{calc-rem(12)});
-        background: $gradientPurple;
+        background: $gradient-purple;
       }
     }
 

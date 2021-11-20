@@ -49,7 +49,7 @@
 
   &__input:checked ~ &__view {
     color: $purple;
-    background: $gradientPurple;
+    background: $gradient-purple;
 
     &::after {
       background-image: url(../../shared/img/heart-purple.svg);
