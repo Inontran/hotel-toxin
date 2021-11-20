@@ -6,8 +6,6 @@ import Header from '@/components/header/header';
 import Footer from '@/components/footer/footer';
 import SiteRegistration from '@/components/form/site-registration/site-registration';
 
-import './register.scss';
-
 $(() => {
   new Header($('.js-header'));
   new FirstDisplay($('.js-first-display'));

@@ -6,8 +6,6 @@ import Header from '@/components/header/header';
 import Footer from '@/components/footer/footer';
 import RoomSearch from '@/components/form/room-search/room-search';
 
-import './index.scss';
-
 $(() => {
   new Header($('.js-header'));
   new FirstDisplay($('.js-first-display'));
