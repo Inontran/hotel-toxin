@@ -50,28 +50,43 @@ mixin header(options = {})
       div.header__logo
         +logo()
       ul.header__main-menu
-        each val, index in menuItems
+        each menuItem, index in menuItems
           li.header__main-menu-item
-            if val.subitems
-              each subitem in val.subitems
-                if !subitem.href
-                  -subitem.href = '/mock-address/change-me'
+            if menuItem.subitems
+              - let index = 0
+              - let subitems = []
+              while index < menuItem.subitems.length
+                - subitems[index] = menuItem.subitems[index]
+                if !subitems[index].href
+                  -subitems[index].href = '/mock-address/change-me'
+                - index++
+
               +dropdown({
-                text: val.name,
+                text: menuItem.name,
                 group: 'header-dropdowns',
                 classes: 'dropdown_adapted-for-header'
               })
                 +list({
                   classes: 'list_with-gray-items',
-                  items: val.subitems
+                  items: subitems
                 })
             else
-              if !val.href
-                -val.href = '/mock-address/change-me'
-              a.header__main-menu-link(href = val.href) #{val.name}
+              a.header__main-menu-link(
+                href = menuItem.href ? menuItem.href : '/mock-address/change-me'
+              ) #{menuItem.name}
 
 
-      if !username
+      if username
+        a.header__icon-btn.header__icon-btn_type_profile(
+          href = buttonLoginHref ? buttonLoginHref : '/mock-address/change-me',
+          title = 'Профиль'
+        )
+          img(
+            src = require('@/shared/img/user-icon.svg').default,
+            alt = 'Профиль',
+          )
+        a.header__username #{username}
+      else
         button.header__icon-btn.header__icon-btn_type_profile.js-header__icon-btn_type_profile(
           title = 'Профиль',
           type = 'button',
@@ -93,16 +108,6 @@ mixin header(options = {})
               classes: 'button_filled_blue-green-gradient button_size_md button_adapted-for-header',
               href: buttonRegHref ? buttonRegHref : false
             })
-      else
-        a.header__icon-btn.header__icon-btn_type_profile(
-          href = buttonLoginHref ? buttonLoginHref : '/mock-address/change-me',
-          title = 'Профиль'
-        )
-          img(
-            src = require('@/shared/img/user-icon.svg').default,
-            alt = 'Профиль',
-          )
-        a.header__username #{username}
 
       button.header__icon-btn.header__icon-btn_type_menu.js-header__icon-btn_type_menu(
         title = 'Меню',
